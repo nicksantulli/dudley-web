@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import { rel } from '../consts';
+---
+<Base title="Page not found" description="This page wandered off." path="/404" noindex={true}>
+  <main class="hero" style="min-height:70vh; display:flex; align-items:center;">
+    <div class="wrap">
+      <span class="eyebrow">404</span>
+      <h1>This page wandered off.</h1>
+      <p class="lede">The link's broken or the page moved. Let's get you back.</p>
+      <a class="btn primary" href={rel('/')}>Go home →</a>
+    </div>
+  </main>
+</Base>

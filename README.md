@@ -1,66 +1,83 @@
 # Dudley Development — website
 
-The marketing + legal site for [Dudley Development](https://github.com/nicksantulli),
-a small independent iOS studio. Static, dependency-free, low-maintenance by design.
+The marketing + legal + programmatic-SEO/AEO site for
+[Dudley Development](https://github.com/nicksantulli), a small independent iOS studio.
 
-## What's here
-
-| Path | Purpose |
-|---|---|
-| `index.html` | Home — studio intro + app showcase (Powell Prowl, Vibe Rater) |
-| `about.html` | About the studio |
-| `support.html` | Consolidated support + per-app FAQ + contact email |
-| `privacy/index.html` | Privacy hub — links to each app's policy |
-| `privacy/powell-prowl.html` | Powell Prowl: Rate Chase privacy policy (migrated from the old `powell-prowl-legal` repo) |
-| `privacy/vibe-rater.html` | Vibe Rater privacy policy |
-| `app-ads.txt` | AdMob authorized-sellers file (served at the web root) |
-| `assets/` | Shared `style.css`, brand mark, app icons |
-| `.nojekyll` | Tells GitHub Pages to serve files as-is (so `app-ads.txt` works) |
+**Live:** https://nicksantulli.github.io/dudley-web/
 
 ## Stack
 
-Plain HTML + one hand-written CSS file (`assets/style.css`). **No build step, no
-dependencies, no framework.** Edit a file, commit, done — it deploys as-is. This is
-deliberate: the site should outlive any tooling churn and need near-zero upkeep.
+[Astro](https://astro.build) (v5) → 100% static HTML output. Content lives in
+**content collections** (Markdown/MDX + typed frontmatter), and dynamic routes
+template one page per entry — so adding pages is a data edit, not hand-written HTML.
 
-## Local preview
+- No client JS shipped by default (clean, crawlable semantic HTML — an AEO win)
+- `@astrojs/sitemap` auto-generates `sitemap-index.xml`
+- schema.org JSON-LD on every page (Organization + page-type schema)
 
-```bash
-cd dudley-web
-python3 -m http.server 8000   # then open http://localhost:8000
+## Structure
+
+```
+src/
+├── consts.ts              # site URL, base path, App Store IDs — single source of truth
+├── content/
+│   ├── config.ts          # collection schemas (apps, archetypes, comparisons, tools)
+│   ├── apps/*.mdx         # one file per app  → /apps/<slug>/
+│   ├── archetypes/*.mdx   # one file per Vibe Rater archetype → /archetypes/<slug>/
+│   ├── comparisons/*.mdx  # one file per comparison → /compare/<slug>/
+│   └── tools/*.mdx        # one file per tool/quiz → /tools/<slug>/
+├── layouts/               # Base + per-page-type layouts (build the JSON-LD)
+├── components/            # FAQ, InternalLinks, AppCTA, VibeQuiz
+└── pages/                 # static pages (home, about, support, privacy, 404) + [slug] routes
+public/                    # served as-is: app-ads.txt, robots.txt, llms.txt, assets/, .nojekyll
+                           #   + legacy .html redirect stubs (preserve old App Store URLs)
 ```
 
-## Deploy (free)
+## Adding content (the programmatic part)
 
-Either free host works on a subdomain to start; wire a custom domain later only if
-the Owner registers one.
+- **New app** → add `src/content/apps/<slug>.mdx`. The landing page, schema, and FAQ generate automatically. Add the App Store ID in `src/consts.ts` when live.
+- **New archetype** → add `src/content/archetypes/<slug>.mdx`. (Remaining to write: drip, serve, gorpcore-prophet, npc-affectionate — see `vault/growth/seo-aeo/`.)
+- **New comparison / tool** → add a file in the matching collection.
 
-**GitHub Pages** — repo must be public (Pages on private repos needs a paid plan).
-Settings → Pages → Source: `main` / root. Serves at `https://<user>.github.io/dudley-web/`
-(or the root domain if this becomes the user/organization site).
+Content templates + the keyword/AEO plan live in the Dudley vault at
+`vault/growth/seo-aeo/`.
 
-**Cloudflare Pages** — connect the repo (works while private), framework preset *None*,
-build command empty, output dir `/`. Serves at `https://dudley-web.pages.dev`.
+> ⚠️ Comparison pages must list **real** apps and be honest — no fabricated
+> competitors (penalized by Google, distrusted by AI engines).
 
-### app-ads.txt note
-
-`app-ads.txt` must be reachable at the **root of the domain listed as the app's
-marketing/developer URL in App Store Connect**. For the AdMob crawler to pick it up,
-point each app's App Store marketing URL at this site's domain so the file resolves at
-`https://<domain>/app-ads.txt`. Verify after deploy:
+## Local dev
 
 ```bash
-curl -s https://<domain>/app-ads.txt
-# expect: google.com, pub-9950526548980224, DIRECT, f08c47fec0942fa0
+npm install
+npm run dev        # http://localhost:4321/dudley-web/
+npm run build      # outputs to dist/
+npm run preview    # serve the built dist/
 ```
 
-Then register the domain in AdMob → Apps → [app] → App-ads.txt.
+## Deploy (free, zero Owner action)
 
-## Editing content
+GitHub Pages serves **legacy-style from the `gh-pages` branch root**
+(Settings → Pages → Source: `gh-pages` `/`). Deploy by building and pushing
+`dist/` to that branch — **no GitHub Actions workflow and no `pages`/`workflow`
+token scope needed**:
 
-- **New app?** Add a card in `index.html#apps`, a privacy page under `privacy/`, a row
-  in `privacy/index.html`, and (optionally) a support section in `support.html`.
-- **Support email** lives in `support.html`, `about.html`, and each privacy page
-  (`mailto:nicksantulli@yahoo.com`). Search-and-replace to change it everywhere.
+```bash
+npm run deploy     # builds, then publishes dist/ to gh-pages via a temp worktree
+```
+
+Live within ~1 minute at https://nicksantulli.github.io/dudley-web/.
+
+### Custom domain (later)
+
+When the Owner registers a domain, it's a one-place change:
+set `ORIGIN_HOST`/`BASE` in `src/consts.ts` and `site`/`base` in `astro.config.mjs`
+(to the root domain + `/`), add a `CNAME` file in `public/`, and redeploy. The
+optional GitHub Actions workflow / Cloudflare Pages migration can follow then.
+
+### app-ads.txt
+
+`app-ads.txt` is served at `/dudley-web/app-ads.txt` now and at the domain root
+once a custom domain is live. It must be reachable at the root of the domain set as
+each app's marketing URL in App Store Connect for the AdMob crawler to find it.
 
 © Dudley Development.

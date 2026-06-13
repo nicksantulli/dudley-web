@@ -1,0 +1,27 @@
+---
+import { appStoreUrl } from '../consts';
+export interface Props {
+  appName: string;
+  appStoreId?: string;
+  status: 'live' | 'coming_soon' | 'in_development';
+  blurb?: string;
+}
+const { appName, appStoreId = '', status, blurb } = Astro.props;
+const url = appStoreUrl(appStoreId);
+const isLive = status === 'live' && !!url;
+---
+<div class="cta-block">
+  {isLive ? (
+    <>
+      <h3>Download {appName}</h3>
+      <p>{blurb ?? `${appName} is free on the App Store for iPhone.`}</p>
+      <a class="btn primary" href={url} rel="noopener">Download {appName} on the App Store</a>
+    </>
+  ) : (
+    <>
+      <h3>{appName} is coming soon</h3>
+      <p>{blurb ?? `${appName} is in development and launching on the App Store soon.`}</p>
+      <span class="btn" style="opacity:.65; cursor:default;">Coming soon to the App Store</span>
+    </>
+  )}
+</div>

@@ -1,0 +1,37 @@
+---
+import Base from '../../layouts/Base.astro';
+import { rel } from '../../consts';
+const description = 'Privacy policies for Dudley Development apps.';
+---
+<Base title="Privacy" description={description} path="/privacy/">
+  <main class="page">
+    <div class="wrap" style="max-width:720px;">
+      <a class="back" href={rel('/')}>← Home</a>
+      <h1>Privacy</h1>
+      <p class="updated">One policy per app. Pick yours below.</p>
+
+      <p>
+        The short version that's true of every Dudley app: we don't run our own accounts, analytics, or
+        trackers, and we never see your personal information. Our free apps show ads through Google AdMob,
+        which is disclosed in each policy, and you can always decline tracking.
+      </p>
+
+      <ul class="policy-list">
+        <li>
+          <a class="row" href={rel('/privacy/powell-prowl')}>
+            <img src={rel('/assets/powell-prowl-icon.png')} alt="" />
+            <span class="meta"><b>Powell Prowl: Rate Chase</b><span>Privacy policy</span></span>
+            <span class="chev">→</span>
+          </a>
+        </li>
+        <li>
+          <a class="row" href={rel('/privacy/vibe-rater')}>
+            <img src={rel('/assets/vibe-rater-icon.png')} alt="" />
+            <span class="meta"><b>Vibe Rater</b><span>Privacy policy</span></span>
+            <span class="chev">→</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </main>
+</Base>

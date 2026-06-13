@@ -1,0 +1,84 @@
+---
+import Base from './Base.astro';
+import FAQ from '../components/FAQ.astro';
+import InternalLinks from '../components/InternalLinks.astro';
+import { rel, abs } from '../consts';
+
+export interface Props {
+  cmp: any;
+}
+const { cmp } = Astro.props;
+const path = `/compare/${cmp.slug}/`;
+
+const listSchema = {
+  '@type': 'ItemList',
+  name: cmp.title,
+  description: cmp.description,
+  url: abs(path),
+  numberOfItems: cmp.apps.length,
+  itemListElement: cmp.apps.map((a: any, i: number) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: a.name,
+    description: a.description,
+    ...(a.appStoreUrl ? { url: a.appStoreUrl } : {}),
+  })),
+};
+const graph: any[] = [listSchema];
+if (cmp.faq && cmp.faq.length) {
+  graph.push({
+    '@type': 'FAQPage',
+    mainEntity: cmp.faq.map((f: any) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  });
+}
+const schema = { '@context': 'https://schema.org', '@graph': graph };
+---
+<Base title={cmp.title} description={cmp.description} path={path} schema={schema}>
+  <main class="page">
+    <div class="wrap" style="max-width:760px;">
+      <nav class="crumbs">
+        <a href={rel('/')}>Home</a><span class="sep">/</span>
+        <span>Compare</span><span class="sep">/</span>
+        <span>{cmp.title}</span>
+      </nav>
+
+      <h1>{cmp.title}</h1>
+
+      <slot />
+
+      <h2>Quick picks</h2>
+      <table class="cmp-table">
+        <thead>
+          <tr><th>App</th><th>Best for</th><th>Price</th></tr>
+        </thead>
+        <tbody>
+          {cmp.apps.map((a: any) => (
+            <tr>
+              <td>{a.name}</td>
+              <td>{a.bestFor ?? '—'}</td>
+              <td>{a.price}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {cmp.apps.map((a: any) => (
+        <div class={`cmp-app${a.isDudleyApp ? ' is-dudley' : ''}`}>
+          <h2>{a.name} {a.isDudleyApp && <span class="pick-tag">Our app</span>}</h2>
+          <p>{a.description}</p>
+          <p><strong>What we like:</strong></p>
+          <ul>{a.pros.map((p: string) => <li>{p}</li>)}</ul>
+          <p><strong>Verdict:</strong> {a.verdict}</p>
+          {a.appStoreUrl && <p><a class="btn primary" href={a.appStoreUrl} rel="noopener">Download {a.name} on the App Store</a></p>}
+        </div>
+      ))}
+
+      <FAQ items={cmp.faq} />
+      <InternalLinks pages={cmp.related} heading="More comparisons" />
+    </div>
+  </main>
+</Base>

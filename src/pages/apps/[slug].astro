@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+import AppLanding from '../../layouts/AppLanding.astro';
+
+export async function getStaticPaths() {
+  const [apps, archetypes] = [await getCollection('apps'), await getCollection('archetypes')];
+  const appBySlug = new Map(apps.map((a) => [a.slug, a]));
+  const archBySlug = new Map(archetypes.map((a) => [a.slug, a]));
+
+  return apps.map((app) => {
+    const related: { title: string; url: string; description: string }[] = [];
+    for (const s of app.data.relatedApps ?? []) {
+      const a = appBySlug.get(s);
+      if (a) related.push({ title: a.data.name, url: `/apps/${a.slug}/`, description: a.data.tagline });
+    }
+    for (const s of app.data.relatedArchetypes ?? []) {
+      const a = archBySlug.get(s);
+      if (a) related.push({ title: a.data.name, url: `/archetypes/${a.slug}/`, description: a.data.tagline });
+    }
+    return { params: { slug: app.slug }, props: { app, related } };
+  });
+}
+
+const { app, related } = Astro.props;
+const { Content } = await app.render();
+const data = { ...app.data, slug: app.slug };
+---
+<AppLanding app={data} related={related}>
+  <Content />
+</AppLanding>

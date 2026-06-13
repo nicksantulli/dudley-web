@@ -1,47 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Support · Dudley Development</title>
-  <meta name="description" content="Support and contact for Dudley Development apps — Powell Prowl: Rate Chase and Vibe Rater." />
-  <meta name="theme-color" content="#0b0e14" />
-  <link rel="icon" type="image/svg+xml" href="assets/dudley-mark.svg" />
-  <link rel="stylesheet" href="assets/style.css" />
-</head>
-<body>
-  <header class="site">
-    <div class="wrap">
-      <a class="brand" href="index.html">
-        <img class="mark" src="assets/dudley-mark.svg" alt="" />
-        Dudley Development
-      </a>
-      <nav class="top">
-        <a href="index.html#apps">Apps</a>
-        <a href="about.html">About</a>
-        <a href="support.html">Support</a>
-        <a href="privacy/index.html">Privacy</a>
-      </nav>
-    </div>
-  </header>
-
+---
+import Base from '../layouts/Base.astro';
+import { rel, SUPPORT_EMAIL } from '../consts';
+const description = 'Support and contact for Dudley Development apps — Powell Prowl: Rate Chase and Vibe Rater.';
+---
+<Base title="Support" description={description} path="/support">
   <main class="page">
     <div class="wrap" style="max-width:720px;">
-      <a class="back" href="index.html">← Home</a>
+      <a class="back" href={rel('/')}>← Home</a>
       <h1>Support</h1>
       <p class="updated">We read every message.</p>
 
       <p>
-        Need help with a Dudley app? Email us and we'll chase it down. Please
-        include your device and iOS version (Settings → General → About), which
-        app and screen, and what happened — a screenshot or recording helps.
+        Need help with a Dudley app? Email us and we'll chase it down. Please include your device and
+        iOS version (Settings → General → About), which app and screen, and what happened — a screenshot
+        or recording helps.
       </p>
       <p>
-        <a class="btn primary" href="mailto:nicksantulli@yahoo.com?subject=Dudley%20Development%20Support">Email Support</a>
+        <a class="btn primary" href={`mailto:${SUPPORT_EMAIL}?subject=Dudley%20Development%20Support`}>Email Support</a>
       </p>
 
       <h2>Powell Prowl: Rate Chase</h2>
-
       <div class="card">
         <strong>The game is stuck on a level / something broke.</strong>
         <p style="margin:6px 0 0;">Tap the gear icon (top-right of the home screen) → Settings → <em>Reset all progress</em>. That clears saved state, unlock progress, and tutorial flags. Force-quit the app and reopen.</p>
@@ -70,7 +48,7 @@
       </div>
       <div class="card">
         <strong>Where do my photos go?</strong>
-        <p style="margin:6px 0 0;">Nowhere. Photos you pick are processed on your device and are not uploaded to us. See the <a href="privacy/vibe-rater.html">Vibe Rater privacy policy</a> for details.</p>
+        <p style="margin:6px 0 0;">Nowhere. Photos you pick are processed on your device and are not uploaded to us. See the <a href={rel('/privacy/vibe-rater')}>Vibe Rater privacy policy</a> for details.</p>
       </div>
       <div class="card">
         <strong>The phone vibrates while it analyzes — is that a bug?</strong>
@@ -79,23 +57,8 @@
 
       <h2>Still need a hand?</h2>
       <p>
-        Email <a href="mailto:nicksantulli@yahoo.com">nicksantulli@yahoo.com</a>
-        and we'll get back to you.
+        Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> and we'll get back to you.
       </p>
     </div>
   </main>
-
-  <footer class="site">
-    <div class="wrap">
-      <div class="copy">© <span id="year">2026</span> Dudley Development</div>
-      <nav>
-        <a href="index.html#apps">Apps</a>
-        <a href="about.html">About</a>
-        <a href="support.html">Support</a>
-        <a href="privacy/index.html">Privacy</a>
-      </nav>
-    </div>
-  </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+</Base>

@@ -1,6 +1,12 @@
+# build output
+dist/
+# dependencies
+node_modules/
+# astro
+.astro/
+# misc
 .DS_Store
 *.log
-node_modules/
 .env
 *.mobileprovision
 *.p12

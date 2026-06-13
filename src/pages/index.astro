@@ -1,0 +1,83 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { rel, abs, ORIGIN, appStoreUrl } from '../consts';
+
+const apps = (await getCollection('apps')).sort((a, b) => a.data.order - b.data.order);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Dudley Development',
+  url: ORIGIN,
+};
+const description =
+  'Dudley Development is a small independent studio building polished, playful iPhone apps. Maker of Powell Prowl: Rate Chase and Vibe Rater.';
+---
+<Base title="Dudley Development — iOS apps with character" description={description} path="/" schema={schema}>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow">Independent iOS Studio</span>
+        <h1>Small apps with<br /><span class="grad">real character.</span></h1>
+        <p class="lede">
+          Dudley Development is a one-person-energy studio building polished, playful iPhone apps —
+          the kind you actually want to open. Free to play, privacy-first, and made with care.
+        </p>
+        <a class="btn primary" href="#apps">See the apps →</a>
+      </div>
+    </section>
+
+    <section id="apps">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>The apps</h2>
+          <p class="sub">Free on the App Store. No accounts. No nonsense.</p>
+        </div>
+
+        <div class="apps">
+          {apps.map((app) => {
+            const url = appStoreUrl(app.data.appStoreId);
+            const live = app.data.status === 'live' && !!url;
+            const slug = app.slug;
+            return (
+              <div class="app-card">
+                <div class="top">
+                  <img class="icon" src={rel(app.data.icon)} alt={`${app.data.name} app icon`} />
+                  <div>
+                    <h3>{app.data.name}</h3>
+                    <p class="tagline">{app.data.tagline}</p>
+                    <span class={`badge ${live ? 'live' : 'soon'}`} style="margin-top:8px;">
+                      <span class="dot"></span> {live ? 'Live on the App Store' : 'Coming soon'}
+                    </span>
+                  </div>
+                </div>
+                <p class="desc">{app.data.description}</p>
+                <div class="actions">
+                  <a class="btn primary" href={rel(`/apps/${slug}/`)}>Learn more</a>
+                  {live && <a class="btn" href={url} rel="noopener">Download</a>}
+                  <a class="btn" href={rel(`/privacy/${slug}`)}>Privacy</a>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:8px;">
+      <div class="wrap">
+        <div class="app-card" style="text-align:center; align-items:center;">
+          <h3 style="font-size:24px;">Built honestly, shipped carefully.</h3>
+          <p class="desc" style="max-width:560px; margin:0 auto;">
+            Every Dudley app is free, runs without an account, and keeps your data on your device.
+            Ads are clearly disclosed and you can always opt out of tracking. That's the whole deal.
+          </p>
+          <div class="actions" style="justify-content:center;">
+            <a class="btn" href={rel('/about')}>More about the studio →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>
