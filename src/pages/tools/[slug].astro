@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import Tool from '../../layouts/Tool.astro';
+import VibeQuiz from '../../components/VibeQuiz.astro';
+
+export async function getStaticPaths() {
+  const tools = await getCollection('tools');
+  return tools.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const data = { ...entry.data, slug: entry.slug };
+const related = [
+  { title: 'Vibe Rater', url: '/apps/vibe-rater/', description: 'Rate your vibe from a photo' },
+  { title: 'Main Character Energy', url: '/archetypes/main-character/', description: 'What it means and how to tell if you have it' },
+  { title: 'Best photo rating apps', url: '/compare/best-photo-rating-apps/', description: 'The funniest photo-rating apps for iPhone' },
+];
+---
+<Tool tool={data} related={related}>
+  <Content />
+  {data.slug === 'whats-my-vibe' && <VibeQuiz slot="quiz" />}
+</Tool>

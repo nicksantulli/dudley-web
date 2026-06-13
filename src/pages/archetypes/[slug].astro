@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import Archetype from '../../layouts/Archetype.astro';
+
+export async function getStaticPaths() {
+  const archetypes = await getCollection('archetypes');
+  const bySlug = new Map(archetypes.map((a) => [a.slug, a]));
+
+  return archetypes.map((entry) => {
+    const related: { title: string; url: string; description: string }[] = [];
+    for (const s of entry.data.relatedArchetypes ?? []) {
+      const a = bySlug.get(s);
+      if (a) related.push({ title: a.data.name, url: `/archetypes/${a.slug}/`, description: a.data.tagline });
+    }
+    related.push({ title: "What's my vibe? Quiz", url: '/tools/whats-my-vibe/', description: 'Find your archetype in 5 questions' });
+    return {
+      params: { slug: entry.slug },
+      props: { entry, related, dateAdded: entry.data.dateAdded.toISOString().slice(0, 10) },
+    };
+  });
+}
+
+const { entry, related, dateAdded } = Astro.props;
+const { Content } = await entry.render();
+const data = { ...entry.data, slug: entry.slug };
+---
+<Archetype archetype={data} related={related} dateAdded={dateAdded}>
+  <Content />
+</Archetype>

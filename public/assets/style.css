@@ -141,6 +141,68 @@ section .sub { color: var(--ink-muted); margin: 0 0 34px; font-size: 16px; }
 .policy-list .meta span { color: var(--ink-muted); font-size: 13px; }
 .policy-list .chev { color: var(--ink-faint); }
 
+/* ---------- Breadcrumb ---------- */
+.crumbs { font-size: 13px; color: var(--ink-faint); margin: 0 0 18px; display: flex; gap: 8px; flex-wrap: wrap; }
+.crumbs a { color: var(--ink-muted); }
+.crumbs .sep { color: var(--ink-faint); }
+
+/* ---------- Article hero (apps / archetypes) ---------- */
+.lede-hero { display: flex; gap: 18px; align-items: center; margin: 0 0 8px; }
+.lede-hero img.icon { width: 84px; height: 84px; border-radius: 18px; box-shadow: 0 8px 26px rgba(0,0,0,0.5); }
+.lede-hero .emoji { font-size: 56px; line-height: 1; }
+.tldr { font-size: 18px; color: var(--ink); background: var(--surface); border: 1px solid var(--border);
+  border-left: 3px solid var(--accent); border-radius: 10px; padding: 16px 18px; margin: 18px 0 8px; }
+
+/* ---------- Tags / chips ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+.chip { font-size: 12px; font-weight: 700; color: var(--ink-muted); background: var(--surface-2);
+  border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; }
+.chip:hover { color: var(--ink); text-decoration: none; border-color: rgba(110,139,255,0.4); }
+
+/* ---------- CTA block ---------- */
+.cta-block { background: linear-gradient(120deg, rgba(110,139,255,0.12), rgba(155,107,255,0.12));
+  border: 1px solid rgba(110,139,255,0.28); border-radius: var(--radius); padding: 24px; margin: 28px 0; text-align: center; }
+.cta-block h3 { margin: 0 0 8px; font-size: 20px; }
+.cta-block p { margin: 0 0 16px; color: var(--ink-muted); }
+
+/* ---------- FAQ ---------- */
+.faq { display: grid; gap: 10px; margin: 14px 0; }
+.faq details { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 2px 18px; }
+.faq details[open] { border-color: rgba(110,139,255,0.35); }
+.faq summary { cursor: pointer; font-weight: 700; color: var(--ink); padding: 14px 0; list-style: none; font-size: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; float: right; color: var(--ink-muted); font-weight: 700; }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { margin: 0 0 14px; color: #c9d2e0; font-size: 15px; }
+
+/* ---------- Internal links ---------- */
+.see-also { display: grid; gap: 12px; grid-template-columns: 1fr; margin: 14px 0; }
+@media (min-width: 640px) { .see-also { grid-template-columns: 1fr 1fr; } }
+.see-also a { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; color: var(--ink); }
+.see-also a:hover { border-color: rgba(110,139,255,0.4); text-decoration: none; transform: translateY(-1px); }
+.see-also b { display: block; font-size: 15px; margin-bottom: 3px; }
+.see-also span { color: var(--ink-muted); font-size: 13px; }
+
+/* ---------- Comparison ---------- */
+.cmp-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+.cmp-table th, .cmp-table td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--border); }
+.cmp-table th { color: var(--ink-muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+.cmp-app { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px; margin: 18px 0; }
+.cmp-app.is-dudley { border-color: rgba(110,139,255,0.4); }
+.cmp-app h2 { margin-top: 0; display: flex; align-items: center; gap: 10px; }
+.cmp-app .pick-tag { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px;
+  color: #fff; background: linear-gradient(100deg, var(--accent), var(--accent-2)); padding: 3px 9px; border-radius: 999px; }
+
+/* ---------- Quiz (CSS-only) ---------- */
+.quiz { margin: 18px 0; }
+.quiz fieldset { border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin: 0 0 16px; background: var(--surface); }
+.quiz legend { font-weight: 800; padding: 0 8px; font-size: 16px; color: var(--ink); }
+.quiz label { display: block; padding: 10px 12px; border: 1px solid var(--border); border-radius: 9px; margin: 8px 0;
+  cursor: pointer; color: #c9d2e0; font-size: 15px; transition: border-color .12s ease, background .12s ease; }
+.quiz label:hover { border-color: rgba(110,139,255,0.4); background: var(--surface-2); }
+.quiz input[type="radio"] { accent-color: var(--accent); margin-right: 10px; }
+.quiz-note { color: var(--ink-faint); font-size: 13px; margin: 6px 0 0; }
+
 /* ---------- Footer ---------- */
 footer.site {
   border-top: 1px solid var(--border); padding: 40px 0; margin-top: 40px;

@@ -1,0 +1,22 @@
+---
+// Visible FAQ. The FAQPage JSON-LD is emitted by each page layout (in <head>),
+// built from the same `faq` data — so the schema and the visible content always match.
+export interface Props {
+  items: { q: string; a: string }[];
+  heading?: string;
+}
+const { items, heading = 'Frequently asked questions' } = Astro.props;
+---
+{items && items.length > 0 && (
+  <section aria-labelledby="faq-heading">
+    <h2 id="faq-heading">{heading}</h2>
+    <div class="faq">
+      {items.map((item) => (
+        <details>
+          <summary>{item.q}</summary>
+          <p>{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+)}

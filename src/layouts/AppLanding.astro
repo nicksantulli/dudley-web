@@ -1,0 +1,64 @@
+---
+import Base from './Base.astro';
+import FAQ from '../components/FAQ.astro';
+import InternalLinks from '../components/InternalLinks.astro';
+import AppCTA from '../components/AppCTA.astro';
+import { STUDIO, ORIGIN, rel, abs, appStoreUrl } from '../consts';
+
+export interface Props {
+  app: any;
+  related: { title: string; url: string; description: string }[];
+}
+const { app, related } = Astro.props;
+const path = `/apps/${app.slug}/`;
+const url = appStoreUrl(app.appStoreId);
+
+const appSchema: Record<string, any> = {
+  '@type': 'MobileApplication',
+  name: app.name,
+  description: app.description,
+  url: abs(path),
+  applicationCategory: app.applicationCategory,
+  operatingSystem: app.operatingSystem,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  author: { '@type': 'Organization', name: STUDIO, url: ORIGIN },
+  featureList: app.featureList,
+};
+if (url) appSchema.downloadUrl = url;
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: app.faq.map((f: any) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+const schema = { '@context': 'https://schema.org', '@graph': [appSchema, faqSchema] };
+---
+<Base title={`${app.name} — ${app.tagline}`} description={app.description} path={path} ogImage={app.icon} schema={schema}>
+  <main class="page">
+    <div class="wrap" style="max-width:760px;">
+      <nav class="crumbs">
+        <a href={rel('/')}>Home</a><span class="sep">/</span>
+        <a href={rel('/#apps')}>Apps</a><span class="sep">/</span>
+        <span>{app.name}</span>
+      </nav>
+
+      <div class="lede-hero">
+        <img class="icon" src={rel(app.icon)} alt={`${app.name} app icon`} />
+        <div>
+          <h1>{app.name}</h1>
+          <p class="updated">{app.tagline}{app.status === 'live' ? ' · Live on the App Store' : ' · Coming soon'}</p>
+        </div>
+      </div>
+
+      <slot />
+
+      <AppCTA appName={app.name} appStoreId={app.appStoreId} status={app.status} />
+
+      <FAQ items={app.faq} />
+      <InternalLinks pages={related} heading="More from Dudley Development" />
+    </div>
+  </main>
+</Base>

@@ -1,0 +1,22 @@
+---
+import { rel } from '../consts';
+export interface Props {
+  pages: { title: string; url: string; description: string }[];
+  heading?: string;
+}
+const { pages, heading = 'See also' } = Astro.props;
+const href = (u: string) => (u.startsWith('http') ? u : rel(u));
+---
+{pages && pages.length > 0 && (
+  <section>
+    <h2>{heading}</h2>
+    <nav class="see-also">
+      {pages.map((p) => (
+        <a href={href(p.url)}>
+          <b>{p.title}</b>
+          <span>{p.description}</span>
+        </a>
+      ))}
+    </nav>
+  </section>
+)}

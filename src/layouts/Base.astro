@@ -1,0 +1,91 @@
+---
+import { STUDIO, SUPPORT_EMAIL, SOCIAL_LINKS, ORIGIN, rel, abs } from '../consts';
+
+export interface Props {
+  title: string;
+  description: string;
+  path: string;            // site-relative path, e.g. "/apps/powell-prowl/"
+  ogImage?: string;        // site-relative or absolute
+  schema?: object | null;  // page-specific JSON-LD
+  noindex?: boolean;
+}
+
+const { title, description, path, ogImage = '/assets/dudley-mark.svg', schema = null, noindex = false } = Astro.props;
+const canonical = abs(path);
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : abs(ogImage);
+const fullTitle = title.includes(STUDIO) ? title : `${title} | ${STUDIO}`;
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: STUDIO,
+  url: ORIGIN,
+  logo: { '@type': 'ImageObject', url: abs('/assets/dudley-mark.svg') },
+  contactPoint: { '@type': 'ContactPoint', email: SUPPORT_EMAIL, contactType: 'customer support' },
+  sameAs: SOCIAL_LINKS,
+};
+
+const nav = [
+  { href: rel('/#apps'), label: 'Apps' },
+  { href: rel('/about'), label: 'About' },
+  { href: rel('/support'), label: 'Support' },
+  { href: rel('/privacy/'), label: 'Privacy' },
+];
+const year = new Date().getFullYear();
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {noindex && <meta name="robots" content="noindex" />}
+  <meta name="theme-color" content="#0b0e14" />
+  <link rel="icon" type="image/svg+xml" href={rel('/assets/dudley-mark.svg')} />
+  <link rel="stylesheet" href={rel('/assets/style.css')} />
+  <link rel="sitemap" href={rel('/sitemap-index.xml')} />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content={ogImageUrl} />
+  <meta property="og:site_name" content={STUDIO} />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageUrl} />
+
+  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+  {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href={rel('/')}>
+        <img class="mark" src={rel('/assets/dudley-mark.svg')} alt="" />
+        Dudley Development
+      </a>
+      <nav class="top">
+        {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+      </nav>
+    </div>
+  </header>
+
+  <slot />
+
+  <footer class="site">
+    <div class="wrap">
+      <div class="copy">© {year} {STUDIO}</div>
+      <nav>
+        {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

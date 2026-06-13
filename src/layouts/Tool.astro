@@ -1,0 +1,65 @@
+---
+import Base from './Base.astro';
+import FAQ from '../components/FAQ.astro';
+import InternalLinks from '../components/InternalLinks.astro';
+import AppCTA from '../components/AppCTA.astro';
+import { rel, abs, APP_STORE } from '../consts';
+
+export interface Props {
+  tool: any;
+  related: { title: string; url: string; description: string }[];
+}
+const { tool, related } = Astro.props;
+const path = `/tools/${tool.slug}/`;
+
+const howToSchema = {
+  '@type': 'HowTo',
+  name: tool.title,
+  description: tool.description,
+  url: abs(path),
+  step: [
+    { '@type': 'HowToStep', name: 'Answer the questions', text: 'Answer 5 quick questions about your style and energy.' },
+    { '@type': 'HowToStep', name: 'Get your vibe archetype', text: 'See your closest vibe archetype based on your answers.' },
+    { '@type': 'HowToStep', name: 'Get your full score in the app', text: 'Download Vibe Rater for a photo-based vibe score, aura color, and shareable card.' },
+  ],
+};
+const graph: any[] = [howToSchema];
+if (tool.faq && tool.faq.length) {
+  graph.push({
+    '@type': 'FAQPage',
+    mainEntity: tool.faq.map((f: any) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  });
+}
+const schema = { '@context': 'https://schema.org', '@graph': graph };
+---
+<Base title={tool.title} description={tool.description} path={path} schema={schema}>
+  <main class="page">
+    <div class="wrap" style="max-width:720px;">
+      <nav class="crumbs">
+        <a href={rel('/')}>Home</a><span class="sep">/</span>
+        <span>Tools</span><span class="sep">/</span>
+        <span>{tool.title}</span>
+      </nav>
+
+      <h1>{tool.title}</h1>
+
+      <slot />
+
+      <slot name="quiz" />
+
+      <AppCTA
+        appName="Vibe Rater"
+        appStoreId={APP_STORE.vibeRater}
+        status={APP_STORE.vibeRater ? 'live' : 'coming_soon'}
+        blurb="This quiz gives you your archetype in 5 questions. For your real vibe score from a photo — with a full dimension breakdown, aura color, and a shareable card — get Vibe Rater. The phone vibrates while it reads you."
+      />
+
+      <FAQ items={tool.faq} />
+      <InternalLinks pages={related} heading="More from Dudley Development" />
+    </div>
+  </main>
+</Base>

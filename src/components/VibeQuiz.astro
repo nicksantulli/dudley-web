@@ -1,0 +1,126 @@
+---
+import { rel } from '../consts';
+
+// Questions → each option tags 1-3 archetypes. Tallied client-side; the result
+// reveals the top match. All result content is in the HTML source so AI crawlers
+// can read every possible answer without running JavaScript.
+const questions = [
+  {
+    id: 'q1', text: 'Pick your ideal Saturday fit',
+    options: [
+      { label: 'A perfectly coordinated outfit I planned in advance', tags: ['main-character', 'final-boss', 'clean-girl'] },
+      { label: "Whatever's comfortable and has pockets", tags: ['cozy-goblin', 'cottagecore'] },
+      { label: 'Something understated but clearly expensive', tags: ['quiet-luxury', 'clean-girl'] },
+      { label: 'Layered, intentional, a little academic', tags: ['dark-academia', 'main-character'] },
+    ],
+  },
+  {
+    id: 'q2', text: 'How do you enter a room?',
+    options: [
+      { label: 'People notice, and I let them', tags: ['main-character', 'final-boss', 'rizz'] },
+      { label: 'Quietly — I observe first', tags: ['dark-academia', 'quiet-luxury'] },
+      { label: 'With snacks or something to share', tags: ['cozy-goblin', 'cottagecore'] },
+      { label: 'Chatting to someone within ten seconds', tags: ['rizz', 'main-character'] },
+    ],
+  },
+  {
+    id: 'q3', text: 'Your natural energy is closest to:',
+    options: [
+      { label: 'Director on a film set', tags: ['main-character', 'final-boss'] },
+      { label: 'Cozy corner-bookshop owner', tags: ['dark-academia', 'cozy-goblin', 'cottagecore'] },
+      { label: 'Quiet person who somehow always wins', tags: ['quiet-luxury', 'clean-girl', 'final-boss'] },
+      { label: 'The friend who can talk to anyone', tags: ['rizz', 'main-character'] },
+    ],
+  },
+  {
+    id: 'q4', text: 'Friends would describe your style as:',
+    options: [
+      { label: 'Iconic and consistent', tags: ['main-character', 'final-boss'] },
+      { label: 'Cozy and kind of chaotic', tags: ['cozy-goblin', 'cottagecore'] },
+      { label: 'Clean and elevated', tags: ['quiet-luxury', 'clean-girl'] },
+      { label: 'Very specific and hard to explain', tags: ['dark-academia', 'cottagecore'] },
+    ],
+  },
+  {
+    id: 'q5', text: 'The phrase that best fits you is:',
+    options: [
+      { label: "I'm the moment", tags: ['main-character', 'final-boss'] },
+      { label: "I'm just vibing", tags: ['cozy-goblin', 'cottagecore'] },
+      { label: "I don't explain my taste", tags: ['quiet-luxury', 'clean-girl', 'dark-academia'] },
+      { label: 'I could talk my way into anywhere', tags: ['rizz', 'main-character'] },
+    ],
+  },
+];
+
+const results = [
+  { slug: 'main-character', emoji: '🎬', name: 'Main Character Energy', blurb: "You move through the world like the lead in your own story — confident, intentional, impossible to miss." },
+  { slug: 'final-boss', emoji: '👑', name: 'Final Boss', blurb: 'Peak power, effortless authority. You are the level everyone else is trying to beat.' },
+  { slug: 'quiet-luxury', emoji: '🤍', name: 'Quiet Luxury', blurb: 'Understated, elevated, and expensive in a way that never announces itself.' },
+  { slug: 'clean-girl', emoji: '✨', name: 'Clean Girl', blurb: 'Minimal, polished, effortless. The look is "I woke up like this" but better.' },
+  { slug: 'cozy-goblin', emoji: '🍄', name: 'Cozy Goblin', blurb: 'Maximally comfortable, endearingly chaotic. Zero Serve, infinite Aura.' },
+  { slug: 'dark-academia', emoji: '📚', name: 'Dark Academia', blurb: 'Books, tweed, candlelight, brooding intellect. An aesthetic and a mood.' },
+  { slug: 'cottagecore', emoji: '🌿', name: 'Cottagecore', blurb: 'Nature, softness, slow living. Peaceful energy and a very high Aura.' },
+  { slug: 'rizz', emoji: '😎', name: 'Rizz', blurb: 'Natural charisma and social magnetism. You just have it.' },
+];
+---
+<section class="quiz">
+  <h2 id="take-the-quiz">Take the quiz</h2>
+  <form id="vibe-quiz">
+    {questions.map((q) => (
+      <fieldset>
+        <legend>{q.text}</legend>
+        {q.options.map((opt, i) => (
+          <label>
+            <input type="radio" name={q.id} value={opt.tags.join(',')} required />
+            {opt.label}
+          </label>
+        ))}
+      </fieldset>
+    ))}
+    <button class="btn primary" type="submit">Reveal my vibe →</button>
+    <p class="quiz-note">For fun, not science. Your real vibe score comes from a photo in Vibe Rater.</p>
+  </form>
+
+  <div id="vibe-result" class="cta-block" hidden>
+    <h3 id="vibe-result-title"></h3>
+    <p id="vibe-result-blurb"></p>
+    <a id="vibe-result-link" class="btn" href={rel('/apps/vibe-rater/')}>Read more →</a>
+  </div>
+
+  <h2>Every vibe archetype</h2>
+  <p>Here is every result this quiz can give you. Most people are a blend of a few — the quiz surfaces your dominant one.</p>
+  <div class="see-also">
+    {results.map((r) => (
+      <a href={rel(`/archetypes/${r.slug}/`)}>
+        <b>{r.emoji} {r.name}</b>
+        <span>{r.blurb}</span>
+      </a>
+    ))}
+  </div>
+</section>
+
+<script is:inline define:vars={{ results, base: rel('/archetypes/') }}>
+  const form = document.getElementById('vibe-quiz');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const tally = {};
+    new FormData(form).forEach((v) => {
+      String(v).split(',').forEach((t) => { tally[t] = (tally[t] || 0) + 1; });
+    });
+    // Priority order = the order results are defined (ties resolve to higher-volume archetype).
+    let best = results[0];
+    let bestScore = -1;
+    for (const r of results) {
+      const s = tally[r.slug] || 0;
+      if (s > bestScore) { bestScore = s; best = r; }
+    }
+    document.getElementById('vibe-result-title').textContent = `${best.emoji} You're ${best.name}`;
+    document.getElementById('vibe-result-blurb').textContent = best.blurb;
+    const link = document.getElementById('vibe-result-link');
+    link.href = base + best.slug + '/';
+    link.textContent = `What ${best.name} means →`;
+    const box = document.getElementById('vibe-result');
+    box.hidden = false;
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+</script>
