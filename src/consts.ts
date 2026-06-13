@@ -1,9 +1,9 @@
 // Single source of truth for site identity + URL building.
-// When the Owner buys a domain, change ORIGIN_HOST -> 'https://dudleydevelopment.com'
-// and BASE -> '' here, and `site`/`base` in astro.config.mjs, and everything follows.
+// Live at the custom domain https://dudleyapps.com, served at root.
+// ORIGIN_HOST/BASE here must stay in sync with `site`/`base` in astro.config.mjs.
 
-export const ORIGIN_HOST = 'https://nicksantulli.github.io';
-export const BASE = '/dudley-web'; // '' once a root domain is live
+export const ORIGIN_HOST = 'https://dudleyapps.com';
+export const BASE = ''; // root domain — no project sub-path
 export const ORIGIN = ORIGIN_HOST + BASE; // canonical origin for the deployed site
 
 export const STUDIO = 'Dudley Development';

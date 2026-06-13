@@ -3,12 +3,12 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 
-// Live now: GitHub Pages project site at https://nicksantulli.github.io/dudley-web/
-// When the Owner buys a domain, this becomes a one-file change:
-//   site: 'https://dudleydevelopment.com', base: '/'  (and update src/consts.ts to match)
+// Live at the custom domain https://dudleyapps.com (served at root, not a project path).
+// GitHub Pages serves from the gh-pages branch; the public/CNAME file keeps the domain
+// bound on every deploy. Keep `base: '/'` so all asset/nav URLs are root-relative.
 export default defineConfig({
-  site: 'https://nicksantulli.github.io',
-  base: '/dudley-web',
+  site: 'https://dudleyapps.com',
+  base: '/',
   trailingSlash: 'ignore',
   integrations: [
     mdx(),
