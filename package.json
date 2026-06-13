@@ -10,8 +10,9 @@
     "deploy": "node scripts/deploy-gh-pages.mjs"
   },
   "dependencies": {
-    "astro": "^5.7.0",
+    "@astrojs/mdx": "^4.2.0",
+    "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.3.0",
-    "@astrojs/mdx": "^4.2.0"
+    "astro": "^5.7.0"
   }
 }

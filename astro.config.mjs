@@ -13,8 +13,13 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      // Legal/support pages exist for App Review, not discovery — keep them out of the sitemap.
-      filter: (page) => !page.includes('/privacy') && !page.includes('/support'),
+      // Legal/support pages exist for App Review, not discovery — keep them out of the
+      // sitemap, along with machine-readable feeds (RSS / llms.txt).
+      filter: (page) =>
+        !page.includes('/privacy') &&
+        !page.includes('/support') &&
+        !page.includes('/rss.xml') &&
+        !page.includes('/llms.txt'),
     }),
   ],
 });

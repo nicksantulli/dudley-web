@@ -1,0 +1,61 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { STUDIO, ORIGIN, rel, abs } from '../../../consts';
+import { getPublishedPosts, getAllTags, postTags, tagSlug, tagLabel, formatDate } from '../../../lib/blog';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  const tags = await getAllTags();
+  return tags.map(({ tag, slug }) => ({
+    params: { tag: slug },
+    props: {
+      tag,
+      posts: posts.filter((p) => postTags(p).some((t) => tagSlug(t) === slug)),
+    },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+const label = tagLabel(tag);
+const path = `/blog/tags/${tagSlug(tag)}/`;
+const title = `${label} — The Dudley Blog`;
+const description = `Every Dudley Development post tagged ${label}. ${posts.length} ${posts.length === 1 ? 'post' : 'posts'}.`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: title,
+  description,
+  url: abs(path),
+  isPartOf: { '@type': 'Blog', name: 'The Dudley Blog', url: abs('/blog/') },
+  publisher: { '@type': 'Organization', name: STUDIO, url: ORIGIN },
+};
+---
+<Base title={title} description={description} path={path} schema={schema}>
+  <main class="page">
+    <div class="wrap" style="max-width:760px;">
+      <nav class="crumbs">
+        <a href={rel('/')}>Home</a><span class="sep">/</span>
+        <a href={rel('/blog/')}>Blog</a><span class="sep">/</span>
+        <span>{label}</span>
+      </nav>
+      <header class="blog-hero">
+        <h1>{label}</h1>
+        <p>{posts.length} {posts.length === 1 ? 'post' : 'posts'} tagged {label}.</p>
+      </header>
+      <ul class="post-list">
+        {posts.map((p) => (
+          <li class="post-card">
+            <a class="post-card-link" href={rel(`/blog/${p.slug}/`)}>
+              <time datetime={p.data.publishDate.toISOString().slice(0, 10)}>
+                {formatDate(p.data.publishDate)}
+              </time>
+              <h2>{p.data.title}</h2>
+              <p>{p.data.description}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </main>
+</Base>
