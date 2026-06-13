@@ -1,2 +1,20 @@
 User-agent: *
 Allow: /
+
+# AI crawlers — explicitly allowed (we want to be indexed and cited)
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+Sitemap: https://nicksantulli.github.io/dudley-web/sitemap-index.xml
