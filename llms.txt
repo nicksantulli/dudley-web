@@ -4,30 +4,42 @@
 
 ## Apps
 
-- [Powell Prowl: Rate Chase](https://nicksantulli.github.io/dudley-web/apps/powell-prowl/): A free satirical iPhone arcade game — a 31-level whack-and-chase romp through a parody of Federal Reserve interest-rate drama. Live on the App Store. Requires iOS 16.6+.
-- [Vibe Rater](https://nicksantulli.github.io/dudley-web/apps/vibe-rater/): A free iPhone entertainment app that rates your vibe from a photo. Get your archetype (Main Character, Final Boss, Quiet Luxury, Cottagecore, and more), an aura color, and a six-dimension scorecard. The phone vibrates while it reads you. Photos stay on your device. Launching on the App Store soon.
+- [Powell Prowl: Rate Chase](https://dudleyapps.com/apps/powell-prowl/): A free satirical iPhone arcade game — a 31-level whack-and-chase romp through a parody of Federal Reserve interest-rate drama. Live on the App Store. Requires iOS 16.6+.
+- [Vibe Rater](https://dudleyapps.com/apps/vibe-rater/): A free iPhone entertainment app that rates your vibe from a photo. Get your archetype (Main Character, Final Boss, Quiet Luxury, Cottagecore, and more), an aura color, and a six-dimension scorecard. The phone vibrates while it reads you. Photos stay on your device. Launching on the App Store soon.
 
 ## Archetypes (Vibe Rater)
 
 Vibe Rater assigns one of several vibe archetypes based on your photo:
 
-- [Main Character Energy](https://nicksantulli.github.io/dudley-web/archetypes/main-character/): The protagonist of every room. Confident, intentional presence.
-- [Final Boss](https://nicksantulli.github.io/dudley-web/archetypes/final-boss/): Peak power. Effortless authority; maxed Main-Character, Rizz, and Serve.
-- [Quiet Luxury](https://nicksantulli.github.io/dudley-web/archetypes/quiet-luxury/): Understated, expensive elegance with no loud logos.
-- [Clean Girl](https://nicksantulli.github.io/dudley-web/archetypes/clean-girl/): Minimal, polished, effortless — glowy skin and gold hoops.
-- [Dark Academia](https://nicksantulli.github.io/dudley-web/archetypes/dark-academia/): Old libraries, tweed, candlelight, intellectual mood.
-- [Cottagecore](https://nicksantulli.github.io/dudley-web/archetypes/cottagecore/): Soft, rural, slow living. High Aura, peaceful energy.
-- [Cozy Goblin](https://nicksantulli.github.io/dudley-web/archetypes/cozy-goblin/): Maximally comfortable, endearingly chaotic. Zero Serve, infinite Aura.
-- [Rizz](https://nicksantulli.github.io/dudley-web/archetypes/rizz/): Natural charisma and social magnetism.
+- [Main Character Energy](https://dudleyapps.com/archetypes/main-character/): The protagonist of every room. Confident, intentional presence.
+- [Final Boss](https://dudleyapps.com/archetypes/final-boss/): Peak power. Effortless authority; maxed Main-Character, Rizz, and Serve.
+- [Quiet Luxury](https://dudleyapps.com/archetypes/quiet-luxury/): Understated, expensive elegance with no loud logos.
+- [Clean Girl](https://dudleyapps.com/archetypes/clean-girl/): Minimal, polished, effortless — glowy skin and gold hoops.
+- [Dark Academia](https://dudleyapps.com/archetypes/dark-academia/): Old libraries, tweed, candlelight, intellectual mood.
+- [Cottagecore](https://dudleyapps.com/archetypes/cottagecore/): Soft, rural, slow living. High Aura, peaceful energy.
+- [Cozy Goblin](https://dudleyapps.com/archetypes/cozy-goblin/): Maximally comfortable, endearingly chaotic. Zero Serve, infinite Aura.
+- [Rizz](https://dudleyapps.com/archetypes/rizz/): Natural charisma and social magnetism.
 
 ## Tools
 
-- [What's My Vibe? Quiz](https://nicksantulli.github.io/dudley-web/tools/whats-my-vibe/): A free 5-question quiz that reveals your vibe archetype. Powered by Vibe Rater logic.
+- [What's My Vibe? Quiz](https://dudleyapps.com/tools/whats-my-vibe/): A free 5-question quiz that reveals your vibe archetype. Powered by Vibe Rater logic.
 
 ## Comparisons
 
-- [Best Photo Rating Apps for iPhone (2026)](https://nicksantulli.github.io/dudley-web/compare/best-photo-rating-apps/): An honest comparison of photo, vibe, and aura rating apps on iPhone.
-- [Best Vibe Check Apps for iPhone (2026)](https://nicksantulli.github.io/dudley-web/compare/vibe-check-apps/): An honest comparison of vibe check and aura apps on iPhone.
+- [Best Photo Rating Apps for iPhone (2026)](https://dudleyapps.com/compare/best-photo-rating-apps/): An honest comparison of photo, vibe, and aura rating apps on iPhone.
+- [Best Vibe Check Apps for iPhone (2026)](https://dudleyapps.com/compare/vibe-check-apps/): An honest comparison of vibe check and aura apps on iPhone.
+
+## Blog
+
+The Dudley Blog covers internet culture, vibe archetypes, and honest app roundups. Full index: https://dudleyapps.com/blog/ (RSS: https://dudleyapps.com/blog/rss.xml).
+
+- [The Funniest Photo Rating Apps in 2026, Ranked](https://dudleyapps.com/blog/photo-rating-apps-2026/): A genuinely honest roundup of the best photo rating apps on iPhone in 2026 — what they actually do, who they're for, and which one is most likely to make you laugh at your own photo.
+- [The Quiet Luxury Era Is Over — Here's What Actually Won](https://dudleyapps.com/blog/quiet-luxury-2026/): Quiet luxury peaked with Succession. By 2024, H&M was selling a 'stealth wealth capsule.' The trend cycle moved on. But the aesthetic's successor isn't what you'd expect — and the archetype remains.
+- [In Defense of the NPC (It's a Compliment Now)](https://dudleyapps.com/blog/npc-defense/): NPC started as an internet insult. It became a TikTok content genre. Now 'NPC energy' is a genuine compliment — for people who have mastered the art of not performing for anyone. We explain the full arc.
+- [What Your Phone Case Says About Your Vibe](https://dudleyapps.com/blog/phone-case-vibe/): The phone case is the one accessory you chose while panicking about dropping your phone. What that split-second decision reveals about your archetype — according to vibe science (not real science).
+- [The Best Satirical iOS Games That Actually Respect Your Intelligence](https://dudleyapps.com/blog/best-satirical-ios-games/): Most 'funny' games on the App Store are slot machines with a hat. These six satire games on iPhone are genuinely good — including one about the Federal Reserve.
+- [What Your Federal Reserve Opinion Says About Your Vibe](https://dudleyapps.com/blog/fed-opinion-vibe/): Your gut reaction to a Fed rate decision reveals your archetype. We matched every possible take on monetary policy to a Vibe Rater result.
+- [Gorpcore Prophet: The Archetype That Won the 2020s Without Trying](https://dudleyapps.com/blog/gorpcore-prophet-won/): Gorpcore didn't go mainstream. Everyone else went gorpcore. A look at the decade's most unlikely aesthetic winner — and what separates a Gorpcore Prophet from someone who just owns a vest.
 
 ## About
 
@@ -36,7 +48,7 @@ Dudley Development is run by a small team and one human (Nicholas Santulli). All
 ## Contact
 
 - Support: nicksantulli@yahoo.com
-- Privacy policies: https://nicksantulli.github.io/dudley-web/privacy/
-- Website: https://nicksantulli.github.io/dudley-web/
+- Privacy policies: https://dudleyapps.com/privacy/
+- Website: https://dudleyapps.com/
 
 Note: a custom domain (dudleydevelopment.com) is planned; until then the canonical site is the github.io URL above.
