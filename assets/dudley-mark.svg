@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Dudley Development">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6e8bff"/>
+      <stop offset="1" stop-color="#9b6bff"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#g)"/>
+  <path d="M22 18h11c9.4 0 15 5.4 15 14s-5.6 14-15 14H22V18zm8 6.4V39.6h2.4c4.9 0 7.7-2.8 7.7-7.6 0-4.8-2.8-7.6-7.7-7.6H30z" fill="#fff"/>
+</svg>
