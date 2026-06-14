@@ -1,0 +1,78 @@
+---
+import Base from '../../layouts/Base.astro';
+import { STUDIO, ORIGIN, rel, abs } from '../../consts';
+import { getPublishedPosts, getAllTags, postTags, tagSlug, tagLabel, formatDate } from '../../lib/blog';
+
+const posts = await getPublishedPosts();
+const tags = await getAllTags();
+const path = '/blog/';
+const title = 'The Dudley Blog';
+const description =
+  'Culture, archetypes, and honest app roundups from Dudley Development — the studio behind Vibe Rater and Powell Prowl. Vibe science, taken exactly as seriously as it deserves.';
+
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: title,
+  description,
+  url: abs(path),
+  publisher: {
+    '@type': 'Organization',
+    name: STUDIO,
+    url: ORIGIN,
+    logo: { '@type': 'ImageObject', url: abs('/assets/dudley-mark.svg') },
+  },
+  blogPost: posts.slice(0, 25).map((p) => ({
+    '@type': 'BlogPosting',
+    headline: p.data.title,
+    description: p.data.description,
+    url: abs(`/blog/${p.slug}/`),
+    datePublished: p.data.publishDate.toISOString().slice(0, 10),
+    author: { '@type': 'Organization', name: p.data.author },
+  })),
+};
+---
+<Base title={title} description={description} path={path} schema={blogSchema}>
+  <main class="page">
+    <div class="wrap" style="max-width:760px;">
+      <header class="blog-hero">
+        <h1>The Dudley Blog</h1>
+        <p>{description}</p>
+        <p class="blog-feed-link">
+          <a href={rel('/blog/rss.xml')}>RSS feed</a>
+        </p>
+      </header>
+
+      {tags.length > 0 && (
+        <nav class="tag-cloud" aria-label="Browse by tag">
+          {tags.map((t) => (
+            <a class="tag" href={rel(`/blog/tags/${t.slug}/`)}>{tagLabel(t.tag)} <span>{t.count}</span></a>
+          ))}
+        </nav>
+      )}
+
+      {posts.length === 0 ? (
+        <p>No posts yet — check back soon.</p>
+      ) : (
+        <ul class="post-list">
+          {posts.map((p) => (
+            <li class="post-card">
+              <a class="post-card-link" href={rel(`/blog/${p.slug}/`)}>
+                <time datetime={p.data.publishDate.toISOString().slice(0, 10)}>
+                  {formatDate(p.data.publishDate)}
+                </time>
+                <h2>{p.data.title}</h2>
+                <p>{p.data.description}</p>
+              </a>
+              <div class="post-card-tags">
+                {postTags(p).slice(0, 3).map((t) => (
+                  <a class="tag" href={rel(`/blog/tags/${tagSlug(t)}/`)}>{tagLabel(t)}</a>
+                ))}
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </main>
+</Base>

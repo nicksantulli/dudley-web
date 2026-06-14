@@ -1,0 +1,115 @@
+---
+import Base from './Base.astro';
+import FAQ from '../components/FAQ.astro';
+import InternalLinks from '../components/InternalLinks.astro';
+import AppCTA from '../components/AppCTA.astro';
+import { STUDIO, ORIGIN, rel, abs, APP_STORE } from '../consts';
+import { postTags, tagSlug, tagLabel, formatDate } from '../lib/blog';
+
+export interface Props {
+  post: any; // blog entry data + slug
+  related: { title: string; url: string; description: string }[];
+}
+const { post, related } = Astro.props;
+const path = `/blog/${post.slug}/`;
+const published = post.publishDate as Date;
+const updated = (post.updatedDate ?? post.publishDate) as Date;
+
+// Which app to surface in the CTA — first related app, defaulting to Vibe Rater.
+const APP_META: Record<string, { name: string; id: string }> = {
+  'powell-prowl': { name: 'Powell Prowl', id: APP_STORE.powellProwl },
+  'vibe-rater': { name: 'Vibe Rater', id: APP_STORE.vibeRater },
+};
+const ctaKey = post.relatedApps?.find((a: string) => APP_META[a]) ?? 'vibe-rater';
+const cta = APP_META[ctaKey];
+
+const ogImage = post.ogImage ?? '/assets/dudley-mark.svg';
+const tags = postTags({ data: post } as any);
+
+const articleSchema = {
+  '@type': 'BlogPosting',
+  headline: post.title,
+  description: post.description,
+  url: abs(path),
+  datePublished: published.toISOString().slice(0, 10),
+  dateModified: updated.toISOString().slice(0, 10),
+  author: { '@type': 'Organization', name: post.author ?? STUDIO, url: ORIGIN },
+  publisher: {
+    '@type': 'Organization',
+    name: STUDIO,
+    logo: { '@type': 'ImageObject', url: abs('/assets/dudley-mark.svg') },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': abs(path) },
+  image: abs(ogImage),
+  keywords: tags.join(', '),
+  ...(post.primaryKeyword ? { about: { '@type': 'Thing', name: post.primaryKeyword } } : {}),
+};
+const breadcrumbSchema = {
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: abs('/') },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: abs('/blog/') },
+    { '@type': 'ListItem', position: 3, name: post.title, item: abs(path) },
+  ],
+};
+const graph: object[] = [articleSchema, breadcrumbSchema];
+if (post.faq && post.faq.length > 0) {
+  graph.push({
+    '@type': 'FAQPage',
+    mainEntity: post.faq.map((f: any) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  });
+}
+const schema = { '@context': 'https://schema.org', '@graph': graph };
+---
+<Base
+  title={post.title}
+  description={post.description}
+  path={path}
+  ogImage={ogImage}
+  schema={schema}
+>
+  <main class="page">
+    <div class="wrap" style="max-width:720px;">
+      <nav class="crumbs">
+        <a href={rel('/')}>Home</a><span class="sep">/</span>
+        <a href={rel('/blog/')}>Blog</a><span class="sep">/</span>
+        <span>{post.title}</span>
+      </nav>
+
+      <article class="post">
+        <header class="post-head">
+          <h1>{post.title}</h1>
+          <p class="post-meta">
+            <span class="byline">{post.author ?? STUDIO}</span>
+            <span class="sep">·</span>
+            <time datetime={published.toISOString().slice(0, 10)}>{formatDate(published)}</time>
+          </p>
+          <p class="post-dek">{post.description}</p>
+          <nav class="post-tags" aria-label="Tags">
+            {tags.map((t) => (
+              <a class="tag" href={rel(`/blog/tags/${tagSlug(t)}/`)}>{tagLabel(t)}</a>
+            ))}
+          </nav>
+        </header>
+
+        <div class="post-body">
+          <slot />
+        </div>
+      </article>
+
+      <AppCTA
+        appName={cta.name}
+        appStoreId={cta.id}
+        status={cta.id ? 'live' : 'coming_soon'}
+        blurb={`Liked this? ${cta.name} ${cta.id ? 'is free on the App Store.' : 'is launching on the App Store soon.'}`}
+      />
+
+      <FAQ items={post.faq} />
+      <InternalLinks pages={related} heading="Keep reading" />
+    </div>
+  </main>
+</Base>

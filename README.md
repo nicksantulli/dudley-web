@@ -21,23 +21,30 @@ template one page per entry — so adding pages is a data edit, not hand-written
 src/
 ├── consts.ts              # site URL, base path, App Store IDs — single source of truth
 ├── content/
-│   ├── config.ts          # collection schemas (apps, archetypes, comparisons, tools)
+│   ├── config.ts          # collection schemas (apps, archetypes, comparisons, tools, blog)
 │   ├── apps/*.mdx         # one file per app  → /apps/<slug>/
 │   ├── archetypes/*.mdx   # one file per Vibe Rater archetype → /archetypes/<slug>/
 │   ├── comparisons/*.mdx  # one file per comparison → /compare/<slug>/
-│   └── tools/*.mdx        # one file per tool/quiz → /tools/<slug>/
+│   ├── tools/*.mdx        # one file per tool/quiz → /tools/<slug>/
+│   └── blog/*.md          # one file per blog post → /blog/<slug>/  (see PUBLISHING.md)
+├── lib/blog.ts            # blog helpers (published posts, tags, date fmt)
 ├── layouts/               # Base + per-page-type layouts (build the JSON-LD)
 ├── components/            # FAQ, InternalLinks, AppCTA, VibeQuiz
-└── pages/                 # static pages (home, about, support, privacy, 404) + [slug] routes
-public/                    # served as-is: app-ads.txt, robots.txt, llms.txt, assets/, .nojekyll
+└── pages/                 # static pages + [slug] routes + blog/ (index, [slug], tags, rss.xml) + llms.txt.ts
+public/                    # served as-is: app-ads.txt, robots.txt, assets/, .nojekyll
                            #   + legacy .html redirect stubs (preserve old App Store URLs)
 ```
+
+`llms.txt` is now generated (`src/pages/llms.txt.ts`) so new blog posts are listed for
+answer engines automatically.
 
 ## Adding content (the programmatic part)
 
 - **New app** → add `src/content/apps/<slug>.mdx`. The landing page, schema, and FAQ generate automatically. Add the App Store ID in `src/consts.ts` when live.
 - **New archetype** → add `src/content/archetypes/<slug>.mdx`. (Remaining to write: drip, serve, gorpcore-prophet, npc-affectionate — see `vault/growth/seo-aeo/`.)
 - **New comparison / tool** → add a file in the matching collection.
+- **New blog post** → drop `src/content/blog/<slug>.md` and push. Index, tag pages, RSS,
+  sitemap, and `llms.txt` update automatically. Full guide: [`PUBLISHING.md`](PUBLISHING.md).
 
 Content templates + the keyword/AEO plan live in the Dudley vault at
 `vault/growth/seo-aeo/`.
@@ -66,6 +73,10 @@ npm run deploy     # builds, then publishes dist/ to gh-pages via a temp worktre
 ```
 
 Live within ~1 minute at https://nicksantulli.github.io/dudley-web/.
+
+**Optional auto-deploy:** a ready GitHub Actions workflow at `docs/github-actions-deploy.yml`
+makes pushes to `main` build + deploy automatically (so the Content Writer never runs a
+manual step). Installing it needs a `workflow`-scoped token — see [`PUBLISHING.md`](PUBLISHING.md).
 
 ### Custom domain (later)
 

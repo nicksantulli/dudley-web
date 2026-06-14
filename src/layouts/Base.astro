@@ -27,6 +27,7 @@ const orgSchema = {
 
 const nav = [
   { href: rel('/#apps'), label: 'Apps' },
+  { href: rel('/blog/'), label: 'Blog' },
   { href: rel('/about'), label: 'About' },
   { href: rel('/support'), label: 'Support' },
   { href: rel('/privacy/'), label: 'Privacy' },
@@ -46,6 +47,7 @@ const year = new Date().getFullYear();
   <link rel="icon" type="image/svg+xml" href={rel('/assets/dudley-mark.svg')} />
   <link rel="stylesheet" href={rel('/assets/style.css')} />
   <link rel="sitemap" href={rel('/sitemap-index.xml')} />
+  <link rel="alternate" type="application/rss+xml" title="The Dudley Blog" href={rel('/blog/rss.xml')} />
 
   <!-- Open Graph -->
   <meta property="og:title" content={fullTitle} />

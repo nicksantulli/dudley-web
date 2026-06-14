@@ -1,0 +1,55 @@
+# Dudley-web auto-deploy — build the Astro site and publish to the gh-pages branch.
+#
+# INSTALL (one-time, requires a token with the `workflow` scope — see PUBLISHING.md):
+#   1. Move this file to .github/workflows/deploy.yml
+#   2. Commit + push it with a workflow-scoped token / via the GitHub UI.
+#   3. Keep Settings -> Pages -> Source = gh-pages / (root).
+#
+# Once installed, every push to `main` that touches site content rebuilds and deploys
+# automatically — the Content Writer just drops a markdown file in src/content/blog/
+# and pushes. The in-Actions GITHUB_TOKEN can push gh-pages; no PAT scopes required.
+
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'astro.config.mjs'
+      - 'package.json'
+      - 'package-lock.json'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write   # lets the action push the built site to the gh-pages branch
+
+concurrency:
+  group: deploy-gh-pages
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Publish dist/ to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          # GitHub Pages "legacy" (branch) source must not run Jekyll over our build.
+          enable_jekyll: false
+          cname: ''

@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+import { getPublishedPosts, postTags, tagSlug } from '../../lib/blog';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  const archetypes = await getCollection('archetypes');
+  const apps = await getCollection('apps');
+  const archBySlug = new Map(archetypes.map((a) => [a.slug, a]));
+  const appBySlug = new Map(apps.map((a) => [a.slug, a]));
+
+  return posts.map((entry) => {
+    const related: { title: string; url: string; description: string }[] = [];
+
+    // Link to existing app pages this post references.
+    for (const s of entry.data.relatedApps) {
+      const app = appBySlug.get(s);
+      if (app) related.push({ title: app.data.name, url: `/apps/${app.slug}/`, description: app.data.tagline });
+    }
+    // Link to existing archetype pages (skip ones without a page yet).
+    for (const s of entry.data.relatedArchetypes) {
+      const a = archBySlug.get(s);
+      if (a) related.push({ title: a.data.name, url: `/archetypes/${a.slug}/`, description: a.data.tagline });
+    }
+    // Fill out with other recent posts that share a tag, then any recent post.
+    const tags = new Set(postTags(entry));
+    const others = posts.filter((p) => p.slug !== entry.slug);
+    const ranked = [
+      ...others.filter((p) => postTags(p).some((t) => tags.has(t))),
+      ...others,
+    ];
+    for (const p of ranked) {
+      if (related.length >= 5) break;
+      const url = `/blog/${p.slug}/`;
+      if (related.some((r) => r.url === url)) continue;
+      related.push({ title: p.data.title, url, description: p.data.description });
+    }
+
+    return {
+      params: { slug: entry.slug },
+      props: { entry, related },
+    };
+  });
+}
+
+const { entry, related } = Astro.props;
+const { Content } = await entry.render();
+const post = { ...entry.data, slug: entry.slug };
+---
+<BlogPost post={post} related={related}>
+  <Content />
+</BlogPost>
