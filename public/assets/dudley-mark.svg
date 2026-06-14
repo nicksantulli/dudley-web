@@ -1,10 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Dudley Development">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#6e8bff"/>
-      <stop offset="1" stop-color="#9b6bff"/>
-    </linearGradient>
-  </defs>
-  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#g)"/>
-  <path d="M22 18h11c9.4 0 15 5.4 15 14s-5.6 14-15 14H22V18zm8 6.4V39.6h2.4c4.9 0 7.7-2.8 7.7-7.6 0-4.8-2.8-7.6-7.7-7.6H30z" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -25 434 434" width="64" height="64" role="img" aria-label="Dudley Development">
+  <!--
+    Dudley Development — Longhorn-D Web Mark
+    DUD-198 · Cowhide Rebrand (Jun 14 2026)
+    Cream bg (#F0E6CE) + dark brown monoline Longhorn-D (#3D1C08)
+  -->
+  <rect x="-12" y="-25" width="434" height="434" rx="88" fill="#F0E6CE"/>
+  <g stroke="#3D1C08" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M 142,170 C 170,144 228,144 266,170"/>
+    <path d="M 158,160 C 130,130 74,95 42,70 C 30,60 32,76 46,84"/>
+    <path d="M 250,160 C 278,130 336,95 368,70 C 380,60 378,76 364,84"/>
+    <line x1="142" y1="170" x2="142" y2="318"/>
+    <path d="M 266,170 C 322,172 332,204 332,244 C 332,284 322,316 266,318"/>
+    <line x1="142" y1="318" x2="266" y2="318"/>
+    <line x1="122" y1="325" x2="162" y2="325"/>
+  </g>
 </svg>
