@@ -3,7 +3,12 @@ import { getCollection } from 'astro:content';
 import AppLanding from '../../layouts/AppLanding.astro';
 
 export async function getStaticPaths() {
-  const [apps, archetypes] = [await getCollection('apps'), await getCollection('archetypes')];
+  // Only apps with a real landing page get a /apps/<slug>/ route.
+  // "Coming soon" stubs (landingPage: false) appear as homepage cards only.
+  const [apps, archetypes] = [
+    (await getCollection('apps')).filter((a) => a.data.landingPage !== false),
+    await getCollection('archetypes'),
+  ];
   const appBySlug = new Map(apps.map((a) => [a.slug, a]));
   const archBySlug = new Map(archetypes.map((a) => [a.slug, a]));
 

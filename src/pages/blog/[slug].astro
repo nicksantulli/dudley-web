@@ -6,7 +6,8 @@ import { getPublishedPosts, postTags, tagSlug } from '../../lib/blog';
 export async function getStaticPaths() {
   const posts = await getPublishedPosts();
   const archetypes = await getCollection('archetypes');
-  const apps = await getCollection('apps');
+  // Only apps with a real landing page are linkable (skip "Coming soon" stubs).
+  const apps = (await getCollection('apps')).filter((a) => a.data.landingPage !== false);
   const archBySlug = new Map(archetypes.map((a) => [a.slug, a]));
   const appBySlug = new Map(apps.map((a) => [a.slug, a]));
 

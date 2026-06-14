@@ -39,6 +39,7 @@ const description =
           {apps.map((app) => {
             const url = appStoreUrl(app.data.appStoreId);
             const live = app.data.status === 'live' && !!url;
+            const hasPage = app.data.landingPage !== false;
             const slug = app.slug;
             return (
               <div class="app-card">
@@ -54,9 +55,9 @@ const description =
                 </div>
                 <p class="desc">{app.data.description}</p>
                 <div class="actions">
-                  <a class="btn primary" href={rel(`/apps/${slug}/`)}>Learn more</a>
+                  {hasPage && <a class="btn primary" href={rel(`/apps/${slug}/`)}>Learn more</a>}
                   {live && <a class="btn" href={url} rel="noopener">Download</a>}
-                  <a class="btn" href={rel(`/privacy/${slug}`)}>Privacy</a>
+                  {hasPage && <a class="btn" href={rel(`/privacy/${slug}`)}>Privacy</a>}
                 </div>
               </div>
             );

@@ -20,6 +20,11 @@ const apps = defineCollection({
     faq: z.array(faqItem),
     relatedArchetypes: z.array(z.string()).optional(),
     relatedApps: z.array(z.string()).optional(),
+    // Set false for a "Coming soon" stub that has no full landing/privacy page yet.
+    // The homepage still shows its card (icon + badge + blurb) but hides the
+    // Learn more / Privacy buttons, and no /apps/<slug>/ page is generated.
+    // Flip to true (and fill in the body/faq) once the app ships and earns a page.
+    landingPage: z.boolean().default(true),
     order: z.number().default(99),
     dateAdded: z.date(),
     lastUpdated: z.date(),
