@@ -1,5 +1,5 @@
 ---
-import { STUDIO, SUPPORT_EMAIL, SOCIAL_LINKS, SOCIALS, ORIGIN, rel, abs } from '../consts';
+import { STUDIO, SUPPORT_EMAIL, SOCIAL_LINKS, SOCIALS, BING_VERIFICATION, ORIGIN, rel, abs } from '../consts';
 
 export interface Props {
   title: string;
@@ -89,6 +89,7 @@ const SOCIAL_ICONS: Record<string, string> = {
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
   {noindex && <meta name="robots" content="noindex" />}
+  {BING_VERIFICATION && <meta name="msvalidate.01" content={BING_VERIFICATION} />}
   <meta name="theme-color" content="#1C0D06" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#F2E8D5" media="(prefers-color-scheme: light)" />
   <link rel="icon" href={rel('/favicon.ico')} sizes="any" />

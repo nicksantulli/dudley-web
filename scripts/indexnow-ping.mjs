@@ -1,45 +1,66 @@
 #!/usr/bin/env node
-// IndexNow ping script — submits one or more URLs to IndexNow (Bing/Yandex/etc.)
-// Usage: node scripts/indexnow-ping.mjs <url> [url...]
-// Key file must be live at: https://dudleyapps.com/f6225bfd34b9bfaf4d5f00d578fb4824.txt
+// Ping the IndexNow API with the URLs that changed in a gh-pages deploy so Bing
+// (and other IndexNow engines: Yandex, Seznam, Naver) index them in minutes
+// instead of waiting to be crawled. Called by scripts/deploy-gh-pages.mjs after
+// a successful push. DUD-209.
+//
+// The IndexNow key is the stem of the key file we serve at the domain root:
+// public/<key>.txt (its contents == the stem). This module auto-discovers it,
+// so there is no second place to update.
 
-import { readFileSync } from 'node:fs';
-import { join, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { readdirSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const KEY = 'f6225bfd34b9bfaf4d5f00d578fb4824';
+const ORIGIN = 'https://dudleyapps.com';
 const HOST = 'dudleyapps.com';
-const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
-const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/indexnow';
+const ENDPOINT = 'https://api.indexnow.com/IndexNow';
 
-const urls = process.argv.slice(2);
-if (!urls.length) {
-  console.error('Usage: node scripts/indexnow-ping.mjs <url> [url...]');
-  process.exit(1);
+// Find the IndexNow key file in public/ (32-hex stem, content == stem).
+export function findKey(publicDir = 'public') {
+  const file = readdirSync(publicDir).find((f) => /^[0-9a-f]{16,128}\.txt$/.test(f));
+  if (!file) return null;
+  const stem = file.replace(/\.txt$/, '');
+  const content = readFileSync(join(publicDir, file), 'utf8').trim();
+  return content === stem ? { key: stem, keyLocation: `${ORIGIN}/${file}` } : null;
 }
 
-const body = JSON.stringify({
-  host: HOST,
-  key: KEY,
-  keyLocation: KEY_LOCATION,
-  urlList: urls,
-});
+// Map a gh-pages worktree path (e.g. "apps/vibe-rater/index.html") to its URL.
+export function pathToUrl(p) {
+  let rel = p.replace(/^\.?\//, '');
+  if (rel === 'index.html') return `${ORIGIN}/`;
+  rel = rel.replace(/index\.html$/, '').replace(/\.html$/, '/');
+  return `${ORIGIN}/${rel}`.replace(/([^:])\/{2,}/g, '$1/');
+}
 
-console.log(`IndexNow: submitting ${urls.length} URL(s)...`);
-urls.forEach(u => console.log(`  ${u}`));
+// Submit a list of URLs. No-op (returns a reason) when key or URLs are missing.
+export async function pingIndexNow(urls) {
+  const unique = [...new Set(urls)].filter(Boolean);
+  if (unique.length === 0) return { ok: false, skipped: 'no changed URLs' };
+  const key = findKey();
+  if (!key) return { ok: false, skipped: 'no IndexNow key file in public/' };
 
-const res = await fetch(INDEXNOW_ENDPOINT, {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json; charset=utf-8' },
-  body,
-});
+  const payload = { host: HOST, key: key.key, keyLocation: key.keyLocation, urlList: unique };
+  try {
+    const res = await fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      body: JSON.stringify(payload),
+    });
+    // IndexNow returns 200 (accepted) or 202 (accepted, validation pending).
+    return { ok: res.status === 200 || res.status === 202, status: res.status, count: unique.length };
+  } catch (err) {
+    return { ok: false, error: String(err), count: unique.length };
+  }
+}
 
-console.log(`IndexNow: HTTP ${res.status} ${res.statusText}`);
-if (res.status === 200 || res.status === 202) {
-  console.log('IndexNow: submitted successfully.');
-} else {
-  const text = await res.text().catch(() => '');
-  console.error('IndexNow: unexpected response:', text);
-  process.exit(1);
+// CLI: `node scripts/indexnow-ping.mjs <url> [url...]` for manual re-submits.
+if (import.meta.url === `file://${process.argv[1]}`) {
+  const urls = process.argv.slice(2);
+  if (urls.length === 0) {
+    console.error('usage: node scripts/indexnow-ping.mjs <url> [url...]');
+    process.exit(1);
+  }
+  const r = await pingIndexNow(urls);
+  console.log('IndexNow:', JSON.stringify(r));
+  process.exit(r.ok ? 0 : 1);
 }
