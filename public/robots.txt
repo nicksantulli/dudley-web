@@ -18,3 +18,4 @@ User-agent: anthropic-ai
 Allow: /
 
 Sitemap: https://dudleyapps.com/sitemap-index.xml
+Sitemap: https://dudleyapps.com/sitemap-images.xml

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "postbuild": "node scripts/gen-image-sitemap.mjs",
     "preview": "astro preview",
     "deploy": "node scripts/deploy-gh-pages.mjs"
   },
