@@ -10,7 +10,7 @@ export interface Props {
   noindex?: boolean;
 }
 
-const { title, description, path, ogImage = '/assets/dudley-mark.svg', schema = null, noindex = false } = Astro.props;
+const { title, description, path, ogImage = '/assets/og-home.png', schema = null, noindex = false } = Astro.props;
 const canonical = abs(path);
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : abs(ogImage);
 const fullTitle = title.includes(STUDIO) ? title : `${title} | ${STUDIO}`;
