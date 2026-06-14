@@ -62,7 +62,7 @@ header.site {
   border-bottom: 1px solid var(--border);
 }
 @media (prefers-color-scheme: light) {
-  header.site { background: rgba(242, 232, 213, 0.90); }
+  header.site { background: rgba(208, 180, 134, 0.96); border-bottom-color: #7A4B33; }
 }
 header.site .wrap {
   display: flex; align-items: center; justify-content: space-between;
