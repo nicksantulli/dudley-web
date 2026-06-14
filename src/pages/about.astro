@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { rel, SUPPORT_EMAIL } from '../consts';
+import { rel, SUPPORT_EMAIL, CONTACT_EMAIL } from '../consts';
 const description = 'Dudley Development is a small independent studio building polished, playful iPhone apps.';
 ---
 <Base title="About" description={description} path="/about">
@@ -33,8 +33,9 @@ const description = 'Dudley Development is a small independent studio building p
 
       <h2>Get in touch</h2>
       <p>
-        Questions, bugs, or just want to say hi? Head to <a href={rel('/support')}>Support</a> or email
-        <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+        Got a bug or need help? Head to <a href={rel('/support')}>Support</a> or email
+        <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>. Just want to say hi or talk shop? Reach us at
+        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
       </p>
     </div>
   </main>
