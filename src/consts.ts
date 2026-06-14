@@ -7,7 +7,8 @@ export const BASE = '/dudley-web'; // '' once a root domain is live
 export const ORIGIN = ORIGIN_HOST + BASE; // canonical origin for the deployed site
 
 export const STUDIO = 'Dudley Development';
-export const SUPPORT_EMAIL = 'nicksantulli@yahoo.com';
+export const SUPPORT_EMAIL = 'support@dudleyapps.com';
+export const CONTACT_EMAIL = 'hello@dudleyapps.com'; // general / say-hi contact (Cloudflare Email Routing → Owner inbox)
 export const SOCIAL_LINKS: string[] = []; // add Bluesky/X URLs to populate schema sameAs
 
 // Build a site-relative href that respects the GitHub Pages base path.

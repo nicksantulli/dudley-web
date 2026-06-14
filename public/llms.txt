@@ -35,8 +35,9 @@ Dudley Development is run by a small team and one human (Nicholas Santulli). All
 
 ## Contact
 
-- Support: nicksantulli@yahoo.com
-- Privacy policies: https://nicksantulli.github.io/dudley-web/privacy/
-- Website: https://nicksantulli.github.io/dudley-web/
+- Support: support@dudleyapps.com
+- General: hello@dudleyapps.com
+- Privacy policies: https://dudleyapps.com/privacy/
+- Website: https://dudleyapps.com/
 
 Note: a custom domain (dudleydevelopment.com) is planned; until then the canonical site is the github.io URL above.
