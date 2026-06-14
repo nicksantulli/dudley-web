@@ -43,7 +43,8 @@ const year = new Date().getFullYear();
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
   {noindex && <meta name="robots" content="noindex" />}
-  <meta name="theme-color" content="#0b0e14" />
+  <meta name="theme-color" content="#1C0D06" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F2E8D5" media="(prefers-color-scheme: light)" />
   <link rel="icon" type="image/svg+xml" href={rel('/assets/dudley-mark.svg')} />
   <link rel="stylesheet" href={rel('/assets/style.css')} />
   <link rel="sitemap" href={rel('/sitemap-index.xml')} />
