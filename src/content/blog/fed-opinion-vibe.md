@@ -18,9 +18,9 @@ faq:
   - q: "What does the Federal Reserve do?"
     a: "The Federal Reserve (the Fed) is the central bank of the United States. Its main job is to set the federal funds rate — the interest rate banks charge each other for short-term loans. When the Fed raises rates, borrowing gets more expensive, which tends to slow inflation. When it cuts rates, borrowing gets cheaper, which tends to stimulate the economy. The decision is made by the Federal Open Market Committee (FOMC), which meets eight times a year."
   - q: "What is Powell Prowl: Rate Chase?"
-    a: "Powell Prowl: Rate Chase is a free satirical iOS arcade game where you play as Jerome Powell, the Federal Reserve Chairman. You decide whether to raise or lower interest rates and watch the economic consequences unfold — in an extremely simplified, extremely funny way. Available on the App Store for iPhone."
+    a: "Powell Prowl: Rate Chase is a free satirical iOS arcade game where you play as a hapless President figure chasing the Fed Chair across 31 levels of mini-games, trying to catch him and force a rate-cut memo on him — in an extremely simplified, extremely funny way. Available on the App Store for iPhone."
   - q: "What is a 'hawk' vs. a 'dove' in Fed policy?"
-    a: "In central banking, a 'hawk' favors higher interest rates to fight inflation. A 'dove' favors lower rates to support employment and growth. Most real Fed decisions involve hawks and doves disagreeing about where the balance is. In Powell Prowl, you get to be both — sometimes in the same session."
+    a: "In central banking, a 'hawk' favors higher interest rates to fight inflation. A 'dove' favors lower rates to support employment and growth. Most real Fed decisions involve hawks and doves disagreeing about where the balance is. In Powell Prowl you play the ultimate dove — a President chasing the Fed Chair around to force a rate cut on him."
   - q: "What is Vibe Rater?"
     a: "Vibe Rater is a free iOS entertainment app that rates your vibe from a photo. You get a score across six dimensions (Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve), plus an archetype — like Final Boss, Gorpcore Prophet, or Cozy Goblin. The phone vibrates while it reads you."
 draft: false
@@ -28,7 +28,7 @@ draft: false
 
 The Federal Reserve made a decision this week. Your reaction to that sentence tells me everything I need to know about you.
 
-Not about your understanding of monetary policy — about your *vibe*. There are exactly five types of people when the FOMC releases a statement, and each one maps cleanly to a Vibe Rater archetype. We know this because we built Powell Prowl, a game about making Fed decisions, and we have watched people interact with interest rate news for approximately three years now.
+Not about your understanding of monetary policy — about your *vibe*. There are exactly five types of people when the FOMC releases a statement, and each one maps cleanly to a Vibe Rater archetype. We know this because we built Powell Prowl, a game about a President chasing the Fed Chair to force a rate cut, and we have watched people interact with interest rate news for approximately three years now.
 
 Here is what your gut reaction says about your vibe:
 
@@ -86,7 +86,7 @@ Your Fed take: Cut. Everything makes more sense when rates go down. Just cut.
 
 ## Find Out Which One You Actually Are
 
-We built [Powell Prowl: Rate Chase](https://apps.apple.com/app/id6775539250) so you can sit in the hot seat yourself — decide to raise, hold, or cut and watch the economic chaos that follows. It's free, it's extremely educational in a completely irresponsible way, and it turns out making the "right" call is a lot harder when it's your finger on the button.
+We built [Powell Prowl: Rate Chase](https://apps.apple.com/app/id6775539250) so you can stop yelling at the Fed and start chasing it — you play the President, hunting the Fed Chair across 31 levels to force your rate-cut memo on him. It's free, it's extremely educational in a completely irresponsible way, and it turns out catching the guy who actually sets rates is a lot harder than having opinions about him.
 
 If you want to know your actual vibe archetype (not the monetary policy version), that's Vibe Rater — coming soon to the App Store. Upload a photo, get your archetype, aura color, and a score across all six dimensions.
 
@@ -98,10 +98,10 @@ If you want to know your actual vibe archetype (not the monetary policy version)
 The Federal Reserve (the Fed) is the central bank of the United States. Its main job is to set the federal funds rate — the interest rate banks charge each other for short-term loans. When the Fed raises rates, borrowing gets more expensive, which tends to slow inflation. When it cuts, borrowing gets cheaper. The decision is made eight times a year by the FOMC.
 
 **What is a 'hawk' vs. a 'dove' in Fed policy?**
-A hawk favors higher interest rates to fight inflation. A dove favors lower rates to support employment and growth. Most real Fed decisions involve hawks and doves disagreeing. In Powell Prowl, you get to play both.
+A hawk favors higher interest rates to fight inflation. A dove favors lower rates to support employment and growth. Most real Fed decisions involve hawks and doves disagreeing. In Powell Prowl, you play the ultimate dove — a President chasing the Fed Chair to force a rate cut on him.
 
 **What is Powell Prowl: Rate Chase?**
-Powell Prowl: Rate Chase is a free satirical iOS arcade game where you play as Jerome Powell. You decide whether to raise or lower interest rates and watch the consequences. Available on the App Store for iPhone, free with ads.
+Powell Prowl: Rate Chase is a free satirical iOS arcade game where you play as a hapless President figure chasing the Fed Chair across 31 levels of mini-games, trying to catch him and force a rate-cut memo on him. Available on the App Store for iPhone, free with ads.
 
 **What is Vibe Rater?**
 Vibe Rater is a free iOS entertainment app that rates your vibe from a photo. You get a score across six dimensions plus an archetype — Final Boss, Gorpcore Prophet, Cozy Goblin, and more. Coming soon to the App Store.

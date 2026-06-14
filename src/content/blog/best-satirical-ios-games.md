@@ -11,11 +11,11 @@ faq:
   - q: "What are the best satirical games on iPhone?"
     a: "The best satirical games on iPhone in 2026 include: Powell Prowl: Rate Chase (Federal Reserve satire, free), Reigns (monarchy decision satire, paid), Suzerain (political RPG, paid), Papers, Please (border control dystopia, paid), BitLife (life simulation with dark humor, free/IAP), and Orwell's Animal Farm (literary adaptation, paid). Each takes a different approach to satire — some are systems-based, some narrative, some pure comedy."
   - q: "What is Powell Prowl: Rate Chase?"
-    a: "Powell Prowl: Rate Chase is a free satirical iOS arcade game where you play as Jerome Powell, the Federal Reserve Chairman, deciding whether to raise or lower interest rates. Made by Dudley Development, it's free to download with AdMob ads. Available on the App Store for iPhone."
+    a: "Powell Prowl: Rate Chase is a free satirical iOS arcade game where you play as a hapless President figure chasing the Fed Chair across 31 levels of mini-games, trying to catch him and force a rate-cut memo on him. Made by Dudley Development, it's free to download with AdMob ads. Available on the App Store for iPhone."
   - q: "Are there any free satirical games on iPhone?"
     a: "Yes. Powell Prowl: Rate Chase is free (with ads) and is a legitimate satire of Federal Reserve monetary policy. BitLife is also free with optional in-app purchases, though it's more dark comedy than pointed satire. Most of the deeper satire games (Reigns, Suzerain, Papers Please) are paid — usually $2.99–$4.99."
   - q: "What makes a good satire game?"
-    a: "A good satire game makes a real point through its mechanics, not just its aesthetics. The best examples — Reigns, Papers Please, Powell Prowl — put you in a position of institutional power and force you to make decisions where every option has a cost. The comedy comes from the system, not just from funny dialogue. You learn something about how the real system works, and that's what makes the joke land."
+    a: "A good satire game makes a real point through its mechanics, not just its aesthetics. The best examples — Reigns and Papers Please — put you in a position of institutional power and force you to make decisions where every option has a cost. Powell Prowl takes the opposite tack: it makes you the President who can't set rates, only chase the Chair who can, so the joke lands through the chase itself. Either way the comedy comes from the system, not just from funny dialogue. You learn something about how the real system works, and that's what makes the joke land."
 draft: false
 ---
 
@@ -29,11 +29,11 @@ Here are six iPhone games that are actually doing this:
 
 ## 1. Powell Prowl: Rate Chase — Free
 
-**The premise:** You are Jerome Powell, Chairman of the Federal Reserve. Every few seconds you have to decide: raise rates, hold, or cut. The economy reacts accordingly. The game does not explain the consequences in advance.
+**The premise:** You play as a hapless President figure — a Trump-style caricature — chasing the Fed Chair, a Powell-style caricature, across 31 levels of mini-games. Your goal in every level is to catch him and force a rate-cut memo into his hands. He dodges, ducks, and weaves around a paper-cutout Washington while you give chase through tag, subpoena sniping, arm-wrestling, canoe races, whack-a-Fed, a museum heist, and a final Beltway race.
 
-**Why it's satire and not just a joke:** The mechanics are the point. Raise rates when you shouldn't and inflation vanishes but employment collapses. Cut too early and inflation comes back. The game teaches you, faster than any explainer article, why the "right" decision is genuinely contested — because every choice has a real cost that plays out on a delay. The Fed's problem isn't incompetence; it's that the economy is a system with lagged responses, and Powell Prowl makes you feel that.
+**Why it's satire and not just a joke:** The mechanics are the point. The whole game is one running gag about political pressure on the Federal Reserve — an executive who wants lower rates *now* and a central banker whose entire job is to not be caught. You never get to set rates yourself; you can only chase the person who does. That's the joke, and it's a sharp one: the Fed's independence is exactly the thing that keeps the President from simply catching the Chair and getting his way. Powell Prowl turns that institutional tension into a frantic arcade chase.
 
-The satirical joke is that this is a *game* — which means it's more honest about its uncertainty than most central bank communications.
+The satirical joke is that this is a *game* — the absurd literalization of "jawboning the Fed" lands harder than any op-ed.
 
 **Cost:** Free. Ad-supported.
 
@@ -105,7 +105,7 @@ The App Store has thousands of games. Most of them are monetization exercises dr
 Powell Prowl: Rate Chase (free, Federal Reserve), Reigns ($2.99, monarchy), Suzerain ($4.99, political RPG), Papers, Please ($4.99, bureaucracy), BitLife (free with IAP, life simulation), and Orwell's Animal Farm ($4.99, literary adaptation). Each takes a different satirical approach through its mechanics.
 
 **What is Powell Prowl: Rate Chase?**
-Powell Prowl: Rate Chase is a free satirical iOS arcade game from Dudley Development where you play as Jerome Powell deciding whether to raise, hold, or cut interest rates. Free on the App Store for iPhone.
+Powell Prowl: Rate Chase is a free satirical iOS arcade game from Dudley Development where you play as a hapless President figure chasing the Fed Chair across 31 levels of mini-games, trying to catch him and force a rate-cut memo on him. Free on the App Store for iPhone.
 
 **Are there any free satirical games on iPhone?**
 Yes. Powell Prowl: Rate Chase is free with ads. BitLife is also free with optional purchases. The deeper satire experiences (Reigns, Suzerain, Papers Please) are paid — usually $2.99–$4.99 and worth it.
