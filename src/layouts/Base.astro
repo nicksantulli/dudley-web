@@ -10,7 +10,7 @@ export interface Props {
   noindex?: boolean;
 }
 
-const { title, description, path, ogImage = '/assets/og-home.png', schema = null, noindex = false } = Astro.props;
+const { title, description, path, ogImage = '/assets/dudley-lockup.png', schema = null, noindex = false } = Astro.props;
 const canonical = abs(path);
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : abs(ogImage);
 const fullTitle = title.includes(STUDIO) ? title : `${title} | ${STUDIO}`;
@@ -20,7 +20,7 @@ const orgSchema = {
   '@type': 'Organization',
   name: STUDIO,
   url: ORIGIN,
-  logo: { '@type': 'ImageObject', url: abs('/assets/dudley-mark.svg') },
+  logo: { '@type': 'ImageObject', url: abs('/assets/dudley-mark.png') },
   contactPoint: { '@type': 'ContactPoint', email: SUPPORT_EMAIL, contactType: 'customer support' },
   sameAs: SOCIAL_LINKS,
 };
@@ -71,7 +71,7 @@ const year = new Date().getFullYear();
   <header class="site">
     <div class="wrap">
       <a class="brand" href={rel('/')}>
-        <img class="mark" src={rel('/assets/dudley-mark.svg')} alt="" />
+        <img class="mark" src={rel('/assets/dudley-mark.png')} alt="" />
         Dudley Development
       </a>
       <nav class="top">

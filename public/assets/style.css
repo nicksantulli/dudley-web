@@ -2,38 +2,38 @@
    Cowhide rebrand (DUD-198, Jun 14 2026). Plain CSS, no build step. */
 
 :root {
-  /* === Dark (default) — warm cowhide dark === */
-  --bg:        #1C0D06;
-  --bg-2:      #251407;
-  --surface:   #2E1A08;
-  --surface-2: #3D2010;
-  --border:    rgba(240, 230, 206, 0.10);
-  --ink:       #F0E6CE;
-  --ink-muted: rgba(240, 230, 206, 0.58);
-  --ink-faint: rgba(240, 230, 206, 0.28);
-  --ink-body:  rgba(240, 230, 206, 0.78);
-  --accent:    #D47C1A;
-  --accent-2:  #B85C0C;
-  --good:      #3AB070;
+  /* === Light/cream (default) — warm parchment === */
+  --bg:        #F2E8D5;
+  --bg-2:      #E8D9C0;
+  --surface:   #F8F2E4;
+  --surface-2: #EBD9C2;
+  --border:    rgba(61, 28, 8, 0.12);
+  --ink:       #2A1208;
+  --ink-muted: #7A4B33;
+  --ink-faint: rgba(42, 18, 8, 0.38);
+  --ink-body:  #4A2E1A;
+  --accent:    #9A3D04;
+  --accent-2:  #7B2E02;
+  --good:      #2A7A50;
   --radius:    16px;
   --maxw:      960px;
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --bg:        #F2E8D5;
-    --bg-2:      #E8D9C0;
-    --surface:   #F8F2E4;
-    --surface-2: #EBD9C2;
-    --border:    rgba(61, 28, 8, 0.12);
-    --ink:       #2A1208;
-    --ink-muted: #7A4B33;
-    --ink-faint: rgba(42, 18, 8, 0.38);
-    --ink-body:  #4A2E1A;
-    --accent:    #9A3D04;
-    --accent-2:  #7B2E02;
-    --good:      #2A7A50;
+    --bg:        #1C0D06;
+    --bg-2:      #251407;
+    --surface:   #2E1A08;
+    --surface-2: #3D2010;
+    --border:    rgba(240, 230, 206, 0.10);
+    --ink:       #F0E6CE;
+    --ink-muted: rgba(240, 230, 206, 0.58);
+    --ink-faint: rgba(240, 230, 206, 0.28);
+    --ink-body:  rgba(240, 230, 206, 0.78);
+    --accent:    #D47C1A;
+    --accent-2:  #B85C0C;
+    --good:      #3AB070;
   }
 }
 
@@ -57,12 +57,12 @@ a:hover { text-decoration: underline; }
 /* ---------- Header ---------- */
 header.site {
   position: sticky; top: 0; z-index: 10;
-  background: rgba(28, 13, 6, 0.88);
+  background: rgba(242, 232, 213, 0.90);
   backdrop-filter: saturate(140%) blur(12px);
   border-bottom: 1px solid var(--border);
 }
-@media (prefers-color-scheme: light) {
-  header.site { background: rgba(242, 232, 213, 0.90); }
+@media (prefers-color-scheme: dark) {
+  header.site { background: rgba(28, 13, 6, 0.88); }
 }
 header.site .wrap {
   display: flex; align-items: center; justify-content: space-between;
@@ -70,7 +70,7 @@ header.site .wrap {
 }
 .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; color: var(--ink); font-size: 16px; letter-spacing: -0.2px; }
 .brand:hover { text-decoration: none; }
-.brand .mark { width: 30px; height: 30px; display: block; }
+.brand .mark { height: 30px; width: auto; display: block; }
 nav.top { display: flex; gap: 22px; font-size: 14px; font-weight: 600; }
 nav.top a { color: var(--ink-muted); }
 nav.top a:hover { color: var(--ink); text-decoration: none; }
@@ -189,9 +189,9 @@ section .sub { color: var(--ink-muted); margin: 0 0 34px; font-size: 16px; }
 .page h2 { color: var(--ink); font-size: 21px; font-weight: 800; margin: 34px 0 10px; letter-spacing: -0.3px; }
 .page p, .page li { color: var(--ink-body); font-size: 16px; }
 .page ul { padding-left: 22px; }
-.page code { background: rgba(240, 230, 206, 0.07); padding: 2px 7px; border-radius: 5px; font-size: 14px; color: var(--ink); }
-@media (prefers-color-scheme: light) {
-  .page code { background: rgba(61, 28, 8, 0.08); }
+.page code { background: rgba(61, 28, 8, 0.08); padding: 2px 7px; border-radius: 5px; font-size: 14px; color: var(--ink); }
+@media (prefers-color-scheme: dark) {
+  .page code { background: rgba(240, 230, 206, 0.07); }
 }
 .back { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-muted); font-weight: 600; font-size: 14px; margin-bottom: 22px; }
 .back:hover { color: var(--ink); text-decoration: none; }

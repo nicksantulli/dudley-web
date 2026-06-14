@@ -1,17 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -25 434 434" width="64" height="64" role="img" aria-label="Dudley Development">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Dudley Development">
   <!--
-    Dudley Development — Longhorn-D Web Mark
-    DUD-198 · Cowhide Rebrand (Jun 14 2026)
-    Cream bg (#F0E6CE) + dark brown monoline Longhorn-D (#3D1C08)
+    Dudley Development — favicon wrapper
+    DUD-198 · Provides a square cream bg for the transparent-PNG longhorn-D mark
+    The actual mark is the operator-provided dudley-mark.png (1150×640 RGBA)
   -->
-  <rect x="-12" y="-25" width="434" height="434" rx="88" fill="#F0E6CE"/>
-  <g stroke="#3D1C08" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <path d="M 142,170 C 170,144 228,144 266,170"/>
-    <path d="M 158,160 C 130,130 74,95 42,70 C 30,60 32,76 46,84"/>
-    <path d="M 250,160 C 278,130 336,95 368,70 C 380,60 378,76 364,84"/>
-    <line x1="142" y1="170" x2="142" y2="318"/>
-    <path d="M 266,170 C 322,172 332,204 332,244 C 332,284 322,316 266,318"/>
-    <line x1="142" y1="318" x2="266" y2="318"/>
-    <line x1="122" y1="325" x2="162" y2="325"/>
-  </g>
+  <rect width="64" height="64" rx="14" fill="#F0E6CE"/>
+  <image href="dudley-mark.png" x="4" y="16" width="56" height="31"/>
 </svg>
