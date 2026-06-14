@@ -13,8 +13,14 @@ const { app, related } = Astro.props;
 const path = `/apps/${app.slug}/`;
 const url = appStoreUrl(app.appStoreId);
 
+// SoftwareApplication is Google's app-listing rich-result type (name, category,
+// OS, free Offer). Note: NO FAQPage schema — Google restricts FAQ rich results to
+// authoritative gov/health sources, so we keep the visible FAQ (good for AEO) but
+// don't emit FAQPage markup. aggregateRating is intentionally omitted until we have
+// real App Store reviews to source it from (faking it is a guidelines violation).
 const appSchema: Record<string, any> = {
-  '@type': 'MobileApplication',
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
   name: app.name,
   description: app.description,
   url: abs(path),
@@ -25,18 +31,8 @@ const appSchema: Record<string, any> = {
   featureList: app.featureList,
 };
 if (url) appSchema.downloadUrl = url;
-
-const faqSchema = {
-  '@type': 'FAQPage',
-  mainEntity: app.faq.map((f: any) => ({
-    '@type': 'Question',
-    name: f.q,
-    acceptedAnswer: { '@type': 'Answer', text: f.a },
-  })),
-};
-const schema = { '@context': 'https://schema.org', '@graph': [appSchema, faqSchema] };
 ---
-<Base title={`${app.name} — ${app.tagline}`} description={app.description} path={path} ogImage={app.icon} schema={schema}>
+<Base title={`${app.name} — ${app.tagline}`} description={app.description} path={path} ogImage={app.icon} schema={appSchema} breadcrumbLeaf={app.name}>
   <main class="page">
     <div class="wrap" style="max-width:760px;">
       <nav class="crumbs">

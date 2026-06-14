@@ -8,9 +8,13 @@ export interface Props {
   ogImage?: string;        // site-relative or absolute
   schema?: object | null;  // page-specific JSON-LD
   noindex?: boolean;
+  // Human-readable name for the final breadcrumb crumb (the current page). When
+  // omitted, the cleaned page title is used. Pass this when the page title is long
+  // or differs from how the page reads in a trail (e.g. an app's full tagline).
+  breadcrumbLeaf?: string;
 }
 
-const { title, description, path, ogImage = '/assets/dudley-lockup.png', schema = null, noindex = false } = Astro.props;
+const { title, description, path, ogImage = '/assets/dudley-lockup.png', schema = null, noindex = false, breadcrumbLeaf } = Astro.props;
 const canonical = abs(path);
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : abs(ogImage);
 const fullTitle = title.includes(STUDIO) ? title : `${title} | ${STUDIO}`;
@@ -24,6 +28,40 @@ const orgSchema = {
   contactPoint: { '@type': 'ContactPoint', email: SUPPORT_EMAIL, contactType: 'customer support' },
   sameAs: SOCIAL_LINKS,
 };
+
+// Site-wide BreadcrumbList JSON-LD, derived from the page path so every non-home
+// page emits a valid trail with zero per-page wiring. Known segments get a clean
+// label; unknown segments (slugs) are title-cased, and the final crumb uses
+// `breadcrumbLeaf` (or the page title) so it reads naturally.
+const CRUMB_LABELS: Record<string, string> = {
+  apps: 'Apps', blog: 'Blog', compare: 'Compare', tools: 'Tools',
+  archetypes: 'Archetypes', support: 'Support', privacy: 'Privacy',
+  about: 'About', tags: 'Tags',
+};
+// Segments without a dedicated index page point at the closest real destination.
+const CRUMB_HREF: Record<string, string> = { apps: '/#apps' };
+const titleCase = (s: string) => s.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+const crumbLeaf = (breadcrumbLeaf ?? title).replace(` | ${STUDIO}`, '').trim();
+
+const segs = path.split('/').filter(Boolean);
+let breadcrumbSchema: object | null = null;
+if (segs.length > 0) {
+  const itemListElement: object[] = [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: abs('/') },
+  ];
+  let acc = '';
+  segs.forEach((seg, i) => {
+    acc += '/' + seg;
+    const isLeaf = i === segs.length - 1;
+    itemListElement.push({
+      '@type': 'ListItem',
+      position: i + 2,
+      name: isLeaf ? crumbLeaf : (CRUMB_LABELS[seg] ?? titleCase(seg)),
+      item: abs(CRUMB_HREF[seg] ?? acc + '/'),
+    });
+  });
+  breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement };
+}
 
 const nav = [
   { href: rel('/#apps'), label: 'Apps' },
@@ -65,13 +103,14 @@ const year = new Date().getFullYear();
   <meta name="twitter:image" content={ogImageUrl} />
 
   <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+  {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
   {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
 </head>
 <body>
   <header class="site">
     <div class="wrap">
       <a class="brand" href={rel('/')}>
-        <img class="mark" src={rel('/assets/dudley-mark.png')} alt="" />
+        <img class="mark" src={rel('/assets/dudley-mark.png')} alt="" aria-hidden="true" />
         Dudley Development
       </a>
       <nav class="top">

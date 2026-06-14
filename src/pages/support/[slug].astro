@@ -17,23 +17,16 @@ const support = data.support;
 const subject = encodeURIComponent(`${data.name} — Support`);
 const description = `Support and FAQs for ${data.name} by Dudley Development.`;
 
-// FAQPage JSON-LD, built from the same data shown below so schema and content stay in sync.
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: support.map((f) => ({
-    '@type': 'Question',
-    name: f.q,
-    acceptedAnswer: { '@type': 'Answer', text: f.a },
-  })),
-};
+// No FAQPage JSON-LD — Google restricts FAQ rich results to authoritative gov/health
+// sources, so we keep the visible Q&A (good for AEO) but don't emit FAQPage markup.
+// Base still emits a site-wide BreadcrumbList for this page.
 ---
 <Base
   title={`Support · ${data.name}`}
   description={description}
   path={`/support/${app.slug}/`}
   ogImage={data.icon}
-  schema={faqSchema}
+  breadcrumbLeaf={data.name}
 >
   <main class="page">
     <div class="wrap" style="max-width:720px;">

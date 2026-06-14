@@ -24,20 +24,10 @@ const listSchema = {
     ...(a.appStoreUrl ? { url: a.appStoreUrl } : {}),
   })),
 };
-const graph: any[] = [listSchema];
-if (cmp.faq && cmp.faq.length) {
-  graph.push({
-    '@type': 'FAQPage',
-    mainEntity: cmp.faq.map((f: any) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
-    })),
-  });
-}
-const schema = { '@context': 'https://schema.org', '@graph': graph };
+// No FAQPage markup (Google restricts FAQ rich results); the visible FAQ stays.
+const schema = { '@context': 'https://schema.org', ...listSchema };
 ---
-<Base title={cmp.title} description={cmp.description} path={path} schema={schema}>
+<Base title={cmp.title} description={cmp.description} path={path} schema={schema} breadcrumbLeaf={cmp.title}>
   <main class="page">
     <div class="wrap" style="max-width:760px;">
       <nav class="crumbs">
@@ -50,17 +40,19 @@ const schema = { '@context': 'https://schema.org', '@graph': graph };
 
       <slot />
 
-      <h2>Quick picks</h2>
+      <h2>Feature comparison at a glance</h2>
       <table class="cmp-table">
+        <caption class="sr-only">Feature matrix comparing {cmp.title} by best use, price, and standout feature.</caption>
         <thead>
-          <tr><th>App</th><th>Best for</th><th>Price</th></tr>
+          <tr><th scope="col">App</th><th scope="col">Best for</th><th scope="col">Price</th><th scope="col">Standout feature</th></tr>
         </thead>
         <tbody>
           {cmp.apps.map((a: any) => (
             <tr>
-              <td>{a.name}</td>
+              <th scope="row">{a.name}{a.isDudleyApp && <span class="pick-tag">Our app</span>}</th>
               <td>{a.bestFor ?? '—'}</td>
               <td>{a.price}</td>
+              <td>{a.pros?.[0] ?? '—'}</td>
             </tr>
           ))}
         </tbody>

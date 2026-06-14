@@ -25,6 +25,23 @@ Photo rating apps are having a moment. Which is fair: taking a picture of yourse
 
 Here is an honest ranking of the notable photo rating apps on iPhone in 2026, what they actually do, who they're for, and how funny they are.
 
+## The photo rating apps at a glance
+
+<table class="cmp-table">
+  <caption class="sr-only">Comparison of the funniest photo rating apps on iPhone in 2026 by what they rate, funny factor, and cost.</caption>
+  <thead>
+    <tr><th scope="col">App</th><th scope="col">What it rates</th><th scope="col">Funny factor</th><th scope="col">Cost</th></tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">Vibe Rater</th><td>Your vibe across six dimensions, plus an archetype and aura color</td><td>High — chaotic copy and a haptic "judging" bit</td><td>Free, ad-supported</td></tr>
+    <tr><th scope="row">Umax</th><td>Facial attractiveness, with specific AI feedback</td><td>Situational — the harshness is the feature</td><td>Free with in-app purchases</td></tr>
+    <tr><th scope="row">Photofeeler</th><td>Real-human ratings for professional, social, and dating photos</td><td>Low — it's a utility, not a comedy</td><td>Free tier, paid credits</td></tr>
+    <tr><th scope="row">Hot or Not</th><td>1–10 attractiveness (the legacy app that started the genre)</td><td>The original wasn't trying to be funny</td><td>Varies by current owner</td></tr>
+  </tbody>
+</table>
+
+The rest of this post breaks down each one in detail.
+
 ---
 
 ## 1. Vibe Rater — Coming Soon to the App Store
@@ -101,7 +118,7 @@ Know which one you're downloading. If you need to optimize a headshot for a job 
 
 ---
 
-**Vibe Rater is coming soon to the App Store.** Free, ad-supported. The phone vibrates while it reads you. [Get notified when it drops.](https://dudleydevelopment.com/apps/vibe-rater/)
+**Vibe Rater is coming soon to the App Store.** Free, ad-supported. The phone vibrates while it reads you. [Get notified when it drops.](https://dudleyapps.com/apps/vibe-rater/)
 
 ---
 
