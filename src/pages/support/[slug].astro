@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { rel, SUPPORT_EMAIL } from '../../consts';
+
+export async function getStaticPaths() {
+  // One support page per app that has support content. Apps without a `support`
+  // block (e.g. coming-soon stubs) don't get a page until they add one.
+  const apps = (await getCollection('apps')).filter((a) => a.data.support && a.data.support.length > 0);
+  return apps.map((app) => ({ params: { slug: app.slug }, props: { app } }));
+}
+
+const { app } = Astro.props;
+const data = app.data;
+const support = data.support;
+
+const subject = encodeURIComponent(`${data.name} — Support`);
+const description = `Support and FAQs for ${data.name} by Dudley Development.`;
+
+// FAQPage JSON-LD, built from the same data shown below so schema and content stay in sync.
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: support.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+<Base
+  title={`Support · ${data.name}`}
+  description={description}
+  path={`/support/${app.slug}/`}
+  ogImage={data.icon}
+  schema={faqSchema}
+>
+  <main class="page">
+    <div class="wrap" style="max-width:720px;">
+      <a class="back" href={rel('/support/')}>← All apps</a>
+      <h1>{data.name} Support</h1>
+      <p class="updated">{data.tagline}</p>
+
+      <p>
+        Below are answers to the questions we hear most. Still stuck? Email us with your device and iOS
+        version, the screen you were on, and what happened — a screenshot or recording helps.
+      </p>
+      <p>
+        <a class="btn primary" href={`mailto:${SUPPORT_EMAIL}?subject=${subject}`}>Email Support</a>
+      </p>
+
+      {support.map((item) => (
+        <div class="card">
+          <strong>{item.q}</strong>
+          <p style="margin:6px 0 0;">{item.a}</p>
+        </div>
+      ))}
+
+      <h2>Still need a hand?</h2>
+      <p>
+        Email <a href={`mailto:${SUPPORT_EMAIL}?subject=${subject}`}>{SUPPORT_EMAIL}</a> and we'll get back to you.
+      </p>
+    </div>
+  </main>
+</Base>

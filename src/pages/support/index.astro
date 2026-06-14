@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { rel, SUPPORT_EMAIL } from '../../consts';
+
+// Data-driven: any app with a non-empty `support` array gets a card here and its
+// own /support/<slug> page. Adding support for a new app = add a `support:` block
+// to its src/content/apps/<slug>.mdx — no changes to this page required.
+const apps = (await getCollection('apps'))
+  .filter((a) => a.data.support && a.data.support.length > 0)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const description = 'Support for Dudley Development apps — pick your app for FAQs and how to reach us.';
+---
+<Base title="Support" description={description} path="/support/">
+  <main class="page">
+    <div class="wrap" style="max-width:720px;">
+      <a class="back" href={rel('/')}>← Home</a>
+      <h1>Support</h1>
+      <p class="updated">Pick your app for FAQs — we read every message.</p>
+
+      <p>
+        Need help with a Dudley app? Choose it below for answers to common questions, or email us and
+        we'll chase it down. It helps to include your device and iOS version (Settings → General → About),
+        which app and screen, and what happened — a screenshot or recording is gold.
+      </p>
+
+      <ul class="policy-list">
+        {apps.map((app) => (
+          <li>
+            <a class="row" href={rel(`/support/${app.slug}`)}>
+              <img src={rel(app.data.icon)} alt="" />
+              <span class="meta"><b>{app.data.name}</b><span>Help &amp; FAQs</span></span>
+              <span class="chev">→</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <h2>Still need a hand?</h2>
+      <p>
+        Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> and we'll get back to you.
+      </p>
+    </div>
+  </main>
+</Base>

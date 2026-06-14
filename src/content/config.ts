@@ -18,6 +18,11 @@ const apps = defineCollection({
     primaryKeyword: z.string(),
     featureList: z.array(z.string()).default([]),
     faq: z.array(faqItem),
+    // Per-app SUPPORT FAQ (troubleshooting / how-do-I, distinct from the marketing `faq`).
+    // Data-driven: any app with a non-empty `support` array automatically gets a
+    // /support/<slug> page and a card on the /support index. Leave it empty for apps
+    // that don't have a support page yet (coming-soon stubs); fill it in when they ship.
+    support: z.array(faqItem).default([]),
     relatedArchetypes: z.array(z.string()).optional(),
     relatedApps: z.array(z.string()).optional(),
     // Set false for a "Coming soon" stub that has no full landing/privacy page yet.
