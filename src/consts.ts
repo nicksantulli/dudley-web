@@ -9,7 +9,19 @@ export const ORIGIN = ORIGIN_HOST + BASE; // canonical origin for the deployed s
 export const STUDIO = 'Dudley Development';
 export const SUPPORT_EMAIL = 'support@dudleyapps.com';
 export const CONTACT_EMAIL = 'hello@dudleyapps.com'; // general / say-hi contact (Cloudflare Email Routing → Owner inbox)
-export const SOCIAL_LINKS: string[] = []; // add Bluesky/X URLs to populate schema sameAs
+// Follow-us socials — the single source of truth for the footer + schema sameAs.
+// Add/remove a platform here and both the footer icons and JSON-LD update.
+// `icon` keys into the SVG map in Base.astro. (Reddit intentionally excluded —
+// promotion happens in subreddits, not via a profile link.)
+export interface Social { name: string; label: string; url: string; icon: string; }
+export const SOCIALS: Social[] = [
+  { name: 'X', label: 'Follow Dudley Development on X', url: 'https://x.com/DudleyAppDev', icon: 'x' },
+  { name: 'Instagram', label: 'Follow Dudley Development on Instagram', url: 'https://instagram.com/dudleyappdev', icon: 'instagram' },
+  { name: 'TikTok', label: 'Follow Dudley Development on TikTok', url: 'https://tiktok.com/@dudley_apps', icon: 'tiktok' },
+];
+
+// Schema sameAs derives from the same list, so it never drifts.
+export const SOCIAL_LINKS: string[] = SOCIALS.map((s) => s.url);
 
 // Build a site-relative href that respects the GitHub Pages base path.
 export function rel(path: string): string {

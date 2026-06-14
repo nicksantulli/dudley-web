@@ -290,6 +290,10 @@ footer.site nav { display: flex; gap: 20px; flex-wrap: wrap; }
 footer.site nav a { color: var(--ink-muted); }
 footer.site nav a:hover { color: var(--ink); }
 footer.site .copy { color: var(--ink-faint); }
+footer.site nav.socials { gap: 16px; }
+footer.site nav.socials a { display: inline-flex; align-items: center; color: var(--ink-muted); transition: color .12s ease, transform .12s ease; }
+footer.site nav.socials a:hover { color: var(--accent); transform: translateY(-1px); }
+footer.site nav.socials svg { display: block; }
 
 /* ---- Blog ---- */
 .blog-hero { margin: 0 0 26px; }
