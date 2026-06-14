@@ -11,6 +11,7 @@
 
 import { execSync } from 'node:child_process';
 import { existsSync, rmSync } from 'node:fs';
+import { pingIndexNow, pathToUrl } from './indexnow-ping.mjs';
 
 const run = (cmd, opts = {}) => execSync(cmd, { stdio: 'inherit', ...opts });
 const out = (cmd) => execSync(cmd, { encoding: 'utf8' }).trim();
@@ -42,7 +43,22 @@ try {
     const sha = out('git rev-parse --short HEAD');
     run(`git -C ${WORKTREE} commit -m "deploy: build from ${sha}"`);
     run(`git -C ${WORKTREE} push origin ${BRANCH}`);
-    console.log('\nDeployed to https://nicksantulli.github.io/dudley-web/');
+    console.log('\nDeployed to https://dudleyapps.com/');
+
+    // 5. IndexNow: tell Bing & friends exactly which pages changed this deploy.
+    // Parse porcelain status for added/modified/renamed .html files → URLs.
+    const changedUrls = status
+      .split('\n')
+      .map((line) => line.trim())
+      .filter(Boolean)
+      .map((line) => {
+        const path = line.slice(2).trim().split(' -> ').pop(); // handle renames
+        return path && path.endsWith('.html') ? pathToUrl(path) : null;
+      })
+      .filter(Boolean);
+    const result = await pingIndexNow(changedUrls);
+    if (result.ok) console.log(`IndexNow: submitted ${result.count} URL(s) (HTTP ${result.status}).`);
+    else console.log(`IndexNow: not submitted — ${result.skipped || result.error || `HTTP ${result.status}`}.`);
   }
 } finally {
   run(`git worktree remove --force ${WORKTREE}`);
