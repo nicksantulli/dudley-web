@@ -23,20 +23,10 @@ const howToSchema = {
     { '@type': 'HowToStep', name: 'Get your full score in the app', text: 'Download Vibe Rater for a photo-based vibe score, aura color, and shareable card.' },
   ],
 };
-const graph: any[] = [howToSchema];
-if (tool.faq && tool.faq.length) {
-  graph.push({
-    '@type': 'FAQPage',
-    mainEntity: tool.faq.map((f: any) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
-    })),
-  });
-}
-const schema = { '@context': 'https://schema.org', '@graph': graph };
+// No FAQPage markup (Google restricts FAQ rich results); the visible FAQ stays.
+const schema = { '@context': 'https://schema.org', ...howToSchema };
 ---
-<Base title={tool.title} description={tool.description} path={path} schema={schema}>
+<Base title={tool.title} description={tool.description} path={path} schema={schema} breadcrumbLeaf={tool.title}>
   <main class="page">
     <div class="wrap" style="max-width:720px;">
       <nav class="crumbs">

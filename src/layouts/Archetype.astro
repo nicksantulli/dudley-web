@@ -28,17 +28,10 @@ const articleSchema = {
   },
   about: { '@type': 'Thing', name: archetype.name },
 };
-const faqSchema = {
-  '@type': 'FAQPage',
-  mainEntity: archetype.faq.map((f: any) => ({
-    '@type': 'Question',
-    name: f.q,
-    acceptedAnswer: { '@type': 'Answer', text: f.a },
-  })),
-};
-const schema = { '@context': 'https://schema.org', '@graph': [articleSchema, faqSchema] };
+// No FAQPage markup (Google restricts FAQ rich results); the visible FAQ stays.
+const schema = { '@context': 'https://schema.org', ...articleSchema };
 ---
-<Base title={`What Is ${archetype.name}? Meaning & Signs`} description={archetype.description} path={path} schema={schema}>
+<Base title={`What Is ${archetype.name}? Meaning & Signs`} description={archetype.description} path={path} schema={schema} breadcrumbLeaf={archetype.name}>
   <main class="page">
     <div class="wrap" style="max-width:720px;">
       <nav class="crumbs">

@@ -1,6 +1,7 @@
 ---
-// Visible FAQ. The FAQPage JSON-LD is emitted by each page layout (in <head>),
-// built from the same `faq` data — so the schema and the visible content always match.
+// Visible FAQ — intentionally NOT mirrored by FAQPage JSON-LD. Google restricts FAQ
+// rich results to authoritative gov/health sources, so we render the Q&A for readers
+// and AI answer engines (good for AEO) but deliberately emit no FAQPage markup.
 export interface Props {
   items: { q: string; a: string }[];
   heading?: string;
