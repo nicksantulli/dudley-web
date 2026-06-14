@@ -31,8 +31,8 @@ const articleSchema = {
   headline: post.title,
   description: post.description,
   url: abs(path),
-  datePublished: published.toISOString().slice(0, 10),
-  dateModified: updated.toISOString().slice(0, 10),
+  datePublished: published.toISOString(),
+  dateModified: updated.toISOString(),
   author: { '@type': 'Organization', name: post.author ?? STUDIO, url: ORIGIN },
   publisher: {
     '@type': 'Organization',
