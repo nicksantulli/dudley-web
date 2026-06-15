@@ -3,7 +3,10 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { rel, abs, ORIGIN, appStoreUrl } from '../consts';
 
-const apps = (await getCollection('apps')).sort((a, b) => a.data.order - b.data.order);
+const allApps = (await getCollection('apps')).sort((a, b) => a.data.order - b.data.order);
+// Studio's own apps vs. client work (apps built for a partner — see `developedFor`).
+const apps = allApps.filter((a) => !a.data.developedFor);
+const clientApps = allApps.filter((a) => a.data.developedFor);
 
 const schema = {
   '@context': 'https://schema.org',
@@ -66,6 +69,48 @@ const description =
         </ul>
       </div>
     </section>
+
+    {clientApps.length > 0 && (
+      <section id="client-work">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Client work</h2>
+            <p class="sub">Apps we design and build for partners, under their brand.</p>
+          </div>
+
+          <ul class="app-list">
+            {clientApps.map((app) => {
+              const url = appStoreUrl(app.data.appStoreId);
+              const live = app.data.status === 'live' && !!url;
+              const hasPage = app.data.landingPage !== false;
+              const slug = app.slug;
+              return (
+                <li class="app-row">
+                  <img class="icon" src={rel(app.data.icon)} alt={`${app.data.name} app icon`} width="64" height="64" loading="lazy" />
+                  <div class="row-main">
+                    <div class="row-head">
+                      <h3>{app.data.name}</h3>
+                      <span class="partner-tag">Created for {app.data.developedFor}</span>
+                      <span class={`badge ${live ? 'live' : 'soon'}`}>
+                        <span class="dot"></span> {live ? 'Live' : 'Coming soon'}
+                      </span>
+                    </div>
+                    <p class="tagline" title={app.data.tagline}>{app.data.tagline}</p>
+                    <p class="desc">{app.data.description}</p>
+                  </div>
+                  <div class="actions">
+                    {live && <a class="btn primary" href={url} rel="noopener">Download</a>}
+                    {hasPage && <a class={`btn${live ? '' : ' primary'}`} href={rel(`/apps/${slug}/`)}>Learn more</a>}
+                    {hasPage && <a class="btn ghost" href={rel(`/privacy/${slug}`)}>Privacy</a>}
+                    {!live && !hasPage && <span class="btn ghost disabled" aria-disabled="true">Coming soon</span>}
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+    )}
 
     <section style="padding-top:8px;">
       <div class="wrap">

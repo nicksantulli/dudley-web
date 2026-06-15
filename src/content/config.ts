@@ -13,6 +13,11 @@ const apps = defineCollection({
     icon: z.string(),
     status: z.enum(['live', 'coming_soon', 'in_development']),
     category: z.string(),
+    // Client work: the partner/brand this app was built FOR (e.g. "HomeLight").
+    // When set, the app is rendered in the homepage "Client work" section with a
+    // "Created for <partner>" label instead of in the studio's own-apps list.
+    // Leave unset for Dudley's own apps.
+    developedFor: z.string().optional(),
     operatingSystem: z.string().default('iOS 16.0 or later'),
     applicationCategory: z.string().default('EntertainmentApplication'),
     primaryKeyword: z.string(),
