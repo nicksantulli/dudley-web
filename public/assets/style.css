@@ -136,6 +136,11 @@ section .sub { color: var(--ink-muted); margin: 0 0 34px; font-size: 16px; }
 .badge.live { background: rgba(58, 176, 112, 0.14); color: var(--good); }
 .badge.soon { background: rgba(212, 124, 26, 0.16); color: var(--accent); }
 .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.partner-tag {
+  display: inline-flex; align-items: center; font-size: 11px; font-weight: 800;
+  letter-spacing: 0.6px; text-transform: uppercase; padding: 4px 10px; border-radius: 999px;
+  color: var(--ink-muted); border: 1px solid var(--border);
+}
 .app-card .actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
 /* ---------- Homepage app list (uniform rows) ---------- */
