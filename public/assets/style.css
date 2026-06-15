@@ -337,3 +337,20 @@ a.tag span { color: var(--ink-faint); font-weight: 500; }
 .post-body blockquote { border-left: 3px solid var(--accent); margin: 20px 0; padding: 4px 0 4px 18px; color: var(--ink-muted); font-style: italic; }
 .post-body strong { color: var(--ink); }
 .post-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+/* ---------- Mobile optimization (≤640px) ---------- */
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  /* Header: brand row 1, nav centered row 2 — never overflows */
+  header.site .wrap { flex-wrap: wrap; height: auto; padding-top: 9px; padding-bottom: 9px; row-gap: 6px; }
+  .brand { font-size: 15px; gap: 9px; }
+  .brand .mark { height: 28px; }
+  nav.top { width: 100%; justify-content: center; gap: 18px; font-size: 14px; }
+  /* Breathing room */
+  .hero { padding: 52px 0 40px; }
+  section { padding: 40px 0; }
+  .section-head { margin-bottom: 28px; }
+  /* App rows: tighter, smaller icon */
+  .app-row { padding: 18px; grid-template-columns: 52px 1fr; column-gap: 14px; }
+  .app-row > .icon { width: 52px; height: 52px; }
+}
