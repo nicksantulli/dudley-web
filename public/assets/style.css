@@ -57,9 +57,9 @@ a:hover { text-decoration: underline; }
 /* ---------- Header ---------- */
 header.site {
   position: sticky; top: 0; z-index: 10;
-  background: rgba(242, 232, 213, 0.90);
+  background: rgba(208, 180, 134, 0.96);
   backdrop-filter: saturate(140%) blur(12px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #7A4B33;
 }
 @media (prefers-color-scheme: dark) {
   header.site { background: rgba(28, 13, 6, 0.88); }
