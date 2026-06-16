@@ -1,7 +1,8 @@
 ---
-// Visible FAQ — intentionally NOT mirrored by FAQPage JSON-LD. Google restricts FAQ
-// rich results to authoritative gov/health sources, so we render the Q&A for readers
-// and AI answer engines (good for AEO) but deliberately emit no FAQPage markup.
+// Visible FAQ for readers and AI answer engines (good for AEO). The matching FAQPage
+// JSON-LD is emitted by AppLanding.astro (built from the same app.faq) so the machine-
+// readable Q&A stays in sync with what's rendered here. This component owns the visible
+// markup only; it does not emit structured data itself.
 export interface Props {
   items: { q: string; a: string }[];
   heading?: string;
