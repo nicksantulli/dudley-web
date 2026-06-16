@@ -11,6 +11,7 @@ const apps = defineCollection({
     appStoreId: z.string().optional().default(''),
     bundleId: z.string().optional(),
     icon: z.string(),
+    ogImage: z.string().optional(),
     status: z.enum(['live', 'coming_soon', 'in_development']),
     category: z.string(),
     // Client work: the partner/brand this app was built FOR (e.g. "HomeLight").

@@ -49,7 +49,7 @@ const faqSchema =
     : null;
 const pageSchema = faqSchema ? [appSchema, faqSchema] : appSchema;
 ---
-<Base title={`${app.name} — ${app.tagline}`} description={app.description} path={path} ogImage={app.icon} schema={pageSchema} breadcrumbLeaf={app.name}>
+<Base title={`${app.name} — ${app.tagline}`} description={app.description} path={path} ogImage={app.ogImage ?? app.icon} schema={pageSchema} breadcrumbLeaf={app.name}>
   <main class="page">
     <div class="wrap" style="max-width:760px;">
       <nav class="crumbs">
