@@ -14,10 +14,8 @@ const path = `/apps/${app.slug}/`;
 const url = appStoreUrl(app.appStoreId);
 
 // SoftwareApplication is Google's app-listing rich-result type (name, category,
-// OS, free Offer). Note: NO FAQPage schema — Google restricts FAQ rich results to
-// authoritative gov/health sources, so we keep the visible FAQ (good for AEO) but
-// don't emit FAQPage markup. aggregateRating is intentionally omitted until we have
-// real App Store reviews to source it from (faking it is a guidelines violation).
+// OS, free Offer). aggregateRating is intentionally omitted until we have real App
+// Store reviews to source it from (faking it is a guidelines violation).
 const appSchema: Record<string, any> = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
@@ -31,8 +29,27 @@ const appSchema: Record<string, any> = {
   featureList: app.featureList,
 };
 if (url) appSchema.downloadUrl = url;
+
+// FAQPage JSON-LD built from app.faq. Google won't render an FAQ rich result for a
+// non-gov/health source, but this is still valid structured data and the Owner wants
+// it for AEO / AI-citation value — answer engines (ChatGPT, Perplexity, Claude) parse
+// FAQPage to lift clean Q&A pairs. Emitted alongside SoftwareApplication as a JSON-LD
+// array (both objects in one @graph-style script), which the Rich Results Test accepts.
+const faqSchema =
+  app.faq && app.faq.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: app.faq.map((f: { q: string; a: string }) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      }
+    : null;
+const pageSchema = faqSchema ? [appSchema, faqSchema] : appSchema;
 ---
-<Base title={`${app.name} — ${app.tagline}`} description={app.description} path={path} ogImage={app.icon} schema={appSchema} breadcrumbLeaf={app.name}>
+<Base title={`${app.name} — ${app.tagline}`} description={app.description} path={path} ogImage={app.icon} schema={pageSchema} breadcrumbLeaf={app.name}>
   <main class="page">
     <div class="wrap" style="max-width:760px;">
       <nav class="crumbs">
