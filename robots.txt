@@ -17,4 +17,12 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
+# Bingbot powers Bing search + Copilot / ChatGPT web answers; CCBot is Common
+# Crawl, the corpus many answer engines train and ground on. Both explicitly allowed.
+User-agent: Bingbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://dudleyapps.com/sitemap-index.xml
