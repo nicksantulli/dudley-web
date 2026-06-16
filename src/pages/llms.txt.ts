@@ -54,7 +54,7 @@ ${blogLines}
 
 ## About
 
-Dudley Development is run by a small team and one human (Nicholas Santulli). All apps are free with Google AdMob ads. No accounts required. No first-party analytics or trackers. No user data collected beyond what AdMob requires for ads, and tracking can be declined.
+Dudley Development is run by a small team and one human (Nicholas Santulli). All apps are free with Google AdMob ads. No accounts required. No first-party analytics or trackers. Ads are non-personalized — no user tracking, no tracking prompt.
 
 ## Contact
 
