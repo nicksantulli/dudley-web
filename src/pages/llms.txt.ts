@@ -18,7 +18,7 @@ export async function GET() {
 
 ## Apps
 
-- [Powell Prowl: Rate Chase](${abs('/apps/powell-prowl/')}): A free satirical iPhone arcade game — a 31-level whack-and-chase romp through a parody of Federal Reserve interest-rate drama. Live on the App Store. Requires iOS 16.6+.
+- [Powell Prowl: Rate Chase](${abs('/apps/powell-prowl/')}): A free satirical iPhone arcade game — a 60-level whack-and-chase romp through a parody of Federal Reserve interest-rate drama. Live on the App Store. Requires iOS 16.6+.
 - [Vibe Rater](${abs('/apps/vibe-rater/')}): A free iPhone entertainment app that rates your vibe from a photo. Get your archetype (Main Character, Final Boss, Quiet Luxury, Cottagecore, and more), an aura color, and a six-dimension scorecard. The phone vibrates while it reads you. Photos are sent to the rating service, rated in memory, and never stored. Free with optional ad-free upgrade (in-app purchase). Launching on the App Store soon.
 - Table Talk: A free iPhone app of beautifully designed conversation-starter cards for date nights, family dinners, and friend groups. No account, works offline. Free with optional ad-free upgrade (in-app purchase). iOS. Launching on the App Store soon.
 - Last Human: A free satirical top-down arcade game for iPhone — you're the last human in an AI-automated office, dodging AutoBots to reach the time clock before the timer runs out. Free with optional ad-free upgrade (in-app purchase). iOS. Launching on the App Store soon.

@@ -1,7 +1,19 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { rel, SUPPORT_EMAIL, CONTACT_EMAIL } from '../consts';
 const description = 'Dudley Development is a small independent studio building polished, playful iPhone apps.';
+
+// "The apps" is data-driven off the same content collection that powers the app cards,
+// per-app pages, and launch-status mechanism (DUD-182) — so the list, ordering, and
+// live/coming-soon status here can never drift from the rest of the site again.
+// Client work (developedFor set, e.g. HomeLight) is excluded — those are the studio's
+// own apps only. Flip an app's `status` in its .mdx and every surface updates together.
+const ownApps = (await getCollection('apps'))
+  .filter((a) => !a.data.developedFor)
+  .sort((x, y) => x.data.order - y.data.order);
+const statusLabel = (s: string) =>
+  s === 'live' ? 'Live on the App Store' : s === 'in_development' ? 'In development' : 'Coming soon';
 ---
 <Base title="About" description={description} path="/about">
   <main class="page">
@@ -20,16 +32,22 @@ const description = 'Dudley Development is a small independent studio building p
         <li><strong>Free to start.</strong> Every app is free to download and play. No paywalls in the way of the fun.</li>
         <li><strong>No accounts.</strong> You don't sign up, log in, or hand over an email to use a Dudley app.</li>
         <li><strong>Your data stays yours.</strong> We don't run our own analytics or trackers. What an app saves, it saves on your device.</li>
-        <li><strong>Honest about ads.</strong> Our free apps are ad-supported through Google AdMob, disclosed plainly, and you can always decline tracking.</li>
+        <li><strong>Honest about ads.</strong> Our free apps are ad-supported through Google AdMob and disclosed plainly. The ads are non-personalized — we don't track you and there's no tracking prompt.</li>
         <li><strong>Polish is the point.</strong> Tight controls, real haptics, and a sense of humor — details that make an app feel made, not generated.</li>
       </ul>
 
       <h2>The apps</h2>
-      <p>
-        <strong>Powell Prowl: Rate Chase</strong> — a 31-level arcade satire, live on the App Store.
-        <strong>Vibe Rater</strong> — a tongue-in-cheek photo-vibe rater that buzzes while it reads you,
-        currently in development. See them both on the <a href={rel('/#apps')}>home page</a>.
-      </p>
+      <ul class="app-list">
+        {ownApps.map((a) => (
+          <li>
+            <strong>{a.data.landingPage !== false
+              ? <a href={rel(`/apps/${a.slug}/`)}>{a.data.name}</a>
+              : a.data.name}</strong> — {a.data.tagline}
+            <span class="updated"> · {statusLabel(a.data.status)}</span>
+          </li>
+        ))}
+      </ul>
+      <p>See them all on the <a href={rel('/#apps')}>home page</a>.</p>
 
       <h2>Get in touch</h2>
       <p>
@@ -40,3 +58,9 @@ const description = 'Dudley Development is a small independent studio building p
     </div>
   </main>
 </Base>
+
+<style>
+  .app-list { list-style: none; padding: 0; margin: 0; }
+  .app-list li { padding: .5rem 0; border-bottom: 1px solid var(--hairline, rgba(0,0,0,.08)); line-height: 1.5; }
+  .app-list li:last-child { border-bottom: 0; }
+</style>
