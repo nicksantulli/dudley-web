@@ -26,6 +26,7 @@ export function abs(path: string): string {
 export const APP_STORE = {
   powellProwl: '6775539250',
   vibeRater: '', // set when Vibe Rater is approved
+  dudeWheresThisHouse: '6779785617',
 };
 
 export function appStoreUrl(id: string): string {
