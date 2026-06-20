@@ -17,7 +17,7 @@ const updated = (post.updatedDate ?? post.publishDate) as Date;
 
 // Which app to surface in the CTA — first related app, defaulting to Vibe Rater.
 const APP_META: Record<string, { name: string; id: string }> = {
-  'powell-prowl': { name: 'Powell Prowl', id: APP_STORE.powellProwl },
+  'monetary-policy-independence-day': { name: 'Monetary Policy: Independence Day', id: APP_STORE.monetaryPolicyIndependenceDay },
   'vibe-rater': { name: 'Vibe Rater', id: APP_STORE.vibeRater },
 };
 const ctaKey = post.relatedApps?.find((a: string) => APP_META[a]) ?? 'vibe-rater';

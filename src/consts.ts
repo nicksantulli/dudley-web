@@ -24,7 +24,7 @@ export function abs(path: string): string {
 
 // App Store IDs (single source of truth — update Vibe Rater when it ships).
 export const APP_STORE = {
-  powellProwl: '6775539250',
+  monetaryPolicyIndependenceDay: '6775539250',
   vibeRater: '', // set when Vibe Rater is approved
   dudeWheresThisHouse: '6779785617',
 };

@@ -1,0 +1,21 @@
+---
+export const prerender = true;
+
+export function GET() {
+  return new Response(null, {
+    status: 301,
+    headers: { Location: '/apps/monetary-policy-independence-day/' },
+  });
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="refresh" content="0; url=/apps/monetary-policy-independence-day/" />
+    <title>Moved permanently</title>
+  </head>
+  <body>
+    <p>This page has moved to <a href="/apps/monetary-policy-independence-day/">/apps/monetary-policy-independence-day/</a>.</p>
+  </body>
+</html>

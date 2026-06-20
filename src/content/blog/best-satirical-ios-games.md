@@ -6,16 +6,16 @@ publishDate: 2026-06-13
 category: "roundup"
 primaryKeyword: "best satirical games iphone"
 relatedApps:
-  - "powell-prowl"
+  - "monetary-policy-independence-day"
 faq:
   - q: "What are the best satirical games on iPhone?"
-    a: "The best satirical games on iPhone in 2026 include: Powell Prowl: Rate Chase (Federal Reserve satire, free), Reigns (monarchy decision satire, paid), Suzerain (political RPG, paid), Papers, Please (border control dystopia, paid), BitLife (life simulation with dark humor, free/IAP), and Orwell's Animal Farm (literary adaptation, paid). Each takes a different approach to satire — some are systems-based, some narrative, some pure comedy."
-  - q: "What is Powell Prowl: Rate Chase?"
-    a: "Powell Prowl: Rate Chase is a free satirical iOS arcade game where you play as a hapless President figure chasing the Fed Chair across 60 levels of mini-games, trying to catch him and force a rate-cut memo on him. Made by Dudley Development, it's free to download with AdMob ads. Available on the App Store for iPhone."
+    a: "The best satirical games on iPhone in 2026 include: Monetary Policy: Independence Day (formerly Powell Prowl: Rate Chase, Federal Reserve satire, free), Reigns (monarchy decision satire, paid), Suzerain (political RPG, paid), Papers, Please (border control dystopia, paid), BitLife (life simulation with dark humor, free/IAP), and Orwell's Animal Farm (literary adaptation, paid). Each takes a different approach to satire — some are systems-based, some narrative, some pure comedy."
+  - q: "What is Monetary Policy: Independence Day?"
+    a: "Monetary Policy: Independence Day is a free satirical iOS arcade game where you play as a hapless President figure chasing the Fed Chair through 100 levels of Independence Day mayhem, trying to catch him and force a rate-cut memo on him. Made by Dudley Development, it's free to download with Google AdMob ads and no in-app purchases. Available on the App Store for iPhone."
   - q: "Are there any free satirical games on iPhone?"
-    a: "Yes. Powell Prowl: Rate Chase is free (with ads) and is a legitimate satire of Federal Reserve monetary policy. BitLife is also free with optional in-app purchases, though it's more dark comedy than pointed satire. Most of the deeper satire games (Reigns, Suzerain, Papers Please) are paid — usually $2.99–$4.99."
+    a: "Yes. Monetary Policy: Independence Day is free (with ads) and is a legitimate satire of Federal Reserve monetary policy. BitLife is also free with optional in-app purchases, though it's more dark comedy than pointed satire. Most of the deeper satire games (Reigns, Suzerain, Papers Please) are paid — usually $2.99–$4.99."
   - q: "What makes a good satire game?"
-    a: "A good satire game makes a real point through its mechanics, not just its aesthetics. The best examples — Reigns and Papers Please — put you in a position of institutional power and force you to make decisions where every option has a cost. Powell Prowl takes the opposite tack: it makes you the President who can't set rates, only chase the Chair who can, so the joke lands through the chase itself. Either way the comedy comes from the system, not just from funny dialogue. You learn something about how the real system works, and that's what makes the joke land."
+    a: "A good satire game makes a real point through its mechanics, not just its aesthetics. The best examples — Reigns and Papers Please — put you in a position of institutional power and force you to make decisions where every option has a cost. Monetary Policy: Independence Day takes the opposite tack: it makes you the President who can't set rates, only chase the Chair who can, so the joke lands through the chase itself. Either way the comedy comes from the system, not just from funny dialogue. You learn something about how the real system works, and that's what makes the joke land."
 draft: false
 ---
 
@@ -27,17 +27,17 @@ Here are six iPhone games that are actually doing this:
 
 ---
 
-## 1. Powell Prowl: Rate Chase — Free
+## 1. Monetary Policy: Independence Day — Free
 
-**The premise:** You play as a hapless President figure — a Trump-style caricature — chasing the Fed Chair, a Powell-style caricature, across 60 levels of mini-games. Your goal in every level is to catch him and force a rate-cut memo into his hands. He dodges, ducks, and weaves around a paper-cutout Washington while you give chase through tag, subpoena sniping, arm-wrestling, canoe races, whack-a-Fed, a museum heist, and a final Beltway race.
+**The premise:** You play as a hapless President figure — a Trump-style caricature — chasing the Fed Chair, a Powell-style caricature, across 100 levels of Independence Day mini-games. Every stage is about forcing a rate-cut memo into his hands before fireworks, parades, or regional governors sweep you off the stage. Formerly known as Powell Prowl: Rate Chase, the new name lands with refreshed levels, a new cast, and a celebration of Fed independence turned into chaos.
 
-**Why it's satire and not just a joke:** The mechanics are the point. The whole game is one running gag about political pressure on the Federal Reserve — an executive who wants lower rates *now* and a central banker whose entire job is to not be caught. You never get to set rates yourself; you can only chase the person who does. That's the joke, and it's a sharp one: the Fed's independence is exactly the thing that keeps the President from simply catching the Chair and getting his way. Powell Prowl turns that institutional tension into a frantic arcade chase.
+**Why it's satire and not just a joke:** The mechanics are the point. The whole game is one running gag about political pressure on the Federal Reserve — an executive who wants lower rates *now* and a central banker whose entire job is not to be caught. You never get to set rates yourself; you can only chase the person who does. That's the joke, and it's a sharp one: the Fed's independence is exactly the thing that keeps the President from simply catching the Chair and getting his way. Monetary Policy: Independence Day turns that institutional tension into a frantic arcade chase with fireworks.
 
 The satirical joke is that this is a *game* — the absurd literalization of "jawboning the Fed" lands harder than any op-ed.
 
 **Cost:** Free. Ad-supported.
 
-**Download:** [Powell Prowl: Rate Chase on the App Store](https://apps.apple.com/app/id6775539250)
+**Download:** [Monetary Policy: Independence Day on the App Store](https://apps.apple.com/app/id6775539250)
 
 ---
 
@@ -102,13 +102,13 @@ The App Store has thousands of games. Most of them are monetization exercises dr
 ## Frequently Asked Questions
 
 **What are the best satirical games on iPhone?**
-Powell Prowl: Rate Chase (free, Federal Reserve), Reigns ($2.99, monarchy), Suzerain ($4.99, political RPG), Papers, Please ($4.99, bureaucracy), BitLife (free with IAP, life simulation), and Orwell's Animal Farm ($4.99, literary adaptation). Each takes a different satirical approach through its mechanics.
+Monetary Policy: Independence Day (free, Federal Reserve), Reigns ($2.99, monarchy), Suzerain ($4.99, political RPG), Papers, Please ($4.99, bureaucracy), BitLife (free with IAP, life simulation), and Orwell's Animal Farm ($4.99, literary adaptation). Each takes a different satirical approach through its mechanics.
 
-**What is Powell Prowl: Rate Chase?**
-Powell Prowl: Rate Chase is a free satirical iOS arcade game from Dudley Development where you play as a hapless President figure chasing the Fed Chair across 60 levels of mini-games, trying to catch him and force a rate-cut memo on him. Free on the App Store for iPhone.
+**What is Monetary Policy: Independence Day?**
+Monetary Policy: Independence Day is a free satirical iOS arcade game from Dudley Development where you play as a hapless President figure chasing the Fed Chair across 100 levels of Independence Day mini-games, trying to catch him and force a rate-cut memo on him. Free on the App Store for iPhone.
 
 **Are there any free satirical games on iPhone?**
-Yes. Powell Prowl: Rate Chase is free with ads. BitLife is also free with optional purchases. The deeper satire experiences (Reigns, Suzerain, Papers Please) are paid — usually $2.99–$4.99 and worth it.
+Yes. Monetary Policy: Independence Day is free with ads. BitLife is also free with optional purchases. The deeper satire experiences (Reigns, Suzerain, Papers Please) are paid — usually $2.99–$4.99 and worth it.
 
 **What makes satire games different from comedy games?**
 Satire games use their mechanics to make a point about a real system. Comedy games make jokes. In a satire game, the *gameplay* is where the insight lives — you understand something about how power or institutions work by being forced to operate within them. The best satire games on iPhone are actually educational, even if they're also very funny.
