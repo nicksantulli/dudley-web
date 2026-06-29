@@ -15,7 +15,10 @@ const isLive = status === 'live' && !!url;
     <>
       <h3>Download {appName}</h3>
       <p>{blurb ?? `${appName} is free on the App Store for iPhone.`}</p>
-      <a class="btn primary" href={url} rel="noopener">Download {appName} on the App Store</a>
+      <a class="btn app-store-badge" href={url} rel="noopener" aria-label={`Download ${appName} on the App Store`}>
+        <span class="top">Download on the</span>
+        <span class="bottom">App Store</span>
+      </a>
     </>
   ) : (
     <>

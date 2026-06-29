@@ -58,7 +58,12 @@ const description =
                   <p class="desc">{app.data.description}</p>
                 </div>
                 <div class="actions">
-                  {live && <a class="btn primary" href={url} rel="noopener">Download</a>}
+                  {live && (
+                    <a class="btn app-store-badge compact" href={url} rel="noopener" aria-label={`Download ${app.data.name} on the App Store`}>
+                      <span class="top">Download on the</span>
+                      <span class="bottom">App Store</span>
+                    </a>
+                  )}
                   {hasPage && <a class={`btn${live ? '' : ' primary'}`} href={rel(`/apps/${slug}/`)}>Learn more</a>}
                   {hasPage && <a class="btn ghost" href={rel(`/privacy/${slug}`)}>Privacy</a>}
                   {!live && !hasPage && <span class="btn ghost disabled" aria-disabled="true">Coming soon</span>}
@@ -99,7 +104,12 @@ const description =
                     <p class="desc">{app.data.description}</p>
                   </div>
                   <div class="actions">
-                    {live && <a class="btn primary" href={url} rel="noopener">Download</a>}
+                    {live && (
+                      <a class="btn app-store-badge compact" href={url} rel="noopener" aria-label={`Download ${app.data.name} on the App Store`}>
+                        <span class="top">Download on the</span>
+                        <span class="bottom">App Store</span>
+                      </a>
+                    )}
                     {hasPage && <a class={`btn${live ? '' : ' primary'}`} href={rel(`/apps/${slug}/`)}>Learn more</a>}
                     {hasPage && <a class="btn ghost" href={rel(`/privacy/${slug}`)}>Privacy</a>}
                     {!live && !hasPage && <span class="btn ghost disabled" aria-disabled="true">Coming soon</span>}
