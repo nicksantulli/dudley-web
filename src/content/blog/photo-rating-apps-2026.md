@@ -9,13 +9,13 @@ relatedApps:
   - "vibe-rater"
 faq:
   - q: "What are the best photo rating apps for iPhone in 2026?"
-    a: "The most notable photo rating apps on iPhone in 2026 fall into a few categories: attractiveness/beauty raters (Umax, which went viral for harsh AI ratings), professional photo feedback tools (Photofeeler, designed for LinkedIn/dating profiles), and the newer 'vibe rater' category focused on aesthetic energy rather than attractiveness. Vibe Rater by Dudley Development, coming soon to the App Store, takes this a step further with archetype assignment, haptic feedback, and six-dimension scoring."
+    a: "The most notable photo rating apps on iPhone in 2026 fall into a few categories: attractiveness/beauty raters (Umax, which went viral for harsh AI ratings), professional photo feedback tools (Photofeeler, designed for LinkedIn/dating profiles), and the newer 'vibe rater' category focused on aesthetic energy rather than attractiveness. VibeRater: Aura by Dudley Development takes this a step further with archetype assignment, haptic feedback, six-dimension scoring, personalized vibe eras, and mode-aware scorecards for selfies, regular photos, squad shots, and pet pics."
   - q: "What is Umax app?"
     a: "Umax is an iOS app that uses AI to rate your physical attractiveness, providing a score and suggestions for improvement. It went viral in 2023–2024 for its sometimes harsh ratings and specific feedback. Unlike vibe-focused apps, Umax explicitly rates facial attractiveness — a different category from apps that rate aesthetic, style, or 'vibe.' It's free with in-app purchases."
   - q: "What is Photofeeler?"
     a: "Photofeeler is a platform (web and iOS) that lets real people rate your photos for three specific contexts: professional (LinkedIn), social (Instagram, dating), and dating apps. Unlike AI-powered raters, Photofeeler uses community voting — other Photofeeler users rate your photos and you rate theirs. It's designed for practical use: figuring out which headshot performs best, not comedy or entertainment. Free tier available with paid credits for faster feedback."
   - q: "What is Vibe Rater?"
-    a: "Vibe Rater is a free iOS entertainment app from Dudley Development that rates your vibe — not your attractiveness — from a photo. You get a score across six dimensions (Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve), a letter grade, an archetype (like Gorpcore Prophet, Clean Girl, or Final Boss), and an aura color. The phone vibrates while it 'analyzes' you. It's entertainment, not real analysis — the scientific validity is exactly zero and that's the bit. Coming soon to the App Store."
+    a: "VibeRater: Aura is a free iOS entertainment app from Dudley Development that rates your vibe — not your attractiveness — from a photo. You get a score across six dimensions (Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve), a letter grade, an archetype (like Gorpcore Prophet, Clean Girl, or Final Boss), and an aura color. The phone vibrates while it 'analyzes' you. It's entertainment, not real analysis — the scientific validity is exactly zero and that's the bit. It is live on the App Store."
   - q: "Are photo rating apps accurate?"
     a: "Depends what you mean by accurate. Professional feedback tools like Photofeeler use real human ratings, which are accurate in the sense that they reflect how real people respond to your photo — useful for headshots and dating profiles. AI beauty raters like Umax apply a model trained on attractiveness data, which measures something real but narrow. Entertainment apps like Vibe Rater make no accuracy claims — the fun is in the specificity and absurdity of the result, not the real measurement. Know which type of app you're downloading."
 draft: false
@@ -44,9 +44,9 @@ The rest of this post breaks down each one in detail.
 
 ---
 
-## 1. Vibe Rater — Coming Soon to the App Store
+## 1. VibeRater: Aura — Live on the App Store
 
-**What it does:** Rates your *vibe* — style, energy, fit, aura — across six dimensions: Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve. The phone vibrates while it "analyzes" you (this is the whole bit). You get a score, a letter grade from S to F, an archetype (Gorpcore Prophet, Clean Girl, Final Boss, NPC Affectionate, etc.), and a shareable card.
+**What it does:** Rates your *vibe* — style, energy, fit, aura — across six dimensions: Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve. The phone vibrates while it "analyzes" you (this is the whole bit). You get a score, a letter grade from S to F, an archetype (Gorpcore Prophet, Clean Girl, Final Boss, NPC Affectionate, etc.), and a shareable card. Version 1.1 adds personalized vibe eras, mode-aware selfie/squad/pet scorecards, and story-ready exports.
 
 **What it doesn't do:** Measure your attractiveness, give you actual analysis, or make any scientific claims. "Vibe science, not real science. Do not cite us in court."
 
@@ -118,14 +118,14 @@ Know which one you're downloading. If you need to optimize a headshot for a job 
 
 ---
 
-**Vibe Rater is coming soon to the App Store.** Free, ad-supported. The phone vibrates while it reads you. [Get notified when it drops.](https://dudleyapps.com/apps/vibe-rater/)
+**VibeRater: Aura is live on the App Store.** Free, ad-supported, with a one-time Remove Ads upgrade. The phone vibrates while it reads you. [Download VibeRater on the App Store](https://apps.apple.com/app/id6780704282).
 
 ---
 
 ## Frequently Asked Questions
 
 **What are the best photo rating apps for iPhone in 2026?**
-The best depends on what you're trying to do. For professional photo feedback from real humans: Photofeeler. For harsh AI attractiveness rating: Umax. For entertainment, archetype comedy, and shareable vibe cards: Vibe Rater (coming soon from Dudley Development).
+The best depends on what you're trying to do. For professional photo feedback from real humans: Photofeeler. For harsh AI attractiveness rating: Umax. For entertainment, archetype comedy, and shareable vibe cards: VibeRater: Aura from Dudley Development.
 
 **What is Umax?**
 An iOS app that uses AI to rate physical attractiveness and give specific feedback. Went viral for unfiltered ratings. Different product from vibe-focused apps — Umax measures attractiveness; Vibe Rater rates aesthetic energy and style.
@@ -134,7 +134,7 @@ An iOS app that uses AI to rate physical attractiveness and give specific feedba
 A platform (web + iOS) where real people rate your photos for professional, social, or dating contexts. Community voting, not AI. The most practically useful photo rating tool for optimizing headshots.
 
 **What is Vibe Rater?**
-Vibe Rater is a free iOS entertainment app from Dudley Development, coming soon to the App Store. Upload a photo, get your score across Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve — plus an archetype and aura color. The phone vibrates while it reads you. Vibe science; not real science.
+VibeRater: Aura is a free iOS entertainment app from Dudley Development, live on the App Store. Upload a photo, get your score across Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve — plus an archetype and aura color. The phone vibrates while it reads you. Vibe science; not real science.
 
 **Are photo rating apps accurate?**
 Depends on the type. Human-voted tools (Photofeeler) reflect real human responses — accurate for headshot optimization. AI beauty raters (Umax) measure something real but narrow. Entertainment apps (Vibe Rater) make no accuracy claims — the fun is in the specific, absurd result. Know which type you're using.

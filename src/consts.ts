@@ -42,10 +42,10 @@ export function abs(path: string): string {
   return ORIGIN_HOST + rel(path);
 }
 
-// App Store IDs (single source of truth — update Vibe Rater when it ships).
+// App Store IDs (single source of truth for App Store CTAs + schema).
 export const APP_STORE = {
   monetaryPolicyIndependenceDay: '6775539250',
-  vibeRater: '', // set when Vibe Rater is approved
+  vibeRater: '6780704282',
   dudeWheresThisHouse: '6779785617',
 };
 

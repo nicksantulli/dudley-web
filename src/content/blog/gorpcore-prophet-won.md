@@ -76,7 +76,7 @@ That's the archetype. It won the 2020s by not caring whether it won.
 
 ---
 
-**See if Vibe Rater assigns you Gorpcore Prophet** when the app launches on the App Store. Coming soon — [sign up to be notified](https://dudleydevelopment.com/apps/vibe-rater/).
+**See if VibeRater assigns you Gorpcore Prophet** in the live app. [Download VibeRater on the App Store](https://apps.apple.com/app/id6780704282).
 
 ---
 
@@ -95,4 +95,4 @@ The mainstream trend has peaked, but gorpcore as a genuine lifestyle aesthetic i
 Conviction and function. A Gorpcore Prophet's gear is chosen for a reason they can explain. The vest would survive an actual hike. The pack carries actual things. The aesthetic is intentional and earned, not decorative.
 
 **What is Vibe Rater?**
-Vibe Rater is a free iOS entertainment app coming to the App Store. Upload a photo and get your vibe score across six dimensions — Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve — plus your archetype and aura color. See [Vibe Rater](/apps/vibe-rater/) for details.
+VibeRater: Aura is a free iOS entertainment app live on the App Store. Upload a photo and get your vibe score across six dimensions — Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve — plus your archetype and aura color. See [Vibe Rater](/apps/vibe-rater/) for details.

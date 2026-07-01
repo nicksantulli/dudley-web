@@ -88,7 +88,7 @@ Your Fed take: Cut. Everything makes more sense when rates go down. Just cut.
 
 We built [Monetary Policy: Independence Day](https://apps.apple.com/app/id6775539250) so you can stop yelling at the Fed and start chasing it — you play the President, hunting the Fed Chair across 100 levels to force your rate-cut memo on him. It's free, it's extremely educational in a completely irresponsible way, and it turns out catching the guy who actually sets rates is a lot harder than having opinions about him.
 
-If you want to know your actual vibe archetype (not the monetary policy version), that's Vibe Rater — coming soon to the App Store. Upload a photo, get your archetype, aura color, and a score across all six dimensions.
+If you want to know your actual vibe archetype (not the monetary policy version), that's VibeRater: Aura, now live on the App Store. Upload a photo, get your archetype, aura color, and a score across all six dimensions.
 
 ---
 
@@ -104,4 +104,4 @@ A hawk favors higher interest rates to fight inflation. A dove favors lower rate
 Monetary Policy: Independence Day is a free satirical iOS arcade game where you play as a hapless President figure chasing the Fed Chair across 100 levels of mini-games, trying to catch him and force a rate-cut memo on him. Available on the App Store for iPhone, free with ads.
 
 **What is Vibe Rater?**
-Vibe Rater is a free iOS entertainment app that rates your vibe from a photo. You get a score across six dimensions plus an archetype — Final Boss, Gorpcore Prophet, Cozy Goblin, and more. Coming soon to the App Store.
+VibeRater: Aura is a free iOS entertainment app that rates your vibe from a photo. You get a score across six dimensions plus an archetype — Final Boss, Gorpcore Prophet, Cozy Goblin, and more. Live on the App Store.

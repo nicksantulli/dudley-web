@@ -23,7 +23,7 @@ faq:
   - q: "What is the Quiet Luxury archetype in Vibe Rater?"
     a: "Quiet Luxury is a Vibe Rater archetype assigned to photos that read as understated, expensive-without-announcing-it, and cohesively restrained. High Fit Cohesion (everything agrees), moderate-to-high Drip (quality is readable), low Rizz (not performing for attention), very low Serve (the clothes aren't trying; they simply are). The archetype persists in Vibe Rater because the aspiration is durable even when the trend cycle moves on."
   - q: "What is Vibe Rater?"
-    a: "Vibe Rater is a free iOS entertainment app that rates your vibe from a photo. You get a score across six dimensions — Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve — plus an archetype (like Quiet Luxury, Final Boss, or Gorpcore Prophet) and an aura color. Coming soon to the App Store from Dudley Development."
+    a: "Vibe Rater is a free iOS entertainment app that rates your vibe from a photo. You get a score across six dimensions — Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve — plus an archetype (like Quiet Luxury, Final Boss, or Gorpcore Prophet) and an aura color. Live on the App Store from Dudley Development."
 draft: false
 ---
 
@@ -91,7 +91,7 @@ Those are personality types, not trend cycles. They just get different names eve
 
 ---
 
-**Vibe Rater is coming soon to the App Store.** Find out which archetype you actually are — your photo might surprise you. [Get notified when it drops.](https://dudleydevelopment.com/apps/vibe-rater/)
+**VibeRater: Aura is live on the App Store.** Find out which archetype you actually are — your photo might surprise you. [Download VibeRater on the App Store](https://apps.apple.com/app/id6780704282).
 
 ---
 
@@ -110,4 +110,4 @@ High-quality, understated pieces in neutral tones with minimal visible branding.
 High Fit Cohesion, readable Drip, low Rizz, very low Serve. Everything agrees. Nothing announces itself. The clothes are simply correct. Assigned to photos that read as restrained and expensive without performing either quality.
 
 **What is Vibe Rater?**
-Vibe Rater is a free iOS entertainment app from Dudley Development, coming soon to the App Store. Upload a photo for a score across six dimensions, an archetype, and an aura color. The phone vibrates while it reads you.
+VibeRater: Aura is a free iOS entertainment app from Dudley Development, live on the App Store. Upload a photo for a score across six dimensions, an archetype, and an aura color. The phone vibrates while it reads you.

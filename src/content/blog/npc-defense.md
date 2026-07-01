@@ -22,7 +22,7 @@ faq:
   - q: "Where did the NPC meme come from?"
     a: "The NPC meme originated in video game culture — Non-Player Characters are the scripted characters in games that repeat dialogue, follow fixed paths, and exist to serve the player's narrative. As internet slang, 'NPC' was used around 2016–2019 to describe people who seemed to follow scripts without independent thought. The term was often used dismissively or politically. The reclamation as an affectionate self-identifier happened on TikTok around 2022–2023, when 'NPC streaming' (creators acting like video game NPCs for viewers) became a viral content genre, and the term shed most of its negative connotations."
   - q: "What is Vibe Rater?"
-    a: "Vibe Rater is a free iOS entertainment app that rates your vibe from a photo. You get a score across six dimensions — Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve — plus an archetype (like NPC Affectionate, Final Boss, or Main Character) and an aura color. The phone vibrates while it reads you. Coming soon to the App Store from Dudley Development."
+    a: "Vibe Rater is a free iOS entertainment app that rates your vibe from a photo. You get a score across six dimensions — Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve — plus an archetype (like NPC Affectionate, Final Boss, or Main Character) and an aura color. The phone vibrates while it reads you. Live on the App Store from Dudley Development."
 draft: false
 ---
 
@@ -97,7 +97,7 @@ We are not saying you're boring. We're saying you've stopped caring about the sa
 
 ---
 
-**Vibe Rater is coming soon to the App Store.** Find out your archetype — NPC (Affectionate), Main Character, Final Boss, or one of the others. The phone vibrates while it reads you. [Get notified when it drops.](https://dudleydevelopment.com/apps/vibe-rater/)
+**VibeRater: Aura is live on the App Store.** Find out your archetype — NPC (Affectionate), Main Character, Final Boss, or one of the others. The phone vibrates while it reads you. [Download VibeRater on the App Store](https://apps.apple.com/app/id6780704282).
 
 ---
 
@@ -116,4 +116,4 @@ From video game culture — Non-Player Characters are background characters who 
 A Vibe Rater archetype for photos that read as unbothered, stable, and not performing for the camera. Low Rizz, moderate Aura, low Main-Character Energy. Not a consolation prize — an earned stance.
 
 **What is Vibe Rater?**
-Vibe Rater is a free iOS entertainment app from Dudley Development, coming soon to the App Store. Upload a photo and get your vibe score, archetype, and aura color. The phone vibrates while it reads you. Requires iOS 17.
+VibeRater: Aura is a free iOS entertainment app from Dudley Development, live on the App Store. Upload a photo and get your vibe score, archetype, and aura color. The phone vibrates while it reads you. Requires iOS 17.
