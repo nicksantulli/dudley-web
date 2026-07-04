@@ -87,22 +87,29 @@ nav.top a.nav-cta {
 @media (max-width: 720px) {
   header.site .wrap {
     height: auto;
-    min-height: 62px;
-    align-items: flex-start;
+    min-height: 0;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
-    gap: 8px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    gap: 9px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
-  .brand { white-space: nowrap; }
+  .brand {
+    gap: 10px;
+    white-space: nowrap;
+    font-size: clamp(19px, 6vw, 24px);
+    letter-spacing: -0.6px;
+  }
+  .brand .mark { height: 28px; }
   nav.top {
-    width: auto;
+    width: min(100%, 330px);
     display: grid;
     grid-template-columns: repeat(3, max-content);
-    gap: 10px 18px;
-    font-size: 13px;
-    line-height: 1.2;
+    justify-content: center;
+    gap: 8px 20px;
+    font-size: 12px;
+    line-height: 1.05;
   }
   nav.top a.nav-cta { display: none; }
 }

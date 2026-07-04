@@ -71,8 +71,17 @@
   if (firstTab) activateProduct(firstTab);
 
   const product = root.querySelector('.hero-product');
+
+  function resetPhoneTransform() {
+    if (!fields.phone) return;
+    fields.phone.style.transform = window.innerWidth < 761 ? 'translateX(-50%)' : 'translate3d(0, 0, 0)';
+  }
+
   product?.addEventListener('pointermove', (event) => {
-    if (reduced.matches || !fields.phone) return;
+    if (reduced.matches || !fields.phone || window.innerWidth < 761) {
+      resetPhoneTransform();
+      return;
+    }
     const rect = product.getBoundingClientRect();
     const px = ((event.clientX - rect.left) / rect.width - 0.5) || 0;
     const py = ((event.clientY - rect.top) / rect.height - 0.5) || 0;
@@ -80,8 +89,7 @@
   });
 
   product?.addEventListener('pointerleave', () => {
-    if (!fields.phone || window.innerWidth < 761) return;
-    fields.phone.style.transform = 'translate3d(0, 0, 0)';
+    resetPhoneTransform();
   });
 
   const reveal = new IntersectionObserver((entries) => {
@@ -124,6 +132,8 @@
         hue: i % 3 === 0 ? '255, 47, 179' : i % 3 === 1 ? '58, 25, 8' : '32, 216, 245',
       });
     }
+
+    resetPhoneTransform();
   }
 
   function draw() {
