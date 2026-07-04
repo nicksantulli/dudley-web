@@ -9,6 +9,7 @@
 - [What is VibeRater Social?](https://dudleyapps.com/answers/viberater-social/): Concise explanation of Vibies, Squad, Radar, MiniVibe, and SlopGuard.
 - [About](https://dudleyapps.com/about): Studio positioning, live portfolio, client work, and contact.
 - [Support](https://dudleyapps.com/support/): App-specific support FAQ index.
+- [Contact](https://dudleyapps.com/contact/): Support, privacy, press, partnership, and app feedback contact paths.
 - [Privacy](https://dudleyapps.com/privacy/): App-specific privacy policy index.
 - [Blog](https://dudleyapps.com/blog/): Launch notes, product reads, culture posts, and iOS app roundups.
 - [RSS](https://dudleyapps.com/blog/rss.xml): Blog feed.
