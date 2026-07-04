@@ -3,18 +3,33 @@
   <url>
     <loc>https://dudleyapps.com/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/powell-prowl-icon.png</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/vibe-rater-icon.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/viberater-social-banner.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/viberater-social-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/table-talk-icon.png</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/last-human-icon.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/powell-prowl-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/econbyte-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dude-wheres-this-house-icon.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/last-human-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/about/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/powell-prowl-icon.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/dude-wheres-this-house-icon.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/vibe-rater-icon.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/table-talk-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://dudleyapps.com/answers/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://dudleyapps.com/answers/viberater-social/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/viberater-social-banner.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/apps/econbyte/</loc>

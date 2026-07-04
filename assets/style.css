@@ -16,7 +16,7 @@
   --accent-2:  #7B2E02;
   --good:      #2A7A50;
   --radius:    16px;
-  --maxw:      960px;
+  --maxw:      1420px;
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -57,7 +57,7 @@ a:hover { text-decoration: underline; }
 /* ---------- Header ---------- */
 header.site {
   position: sticky; top: 0; z-index: 10;
-  background: rgba(208, 180, 134, 0.96);
+  background: rgba(246, 237, 220, 0.86);
   backdrop-filter: saturate(140%) blur(12px);
   border-bottom: 1px solid #7A4B33;
 }
@@ -66,14 +66,46 @@ header.site {
 }
 header.site .wrap {
   display: flex; align-items: center; justify-content: space-between;
-  height: 62px;
+  height: 92px;
 }
-.brand { display: flex; align-items: center; gap: 11px; font-weight: 800; color: var(--ink); font-size: 16px; letter-spacing: -0.2px; }
+.brand { display: flex; align-items: center; gap: 14px; font-weight: 850; color: var(--ink); font-size: 22px; letter-spacing: -0.8px; }
 .brand:hover { text-decoration: none; }
-.brand .mark { height: 30px; width: auto; display: block; }
-nav.top { display: flex; gap: 22px; font-size: 14px; font-weight: 600; }
+.brand .mark { height: 36px; width: auto; display: block; }
+nav.top { display: flex; align-items: center; gap: 34px; font-size: 15px; font-weight: 780; }
 nav.top a { color: var(--ink-muted); }
 nav.top a:hover { color: var(--ink); text-decoration: none; }
+nav.top a.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 0 24px;
+  border: 1px solid rgba(61, 28, 8, .28);
+  border-radius: 13px;
+  color: var(--ink);
+  background: rgba(255, 250, 238, .48);
+}
+@media (max-width: 720px) {
+  header.site .wrap {
+    height: auto;
+    min-height: 62px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .brand { white-space: nowrap; }
+  nav.top {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 10px 18px;
+    font-size: 13px;
+    line-height: 1.2;
+  }
+  nav.top a.nav-cta { display: none; }
+}
 
 /* ---------- Hero ---------- */
 .hero { padding: 86px 0 64px; text-align: center; position: relative; overflow: hidden; }
