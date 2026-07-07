@@ -26,8 +26,8 @@
 
 ## Live and Portfolio Apps
 
-- [Monetary Policy: Independence Day](https://dudleyapps.com/apps/monetary-policy-independence-day/): Monetary Policy: Independence Day — free satirical economics game for iPhone. 100 levels. Beat the Fed. Independence Day theme. Live on the App Store.
 - Dude, Where's This House?: Dude, Where's This House? is a native iOS geography game built for HomeLight. Drop into a residential Street View, study the block, and pin where in the world you think you are — the closer your guess, the higher your score. Free on the App Store. Live on the App Store. Client app created for HomeLight.
+- [Monetary Policy: Independence Day](https://dudleyapps.com/apps/monetary-policy-independence-day/): Monetary Policy: Independence Day — free satirical economics game for iPhone. 100 levels. Beat the Fed. Independence Day theme. Live on the App Store.
 - [VibeRater: Aura](https://dudleyapps.com/apps/vibe-rater/): VibeRater: Aura is a free iPhone app that rates your vibe from a selfie, squad shot, regular photo, or pet pic. Pick a vibe era, get an archetype, aura color, and six-dimension scorecard, then share the card. Live on the App Store.
 - [Table Talk: Conversation Cards](https://dudleyapps.com/apps/table-talk/): Table Talk is a free iPhone app of conversation-starter cards for dinner tables, first dates, and friend groups — 185 prompts, no paywall, works offline. Live on the App Store.
 - Last Human: Last Human is a free satirical top-down arcade game for iPhone. You're the last human in an AI-automated office — dodge the AutoBots and race to the time clock before the timer runs out. The corporate-memo screen between levels is the comedy. Coming soon.
@@ -52,6 +52,7 @@
 
 ## Blog
 
+- [What Is an Aura App?](https://dudleyapps.com/blog/what-is-an-aura-app/): An aura app is a playful photo app that turns a selfie or picture into a vibe read, scorecard, archetype, color, or shareable result. Here is how to use one without confusing entertainment for real analysis.
 - [What Is a Vibe Check App?](https://dudleyapps.com/blog/what-is-a-vibe-check-app/): A vibe check app turns a photo, outfit, or moment into a playful read on your energy. Here's what the category means, how VibeRater works, and what to avoid.
 - [What Is a Vibie?](https://dudleyapps.com/blog/what-is-a-vibie/): A Vibie is the VibeRater Social idea of turning a rated photo into a social post. Here's how it fits with VibeRater, Squad reactions, VibeChecks, and Radar.
 - [Does VibeRater Store Your Photos?](https://dudleyapps.com/blog/viberater-photo-privacy/): A clear privacy explainer for VibeRater: what happens when you upload a photo, what the app does not claim, and why privacy wording matters for photo rating apps.
@@ -61,8 +62,8 @@
 - [The Quiet Luxury Era Is Over — Here's What Actually Won](https://dudleyapps.com/blog/quiet-luxury-2026/): Quiet luxury peaked with Succession. By 2024, H&M was selling a 'stealth wealth capsule.' The trend cycle moved on. But the aesthetic's successor isn't what you'd expect — and the archetype remains.
 - [In Defense of the NPC (It's a Compliment Now)](https://dudleyapps.com/blog/npc-defense/): NPC started as an internet insult. It became a TikTok content genre. Now 'NPC energy' is a genuine compliment — for people who have mastered the art of not performing for anyone. We explain the full arc.
 - [What Your Phone Case Says About Your Vibe](https://dudleyapps.com/blog/phone-case-vibe/): The phone case is the one accessory you chose while panicking about dropping your phone. What that split-second decision reveals about your archetype — according to vibe science (not real science).
-- [Gorpcore Prophet: The Archetype That Won the 2020s Without Trying](https://dudleyapps.com/blog/gorpcore-prophet-won/): Gorpcore didn't go mainstream. Everyone else went gorpcore. A look at the decade's most unlikely aesthetic winner — and what separates a Gorpcore Prophet from someone who just owns a vest.
 - [The Best Satirical iOS Games That Actually Respect Your Intelligence](https://dudleyapps.com/blog/best-satirical-ios-games/): Most 'funny' games on the App Store are slot machines with a hat. These six satire games on iPhone are genuinely good — including one about the Federal Reserve.
+- [Gorpcore Prophet: The Archetype That Won the 2020s Without Trying](https://dudleyapps.com/blog/gorpcore-prophet-won/): Gorpcore didn't go mainstream. Everyone else went gorpcore. A look at the decade's most unlikely aesthetic winner — and what separates a Gorpcore Prophet from someone who just owns a vest.
 - [What Your Federal Reserve Opinion Says About Your Vibe](https://dudleyapps.com/blog/fed-opinion-vibe/): Your gut reaction to a Fed rate decision reveals your archetype. We matched every possible take on monetary policy to a VibeRater result.
 
 ## Privacy and Support Facts

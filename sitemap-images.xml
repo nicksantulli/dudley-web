@@ -15,8 +15,8 @@
   <url>
     <loc>https://dudleyapps.com/about/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/powell-prowl-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dude-wheres-this-house-icon.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/powell-prowl-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/vibe-rater-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/table-talk-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
@@ -154,6 +154,11 @@
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://dudleyapps.com/blog/tags/aura-app/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://dudleyapps.com/blog/tags/culture/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
@@ -189,6 +194,11 @@
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://dudleyapps.com/blog/tags/vibe-check/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://dudleyapps.com/blog/tags/viberater-social/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
@@ -210,6 +220,11 @@
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/what-is-a-vibie/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.svg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://dudleyapps.com/blog/what-is-an-aura-app/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.svg</image:loc></image:image>
   </url>
