@@ -1,0 +1,114 @@
+---
+import Base from '../../layouts/Base.astro';
+import { abs, rel, VIBERATER_SOCIALS } from '../../consts';
+
+const description =
+  'What VibeRater Social is, what Vibies, Squad, Radar, MiniVibe, and SlopGuard mean, and where to download VibeRater today.';
+
+const facts = [
+  {
+    q: 'What is VibeRater Social?',
+    a: 'VibeRater Social is the next social version of VibeRater: rate a photo, turn it into a Vibie, share it with a Squad, and discover people or places by vibe rather than follower count.',
+  },
+  {
+    q: 'Can I download VibeRater Social today?',
+    a: 'You can download VibeRater: Aura today on the App Store. VibeRater Social is the next version, built around Vibies, Squad reactions, Radar, MiniVibe, and cleaner feeds.',
+  },
+  {
+    q: 'What are Vibies?',
+    a: 'Vibies are story-style posts made from rated photos, captions, receipts, share cards, or anthem-style moments.',
+  },
+  {
+    q: 'What is SlopGuard?',
+    a: 'SlopGuard is a cleaner-feed helper for suspected AI-generated image posts. It is a filter aid, not a promise that every AI image will be detected perfectly.',
+  },
+  {
+    q: 'Does VibeRater sell my personal data?',
+    a: 'No. Dudley does not sell your personal data. For the app available today, the VibeRater privacy policy explains how photos and app data are handled.',
+  },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': abs('/answers/viberater-social/#faq'),
+  url: abs('/answers/viberater-social/'),
+  name: 'What is VibeRater Social?',
+  description,
+  isPartOf: { '@id': abs('/#website') },
+  publisher: { '@id': abs('/#organization') },
+  about: { '@type': 'SoftwareApplication', name: 'VibeRater', url: abs('/apps/vibe-rater/') },
+  mainEntity: facts.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+---
+<Base
+  title="What is VibeRater Social?"
+  description={description}
+  path="/answers/viberater-social/"
+  ogImage="/assets/viberater-social-banner.png"
+  schema={schema}
+>
+  <main class="answer-page vibe-answer">
+    <section class="answer-hero">
+      <a class="back" href={rel('/answers/')}>← Answers</a>
+      <div class="vibe-media" aria-hidden="true">
+        <img src={rel('/assets/viberater-social-banner.png')} alt="" />
+      </div>
+      <p class="answer-kicker">VibeRater Social</p>
+      <h1>Rate the pic. Post the Vibie. Find your people.</h1>
+      <p class="answer-lede">
+        VibeRater Social is a camera-to-social loop for daily vibe checks, Squad reactions,
+        MiniVibe, Radar, and cleaner feeds.
+      </p>
+    </section>
+
+    <section class="answer-list" aria-label="VibeRater Social answers">
+      {facts.map((item) => (
+        <article>
+          <h2>{item.q}</h2>
+          <p>{item.a}</p>
+        </article>
+      ))}
+    </section>
+
+    <section class="answer-links">
+      <h2>Source pages</h2>
+      <div>
+        <a href={rel('/#viberater-social')}>VibeRater Social</a>
+        <a href={rel('/apps/vibe-rater/')}>Download VibeRater</a>
+        <a href={rel('/privacy/vibe-rater')}>Privacy policy</a>
+        <a href={rel('/support/vibe-rater/')}>Support</a>
+        <a href={abs('/llms.txt')}>llms.txt</a>
+        {VIBERATER_SOCIALS.map((s) => (
+          <a href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.label}>{s.name} {s.handle}</a>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .answer-page { width: min(1040px, calc(100% - 36px)); margin: 0 auto; padding: 58px 0 110px; }
+    .answer-hero { max-width: 900px; padding: 34px 0 50px; }
+    .vibe-media { height: clamp(130px, 20vw, 220px); margin-bottom: 28px; border-radius: 28px; overflow: hidden; box-shadow: 0 24px 70px rgba(255,47,179,.16); }
+    .vibe-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .answer-kicker { margin: 0 0 14px; color: #ff2fb3; font-size: 13px; font-weight: 850; text-transform: uppercase; letter-spacing: .12em; }
+    .answer-hero h1, .answer-links h2 { margin: 0; color: #2a1208; line-height: .96; font-weight: 900; }
+    .answer-hero h1 { max-width: 880px; font-size: clamp(46px, 7vw, 86px); }
+    .answer-lede { max-width: 760px; margin: 24px 0 0; color: #775036; font-size: clamp(18px, 2vw, 22px); line-height: 1.45; }
+    .answer-list { display: grid; gap: 12px; padding: 20px 0 52px; }
+    .answer-list article, .answer-links { border: 1px solid rgba(68,30,9,.14); border-radius: 24px; background: linear-gradient(100deg, rgba(255,248,231,.8), rgba(255,248,231,.44)); box-shadow: 0 18px 50px rgba(49,22,7,.06); }
+    .answer-list article:first-child { border-color: rgba(255,47,179,.28); background: radial-gradient(circle at 8% 0, rgba(255,47,179,.14), transparent 22rem), linear-gradient(100deg, rgba(255,248,231,.82), rgba(34,228,255,.08)); }
+    .answer-list article { padding: 22px; }
+    .answer-list h2 { margin: 0 0 8px; color: #2a1208; font-size: clamp(24px, 3vw, 34px); line-height: 1.05; }
+    .answer-list p { margin: 0; color: #775036; line-height: 1.55; font-size: 17px; }
+    .answer-links { padding: 24px; }
+    .answer-links h2 { font-size: clamp(30px, 4vw, 48px); margin-bottom: 18px; }
+    .answer-links div { display: flex; flex-wrap: wrap; gap: 10px; }
+    .answer-links a { padding: 10px 13px; border: 1px solid rgba(68,30,9,.14); border-radius: 999px; background: rgba(255,248,231,.6); color: #2a1208; font-weight: 850; }
+    @media (max-width: 680px) { .answer-page { width: min(100% - 28px, 1040px); } }
+  </style>
+</Base>

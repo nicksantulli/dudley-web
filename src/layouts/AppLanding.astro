@@ -3,7 +3,7 @@ import Base from './Base.astro';
 import FAQ from '../components/FAQ.astro';
 import InternalLinks from '../components/InternalLinks.astro';
 import AppCTA from '../components/AppCTA.astro';
-import { STUDIO, ORIGIN, rel, abs, appStoreUrl } from '../consts';
+import { STUDIO, ORIGIN, VIBERATER_SOCIALS, rel, abs, appStoreUrl } from '../consts';
 
 export interface Props {
   app: any;
@@ -12,6 +12,13 @@ export interface Props {
 const { app, related } = Astro.props;
 const path = `/apps/${app.slug}/`;
 const url = appStoreUrl(app.appStoreId);
+const appImage = abs(app.ogImage ?? app.icon);
+const privacyRoutes = new Set(['monetary-policy-independence-day', 'vibe-rater', 'table-talk']);
+const hasPrivacyPolicy = privacyRoutes.has(app.slug);
+// App-level social accounts (currently only VibeRater has its own handles).
+const socials = app.slug === 'vibe-rater' ? VIBERATER_SOCIALS : [];
+// "VibeRater: Aura" → "VibeRater" for the follow heading.
+const followName = app.name.split(':')[0].trim();
 
 // SoftwareApplication is Google's app-listing rich-result type (name, category,
 // OS, free Offer). aggregateRating is intentionally omitted until we have real App
@@ -19,16 +26,37 @@ const url = appStoreUrl(app.appStoreId);
 const appSchema: Record<string, any> = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  '@id': abs(path) + '#softwareapplication',
   name: app.name,
+  alternateName: app.slug === 'vibe-rater' ? 'VibeRater' : undefined,
   description: app.description,
   url: abs(path),
+  mainEntityOfPage: { '@type': 'WebPage', '@id': abs(path) + '#webpage' },
+  image: appImage,
+  thumbnailUrl: abs(app.icon),
+  identifier: app.bundleId ? { '@type': 'PropertyValue', propertyID: 'iOS bundle identifier', value: app.bundleId } : undefined,
   applicationCategory: app.applicationCategory,
   operatingSystem: app.operatingSystem,
+  keywords: [app.primaryKeyword, app.category, ...(app.featureList ?? [])].filter(Boolean).join(', '),
+  isAccessibleForFree: app.status === 'live' ? true : undefined,
+  datePublished: app.dateAdded ? app.dateAdded.toISOString().slice(0, 10) : undefined,
+  dateModified: app.lastUpdated ? app.lastUpdated.toISOString().slice(0, 10) : undefined,
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-  author: { '@type': 'Organization', name: STUDIO, url: ORIGIN },
+  author: { '@type': 'Organization', '@id': abs('/#organization'), name: STUDIO, url: ORIGIN },
+  publisher: { '@type': 'Organization', '@id': abs('/#organization'), name: STUDIO, url: ORIGIN },
   featureList: app.featureList,
+  sameAs: socials.length > 0 ? socials.map((s) => s.url) : undefined,
+  ...(hasPrivacyPolicy ? { privacyPolicy: abs(`/privacy/${app.slug}`) } : {}),
 };
-if (url) appSchema.downloadUrl = url;
+if (url) {
+  appSchema.downloadUrl = url;
+  appSchema.installUrl = url;
+  appSchema.potentialAction = {
+    '@type': 'DownloadAction',
+    target: url,
+  };
+}
+Object.keys(appSchema).forEach((key) => appSchema[key] === undefined && delete appSchema[key]);
 
 // FAQPage JSON-LD built from app.faq. Google won't render an FAQ rich result for a
 // non-gov/health source, but this is still valid structured data and the Owner wants
@@ -40,6 +68,13 @@ const faqSchema =
     ? {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
+        '@id': abs(path) + '#faq',
+        url: abs(path),
+        name: `${app.name} FAQ`,
+        description: app.description,
+        isPartOf: { '@id': abs('/#website') },
+        publisher: { '@id': abs('/#organization') },
+        about: { '@id': abs(path) + '#softwareapplication' },
         mainEntity: app.faq.map((f: { q: string; a: string }) => ({
           '@type': 'Question',
           name: f.q,
@@ -69,6 +104,18 @@ const pageSchema = faqSchema ? [appSchema, faqSchema] : appSchema;
       <slot />
 
       <AppCTA appName={app.name} appStoreId={app.appStoreId} status={app.status} />
+
+      {socials.length > 0 && (
+        <div class="cta-block">
+          <h3>Follow {followName}</h3>
+          <p>New drops, archetype reveals, and vibe checks — follow {followName} for the latest.</p>
+          {socials.map((s) => (
+            <a class="btn" href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.label} style="margin-right:10px;">
+              {s.name} {s.handle}
+            </a>
+          ))}
+        </div>
+      )}
 
       <FAQ items={app.faq} />
       <InternalLinks pages={related} heading="More from Dudley Development" />

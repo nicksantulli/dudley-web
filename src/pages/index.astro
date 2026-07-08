@@ -1,12 +1,131 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import { rel, abs, ORIGIN, appStoreUrl } from '../consts';
+import { rel, ORIGIN, VIBERATER_SOCIALS, appStoreUrl } from '../consts';
 
 const allApps = (await getCollection('apps')).sort((a, b) => a.data.order - b.data.order);
-// Studio's own apps vs. client work (apps built for a partner — see `developedFor`).
 const apps = allApps.filter((a) => !a.data.developedFor);
 const clientApps = allApps.filter((a) => a.data.developedFor);
+const appBySlug = Object.fromEntries(allApps.map((app) => [app.slug, app]));
+
+const vibe = appBySlug['vibe-rater'];
+const tableTalk = appBySlug['table-talk'];
+const monetary = appBySlug['monetary-policy-independence-day'];
+const econ = appBySlug['econbyte'];
+const homeLight = appBySlug['dude-wheres-this-house'] ?? clientApps[0];
+const lastHuman = appBySlug['last-human'];
+
+const vibeSocial = {
+  name: 'VibeRater Social',
+  liveName: vibe?.data.name ?? 'VibeRater: Aura',
+  icon: '/assets/viberater-social-icon.png',
+  banner: '/assets/viberater-social-banner.png',
+  headline: 'Rate the pic. Post the Vibie. Find your people.',
+  summary:
+    'VibeRater Social is built around daily vibe checks, Vibies, Squad reactions, Radar, MiniVibe, and a cleaner feed for people who want social media to feel lighter.',
+  guardrails: [
+    'Your personal data is not sold.',
+    'You choose what goes public, Squad-only, or private.',
+    'Find your people by vibe, not follower count.',
+  ],
+};
+
+const productStates = [
+  {
+    slug: 'vibe-rater',
+    label: 'VibeRater Social',
+    kicker: 'Coming next',
+    title: 'Post the Vibie',
+    body: 'Daily vibe checks, Vibies, Squad reactions, Radar, MiniVibe, and SlopGuard.',
+    status: 'Daily vibe checks, Squad reactions, Radar, MiniVibe, and cleaner feeds.',
+    icon: vibeSocial.icon,
+    accent: '#ff2fb3',
+    background: vibeSocial.banner,
+    rows: ['Vibes Feed', 'Vibies', 'VibeChecks', 'Squad', 'Radar', 'MiniVibe', 'SlopGuard'],
+    chips: ['Public', 'Squad-only', 'Private'],
+  },
+  {
+    slug: 'table-talk',
+    label: 'Table Talk',
+    kicker: 'Live conversation app',
+    title: 'Pick a card',
+    body: 'Hand-written prompts for dinner tables, first dates, friend groups, and work teams.',
+    status: 'Live on the App Store · no accounts · offline deck',
+    icon: tableTalk?.data.icon,
+    accent: '#b48222',
+    rows: ['Daily Featured', 'Date Night', 'Friend Group', 'Deep Questions', 'Bookmarks', 'Share card'],
+    chips: ['185 prompts', 'Offline', 'Bookmarks'],
+  },
+  {
+    slug: 'monetary-policy-independence-day',
+    label: 'Monetary Policy',
+    kicker: 'Live arcade game',
+    title: 'Beat the Fed',
+    body: 'A satirical iPhone arcade game with 100 Independence Day levels and tuned portrait controls.',
+    status: 'Live on the App Store · ad-supported parody game',
+    icon: monetary?.data.icon,
+    accent: '#b65a19',
+    rows: ['Campaign', 'Mini-games', 'Leaderboards', 'Haptics', 'Easy mode', 'Satire'],
+    chips: ['100 levels', 'Arcade', 'Haptics'],
+  },
+  {
+    slug: 'econbyte',
+    label: 'EconByte',
+    kicker: 'Coming soon',
+    title: 'Learn one idea',
+    body: 'Bite-sized economics cards with plain-language definitions and real-world examples.',
+    status: 'Coming soon · educational app, not financial advice',
+    icon: econ?.data.icon,
+    accent: '#1687a1',
+    rows: ['Daily set', 'Flip card', 'Topics', 'Streak', 'Bookmarks', 'Sources'],
+    chips: ['150 cards', '20 topics', 'Education'],
+  },
+].filter((item) => item.icon);
+
+const releaseBoard = [
+  {
+    app: vibe,
+    eyebrow: 'Coming next',
+    title: vibeSocial.name,
+    body: vibeSocial.headline,
+    detail: 'A lighter social loop for daily vibe checks, Vibies, Squad reactions, Radar, MiniVibe, and cleaner feeds.',
+    icon: vibeSocial.icon,
+    accent: '#ff2fb3',
+    href: '#viberater-social',
+  },
+  {
+    app: tableTalk,
+    eyebrow: 'Live product',
+    title: 'Table Talk',
+    body: 'Conversation-starter cards for dinner tables, dates, friends, and teams.',
+    detail: '185 prompts, daily featured card, bookmarks, and shareable cards.',
+    icon: tableTalk?.data.icon,
+    accent: '#b48222',
+    href: tableTalk ? rel(`/apps/${tableTalk.slug}/`) : '#work',
+  },
+  {
+    app: monetary,
+    eyebrow: 'Live game',
+    title: 'Monetary Policy',
+    body: 'A satirical iPhone arcade game where Fed independence turns chaotic.',
+    detail: '100 levels, mini-games, leaderboards, optional haptics, and parody guardrails.',
+    icon: monetary?.data.icon,
+    accent: '#b65a19',
+    href: monetary ? rel(`/apps/${monetary.slug}/`) : '#work',
+  },
+  {
+    app: homeLight,
+    eyebrow: 'Built for HomeLight',
+    title: homeLight?.data.name ?? "Dude, Where's This House?",
+    body: 'A HomeLight-powered residential Street View guessing game.',
+    detail: 'Public-road Street View, broad location labels, and no homeowner names or exact addresses.',
+    icon: homeLight?.data.icon,
+    accent: '#1b6f82',
+    href: homeLight ? appStoreUrl(homeLight.data.appStoreId) || '#work' : '#work',
+  },
+].filter((item) => item.app && item.icon);
+
+const catalog = [econ, lastHuman].filter(Boolean);
 
 const schema = {
   '@context': 'https://schema.org',
@@ -14,127 +133,256 @@ const schema = {
   name: 'Dudley Development',
   url: ORIGIN,
 };
-const description =
-  'Dudley Development is a small independent studio building polished, playful iPhone apps. Maker of Monetary Policy: Independence Day and Vibe Rater.';
----
-<Base title="Dudley Development — iOS apps with character" description={description} path="/" schema={schema}>
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <span class="eyebrow">Independent iOS Studio</span>
-        <h1>Small apps with<br /><span class="grad">real character.</span></h1>
-        <p class="lede">
-          Dudley Development is a studio building polished, playful iPhone apps —
-          the kind you actually want to open. Free to play, privacy-first, and made with care.
-        </p>
-        <a class="btn primary" href="#apps">See the apps →</a>
-      </div>
-    </section>
 
-    <section id="apps">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>The apps</h2>
-          <p class="sub">Free on the App Store. No accounts. No nonsense.</p>
+const description =
+  'Dudley Development is an independent native iOS studio building focused iPhone apps, App Store launches, privacy and support surfaces, and sharp product loops.';
+---
+<Base title="Dudley Development — native iOS products with a pulse" description={description} path="/" schema={schema}>
+<link rel="stylesheet" href={rel('/assets/home-motion-mobile.css')} />
+
+  <main class="dd-home" id="top">
+    <canvas id="home-brand-field" aria-hidden="true"></canvas>
+    <div class="paper-wash" aria-hidden="true"></div>
+
+    <section class="dd-hero" aria-labelledby="home-title">
+      <div class="hero-copy">
+        <p class="studio-mark">Independent native iOS studio</p>
+        <h1 id="home-title">Native iOS products with a <span>pulse.</span></h1>
+        <p class="hero-lede">
+          Dudley Development builds focused, privacy-aware iPhone apps with sharp product loops,
+          App Store craft, support pages, policy surfaces, and launch-ready web presence.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#viberater-social">Explore VibeRater</a>
+          <a class="button secondary" href="#work">See the apps</a>
+        </div>
+        <div class="studio-stamp" aria-hidden="true">
+          <span>Built independent</span>
+          <strong>D</strong>
+          <span>Ship small · ship honest</span>
+        </div>
+      </div>
+
+      <div class="hero-product" aria-label="Interactive Dudley app showcase">
+        <div class="product-art">
+          <div class="neon-backplate">
+            <img id="product-backdrop" src={rel(vibeSocial.banner)} alt="" />
+          </div>
+          <div class="side-panel">
+            <div class="radar-graphic" aria-hidden="true"><span></span><span></span><span></span></div>
+            <ul id="side-list">
+              {productStates[0].rows.slice(3).map((row) => <li>{row}</li>)}
+            </ul>
+          </div>
+          <div class="phone-shell" id="phone-shell">
+            <div class="phone-screen">
+              <div class="screen-top">
+                <img id="screen-icon" src={rel(productStates[0].icon)} alt="" />
+                <span id="screen-label">{productStates[0].label}</span>
+              </div>
+              <div class="screen-card">
+                <small id="screen-kicker">{productStates[0].kicker}</small>
+                <strong id="screen-title">{productStates[0].title}</strong>
+                <span id="screen-body">{productStates[0].body}</span>
+              </div>
+              <div class="screen-list" id="screen-list">
+                {productStates[0].rows.slice(0, 4).map((row) => <span>{row}</span>)}
+              </div>
+            </div>
+          </div>
         </div>
 
-        <ul class="app-list">
-          {apps.map((app) => {
-            const url = appStoreUrl(app.data.appStoreId);
-            const live = app.data.status === 'live' && !!url;
-            const hasPage = app.data.landingPage !== false;
-            const slug = app.slug;
-            return (
-              <li class="app-row">
-                <img class="icon" src={rel(app.data.icon)} alt={`${app.data.name} app icon`} width="64" height="64" loading="lazy" />
-                <div class="row-main">
-                  <div class="row-head">
-                    <h3>{app.data.name}</h3>
-                    <span class={`badge ${live ? 'live' : 'soon'}`}>
-                      <span class="dot"></span> {live ? 'Live' : 'Coming soon'}
-                    </span>
-                  </div>
-                  <p class="tagline" title={app.data.tagline}>{app.data.tagline}</p>
-                  <p class="desc">{app.data.description}</p>
-                </div>
-                <div class="actions">
-                  {live && (
-                    <a class="btn app-store-badge compact" href={url} rel="noopener" aria-label={`Download ${app.data.name} on the App Store`}>
-                      <span class="top">Download on the</span>
-                      <span class="bottom">App Store</span>
-                    </a>
-                  )}
-                  {hasPage && <a class={`btn${live ? '' : ' primary'}`} href={rel(`/apps/${slug}/`)}>Learn more</a>}
-                  {hasPage && <a class="btn ghost" href={rel(`/privacy/${slug}`)}>Privacy</a>}
-                  {!live && !hasPage && <span class="btn ghost disabled" aria-disabled="true">Coming soon</span>}
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+        <div class="product-dock" aria-label="Choose an app">
+          {productStates.map((state, index) => (
+            <button
+              class={`product-tab${index === 0 ? ' active' : ''}`}
+              type="button"
+              data-product={state.slug}
+              data-label={state.label}
+              data-kicker={state.kicker}
+              data-title={state.title}
+              data-body={state.body}
+              data-status={state.status}
+              data-icon={rel(state.icon)}
+              data-accent={state.accent}
+              data-background={state.background ? rel(state.background) : ''}
+              data-rows={state.rows.join('|')}
+              data-chips={state.chips.join('|')}
+              aria-pressed={index === 0 ? 'true' : 'false'}
+            >
+              <img src={rel(state.icon)} alt="" />
+              <span>
+                {state.label}
+                {index === 0 && <small>{vibeSocial.headline}</small>}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        <article class="product-brief" id="product-brief">
+          <span id="brief-status">{productStates[0].status}</span>
+          <h2 id="brief-title">{productStates[0].label}</h2>
+          <p id="brief-copy">{productStates[0].body}</p>
+          <div id="brief-chips" class="brief-chips">
+            {productStates[0].chips.map((chip) => <span>{chip}</span>)}
+          </div>
+        </article>
       </div>
     </section>
 
-    {clientApps.length > 0 && (
-      <section id="client-work">
-        <div class="wrap">
-          <div class="section-head">
-            <h2>Client work</h2>
-            <p class="sub">Apps we design and build for partners, under their brand.</p>
-          </div>
+    <section class="studio-proof" aria-labelledby="approach-title">
+      <div>
+        <p class="section-kicker">Our approach</p>
+        <h2 id="approach-title">Small studio. Strong product taste.</h2>
+        <p>
+          The work stays focused: native app loops, launch copy, privacy/support pages,
+          App Store packaging, and web surfaces that tell the truth about what shipped.
+        </p>
+      </div>
+      <article>
+        <span>01</span>
+        <h3>Clear from the first tap</h3>
+        <p>Each app page tells you what the app does, how it works, and where to get help.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3>Native loops first</h3>
+        <p>Haptics, share cards, offline decks, score loops, and daily rituals lead the experience.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>Launch surfaces ship together</h3>
+        <p>Support, privacy, answers, blog posts, and App Store copy are treated as product, not cleanup.</p>
+      </article>
+    </section>
 
-          <ul class="app-list">
-            {clientApps.map((app) => {
-              const url = appStoreUrl(app.data.appStoreId);
-              const live = app.data.status === 'live' && !!url;
-              const hasPage = app.data.landingPage !== false;
-              const slug = app.slug;
-              return (
-                <li class="app-row">
-                  <img class="icon" src={rel(app.data.icon)} alt={`${app.data.name} app icon`} width="64" height="64" loading="lazy" />
-                  <div class="row-main">
-                    <div class="row-head">
-                      <h3>{app.data.name}</h3>
-                      <span class="partner-tag">Created for {app.data.developedFor}</span>
-                      <span class={`badge ${live ? 'live' : 'soon'}`}>
-                        <span class="dot"></span> {live ? 'Live' : 'Coming soon'}
-                      </span>
-                    </div>
-                    <p class="tagline" title={app.data.tagline}>{app.data.tagline}</p>
-                    <p class="desc">{app.data.description}</p>
-                  </div>
-                  <div class="actions">
-                    {live && (
-                      <a class="btn app-store-badge compact" href={url} rel="noopener" aria-label={`Download ${app.data.name} on the App Store`}>
-                        <span class="top">Download on the</span>
-                        <span class="bottom">App Store</span>
-                      </a>
-                    )}
-                    {hasPage && <a class={`btn${live ? '' : ' primary'}`} href={rel(`/apps/${slug}/`)}>Learn more</a>}
-                    {hasPage && <a class="btn ghost" href={rel(`/privacy/${slug}`)}>Privacy</a>}
-                    {!live && !hasPage && <span class="btn ghost disabled" aria-disabled="true">Coming soon</span>}
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+    <section id="viberater-social" class="vibe-section" aria-labelledby="vibe-title">
+      <div class="vibe-copy">
+        <p class="section-kicker">Flagship product</p>
+        <h2 id="vibe-title">{vibeSocial.headline}</h2>
+        <p>{vibeSocial.summary}</p>
+        <div class="guardrail-row">
+          {vibeSocial.guardrails.map((item) => <span>{item}</span>)}
+        </div>
+        <div class="vibe-actions">
+          <a class="button primary" href={rel('/apps/vibe-rater/')}>Explore VibeRater</a>
+          <a class="button secondary" href={rel('/answers/viberater-social/')}>How VibeRater Social works</a>
+          {VIBERATER_SOCIALS.map((s) => (
+            <a class="button secondary" href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.label}>
+              {s.name} {s.handle}
+            </a>
+          ))}
+        </div>
+      </div>
+      <div class="vibe-ui" aria-label="VibeRater Social interface">
+        <div class="vibe-device">
+          <div class="screen-top">
+            <img src={rel(vibeSocial.icon)} alt="" />
+            <span>VibeRater Social</span>
+          </div>
+          <div class="vibie-composer">
+            <small>Daily Vibe</small>
+            <strong>Post the Vibie</strong>
+            <span>Caption · receipt · anthem · share card</span>
+          </div>
+          <div class="privacy-choice">
+            <span>Public</span>
+            <span>Squad-only</span>
+            <span>Private</span>
+          </div>
+        </div>
+        <div class="vibe-pillar-board">
+          {['Vibes Feed', 'Vibies', 'VibeChecks', 'Squad', 'Radar', 'MiniVibe', 'SlopGuard'].map((pillar, index) => (
+            <article>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h3>{pillar}</h3>
+              <p>
+                {pillar === 'Vibes Feed'
+                  ? 'Ratings become posts, reactions, comments, quotes, and friend activity.'
+                  : pillar === 'Vibies'
+                    ? 'Story-style posts made from rated photos, captions, receipts, and anthems.'
+                    : pillar === 'VibeChecks'
+                      ? 'Friends answer your vibe with their own selfie reaction.'
+                      : pillar === 'Squad'
+                        ? 'A friend circle for daily energy without follower-count theater.'
+                        : pillar === 'Radar'
+                          ? 'Nearby places, events, and similar-vibe plans.'
+                          : pillar === 'MiniVibe'
+                            ? 'A tiny companion that reacts to the daily vibe.'
+                            : 'Helps filter suspected AI-generated image posts from the feed.'}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="release-section" aria-labelledby="work-title">
+      <div class="section-heading">
+        <p class="section-kicker">Apps</p>
+        <h2 id="work-title">Quick laughs, better conversations, and useful little daily loops.</h2>
+      </div>
+      <div class="release-grid">
+        {releaseBoard.map((item, index) => (
+          <article class={`release-card${index === 0 ? ' featured' : ''}`} style={`--accent: ${item.accent}`}>
+            <img src={rel(item.icon)} alt="" loading="lazy" />
+            <div>
+              <span>{item.eyebrow}</span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+              <small>{item.detail}</small>
+            </div>
+            <a href={item.href} rel={item.href.startsWith('http') ? 'noopener' : undefined}>
+              {index === 0 ? 'Explore VibeRater' : item.app?.data.status === 'live' ? 'View app' : 'Learn more'}
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="site-system" aria-labelledby="site-title">
+      <div class="section-heading">
+        <p class="section-kicker">Help and policies</p>
+        <h2 id="site-title">Support, privacy, and answers stay easy to find.</h2>
+      </div>
+      <div class="surface-list">
+        <a href={rel('/support/')}>
+          <span>Support</span>
+          <p>Product-specific help, reset notes, purchase restore guidance, and contact paths.</p>
+        </a>
+        <a href={rel('/privacy/')}>
+          <span>Privacy</span>
+          <p>Plain-language privacy notes for each app, including ads, accounts, and local data.</p>
+        </a>
+        <a href={rel('/answers/')}>
+          <span>Answers</span>
+          <p>Short AEO-friendly explainers for questions people actually search.</p>
+        </a>
+        <a href={rel('/blog/')}>
+          <span>Blog</span>
+          <p>Launch notes, product thinking, and updates without fake metrics or fluff.</p>
+        </a>
+      </div>
+    </section>
+
+    {catalog.length > 0 && (
+      <section class="catalog-section" aria-labelledby="catalog-title">
+        <div class="section-heading">
+          <p class="section-kicker">Pipeline</p>
+          <h2 id="catalog-title">More Dudley apps are on the way.</h2>
+        </div>
+        <div class="mini-catalog">
+          {catalog.map((app) => (
+            <a href={app.data.landingPage === false ? rel('/#work') : rel(`/apps/${app.slug}/`)}>
+              <img src={rel(app.data.icon)} alt="" loading="lazy" />
+              <span>{app.data.name}</span>
+              <small>{app.data.status === 'live' ? 'Live' : 'Coming soon'}</small>
+            </a>
+          ))}
         </div>
       </section>
     )}
-
-    <section style="padding-top:8px;">
-      <div class="wrap">
-        <div class="app-card" style="text-align:center; align-items:center;">
-          <h3 style="font-size:24px;">Built honestly, shipped carefully.</h3>
-          <p class="desc" style="max-width:560px; margin:0 auto;">
-            Every Dudley app is free, runs without an account, and keeps your data on your device.
-            Ads are clearly disclosed and you can always opt out of tracking. That's the whole deal.
-          </p>
-          <div class="actions" style="justify-content:center;">
-            <a class="btn" href={rel('/about')}>More about the studio →</a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
+
+<script src={rel('/assets/home-motion-mobile.js')} defer></script>
 </Base>

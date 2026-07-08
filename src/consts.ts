@@ -21,7 +21,7 @@ export const CONTACT_EMAIL = 'hello@dudleyapps.com'; // general / say-hi contact
 // Add/remove a platform here and both the footer icons and JSON-LD update.
 // `icon` keys into the SVG map in Base.astro. (Reddit intentionally excluded —
 // promotion happens in subreddits, not via a profile link.)
-export interface Social { name: string; label: string; url: string; icon: string; }
+export interface Social { name: string; label: string; url: string; icon: string; handle?: string; }
 export const SOCIALS: Social[] = [
   { name: 'X', label: 'Follow Dudley Development on X', url: 'https://x.com/DudleyAppDev', icon: 'x' },
   { name: 'Instagram', label: 'Follow Dudley Development on Instagram', url: 'https://instagram.com/dudleyappdev', icon: 'instagram' },
@@ -30,6 +30,16 @@ export const SOCIALS: Social[] = [
 
 // Schema sameAs derives from the same list, so it never drifts.
 export const SOCIAL_LINKS: string[] = SOCIALS.map((s) => s.url);
+
+// VibeRater's own follow-us handles — app-level accounts, distinct from the
+// studio accounts above (which stay in the site footer). Rendered on VibeRater
+// surfaces (app page, homepage VibeRater Social section, answers page) and
+// merged into the VibeRater SoftwareApplication sameAs in AppLanding.astro.
+export const VIBERATER_SOCIALS: Social[] = [
+  { name: 'TikTok', label: 'Follow VibeRater on TikTok', url: 'https://tiktok.com/@viberaterapp', icon: 'tiktok', handle: '@viberaterapp' },
+  { name: 'Instagram', label: 'Follow VibeRater on Instagram', url: 'https://instagram.com/viberater.app', icon: 'instagram', handle: '@viberater.app' },
+];
+export const VIBERATER_SOCIAL_LINKS: string[] = VIBERATER_SOCIALS.map((s) => s.url);
 
 // Build a site-relative href that respects the GitHub Pages base path.
 export function rel(path: string): string {
@@ -47,6 +57,7 @@ export const APP_STORE = {
   monetaryPolicyIndependenceDay: '6775539250',
   vibeRater: '6780704282',
   dudeWheresThisHouse: '6779785617',
+  tableTalk: '6780714565',
 };
 
 export function appStoreUrl(id: string): string {
