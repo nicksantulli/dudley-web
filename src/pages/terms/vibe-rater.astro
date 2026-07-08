@@ -1,0 +1,107 @@
+---
+import Base from '../../layouts/Base.astro';
+import { rel, SUPPORT_EMAIL } from '../../consts';
+const description = 'Terms of Use and End User License Agreement for VibeRater by Dudley Development.';
+---
+<Base title="Terms of Use · VibeRater" description={description} path="/terms/vibe-rater">
+  <main class="page">
+    <div class="wrap" style="max-width:720px;">
+      <a class="back" href={rel('/apps/vibe-rater')}>← VibeRater</a>
+      <h1>Terms of Use</h1>
+      <p class="updated">VibeRater · Last updated July 8, 2026</p>
+
+      <p>
+        These Terms of Use ("Terms") are the agreement (the "EULA") between you and Dudley Development
+        ("we," "us") for the VibeRater app and its social features (the "App"). By downloading or using
+        the App, you agree to these Terms. If you do not agree, do not use the App.
+      </p>
+
+      <h2>Zero tolerance for objectionable content and abuse</h2>
+      <p>
+        There is <strong>no tolerance</strong> for objectionable content or abusive behavior on VibeRater.
+        You agree not to post, share, or send content that is illegal, hateful, harassing, threatening,
+        sexually explicit, violent, defamatory, or that targets, demeans, or endangers any person, and not
+        to harass, impersonate, or abuse other users. Accounts that violate this policy may be removed
+        without notice. We review reports of objectionable content and abusive users and act on them —
+        typically within 24 hours — by removing content and, where warranted, ejecting the user who
+        provided it.
+      </p>
+
+      <h2>Report and block</h2>
+      <ul>
+        <li><strong>Report:</strong> every post has a <em>Report</em> action. Flagged content is reviewed for safety and moderation, and removed if it violates these Terms.</li>
+        <li><strong>Block:</strong> you can block any user from their profile. Blocking hides their content from you and prevents them from contacting you.</li>
+        <li><strong>Contact us:</strong> you can also report concerns directly to <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</li>
+      </ul>
+
+      <h2>Eligibility</h2>
+      <p>
+        You must be at least 13 years old to use the App. If you are under the age of majority where you
+        live, you may use the App only with the consent and supervision of a parent or legal guardian who
+        agrees to these Terms.
+      </p>
+
+      <h2>For entertainment only</h2>
+      <p>
+        VibeRater is a novelty for fun. Its scores, grades, archetypes, auras, and other outputs are
+        AI-generated entertainment — they are <strong>not</strong> a measurement of anything real about
+        you, your appearance, your worth, or any person in a photo, and must not be relied on for any
+        decision.
+      </p>
+
+      <h2>Your account</h2>
+      <p>
+        Some features (posting, friends, messages, events) use a profile that syncs to our service. You are
+        responsible for activity on your account and for the content you choose to post, share, or save.
+        Keep your device secure; access to your device may grant access to your account.
+      </p>
+
+      <h2>Your content</h2>
+      <p>
+        You keep ownership of the photos and content you create. To operate the social features, you grant
+        us a limited, non-exclusive, worldwide, royalty-free license to host, store, reproduce, and display
+        the content you choose to post or share, solely to provide and improve the App. Content you rate
+        privately (without posting) is processed to generate your rating and is not published. You are
+        responsible for having the rights to any content you upload, and for any people depicted in it.
+      </p>
+
+      <h2>Prohibited conduct</h2>
+      <ul>
+        <li>Posting objectionable content as described above, or content you do not have the right to share.</li>
+        <li>Harassing, threatening, impersonating, doxxing, or abusing other users.</li>
+        <li>Uploading photos of other people without their consent, or content sexualizing minors (this is strictly forbidden and reported to authorities).</li>
+        <li>Spamming, scraping, reverse-engineering, or attempting to disrupt or gain unauthorized access to the App or other accounts.</li>
+      </ul>
+
+      <h2>Suspension and termination</h2>
+      <p>
+        We may remove content, and suspend or terminate accounts, that violate these Terms — including
+        removing an abusive user — with or without notice. You may stop using the App and delete your
+        account at any time from within the App.
+      </p>
+
+      <h2>Advertising</h2>
+      <p>
+        The App may show ads served by Google AdMob. How your data is handled for ads, and your tracking
+        choices, are described in our <a href={rel('/privacy/vibe-rater')}>Privacy Policy</a>.
+      </p>
+
+      <h2>Disclaimers and limitation of liability</h2>
+      <p>
+        The App is provided "as is," without warranties of any kind. To the fullest extent permitted by
+        law, we are not liable for any indirect, incidental, or consequential damages arising from your use
+        of the App or from content posted by other users. Nothing in these Terms limits liability that
+        cannot be limited under applicable law.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        If these Terms change materially, the new version will be posted at this URL with an updated date
+        above. Continued use of the App after a change constitutes acceptance.
+      </p>
+
+      <h2>Contact</h2>
+      <p>Questions? Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
+    </div>
+  </main>
+</Base>

@@ -1,77 +1,144 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { rel, SUPPORT_EMAIL } from '../../consts';
-const description = 'Privacy policy for Vibe Rater by Dudley Development.';
+const description = 'Privacy policy for VibeRater by Dudley Development.';
 ---
-<Base title="Privacy Policy · Vibe Rater" description={description} path="/privacy/vibe-rater">
+<Base title="Privacy Policy · VibeRater" description={description} path="/privacy/vibe-rater">
   <main class="page">
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/privacy/')}>← All privacy policies</a>
       <h1>Privacy Policy</h1>
-      <p class="updated">Vibe Rater · Last updated June 14, 2026</p>
+      <p class="updated">VibeRater · Last updated July 8, 2026</p>
 
       <h2>The short version</h2>
       <p>
-        Vibe Rater is a free, for-entertainment app supported by ads. When you pick or take a photo, the app
-        <strong>sends it to our service to generate your playful "vibe" rating</strong>, then the photo is
-        <strong>discarded — it is processed in memory and never stored or retained</strong>. We don't run
-        accounts, profiles, or analytics of our own. To show ads, the app uses Google AdMob, as described
-        below — and you can say no to tracking with one tap.
+        VibeRater is a free, for-entertainment app that gives your photos a playful AI "vibe" rating and,
+        if you choose, lets you share ratings, post to a feed, add friends, message, and join events. When
+        you rate a photo, it is <strong>sent to our service to generate the rating and then discarded —
+        processed in memory and never stored</strong>. When you <strong>choose to post, share, or save</strong>,
+        that media and the related profile and social data <strong>are stored</strong> so the feature works.
+        We don't sell your personal data. Ads use Google AdMob, and you can say no to tracking with one tap.
       </p>
 
-      <h2>How your photo is used</h2>
+      <h2>Rating a photo (processed, not stored)</h2>
       <p>
-        When you pick or take a photo, Vibe Rater sends it to our rating service, which produces the playful
-        "vibe" score and verdict. <strong>Your photo is used only to generate that rating, processed in memory,
-        and is never stored, retained, logged, or shared</strong> — it isn't saved on our servers and isn't tied
-        to your name, account, or any identifier. The app requests photo-library or camera access only so you can
-        choose the image you want rated.
-      </p>
-      <p>
-        We don't sell your photos or use them to build profiles or to train models. The rating is generated and
-        the image is dropped.
+        When you pick or take a photo to rate, VibeRater sends it to our rating service, which uses a
+        third-party AI provider (Anthropic) to produce the playful score, verdict, archetype, and aura.
+        <strong>A photo you only rate is used solely to generate that rating, processed in memory, and is
+        never stored, retained, logged, or used to train models</strong>. The camera and photo-library
+        permissions exist only so you can choose the image you want rated.
       </p>
 
-      <h2>What stays on your device</h2>
-      <ul>
-        <li>Your recent results and any saved vibe cards (stored locally so you can revisit them).</li>
-        <li>Your sound and haptics preferences.</li>
-      </ul>
-      <p>This is stored on your device. Uninstalling the app, or clearing history in Settings, removes it.</p>
-
-      <h2>For entertainment only</h2>
+      <h2>Accounts and profiles</h2>
       <p>
-        Vibe Rater is a novelty. Its scores, grades, and archetypes are meant to be fun and are not a measurement
-        of anything real about you, your appearance, or any person in a photo.
+        Social features (posting, friends, messages, events, your Mini) use a profile that syncs to our
+        cloud service so it stays attached to you across launches and devices. Depending on what you do,
+        this can include: a device-generated account identifier; an optional username, display name, bio,
+        avatar, and banner; and — if you choose to sign in — a Sign in with Apple or Google identifier
+        (we receive an opaque identifier, not your Apple/Google password). You can use the rating features
+        without creating a social profile.
+      </p>
+
+      <h2>Content you post or share</h2>
+      <p>
+        If you post, share, or save, the selected media and content — posts, captions, ratings you publish,
+        vibe cards, comments, likes, events you create or RSVP to, and direct messages — <strong>are
+        stored</strong> on our cloud infrastructure (Supabase) so the social features work and other users
+        can see what you chose to share. Direct messages are stored to deliver them; they are not
+        end-to-end encrypted, and we may access content when necessary for safety, moderation, or legal
+        reasons. Content you rate privately (without posting) is never published.
+      </p>
+
+      <h2>Friends, contacts, and discovery</h2>
+      <p>
+        To help you find friends, VibeRater can scan the contacts on your device for saved @handles or
+        invite codes. <strong>Your contacts are matched on-device and are not uploaded</strong>. If you opt
+        in to VibeRadar (nearby discovery), a coarse, approximate location is shared briefly with other
+        opted-in users so you can see nearby venues and vibers; you control this in Settings.
+      </p>
+
+      <h2>Safety and moderation</h2>
+      <p>
+        VibeRater has no tolerance for objectionable content or abusive users. You can report any post and
+        block any user in the app. We review reports and act on them — typically within 24 hours — by
+        removing content and, where warranted, removing the user. See our
+        <a href={rel('/terms/vibe-rater')}>Terms of Use</a> for the full policy.
+      </p>
+
+      <h2>Analytics</h2>
+      <p>
+        We use PostHog to understand how the app is used and to improve it. Analytics is limited to coarse,
+        product events (for example, that a rating was completed) tied to your pseudonymous account
+        identifier. <strong>We do not send your photos, messages, captions, names, or contacts to
+        analytics.</strong> Event data is minimized and truncated, and if you enable private mode we stop
+        sending analytics.
       </p>
 
       <h2>Advertising (Google AdMob)</h2>
       <p>
-        The app shows occasional full-screen ads between ratings. Ads are served by <strong>Google AdMob</strong>,
-        a third-party advertising network. To serve and measure ads, Google may collect device information such as
-        the advertising identifier (IDFA), IP address, and coarse ad-interaction data. We do not receive, store, or
-        link any of this to you.
+        The app shows occasional ads served by <strong>Google AdMob</strong>, a third-party advertising
+        network. To serve and measure ads, Google may collect device information such as the advertising
+        identifier (IDFA), IP address, and coarse ad-interaction data. We do not receive, store, or link
+        this to your account.
       </p>
       <ul>
         <li><strong>Your choice:</strong> the first time an ad is about to appear, iOS asks whether to allow tracking. If you choose <em>Ask App Not to Track</em>, you still get ads — just non-personalized ones.</li>
-        <li><strong>Change your mind anytime:</strong> iOS Settings → Privacy &amp; Security → Tracking → Vibe Rater.</li>
-        <li>How Google uses this data is described in <a href="https://policies.google.com/technologies/ads">Google's advertising policy</a> and <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</li>
+        <li><strong>Change your mind anytime:</strong> iOS Settings → Privacy &amp; Security → Tracking → VibeRater.</li>
+        <li>How Google uses this data is described in <a href="https://policies.google.com/technologies/ads" rel="noopener">Google's advertising policy</a> and <a href="https://policies.google.com/privacy" rel="noopener">Google's privacy policy</a>.</li>
       </ul>
+
+      <h2>Who we share data with</h2>
+      <p>We do not sell your personal data. We share it only with the service providers that make the app work:</p>
+      <ul>
+        <li><strong>Anthropic</strong> — generates your vibe rating from a photo (processed in memory, not stored by us).</li>
+        <li><strong>Supabase</strong> — cloud hosting and database for your profile and the content you post or share.</li>
+        <li><strong>Apple &amp; Google</strong> — Sign in with Apple / Google sign-in, when you choose to use them.</li>
+        <li><strong>Google AdMob</strong> — advertising, as described above.</li>
+        <li><strong>PostHog</strong> — pseudonymous product analytics, as described above.</li>
+      </ul>
+
+      <h2>What stays on your device</h2>
+      <ul>
+        <li>Your recent results and any saved vibe cards.</li>
+        <li>Your sign-in and session credentials, stored in the iOS Keychain.</li>
+        <li>Your sound, haptics, language, and privacy preferences.</li>
+      </ul>
+
+      <h2>Retention and deleting your data</h2>
+      <p>
+        Content you post is retained until you delete it or delete your account. You can delete individual
+        posts in the app, and you can <strong>delete your account</strong> from Settings, which removes your
+        profile and associated social content and anonymizes your identifiers. Photos you only rate are
+        never stored, so there is nothing to delete on our side.
+      </p>
+
+      <h2>For entertainment only</h2>
+      <p>
+        VibeRater is a novelty. Its scores, grades, archetypes, and auras are AI-generated fun and are not a
+        measurement of anything real about you, your appearance, or any person in a photo.
+      </p>
 
       <h2>Children</h2>
       <p>
-        We do not knowingly collect any data from anyone, including children under 13. There are no accounts,
-        profiles, or in-app messaging, and the app is not directed at children.
+        VibeRater is not directed at children under 13, and you must be at least 13 to use it. We do not
+        knowingly collect personal information from children under 13.
+      </p>
+
+      <h2>Security</h2>
+      <p>
+        Data is transmitted over encrypted connections (HTTPS/TLS), sign-in and session credentials are held
+        in the device Keychain, and access to stored content is controlled by your account. No method of
+        transmission or storage is perfectly secure, but we take reasonable measures to protect your data.
       </p>
 
       <h2>Changes</h2>
       <p>
-        If this policy ever changes materially, the new version will be posted at this URL with an updated date
+        If this policy changes materially, the new version will be posted at this URL with an updated date
         above. Continued use of the app after a change constitutes acceptance.
       </p>
 
       <h2>Contact</h2>
-      <p>Questions? Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
+      <p>Questions or data requests? Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
     </div>
   </main>
 </Base>
