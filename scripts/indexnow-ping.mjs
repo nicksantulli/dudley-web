@@ -13,7 +13,9 @@ import { join } from 'node:path';
 
 const ORIGIN = 'https://dudleyapps.com';
 const HOST = 'dudleyapps.com';
-const ENDPOINT = 'https://api.indexnow.com/IndexNow';
+// NOTE: the API lives on .org — api.indexnow.com does not resolve, and every
+// deploy ping before Jul 8 2026 silently failed with "fetch failed" because of it.
+const ENDPOINT = 'https://api.indexnow.org/IndexNow';
 
 // Find the IndexNow key file in public/ (32-hex stem, content == stem).
 export function findKey(publicDir = 'public') {
