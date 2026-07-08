@@ -52,10 +52,10 @@
 
 ## Blog
 
-- [Are AI Photo Rating Apps Safe?](https://dudleyapps.com/blog/safe-ai-photo-rating-apps/): A practical checklist for choosing an AI photo rating app: privacy labels, photo permissions, storage claims, entertainment disclaimers, and when VibeRater fits.
 - [What Is an Aura App?](https://dudleyapps.com/blog/what-is-an-aura-app/): An aura app is a playful photo app that turns a selfie or picture into a vibe read, scorecard, archetype, color, or shareable result. Here is how to use one without confusing entertainment for real analysis.
-- [What Is a Vibie?](https://dudleyapps.com/blog/what-is-a-vibie/): A Vibie is the VibeRater Social idea of turning a rated photo into a social post. Here's how it fits with VibeRater, Squad reactions, VibeChecks, and Radar.
+- [Are AI Photo Rating Apps Safe?](https://dudleyapps.com/blog/safe-ai-photo-rating-apps/): A practical checklist for choosing an AI photo rating app: privacy labels, photo permissions, storage claims, entertainment disclaimers, and when VibeRater fits.
 - [What Is a Vibe Check App?](https://dudleyapps.com/blog/what-is-a-vibe-check-app/): A vibe check app turns a photo, outfit, or moment into a playful read on your energy. Here's what the category means, how VibeRater works, and what to avoid.
+- [What Is a Vibie?](https://dudleyapps.com/blog/what-is-a-vibie/): A Vibie is the VibeRater Social idea of turning a rated photo into a social post. Here's how it fits with VibeRater, Squad reactions, VibeChecks, and Radar.
 - [Does VibeRater Store Your Photos?](https://dudleyapps.com/blog/viberater-photo-privacy/): A clear privacy explainer for VibeRater: what happens when you upload a photo, what the app does not claim, and why privacy wording matters for photo rating apps.
 - [How to Rate Your Vibe From a Photo](https://dudleyapps.com/blog/rate-my-vibe-from-a-photo/): Want to rate your vibe from a selfie, outfit pic, squad shot, or pet photo? Here's how VibeRater turns a picture into a scorecard, archetype, aura color, and share card.
 - [The Best Photo Games for Group Chats](https://dudleyapps.com/blog/best-group-chat-photo-games/): Photo games work best when the result is funny, fast, and shareable. Here are the best group-chat formats, including VibeRater's photo vibe cards.
@@ -64,8 +64,8 @@
 - [In Defense of the NPC (It's a Compliment Now)](https://dudleyapps.com/blog/npc-defense/): NPC started as an internet insult. It became a TikTok content genre. Now 'NPC energy' is a genuine compliment — for people who have mastered the art of not performing for anyone. We explain the full arc.
 - [What Your Phone Case Says About Your Vibe](https://dudleyapps.com/blog/phone-case-vibe/): The phone case is the one accessory you chose while panicking about dropping your phone. What that split-second decision reveals about your archetype — according to vibe science (not real science).
 - [The Best Satirical iOS Games That Actually Respect Your Intelligence](https://dudleyapps.com/blog/best-satirical-ios-games/): Most 'funny' games on the App Store are slot machines with a hat. These six satire games on iPhone are genuinely good — including one about the Federal Reserve.
-- [What Your Federal Reserve Opinion Says About Your Vibe](https://dudleyapps.com/blog/fed-opinion-vibe/): Your gut reaction to a Fed rate decision reveals your archetype. We matched every possible take on monetary policy to a VibeRater result.
 - [Gorpcore Prophet: The Archetype That Won the 2020s Without Trying](https://dudleyapps.com/blog/gorpcore-prophet-won/): Gorpcore didn't go mainstream. Everyone else went gorpcore. A look at the decade's most unlikely aesthetic winner — and what separates a Gorpcore Prophet from someone who just owns a vest.
+- [What Your Federal Reserve Opinion Says About Your Vibe](https://dudleyapps.com/blog/fed-opinion-vibe/): Your gut reaction to a Fed rate decision reveals your archetype. We matched every possible take on monetary policy to a VibeRater result.
 
 ## Privacy and Support Facts
 
