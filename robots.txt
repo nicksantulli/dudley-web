@@ -25,5 +25,9 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
+# Machine-readable context for answer engines and feed readers:
+# https://dudleyapps.com/llms.txt
+# https://dudleyapps.com/blog/rss.xml
+
 Sitemap: https://dudleyapps.com/sitemap-index.xml
 Sitemap: https://dudleyapps.com/sitemap-images.xml
