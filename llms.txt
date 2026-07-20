@@ -1,6 +1,6 @@
 # Dudley Development
 
-> Dudley Development is an independent iOS app studio that builds small, polished, playful iPhone apps. VibeRater is the lead product family, with VibeRater: Aura available on the App Store and VibeRater Social introduced on the homepage as the next social version.
+> Dudley Development is the public-facing studio name of Dudley Development, LLC, an independent iOS app studio that builds small, polished, playful iPhone apps. VibeRater is the lead product family, with VibeRater: Aura available on the App Store and VibeRater Social introduced on the homepage as the next social version.
 
 ## Canonical Site Pages
 
