@@ -52,6 +52,7 @@
 
 ## Blog
 
+- [How to Do a Vibe Check in a Group Chat](https://dudleyapps.com/blog/how-to-do-a-vibe-check-in-a-group-chat/): A vibe check in a group chat is a quick way to ask what the room feels like, react to a photo, or turn a moment into a low-stakes game. Here is how to do it without making it weird.
 - [Are Aura Apps Real? Entertainment vs. Actual Analysis](https://dudleyapps.com/blog/are-aura-apps-real/): Aura apps can be fun, but their photo scores, colors, and archetypes should be treated as entertainment. Here is how to tell playful vibe reads from serious claims.
 - [What Is an Aura App?](https://dudleyapps.com/blog/what-is-an-aura-app/): An aura app is a playful photo app that turns a selfie or picture into a vibe read, scorecard, archetype, color, or shareable result. Here is how to use one without confusing entertainment for real analysis.
 - [Are AI Photo Rating Apps Safe?](https://dudleyapps.com/blog/safe-ai-photo-rating-apps/): A practical checklist for choosing an AI photo rating app: privacy labels, photo permissions, storage claims, entertainment disclaimers, and when VibeRater fits.
