@@ -52,6 +52,8 @@
 
 ## Blog
 
+- [Do AI Photo Apps Need Labels on TikTok?](https://dudleyapps.com/blog/do-ai-photo-apps-need-labels-on-tiktok/): TikTok asks creators to label realistic AI-generated or significantly AI-edited content. Here is what that means before you share AI photo, aura, or vibe-check results.
+
 - [Can Apps See All Your iPhone Photos?](https://dudleyapps.com/blog/can-apps-see-all-your-photos-iphone/): iPhone apps can see your full photo library only when you grant full Photos access. Here is how Limited Access, Photo Picker, and privacy labels work.
 - [How to Do a Vibe Check in a Group Chat](https://dudleyapps.com/blog/how-to-do-a-vibe-check-in-a-group-chat/): A vibe check in a group chat is a quick way to ask what the room feels like, react to a photo, or turn a moment into a low-stakes game. Here is how to do it without making it weird.
 - [Are Aura Apps Real? Entertainment vs. Actual Analysis](https://dudleyapps.com/blog/are-aura-apps-real/): Aura apps can be fun, but their photo scores, colors, and archetypes should be treated as entertainment. Here is how to tell playful vibe reads from serious claims.
