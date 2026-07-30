@@ -52,6 +52,7 @@
 
 ## Blog
 
+- [Should You Give an AI Photo App Full Photo Access?](https://dudleyapps.com/blog/should-you-give-ai-photo-app-full-photo-access/): Most AI photo apps do not need your whole camera roll for a single edit, aura card, or vibe check. Here is when full photo access makes sense and when to use a picker instead.
 - [Can Photo Apps See Your Location?](https://dudleyapps.com/blog/can-photo-apps-see-your-location/): Photo apps may receive location metadata when you share or upload an image. Here is how iPhone photo location data works and what to check before using an aura or AI photo app.
 - [Do AI Photo Apps Need Labels on TikTok?](https://dudleyapps.com/blog/do-ai-photo-apps-need-labels-on-tiktok/): TikTok asks creators to label realistic AI-generated or significantly AI-edited content. Here is what that means before you share AI photo, aura, or vibe-check results.
 
