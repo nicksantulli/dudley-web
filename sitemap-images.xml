@@ -169,6 +169,11 @@
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://dudleyapps.com/blog/tags/ai-slop/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://dudleyapps.com/blog/tags/answers/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
@@ -244,6 +249,11 @@
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://dudleyapps.com/blog/tags/social-media/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://dudleyapps.com/blog/tags/tiktok/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
@@ -262,6 +272,11 @@
     <loc>https://dudleyapps.com/blog/tags/viberater/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://dudleyapps.com/blog/what-is-ai-slop/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.svg</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/compare/best-photo-rating-apps/</loc>
