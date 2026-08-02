@@ -37,6 +37,7 @@ Vibe Rater assigns one of several vibe archetypes based on your photo:
 
 The Dudley Blog covers internet culture, vibe archetypes, and honest app roundups. Full index: https://dudleyapps.com/blog/ (RSS: https://dudleyapps.com/blog/rss.xml).
 
+- [Do AI Photo Apps Need AI Act Labels?](https://dudleyapps.com/blog/do-ai-photo-apps-need-ai-act-labels/): The EU AI Act transparency rules start applying on August 2, 2026. Here is what AI photo app users should know about labels, deepfakes, and honest vibe-check posts.
 - [What Is AI Slop?](https://dudleyapps.com/blog/what-is-ai-slop/): AI slop is low-effort AI-generated content that makes feeds feel fake, repetitive, or misleading. Here is what it means for photo trends, social apps, and vibe-check posts.
 - [Can AI Use Your Instagram Photos?](https://dudleyapps.com/blog/can-ai-use-your-instagram-photos/): Meta pulled back a July 2026 feature that let people reference public Instagram accounts in AI images, but public social photos still deserve careful privacy settings and context.
 - [Should You Give an AI Photo App Full Photo Access?](https://dudleyapps.com/blog/should-you-give-ai-photo-app-full-photo-access/): Most AI photo apps do not need your whole camera roll for a single edit, aura card, or vibe check. Here is when full photo access makes sense and when to use a picker instead.
