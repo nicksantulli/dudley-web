@@ -622,9 +622,10 @@
 
 .vibe-section {
   display: grid;
-  grid-template-columns: minmax(420px, .76fr) minmax(620px, 1.24fr);
-  gap: clamp(42px, 6vw, 92px);
+  grid-template-columns: minmax(360px, .78fr) minmax(0, 1.22fr);
+  gap: clamp(44px, 5vw, 76px);
   align-items: start;
+  scroll-margin-top: 78px;
 }
 
 .vibe-copy {
@@ -633,7 +634,9 @@
 }
 
 .vibe-copy h2 {
-  max-width: 780px;
+  max-width: 640px;
+  font-size: clamp(46px, 4.25vw, 66px);
+  line-height: .96;
 }
 
 .vibe-copy p {
@@ -647,89 +650,124 @@
 
 .vibe-ui {
   display: grid;
-  grid-template-columns: minmax(270px, .72fr) minmax(420px, 1fr);
-  gap: 18px;
-  align-items: stretch;
+  grid-template-columns: minmax(360px, 1.12fr) minmax(250px, .88fr);
+  gap: 16px;
+  align-items: start;
 }
 
-.vibe-device {
-  min-height: 560px;
-  padding: 36px 28px;
-  border: 10px solid #0a0710;
-  border-radius: 46px;
-  background:
-    radial-gradient(circle at 26% 15%, rgba(255, 47, 179, .55), transparent 16rem),
-    radial-gradient(circle at 88% 54%, rgba(32, 216, 245, .4), transparent 17rem),
-    linear-gradient(180deg, #12051c, #07040a 78%);
-  color: white;
-  box-shadow: 0 26px 70px rgba(36, 8, 42, .22);
-}
-
-.vibie-composer {
-  display: grid;
-  gap: 8px;
-  margin-top: 92px;
-  padding: 24px;
-  border: 1px solid rgba(255, 255, 255, .18);
-  border-radius: 22px;
-  background: linear-gradient(135deg, rgba(255, 47, 179, .4), rgba(32, 216, 245, .16));
-}
-
-.vibie-composer small {
-  color: rgba(255, 255, 255, .72);
-  font-size: 12px;
-  font-weight: 850;
-}
-
-.vibie-composer strong {
-  font-size: 42px;
-  line-height: .95;
-  letter-spacing: -0.04em;
-}
-
-.vibie-composer span {
-  color: rgba(255, 255, 255, .74);
-  font-size: 13px;
-  font-weight: 760;
-}
-
-.privacy-choice {
-  margin-top: 24px;
-}
-
-.privacy-choice span {
-  border-color: rgba(255, 255, 255, .14);
-  background: rgba(255, 255, 255, .08);
-  color: rgba(255, 255, 255, .78);
-}
-
-.vibe-pillar-board {
+.vibe-preview-pair {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid rgba(58, 25, 8, .12);
+  border-radius: 28px;
+  background: #100813;
+  box-shadow: 0 24px 64px rgba(36, 8, 42, .2);
 }
 
-.vibe-pillar-board article {
-  min-height: 166px;
-  padding: 24px;
-  border: 1px solid rgba(58, 25, 8, .1);
+.vibe-preview {
+  min-width: 0;
+  margin: 0;
+}
+
+.vibe-preview img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 600 / 1304;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, .12);
   border-radius: 20px;
-  background: rgba(255, 251, 241, .7);
-  box-shadow: 0 16px 42px rgba(58, 25, 8, .06);
+  background: #08040a;
 }
 
-.vibe-pillar-board article:first-child {
-  grid-column: 1 / -1;
-  min-height: 176px;
-  border-color: rgba(255, 47, 179, .32);
+.vibe-preview figcaption {
+  padding: 14px 5px 4px;
+  color: rgba(255, 255, 255, .72);
+}
+
+.vibe-preview figcaption span,
+.vibe-release-summary-head span {
+  display: block;
+  color: var(--pink);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.vibe-preview figcaption strong {
+  display: block;
+  margin-top: 5px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+.vibe-preview figcaption p {
+  margin: 7px 0 0;
+  color: rgba(255, 255, 255, .62);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.vibe-release-summary {
+  padding: 24px;
+  border: 1px solid rgba(255, 47, 179, .24);
+  border-radius: 24px;
   background:
-    radial-gradient(circle at 80% 20%, rgba(32, 216, 245, .14), transparent 16rem),
-    linear-gradient(135deg, rgba(255, 47, 179, .12), rgba(255, 251, 241, .76));
+    radial-gradient(circle at 100% 0%, rgba(32, 216, 245, .14), transparent 15rem),
+    linear-gradient(145deg, rgba(255, 251, 241, .94), rgba(255, 243, 226, .76));
+  box-shadow: 0 18px 48px rgba(58, 25, 8, .08);
 }
 
-.vibe-pillar-board h3 {
-  margin: 22px 0 8px;
-  font-size: 24px;
+.vibe-release-summary-head {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+}
+
+.vibe-release-summary-head img {
+  width: 58px;
+  height: 58px;
+  border-radius: 15px;
+  box-shadow: 0 10px 24px rgba(36, 8, 42, .2);
+}
+
+.vibe-release-summary-head strong {
+  display: block;
+  margin-top: 5px;
+  font-family: Georgia, "Iowan Old Style", "New York", serif;
+  font-size: 22px;
+  line-height: 1.05;
+}
+
+.vibe-feature-list {
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vibe-feature-list li {
+  padding: 16px 0;
+  border-top: 1px solid rgba(58, 25, 8, .12);
+}
+
+.vibe-feature-list strong,
+.vibe-feature-list span {
+  display: block;
+}
+
+.vibe-feature-list strong {
+  font-size: 16px;
+}
+
+.vibe-feature-list span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
 }
 
 .section-heading {
@@ -870,7 +908,8 @@
 
   .vibe-copy,
   .vibe-ui,
-  .vibe-pillar-board {
+  .vibe-preview-pair,
+  .vibe-release-summary {
     min-width: 0;
   }
 
@@ -907,7 +946,8 @@
 
   .vibe-copy,
   .vibe-ui,
-  .vibe-pillar-board {
+  .vibe-preview-pair,
+  .vibe-release-summary {
     min-width: 0;
   }
 
@@ -946,6 +986,10 @@
   .vibe-copy p {
     font-size: 16px;
     line-height: 1.46;
+  }
+
+  .vibe-copy h2 {
+    font-size: clamp(40px, 12vw, 52px);
   }
 
   .hero-lede {
@@ -1077,8 +1121,7 @@
   .studio-proof,
   .release-grid,
   .surface-list,
-  .vibe-ui,
-  .vibe-pillar-board {
+  .vibe-ui {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -1100,8 +1143,8 @@
     border-top: 1px solid var(--line);
   }
 
-  .vibe-device {
-    min-height: 470px;
+  .vibe-release-summary {
+    padding: 22px;
   }
 
   .release-card,
@@ -1111,6 +1154,28 @@
 }
 
 @media (max-width: 520px) {
+  .vibe-preview-pair {
+    gap: 9px;
+    padding: 9px;
+    border-radius: 22px;
+  }
+
+  .vibe-preview img {
+    border-radius: 15px;
+  }
+
+  .vibe-preview figcaption {
+    padding-top: 11px;
+  }
+
+  .vibe-preview figcaption strong {
+    font-size: 15px;
+  }
+
+  .vibe-preview figcaption p {
+    display: none;
+  }
+
   .vibe-actions {
     grid-template-columns: 1fr;
   }
