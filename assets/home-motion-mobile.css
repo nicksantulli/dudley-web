@@ -193,7 +193,7 @@
 }
 
 .studio-stamp span {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 850;
   letter-spacing: .14em;
   text-transform: uppercase;
@@ -425,7 +425,7 @@
   position: relative;
   z-index: 6;
   display: grid;
-  grid-template-columns: 1.7fr repeat(3, 1fr);
+  grid-template-columns: 1.45fr repeat(4, 1fr);
   gap: 12px;
   width: calc(100% - 74px);
   margin: -74px auto 0;
@@ -477,7 +477,7 @@
 
 .product-tab small {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 750;
   line-height: 1.25;
 }
@@ -865,7 +865,13 @@
 @media (max-width: 1220px) {
   .dd-hero,
   .vibe-section {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .vibe-copy,
+  .vibe-ui,
+  .vibe-pillar-board {
+    min-width: 0;
   }
 
   .hero-copy,
@@ -895,6 +901,16 @@
 }
 
 @media (max-width: 760px) {
+  .vibe-section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .vibe-copy,
+  .vibe-ui,
+  .vibe-pillar-board {
+    min-width: 0;
+  }
+
   .dd-home {
     width: min(100% - 32px, var(--max));
   }
@@ -909,7 +925,7 @@
   .section-kicker {
     gap: 10px;
     margin-bottom: 18px;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: .15em;
   }
 
@@ -1049,7 +1065,7 @@
   }
 
   .product-tab span {
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.08;
   }
 
@@ -1063,7 +1079,7 @@
   .surface-list,
   .vibe-ui,
   .vibe-pillar-board {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .studio-proof,
