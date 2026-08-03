@@ -5,8 +5,8 @@
 ## Apps
 
 - [Monetary Policy: Independence Day](https://dudleyapps.com/apps/monetary-policy-independence-day/): A free satirical iPhone economics game — a 100-level Independence Day campaign that turns Fed policy into micro-game chaos with a new cast. Live on the App Store. Requires iOS 16.6+.
-- Dude, Where's This House?: A free iPhone geography game built for HomeLight — drop into a residential Street View, study the block, and pin where in the world you think you are. Live on the App Store. Requires iOS 17+.
-- [VibeRater: Aura](https://dudleyapps.com/apps/vibe-rater/): A free iPhone entertainment app that rates your vibe from a selfie, regular photo, squad shot, or pet pic. Get your archetype, an aura color, a tailored scorecard, personalized vibe eras, and story-ready share cards. Photos are sent to the rating service, rated in memory, and not stored for rating-only use. Live on the App Store.
+- [Dude, Where's This House?](https://apps.apple.com/app/id6779785617): A free iPhone geography game built for HomeLight with 5,000 approved U.S. residential locations. Explore Street View, play five timed rounds, pin each house on the map, and score by distance. Optional player accounts save scores and leaderboard identity. Live on the App Store as version 1.1. Requires iOS 17+.
+- [VibeRater Social](https://dudleyapps.com/apps/vibe-rater/): A free iPhone social app built around playful photo ratings and real connection. Get a VibeMeter score, aura-style read, archetype, and vibe anthem; then keep it private or share it through Vibes, Vibies, VibeChecks, and Squad. Radar helps discover compatible nearby people and places, Rise adds a daily corner, and optional SlopGuard can filter suspected AI-generated image posts. Live on the App Store as version 2.0. Requires iOS 17+.
 - [Table Talk: Conversation Cards](https://dudleyapps.com/apps/table-talk/): A free iPhone app of beautifully designed conversation-starter cards for date nights, family dinners, friend groups, work teams, deep questions, and light fun. 185 prompts, no account, works offline, free with optional one-time ad-free upgrade. Live on the App Store. Requires iOS 16.6+.
 - Last Human: A free satirical top-down arcade game for iPhone — you're the last human in an AI-automated office, dodging AutoBots to reach the time clock before the timer runs out. Free with optional ad-free upgrade (in-app purchase). iOS. Launching on the App Store soon.
 - EconByte: A free iPhone app that explains economics in bite-sized daily cards — inflation, interest rates, GDP, trade — like a smart friend, not a textbook. Educational only, not investment advice. Free with optional ad-free upgrade (in-app purchase). iOS. Launching on the App Store soon.
@@ -56,7 +56,7 @@ The Dudley Blog covers internet culture, vibe archetypes, and honest app roundup
 
 ## About
 
-Dudley Development is the public-facing studio name of Dudley Development, LLC. The studio is run by a small team and one human (Nicholas Santulli). All apps are free. Account needs, cloud storage, analytics, advertising, and tracking behavior vary by app and are disclosed in each app's privacy policy. VibeRater: Aura is for entertainment, does not sell personal information, and does not request cross-app tracking permission.
+Dudley Development is the public-facing studio name of Dudley Development, LLC. The studio is run by a small team and one human (Nicholas Santulli). All apps are free. Account needs, cloud storage, analytics, advertising, and tracking behavior vary by app and are disclosed in each app's privacy policy. VibeRater Social is for entertainment, does not sell personal information, and does not request cross-app tracking permission.
 
 ## Contact
 
