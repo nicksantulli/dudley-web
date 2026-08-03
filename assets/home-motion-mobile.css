@@ -321,7 +321,7 @@
   z-index: 2;
   display: grid;
   gap: 8px;
-  margin-top: 90px;
+  margin-top: 54px;
   padding: 22px;
   border: 1px solid rgba(255, 255, 255, .22);
   border-radius: 22px;
@@ -1013,10 +1013,7 @@
   }
 
   .screen-list {
-    left: 18px;
-    right: 18px;
-    bottom: 18px;
-    gap: 8px;
+    display: none;
   }
 
   .screen-list span,
@@ -1094,6 +1091,20 @@
   .release-card,
   .release-card.featured {
     min-height: 280px;
+  }
+}
+
+@media (max-width: 520px) {
+  .vibe-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .vibe-actions .button {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
   }
 }
 
