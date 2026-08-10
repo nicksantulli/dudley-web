@@ -37,6 +37,7 @@ Vibe Rater assigns one of several vibe archetypes based on your photo:
 
 The Dudley Blog covers internet culture, vibe archetypes, and honest app roundups. Full index: https://dudleyapps.com/blog/ (RSS: https://dudleyapps.com/blog/rss.xml).
 
+- [What Is Captured by Me on iPhone?](https://dudleyapps.com/blog/what-is-captured-by-me-iphone/): Captured by Me is a reported iOS 27 Photos collection for pictures taken with your iPhone camera. Here is what it means for finding cleaner photos to edit, share, or use in photo apps.
 - [Can Smart Glasses Record You?](https://dudleyapps.com/blog/can-smart-glasses-record-you/): Smart glasses can record photos or video from the wearer's point of view, so consent, posting choices, and app privacy settings matter. Here is the practical privacy check before filming or sharing group moments.
 - [What Is a Vibe Check?](https://dudleyapps.com/blog/what-is-a-vibe-check/): A vibe check is a quick read on the mood, energy, or social fit of a person, place, photo, or moment. Here is what it means, how to use it, and where playful vibe apps fit.
 - [What Does Aura Mean in Slang?](https://dudleyapps.com/blog/what-does-aura-mean-in-slang/): Aura slang means cool presence, social energy, or the imaginary points people gain and lose online. Here is how aura points work and how to use the term without taking it too seriously.
