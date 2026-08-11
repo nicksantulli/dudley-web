@@ -34,6 +34,7 @@ Vibe Rater assigns one of several vibe archetypes based on your photo:
 - [Best Vibe Check Apps for iPhone (2026)](https://dudleyapps.com/compare/vibe-check-apps/): An honest comparison of vibe check and aura apps on iPhone.
 
 ## Blog
+- [Can Apps See Hidden Photos on iPhone?](https://dudleyapps.com/blog/can-apps-see-hidden-photos-iphone/): Hidden photos are locked in the Photos app, and iPhone photo permissions still matter. Here is what apps can see, what Photo Picker protects, and how to share one image safely.
 
 The Dudley Blog covers internet culture, vibe archetypes, and honest app roundups. Full index: https://dudleyapps.com/blog/ (RSS: https://dudleyapps.com/blog/rss.xml).
 
