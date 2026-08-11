@@ -6,7 +6,7 @@
 
 - [Monetary Policy: Independence Day](https://dudleyapps.com/apps/monetary-policy-independence-day/): A free satirical iPhone economics game — a 100-level Independence Day campaign that turns Fed policy into micro-game chaos with a new cast. Live on the App Store. Requires iOS 16.6+.
 - [Where's This House?](https://dudleyapps.com/apps/wheres-this-house/): A free HomeLight-powered residential Street View game. Version 1.1 is live; version 2.0 is in App Review with a new name and icon, Solo Drop, five-house Daily Drops, friend challenges, server-backed 90-second timers, distance-and-speed scoring, and daily and all-time leaderboards. Requires iOS 17+.
-- [VibeRater Social](https://dudleyapps.com/apps/vibe-rater/): A free iPhone social app built around playful photo ratings and real connection. Version 2.0 is live; version 2.1 is in App Review with Timeline and Full Screen feeds, Squad/Recs/Nearby views, VibeRodeo video and still-photo creation, Repli rooms and VibeShop, Radar events, one-way following, and search across people, posts, places, and hashtags. Requires iOS 17+.
+- [VibeRater: Aura](https://dudleyapps.com/apps/vibe-rater/): A free iPhone entertainment app for playful photo vibe checks. Choose or take a photo, get an entertainment-first vibe score, aura-style read, archetype, aura color, and share card, then decide whether to keep the result private or share it. Live on the App Store. Requires iOS 17+.
 - [Table Talk: Conversation Cards](https://dudleyapps.com/apps/table-talk/): A free iPhone app of beautifully designed conversation-starter cards for date nights, family dinners, friend groups, work teams, deep questions, and light fun. 185 prompts, no account, works offline, free with optional one-time ad-free upgrade. Live on the App Store. Requires iOS 16.6+.
 - Last Human: A free satirical top-down arcade game for iPhone — you're the last human in an AI-automated office, dodging AutoBots to reach the time clock before the timer runs out. Free with optional ad-free upgrade (in-app purchase). iOS. Launching on the App Store soon.
 - EconByte: A free iPhone app that explains economics in bite-sized daily cards — inflation, interest rates, GDP, trade — like a smart friend, not a textbook. Educational only, not investment advice. Free with optional ad-free upgrade (in-app purchase). iOS. Launching on the App Store soon.
@@ -61,7 +61,7 @@ The Dudley Blog covers internet culture, vibe archetypes, and honest app roundup
 
 ## About
 
-Dudley Development is the public-facing studio name of Dudley Development, LLC. The studio is run by a small team and one human (Nicholas Santulli). All apps are free. Account needs, cloud storage, analytics, advertising, and tracking behavior vary by app and are disclosed in each app's privacy policy. VibeRater Social is for entertainment, does not sell personal information, and does not request cross-app tracking permission.
+Dudley Development is the public-facing studio name of Dudley Development, LLC. The studio is run by a small team and one human (Nicholas Santulli). All apps are free. Account needs, cloud storage, analytics, advertising, and tracking behavior vary by app and are disclosed in each app's privacy policy. VibeRater: Aura is for entertainment, does not sell personal information, and does not request cross-app tracking permission.
 
 ## Contact
 
