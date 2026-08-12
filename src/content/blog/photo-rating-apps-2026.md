@@ -27,6 +27,8 @@ Here is an honest ranking of the notable photo rating apps on iPhone in 2026, wh
 
 ## The photo rating apps at a glance
 
+<p class="table-scroll-hint" aria-hidden="true">Swipe to compare <span>→</span></p>
+<div class="table-scroll" tabindex="0" aria-label="Scrollable comparison of photo rating apps">
 <table class="cmp-table">
   <caption class="sr-only">Comparison of the funniest photo rating apps on iPhone in 2026 by what they rate, funny factor, and cost.</caption>
   <thead>
@@ -39,6 +41,7 @@ Here is an honest ranking of the notable photo rating apps on iPhone in 2026, wh
     <tr><th scope="row">Hot or Not</th><td>1–10 attractiveness (the legacy app that started the genre)</td><td>The original wasn't trying to be funny</td><td>Varies by current owner</td></tr>
   </tbody>
 </table>
+</div>
 
 The rest of this post breaks down each one in detail.
 

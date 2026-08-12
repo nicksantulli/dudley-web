@@ -425,7 +425,7 @@
   position: relative;
   z-index: 6;
   display: grid;
-  grid-template-columns: 1.45fr repeat(4, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
   width: calc(100% - 74px);
   margin: -74px auto 0;
@@ -439,10 +439,12 @@
 
 .product-tab {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 14px;
-  min-height: 86px;
-  padding: 14px;
+  gap: 8px;
+  min-height: 104px;
+  padding: 12px 8px;
   border: 1px solid rgba(58, 25, 8, .1);
   border-radius: 18px;
   background: rgba(255, 253, 245, .82);
@@ -451,6 +453,7 @@
   cursor: pointer;
   box-shadow: 0 10px 24px rgba(51, 24, 8, .08);
   transition: transform .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+  min-width: 0;
 }
 
 .product-tab:hover,
@@ -460,26 +463,27 @@
 }
 
 .product-tab img {
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
   border-radius: 13px;
   object-fit: cover;
   box-shadow: 0 10px 24px rgba(58, 25, 8, .18);
+  flex: 0 0 auto;
 }
 
 .product-tab span {
   display: grid;
   gap: 4px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 1.12;
+  text-align: center;
+  min-width: 0;
+  overflow-wrap: normal;
 }
 
 .product-tab small {
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 750;
-  line-height: 1.25;
+  display: none;
 }
 
 .product-brief {
@@ -626,6 +630,19 @@
   gap: clamp(44px, 5vw, 76px);
   align-items: start;
   scroll-margin-top: 78px;
+}
+
+.vibe-section > .app-screenshots {
+  grid-column: 2;
+  width: 100%;
+  min-width: 0;
+  margin-top: 0;
+}
+
+.vibe-section > .app-screenshots .app-shot-rail {
+  grid-auto-flow: row;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  overflow-x: visible;
 }
 
 .vibe-copy {
@@ -920,6 +937,10 @@
     max-width: 820px;
   }
 
+  .vibe-section > .app-screenshots {
+    grid-column: 1;
+  }
+
   .product-art {
     min-height: 560px;
   }
@@ -948,6 +969,12 @@
   .vibe-preview-pair,
   .vibe-release-summary {
     min-width: 0;
+  }
+
+  .vibe-section > .app-screenshots .app-shot-rail {
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    overflow-x: auto;
   }
 
   .dd-home {
@@ -1095,6 +1122,8 @@
   }
 
   .product-tab {
+    flex-direction: row;
+    justify-content: flex-start;
     min-height: 68px;
     gap: 9px;
     padding: 10px;
@@ -1110,6 +1139,7 @@
   .product-tab span {
     font-size: 12px;
     line-height: 1.08;
+    text-align: left;
   }
 
   .product-tab small,

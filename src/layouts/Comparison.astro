@@ -41,22 +41,25 @@ const schema = { '@context': 'https://schema.org', ...listSchema };
       <slot />
 
       <h2>Feature comparison at a glance</h2>
-      <table class="cmp-table">
-        <caption class="sr-only">Feature matrix comparing {cmp.title} by best use, price, and standout feature.</caption>
-        <thead>
-          <tr><th scope="col">App</th><th scope="col">Best for</th><th scope="col">Price</th><th scope="col">Standout feature</th></tr>
-        </thead>
-        <tbody>
-          {cmp.apps.map((a: any) => (
-            <tr>
-              <th scope="row">{a.name}{a.isDudleyApp && <span class="pick-tag">Our app</span>}</th>
-              <td>{a.bestFor ?? '—'}</td>
-              <td>{a.price}</td>
-              <td>{a.pros?.[0] ?? '—'}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <p class="table-scroll-hint" aria-hidden="true">Swipe to compare <span>→</span></p>
+      <div class="table-scroll" tabindex="0" aria-label={`Scrollable feature comparison for ${cmp.title}`}>
+        <table class="cmp-table">
+          <caption class="sr-only">Feature matrix comparing {cmp.title} by best use, price, and standout feature.</caption>
+          <thead>
+            <tr><th scope="col">App</th><th scope="col">Best for</th><th scope="col">Price</th><th scope="col">Standout feature</th></tr>
+          </thead>
+          <tbody>
+            {cmp.apps.map((a: any) => (
+              <tr>
+                <th scope="row">{a.name}{a.isDudleyApp && <span class="pick-tag">Our app</span>}</th>
+                <td>{a.bestFor ?? '—'}</td>
+                <td>{a.price}</td>
+                <td>{a.pros?.[0] ?? '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       {cmp.apps.map((a: any) => (
         <div class={`cmp-app${a.isDudleyApp ? ' is-dudley' : ''}`}>

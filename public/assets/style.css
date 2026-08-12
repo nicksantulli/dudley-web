@@ -384,8 +384,8 @@ section .sub { color: var(--ink-muted); margin: 0 0 34px; font-size: 16px; }
 .policy-list .chev { color: var(--ink-faint); }
 
 /* ---------- Breadcrumb ---------- */
-.crumbs { font-size: 13px; color: var(--ink-faint); margin: 0 0 18px; display: flex; gap: 8px; flex-wrap: wrap; }
-.crumbs a { color: var(--ink-muted); }
+.crumbs { font-size: 13px; color: var(--ink-faint); margin: 0 0 18px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.crumbs a { color: var(--ink-muted); display: inline-flex; align-items: center; min-height: 44px; }
 .crumbs .sep { color: var(--ink-faint); }
 
 /* ---------- Article hero (apps / archetypes) ---------- */
@@ -670,6 +670,10 @@ footer.site nav.socials a {
   margin: 0;
 }
 
+.table-scroll-hint {
+  display: none;
+}
+
 @media (max-width: 720px) {
   .page { padding: 38px 0 64px; }
 
@@ -678,6 +682,36 @@ footer.site nav.socials a {
   .back {
     margin-bottom: 14px;
     padding: 8px 0;
+  }
+
+  .crumbs {
+    gap: 0 6px;
+    margin-top: -10px;
+    margin-bottom: 14px;
+  }
+
+  .crumbs a {
+    margin-inline: -4px;
+    padding-inline: 4px;
+  }
+
+  .table-scroll-hint {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    margin: -4px 0 8px;
+    color: var(--ink-muted);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .table-scroll-hint span {
+    color: var(--accent);
+    font-size: 17px;
+    line-height: 1;
   }
 
   .lede-hero {
