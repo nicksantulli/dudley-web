@@ -9,6 +9,7 @@ const apps = defineCollection({
     tagline: z.string(),
     description: z.string(),
     appStoreId: z.string().optional().default(''),
+    version: z.string().optional(),
     bundleId: z.string().optional(),
     icon: z.string(),
     ogImage: z.string().optional(),

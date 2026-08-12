@@ -20,7 +20,7 @@ const howToSchema = {
   step: [
     { '@type': 'HowToStep', name: 'Answer the questions', text: 'Answer 5 quick questions about your style and energy.' },
     { '@type': 'HowToStep', name: 'Get your vibe archetype', text: 'See your closest vibe archetype based on your answers.' },
-    { '@type': 'HowToStep', name: 'Get your full score in the app', text: 'Download Vibe Rater for a photo-based vibe score, aura color, and shareable card.' },
+    { '@type': 'HowToStep', name: 'Get your full score in the app', text: 'Download VibeRater Social for a VibeMeter score, aura-style read, archetype, vibe anthem, and shareable post.' },
   ],
 };
 // No FAQPage markup (Google restricts FAQ rich results); the visible FAQ stays.
@@ -42,10 +42,10 @@ const schema = { '@context': 'https://schema.org', ...howToSchema };
       <slot name="quiz" />
 
       <AppCTA
-        appName="Vibe Rater"
+        appName="VibeRater Social"
         appStoreId={APP_STORE.vibeRater}
         status={APP_STORE.vibeRater ? 'live' : 'coming_soon'}
-        blurb="This quiz gives you your archetype in 5 questions. For your real vibe score from a photo — with a full dimension breakdown, aura color, and a shareable card — get Vibe Rater. The phone vibrates while it reads you."
+        blurb="This quiz gives you an archetype in 5 questions. VibeRater Social turns a photo into a VibeMeter score, aura-style read, archetype, vibe anthem, and a moment you can keep private or share."
       />
 
       <FAQ items={tool.faq} />

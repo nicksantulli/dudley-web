@@ -86,7 +86,7 @@ That's the archetype. It won the 2020s by not caring whether it won.
 Gorpcore is a fashion aesthetic based on outdoor and technical gear — fleece, Arc'teryx, trail runners, utility packs. It went mainstream around 2021–2022 but has been a subculture aesthetic since the early 2010s.
 
 **What is a Gorpcore Prophet in Vibe Rater?**
-Gorpcore Prophet is one of the archetypes in Vibe Rater, assigned to photos that demonstrate a technical-functional visual language with genuine conviction behind it. High Aura, high Drip, low Rizz (not trying to impress anyone). Learn more at [the Gorpcore Prophet archetype page](/archetypes/gorpcore-prophet/).
+Gorpcore Prophet is one of the archetypes in Vibe Rater, assigned to photos that demonstrate a technical-functional visual language with genuine conviction behind it. High Aura, high Drip, low Rizz (not trying to impress anyone). [Explore VibeRater Social](/apps/vibe-rater/) to see where the archetype fits into the current app.
 
 **Is gorpcore still popular in 2026?**
 The mainstream trend has peaked, but gorpcore as a genuine lifestyle aesthetic is durable. The people still wearing it in 2026 are the ones who were wearing it in 2019 — and that's the definition of a Gorpcore Prophet.

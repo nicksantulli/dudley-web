@@ -65,10 +65,11 @@ if (segs.length > 0) {
 }
 
 const nav = [
-  { href: rel('/#apps'), label: 'Apps' },
+  { href: rel('/#work'), label: 'Apps' },
   { href: rel('/blog/'), label: 'Blog' },
   { href: rel('/about'), label: 'About' },
   { href: rel('/support'), label: 'Support' },
+  { href: rel('/contact/'), label: 'Contact' },
   { href: rel('/privacy/'), label: 'Privacy' },
 ];
 const year = new Date().getFullYear();
@@ -97,7 +98,7 @@ const SOCIAL_ICONS: Record<string, string> = {
   <link rel="icon" type="image/png" sizes="32x32" href={rel('/assets/favicon-32x32.png')} />
   <link rel="icon" type="image/png" sizes="16x16" href={rel('/assets/favicon-16x16.png')} />
   <link rel="apple-touch-icon" sizes="180x180" href={rel('/assets/apple-touch-icon.png')} />
-  <link rel="stylesheet" href={rel('/assets/style.css')} />
+  <link rel="stylesheet" href={`${rel('/assets/style.css')}?v=refresh-20260812`} />
   <link rel="sitemap" href={rel('/sitemap-index.xml')} />
   <link rel="alternate" type="application/rss+xml" title="The Dudley Blog" href={rel('/blog/rss.xml')} />
 
@@ -126,8 +127,12 @@ const SOCIAL_ICONS: Record<string, string> = {
         <img class="mark" src={rel('/assets/dudley-mark.png')} alt="" aria-hidden="true" />
         Dudley Development
       </a>
-      <nav class="top">
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="top" id="site-nav" aria-label="Primary navigation">
         {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+        <a class="nav-cta" href={rel('/#work')}>See the apps</a>
       </nav>
     </div>
   </header>
@@ -153,5 +158,25 @@ const SOCIAL_ICONS: Record<string, string> = {
       )}
     </div>
   </footer>
+
+  <script is:inline>
+    (() => {
+      const header = document.querySelector('header.site');
+      const toggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('#site-nav');
+      if (!header || !toggle || !nav) return;
+
+      const setOpen = (isOpen) => {
+        header.classList.toggle('nav-open', isOpen);
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      };
+
+      toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+      nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+      document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setOpen(false); });
+      document.addEventListener('click', (event) => { if (!header.contains(event.target)) setOpen(false); });
+    })();
+  </script>
 </body>
 </html>

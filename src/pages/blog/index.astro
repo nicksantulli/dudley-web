@@ -5,6 +5,8 @@ import { getPublishedPosts, getAllTags, postTags, tagSlug, tagLabel, formatDate 
 
 const posts = await getPublishedPosts();
 const tags = await getAllTags();
+const featuredTags = tags.filter((tag) => tag.count > 1).slice(0, 6);
+const remainingTags = tags.filter((tag) => !featuredTags.some((featured) => featured.slug === tag.slug));
 const path = '/blog/';
 const title = 'The Dudley Blog';
 const description =
@@ -34,27 +36,46 @@ const blogSchema = {
 ---
 <Base title={title} description={description} path={path} schema={blogSchema}>
   <main class="page">
-    <div class="wrap" style="max-width:760px;">
+    <div class="wrap blog-index-shell">
       <header class="blog-hero">
+        <span class="blog-kicker">Ideas, answers, and launch notes</span>
         <h1>The Dudley Blog</h1>
         <p>{description}</p>
-        <p class="blog-feed-link">
-          <a href={rel('/blog/rss.xml')}>RSS feed</a>
-        </p>
       </header>
 
-      {tags.length > 0 && (
-        <nav class="tag-cloud" aria-label="Browse by tag">
-          {tags.map((t) => (
-            <a class="tag" href={rel(`/blog/tags/${t.slug}/`)}>{tagLabel(t.tag)} <span>{t.count}</span></a>
-          ))}
-        </nav>
-      )}
+      <div class="blog-toolbar">
+        {featuredTags.length > 0 && (
+          <nav class="featured-topics" aria-label="Popular blog topics">
+            <span class="topic-label">Popular topics</span>
+            {featuredTags.map((t) => (
+              <a class="tag" href={rel(`/blog/tags/${t.slug}/`)}>{tagLabel(t.tag)} <span>{t.count}</span></a>
+            ))}
+          </nav>
+        )}
+        <div class="blog-toolbar-actions">
+          {remainingTags.length > 0 && (
+            <details class="all-topics">
+              <summary>All topics <span>{tags.length}</span></summary>
+              <nav class="tag-cloud" aria-label="All blog topics">
+                {remainingTags.map((t) => (
+                  <a class="tag" href={rel(`/blog/tags/${t.slug}/`)}>{tagLabel(t.tag)} <span>{t.count}</span></a>
+                ))}
+              </nav>
+            </details>
+          )}
+          <a class="rss-link" href={rel('/blog/rss.xml')}>RSS</a>
+        </div>
+      </div>
 
       {posts.length === 0 ? (
         <p>No posts yet — check back soon.</p>
       ) : (
-        <ul class="post-list">
+        <section class="latest-posts" aria-labelledby="latest-posts-title">
+          <div class="latest-posts-heading">
+            <h2 id="latest-posts-title">Latest</h2>
+            <span>{posts.length} articles</span>
+          </div>
+        <ul class="post-list blog-post-grid">
           {posts.map((p) => (
             <li class="post-card">
               <a class="post-card-link" href={rel(`/blog/${p.slug}/`)}>
@@ -72,6 +93,7 @@ const blogSchema = {
             </li>
           ))}
         </ul>
+        </section>
       )}
     </div>
   </main>

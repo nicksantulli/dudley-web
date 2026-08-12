@@ -1,4 +1,4 @@
-import { abs, SUPPORT_EMAIL, CONTACT_EMAIL } from '../consts';
+import { abs, appStoreUrl, APP_STORE, SUPPORT_EMAIL, CONTACT_EMAIL } from '../consts';
 import { getPublishedPosts } from '../lib/blog';
 
 // llms.txt is generated so the Blog section stays current automatically — the Content
@@ -14,13 +14,13 @@ export async function GET() {
 
   const body = `# Dudley Development
 
-> Dudley Development is an independent iOS app studio. We build small, polished, playful apps for iPhone — mostly funny, sometimes useful. Every app is free, runs without an account, and keeps your data on your device. Founded and run by Nicholas Santulli.
+> Dudley Development is an independent iOS app studio. We build small, polished, playful apps for iPhone — mostly funny, sometimes useful. Every app is free, and every app explains its account, cloud-data, analytics, advertising, and tracking behavior in a dedicated privacy policy. Founded and run by Nicholas Santulli.
 
 ## Apps
 
 - [Monetary Policy: Independence Day](${abs('/apps/monetary-policy-independence-day/')}): A free satirical iPhone economics game — a 100-level Independence Day campaign that turns Fed policy into micro-game chaos with a new cast. Live on the App Store. Requires iOS 16.6+.
-- Dude, Where's This House?: A free iPhone geography game built for HomeLight — drop into a residential Street View, study the block, and pin where in the world you think you are. Live on the App Store. Requires iOS 17+.
-- [VibeRater: Aura](${abs('/apps/vibe-rater/')}): A free iPhone entertainment app that rates your vibe from a selfie, regular photo, squad shot, or pet pic. Get your archetype (Main Character, Final Boss, Quiet Luxury, Cottagecore, and more), an aura color, a tailored six-dimension scorecard, personalized vibe eras, and story-ready share cards. The phone vibrates while it reads you. Photos are sent to the rating service, rated in memory, and never stored. Free with optional one-time ad-free upgrade. Live on the App Store as version 1.1.
+- [Where's This House?](${appStoreUrl(APP_STORE.dudeWheresThisHouse)}): A free iPhone and iPad residential Street View geography game powered by HomeLight. Play five timed solo rounds, pin each house on the map, and score by distance and speed. Daily Drop, friend play, and online matches remain labeled as upcoming. Live on the App Store as version 2.0.1. Requires iOS 17+.
+- [VibeRater Social](${abs('/apps/vibe-rater/')}): A free iPhone social app for playful photo ratings, Vibes, VibeRodeo creation, Repli rooms, Radar events, Following, Search, Squad, and Rise. Choose what stays private, goes to your Squad, or appears publicly. Live on the App Store as version 2.1. Requires iOS 17+.
 - [Table Talk: Conversation Cards](${abs('/apps/table-talk/')}): A free iPhone app of beautifully designed conversation-starter cards for date nights, family dinners, friend groups, work teams, deep questions, and light fun. 185 prompts, no account, works offline, free with optional one-time ad-free upgrade. Live on the App Store. Requires iOS 16.6+.
 - Last Human: A free satirical top-down arcade game for iPhone — you're the last human in an AI-automated office, dodging AutoBots to reach the time clock before the timer runs out. Free with optional ad-free upgrade (in-app purchase). iOS. Launching on the App Store soon.
 - EconByte: A free iPhone app that explains economics in bite-sized daily cards — inflation, interest rates, GDP, trade — like a smart friend, not a textbook. Educational only, not investment advice. Free with optional ad-free upgrade (in-app purchase). iOS. Launching on the App Store soon.
@@ -55,7 +55,7 @@ ${blogLines}
 
 ## About
 
-Dudley Development is the public-facing studio name of Dudley Development, LLC. The studio is run by a small team and one human (Nicholas Santulli). All apps are free with Google AdMob ads. No accounts required. No first-party analytics or trackers. Ads are non-personalized — no user tracking, no tracking prompt.
+Dudley Development is the public-facing studio name of Dudley Development, LLC. The studio is run by a small team and one human (Nicholas Santulli). All apps are free. Account needs, cloud storage, analytics, advertising, and tracking behavior vary by app and are disclosed in each app's privacy policy. VibeRater Social is for entertainment, does not sell personal information, and does not request cross-app tracking permission.
 
 ## Contact
 

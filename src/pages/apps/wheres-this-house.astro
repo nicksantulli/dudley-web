@@ -1,0 +1,86 @@
+---
+import Base from '../../layouts/Base.astro';
+import { APP_STORE, appStoreUrl, abs } from '../../consts';
+
+const path = '/apps/wheres-this-house/';
+const storeUrl = appStoreUrl(APP_STORE.dudeWheresThisHouse);
+const description = "Where's This House? is a free iPhone and iPad residential Street View geography game powered by HomeLight. Play five timed rounds, pin each house on the map, and score by distance and speed.";
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: "Where's This House?",
+  description,
+  url: abs(path),
+  downloadUrl: storeUrl,
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'iOS 17 or later',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+};
+const screens = [
+  { src: '/assets/wheres-this-house-home.jpg', alt: "Where's This House home screen", title: 'Start a five-round run', caption: 'Drop into an approved residential mystery scene.' },
+  { src: '/assets/wheres-this-house-gameplay.jpg', alt: "Where's This House Street View gameplay", title: 'Study the neighborhood', caption: 'Move through Street View and look for broad location clues.' },
+  { src: '/assets/wheres-this-house-scoring.jpg', alt: "Where's This House scoring screen", title: 'Pin the map', caption: 'Score by distance and speed after every guess.' },
+  { src: '/assets/wheres-this-house-leaderboard.jpg', alt: "Where's This House leaderboard", title: 'Compare your run', caption: 'Optional accounts support handles and leaderboard attribution.' },
+];
+---
+<Base title="Where's This House? — residential Street View game" description={description} path={path} ogImage="/assets/wheres-this-house-home.jpg" schema={schema}>
+  <main class="page">
+    <div class="wrap" style="max-width: 960px;">
+      <nav class="crumbs">
+        <a href="/">Home</a><span class="sep">/</span>
+        <a href="/#work">Apps</a><span class="sep">/</span>
+        <span>Where's This House?</span>
+      </nav>
+
+      <div class="app-release-hero">
+        <img src="/assets/wheres-this-house-icon.png" alt="Where's This House? app icon" />
+        <div>
+          <p class="release-note">Version 2.0.1 · Live</p>
+          <h1>Where's This House?</h1>
+          <p>Guess the location from the street. A geography game powered by HomeLight.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href={storeUrl} rel="noopener">Download on the App Store</a>
+          </div>
+        </div>
+      </div>
+
+      <section class="app-screenshots app-screenshots-featured" aria-labelledby="house-screens-title">
+        <header>
+          <p class="release-note">Current release</p>
+          <h2 id="house-screens-title">Look around. Find the clues. Drop your pin.</h2>
+          <p>Five-round solo play is live on iPhone and iPad.</p>
+        </header>
+        <div class="app-shot-rail" tabindex="0" aria-label="Where's This House product screenshots. Swipe or scroll horizontally.">
+          {screens.map((screen) => (
+            <figure>
+              <img src={screen.src} alt={screen.alt} width="600" height="1304" loading="lazy" />
+              <figcaption><strong>{screen.title}</strong>{screen.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <h2>How a run works</h2>
+      <ol>
+        <li>Start a five-round solo game as a guest.</li>
+        <li>Explore the residential Street View scene and scan the neighborhood for clues.</li>
+        <li>Drop a pin on the U.S. map before time runs out.</li>
+        <li>Compare your guess with the actual location and earn more points for getting closer, faster.</li>
+      </ol>
+
+      <h2>What shipped in 2.0 and 2.0.1</h2>
+      <ul>
+        <li><strong>Native iPad support</strong> adds layouts designed for the larger screen.</li>
+        <li><strong>A larger approved mystery catalog</strong> adds more residential drops.</li>
+        <li><strong>Refreshed HomeLight cards</strong> keep the partnership clear without exposing private home data.</li>
+        <li><strong>The corrected house-pin icon</strong> now appears on the Home Screen and App Store in version 2.0.1.</li>
+      </ul>
+
+      <h2>What is still upcoming</h2>
+      <p>Daily Drop, Play a Friend, and Online Match are visible in the app but remain clearly labeled Soon or Coming Soon. Five-round solo play is the live game mode today.</p>
+
+      <h2>Privacy by design</h2>
+      <p>Rounds use public-road Street View scenes and broad location labels. The app does not show homeowner names, exact addresses, listings, or private transaction data. A player account is optional and is used for a handle and leaderboard attribution.</p>
+    </div>
+  </main>
+</Base>

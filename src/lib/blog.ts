@@ -2,10 +2,20 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 
 export type Post = CollectionEntry<'blog'>;
 
+const TAG_ALIASES: Record<string, string> = {
+  'vibe-rater': 'VibeRater',
+  viberater: 'VibeRater',
+};
+
+function canonicalTag(tag: string): string {
+  const cleaned = tag.trim();
+  return TAG_ALIASES[tagSlug(cleaned)] ?? cleaned;
+}
+
 // A post's full tag set = its category plus any explicit tags, de-duplicated.
 export function postTags(post: Post): string[] {
   const all = [post.data.category, ...post.data.tags];
-  return [...new Set(all.map((t) => t.trim()).filter(Boolean))];
+  return [...new Set(all.map(canonicalTag).filter(Boolean))];
 }
 
 // Turn a human tag ("Outfit Explainer", "archetype-deep-dive") into a URL slug.
@@ -23,7 +33,12 @@ export function tagLabel(tag: string): string {
     .replace(/[-_]+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim()
-    .replace(/\b\w/g, (c) => c.toUpperCase());
+    .replace(/\b\w/g, (c) => c.toUpperCase())
+    .replace(/\bAi\b/g, 'AI')
+    .replace(/\bIphone\b/g, 'iPhone')
+    .replace(/\bIos\b/g, 'iOS')
+    .replace(/\bTiktok\b/g, 'TikTok')
+    .replace(/\bViberater\b/g, 'VibeRater');
 }
 
 // Published posts (drafts excluded), newest first. The single source of truth for

@@ -10,6 +10,11 @@ export default defineConfig({
   site: 'https://dudleyapps.com',
   base: '/',
   trailingSlash: 'ignore',
+  vite: {
+    // Keep dependency optimization local to each checkout/worktree instead of
+    // mutating a shared node_modules cache.
+    cacheDir: '.vite-cache',
+  },
   integrations: [
     mdx(),
     sitemap({

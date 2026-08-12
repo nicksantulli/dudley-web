@@ -36,7 +36,7 @@ const schema = { '@context': 'https://schema.org', ...articleSchema };
     <div class="wrap" style="max-width:720px;">
       <nav class="crumbs">
         <a href={rel('/')}>Home</a><span class="sep">/</span>
-        <a href={rel('/apps/vibe-rater/')}>Vibe Rater</a><span class="sep">/</span>
+        <a href={rel('/apps/vibe-rater/')}>VibeRater Social</a><span class="sep">/</span>
         <span>{archetype.name}</span>
       </nav>
 
@@ -51,10 +51,10 @@ const schema = { '@context': 'https://schema.org', ...articleSchema };
       <slot />
 
       <AppCTA
-        appName="Vibe Rater"
+        appName="VibeRater Social"
         appStoreId={APP_STORE.vibeRater}
         status={APP_STORE.vibeRater ? 'live' : 'coming_soon'}
-        blurb={`See if you have ${archetype.name} — Vibe Rater rates your vibe from a photo and assigns your archetype.`}
+        blurb={`See if you have ${archetype.name} — VibeRater Social turns a photo into a playful vibe read you can keep private or share.`}
       />
 
       <FAQ items={archetype.faq} />
