@@ -37,6 +37,7 @@ Vibe Rater assigns one of several vibe archetypes based on your photo:
 
 The Dudley Blog covers internet culture, vibe archetypes, and honest app roundups. Full index: https://dudleyapps.com/blog/ (RSS: https://dudleyapps.com/blog/rss.xml).
 
+- [Does Instagram Map Show Your Location From Photos?](https://dudleyapps.com/blog/does-instagram-map-show-your-location-from-photos/): Instagram Map can show location-tagged content, but that is different from sharing your live or last-active location. Here is what iPhone photo posters should check before sharing.
 - [Can Your iPhone Prove a Photo Is Real?](https://dudleyapps.com/blog/can-iphone-prove-photo-is-real/): New iPhone provenance ideas could make some photos easier to authenticate, but they are not magic AI detectors. Here is what photo proof means for AI images, social posts, and vibe-check apps.
 - [Can Apps See Hidden Photos on iPhone?](https://dudleyapps.com/blog/can-apps-see-hidden-photos-iphone/): Hidden photos are locked in the Photos app, and iPhone photo permissions still matter. Here is what apps can see, what Photo Picker protects, and how to share one image safely.
 - [What Is Captured by Me on iPhone?](https://dudleyapps.com/blog/what-is-captured-by-me-iphone/): Captured by Me is a reported iOS 27 Photos collection for pictures taken with your iPhone camera. Here is what it means for finding cleaner photos to edit, share, or use in photo apps.
