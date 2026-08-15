@@ -37,6 +37,7 @@ Vibe Rater assigns one of several vibe archetypes based on your photo:
 
 The Dudley Blog covers internet culture, vibe archetypes, and honest app roundups. Full index: https://dudleyapps.com/blog/ (RSS: https://dudleyapps.com/blog/rss.xml).
 
+- [Can AI Photo Apps Use Your Photos To Train AI?](https://dudleyapps.com/blog/can-ai-photo-apps-use-your-photos-to-train-ai/): Some AI services can use saved media to improve models, but every photo app is different. Here is how to check AI training, iPhone photo access, privacy labels, and VibeRater's entertainment boundary.
 - [Does Apple Intelligence Label AI-Edited Photos?](https://dudleyapps.com/blog/does-apple-intelligence-label-ai-edited-photos/): Apple says AI-edited Photos and Image Playground creations will include hidden SynthID watermarks. Here is what that means before you post AI edits, vibe cards, or group-chat photos.
 - [Does Instagram Map Show Your Location From Photos?](https://dudleyapps.com/blog/does-instagram-map-show-your-location-from-photos/): Instagram Map can show location-tagged content, but that is different from sharing your live or last-active location. Here is what iPhone photo posters should check before sharing.
 - [Can Your iPhone Prove a Photo Is Real?](https://dudleyapps.com/blog/can-iphone-prove-photo-is-real/): New iPhone provenance ideas could make some photos easier to authenticate, but they are not magic AI detectors. Here is what photo proof means for AI images, social posts, and vibe-check apps.
