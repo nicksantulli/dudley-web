@@ -37,6 +37,7 @@ Vibe Rater assigns one of several vibe archetypes based on your photo:
 
 The Dudley Blog covers internet culture, vibe archetypes, and honest app roundups. Full index: https://dudleyapps.com/blog/ (RSS: https://dudleyapps.com/blog/rss.xml).
 
+- [Can People See Reels You Liked on Instagram?](https://dudleyapps.com/blog/can-people-see-reels-you-liked-on-instagram/): Instagram likes are not always private. The Friends tab in Reels can surface public Reels your friends liked, commented on, reposted, or created, so check your activity controls before you treat a like as invisible.
 - [Why Did My Photo Get a Made With AI Label?](https://dudleyapps.com/blog/why-did-my-photo-get-made-with-ai-label/): A Made with AI label usually means a platform, tool, disclosure setting, or content credential signaled that media was meaningfully AI-generated or altered. Here is what the label can and cannot prove.
 - [Can AI Photo Apps Use Your Photos To Train AI?](https://dudleyapps.com/blog/can-ai-photo-apps-use-your-photos-to-train-ai/): Some AI services can use saved media to improve models, but every photo app is different. Here is how to check AI training, iPhone photo access, privacy labels, and VibeRater's entertainment boundary.
 - [Does Apple Intelligence Label AI-Edited Photos?](https://dudleyapps.com/blog/does-apple-intelligence-label-ai-edited-photos/): Apple says AI-edited Photos and Image Playground creations will include hidden SynthID watermarks. Here is what that means before you post AI edits, vibe cards, or group-chat photos.
