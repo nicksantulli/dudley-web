@@ -37,6 +37,7 @@ Vibe Rater assigns one of several vibe archetypes based on your photo:
 
 The Dudley Blog covers internet culture, vibe archetypes, and honest app roundups. Full index: https://dudleyapps.com/blog/ (RSS: https://dudleyapps.com/blog/rss.xml).
 
+- [What Does Limited Access Mean for Photos on iPhone?](https://dudleyapps.com/blog/what-does-limited-access-mean-photos-iphone/): Limited Access means an iPhone app can use only the photos and videos you select, not your whole photo library. Here is what it changes, how to check it, and what to watch before using photo apps.
 - [Does ChatGPT Use Your Photos To Train AI?](https://dudleyapps.com/blog/does-chatgpt-use-your-photos-to-train-ai/): ChatGPT can use content you upload, including images, to improve OpenAI's models unless your plan or data controls say otherwise. Here is the practical photo privacy checklist.
 - [Does iPhone Share Photo Metadata When You Send a Picture?](https://dudleyapps.com/blog/does-iphone-share-photo-metadata/): Yes, iPhone photo sharing can include metadata such as date, time, location, device details, and captions. Here is how to remove location before sharing and what to check before using photo apps.
 - [Can iPhone Apps See Your Screenshots?](https://dudleyapps.com/blog/can-iphone-apps-see-your-screenshots/): iPhone apps cannot automatically browse every screenshot, but an active app can know when you take a screenshot and photo permissions decide what screenshots you can share later.
