@@ -5,6 +5,7 @@ import InternalLinks from '../components/InternalLinks.astro';
 import AppCTA from '../components/AppCTA.astro';
 import { STUDIO, ORIGIN, rel, abs, APP_STORE } from '../consts';
 import { postTags, tagSlug, tagLabel, formatDate } from '../lib/blog';
+import { appBannerIdFor } from '../lib/appBanner';
 
 export interface Props {
   post: any; // blog entry data + slug
@@ -18,7 +19,7 @@ const updated = (post.updatedDate ?? post.publishDate) as Date;
 // Which app to surface in the CTA — first related app, defaulting to Vibe Rater.
 const APP_META: Record<string, { name: string; id: string }> = {
   'monetary-policy-independence-day': { name: 'Monetary Policy: Independence Day', id: APP_STORE.monetaryPolicyIndependenceDay },
-  'vibe-rater': { name: 'Vibe Rater', id: APP_STORE.vibeRater },
+  'vibe-rater': { name: 'VibeRater Social', id: APP_STORE.vibeRater },
 };
 const ctaKey = post.relatedApps?.find((a: string) => APP_META[a]) ?? 'vibe-rater';
 const cta = APP_META[ctaKey];
@@ -55,6 +56,7 @@ const schema = { '@context': 'https://schema.org', ...articleSchema };
   ogImage={ogImage}
   schema={schema}
   breadcrumbLeaf={post.title}
+  appBannerId={await appBannerIdFor(ctaKey)}
 >
   <main class="page">
     <div class="wrap" style="max-width:720px;">

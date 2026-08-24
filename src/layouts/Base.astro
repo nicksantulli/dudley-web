@@ -1,5 +1,5 @@
 ---
-import { STUDIO, SUPPORT_EMAIL, SOCIAL_LINKS, SOCIALS, BING_VERIFICATION, ORIGIN, rel, abs } from '../consts';
+import { STUDIO, LEGAL_NAME, SUPPORT_EMAIL, SOCIAL_LINKS, SOCIALS, BING_VERIFICATION, ORIGIN, rel, abs } from '../consts';
 
 export interface Props {
   title: string;
@@ -12,9 +12,13 @@ export interface Props {
   // omitted, the cleaned page title is used. Pass this when the page title is long
   // or differs from how the page reads in a trail (e.g. an app's full tagline).
   breadcrumbLeaf?: string;
+  // App Store id for a Safari Smart App Banner (apple-itunes-app). Set only on
+  // pages promoting a single live app; iOS Safari shows a native install/open
+  // banner above the page. Omit on multi-app pages like the homepage.
+  appBannerId?: string;
 }
 
-const { title, description, path, ogImage = '/assets/dudley-lockup.png', schema = null, noindex = false, breadcrumbLeaf } = Astro.props;
+const { title, description, path, ogImage = '/assets/dudley-lockup.png', schema = null, noindex = false, breadcrumbLeaf, appBannerId } = Astro.props;
 const canonical = abs(path);
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : abs(ogImage);
 const fullTitle = title.includes(STUDIO) ? title : `${title} | ${STUDIO}`;
@@ -23,6 +27,7 @@ const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: STUDIO,
+  legalName: LEGAL_NAME,
   url: ORIGIN,
   logo: { '@type': 'ImageObject', url: abs('/assets/dudley-mark.png') },
   contactPoint: { '@type': 'ContactPoint', email: SUPPORT_EMAIL, contactType: 'customer support' },
@@ -92,6 +97,7 @@ const SOCIAL_ICONS: Record<string, string> = {
   {BING_VERIFICATION && <meta name="msvalidate.01" content={BING_VERIFICATION} />}
   <meta name="theme-color" content="#1C0D06" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#F2E8D5" media="(prefers-color-scheme: light)" />
+  {appBannerId && <meta name="apple-itunes-app" content={`app-id=${appBannerId}`} />}
   <link rel="icon" href={rel('/favicon.ico')} sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href={rel('/assets/favicon-32x32.png')} />
   <link rel="icon" type="image/png" sizes="16x16" href={rel('/assets/favicon-16x16.png')} />
@@ -135,7 +141,7 @@ const SOCIAL_ICONS: Record<string, string> = {
 
   <footer class="site">
     <div class="wrap">
-      <div class="copy">© {year} {STUDIO}</div>
+      <div class="copy">© {year} {LEGAL_NAME}. All rights reserved.</div>
       <nav>
         {nav.map((n) => <a href={n.href}>{n.label}</a>)}
       </nav>
