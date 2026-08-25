@@ -11,9 +11,9 @@
 - Last Human: A free satirical top-down arcade game for iPhone — you're the last human in an AI-automated office, dodging AutoBots to reach the time clock before the timer runs out. Free with optional ad-free upgrade (in-app purchase). iOS. Launching on the App Store soon.
 - EconByte: A free iPhone app that explains economics in bite-sized daily cards — inflation, interest rates, GDP, trade — like a smart friend, not a textbook. Educational only, not investment advice. Free with optional ad-free upgrade (in-app purchase). iOS. Launching on the App Store soon.
 
-## Archetypes (Vibe Rater)
+## Archetypes (VibeRater Social)
 
-Vibe Rater assigns one of several vibe archetypes based on your photo:
+VibeRater Social assigns one of several vibe archetypes based on your photo:
 
 - [Main Character Energy](https://dudleyapps.com/archetypes/main-character/): The protagonist of every room. Confident, intentional presence.
 - [Final Boss](https://dudleyapps.com/archetypes/final-boss/): Peak power. Effortless authority; maxed Main-Character, Rizz, and Serve.
@@ -26,7 +26,7 @@ Vibe Rater assigns one of several vibe archetypes based on your photo:
 
 ## Tools
 
-- [What's My Vibe? Quiz](https://dudleyapps.com/tools/whats-my-vibe/): A free 5-question quiz that reveals your vibe archetype. Powered by Vibe Rater logic.
+- [What's My Vibe? Quiz](https://dudleyapps.com/tools/whats-my-vibe/): A free 5-question quiz that reveals your vibe archetype. Powered by VibeRater Social logic.
 
 ## Comparisons
 

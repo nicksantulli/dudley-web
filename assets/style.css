@@ -87,8 +87,10 @@ nav.top a:hover { color: var(--ink); text-decoration: none; }
   .brand .mark { height: 27px; }
   nav.top {
     width: 100%;
-    justify-content: space-between;
-    gap: 8px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: 18px;
+    row-gap: 2px;
     font-size: 13px;
   }
 }
@@ -281,8 +283,9 @@ section .sub { color: var(--ink-muted); margin: 0 0 34px; font-size: 16px; }
 .lede-hero > div { min-width: 0; }
 .lede-hero img.icon { width: 84px; height: 84px; border-radius: 18px; box-shadow: 0 8px 26px rgba(0,0,0,0.5); }
 .lede-hero .emoji { font-size: 56px; line-height: 1; }
+.lede-hero h1, .lede-hero .updated { overflow-wrap: anywhere; }
 @media (max-width: 420px) {
-  .lede-hero { gap: 14px; }
+  .lede-hero { gap: 14px; flex-direction: column; align-items: flex-start; }
   .lede-hero img.icon { width: 72px; height: 72px; border-radius: 16px; }
 }
 .tldr { font-size: 18px; color: var(--ink); background: var(--surface); border: 1px solid var(--border);
@@ -322,7 +325,8 @@ section .sub { color: var(--ink-muted); margin: 0 0 34px; font-size: 16px; }
 .see-also span { color: var(--ink-muted); font-size: 13px; }
 
 /* ---------- Comparison ---------- */
-.cmp-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+.cmp-table { width: 100%; table-layout: fixed; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+.cmp-table th, .cmp-table td { overflow-wrap: anywhere; word-break: break-word; }
 .cmp-table th, .cmp-table td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--border); }
 .cmp-table thead th { color: var(--ink-muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
 .cmp-table tbody th { color: var(--ink); font-weight: 700; }
