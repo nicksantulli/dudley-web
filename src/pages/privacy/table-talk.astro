@@ -1,18 +1,18 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { rel, SUPPORT_EMAIL } from '../../consts';
-const description = 'Privacy policy for Table Talk: Conversation Cards by Dudley Development.';
+import { rel, SUPPORT_EMAIL, LEGAL_NAME } from '../../consts';
+const description = `Privacy policy for Table Talk: Conversation Cards by ${LEGAL_NAME}.`;
 ---
 <Base title="Privacy Policy · Table Talk: Conversation Cards" description={description} path="/privacy/table-talk">
   <main class="page">
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/privacy/')}>← All privacy policies</a>
       <h1>Privacy Policy</h1>
-      <p class="updated">Table Talk: Conversation Cards · Last updated July 1, 2026</p>
+      <p class="updated">Table Talk: Conversation Cards · Last updated July 20, 2026</p>
 
       <h2>The short version</h2>
       <p>
-        Table Talk is a free conversation-card app supported by ads. We do not run accounts,
+        {LEGAL_NAME} operates Table Talk, a free conversation-card app supported by ads. We do not run accounts,
         analytics, or trackers of our own, and we never see your personal information. The prompts
         are bundled in the app, bookmarks stay on your device, and the app works without an account
         or internet connection.

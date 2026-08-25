@@ -1,5 +1,5 @@
 ---
-import { STUDIO, SUPPORT_EMAIL, SOCIAL_LINKS, SOCIALS, BING_VERIFICATION, ORIGIN, rel, abs } from '../consts';
+import { STUDIO, LEGAL_NAME, SUPPORT_EMAIL, SOCIAL_LINKS, SOCIALS, BING_VERIFICATION, ORIGIN, rel, abs } from '../consts';
 
 export interface Props {
   title: string;
@@ -23,6 +23,7 @@ const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: STUDIO,
+  legalName: LEGAL_NAME,
   url: ORIGIN,
   logo: { '@type': 'ImageObject', url: abs('/assets/dudley-mark.png') },
   contactPoint: { '@type': 'ContactPoint', email: SUPPORT_EMAIL, contactType: 'customer support' },
@@ -135,7 +136,7 @@ const SOCIAL_ICONS: Record<string, string> = {
 
   <footer class="site">
     <div class="wrap">
-      <div class="copy">© {year} {STUDIO}</div>
+      <div class="copy">© {year} {LEGAL_NAME}. All rights reserved.</div>
       <nav>
         {nav.map((n) => <a href={n.href}>{n.label}</a>)}
       </nav>

@@ -1,18 +1,18 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { rel, SUPPORT_EMAIL } from '../../consts';
-const description = 'Privacy policy for Monetary Policy: Independence Day by Dudley Development.';
+import { rel, SUPPORT_EMAIL, LEGAL_NAME } from '../../consts';
+const description = `Privacy policy for Monetary Policy: Independence Day by ${LEGAL_NAME}.`;
 ---
 <Base title="Privacy Policy · Monetary Policy: Independence Day" description={description} path="/privacy/monetary-policy-independence-day">
   <main class="page">
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/privacy/')}>← All privacy policies</a>
       <h1>Privacy Policy</h1>
-      <p class="updated">Monetary Policy: Independence Day · Last updated June 20, 2026</p>
+      <p class="updated">Monetary Policy: Independence Day · Last updated July 20, 2026</p>
 
       <h2>The short version</h2>
       <p>
-        Monetary Policy: Independence Day is free to play and supported by ads. We don't run accounts, analytics,
+        {LEGAL_NAME} operates Monetary Policy: Independence Day, which is free to play and supported by ads. We don't run accounts, analytics,
         or trackers of our own, and we never see or store your personal information. The app was renamed from
         Powell Prowl: Rate Chase in June 2026; the privacy practice didn't change. Google AdMob may collect ad-related
         identifiers as described below — and you can say no to tracking with one tap.

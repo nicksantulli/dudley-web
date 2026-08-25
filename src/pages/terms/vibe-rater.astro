@@ -1,17 +1,17 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { rel, SUPPORT_EMAIL } from '../../consts';
-const description = 'Terms of Use and End User License Agreement for VibeRater by Dudley Development.';
+import { rel, SUPPORT_EMAIL, LEGAL_NAME } from '../../consts';
+const description = `Terms of Use and End User License Agreement for VibeRater by ${LEGAL_NAME}.`;
 ---
 <Base title="Terms of Use · VibeRater" description={description} path="/terms/vibe-rater">
   <main class="page">
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/apps/vibe-rater')}>← VibeRater</a>
       <h1>Terms of Use</h1>
-      <p class="updated">VibeRater · Last updated July 8, 2026</p>
+      <p class="updated">VibeRater · Last updated July 20, 2026</p>
 
       <p>
-        These Terms of Use ("Terms") are the agreement (the "EULA") between you and Dudley Development
+        These Terms of Use ("Terms") are the agreement (the "EULA") between you and {LEGAL_NAME}
         ("we," "us") for the VibeRater app and its social features (the "App"). By downloading or using
         the App, you agree to these Terms. If you do not agree, do not use the App.
       </p>

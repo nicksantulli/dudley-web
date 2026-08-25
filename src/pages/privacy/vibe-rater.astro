@@ -1,18 +1,18 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { rel, SUPPORT_EMAIL } from '../../consts';
-const description = 'Privacy policy for VibeRater by Dudley Development.';
+import { rel, SUPPORT_EMAIL, LEGAL_NAME } from '../../consts';
+const description = `Privacy policy for VibeRater by ${LEGAL_NAME}.`;
 ---
 <Base title="Privacy Policy · VibeRater" description={description} path="/privacy/vibe-rater">
   <main class="page">
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/privacy/')}>← All privacy policies</a>
       <h1>Privacy Policy</h1>
-      <p class="updated">VibeRater · Last updated July 16, 2026</p>
+      <p class="updated">VibeRater · Last updated July 20, 2026</p>
 
       <h2>The short version</h2>
       <p>
-        VibeRater is a free, for-entertainment app that gives your photos a playful AI "vibe" rating and,
+        {LEGAL_NAME} operates VibeRater, a free, for-entertainment app that gives your photos a playful AI "vibe" rating and,
         if you choose, lets you share ratings, post to a feed, add friends, message, and join events. When
         you rate a photo, it is <strong>sent to our service to generate the rating and then discarded —
         processed in memory and never stored</strong>. When you <strong>choose to post, share, or save</strong>,
