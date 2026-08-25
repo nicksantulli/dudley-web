@@ -4,6 +4,8 @@ import FAQ from '../components/FAQ.astro';
 import InternalLinks from '../components/InternalLinks.astro';
 import AppCTA from '../components/AppCTA.astro';
 import { rel, abs, APP_STORE } from '../consts';
+import { VIBERATER_ASC_TOKENS } from '../lib/campaignLinks.mjs';
+import { appBannerIdFor } from '../lib/appBanner';
 
 export interface Props {
   tool: any;
@@ -20,13 +22,13 @@ const howToSchema = {
   step: [
     { '@type': 'HowToStep', name: 'Answer the questions', text: 'Answer 5 quick questions about your style and energy.' },
     { '@type': 'HowToStep', name: 'Get your vibe archetype', text: 'See your closest vibe archetype based on your answers.' },
-    { '@type': 'HowToStep', name: 'Get your full score in the app', text: 'Download Vibe Rater for a photo-based vibe score, aura color, and shareable card.' },
+    { '@type': 'HowToStep', name: 'Get your full score in the app', text: 'Download VibeRater Social for a VibeMeter score, aura-style read, archetype, vibe anthem, and shareable post.' },
   ],
 };
 // No FAQPage markup (Google restricts FAQ rich results); the visible FAQ stays.
 const schema = { '@context': 'https://schema.org', ...howToSchema };
 ---
-<Base title={tool.title} description={tool.description} path={path} schema={schema} breadcrumbLeaf={tool.title}>
+<Base title={tool.title} description={tool.description} path={path} schema={schema} breadcrumbLeaf={tool.title} appBannerId={await appBannerIdFor(tool.targetApp)}>
   <main class="page">
     <div class="wrap" style="max-width:720px;">
       <nav class="crumbs">
@@ -42,10 +44,11 @@ const schema = { '@context': 'https://schema.org', ...howToSchema };
       <slot name="quiz" />
 
       <AppCTA
-        appName="Vibe Rater"
+        appName="VibeRater Social"
         appStoreId={APP_STORE.vibeRater}
         status={APP_STORE.vibeRater ? 'live' : 'coming_soon'}
-        blurb="This quiz gives you your archetype in 5 questions. For your real vibe score from a photo — with a full dimension breakdown, aura color, and a shareable card — get Vibe Rater. The phone vibrates while it reads you."
+        campaignToken={VIBERATER_ASC_TOKENS.tool}
+        blurb="This quiz gives you an archetype in 5 questions. VibeRater Social turns a photo into a VibeMeter score, aura-style read, archetype, vibe anthem, and a moment you can keep private or share."
       />
 
       <FAQ items={tool.faq} />

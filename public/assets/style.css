@@ -74,6 +74,26 @@ header.site .wrap {
 nav.top { display: flex; gap: 22px; font-size: 14px; font-weight: 600; }
 nav.top a { color: var(--ink-muted); }
 nav.top a:hover { color: var(--ink); text-decoration: none; }
+@media (max-width: 640px) {
+  header.site .wrap {
+    height: auto;
+    min-height: 62px;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    padding-top: 8px;
+    padding-bottom: 9px;
+  }
+  .brand { font-size: 15px; }
+  .brand .mark { height: 27px; }
+  nav.top {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: 18px;
+    row-gap: 2px;
+    font-size: 13px;
+  }
+}
 
 /* ---------- Hero ---------- */
 .hero { padding: 86px 0 64px; text-align: center; position: relative; overflow: hidden; }
@@ -260,8 +280,14 @@ section .sub { color: var(--ink-muted); margin: 0 0 34px; font-size: 16px; }
 
 /* ---------- Article hero (apps / archetypes) ---------- */
 .lede-hero { display: flex; gap: 18px; align-items: center; margin: 0 0 8px; }
+.lede-hero > div { min-width: 0; }
 .lede-hero img.icon { width: 84px; height: 84px; border-radius: 18px; box-shadow: 0 8px 26px rgba(0,0,0,0.5); }
 .lede-hero .emoji { font-size: 56px; line-height: 1; }
+.lede-hero h1, .lede-hero .updated { overflow-wrap: anywhere; }
+@media (max-width: 420px) {
+  .lede-hero { gap: 14px; flex-direction: column; align-items: flex-start; }
+  .lede-hero img.icon { width: 72px; height: 72px; border-radius: 16px; }
+}
 .tldr { font-size: 18px; color: var(--ink); background: var(--surface); border: 1px solid var(--border);
   border-left: 3px solid var(--accent); border-radius: 10px; padding: 16px 18px; margin: 18px 0 8px; }
 
@@ -299,7 +325,8 @@ section .sub { color: var(--ink-muted); margin: 0 0 34px; font-size: 16px; }
 .see-also span { color: var(--ink-muted); font-size: 13px; }
 
 /* ---------- Comparison ---------- */
-.cmp-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+.cmp-table { width: 100%; table-layout: fixed; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+.cmp-table th, .cmp-table td { overflow-wrap: anywhere; word-break: break-word; }
 .cmp-table th, .cmp-table td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--border); }
 .cmp-table thead th { color: var(--ink-muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
 .cmp-table tbody th { color: var(--ink); font-weight: 700; }

@@ -1,13 +1,15 @@
 ---
 import { appStoreUrl } from '../consts';
+import { appStoreCampaignUrl } from '../lib/campaignLinks.mjs';
 export interface Props {
   appName: string;
   appStoreId?: string;
   status: 'live' | 'coming_soon' | 'in_development';
   blurb?: string;
+  campaignToken?: string;
 }
-const { appName, appStoreId = '', status, blurb } = Astro.props;
-const url = appStoreUrl(appStoreId);
+const { appName, appStoreId = '', status, blurb, campaignToken } = Astro.props;
+const url = campaignToken ? appStoreCampaignUrl(appStoreId, campaignToken) : appStoreUrl(appStoreId);
 const isLive = status === 'live' && !!url;
 ---
 <div class="cta-block">

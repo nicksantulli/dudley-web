@@ -12,9 +12,12 @@ export interface Props {
   // omitted, the cleaned page title is used. Pass this when the page title is long
   // or differs from how the page reads in a trail (e.g. an app's full tagline).
   breadcrumbLeaf?: string;
+  // App Store id for a Safari Smart App Banner. Set only on pages promoting a
+  // single live app; omit on multi-app pages like the homepage.
+  appBannerId?: string;
 }
 
-const { title, description, path, ogImage = '/assets/dudley-lockup.png', schema = null, noindex = false, breadcrumbLeaf } = Astro.props;
+const { title, description, path, ogImage = '/assets/dudley-lockup.png', schema = null, noindex = false, breadcrumbLeaf, appBannerId } = Astro.props;
 const canonical = abs(path);
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : abs(ogImage);
 const fullTitle = title.includes(STUDIO) ? title : `${title} | ${STUDIO}`;
@@ -92,6 +95,7 @@ const SOCIAL_ICONS: Record<string, string> = {
   {BING_VERIFICATION && <meta name="msvalidate.01" content={BING_VERIFICATION} />}
   <meta name="theme-color" content="#1C0D06" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#F2E8D5" media="(prefers-color-scheme: light)" />
+  {appBannerId && <meta name="apple-itunes-app" content={`app-id=${appBannerId}`} />}
   <link rel="icon" href={rel('/favicon.ico')} sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href={rel('/assets/favicon-32x32.png')} />
   <link rel="icon" type="image/png" sizes="16x16" href={rel('/assets/favicon-16x16.png')} />

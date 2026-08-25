@@ -2,13 +2,19 @@
 import Base from './Base.astro';
 import FAQ from '../components/FAQ.astro';
 import InternalLinks from '../components/InternalLinks.astro';
-import { rel, abs } from '../consts';
+import { rel, abs, APP_STORE } from '../consts';
+import { appStoreCampaignUrl, VIBERATER_ASC_TOKENS } from '../lib/campaignLinks.mjs';
+import { appBannerIdFor } from '../lib/appBanner';
 
 export interface Props {
   cmp: any;
 }
 const { cmp } = Astro.props;
 const path = `/compare/${cmp.slug}/`;
+const appStoreLink = (app: any) =>
+  app.isDudleyApp && cmp.targetApp === 'vibe-rater'
+    ? appStoreCampaignUrl(APP_STORE.vibeRater, VIBERATER_ASC_TOKENS.comparison)
+    : app.appStoreUrl;
 
 const listSchema = {
   '@type': 'ItemList',
@@ -27,7 +33,7 @@ const listSchema = {
 // No FAQPage markup (Google restricts FAQ rich results); the visible FAQ stays.
 const schema = { '@context': 'https://schema.org', ...listSchema };
 ---
-<Base title={cmp.title} description={cmp.description} path={path} schema={schema} breadcrumbLeaf={cmp.title}>
+<Base title={cmp.title} description={cmp.description} path={path} schema={schema} breadcrumbLeaf={cmp.title} appBannerId={await appBannerIdFor(cmp.targetApp)}>
   <main class="page">
     <div class="wrap" style="max-width:760px;">
       <nav class="crumbs">
@@ -65,7 +71,7 @@ const schema = { '@context': 'https://schema.org', ...listSchema };
           <p><strong>What we like:</strong></p>
           <ul>{a.pros.map((p: string) => <li>{p}</li>)}</ul>
           <p><strong>Verdict:</strong> {a.verdict}</p>
-          {a.appStoreUrl && <p><a class="btn primary" href={a.appStoreUrl} rel="noopener">Download {a.name} on the App Store</a></p>}
+          {appStoreLink(a) && <p><a class="btn primary" href={appStoreLink(a)} rel="noopener">Download {a.name} on the App Store</a></p>}
         </div>
       ))}
 

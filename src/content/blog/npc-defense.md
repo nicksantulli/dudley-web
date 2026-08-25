@@ -97,7 +97,7 @@ We are not saying you're boring. We're saying you've stopped caring about the sa
 
 ---
 
-**VibeRater: Aura is live on the App Store.** Find out your archetype — NPC (Affectionate), Main Character, Final Boss, or one of the others. The phone vibrates while it reads you. [Download VibeRater on the App Store](https://apps.apple.com/app/id6780704282).
+**VibeRater Social is live on the App Store.** Find out your archetype — NPC (Affectionate), Main Character, Final Boss, or one of the others. The phone vibrates while it reads you. [Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-npc-defense-aug26-v1&mt=8).
 
 ---
 
@@ -116,4 +116,4 @@ From video game culture — Non-Player Characters are background characters who 
 A Vibe Rater archetype for photos that read as unbothered, stable, and not performing for the camera. Low Rizz, moderate Aura, low Main-Character Energy. Not a consolation prize — an earned stance.
 
 **What is Vibe Rater?**
-VibeRater: Aura is a free iOS entertainment app from Dudley Development, live on the App Store. Upload a photo and get your vibe score, archetype, and aura color. The phone vibrates while it reads you. Requires iOS 17.
+VibeRater Social is a free iOS entertainment app from Dudley Development, live on the App Store. Upload a photo and get your vibe score, archetype, and aura color. The phone vibrates while it reads you. Requires iOS 17.

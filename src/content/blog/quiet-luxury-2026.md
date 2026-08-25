@@ -91,7 +91,7 @@ Those are personality types, not trend cycles. They just get different names eve
 
 ---
 
-**VibeRater: Aura is live on the App Store.** Find out which archetype you actually are — your photo might surprise you. [Download VibeRater on the App Store](https://apps.apple.com/app/id6780704282).
+**VibeRater Social is live on the App Store.** Find out which archetype you actually are — your photo might surprise you. [Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-quiet-luxury-2026-aug26-v1&mt=8).
 
 ---
 
@@ -110,4 +110,4 @@ High-quality, understated pieces in neutral tones with minimal visible branding.
 High Fit Cohesion, readable Drip, low Rizz, very low Serve. Everything agrees. Nothing announces itself. The clothes are simply correct. Assigned to photos that read as restrained and expensive without performing either quality.
 
 **What is Vibe Rater?**
-VibeRater: Aura is a free iOS entertainment app from Dudley Development, live on the App Store. Upload a photo for a score across six dimensions, an archetype, and an aura color. The phone vibrates while it reads you.
+VibeRater Social is a free iOS entertainment app from Dudley Development, live on the App Store. Upload a photo for a score across six dimensions, an archetype, and an aura color. The phone vibrates while it reads you.

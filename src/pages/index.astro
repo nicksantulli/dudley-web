@@ -1,7 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import { rel, abs, ORIGIN, appStoreUrl } from '../consts';
+import { rel, abs, ORIGIN, APP_STORE, appStoreUrl } from '../consts';
+import { appStoreCampaignUrl, VIBERATER_ASC_TOKENS } from '../lib/campaignLinks.mjs';
 
 const allApps = (await getCollection('apps')).sort((a, b) => a.data.order - b.data.order);
 // Studio's own apps vs. client work (apps built for a partner — see `developedFor`).
@@ -15,7 +16,7 @@ const schema = {
   url: ORIGIN,
 };
 const description =
-  'Dudley Development is a small independent studio building polished, playful iPhone apps. Maker of Monetary Policy: Independence Day and Vibe Rater.';
+  'Dudley Development is a small independent studio building polished, playful iPhone apps. Maker of VibeRater Social and Monetary Policy: Independence Day, plus the studio behind Dude, Where\'s This House? for HomeLight.';
 ---
 <Base title="Dudley Development — iOS apps with character" description={description} path="/" schema={schema}>
   <main>
@@ -35,12 +36,14 @@ const description =
       <div class="wrap">
         <div class="section-head">
           <h2>The apps</h2>
-          <p class="sub">Free on the App Store. No accounts. No nonsense.</p>
+          <p class="sub">Free on the App Store. Clear privacy choices. No nonsense.</p>
         </div>
 
         <ul class="app-list">
           {apps.map((app) => {
-            const url = appStoreUrl(app.data.appStoreId);
+            const url = app.data.appStoreId === APP_STORE.vibeRater
+              ? appStoreCampaignUrl(app.data.appStoreId, VIBERATER_ASC_TOKENS.home)
+              : appStoreUrl(app.data.appStoreId);
             const live = app.data.status === 'live' && !!url;
             const hasPage = app.data.landingPage !== false;
             const slug = app.slug;
@@ -85,7 +88,9 @@ const description =
 
           <ul class="app-list">
             {clientApps.map((app) => {
-              const url = appStoreUrl(app.data.appStoreId);
+              const url = app.data.appStoreId === APP_STORE.vibeRater
+                ? appStoreCampaignUrl(app.data.appStoreId, VIBERATER_ASC_TOKENS.home)
+                : appStoreUrl(app.data.appStoreId);
               const live = app.data.status === 'live' && !!url;
               const hasPage = app.data.landingPage !== false;
               const slug = app.slug;
@@ -127,8 +132,8 @@ const description =
         <div class="app-card" style="text-align:center; align-items:center;">
           <h3 style="font-size:24px;">Built honestly, shipped carefully.</h3>
           <p class="desc" style="max-width:560px; margin:0 auto;">
-            Every Dudley app is free, runs without an account, and keeps your data on your device.
-            Ads are clearly disclosed and you can always opt out of tracking. That's the whole deal.
+            Every Dudley app is free, and every privacy policy explains what stays on your device,
+            what reaches a service, and why. Ads, analytics, and account features are disclosed plainly.
           </p>
           <div class="actions" style="justify-content:center;">
             <a class="btn" href={rel('/about')}>More about the studio →</a>

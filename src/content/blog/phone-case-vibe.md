@@ -109,7 +109,7 @@ The delusional version: you have AirPod cases missing, a cracked screen from thr
 
 Your phone case suggests your archetype. Vibe Rater will tell you for sure — upload a photo and get your score across six dimensions, your archetype, and your aura color. The phone vibrates while it reads you.
 
-[Download VibeRater on the App Store](https://apps.apple.com/app/id6780704282).
+[Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-phone-case-vibe-aug26-v1&mt=8).
 
 ---
 
@@ -122,7 +122,7 @@ Your phone case reflects your relationship to risk, aesthetics, and self-express
 Clean Girl is a minimalist aesthetic defined by polished basics, neutral tones, and effortless organization. Everything is chosen deliberately. In Vibe Rater, Clean Girl scores high on Fit Cohesion — the aesthetic is internally consistent, always. The clear case fits because it doesn't break the visual logic of the phone itself.
 
 **What is Vibe Rater?**
-VibeRater: Aura is a free iOS entertainment app live on the App Store. Upload a photo and get your vibe score across six dimensions — Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve — plus an archetype and aura color. Requires iOS 17 or later. Made by Dudley Development.
+VibeRater Social is a free iOS entertainment app live on the App Store. Upload a photo and get your vibe score across six dimensions — Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve — plus an archetype and aura color. Requires iOS 17 or later. Made by Dudley Development.
 
 **What is a Gorpcore Prophet?**
 Gorpcore Prophet is a Vibe Rater archetype for people whose aesthetic is defined by technical, functional gear chosen through research and conviction. The Gorpcore Prophet MagSafe wallet case was selected after a Reddit thread. It was the correct choice and they can tell you why.

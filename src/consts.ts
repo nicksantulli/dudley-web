@@ -7,6 +7,7 @@ export const BASE = ''; // root domain — no project sub-path
 export const ORIGIN = ORIGIN_HOST + BASE; // canonical origin for the deployed site
 
 export const STUDIO = 'Dudley Development';
+export const LEGAL_NAME = 'Dudley Development, LLC';
 
 // Bing Webmaster Tools site verification. Paste the `content` value from the
 // <meta name="msvalidate.01" ...> tag Bing gives you after adding the site
