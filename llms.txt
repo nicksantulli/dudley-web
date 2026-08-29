@@ -37,6 +37,7 @@ VibeRater Social assigns one of several vibe archetypes based on your photo:
 
 The Dudley Blog covers internet culture, vibe archetypes, and honest app roundups. Full index: https://dudleyapps.com/blog/ (RSS: https://dudleyapps.com/blog/rss.xml).
 
+- [What Are Content Credentials on AI Photos?](https://dudleyapps.com/blog/what-are-content-credentials-ai-photos/): Content Credentials are provenance metadata that can show how a photo was created or edited. Here is what they mean, what they do not prove, and how to read them before sharing AI photos.
 - [Can You Remove the Gemini AI Watermark?](https://dudleyapps.com/blog/can-you-remove-gemini-ai-watermark/): Gemini now lets some users turn off visible watermarks on AI-generated media. Here is what changes, what still stays in the file, and what to check before sharing AI-edited photos.
 - [What Is Nano Banana AI?](https://dudleyapps.com/blog/what-is-nano-banana-ai/): Nano Banana is Google's nickname for Gemini image generation and editing models. Here is what the trend means, what it can do with photos, and what to check before sharing AI-edited images.
 - [Can iPhone Apps Tell When You Screen Record?](https://dudleyapps.com/blog/can-iphone-apps-tell-when-you-screen-record/): An iPhone app can often tell when its own screen is being recorded or mirrored, but that does not mean it can read the recording file or browse your old screen recordings.
