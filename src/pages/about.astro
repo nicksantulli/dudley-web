@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import { rel, SUPPORT_EMAIL, CONTACT_EMAIL } from '../consts';
+import { rel, SUPPORT_EMAIL, CONTACT_EMAIL, LEGAL_NAME } from '../consts';
 const description = 'Dudley Development is a small independent studio building polished, playful iPhone apps.';
 
 // "The apps" is data-driven off the same content collection that powers the app cards,
@@ -17,12 +17,16 @@ const statusLabel = (s: string) =>
 ---
 <Base title="About" description={description} path="/about">
   <main class="page">
-    <div class="wrap" style="max-width:720px;">
-      <a class="back" href={rel('/')}>← Home</a>
-      <h1>About Dudley Development</h1>
-      <p class="updated">Independent iOS studio · United States</p>
+    <div class="wrap" style="max-width:760px;">
+      <nav class="crumbs">
+        <a href={rel('/')}>Home</a><span class="sep">/</span>
+        <span>About</span>
+      </nav>
 
-      <p>
+      <h1>About Dudley Development</h1>
+      <p class="updated">Independent iOS studio · {LEGAL_NAME} · United States</p>
+
+      <p class="tldr">
         Dudley Development is a small independent studio making iPhone apps — the kind that are quick
         to pick up, do one thing with a bit of personality, and don't ask anything of you to start playing.
       </p>
@@ -37,30 +41,53 @@ const statusLabel = (s: string) =>
       </ul>
 
       <h2>The apps</h2>
-      <ul class="app-list">
+      <ul class="about-apps">
         {ownApps.map((a) => (
           <li>
-            <strong>{a.data.landingPage !== false
-              ? <a href={rel(`/apps/${a.slug}/`)}>{a.data.name}</a>
-              : a.data.name}</strong> — {a.data.tagline}
-            <span class="updated"> · {statusLabel(a.data.status)}</span>
+            <span class="about-app-name">
+              {a.data.landingPage !== false
+                ? <a href={rel(`/apps/${a.slug}/`)}>{a.data.name}</a>
+                : a.data.name}
+            </span>
+            <span class="about-app-tagline">{a.data.tagline}</span>
+            <span class={`badge ${a.data.status === 'live' ? 'live' : 'soon'}`}>
+              <span class="dot"></span> {statusLabel(a.data.status)}
+            </span>
           </li>
         ))}
       </ul>
-      <p>See them all on the <a href={rel('/#apps')}>home page</a>.</p>
+      <p>See them all — plus our client work — on the <a href={rel('/#apps')}>home page</a>.</p>
 
       <h2>Get in touch</h2>
       <p>
-        Got a bug or need help? Head to <a href={rel('/support')}>Support</a> or email
+        Got a bug or need help? Use the <a href={rel('/contact/')}>contact form</a>, head to
+        <a href={rel('/support')}>Support</a>, or email
         <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>. Just want to say hi or talk shop? Reach us at
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
       </p>
+
+      <div class="cta-block">
+        <h2>Want to work with us?</h2>
+        <p>We take on a small amount of client work each year — iOS apps designed, built, and shipped end to end.</p>
+        <div class="actions">
+          <a class="btn primary" href={rel('/contact/')}>Start a conversation</a>
+        </div>
+      </div>
     </div>
   </main>
 </Base>
 
 <style>
-  .app-list { list-style: none; padding: 0; margin: 0; }
-  .app-list li { padding: .5rem 0; border-bottom: 1px solid var(--hairline, rgba(0,0,0,.08)); line-height: 1.5; }
-  .app-list li:last-child { border-bottom: 0; }
+  .about-apps { list-style: none; padding: 0; margin: 0 0 1rem; }
+  .about-apps li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 12px;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .about-apps li:last-child { border-bottom: 0; }
+  .about-app-name { font-weight: 700; font-size: 1.0625rem; color: var(--ink); }
+  .about-app-tagline { color: var(--ink-muted); font-size: 0.9375rem; flex: 1 1 12rem; min-width: 0; }
 </style>

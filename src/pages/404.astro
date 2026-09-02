@@ -3,12 +3,18 @@ import Base from '../layouts/Base.astro';
 import { rel } from '../consts';
 ---
 <Base title="Page not found" description="This page wandered off." path="/404" noindex={true}>
-  <main class="hero" style="min-height:70vh; display:flex; align-items:center;">
+  <main class="hero center" style="min-height:60vh; display:flex; align-items:center;">
     <div class="wrap">
-      <span class="eyebrow">404</span>
-      <h1>This page wandered off.</h1>
-      <p class="lede">The link's broken or the page moved. Let's get you back.</p>
-      <a class="btn primary" href={rel('/')}>Go home →</a>
+      <div class="hero-inner">
+        <span class="eyebrow">404</span>
+        <h1>This page wandered off.</h1>
+        <p class="lede">The link's broken or the page moved. Here's the way back.</p>
+        <div class="actions center">
+          <a class="btn primary" href={rel('/')}>Go home</a>
+          <a class="btn" href={rel('/#apps')}>Browse the apps</a>
+          <a class="btn ghost" href={rel('/support')}>Get support</a>
+        </div>
+      </div>
     </div>
   </main>
 </Base>

@@ -1,5 +1,5 @@
 ---
-import { STUDIO, LEGAL_NAME, SUPPORT_EMAIL, SOCIAL_LINKS, SOCIALS, BING_VERIFICATION, ORIGIN, rel, abs } from '../consts';
+import { STUDIO, LEGAL_NAME, SUPPORT_EMAIL, CONTACT_EMAIL, SOCIAL_LINKS, SOCIALS, BING_VERIFICATION, ORIGIN, rel, abs } from '../consts';
 
 export interface Props {
   title: string;
@@ -40,7 +40,7 @@ const orgSchema = {
 const CRUMB_LABELS: Record<string, string> = {
   apps: 'Apps', blog: 'Blog', compare: 'Compare', tools: 'Tools',
   archetypes: 'Archetypes', support: 'Support', privacy: 'Privacy',
-  about: 'About', tags: 'Tags',
+  about: 'About', tags: 'Tags', contact: 'Contact', terms: 'Terms',
 };
 // Segments without a dedicated index page point at the closest real destination.
 const CRUMB_HREF: Record<string, string> = { apps: '/#apps' };
@@ -67,13 +67,33 @@ if (segs.length > 0) {
   breadcrumbSchema = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement };
 }
 
+// --- Navigation -------------------------------------------------------------
+// One list drives the desktop bar, the mobile drop panel, and the footer's
+// "Explore" column, so they can never drift. `match` marks the current page.
 const nav = [
-  { href: rel('/#apps'), label: 'Apps' },
-  { href: rel('/blog/'), label: 'Blog' },
-  { href: rel('/about'), label: 'About' },
-  { href: rel('/support'), label: 'Support' },
-  { href: rel('/privacy/'), label: 'Privacy' },
+  { href: rel('/'), label: 'Home', match: '/' },
+  { href: rel('/#apps'), label: 'Apps', match: '/#apps' },
+  { href: rel('/blog/'), label: 'Blog', match: '/blog' },
+  { href: rel('/about'), label: 'About', match: '/about' },
+  { href: rel('/support'), label: 'Support', match: '/support' },
+  { href: rel('/contact/'), label: 'Contact', match: '/contact' },
 ];
+const normalized = '/' + segs.join('/');
+const isCurrent = (match: string) =>
+  match === '/' ? normalized === '/' : match !== '/#apps' && normalized.startsWith(match);
+
+const footerLegal = [
+  { href: rel('/privacy/'), label: 'Privacy' },
+  { href: rel('/terms/vibe-rater'), label: 'VibeRater Terms' },
+  { href: rel('/about'), label: 'About the studio' },
+];
+const footerHelp = [
+  { href: rel('/support'), label: 'Support' },
+  { href: rel('/contact/'), label: 'Contact us' },
+  { href: rel('/blog/'), label: 'The Dudley Blog' },
+  { href: rel('/blog/rss.xml'), label: 'RSS feed' },
+];
+const footerExplore = nav.filter((n) => n.label !== 'Contact' && n.label !== 'Support');
 const year = new Date().getFullYear();
 
 // Monochrome platform glyphs (Simple Icons paths, 24×24, fill=currentColor so
@@ -124,38 +144,119 @@ const SOCIAL_ICONS: Record<string, string> = {
   {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site">
     <div class="wrap">
-      <a class="brand" href={rel('/')}>
-        <img class="mark" src={rel('/assets/dudley-mark.png')} alt="" aria-hidden="true" />
+      <a class="brand" href={rel('/')} aria-label={`${STUDIO} — home`}>
+        <img class="mark" src={rel('/assets/dudley-mark.png')} alt="" aria-hidden="true" width="30" height="30" />
         Dudley Development
       </a>
-      <nav class="top">
-        {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+
+      <nav class="top" aria-label="Primary">
+        {nav.map((n) => (
+          <a href={n.href} aria-current={isCurrent(n.match) ? 'page' : undefined}>{n.label}</a>
+        ))}
       </nav>
+
+      <details class="nav-toggle" id="nav-toggle">
+        <summary aria-label="Open the main menu">
+          <span class="bars" aria-hidden="true"><span></span></span>
+          Menu
+        </summary>
+        <div class="nav-panel">
+          <nav aria-label="Primary, mobile">
+            {nav.map((n) => (
+              <a href={n.href} aria-current={isCurrent(n.match) ? 'page' : undefined}>{n.label}</a>
+            ))}
+            <a href={rel('/privacy/')}>Privacy</a>
+          </nav>
+        </div>
+      </details>
     </div>
   </header>
 
-  <slot />
+  <div id="main">
+    <slot />
+  </div>
 
   <footer class="site">
     <div class="wrap">
-      <div class="copy">© {year} {LEGAL_NAME}. All rights reserved.</div>
-      <nav>
-        {nav.map((n) => <a href={n.href}>{n.label}</a>)}
-      </nav>
-      {SOCIALS.length > 0 && (
-        <nav class="socials" aria-label="Follow Dudley Development on social media">
-          {SOCIALS.map((s) => (
-            <a href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.label} title={s.name}>
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false">
-                <path d={SOCIAL_ICONS[s.icon]} />
-              </svg>
-            </a>
-          ))}
-        </nav>
-      )}
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href={rel('/')}>
+            <img class="mark" src={rel('/assets/dudley-mark.png')} alt="" aria-hidden="true" width="30" height="30" />
+            Dudley Development
+          </a>
+          <p>An independent iOS studio making small apps with real character. Free to play, privacy-first.</p>
+          {SOCIALS.length > 0 && (
+            <nav class="socials" aria-label="Follow Dudley Development on social media">
+              {SOCIALS.map((s) => (
+                <a href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.label} title={s.name}>
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false">
+                    <path d={SOCIAL_ICONS[s.icon]} />
+                  </svg>
+                </a>
+              ))}
+            </nav>
+          )}
+        </div>
+
+        <div class="foot-col">
+          <h2>Explore</h2>
+          <nav aria-label="Footer — explore">
+            {footerExplore.map((n) => <a href={n.href}>{n.label}</a>)}
+          </nav>
+        </div>
+
+        <div class="foot-col">
+          <h2>Help</h2>
+          <nav aria-label="Footer — help">
+            {footerHelp.map((n) => <a href={n.href}>{n.label}</a>)}
+          </nav>
+        </div>
+
+        <div class="foot-col">
+          <h2>Legal</h2>
+          <nav aria-label="Footer — legal">
+            {footerLegal.map((n) => <a href={n.href}>{n.label}</a>)}
+          </nav>
+        </div>
+      </div>
+
+      <div class="foot-bottom">
+        <div class="copy">© {year} {LEGAL_NAME}. All rights reserved.</div>
+        <div class="foot-mail">
+          Support <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
+          <span aria-hidden="true"> · </span>
+          Say hi <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <!-- Mobile menu polish. The <details> element already opens/closes and is
+       keyboard accessible with zero JS; this only closes it on link tap, on
+       Escape, on outside click, and when the viewport grows past the breakpoint. -->
+  <script is:inline>
+    (function () {
+      var d = document.getElementById('nav-toggle');
+      if (!d) return;
+      var close = function () { d.open = false; };
+      d.addEventListener('click', function (e) {
+        if (e.target instanceof Element && e.target.closest('.nav-panel a')) close();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && d.open) { close(); var s = d.querySelector('summary'); if (s) s.focus(); }
+      });
+      document.addEventListener('click', function (e) {
+        if (d.open && e.target instanceof Node && !d.contains(e.target)) close();
+      });
+      var mq = window.matchMedia('(min-width: 861px)');
+      var onChange = function (e) { if (e.matches) close(); };
+      if (mq.addEventListener) mq.addEventListener('change', onChange);
+      else if (mq.addListener) mq.addListener(onChange);
+    })();
+  </script>
 </body>
 </html>

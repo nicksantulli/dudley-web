@@ -61,10 +61,15 @@ const pageSchema = faqSchema ? [appSchema, faqSchema] : appSchema;
       </nav>
 
       <div class="lede-hero">
-        <img class="icon" src={rel(app.icon)} alt={`${app.name} app icon`} />
+        <img class="icon" src={rel(app.icon)} alt={`${app.name} app icon`} width="78" height="78" />
         <div>
           <h1>{app.name}</h1>
-          <p class="updated">{app.tagline}{app.status === 'live' ? ' · Live on the App Store' : ' · Coming soon'}</p>
+          <p class="updated">{app.tagline}</p>
+          <p class="lede-hero-status">
+            <span class={`badge ${app.status === 'live' ? 'live' : 'soon'}`}>
+              <span class="dot"></span> {app.status === 'live' ? 'Live on the App Store' : 'Coming soon'}
+            </span>
+          </p>
         </div>
       </div>
 
@@ -82,3 +87,7 @@ const pageSchema = faqSchema ? [appSchema, faqSchema] : appSchema;
     </div>
   </main>
 </Base>
+
+<style>
+  .lede-hero-status { margin: 8px 0 0; }
+</style>

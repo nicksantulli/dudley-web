@@ -47,6 +47,7 @@ const schema = { '@context': 'https://schema.org', ...listSchema };
       <slot />
 
       <h2>Feature comparison at a glance</h2>
+      <div class="table-scroll">
       <table class="cmp-table">
         <caption class="sr-only">Feature matrix comparing {cmp.title} by best use, price, and standout feature.</caption>
         <thead>
@@ -63,6 +64,7 @@ const schema = { '@context': 'https://schema.org', ...listSchema };
           ))}
         </tbody>
       </table>
+      </div>
 
       {cmp.apps.map((a: any) => (
         <div class={`cmp-app${a.isDudleyApp ? ' is-dudley' : ''}`}>
