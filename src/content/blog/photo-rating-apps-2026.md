@@ -14,10 +14,10 @@ faq:
     a: "Umax is an iOS app that uses AI to rate your physical attractiveness, providing a score and suggestions for improvement. It went viral in 2023–2024 for its sometimes harsh ratings and specific feedback. Unlike vibe-focused apps, Umax explicitly rates facial attractiveness — a different category from apps that rate aesthetic, style, or 'vibe.' It's free with in-app purchases."
   - q: "What is Photofeeler?"
     a: "Photofeeler is a platform (web and iOS) that lets real people rate your photos for three specific contexts: professional (LinkedIn), social (Instagram, dating), and dating apps. Unlike AI-powered raters, Photofeeler uses community voting — other Photofeeler users rate your photos and you rate theirs. It's designed for practical use: figuring out which headshot performs best, not comedy or entertainment. Free tier available with paid credits for faster feedback."
-  - q: "What is Vibe Rater?"
+  - q: "What is VibeRater?"
     a: "VibeRater Social is a free iOS entertainment app from Dudley Development that rates your vibe — not your attractiveness — from a photo. You get a score across six dimensions (Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve), a letter grade, an archetype (like Gorpcore Prophet, Clean Girl, or Final Boss), and an aura color. The phone vibrates while it 'analyzes' you. It's entertainment, not real analysis — the scientific validity is exactly zero and that's the bit. It is live on the App Store."
   - q: "Are photo rating apps accurate?"
-    a: "Depends what you mean by accurate. Professional feedback tools like Photofeeler use real human ratings, which are accurate in the sense that they reflect how real people respond to your photo — useful for headshots and dating profiles. AI beauty raters like Umax apply a model trained on attractiveness data, which measures something real but narrow. Entertainment apps like Vibe Rater make no accuracy claims — the fun is in the specificity and absurdity of the result, not the real measurement. Know which type of app you're downloading."
+    a: "Depends what you mean by accurate. Professional feedback tools like Photofeeler use real human ratings, which are accurate in the sense that they reflect how real people respond to your photo — useful for headshots and dating profiles. AI beauty raters like Umax apply a model trained on attractiveness data, which measures something real but narrow. Entertainment apps like VibeRater make no accuracy claims — the fun is in the specificity and absurdity of the result, not the real measurement. Know which type of app you're downloading."
 draft: false
 ---
 
@@ -33,7 +33,7 @@ Here is an honest ranking of the notable photo rating apps on iPhone in 2026, wh
     <tr><th scope="col">App</th><th scope="col">What it rates</th><th scope="col">Funny factor</th><th scope="col">Cost</th></tr>
   </thead>
   <tbody>
-    <tr><th scope="row">Vibe Rater</th><td>Your vibe across six dimensions, plus an archetype and aura color</td><td>High — chaotic copy and a haptic "judging" bit</td><td>Free, ad-supported</td></tr>
+    <tr><th scope="row">VibeRater</th><td>Your vibe across six dimensions, plus an archetype and aura color</td><td>High — chaotic copy and a haptic "judging" bit</td><td>Free, ad-supported</td></tr>
     <tr><th scope="row">Umax</th><td>Facial attractiveness, with specific AI feedback</td><td>Situational — the harshness is the feature</td><td>Free with in-app purchases</td></tr>
     <tr><th scope="row">Photofeeler</th><td>Real-human ratings for professional, social, and dating photos</td><td>Low — it's a utility, not a comedy</td><td>Free tier, paid credits</td></tr>
     <tr><th scope="row">Hot or Not</th><td>1–10 attractiveness (the legacy app that started the genre)</td><td>The original wasn't trying to be funny</td><td>Varies by current owner</td></tr>
@@ -72,7 +72,7 @@ The rest of this post breaks down each one in detail.
 
 **Cost:** Free with in-app purchases.
 
-**Our honest take:** Different product from Vibe Rater. Umax is trying to measure something real. We're not. If you want actual attractiveness feedback, Umax is doing that. If you want archetype comedy about your outfit energy, that's Vibe Rater. Neither is better; they're different apps for different moments.
+**Our honest take:** Different product from VibeRater. Umax is trying to measure something real. We're not. If you want actual attractiveness feedback, Umax is doing that. If you want archetype comedy about your outfit energy, that's VibeRater. Neither is better; they're different apps for different moments.
 
 ---
 
@@ -98,7 +98,7 @@ The rest of this post breaks down each one in detail.
 
 **Why it's on this list:** It invented the category. The entire "submit a photo, get a rating" genre of app exists because Hot or Not demonstrated in 2000 that people would absolutely do this. Every photo rating app is building on that insight.
 
-**Funny factor:** The original was not trying to be funny. Its imitators (including Vibe Rater, in a different direction) are.
+**Funny factor:** The original was not trying to be funny. Its imitators (including VibeRater, in a different direction) are.
 
 **Current state:** Consult the App Store for the current form of the app — the "Hot or Not" brand has changed hands and functionality over the years. We're not going to pretend to have a current review of something that has been multiple different products.
 
@@ -110,7 +110,7 @@ The category has quietly split into two completely different products:
 
 **Practical tools** (Photofeeler, professional headshot apps) are trying to give you useful signal. The rating is the product. They want to tell you something accurate about how your photo will perform in a specific context.
 
-**Entertainment apps** (Vibe Rater, the AI-roast category) are not trying to be accurate. The *result* is the product — specifically, the screenshot-able, shareable, group-chat-worthy result. The "analysis" is the delivery mechanism for a joke that has to be specific enough to feel real.
+**Entertainment apps** (VibeRater, the AI-roast category) are not trying to be accurate. The *result* is the product — specifically, the screenshot-able, shareable, group-chat-worthy result. The "analysis" is the delivery mechanism for a joke that has to be specific enough to feel real.
 
 These are different genres. Evaluating them on the same criteria — "is this accurate?" — misses the point of the entertainment category. You don't ask a horoscope if it's a good epidemiological study.
 
@@ -128,13 +128,13 @@ Know which one you're downloading. If you need to optimize a headshot for a job 
 The best depends on what you're trying to do. For professional photo feedback from real humans: Photofeeler. For harsh AI attractiveness rating: Umax. For entertainment, archetype comedy, and shareable vibe cards: VibeRater Social from Dudley Development.
 
 **What is Umax?**
-An iOS app that uses AI to rate physical attractiveness and give specific feedback. Went viral for unfiltered ratings. Different product from vibe-focused apps — Umax measures attractiveness; Vibe Rater rates aesthetic energy and style.
+An iOS app that uses AI to rate physical attractiveness and give specific feedback. Went viral for unfiltered ratings. Different product from vibe-focused apps — Umax measures attractiveness; VibeRater rates aesthetic energy and style.
 
 **What is Photofeeler?**
 A platform (web + iOS) where real people rate your photos for professional, social, or dating contexts. Community voting, not AI. The most practically useful photo rating tool for optimizing headshots.
 
-**What is Vibe Rater?**
+**What is VibeRater?**
 VibeRater Social is a free iOS entertainment app from Dudley Development, live on the App Store. Upload a photo, get your score across Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve — plus an archetype and aura color. The phone vibrates while it reads you. Vibe science; not real science.
 
 **Are photo rating apps accurate?**
-Depends on the type. Human-voted tools (Photofeeler) reflect real human responses — accurate for headshot optimization. AI beauty raters (Umax) measure something real but narrow. Entertainment apps (Vibe Rater) make no accuracy claims — the fun is in the specific, absurd result. Know which type you're using.
+Depends on the type. Human-voted tools (Photofeeler) reflect real human responses — accurate for headshot optimization. AI beauty raters (Umax) measure something real but narrow. Entertainment apps (VibeRater) make no accuracy claims — the fun is in the specific, absurd result. Know which type you're using.

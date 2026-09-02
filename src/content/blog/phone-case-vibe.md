@@ -18,12 +18,12 @@ relatedArchetypes:
 faq:
   - q: "What does your phone case say about your personality?"
     a: "Your phone case reflects your relationship to risk, aesthetics, and self-expression. Clear cases signal intentionality or indifference (both are revealing). Bulky protective cases (OtterBox, etc.) signal practicality over optics. No case signals either recklessness or extreme confidence. Custom photo cases signal someone who sees their phone as an extension of identity. Luxury cases signal status communication. The choice is rarely random — even 'I didn't think about it' is a personality tell."
-  - q: "What is Vibe Rater?"
-    a: "Vibe Rater is a free iOS entertainment app that rates your vibe from a photo. You get a score across six dimensions — Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve — plus an archetype (like Main Character, Gorpcore Prophet, or Cozy Goblin) and an aura color. The phone vibrates while it 'reads' you. Live on the App Store."
+  - q: "What is VibeRater?"
+    a: "VibeRater is a free iOS entertainment app that rates your vibe from a photo. You get a score across six dimensions — Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve — plus an archetype (like Main Character, Gorpcore Prophet, or Cozy Goblin) and an aura color. The phone vibrates while it 'reads' you. Live on the App Store."
   - q: "What is the Clean Girl aesthetic?"
-    a: "Clean Girl is a minimalist aesthetic defined by polished basics, neutral tones, and the impression of effortless organization. Clean Girl energy is about optimization — everything is chosen deliberately and nothing is out of place. In Vibe Rater terms, Clean Girl scores high on Fit Cohesion and Drip but the Drip is quiet, not loud. The aesthetic peaked on TikTok around 2022–2023 and remains culturally dominant."
+    a: "Clean Girl is a minimalist aesthetic defined by polished basics, neutral tones, and the impression of effortless organization. Clean Girl energy is about optimization — everything is chosen deliberately and nothing is out of place. In VibeRater terms, Clean Girl scores high on Fit Cohesion and Drip but the Drip is quiet, not loud. The aesthetic peaked on TikTok around 2022–2023 and remains culturally dominant."
   - q: "What is the Gorpcore Prophet archetype?"
-    a: "Gorpcore Prophet is a Vibe Rater archetype assigned to people whose visual language combines technical gear, functional materials, and quiet conviction. A Gorpcore Prophet has opinions about why their specific gear is correct. They chose their phone case using the same methodology they used to choose their trail runners: research, durability, and a healthy suspicion of things that are fashionable for no reason."
+    a: "Gorpcore Prophet is a VibeRater archetype assigned to people whose visual language combines technical gear, functional materials, and quiet conviction. A Gorpcore Prophet has opinions about why their specific gear is correct. They chose their phone case using the same methodology they used to choose their trail runners: research, durability, and a healthy suspicion of things that are fashionable for no reason."
 draft: false
 ---
 
@@ -53,7 +53,7 @@ You have thought about this. You have thought about it in the way the Gorpcore P
 
 The OtterBox person is not worried about what the case looks like. They are worried about whether it will work. This is the correct priority ordering, and the people who disagree with you have cracked screens and quiet self-loathing.
 
-Your Vibe Rater scores: high Aura (you know who you are), low Drip (that's fine), low Serve (intentionally), moderate Fit Cohesion (the case matches nothing but it doesn't need to). The case is not a vibe — it is a decision, and you made it correctly.
+Your VibeRater scores: high Aura (you know who you are), low Drip (that's fine), low Serve (intentionally), moderate Fit Cohesion (the case matches nothing but it doesn't need to). The case is not a vibe — it is a decision, and you made it correctly.
 
 ---
 
@@ -77,7 +77,7 @@ The photo is either: your pet, a trip you took that changed you, or a screenshot
 
 Either way: your phone case is content. It opens a conversation. It tells a story you wrote. When someone notices it, you have a fully prepared narrative about what it is and why you chose it.
 
-This is not a criticism. Main Character energy is about being the protagonist of your own life, and a custom case is a very efficient way to communicate that. Your Vibe Rater scores trend high on Rizz (you are easy to engage with), high on Main-Character Energy (you like to be in the frame), and your Serve is a 7–9 depending on the execution.
+This is not a criticism. Main Character energy is about being the protagonist of your own life, and a custom case is a very efficient way to communicate that. Your VibeRater scores trend high on Rizz (you are easy to engage with), high on Main-Character Energy (you like to be in the frame), and your Serve is a 7–9 depending on the execution.
 
 ---
 
@@ -99,15 +99,15 @@ All three are valid archetypes. Only one is in denial about why they bought it.
 
 Going caseless is a choice that says: I am confident enough in my reflexes, my grip, and my life to expose this $1,200 glass rectangle to the world without armor. Either you have never dropped a phone in your life (which would be a statistical anomaly), or you have dropped every phone you have ever owned and you simply do not learn from consequences.
 
-The Final Boss version: you genuinely don't worry about it, and the phone has never been dropped, and you will return it to Apple when you upgrade and it will look like new. Your Vibe Rater score is probably an S.
+The Final Boss version: you genuinely don't worry about it, and the phone has never been dropped, and you will return it to Apple when you upgrade and it will look like new. Your VibeRater score is probably an S.
 
-The delusional version: you have AirPod cases missing, a cracked screen from three months ago that you keep meaning to fix, and a case currently sitting in your Amazon cart that you haven't purchased yet. Your Vibe Rater score will tell you something true about yourself that you are not quite ready to hear.
+The delusional version: you have AirPod cases missing, a cracked screen from three months ago that you keep meaning to fix, and a case currently sitting in your Amazon cart that you haven't purchased yet. Your VibeRater score will tell you something true about yourself that you are not quite ready to hear.
 
 ---
 
 ## Find Out What Your Actual Vibe Is
 
-Your phone case suggests your archetype. Vibe Rater will tell you for sure — upload a photo and get your score across six dimensions, your archetype, and your aura color. The phone vibrates while it reads you.
+Your phone case suggests your archetype. VibeRater will tell you for sure — upload a photo and get your score across six dimensions, your archetype, and your aura color. The phone vibrates while it reads you.
 
 [Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-phone-case-vibe-aug26-v1&mt=8).
 
@@ -119,10 +119,10 @@ Your phone case suggests your archetype. Vibe Rater will tell you for sure — u
 Your phone case reflects your relationship to risk, aesthetics, and self-expression. Clear cases signal intentionality or indifference (both are revealing). Bulky protective cases signal practicality over optics. No case signals extreme confidence or a refusal to learn from consequences. Custom cases signal someone who treats their phone as an identity object. The choice is rarely random.
 
 **What is the Clean Girl aesthetic?**
-Clean Girl is a minimalist aesthetic defined by polished basics, neutral tones, and effortless organization. Everything is chosen deliberately. In Vibe Rater, Clean Girl scores high on Fit Cohesion — the aesthetic is internally consistent, always. The clear case fits because it doesn't break the visual logic of the phone itself.
+Clean Girl is a minimalist aesthetic defined by polished basics, neutral tones, and effortless organization. Everything is chosen deliberately. In VibeRater, Clean Girl scores high on Fit Cohesion — the aesthetic is internally consistent, always. The clear case fits because it doesn't break the visual logic of the phone itself.
 
-**What is Vibe Rater?**
+**What is VibeRater?**
 VibeRater Social is a free iOS entertainment app live on the App Store. Upload a photo and get your vibe score across six dimensions — Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve — plus an archetype and aura color. Requires iOS 17 or later. Made by Dudley Development.
 
 **What is a Gorpcore Prophet?**
-Gorpcore Prophet is a Vibe Rater archetype for people whose aesthetic is defined by technical, functional gear chosen through research and conviction. The Gorpcore Prophet MagSafe wallet case was selected after a Reddit thread. It was the correct choice and they can tell you why.
+Gorpcore Prophet is a VibeRater archetype for people whose aesthetic is defined by technical, functional gear chosen through research and conviction. The Gorpcore Prophet MagSafe wallet case was selected after a Reddit thread. It was the correct choice and they can tell you why.

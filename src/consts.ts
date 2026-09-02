@@ -48,6 +48,7 @@ export const APP_STORE = {
   monetaryPolicyIndependenceDay: '6775539250',
   vibeRater: '6780704282',
   dudeWheresThisHouse: '6779785617',
+  econByte: '6780714383',
 };
 
 export function appStoreUrl(id: string): string {

@@ -1,0 +1,65 @@
+---
+import Base from '../../layouts/Base.astro';
+import { rel, SUPPORT_EMAIL, LEGAL_NAME } from '../../consts';
+const description = `Privacy policy for Last Human: Dodge the Bots by ${LEGAL_NAME}.`;
+---
+<Base title="Privacy Policy · Last Human: Dodge the Bots" description={description} path="/privacy/last-human">
+  <main class="page">
+    <div class="wrap" style="max-width:720px;">
+      <a class="back" href={rel('/privacy/')}>← All privacy policies</a>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last Human: Dodge the Bots · Last updated September 1, 2026</p>
+
+      <p>
+        <strong>Last Human is coming soon and not yet available on the App Store.</strong> This policy
+        describes the app as designed and will be finalized against the shipped build before launch.
+      </p>
+
+      <h2>The short version</h2>
+      <p>
+        {LEGAL_NAME} is building Last Human as a free arcade game supported by ads, matching the privacy
+        practice already shipped in our other apps. We don't plan to run accounts, analytics, or trackers
+        of our own, and we won't see your personal information. Gameplay and high scores are designed to
+        stay on your device.
+      </p>
+
+      <h2>What stays on your device</h2>
+      <ul>
+        <li>Your persistent high score.</li>
+        <li>Your app settings, including purchase/ads state.</li>
+      </ul>
+      <p>
+        This information is designed to be stored locally on your device. We do not plan to receive it.
+        Deleting the app removes local app data from your device.
+      </p>
+
+      <h2>Advertising (Google AdMob)</h2>
+      <p>
+        The free version is planned to show an interstitial ad between levels. Ads are expected to be
+        served by <strong>Google AdMob</strong>, a third-party advertising network — the same provider
+        used across our other apps. To serve ads, Google may collect a device identifier for advertising
+        purposes; this is not linked to your identity and is not used to track you across other apps or
+        websites. We do not receive, store, or link any of this to you.
+      </p>
+      <ul>
+        <li>How Google uses this data is described in <a href="https://policies.google.com/technologies/ads">Google's advertising policy</a> and <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</li>
+        <li>The planned Remove Ads purchase ($0.99) would remove ads from the app.</li>
+      </ul>
+
+      <h2>Children</h2>
+      <p>
+        We do not plan to knowingly collect any data from anyone, including children under 13. There are
+        no accounts, profiles, or in-app messaging planned for this app.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        This policy will be updated to match the shipped app before Last Human launches, and any material
+        change after that will be posted at this URL with an updated date above.
+      </p>
+
+      <h2>Contact</h2>
+      <p>Questions? Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
+    </div>
+  </main>
+</Base>
