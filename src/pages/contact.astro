@@ -1,0 +1,143 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { rel, abs, STUDIO, SUPPORT_EMAIL, CONTACT_EMAIL } from '../consts';
+
+const description =
+  'Contact Dudley Development for app support, bug reports, or partnership and press inquiries. We reply from support@dudleyapps.com, usually within a day or two.';
+
+// ContactPage JSON-LD — mirrors the org contactPoint Base.astro already emits site-wide,
+// scoped to this page so AI answer engines and search can point directly at /contact/
+// for "how do I reach Dudley Development".
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact Dudley Development',
+  url: abs('/contact/'),
+  description,
+  mainEntity: {
+    '@type': 'Organization',
+    name: STUDIO,
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        email: SUPPORT_EMAIL,
+        contactType: 'customer support',
+      },
+      {
+        '@type': 'ContactPoint',
+        email: CONTACT_EMAIL,
+        contactType: 'general inquiry',
+      },
+    ],
+  },
+};
+---
+<Base title="Contact" description={description} path="/contact/" schema={schema}>
+  <main class="page">
+    <div class="wrap">
+      <a class="back" href={rel('/')}>← Home</a>
+      <h1>Contact Dudley Development</h1>
+      <p class="updated">Support, partnerships, or just saying hi — pick whichever fits.</p>
+
+      <p class="intro">
+        Got a bug, a question about one of our apps, or an idea for a partnership? Use the form
+        below and it lands directly in our inbox. For quick answers without waiting on a reply,
+        check <a href={rel('/support/')}>Support</a> first — a lot of common questions are already
+        answered there.
+      </p>
+
+      <div class="contact-layout">
+        <ContactForm />
+
+        <aside class="contact-aside" aria-label="Other ways to reach us">
+          <div class="aside-card">
+            <h2>Direct email</h2>
+            <p>
+              <strong>Support &amp; bugs</strong><br />
+              <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
+            </p>
+            <p>
+              <strong>Partnerships, press &amp; everything else</strong><br />
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+            </p>
+          </div>
+
+          <div class="aside-card">
+            <h2>Response time</h2>
+            <p>We read every message and typically reply within a day or two. For urgent App
+              Store review issues, say so in the subject line.</p>
+          </div>
+
+          <div class="aside-card">
+            <h2>More resources</h2>
+            <ul>
+              <li><a href={rel('/support/')}>Support &amp; FAQs</a></li>
+              <li><a href={rel('/privacy/')}>Privacy policy</a></li>
+              <li><a href={rel('/about')}>About Dudley Development</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .intro {
+    max-width: 720px;
+  }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: start;
+    margin-top: 20px;
+  }
+  @media (min-width: 900px) {
+    .contact-layout {
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 36px;
+    }
+  }
+
+  .contact-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .aside-card {
+    background: var(--surface, #f8f2e4);
+    border: 1px solid var(--border, rgba(61, 28, 8, 0.12));
+    border-radius: var(--radius, 16px);
+    padding: 22px;
+  }
+  .aside-card h2 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.2px;
+    color: var(--ink, #2a1208);
+  }
+  .aside-card p {
+    margin: 0 0 10px;
+    font-size: 15px;
+    color: var(--ink-body, #4a2e1a);
+  }
+  .aside-card p:last-child {
+    margin-bottom: 0;
+  }
+  .aside-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .aside-card ul li a {
+    font-size: 15px;
+  }
+</style>

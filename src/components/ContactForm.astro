@@ -1,0 +1,389 @@
+---
+// Reusable contact form — used on /contact/ today, and embeddable on /support (or a
+// per-app support page, via `defaultApp`) later without any changes here.
+//
+// Transport: FormSubmit.co (https://formsubmit.co) — a free forms-as-a-service backend
+// that needs no account and no API key. We POST to their AJAX endpoint on submit; with
+// JS disabled the plain <form> still works via FormSubmit's own redirect flow. See
+// PUBLISHING.md → "Contact form" for the full write-up, and
+// scripts/activate-contact-form.py for the one-time activation step FormSubmit requires
+// before it will actually deliver mail to a brand-new target address.
+import { getCollection } from 'astro:content';
+import { rel, abs, SUPPORT_EMAIL } from '../consts';
+
+export interface Props {
+  // Heading rendered above the form. Omit to render no heading at all (e.g. when the
+  // embedding page already has its own "Contact us" h1/h2 right above this component).
+  heading?: string;
+  // Tighter spacing + no heading margin, for embedding inside an existing card/section
+  // (e.g. a future /support embed) rather than as the page's main event.
+  compact?: boolean;
+  // Preselect an app in the "Which app?" dropdown by its content-collection slug
+  // (e.g. "vibe-rater"). Falls back to "general" when omitted or unrecognized.
+  defaultApp?: string;
+}
+
+const { heading, compact = false, defaultApp } = Astro.props;
+
+// FormSubmit target address. This is deliberately a standalone literal (not imported
+// from consts.ts, which this component does not own) so it can be swapped independently
+// once FormSubmit issues a hashed endpoint id after activation — see the note above
+// ajaxEndpoint below and PUBLISHING.md.
+const FORMSUBMIT_TARGET = 'support@dudleyapps.com';
+
+// Once scripts/activate-contact-form.py has been run and FormSubmit returns a hashed
+// endpoint (a long hex string, e.g. "a1b2c3d4e5f6..."), it can replace FORMSUBMIT_TARGET
+// above — same inbox, same behavior, just a URL that doesn't expose the plain address.
+// Both the plain address and a hash work as a FormSubmit path segment, so no other code
+// here needs to change.
+const formAction = `https://formsubmit.co/${FORMSUBMIT_TARGET}`;
+const ajaxEndpoint = `https://formsubmit.co/ajax/${FORMSUBMIT_TARGET}`;
+const redirectBackTo = abs('/contact/?sent=1');
+
+// "Which app?" options — data-driven off the same content collection that powers the
+// app cards, /apps/<slug>/ pages, and the support index, so this list can't drift as
+// apps ship, get renamed, or get added. Client work (developedFor, e.g. HomeLight) is
+// included too — those apps get support questions same as any other.
+const contentApps = (await getCollection('apps')).sort((a, b) => a.data.order - b.data.order);
+const appOptions = [
+  { value: 'general', label: 'General' },
+  ...contentApps.map((a) => ({ value: a.slug, label: a.data.name })),
+  { value: 'partnerships', label: 'Partnerships & press' },
+  { value: 'other', label: 'Other' },
+];
+const selectedApp = appOptions.some((o) => o.value === defaultApp) ? defaultApp : 'general';
+
+// Scope element ids per-instance so this component can be embedded more than once on a
+// page (e.g. a future /support embed) without id collisions.
+const uid = Math.random().toString(36).slice(2, 8);
+const id = (base: string) => `cf-${base}-${uid}`;
+---
+<section class:list={['contact-form', { compact }]} data-formsubmit-target={FORMSUBMIT_TARGET}>
+  {heading && <h2>{heading}</h2>}
+
+  <form
+    class="cf-form"
+    method="POST"
+    action={formAction}
+    data-ajax-endpoint={ajaxEndpoint}
+    novalidate
+  >
+    <input type="hidden" name="_captcha" value="false" />
+    <input type="hidden" name="_template" value="table" />
+    <input type="hidden" name="_subject" value="Website contact form" />
+    <input type="hidden" name="_next" value={redirectBackTo} />
+    {/* Honeypot: real visitors never see or fill this field. Left blank, it's a no-op;
+        FormSubmit (and our own JS below) treat a filled value as a bot signal. */}
+    <div class="cf-honey" aria-hidden="true">
+      <label for={id('honey')}>Leave this field empty</label>
+      <input type="text" id={id('honey')} name="_honey" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <div class="cf-row">
+      <div class="cf-field">
+        <label for={id('name')}>Name</label>
+        <input id={id('name')} name="name" type="text" required autocomplete="name" />
+      </div>
+      <div class="cf-field">
+        <label for={id('email')}>Email</label>
+        <input id={id('email')} name="email" type="email" required autocomplete="email" inputmode="email" />
+      </div>
+    </div>
+
+    <div class="cf-field">
+      <label for={id('app')}>Which app?</label>
+      <select id={id('app')} name="app">
+        {appOptions.map((o) => (
+          <option value={o.value} selected={o.value === selectedApp}>{o.label}</option>
+        ))}
+      </select>
+    </div>
+
+    <div class="cf-field">
+      <label for={id('subject')}>Subject</label>
+      <input id={id('subject')} name="subject" type="text" required autocomplete="off" />
+    </div>
+
+    <div class="cf-field">
+      <label for={id('message')}>Message</label>
+      <textarea id={id('message')} name="message" rows="6" required></textarea>
+    </div>
+
+    <p class="cf-privacy">
+      We only use this to reply to you. See our <a href={rel('/privacy/')}>Privacy policy</a>.
+    </p>
+
+    <button type="submit" class="btn primary cf-submit">
+      <span class="cf-submit-label">Send message</span>
+    </button>
+
+    <div class="cf-status" role="status" aria-live="polite"></div>
+
+    <div class="cf-success" hidden>
+      <p>
+        <strong>Thanks — your message is in our queue.</strong> We reply from
+        {' '}{SUPPORT_EMAIL}, usually within a day or two. You can also check
+        {' '}<a href={rel('/support/')}>Support</a> for quick answers in the meantime.
+      </p>
+    </div>
+
+    <div class="cf-error" hidden>
+      <p>
+        Something went wrong sending that. Please try again, or email us directly at
+        {' '}<a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> and we'll pick it up from there.
+      </p>
+    </div>
+  </form>
+</section>
+
+<script>
+  // Progressive enhancement only. Without this script (or with it failing to load),
+  // the <form> above still works: it's a real POST to FormSubmit's non-AJAX endpoint,
+  // which emails the target address and redirects the browser back to `_next`
+  // (/contact/?sent=1) — the block below then renders the success state on load.
+  //
+  // Multiple ContactForm instances can exist on one page, so everything below is
+  // scoped per-<form> via querySelectorAll rather than assuming a single instance.
+  function initContactForms() {
+    const forms = document.querySelectorAll<HTMLFormElement>('.contact-form .cf-form');
+
+    // No-JS fallback path: FormSubmit redirected back here after a real POST.
+    if (new URLSearchParams(window.location.search).get('sent') === '1') {
+      forms.forEach((form) => showSuccess(form));
+    }
+
+    forms.forEach((form) => {
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        void handleSubmit(form);
+      });
+    });
+  }
+
+  function setStatus(form: HTMLFormElement, message: string) {
+    const status = form.querySelector<HTMLElement>('.cf-status');
+    if (status) status.textContent = message;
+  }
+
+  function showSuccess(form: HTMLFormElement) {
+    form.querySelectorAll('.cf-field, .cf-row, .cf-privacy, .cf-submit').forEach((el) => {
+      (el as HTMLElement).hidden = true;
+    });
+    const success = form.querySelector<HTMLElement>('.cf-success');
+    if (success) success.hidden = false;
+    const error = form.querySelector<HTMLElement>('.cf-error');
+    if (error) error.hidden = true;
+    setStatus(form, 'Message sent.');
+  }
+
+  function showError(form: HTMLFormElement) {
+    const error = form.querySelector<HTMLElement>('.cf-error');
+    if (error) error.hidden = false;
+    setStatus(form, 'Something went wrong sending your message.');
+  }
+
+  async function handleSubmit(form: HTMLFormElement) {
+    if (!form.reportValidity()) return;
+
+    const honey = form.querySelector<HTMLInputElement>('input[name="_honey"]');
+    const data = new FormData(form);
+    const submitBtn = form.querySelector<HTMLButtonElement>('.cf-submit');
+    const submitLabel = form.querySelector<HTMLElement>('.cf-submit-label');
+
+    // Honeypot tripped — a bot filled a field real users never see. Pretend it worked
+    // (don't tip off the bot) without actually sending anything.
+    if (honey && honey.value.trim() !== '') {
+      showSuccess(form);
+      return;
+    }
+
+    const subjectValue = String(data.get('subject') || '').trim();
+    const payload = {
+      name: data.get('name'),
+      email: data.get('email'),
+      app: data.get('app'),
+      subject: subjectValue,
+      message: data.get('message'),
+      _subject: subjectValue ? `Website contact: ${subjectValue}` : 'Website contact form',
+      _template: 'table',
+      _honey: '',
+    };
+
+    if (submitBtn) submitBtn.disabled = true;
+    if (submitLabel) submitLabel.textContent = 'Sending…';
+    setStatus(form, 'Sending your message…');
+
+    try {
+      const endpoint = form.dataset.ajaxEndpoint;
+      if (!endpoint) throw new Error('Missing AJAX endpoint');
+
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const json = await res.json().catch(() => null);
+
+      if (res.ok && json && String(json.success) === 'true') {
+        showSuccess(form);
+      } else {
+        throw new Error('FormSubmit returned an error');
+      }
+    } catch {
+      showError(form);
+      if (submitBtn) submitBtn.disabled = false;
+      if (submitLabel) submitLabel.textContent = 'Send message';
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initContactForms);
+  } else {
+    initContactForms();
+  }
+</script>
+
+<style>
+  .contact-form {
+    background: var(--surface, #f8f2e4);
+    border: 1px solid var(--border, rgba(61, 28, 8, 0.12));
+    border-radius: var(--radius, 16px);
+    padding: 28px;
+  }
+  .contact-form.compact {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  .contact-form h2 {
+    margin: 0 0 18px;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    color: var(--ink, #2a1208);
+  }
+
+  .cf-honey {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .cf-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  @media (min-width: 640px) {
+    .cf-row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .cf-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .cf-field label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink-muted, #7a4b33);
+  }
+
+  .cf-field input,
+  .cf-field select,
+  .cf-field textarea {
+    width: 100%;
+    font-family: var(--font, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif);
+    /* 16px prevents iOS Safari from auto-zooming into the field on focus. */
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--ink, #2a1208);
+    background: var(--bg, #f2e8d5);
+    border: 1px solid var(--border, rgba(61, 28, 8, 0.12));
+    border-radius: 10px;
+    padding: 12px 14px;
+    /* Comfortably clears the 44px tap-target minimum with default padding + line-height. */
+    min-height: 44px;
+  }
+
+  .cf-field textarea {
+    resize: vertical;
+    min-height: 130px;
+  }
+
+  .cf-field input:focus,
+  .cf-field select:focus,
+  .cf-field textarea:focus {
+    outline: 2px solid var(--accent, #9a3d04);
+    outline-offset: 1px;
+  }
+
+  .cf-privacy {
+    font-size: 13px;
+    color: var(--ink-faint, rgba(42, 18, 8, 0.38));
+    margin: 4px 0 18px;
+  }
+
+  .cf-submit {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .cf-submit:disabled {
+    opacity: 0.7;
+    cursor: default;
+  }
+  @media (min-width: 480px) {
+    .cf-submit {
+      width: auto;
+    }
+  }
+
+  .cf-status {
+    /* Visually hidden but announced by assistive tech; the success/error blocks below
+       carry the visible copy so sighted users aren't shown a duplicate message. */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .cf-success,
+  .cf-error {
+    margin-top: 18px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    font-size: 15px;
+  }
+  .cf-success {
+    background: rgba(42, 122, 80, 0.12);
+    border: 1px solid var(--good, #2a7a50);
+    color: var(--ink, #2a1208);
+  }
+  .cf-error {
+    background: rgba(154, 61, 4, 0.1);
+    border: 1px solid var(--accent, #9a3d04);
+    color: var(--ink, #2a1208);
+  }
+  .cf-success p,
+  .cf-error p {
+    margin: 0;
+  }
+</style>
