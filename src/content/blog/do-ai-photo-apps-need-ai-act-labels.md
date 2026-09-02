@@ -112,7 +112,7 @@ Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) says a photo used only
 
 That distinction matters. A chosen-photo vibe card is not the same thing as a public deepfake generator or a tool claiming to detect reality. VibeRater should be used as a group-chat entertainment app: pick a photo, get a playful result, and share it only in the context you choose.
 
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-do-ai-photo-apps-need-ai-a-aug26-v1&mt=8) if you want a photo vibe check that stays in the entertainment lane.
+[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-do-ai-photo-apps-need-ai-a-aug26-v1&mt=8) if you want a photo vibe check that stays in the entertainment lane.
 
 ## A Simple Posting Checklist
 

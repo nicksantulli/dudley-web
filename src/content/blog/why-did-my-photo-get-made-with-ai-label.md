@@ -116,7 +116,7 @@ That means a VibeRater result should be shared as a joke, caption, reaction, or 
 
 Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) also separates private rating photos from media you choose to post or save. It says a photo used only for rating is sent to the rating service, processed in memory, discarded, and not stored or used to train models. Posted, shared, or saved media is different because the app has to store selected content for those social features to work.
 
-[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-why-did-my-photo-get-made-aug26-v1&mt=8) if you want playful photo reactions and share cards, then caption them honestly as entertainment.
+[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-why-did-my-photo-get-made-aug26-v1&mt=8) if you want playful photo reactions and share cards, then caption them honestly as entertainment.
 
 ## The Safer Rule For Sharing
 

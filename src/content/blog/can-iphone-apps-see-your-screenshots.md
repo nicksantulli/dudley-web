@@ -97,7 +97,7 @@ VibeRater uses the photo library so you can choose photos or short videos to rat
 
 The product claim to keep in mind is also simple: VibeRater results are entertainment and creative expression, not biometric, health, identity, attractiveness, clinical, or dating analysis.
 
-[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-can-iphone-apps-see-your-s-aug26-v1&mt=8) if you want a playful photo or screenshot-ready vibe check with clear choices about what you share.
+[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-can-iphone-apps-see-your-s-aug26-v1&mt=8) if you want a playful photo or screenshot-ready vibe check with clear choices about what you share.
 
 ## A Safer Screenshot Rule
 

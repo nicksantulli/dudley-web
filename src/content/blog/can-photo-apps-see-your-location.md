@@ -115,7 +115,7 @@ Assume a photo can carry more than the image itself. If a location would make th
 
 For aura and vibe-check posts, keep the framing honest too. A playful result card can be fun in a group chat, but it should not imply that an app measured something real about a person.
 
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-can-photo-apps-see-your-lo-aug26-v1&mt=8) if you want a photo-based vibe check that is clearly framed as entertainment.
+[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-can-photo-apps-see-your-lo-aug26-v1&mt=8) if you want a photo-based vibe check that is clearly framed as entertainment.
 
 ## Frequently Asked Questions
 

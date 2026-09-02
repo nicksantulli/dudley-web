@@ -92,7 +92,7 @@ That is the same reason [VibeRater Social](/apps/vibe-rater/) separates playful 
 
 VibeRater results are entertainment, not analysis. A VibeMeter score, aura-style read, archetype, Vibescope, Repli, VibeRodeo, or share card is a social prompt, not a measurement of appearance, personality, health, identity, dating compatibility, or whether a photo is real.
 
-[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-can-people-see-reels-you-l-aug26-v1&mt=8) if you want playful photo reactions and group-chat energy with clearer choices about what gets posted.
+[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-can-people-see-reels-you-l-aug26-v1&mt=8) if you want playful photo reactions and group-chat energy with clearer choices about what gets posted.
 
 ## A Simple Privacy Rule
 

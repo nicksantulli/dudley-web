@@ -122,7 +122,7 @@ Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) says a photo used only
 
 That positioning matters in an AI slop moment. VibeRater is not a public-profile AI remix tool, not a dating-compatibility test, not an appearance measurement, and not a proof engine. It is a chosen-photo entertainment app for making a shareable vibe card and starting a group-chat reaction.
 
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-what-is-ai-slop-aug26-v1&mt=8) if you want a playful photo vibe check that stays honest about what it is.
+[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-what-is-ai-slop-aug26-v1&mt=8) if you want a playful photo vibe check that stays honest about what it is.
 
 ## How To Avoid Making AI Slop
 

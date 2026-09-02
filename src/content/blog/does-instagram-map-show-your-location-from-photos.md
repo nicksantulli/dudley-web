@@ -123,7 +123,7 @@ The app's local source and Dudley privacy copy describe VibeRater as entertainme
 
 For the privacy side, Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) says a photo used only for rating is sent to the rating service, processed in memory, and discarded. Media you deliberately post, share, or save is separate because those features need selected content to work.
 
-[Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-does-instagram-map-show-yo-aug26-v1&mt=8) if you want a just-for-fun photo vibe check, then use your normal iPhone and social-app controls to decide where the card belongs.
+[Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-does-instagram-map-show-yo-aug26-v1&mt=8) if you want a just-for-fun photo vibe check, then use your normal iPhone and social-app controls to decide where the card belongs.
 
 ## A Practical Rule
 

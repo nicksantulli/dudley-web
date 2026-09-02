@@ -118,7 +118,7 @@ Know which one you're downloading. If you need to optimize a headshot for a job 
 
 ---
 
-**VibeRater Social is live on the App Store.** Free, ad-supported, with a one-time Remove Ads upgrade. The phone vibrates while it reads you. [Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-photo-rating-apps-2026-aug26-v1&mt=8).
+**VibeRater Social is live on the App Store.** Free, ad-supported, with a one-time Remove Ads upgrade. The phone vibrates while it reads you. [Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-photo-rating-apps-2026-aug26-v1&mt=8).
 
 ---
 

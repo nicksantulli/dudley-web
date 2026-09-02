@@ -108,7 +108,7 @@ Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) draws a useful boundar
 
 That makes the social rule clear. A private vibe check can be yours. A post, Vibie, Squad share, or group photo includes other people, so their comfort matters too.
 
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-can-smart-glasses-record-y-aug26-v1&mt=8) if you want playful photo reactions that keep the posting choice explicit.
+[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-can-smart-glasses-record-y-aug26-v1&mt=8) if you want playful photo reactions that keep the posting choice explicit.
 
 ## Smart Glasses Etiquette In One Sentence
 

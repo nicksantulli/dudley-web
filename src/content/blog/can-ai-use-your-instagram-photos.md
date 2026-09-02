@@ -113,7 +113,7 @@ Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) says a photo used only
 
 That distinction matters. A private chosen-photo result is not the same privacy scenario as a public social profile being referenced by an AI image generator. If you share a VibeRater card, keep it in the right lane: entertainment, group-chat energy, and your own chosen context.
 
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-can-ai-use-your-instagram-aug26-v1&mt=8) if you want a for-fun photo vibe check built around the image you choose, not a public-account AI remix.
+[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-can-ai-use-your-instagram-aug26-v1&mt=8) if you want a for-fun photo vibe check built around the image you choose, not a public-account AI remix.
 
 ## Frequently Asked Questions
 

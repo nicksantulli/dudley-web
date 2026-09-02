@@ -76,7 +76,7 @@ That's the archetype. It won the 2020s by not caring whether it won.
 
 ---
 
-**See if VibeRater assigns you Gorpcore Prophet** in the live app. [Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-gorpcore-prophet-won-aug26-v1&mt=8).
+**See if VibeRater assigns you Gorpcore Prophet** in the live app. [Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-gorpcore-prophet-won-aug26-v1&mt=8).
 
 ---
 

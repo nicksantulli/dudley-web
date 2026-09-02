@@ -91,7 +91,7 @@ Those are personality types, not trend cycles. They just get different names eve
 
 ---
 
-**VibeRater Social is live on the App Store.** Find out which archetype you actually are — your photo might surprise you. [Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-quiet-luxury-2026-aug26-v1&mt=8).
+**VibeRater Social is live on the App Store.** Find out which archetype you actually are — your photo might surprise you. [Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-quiet-luxury-2026-aug26-v1&mt=8).
 
 ---
 

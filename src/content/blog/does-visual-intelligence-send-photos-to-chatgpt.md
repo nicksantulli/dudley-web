@@ -114,7 +114,7 @@ Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) draws the product boun
 
 That is the habit worth carrying across AI photo tools. A private rating, a saved card, a feed post, a Squad share, and a ChatGPT visual question are not the same privacy action. Each one starts with a specific choice about what image or screen you send.
 
-[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-does-visual-intelligence-s-aug26-v1&mt=8) if you want a photo vibe check built around selected moments and entertainment-first sharing.
+[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-does-visual-intelligence-s-aug26-v1&mt=8) if you want a photo vibe check built around selected moments and entertainment-first sharing.
 
 ## FAQ
 

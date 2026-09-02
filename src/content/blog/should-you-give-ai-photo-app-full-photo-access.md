@@ -108,7 +108,7 @@ Ask one question before granting access: could this feature work if I picked jus
 
 If yes, use the picker or Limited Access. If no, ask why the app needs more, then check the privacy label and policy before continuing. The best photo apps make that decision feel obvious instead of hiding it behind a vague permission prompt.
 
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-should-you-give-ai-photo-a-aug26-v1&mt=8) if you want a playful photo vibe check that is framed as entertainment and built around chosen inputs, not a full-library memory product.
+[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-should-you-give-ai-photo-a-aug26-v1&mt=8) if you want a playful photo vibe check that is framed as entertainment and built around chosen inputs, not a full-library memory product.
 
 ## Frequently Asked Questions
 

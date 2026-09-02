@@ -132,7 +132,7 @@ That distinction is the whole point:
 - A posted Vibie, Vibes post, saved card, comment, or shared social object is content you chose to keep or publish.
 - A VibeRater score, aura, archetype, anthem, Vibie, or Vibescope is not an identity check, attractiveness score, biometric reading, personality test, dating-compatibility result, health signal, or AI-detection verdict.
 
-[Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-can-ai-photo-apps-use-your-aug26-v1&mt=8) if you want a just-for-fun photo reaction with sharing controls, then keep sensitive photos out of any app unless its privacy terms match your comfort level.
+[Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-can-ai-photo-apps-use-your-aug26-v1&mt=8) if you want a just-for-fun photo reaction with sharing controls, then keep sensitive photos out of any app unless its privacy terms match your comfort level.
 
 ## A Simple Rule
 

@@ -3,6 +3,13 @@ const APP_STORE_SLUGS = Object.freeze({
 });
 
 const TOKEN_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const PROVIDER_TOKEN_PATTERN = /^\d+$/;
+
+export const VIBERATER_ASC_PROVIDER_TOKEN = '128970277';
+
+const APP_STORE_PROVIDER_TOKENS = Object.freeze({
+  '6780704282': VIBERATER_ASC_PROVIDER_TOKEN,
+});
 
 export const VIBERATER_ASC_TOKENS = Object.freeze({
   home: 'vr-web-home-aug26-v1',
@@ -23,12 +30,20 @@ export function blogCampaignToken(slug) {
   return `vr-web-blog-${safeSlug}-aug26-v1`;
 }
 
+export function validateProviderToken(providerToken) {
+  if (!providerToken || !PROVIDER_TOKEN_PATTERN.test(providerToken)) {
+    throw new Error('A numeric provider token is required');
+  }
+  return providerToken;
+}
+
 export function appStoreCampaignUrl(appStoreId, campaignToken) {
   if (!appStoreId) return '';
   if (!campaignToken || !TOKEN_PATTERN.test(campaignToken)) {
     throw new Error('A lowercase, hyphenated campaign token is required');
   }
+  const providerToken = validateProviderToken(APP_STORE_PROVIDER_TOKENS[appStoreId]);
   const slug = APP_STORE_SLUGS[appStoreId];
   const path = slug ? `/us/app/${slug}/id${appStoreId}` : `/app/id${appStoreId}`;
-  return `https://apps.apple.com${path}?ct=${encodeURIComponent(campaignToken)}&mt=8`;
+  return `https://apps.apple.com${path}?pt=${providerToken}&ct=${encodeURIComponent(campaignToken)}&mt=8`;
 }

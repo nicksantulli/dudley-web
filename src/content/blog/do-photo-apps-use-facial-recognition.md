@@ -97,7 +97,7 @@ The important privacy split is simple. Dudley's [VibeRater privacy policy](/priv
 
 VibeRater should be used as a vibe-check and group-chat toy, not as a claim about identity. Scores, auras, archetypes, anthems, and Vibescopes are playful outputs. They are not biometric, beauty, health, personality, or compatibility measurements.
 
-[VibeRater is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-do-photo-apps-use-facial-r-aug26-v1&mt=8) if you want a photo result that stays in the entertainment lane.
+[VibeRater is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-do-photo-apps-use-facial-r-aug26-v1&mt=8) if you want a photo result that stays in the entertainment lane.
 
 ## A Simple Privacy Checklist
 

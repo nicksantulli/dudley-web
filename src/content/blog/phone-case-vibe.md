@@ -109,7 +109,7 @@ The delusional version: you have AirPod cases missing, a cracked screen from thr
 
 Your phone case suggests your archetype. Vibe Rater will tell you for sure — upload a photo and get your score across six dimensions, your archetype, and your aura color. The phone vibrates while it reads you.
 
-[Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-phone-case-vibe-aug26-v1&mt=8).
+[Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-phone-case-vibe-aug26-v1&mt=8).
 
 ---
 

@@ -95,7 +95,7 @@ The Dudley [VibeRater privacy policy](/privacy/vibe-rater/) also draws a clear l
 
 VibeRater also includes SlopGuard in the social app direction, which can hide suspected AI-generated image posts from the feed. That is a feed-quality control, not a perfect truth machine. The safer habit is still to post with context and avoid pretending synthetic media is an unedited real moment.
 
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-what-is-an-ai-persona-aug26-v1&mt=8) if you want a playful photo reaction that stays in the entertainment lane.
+[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-what-is-an-ai-persona-aug26-v1&mt=8) if you want a playful photo reaction that stays in the entertainment lane.
 
 ## A Simple Sharing Checklist
 

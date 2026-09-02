@@ -134,7 +134,7 @@ Use the narrowest permission that still lets the feature work.
 
 If you are rating one photo, editing one image, or making one share card, start with a picker or Limited Access. If the app later needs broader access, it should be able to explain why. If it cannot, that is a good reason to keep the permission narrow or skip the upload.
 
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-can-apps-see-all-your-phot-aug26-v1&mt=8) if you want a photo app that treats vibe results as entertainment and publishes a plain-language privacy policy for the rating, posting, sharing, and saving paths.
+[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-can-apps-see-all-your-phot-aug26-v1&mt=8) if you want a photo app that treats vibe results as entertainment and publishes a plain-language privacy policy for the rating, posting, sharing, and saving paths.
 
 ## Frequently Asked Questions
 

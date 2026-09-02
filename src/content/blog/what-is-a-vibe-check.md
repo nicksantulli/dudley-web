@@ -118,7 +118,7 @@ Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) says a photo used only
 
 That makes the boundary clear: VibeRater Social can make a vibe check more shareable, but it is still for reactions, captions, and group-chat energy. It is not proof of who someone is.
 
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-what-is-a-vibe-check-aug26-v1&mt=8) if you want to turn a photo into a playful vibe check card.
+[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-what-is-a-vibe-check-aug26-v1&mt=8) if you want to turn a photo into a playful vibe check card.
 
 ## Simple Vibe Check Examples
 

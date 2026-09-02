@@ -99,7 +99,7 @@ Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) draws the upload bound
 
 That is the model to look for in any photo app. A one-photo private result, a public post, a saved share card, and a social feed item are different privacy decisions.
 
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-can-apps-see-hidden-photos-aug26-v1&mt=8) if you want a just-for-fun photo vibe check that starts with a photo you choose.
+[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-can-apps-see-hidden-photos-aug26-v1&mt=8) if you want a just-for-fun photo vibe check that starts with a photo you choose.
 
 ## A Safer Hidden-Photo Rule
 

@@ -93,7 +93,7 @@ The right mental model is closer to a group-chat game than an assessment. If the
 
 ## Try a vibe-first aura app
 
-If that is the version you want, [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-are-aura-apps-real-aug26-v1&mt=8). Upload a photo, get a vibe scorecard, see your aura color and archetype, and share the card when the result deserves an audience.
+If that is the version you want, [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-are-aura-apps-real-aug26-v1&mt=8). Upload a photo, get a vibe scorecard, see your aura color and archetype, and share the card when the result deserves an audience.
 
 For adjacent search intent, see our guide to [the funniest photo rating apps on iPhone](/blog/photo-rating-apps-2026/) and VibeRater's current [privacy policy](/privacy/vibe-rater/).
 

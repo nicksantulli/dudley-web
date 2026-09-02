@@ -117,7 +117,7 @@ The useful comparison is the privacy question, not the vendor. In Dudley's [Vibe
 
 That boundary is important: private rating, deliberate posting, and external sharing are different actions. VibeRater's scores, auras, archetypes, anthems, and Vibescopes are entertainment outputs, not measurements of appearance, identity, health, personality, or truth.
 
-[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-does-chatgpt-use-your-phot-aug26-v1&mt=8) if you want a photo vibe check that is built around choosing what stays private and what becomes social.
+[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-does-chatgpt-use-your-phot-aug26-v1&mt=8) if you want a photo vibe check that is built around choosing what stays private and what becomes social.
 
 ## Bottom Line
 

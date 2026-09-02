@@ -132,7 +132,7 @@ That line is simple: playful read, yes. Real judgment, no.
 
 ## Try the photo version
 
-If your group chat wants the photo-card version, [download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-how-to-do-a-vibe-check-in-aug26-v1&mt=8). Rate a moment, keep it private or share it, and let the chat decide whether the result passes.
+If your group chat wants the photo-card version, [download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-how-to-do-a-vibe-check-in-aug26-v1&mt=8). Rate a moment, keep it private or share it, and let the chat decide whether the result passes.
 
 For adjacent ideas, read [The Best Photo Games for Group Chats](/blog/best-group-chat-photo-games/), [What Is a Vibe Check App?](/blog/what-is-a-vibe-check-app/), and [Are AI Photo Rating Apps Safe?](/blog/safe-ai-photo-rating-apps/).
 

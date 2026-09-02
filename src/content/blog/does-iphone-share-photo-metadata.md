@@ -110,7 +110,7 @@ If you are using a photo for a vibe check, use the same habit you would use anyw
 - share cards and posts intentionally
 - check location and metadata when sending original photos outside the app
 
-[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-does-iphone-share-photo-me-aug26-v1&mt=8) if you want a playful photo reaction with privacy controls around what stays private, what goes to your Squad, and what becomes a post.
+[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-does-iphone-share-photo-me-aug26-v1&mt=8) if you want a playful photo reaction with privacy controls around what stays private, what goes to your Squad, and what becomes a post.
 
 ## Quick Checklist Before Sharing a Photo
 

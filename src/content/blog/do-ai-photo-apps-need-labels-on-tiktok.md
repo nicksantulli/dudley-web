@@ -131,7 +131,7 @@ Disclose AI when it changes the media in a meaningful way. Keep entertainment re
 
 That approach fits the direction platforms are moving: more transparency for AI media, more pressure on low-quality AI spam, and more value in posts that are honest about what viewers are seeing.
 
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-do-ai-photo-apps-need-labe-aug26-v1&mt=8) if you want a playful photo result you can keep private, save, or share with accurate context.
+[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-do-ai-photo-apps-need-labe-aug26-v1&mt=8) if you want a playful photo result you can keep private, save, or share with accurate context.
 
 ## Frequently Asked Questions
 

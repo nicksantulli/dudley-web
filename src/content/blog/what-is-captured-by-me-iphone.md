@@ -118,7 +118,7 @@ Use Captured by Me the same way you would use any cleaner Photos view: find a ph
 
 Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) draws the product boundary users should care about: a photo used only for rating is sent to the rating service, processed in memory, and discarded, while media you choose to post, share, or save may be stored so those selected features work.
 
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-what-is-captured-by-me-iph-aug26-v1&mt=8) if you want a just-for-fun photo reaction that starts with a photo you choose.
+[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-what-is-captured-by-me-iph-aug26-v1&mt=8) if you want a just-for-fun photo reaction that starts with a photo you choose.
 
 ## A Simple Workflow
 

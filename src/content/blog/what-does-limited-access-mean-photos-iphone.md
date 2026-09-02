@@ -121,7 +121,7 @@ The useful privacy habit is the same one Limited Access encourages: start with t
 
 That distinction is the point. A private rating, a Squad share, a Vibes post, and an external share card are different choices. VibeRater's scores, auras, archetypes, anthems, and Vibescopes are entertainment outputs, not measurements of appearance, identity, health, personality, or truth.
 
-[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-what-does-limited-access-m-aug26-v1&mt=8) if you want a photo vibe check where the interesting part starts with the image you choose, not your whole camera roll.
+[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-what-does-limited-access-m-aug26-v1&mt=8) if you want a photo vibe check where the interesting part starts with the image you choose, not your whole camera roll.
 
 ## Quick Photo-App Permission Checklist
 

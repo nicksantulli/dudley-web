@@ -118,7 +118,7 @@ Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) says a photo used only
 
 That boundary is important for photo culture in 2026. There is a place for provenance when a photo is evidence. There is also a place for harmless entertainment when a photo is just a group-chat spark.
 
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-can-iphone-prove-photo-is-aug26-v1&mt=8) if you want a just-for-fun photo vibe check that does not pretend to prove what a photo is.
+[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-can-iphone-prove-photo-is-aug26-v1&mt=8) if you want a just-for-fun photo vibe check that does not pretend to prove what a photo is.
 
 ## A Practical Rule
 

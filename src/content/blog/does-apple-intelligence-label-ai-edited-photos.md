@@ -109,7 +109,7 @@ VibeRater should not be treated as an AI detector, authenticity checker, biometr
 
 Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) describes the rating flow separately from posted or saved media: a photo used only for rating is processed by the rating service and discarded, while media you choose to post, share, or save is stored so those features can work.
 
-[Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?ct=vr-web-blog-does-apple-intelligence-la-aug26-v1&mt=8) if you want a just-for-fun photo reaction, then use platform labels and your own caption when an AI edit changes what the image appears to show.
+[Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-does-apple-intelligence-la-aug26-v1&mt=8) if you want a just-for-fun photo reaction, then use platform labels and your own caption when an AI edit changes what the image appears to show.
 
 ## A Simple Rule
 
