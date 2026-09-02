@@ -1,14 +1,32 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { STUDIO, ORIGIN, rel, abs } from '../../consts';
-import { getPublishedPosts, getAllTags, postTags, tagSlug, tagLabel, formatDate } from '../../lib/blog';
+import {
+  getPublishedPosts,
+  getAllTags,
+  getTopTags,
+  getFeaturedPost,
+  postTags,
+  tagSlug,
+  tagLabel,
+  formatDate,
+  POSTS_PER_PAGE,
+} from '../../lib/blog';
 
-const posts = await getPublishedPosts();
-const tags = await getAllTags();
+const allPosts = await getPublishedPosts();
+const allTags = await getAllTags();
+const topTags = await getTopTags(8);
+const longTailTags = allTags.slice(topTags.length);
+
+const featuredPost = allPosts.length > 0 ? getFeaturedPost(allPosts) : undefined;
+
+const totalPages = Math.max(1, Math.ceil(allPosts.length / POSTS_PER_PAGE));
+const pagePosts = allPosts.slice(0, POSTS_PER_PAGE).filter((p) => p.slug !== featuredPost?.slug);
+
 const path = '/blog/';
 const title = 'The Dudley Blog';
 const description =
-  'Culture, archetypes, and honest app roundups from Dudley Development — the studio behind VibeRater Social and Monetary Policy: Independence Day. Vibe science, taken exactly as seriously as it deserves.';
+  'Culture, archetypes, and honest app roundups from Dudley Development — the studio behind VibeRater Social and Powell Prowl: Rate Chase. Vibe science, taken exactly as seriously as it deserves.';
 
 const blogSchema = {
   '@context': 'https://schema.org',
@@ -22,7 +40,7 @@ const blogSchema = {
     url: ORIGIN,
     logo: { '@type': 'ImageObject', url: abs('/assets/dudley-mark.svg') },
   },
-  blogPost: posts.slice(0, 25).map((p) => ({
+  blogPost: allPosts.slice(0, POSTS_PER_PAGE).map((p) => ({
     '@type': 'BlogPosting',
     headline: p.data.title,
     description: p.data.description,
@@ -34,45 +52,185 @@ const blogSchema = {
 ---
 <Base title={title} description={description} path={path} schema={blogSchema}>
   <main class="page">
-    <div class="wrap" style="max-width:760px;">
+    <div class="wrap blog-wrap">
       <header class="blog-hero">
         <h1>The Dudley Blog</h1>
         <p>{description}</p>
-        <p class="blog-feed-link">
-          <a href={rel('/blog/rss.xml')}>RSS feed</a>
-        </p>
+        <a class="feed-link" href={rel('/blog/rss.xml')}>RSS feed</a>
       </header>
 
-      {tags.length > 0 && (
-        <nav class="tag-cloud" aria-label="Browse by tag">
-          {tags.map((t) => (
-            <a class="tag" href={rel(`/blog/tags/${t.slug}/`)}>{tagLabel(t.tag)} <span>{t.count}</span></a>
-          ))}
+      {allTags.length > 0 && (
+        <nav class="browse" aria-label="Browse by topic">
+          <span class="browse-label">Browse:</span>
+          <div class="browse-strip">
+            {topTags.map((t) => (
+              <a class="chip" href={rel(`/blog/tags/${t.slug}/`)}>
+                {tagLabel(t.tag)} <span class="count">{t.count}</span>
+              </a>
+            ))}
+            <a class="chip chip-all" href={rel('/blog/tags/')}>All topics →</a>
+          </div>
+
+          {longTailTags.length > 0 && (
+            <details class="more-topics">
+              <summary>More topics ({longTailTags.length})</summary>
+              <div class="more-topics-list">
+                {longTailTags.map((t) => (
+                  <a class="chip" href={rel(`/blog/tags/${t.slug}/`)}>
+                    {tagLabel(t.tag)} <span class="count">{t.count}</span>
+                  </a>
+                ))}
+              </div>
+            </details>
+          )}
         </nav>
       )}
 
-      {posts.length === 0 ? (
+      {allPosts.length === 0 ? (
         <p>No posts yet — check back soon.</p>
       ) : (
-        <ul class="post-list">
-          {posts.map((p) => (
-            <li class="post-card">
-              <a class="post-card-link" href={rel(`/blog/${p.slug}/`)}>
-                <time datetime={p.data.publishDate.toISOString().slice(0, 10)}>
-                  {formatDate(p.data.publishDate)}
-                </time>
-                <h2>{p.data.title}</h2>
-                <p>{p.data.description}</p>
-              </a>
-              <div class="post-card-tags">
-                {postTags(p).slice(0, 3).map((t) => (
-                  <a class="tag" href={rel(`/blog/tags/${tagSlug(t)}/`)}>{tagLabel(t)}</a>
-                ))}
-              </div>
-            </li>
-          ))}
-        </ul>
+        <>
+          {featuredPost && (
+            <a class="featured" href={rel(`/blog/${featuredPost.slug}/`)}>
+              <span class="featured-kicker">{featuredPost.data.featured ? 'Featured' : 'Latest'}</span>
+              <h2>{featuredPost.data.title}</h2>
+              <p>{featuredPost.data.description}</p>
+              <time datetime={featuredPost.data.publishDate.toISOString().slice(0, 10)}>
+                {formatDate(featuredPost.data.publishDate)}
+              </time>
+            </a>
+          )}
+
+          <ul class="post-grid">
+            {pagePosts.map((p) => (
+              <li class="post-card">
+                <a class="post-card-link" href={rel(`/blog/${p.slug}/`)}>
+                  <time datetime={p.data.publishDate.toISOString().slice(0, 10)}>
+                    {formatDate(p.data.publishDate)}
+                  </time>
+                  <h3>{p.data.title}</h3>
+                  <p>{p.data.description}</p>
+                </a>
+                <div class="post-card-tags">
+                  {[...new Set(postTags(p).map(tagLabel))].slice(0, 3).map((label) => (
+                    <a class="chip chip-sm" href={rel(`/blog/tags/${tagSlug(label)}/`)}>{label}</a>
+                  ))}
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          {totalPages > 1 && (
+            <nav class="pagination" aria-label="Blog pages">
+              <span class="page-current" aria-current="page">Page 1 of {totalPages}</span>
+              <a class="btn" href={rel('/blog/2/')}>Next →</a>
+            </nav>
+          )}
+        </>
       )}
     </div>
   </main>
 </Base>
+
+<style>
+  .blog-wrap { max-width: 880px; }
+
+  .blog-hero { margin: 0 0 22px; }
+  .blog-hero h1 { margin: 0 0 10px; }
+  .blog-hero p { color: var(--fg-muted, var(--ink-muted, #7A4B33)); font-size: 17px; max-width: 640px; margin: 0 0 12px; }
+  .feed-link {
+    display: inline-block; font-size: 13px; font-weight: 600;
+    color: var(--fg-muted, var(--ink-muted, #7A4B33));
+    border: 1px solid var(--border, rgba(61, 28, 8, 0.12));
+    border-radius: 999px; padding: 4px 12px;
+  }
+  .feed-link:hover { color: var(--fg, var(--ink, #2A1208)); text-decoration: none; }
+
+  /* ---- Browse strip: the tag-cloud replacement ---- */
+  .browse { margin: 0 0 30px; }
+  .browse-label {
+    display: block; font-size: 12px; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase;
+    color: var(--fg-faint, var(--ink-faint, rgba(42, 18, 8, 0.38))); margin: 0 0 8px;
+  }
+  .browse-strip {
+    display: flex; gap: 8px; flex-wrap: nowrap; overflow-x: auto;
+    padding: 2px 2px 10px; margin: 0 -2px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none; -ms-overflow-style: none;
+  }
+  .browse-strip::-webkit-scrollbar { display: none; }
+  .browse-strip .chip { flex: none; scroll-snap-align: start; }
+  .chip-all {
+    font-weight: 700;
+    color: var(--accent, #9A3D04);
+    border-color: var(--accent, #9A3D04);
+  }
+
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box;
+    font-size: 13px; font-weight: 600; line-height: 1;
+    color: var(--fg-muted, var(--ink-muted, #7A4B33));
+    background: var(--card, var(--surface, #F8F2E4));
+    border: 1px solid var(--border, rgba(61, 28, 8, 0.12));
+    border-radius: 999px; padding: 8px 13px;
+  }
+  .chip:hover { color: var(--fg, var(--ink, #2A1208)); border-color: var(--accent, #9A3D04); text-decoration: none; }
+  .chip .count { color: var(--fg-faint, var(--ink-faint, rgba(42, 18, 8, 0.38))); font-weight: 500; }
+
+  .more-topics { margin-top: 4px; }
+  .more-topics summary {
+    cursor: pointer; list-style: none; font-size: 13px; font-weight: 700;
+    color: var(--fg-muted, var(--ink-muted, #7A4B33)); padding: 6px 2px; width: fit-content;
+  }
+  .more-topics summary::-webkit-details-marker { display: none; }
+  .more-topics summary::before { content: "▸ "; color: var(--accent, #9A3D04); }
+  .more-topics[open] summary::before { content: "▾ "; }
+  .more-topics-list { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 10px; }
+
+  /* ---- Featured ---- */
+  .featured {
+    display: block; margin: 0 0 26px; padding: 26px 28px;
+    background: var(--card, var(--surface, #F8F2E4));
+    border: 1px solid var(--border, rgba(61, 28, 8, 0.12));
+    border-left: 3px solid var(--accent, #9A3D04);
+    border-radius: var(--radius, 16px); color: var(--fg, var(--ink, #2A1208));
+  }
+  .featured:hover { text-decoration: none; border-color: var(--accent, #9A3D04); }
+  .featured-kicker {
+    display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase;
+    color: var(--accent, #9A3D04); margin: 0 0 10px;
+  }
+  .featured h2 { margin: 0 0 8px; font-size: clamp(20px, 3vw, 26px); letter-spacing: -0.3px; }
+  .featured p { margin: 0 0 12px; color: var(--fg-muted, var(--ink-muted, #7A4B33)); font-size: 15.5px; max-width: 60ch; }
+  .featured time { color: var(--fg-faint, var(--ink-faint, rgba(42, 18, 8, 0.38))); font-size: 13px; }
+
+  /* ---- Post grid ---- */
+  .post-grid { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; grid-template-columns: 1fr; }
+  @media (min-width: 720px) {
+    .post-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .post-card {
+    display: flex; flex-direction: column;
+    background: var(--card, var(--surface, #F8F2E4));
+    border: 1px solid var(--border, rgba(61, 28, 8, 0.12));
+    border-radius: var(--radius, 16px); padding: 22px 24px;
+  }
+  .post-card:hover { border-color: var(--accent, #9A3D04); }
+  .post-card-link { display: block; color: var(--fg, var(--ink, #2A1208)); flex: 1; }
+  .post-card-link:hover { text-decoration: none; }
+  .post-card-link time { color: var(--fg-faint, var(--ink-faint, rgba(42, 18, 8, 0.38))); font-size: 13px; }
+  .post-card-link h3 { font-size: 19px; font-weight: 800; letter-spacing: -0.3px; margin: 6px 0 8px; color: var(--fg, var(--ink, #2A1208)); }
+  .post-card-link p {
+    color: var(--fg-muted, var(--ink-muted, #7A4B33)); font-size: 14.5px; margin: 0;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .post-card-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .chip-sm { min-height: 32px; font-size: 12px; padding: 6px 11px; }
+
+  /* ---- Pagination ---- */
+  .pagination {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--border, rgba(61, 28, 8, 0.12));
+  }
+  .page-current { font-size: 13px; color: var(--fg-faint, var(--ink-faint, rgba(42, 18, 8, 0.38))); }
+</style>

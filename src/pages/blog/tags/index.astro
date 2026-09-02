@@ -1,0 +1,93 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { STUDIO, ORIGIN, rel, abs } from '../../../consts';
+import { getAllTags, tagLabel } from '../../../lib/blog';
+
+const tags = await getAllTags();
+// Group alphabetically by first letter for scanability across ~80 topics.
+const groups = new Map<string, typeof tags>();
+for (const t of tags) {
+  const letter = /[a-z]/i.test(t.tag[0]) ? t.tag[0].toUpperCase() : '#';
+  if (!groups.has(letter)) groups.set(letter, []);
+  groups.get(letter)!.push(t);
+}
+const sortedGroups = [...groups.entries()].sort(([a], [b]) => a.localeCompare(b));
+for (const [, list] of sortedGroups) list.sort((a, b) => a.tag.localeCompare(b.tag));
+
+const path = '/blog/tags/';
+const title = 'All Topics';
+const description = `Every topic covered on the Dudley Blog — ${tags.length} tags across our posts on vibe culture, photo privacy, and AI apps.`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: `${title} — The Dudley Blog`,
+  description,
+  url: abs(path),
+  isPartOf: { '@type': 'Blog', name: 'The Dudley Blog', url: abs('/blog/') },
+  publisher: { '@type': 'Organization', name: STUDIO, url: ORIGIN },
+};
+---
+<Base title={`${title} — The Dudley Blog`} description={description} path={path} schema={schema} breadcrumbLeaf="All Topics">
+  <main class="page">
+    <div class="wrap tags-wrap">
+      <nav class="crumbs">
+        <a href={rel('/')}>Home</a><span class="sep">/</span>
+        <a href={rel('/blog/')}>Blog</a><span class="sep">/</span>
+        <span>All Topics</span>
+      </nav>
+      <header class="tags-hero">
+        <h1>All Topics</h1>
+        <p>{tags.length} tags across the Dudley Blog. Pick one to see everything we've written on it.</p>
+      </header>
+
+      {sortedGroups.map(([letter, list]) => (
+        <section class="letter-group">
+          <h2>{letter}</h2>
+          <div class="tag-grid">
+            {list.map((t) => (
+              <a class="tag-row" href={rel(`/blog/tags/${t.slug}/`)}>
+                <span class="tag-name">{tagLabel(t.tag)}</span>
+                <span class="tag-count">{t.count}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </main>
+</Base>
+
+<style>
+  .tags-wrap { max-width: 880px; }
+  .crumbs { font-size: 13px; color: var(--fg-faint, var(--ink-faint, rgba(42, 18, 8, 0.38))); margin: 0 0 18px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .crumbs a { color: var(--fg-muted, var(--ink-muted, #7A4B33)); }
+  .crumbs .sep { color: var(--fg-faint, var(--ink-faint, rgba(42, 18, 8, 0.38))); }
+
+  .tags-hero { margin: 0 0 30px; }
+  .tags-hero h1 { margin: 0 0 10px; }
+  .tags-hero p { color: var(--fg-muted, var(--ink-muted, #7A4B33)); font-size: 16px; margin: 0; max-width: 60ch; }
+
+  .letter-group { margin: 0 0 28px; }
+  .letter-group h2 {
+    font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--accent, #9A3D04); margin: 0 0 12px;
+  }
+  .tag-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+  @media (min-width: 560px) {
+    .tag-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 860px) {
+    .tag-grid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+  .tag-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    min-height: 44px; box-sizing: border-box;
+    background: var(--card, var(--surface, #F8F2E4));
+    border: 1px solid var(--border, rgba(61, 28, 8, 0.12));
+    border-radius: 10px; padding: 10px 14px; color: var(--fg, var(--ink, #2A1208));
+    font-size: 14px; font-weight: 600;
+  }
+  .tag-row:hover { border-color: var(--accent, #9A3D04); text-decoration: none; }
+  .tag-count { color: var(--fg-faint, var(--ink-faint, rgba(42, 18, 8, 0.38))); font-weight: 500; font-size: 13px; }
+</style>

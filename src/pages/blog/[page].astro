@@ -1,25 +1,33 @@
 ---
-import Base from '../../../layouts/Base.astro';
-import { STUDIO, ORIGIN, rel, abs } from '../../../consts';
-import { getPublishedPosts, getAllTags, postTags, tagSlug, tagLabel, formatDate } from '../../../lib/blog';
+// Numbered blog pages (/blog/2/, /blog/3/, ...). Page 1 lives at src/pages/blog/index.astro —
+// this route starts at page 2 so the two never collide. Kept a hand-rolled slice (rather than
+// Astro's paginate() helper) because page 1's route is a separate file from this one and
+// paginate() expects a single dynamic route to own every page including the first.
+import Base from '../../layouts/Base.astro';
+import { STUDIO, ORIGIN, rel, abs } from '../../consts';
+import { getPublishedPosts, postTags, tagSlug, tagLabel, formatDate, POSTS_PER_PAGE } from '../../lib/blog';
 
 export async function getStaticPaths() {
   const posts = await getPublishedPosts();
-  const tags = await getAllTags(); // already merged/deduped by slug — one static path per topic
-  return tags.map(({ tag, slug }) => ({
-    params: { tag: slug },
-    props: {
-      tag,
-      posts: posts.filter((p) => postTags(p).some((t) => tagSlug(t) === slug)),
-    },
-  }));
+  const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
+  const paths = [];
+  for (let n = 2; n <= totalPages; n++) {
+    paths.push({
+      params: { page: String(n) },
+      props: {
+        pageNum: n,
+        totalPages,
+        posts: posts.slice((n - 1) * POSTS_PER_PAGE, n * POSTS_PER_PAGE),
+      },
+    });
+  }
+  return paths;
 }
 
-const { tag, posts } = Astro.props;
-const label = tagLabel(tag);
-const path = `/blog/tags/${tagSlug(tag)}/`;
-const title = `${label} — The Dudley Blog`;
-const description = `Every Dudley Development post tagged ${label}. ${posts.length} ${posts.length === 1 ? 'post' : 'posts'}.`;
+const { pageNum, totalPages, posts } = Astro.props;
+const path = `/blog/${pageNum}/`;
+const title = `The Dudley Blog — Page ${pageNum}`;
+const description = `More posts from the Dudley Blog. Page ${pageNum} of ${totalPages}.`;
 
 const schema = {
   '@context': 'https://schema.org',
@@ -31,19 +39,17 @@ const schema = {
   publisher: { '@type': 'Organization', name: STUDIO, url: ORIGIN },
 };
 ---
-<Base title={title} description={description} path={path} schema={schema} breadcrumbLeaf={label}>
+<Base title={title} description={description} path={path} schema={schema} breadcrumbLeaf={`Page ${pageNum}`}>
   <main class="page">
-    <div class="wrap tag-wrap">
+    <div class="wrap blog-wrap">
       <nav class="crumbs">
         <a href={rel('/')}>Home</a><span class="sep">/</span>
         <a href={rel('/blog/')}>Blog</a><span class="sep">/</span>
-        <a href={rel('/blog/tags/')}>Topics</a><span class="sep">/</span>
-        <span>{label}</span>
+        <span>Page {pageNum}</span>
       </nav>
-      <header class="tag-hero">
-        <h1>{label}</h1>
-        <p>{posts.length} {posts.length === 1 ? 'post' : 'posts'} tagged {label}.</p>
-        <a class="all-topics" href={rel('/blog/tags/')}>← All topics</a>
+      <header class="blog-hero">
+        <h1>The Dudley Blog</h1>
+        <p>Page {pageNum} of {totalPages}.</p>
       </header>
 
       <ul class="post-grid">
@@ -53,32 +59,40 @@ const schema = {
               <time datetime={p.data.publishDate.toISOString().slice(0, 10)}>
                 {formatDate(p.data.publishDate)}
               </time>
-              <h2>{p.data.title}</h2>
+              <h3>{p.data.title}</h3>
               <p>{p.data.description}</p>
             </a>
             <div class="post-card-tags">
-              {[...new Set(postTags(p).map(tagLabel))].slice(0, 3).map((t) => (
-                <a class="chip" href={rel(`/blog/tags/${tagSlug(t)}/`)}>{t}</a>
+              {[...new Set(postTags(p).map(tagLabel))].slice(0, 3).map((label) => (
+                <a class="chip chip-sm" href={rel(`/blog/tags/${tagSlug(label)}/`)}>{label}</a>
               ))}
             </div>
           </li>
         ))}
       </ul>
+
+      <nav class="pagination" aria-label="Blog pages">
+        <a class="btn" href={pageNum <= 2 ? rel('/blog/') : rel(`/blog/${pageNum - 1}/`)}>← Previous</a>
+        <span class="page-current" aria-current="page">Page {pageNum} of {totalPages}</span>
+        {pageNum < totalPages ? (
+          <a class="btn" href={rel(`/blog/${pageNum + 1}/`)}>Next →</a>
+        ) : (
+          <span />
+        )}
+      </nav>
     </div>
   </main>
 </Base>
 
 <style>
-  .tag-wrap { max-width: 880px; }
+  .blog-wrap { max-width: 880px; }
   .crumbs { font-size: 13px; color: var(--fg-faint, var(--ink-faint, rgba(42, 18, 8, 0.38))); margin: 0 0 18px; display: flex; gap: 8px; flex-wrap: wrap; }
   .crumbs a { color: var(--fg-muted, var(--ink-muted, #7A4B33)); }
   .crumbs .sep { color: var(--fg-faint, var(--ink-faint, rgba(42, 18, 8, 0.38))); }
 
-  .tag-hero { margin: 0 0 26px; }
-  .tag-hero h1 { margin: 0 0 10px; }
-  .tag-hero p { color: var(--fg-muted, var(--ink-muted, #7A4B33)); font-size: 16px; margin: 0 0 12px; }
-  .all-topics { font-size: 13px; font-weight: 600; color: var(--fg-muted, var(--ink-muted, #7A4B33)); }
-  .all-topics:hover { color: var(--fg, var(--ink, #2A1208)); }
+  .blog-hero { margin: 0 0 22px; }
+  .blog-hero h1 { margin: 0 0 10px; }
+  .blog-hero p { color: var(--fg-muted, var(--ink-muted, #7A4B33)); font-size: 16px; margin: 0; }
 
   .post-grid { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; grid-template-columns: 1fr; }
   @media (min-width: 720px) {
@@ -94,7 +108,7 @@ const schema = {
   .post-card-link { display: block; color: var(--fg, var(--ink, #2A1208)); flex: 1; }
   .post-card-link:hover { text-decoration: none; }
   .post-card-link time { color: var(--fg-faint, var(--ink-faint, rgba(42, 18, 8, 0.38))); font-size: 13px; }
-  .post-card-link h2 { font-size: 19px; font-weight: 800; letter-spacing: -0.3px; margin: 6px 0 8px; color: var(--fg, var(--ink, #2A1208)); }
+  .post-card-link h3 { font-size: 19px; font-weight: 800; letter-spacing: -0.3px; margin: 6px 0 8px; color: var(--fg, var(--ink, #2A1208)); }
   .post-card-link p {
     color: var(--fg-muted, var(--ink-muted, #7A4B33)); font-size: 14.5px; margin: 0;
     display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
@@ -109,4 +123,10 @@ const schema = {
     border-radius: 999px; padding: 6px 11px;
   }
   .chip:hover { color: var(--fg, var(--ink, #2A1208)); border-color: var(--accent, #9A3D04); text-decoration: none; }
+
+  .pagination {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--border, rgba(61, 28, 8, 0.12));
+  }
+  .page-current { font-size: 13px; color: var(--fg-faint, var(--ink-faint, rgba(42, 18, 8, 0.38))); }
 </style>

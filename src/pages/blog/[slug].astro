@@ -25,10 +25,13 @@ export async function getStaticPaths() {
       if (a) related.push({ title: a.data.name, url: `/archetypes/${a.slug}/`, description: a.data.tagline });
     }
     // Fill out with other recent posts that share a tag, then any recent post.
-    const tags = new Set(postTags(entry));
+    // Matched by slug (not raw string) so case/wording variants of the same tag
+    // ("Privacy" vs "privacy", "AI photo apps" vs "ai photo apps") still count
+    // as a shared topic — see tagSlug's normalization in lib/blog.ts.
+    const tagSlugs = new Set(postTags(entry).map(tagSlug));
     const others = posts.filter((p) => p.slug !== entry.slug);
     const ranked = [
-      ...others.filter((p) => postTags(p).some((t) => tags.has(t))),
+      ...others.filter((p) => postTags(p).some((t) => tagSlugs.has(tagSlug(t)))),
       ...others,
     ];
     for (const p of ranked) {
