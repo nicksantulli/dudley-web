@@ -48,6 +48,7 @@ const contentApps = (await getCollection('apps')).sort((a, b) => a.data.order - 
 const appOptions = [
   { value: 'general', label: 'General' },
   ...contentApps.map((a) => ({ value: a.slug, label: a.data.name })),
+  { value: 'build-an-app', label: 'Build an app for us (custom development)' },
   { value: 'partnerships', label: 'Partnerships & press' },
   { value: 'other', label: 'Other' },
 ];
@@ -91,12 +92,18 @@ const id = (base: string) => `cf-${base}-${uid}`;
     </div>
 
     <div class="cf-field">
-      <label for={id('app')}>Which app?</label>
+      <label for={id('app')}>What's this about?</label>
       <select id={id('app')} name="app">
         {appOptions.map((o) => (
           <option value={o.value} selected={o.value === selectedApp}>{o.label}</option>
         ))}
       </select>
+      <p class="cf-hint" data-hint-for="build-an-app" hidden>
+        Want us to build an app for your brand? Tell us what it should do, who it's for, your
+        rough timeline, and a budget range if you have one. We design, build, and ship iPhone
+        apps end to end — <a href={rel('/#client-work')}>Where's This House?</a> for HomeLight is
+        a recent example.
+      </p>
     </div>
 
     <div class="cf-field">
@@ -153,6 +160,7 @@ const id = (base: string) => `cf-${base}-${uid}`;
     }
 
     forms.forEach((form) => {
+      wireTopic(form);
       form.addEventListener('submit', (event) => {
         event.preventDefault();
         void handleSubmit(form);
@@ -182,6 +190,29 @@ const id = (base: string) => `cf-${base}-${uid}`;
     setStatus(form, 'Something went wrong sending your message.');
   }
 
+  // Tag the email subject by topic so inbound tickets triage at a glance.
+  function subjectPrefix(topic: string): string {
+    if (topic === 'build-an-app') return 'Website inquiry [Build an app]: ';
+    if (topic === 'partnerships') return 'Website inquiry [Partnerships]: ';
+    return 'Website contact: ';
+  }
+
+  // Show topic-specific helper text and honor ?topic=<value> deep links
+  // (e.g. /contact/?topic=build-an-app from the home page's client-work section).
+  function wireTopic(form: HTMLFormElement) {
+    const select = form.querySelector<HTMLSelectElement>('select[name="app"]');
+    if (!select) return;
+    const wanted = new URLSearchParams(window.location.search).get('topic');
+    if (wanted && Array.from(select.options).some((o) => o.value === wanted)) select.value = wanted;
+    const sync = () => {
+      form.querySelectorAll<HTMLElement>('[data-hint-for]').forEach((el) => {
+        el.hidden = el.dataset.hintFor !== select.value;
+      });
+    };
+    select.addEventListener('change', sync);
+    sync();
+  }
+
   async function handleSubmit(form: HTMLFormElement) {
     if (!form.reportValidity()) return;
 
@@ -204,7 +235,7 @@ const id = (base: string) => `cf-${base}-${uid}`;
       app: data.get('app'),
       subject: subjectValue,
       message: data.get('message'),
-      _subject: subjectValue ? `Website contact: ${subjectValue}` : 'Website contact form',
+      _subject: subjectPrefix(String(data.get('app') || '')) + (subjectValue || 'Website contact form'),
       _template: 'table',
       _honey: '',
     };
@@ -327,6 +358,18 @@ const id = (base: string) => `cf-${base}-${uid}`;
     outline: 2px solid var(--accent, #9a3d04);
     outline-offset: 1px;
   }
+
+  .cf-hint {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-muted, rgba(42, 18, 8, 0.62));
+    background: var(--accent-soft, rgba(143, 56, 3, 0.08));
+    border-left: 3px solid var(--accent, #8f3803);
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin: 10px 0 0;
+  }
+  .cf-hint a { color: var(--accent, #8f3803); }
 
   .cf-privacy {
     font-size: 13px;
