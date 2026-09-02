@@ -13,7 +13,7 @@ import { join } from 'node:path';
 
 const ORIGIN = 'https://dudleyapps.com';
 const HOST = 'dudleyapps.com';
-const ENDPOINT = 'https://api.indexnow.com/IndexNow';
+const ENDPOINT = 'https://api.indexnow.org/IndexNow';
 
 // Find the IndexNow key file in public/ (32-hex stem, content == stem).
 export function findKey(publicDir = 'public') {
