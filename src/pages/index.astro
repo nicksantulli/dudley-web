@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { rel, ORIGIN, APP_STORE, appStoreUrl, SUPPORT_EMAIL } from '../consts';
-import { appStoreCampaignUrl, VIBERATER_ASC_TOKENS } from '../lib/campaignLinks.mjs';
+import { appStoreCampaignUrl, VIBERATER_ASC_TOKENS, TABLE_TALK_ASC_TOKENS } from '../lib/campaignLinks.mjs';
 import { getPublishedPosts, formatDate } from '../lib/blog';
 
 const allApps = (await getCollection('apps')).sort((a, b) => a.data.order - b.data.order);
@@ -10,12 +10,16 @@ const allApps = (await getCollection('apps')).sort((a, b) => a.data.order - b.da
 const apps = allApps.filter((a) => !a.data.developedFor);
 const clientApps = allApps.filter((a) => a.data.developedFor);
 
-// A card's App Store link: VibeRater gets an Apple Ads campaign token so home-page
-// installs are attributable; everything else uses the plain store URL.
-const storeUrlFor = (app: any) =>
-  app.data.appStoreId === APP_STORE.vibeRater
-    ? appStoreCampaignUrl(app.data.appStoreId, VIBERATER_ASC_TOKENS.home)
-    : appStoreUrl(app.data.appStoreId);
+// A card's App Store link. VibeRater and Table Talk carry Apple Ads campaign tokens so
+// home-page installs are attributable; everything else keeps the plain store URL —
+// parked apps are deliberately not promoted, and VibeRater's token is not retagged.
+const storeUrlFor = (app: any) => {
+  if (app.data.appStoreId === APP_STORE.vibeRater)
+    return appStoreCampaignUrl(app.data.appStoreId, VIBERATER_ASC_TOKENS.home);
+  if (app.data.appStoreId === APP_STORE.tableTalk)
+    return appStoreCampaignUrl(app.data.appStoreId, TABLE_TALK_ASC_TOKENS.home);
+  return appStoreUrl(app.data.appStoreId);
+};
 
 const liveCount = allApps.filter((a) => a.data.status === 'live' && !!a.data.appStoreId).length;
 

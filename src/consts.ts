@@ -49,6 +49,7 @@ export const APP_STORE = {
   vibeRater: '6780704282',
   dudeWheresThisHouse: '6779785617',
   econByte: '6780714383',
+  tableTalk: '6780714565',
 };
 
 export function appStoreUrl(id: string): string {
