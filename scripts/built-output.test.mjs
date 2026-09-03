@@ -22,6 +22,8 @@
  *   11. Every App Store ct in built output is a registered token (static or
  *       matching a registered blog-token pattern); unregistered/improvised
  *       tokens are a hard failure.
+ *   11b. Blog-dynamic tokens only on /blog/<slug>/ with exact slug+app token
+ *       (checked on every HTML page; non-blog placement is a hard failure).
  *   12. Every App Store href pairs its ct with the correct Apple app ID
  *       (e.g. tabletalk-web-home on a VibeRater URL must fail).
  *   13. llms.txt App Store links: registered token, correct app ID, pt/mt,
@@ -36,7 +38,7 @@ import {
   FIRST_PARTY_APP_IDS,
   resolveTokenDefinition,
   isTemplateClassToken,
-  isExactExpectedBlogToken,
+  validateBlogDynamicTokenPlacement,
 } from '../src/lib/campaignLinks.mjs';
 
 const DIST = resolve(new URL('.', import.meta.url).pathname, '../dist');
@@ -354,28 +356,26 @@ test('every App Store ct in built output is a registered token', () => {
   assert.deepEqual(failures, [], `Unregistered/improvised campaign tokens found:\n${failures.join('\n')}`);
 });
 
-// ── Test 11b: Blog page CTA tokens are exact deterministic slug tokens ──────
-// For blog pages, any dynamic blog token must exactly equal the token generated
-// for that page slug + app pair (no broad regex loophole).
-test('blog page dynamic tokens match exact expected slug+app token', () => {
+// ── Test 11b: Blog-dynamic tokens only on /blog/<slug>/ with exact slug token ─
+// Every first-party App Store href is checked. A regex-shaped blog-dynamic token
+// on / or /apps/.../ must hard-fail even when appId matches the pattern rule.
+test('blog-dynamic tokens only on /blog/<slug>/ with exact slug+app token', () => {
   const failures = [];
   for (const { html, rel } of pages) {
-    if (!rel.startsWith('/blog/')) continue;
+    const logicalPath = rel.replace(/index\.html$/, '') || '/';
     for (const href of [...new Set(extractAppStoreHrefs(html))]) {
+      if (!isFirstParty(href)) continue;
       const appId = extractAppId(href);
       if (!appId) continue;
       try {
         const ct = new URL(href).searchParams.get('ct');
         if (!ct) continue;
-        const def = resolveTokenDefinition(ct);
-        if (!def || def.kind !== 'blog-dynamic') continue;
-        if (!isExactExpectedBlogToken(ct, rel, appId)) {
-          failures.push(`${rel} → dynamic ct="${ct}" does not match expected slug+app token for app ${appId}`);
-        }
+        const result = validateBlogDynamicTokenPlacement(ct, logicalPath, appId);
+        if (!result.ok) failures.push(`${rel} → ${result.reason}`);
       } catch { /* skip malformed */ }
     }
   }
-  assert.deepEqual(failures, [], `Blog dynamic token mismatch:\n${failures.join('\n')}`);
+  assert.deepEqual(failures, [], `Blog-dynamic token placement failures:\n${failures.join('\n')}`);
 });
 
 // ── Test 12: Every ct paired with correct Apple app ID ───────────────────

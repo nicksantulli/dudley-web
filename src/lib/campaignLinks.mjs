@@ -436,6 +436,36 @@ export function isExactExpectedBlogToken(ct, path, appId) {
   return expected !== null && ct === expected;
 }
 
+/**
+ * Validates placement of blog-dynamic campaign tokens on a rendered page.
+ * Blog-dynamic tokens may only appear on /blog/<slug>/ and must exactly match
+ * the deterministic token for that slug+app pair.
+ *
+ * @returns {{ ok: true } | { ok: false, reason: string }}
+ */
+export function validateBlogDynamicTokenPlacement(ct, logicalPath, appId) {
+  const def = resolveTokenDefinition(ct);
+  if (!def || def.kind !== 'blog-dynamic') return { ok: true };
+
+  const normalized = normalizeLogicalPath(logicalPath);
+  const slug = blogSlugFromPath(normalized);
+  if (!slug) {
+    return {
+      ok: false,
+      reason: `blog-dynamic ct="${ct}" on non-blog path "${normalized}" (must be /blog/<slug>/)`,
+    };
+  }
+
+  if (!isExactExpectedBlogToken(ct, normalized, appId)) {
+    return {
+      ok: false,
+      reason: `blog-dynamic ct="${ct}" on ${normalized} does not match expected slug+app token for app ${appId}`,
+    };
+  }
+
+  return { ok: true };
+}
+
 // ---------------------------------------------------------------------------
 // Core URL builder
 // ---------------------------------------------------------------------------
