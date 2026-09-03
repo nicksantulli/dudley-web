@@ -34,10 +34,9 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import {
   FIRST_PARTY_APP_IDS,
-  ALL_REGISTERED_TOKENS,
-  CT_TO_APP_ID,
-  CT_TO_PATH,
-  BLOG_TOKEN_PATTERNS,
+  resolveTokenDefinition,
+  isTemplateClassToken,
+  isExactExpectedBlogToken,
 } from '../src/lib/campaignLinks.mjs';
 
 const DIST = resolve(new URL('.', import.meta.url).pathname, '../dist');
@@ -108,20 +107,6 @@ function extractAppId(url) {
  * Static tokens: looked up directly in CT_TO_APP_ID.
  * Blog tokens: matched against BLOG_TOKEN_PATTERNS.
  */
-function resolveToken(ct) {
-  // Static registry lookup
-  if (CT_TO_APP_ID[ct] !== undefined) {
-    return { appId: CT_TO_APP_ID[ct], pathPattern: CT_TO_PATH[ct] };
-  }
-  // Per-post blog token patterns
-  for (const bp of BLOG_TOKEN_PATTERNS) {
-    if (bp.pattern.test(ct)) {
-      return { appId: bp.appId, pathPattern: bp.pathPrefix + '*/' };
-    }
-  }
-  return null;
-}
-
 // Return true if a built page path matches a registered path pattern.
 // Built paths are like /archetypes/main-character/index.html — we strip
 // 'index.html' to get the logical path for matching.
@@ -199,9 +184,10 @@ test('every ct used only on pages matching its registered path pattern', () => {
   }
 
   for (const [ct, usedOnPages] of ctToPages) {
-    const resolved = resolveToken(ct);
+    const resolved = resolveTokenDefinition(ct);
     if (!resolved) continue; // unregistered — caught by test 11
-    const { pathPattern } = resolved;
+    if (resolved.kind !== 'static') continue;
+    const pathPattern = resolved.path;
     for (const pagePath of usedOnPages) {
       if (!pathMatchesPattern(pagePath, pathPattern)) {
         failures.push(`ct="${ct}" (registered for "${pathPattern}") found on ${pagePath}`);
@@ -209,6 +195,45 @@ test('every ct used only on pages matching its registered path pattern', () => {
     }
   }
   assert.deepEqual(failures, [], `Token used outside registered path pattern:\n${failures.join('\n')}`);
+});
+
+// ── Test 2c: Non-template ct appears on only one logical path ───────────────
+// Non-template tokens are path-unique. The only tokens permitted across many
+// pages are explicit template-class tokens exported by campaignLinks.mjs.
+test('non-template campaign tokens appear on only one logical path', () => {
+  const ctToLogicalPaths = new Map();
+  for (const { html, rel } of pages) {
+    const logical = rel.replace(/index\.html$/, '') || '/';
+    for (const href of [...new Set(extractAppStoreHrefs(html))]) {
+      try {
+        const ct = new URL(href).searchParams.get('ct');
+        if (!ct) continue;
+        if (!ctToLogicalPaths.has(ct)) ctToLogicalPaths.set(ct, new Set());
+        ctToLogicalPaths.get(ct).add(logical);
+      } catch { /* skip malformed */ }
+    }
+  }
+  const llmsPath = join(DIST, 'llms.txt');
+  if (existsSync(llmsPath)) {
+    const txt = readFileSync(llmsPath, 'utf-8');
+    for (const url of [...new Set(extractAppStoreUrlsFromText(txt))]) {
+      try {
+        const ct = new URL(url).searchParams.get('ct');
+        if (!ct) continue;
+        if (!ctToLogicalPaths.has(ct)) ctToLogicalPaths.set(ct, new Set());
+        ctToLogicalPaths.get(ct).add('/llms.txt');
+      } catch { /* skip malformed */ }
+    }
+  }
+
+  const failures = [];
+  for (const [ct, paths] of ctToLogicalPaths) {
+    if (isTemplateClassToken(ct)) continue;
+    if (paths.size > 1) {
+      failures.push(`ct="${ct}" used on multiple logical paths: ${[...paths].join(', ')}`);
+    }
+  }
+  assert.deepEqual(failures, [], `Non-template ct reused across paths:\n${failures.join('\n')}`);
 });
 
 // ── Test 3: No ppid on any App Store link ─────────────────────────────────
@@ -320,13 +345,37 @@ test('every App Store ct in built output is a registered token', () => {
       try {
         const ct = new URL(href).searchParams.get('ct');
         if (!ct) continue;
-        if (resolveToken(ct) === null) {
+        if (resolveTokenDefinition(ct) === null) {
           failures.push(`${rel} → unregistered ct="${ct}": ${href}`);
         }
       } catch { /* skip malformed */ }
     }
   }
   assert.deepEqual(failures, [], `Unregistered/improvised campaign tokens found:\n${failures.join('\n')}`);
+});
+
+// ── Test 11b: Blog page CTA tokens are exact deterministic slug tokens ──────
+// For blog pages, any dynamic blog token must exactly equal the token generated
+// for that page slug + app pair (no broad regex loophole).
+test('blog page dynamic tokens match exact expected slug+app token', () => {
+  const failures = [];
+  for (const { html, rel } of pages) {
+    if (!rel.startsWith('/blog/')) continue;
+    for (const href of [...new Set(extractAppStoreHrefs(html))]) {
+      const appId = extractAppId(href);
+      if (!appId) continue;
+      try {
+        const ct = new URL(href).searchParams.get('ct');
+        if (!ct) continue;
+        const def = resolveTokenDefinition(ct);
+        if (!def || def.kind !== 'blog-dynamic') continue;
+        if (!isExactExpectedBlogToken(ct, rel, appId)) {
+          failures.push(`${rel} → dynamic ct="${ct}" does not match expected slug+app token for app ${appId}`);
+        }
+      } catch { /* skip malformed */ }
+    }
+  }
+  assert.deepEqual(failures, [], `Blog dynamic token mismatch:\n${failures.join('\n')}`);
 });
 
 // ── Test 12: Every ct paired with correct Apple app ID ───────────────────
@@ -340,7 +389,7 @@ test('every App Store ct is paired with the correct app ID', () => {
         const u = new URL(href);
         const ct = u.searchParams.get('ct');
         if (!ct) continue;
-        const resolved = resolveToken(ct);
+        const resolved = resolveTokenDefinition(ct);
         if (!resolved) continue; // caught by test 11
         const hrefAppId = extractAppId(href);
         if (hrefAppId && resolved.appId !== hrefAppId) {
@@ -377,7 +426,7 @@ test('llms.txt App Store links are tagged, registered, and correctly paired', ()
       failures.push(`llms.txt → ppid on: ${url}`);
     }
 
-    const resolved = resolveToken(ct);
+    const resolved = resolveTokenDefinition(ct);
     if (!resolved) {
       failures.push(`llms.txt → unregistered ct="${ct}": ${url}`);
       continue;

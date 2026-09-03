@@ -11,20 +11,25 @@
 //   4. `mt=8` always included.
 //   5. No `ppid` on default product pages. CPP links must use their real assigned
 //      ppid from Apple; do not invent one.
-//   6. `status: 'active'` = live GTM placement. `status: 'maintenance'` = tagged
-//      for attribution hygiene, not a promoted growth surface.
+//   6. `status` reflects lifecycle truthfully:
+//      - proposed: token added in code, not yet deployed
+//      - maintenance: existing non-primary surface kept tagged/accurate
+//      - active: reserved for explicitly owner-confirmed deployed GTM surfaces
 
 // ---------------------------------------------------------------------------
 // Machine-readable registry
-// Each row: { ct, appId, surface, path, channel, ppid, activatedAt, status }
+// Each row:
+// { ct, appId, surface, path, channel, ppid, registeredAt, activatedAt, firstVerifiedAt, status }
 //   ct          — the campaign token value (immutable once registered)
 //   appId       — Apple App Store app ID
 //   surface     — human description of the placement
 //   path        — URL path pattern this token represents (exact or glob)
 //   channel     — 'web' | 'blog-inline'
 //   ppid        — CPP product page ID, null for default product pages
-//   activatedAt — ISO date string of first activation
-//   status      — 'active' | 'maintenance'
+//   registeredAt   — ISO date string when the token was registered in source
+//   activatedAt    — ISO date string when deployment activation is proven; null if unknown/not deployed
+//   firstVerifiedAt— ISO date string we first observed this token live (nullable)
+//   status         — 'proposed' | 'maintenance' | 'active'
 // ---------------------------------------------------------------------------
 export const TOKEN_REGISTRY = Object.freeze([
   // ── Table Talk (6780714565) ──────────────────────────────────────────────
@@ -35,8 +40,10 @@ export const TOKEN_REGISTRY = Object.freeze([
     path: '/',
     channel: 'web',
     ppid: null,
-    activatedAt: '2026-09-03',
-    status: 'active',
+    registeredAt: '2026-09-03',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
   },
   {
     ct: 'tabletalk-web-home',
@@ -45,8 +52,10 @@ export const TOKEN_REGISTRY = Object.freeze([
     path: '/',
     channel: 'web',
     ppid: null,
-    activatedAt: '2026-06-14',
-    status: 'active',
+    registeredAt: '2026-09-03',
+    activatedAt: null,
+    firstVerifiedAt: '2026-09-03',
+    status: 'maintenance',
   },
   {
     ct: 'tabletalk-web-app',
@@ -55,8 +64,10 @@ export const TOKEN_REGISTRY = Object.freeze([
     path: '/apps/table-talk/',
     channel: 'web',
     ppid: null,
-    activatedAt: '2026-06-14',
-    status: 'active',
+    registeredAt: '2026-09-03',
+    activatedAt: null,
+    firstVerifiedAt: '2026-09-03',
+    status: 'maintenance',
   },
 
   // ── VibeRater Social (6780704282) ────────────────────────────────────────
@@ -67,7 +78,9 @@ export const TOKEN_REGISTRY = Object.freeze([
     path: '/',
     channel: 'web',
     ppid: null,
-    activatedAt: '2026-08-01',
+    registeredAt: '2026-09-03',
+    activatedAt: null,
+    firstVerifiedAt: null,
     status: 'maintenance',
   },
   {
@@ -77,7 +90,9 @@ export const TOKEN_REGISTRY = Object.freeze([
     path: '/apps/vibe-rater/',
     channel: 'web',
     ppid: null,
-    activatedAt: '2026-08-01',
+    registeredAt: '2026-09-03',
+    activatedAt: null,
+    firstVerifiedAt: null,
     status: 'maintenance',
   },
   {
@@ -87,7 +102,9 @@ export const TOKEN_REGISTRY = Object.freeze([
     path: '/archetypes/*/',
     channel: 'web',
     ppid: null,
-    activatedAt: '2026-08-01',
+    registeredAt: '2026-09-03',
+    activatedAt: null,
+    firstVerifiedAt: null,
     status: 'maintenance',
   },
   {
@@ -97,7 +114,9 @@ export const TOKEN_REGISTRY = Object.freeze([
     path: '/compare/*/',
     channel: 'web',
     ppid: null,
-    activatedAt: '2026-08-01',
+    registeredAt: '2026-09-03',
+    activatedAt: null,
+    firstVerifiedAt: null,
     status: 'maintenance',
   },
   {
@@ -107,7 +126,9 @@ export const TOKEN_REGISTRY = Object.freeze([
     path: '/tools/*/',
     channel: 'web',
     ppid: null,
-    activatedAt: '2026-08-01',
+    registeredAt: '2026-09-03',
+    activatedAt: null,
+    firstVerifiedAt: null,
     status: 'maintenance',
   },
   // Blog post CTAs — each post gets its own token via blogCampaignToken(slug).
@@ -122,7 +143,9 @@ export const TOKEN_REGISTRY = Object.freeze([
     path: '/',
     channel: 'web',
     ppid: null,
-    activatedAt: '2026-09-03',
+    registeredAt: '2026-09-03',
+    activatedAt: null,
+    firstVerifiedAt: null,
     status: 'maintenance',
   },
   {
@@ -132,7 +155,9 @@ export const TOKEN_REGISTRY = Object.freeze([
     path: '/apps/monetary-policy-independence-day/',
     channel: 'web',
     ppid: null,
-    activatedAt: '2026-09-03',
+    registeredAt: '2026-09-03',
+    activatedAt: null,
+    firstVerifiedAt: null,
     status: 'maintenance',
   },
   {
@@ -142,7 +167,9 @@ export const TOKEN_REGISTRY = Object.freeze([
     path: '/blog/fed-opinion-vibe/',
     channel: 'blog-inline',
     ppid: null,
-    activatedAt: '2026-09-03',
+    registeredAt: '2026-09-03',
+    activatedAt: null,
+    firstVerifiedAt: null,
     status: 'maintenance',
   },
   {
@@ -152,7 +179,9 @@ export const TOKEN_REGISTRY = Object.freeze([
     path: '/blog/best-satirical-ios-games/',
     channel: 'blog-inline',
     ppid: null,
-    activatedAt: '2026-09-03',
+    registeredAt: '2026-09-03',
+    activatedAt: null,
+    firstVerifiedAt: null,
     status: 'maintenance',
   },
 
@@ -164,7 +193,9 @@ export const TOKEN_REGISTRY = Object.freeze([
     path: '/',
     channel: 'web',
     ppid: null,
-    activatedAt: '2026-09-03',
+    registeredAt: '2026-09-03',
+    activatedAt: null,
+    firstVerifiedAt: null,
     status: 'maintenance',
   },
   {
@@ -174,7 +205,9 @@ export const TOKEN_REGISTRY = Object.freeze([
     path: '/apps/econbyte/',
     channel: 'web',
     ppid: null,
-    activatedAt: '2026-09-03',
+    registeredAt: '2026-09-03',
+    activatedAt: null,
+    firstVerifiedAt: null,
     status: 'maintenance',
   },
   // EconByte blog CTAs follow the pattern `eb-web-blog-<slug>-sep26-v1`.
@@ -188,8 +221,22 @@ export const TOKEN_REGISTRY = Object.freeze([
     path: '/',
     channel: 'web',
     ppid: null,
-    activatedAt: '2026-09-03',
+    registeredAt: '2026-09-03',
+    activatedAt: null,
+    firstVerifiedAt: null,
     status: 'maintenance',
+  },
+  {
+    ct: 'dwh-web-llms-sep26-v1',
+    appId: '6779785617',
+    surface: 'llms.txt app link',
+    path: '/llms.txt',
+    channel: 'web',
+    ppid: null,
+    registeredAt: '2026-09-03',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
   },
 ]);
 
@@ -215,10 +262,21 @@ export const CT_TO_PATH = Object.freeze(
 // Blog token patterns — generated per-post, not statically listed.
 // Each function below produces tokens matching these patterns.
 export const BLOG_TOKEN_PATTERNS = Object.freeze([
-  { pattern: /^vr-web-blog-.+-aug26-v1$/, appId: '6780704282', pathPrefix: '/blog/' },
-  { pattern: /^pp-web-blog-.+-sep26-v1$/, appId: '6775539250', pathPrefix: '/blog/' },
-  { pattern: /^eb-web-blog-.+-sep26-v1$/, appId: '6780714383', pathPrefix: '/blog/' },
+  { pattern: /^vr-web-blog-.+-aug26-v1$/, appId: '6780704282' },
+  { pattern: /^pp-web-blog-.+-sep26-v1$/, appId: '6775539250' },
+  { pattern: /^eb-web-blog-.+-sep26-v1$/, appId: '6780714383' },
 ]);
+
+// Explicit template-class tokens allowed across many paths.
+export const TEMPLATE_CLASS_TOKENS = Object.freeze(new Set([
+  'vr-web-archetype-aug26-v1',
+  'vr-web-comparison-aug26-v1',
+  'vr-web-tool-aug26-v1',
+]));
+
+export function isTemplateClassToken(ct) {
+  return TEMPLATE_CLASS_TOKENS.has(ct);
+}
 
 // First-party App Store IDs — any bare link to these in built output is a bug.
 export const FIRST_PARTY_APP_IDS = Object.freeze([
@@ -289,6 +347,7 @@ export const ECONBYTE_ASC_TOKENS = Object.freeze({
 
 export const DUDE_WHERES_ASC_TOKENS = Object.freeze({
   homeCard: 'dwh-web-card-sep26-v1', // homepage app card badge (client work section)
+  llms: 'dwh-web-llms-sep26-v1',     // llms.txt app link
 });
 
 // ---------------------------------------------------------------------------
@@ -329,6 +388,52 @@ export function econbyteBlogCampaignToken(slug) {
     .replace(/-+$/, '');
   if (!safeSlug) throw new Error('Blog slug is required for a campaign token');
   return `eb-web-blog-${safeSlug}-sep26-v1`;
+}
+
+function normalizeLogicalPath(path) {
+  const p = String(path ?? '').trim();
+  if (!p) return '/';
+  const noIndex = p.replace(/index\.html$/, '');
+  const withLeading = noIndex.startsWith('/') ? noIndex : `/${noIndex}`;
+  return withLeading.endsWith('/') ? withLeading : `${withLeading}/`;
+}
+
+export function blogSlugFromPath(path) {
+  const logical = normalizeLogicalPath(path);
+  const m = logical.match(/^\/blog\/([^/]+)\/$/);
+  return m ? m[1] : null;
+}
+
+// Deterministic expected blog token for one specific page slug + app id.
+// Returns null when the path/app pair does not map to a generated blog token.
+export function expectedBlogTokenForPathAndApp(path, appId) {
+  const slug = blogSlugFromPath(path);
+  if (!slug) return null;
+  if (appId === '6780704282') return blogCampaignToken(slug);
+  if (appId === '6775539250') return powellProwlBlogCampaignToken(slug);
+  if (appId === '6780714383') return econbyteBlogCampaignToken(slug);
+  return null;
+}
+
+// Resolve a token by registry row or blog-token rule.
+// Returns:
+// - { kind: 'static', ct, appId, path, status, ... } for static TOKEN_REGISTRY rows
+// - { kind: 'blog-dynamic', ct, appId } for generated blog tokens matching a pattern
+// - null for unknown/improvised ct values
+export function resolveTokenDefinition(ct) {
+  const row = TOKEN_REGISTRY.find((r) => r.ct === ct);
+  if (row) return { kind: 'static', ...row };
+  for (const rule of BLOG_TOKEN_PATTERNS) {
+    if (rule.pattern.test(ct)) return { kind: 'blog-dynamic', ct, appId: rule.appId };
+  }
+  return null;
+}
+
+// For blog paths, validates whether this ct is the exact deterministic token
+// expected for this path/app pair. Returns false for non-blog paths/apps.
+export function isExactExpectedBlogToken(ct, path, appId) {
+  const expected = expectedBlogTokenForPathAndApp(path, appId);
+  return expected !== null && ct === expected;
 }
 
 // ---------------------------------------------------------------------------

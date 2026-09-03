@@ -23,7 +23,7 @@ export async function GET() {
 - [VibeRater Social](${abs('/apps/vibe-rater/')}): A free iPhone social app built around playful photo ratings, VibeRodeo video/photo posts, a customizable Repli avatar and room, VibeShop, one-way Following, Squad, Radar, Rise, and optional SlopGuard. For entertainment only. Live on the App Store. Requires iOS 17+.
 - [Powell Prowl: Rate Chase](${abs('/apps/monetary-policy-independence-day/')}): A free satirical iPhone mini-game collection — hand-tuned levels across multiple mini-game types including chase, sniper, canoe race, and more. Live on the App Store. Requires iOS 16.6+.
 - [EconByte: Daily Economics](${abs('/apps/econbyte/')}): A free iPhone app that explains economics in bite-sized daily cards — inflation, interest rates, GDP, trade — sourced to named institutions. Two topics free; 13 more unlock with a one-time $0.99 purchase. Educational only. Live on the App Store. Requires iOS 16.6+.
-- [Dude, Where's This House?](${appStoreCampaignUrl(APP_STORE.dudeWheresThisHouse, DUDE_WHERES_ASC_TOKENS.homeCard)}): A free iPhone geography game built for HomeLight with 5,000 approved U.S. residential locations. Live on the App Store. Requires iOS 17+.
+- [Dude, Where's This House?](${appStoreCampaignUrl(APP_STORE.dudeWheresThisHouse, DUDE_WHERES_ASC_TOKENS.llms)}): A free iPhone geography game built for HomeLight with 5,000 approved U.S. residential locations. Live on the App Store. Requires iOS 17+.
 - Last Human: A free satirical top-down arcade game for iPhone. Coming soon to the App Store.
 - Beat the Dealer: Card Counting: An offline blackjack trainer for adults 18+. Coming soon to the App Store.
 
