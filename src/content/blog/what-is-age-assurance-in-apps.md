@@ -118,7 +118,7 @@ VibeRater's public privacy policy separates private rating-only photos from medi
 
 The entertainment boundary matters too. VibeRater scores, auras, archetypes, anthems, Vibescopes, and similar outputs are playful. They are not biometric, health, identity, attractiveness, clinical, personality, or dating-compatibility measurements.
 
-[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-what-is-age-assurance-sep26-v1&mt=8) if you want a photo-vibe app built around chosen moments, social context, and controls.
+[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-what-is-age-assurance-in-a-aug26-v1&mt=8) if you want a photo-vibe app built around chosen moments, social context, and controls.
 
 ## The Practical Rule
 

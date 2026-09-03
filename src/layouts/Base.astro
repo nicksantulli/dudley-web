@@ -135,6 +135,7 @@ const SOCIAL_ICONS: Record<string, string> = {
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@DudleyAppDev" />
   <meta name="twitter:title" content={fullTitle} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={ogImageUrl} />
@@ -203,21 +204,21 @@ const SOCIAL_ICONS: Record<string, string> = {
         </div>
 
         <div class="foot-col">
-          <h2>Explore</h2>
+          <h3>Explore</h3>
           <nav aria-label="Footer — explore">
             {footerExplore.map((n) => <a href={n.href}>{n.label}</a>)}
           </nav>
         </div>
 
         <div class="foot-col">
-          <h2>Help</h2>
+          <h3>Help</h3>
           <nav aria-label="Footer — help">
             {footerHelp.map((n) => <a href={n.href}>{n.label}</a>)}
           </nav>
         </div>
 
         <div class="foot-col">
-          <h2>Legal</h2>
+          <h3>Legal</h3>
           <nav aria-label="Footer — legal">
             {footerLegal.map((n) => <a href={n.href}>{n.label}</a>)}
           </nav>
