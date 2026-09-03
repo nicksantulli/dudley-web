@@ -2,7 +2,22 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as campaignLinks from '../src/lib/campaignLinks.mjs';
 
-const { appStoreCampaignUrl, blogCampaignToken, TABLE_TALK_ASC_TOKENS } = campaignLinks;
+const {
+  appStoreCampaignUrl,
+  blogCampaignToken,
+  tableTalkBlogCampaignToken,
+  TABLE_TALK_ASC_TOKENS,
+} = campaignLinks;
+
+const TABLE_TALK_APP_ID = '6780714565';
+const PHONE_IN_THE_MIDDLE_SLUG = 'phone-in-the-middle';
+const PHONE_IN_THE_MIDDLE_CT = 'tt-web-blog-phone-in-the-middle-sep26-v1';
+const FORBIDDEN_TABLE_TALK_REUSE = [
+  'tabletalk-web-home',
+  'tabletalk-web-app',
+  'tt-web-hero-sep26-v1',
+  'tabletalk-blog-phone-in-the-middle',
+];
 
 test('builds a VibeRater campaign link with a stable campaign token', () => {
   assert.equal(
@@ -100,4 +115,61 @@ test('validateBlogDynamicTokenPlacement ignores static tokens on any path', () =
     '6780714565',
   );
   assert.deepEqual(result, { ok: true });
+});
+
+test('tableTalkBlogCampaignToken keeps phone-in-the-middle untruncated', () => {
+  const token = tableTalkBlogCampaignToken(PHONE_IN_THE_MIDDLE_SLUG);
+  assert.equal(token, PHONE_IN_THE_MIDDLE_CT);
+  assert.match(token, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+  assert.ok(token.includes(PHONE_IN_THE_MIDDLE_SLUG), 'slug was truncated');
+});
+
+test('Table Talk blog token is registered to app 6780714565 via the blog pattern', () => {
+  const resolved = campaignLinks.resolveTokenDefinition(PHONE_IN_THE_MIDDLE_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'blog-dynamic');
+  assert.equal(resolved.appId, TABLE_TALK_APP_ID);
+  assert.equal(resolved.ct, PHONE_IN_THE_MIDDLE_CT);
+});
+
+test('expectedBlogTokenForPathAndApp binds Table Talk blog path to generated token', () => {
+  assert.equal(
+    campaignLinks.expectedBlogTokenForPathAndApp(
+      `/blog/${PHONE_IN_THE_MIDDLE_SLUG}/`,
+      TABLE_TALK_APP_ID,
+    ),
+    PHONE_IN_THE_MIDDLE_CT,
+  );
+});
+
+test('Table Talk blog token is not a reused live Table Talk web token', () => {
+  const token = tableTalkBlogCampaignToken(PHONE_IN_THE_MIDDLE_SLUG);
+  assert.ok(!FORBIDDEN_TABLE_TALK_REUSE.includes(token));
+  assert.ok(!campaignLinks.ALL_REGISTERED_TOKENS.includes(token));
+});
+
+test('unregistered campaign tokens still fail resolveTokenDefinition', () => {
+  assert.equal(campaignLinks.resolveTokenDefinition('tabletalk-blog-phone-in-the-middle'), null);
+  assert.equal(campaignLinks.resolveTokenDefinition('not-a-real-campaign-token'), null);
+});
+
+test('Table Talk blog token on the wrong app id fails placement validation', () => {
+  const result = campaignLinks.validateBlogDynamicTokenPlacement(
+    PHONE_IN_THE_MIDDLE_CT,
+    `/blog/${PHONE_IN_THE_MIDDLE_SLUG}/`,
+    '6780704282',
+  );
+  assert.equal(result.ok, false);
+  assert.match(result.reason, /does not match expected slug\+app token/);
+});
+
+test('Table Talk blog App Store URL uses pt, generated ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(
+    TABLE_TALK_APP_ID,
+    tableTalkBlogCampaignToken(PHONE_IN_THE_MIDDLE_SLUG),
+  );
+  assert.equal(
+    url,
+    `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${PHONE_IN_THE_MIDDLE_CT}&mt=8`,
+  );
 });

@@ -69,6 +69,8 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: '2026-09-03',
     status: 'maintenance',
   },
+  // Table Talk blog CTAs follow the pattern `tt-web-blog-<slug>-sep26-v1`.
+  // Generated per-post by tableTalkBlogCampaignToken(slug) — not individually listed.
 
   // ── VibeRater Social (6780704282) ────────────────────────────────────────
   {
@@ -265,6 +267,7 @@ export const BLOG_TOKEN_PATTERNS = Object.freeze([
   { pattern: /^vr-web-blog-.+-aug26-v1$/, appId: '6780704282' },
   { pattern: /^pp-web-blog-.+-sep26-v1$/, appId: '6775539250' },
   { pattern: /^eb-web-blog-.+-sep26-v1$/, appId: '6780714383' },
+  { pattern: /^tt-web-blog-.+-sep26-v1$/, appId: '6780714565' },
 ]);
 
 // Explicit template-class tokens allowed across many paths.
@@ -390,6 +393,18 @@ export function econbyteBlogCampaignToken(slug) {
   return `eb-web-blog-${safeSlug}-sep26-v1`;
 }
 
+/** Per-post Table Talk blog CTA token. Pattern: tt-web-blog-<slug>-sep26-v1 */
+export function tableTalkBlogCampaignToken(slug) {
+  const safeSlug = String(slug ?? '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')
+    .slice(0, 24)
+    .replace(/-+$/, '');
+  if (!safeSlug) throw new Error('Blog slug is required for a campaign token');
+  return `tt-web-blog-${safeSlug}-sep26-v1`;
+}
+
 function normalizeLogicalPath(path) {
   const p = String(path ?? '').trim();
   if (!p) return '/';
@@ -412,6 +427,7 @@ export function expectedBlogTokenForPathAndApp(path, appId) {
   if (appId === '6780704282') return blogCampaignToken(slug);
   if (appId === '6775539250') return powellProwlBlogCampaignToken(slug);
   if (appId === '6780714383') return econbyteBlogCampaignToken(slug);
+  if (appId === '6780714565') return tableTalkBlogCampaignToken(slug);
   return null;
 }
 

@@ -39,6 +39,7 @@ import {
   resolveTokenDefinition,
   isTemplateClassToken,
   validateBlogDynamicTokenPlacement,
+  tableTalkBlogCampaignToken,
 } from '../src/lib/campaignLinks.mjs';
 
 const DIST = resolve(new URL('.', import.meta.url).pathname, '../dist');
@@ -404,6 +405,39 @@ test('every App Store ct is paired with the correct app ID', () => {
 // ── Test 13: llms.txt App Store links ────────────────────────────────────
 // Machine-readable output must also carry registered tokens, correct app IDs,
 // pt=128970277, mt=8, and no ppid.
+
+test('Table Talk post /blog/phone-in-the-middle/ requires the generated blog token', () => {
+  const page = pages.find((p) => p.rel === '/blog/phone-in-the-middle/index.html');
+  assert.ok(page, 'dist/blog/phone-in-the-middle/index.html not found');
+
+  const expectedCt = tableTalkBlogCampaignToken('phone-in-the-middle');
+  assert.equal(expectedCt, 'tt-web-blog-phone-in-the-middle-sep26-v1');
+
+  const hrefs = [...new Set(extractAppStoreHrefs(page.html))].filter(isFirstParty);
+  assert.ok(hrefs.length > 0, 'no first-party App Store links on /blog/phone-in-the-middle/');
+
+  const failures = [];
+  for (const href of hrefs) {
+    const appId = extractAppId(href);
+    let ct;
+    try { ct = new URL(href).searchParams.get('ct'); } catch { ct = null; }
+
+    if (appId !== '6780714565') {
+      failures.push(`wrong app ${appId}: ${href}`);
+      continue;
+    }
+    if (ct !== expectedCt) {
+      failures.push(`expected ct="${expectedCt}", got ct="${ct}": ${href}`);
+    }
+    if (!isTagged(href)) {
+      failures.push(`missing pt/ct/mt: ${href}`);
+    }
+    try {
+      if (new URL(href).searchParams.has('ppid')) failures.push(`unexpected ppid: ${href}`);
+    } catch { /* skip */ }
+  }
+  assert.deepEqual(failures, [], `Table Talk blog token failures:\n${failures.join('\n')}`);
+});
 
 test('llms.txt App Store links are tagged, registered, and correctly paired', () => {
   const llmsPath = join(DIST, 'llms.txt');
