@@ -1,8 +1,15 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import { rel, ORIGIN, APP_STORE, appStoreUrl, SUPPORT_EMAIL } from '../consts';
-import { appStoreCampaignUrl, VIBERATER_ASC_TOKENS } from '../lib/campaignLinks.mjs';
+import { rel, ORIGIN, APP_STORE, SUPPORT_EMAIL } from '../consts';
+import {
+  appStoreCampaignUrl,
+  VIBERATER_ASC_TOKENS,
+  TABLE_TALK_ASC_TOKENS,
+  POWELL_PROWL_ASC_TOKENS,
+  ECONBYTE_ASC_TOKENS,
+  DUDE_WHERES_ASC_TOKENS,
+} from '../lib/campaignLinks.mjs';
 import { getPublishedPosts, formatDate } from '../lib/blog';
 
 const allApps = (await getCollection('apps')).sort((a, b) => a.data.order - b.data.order);
@@ -10,14 +17,21 @@ const allApps = (await getCollection('apps')).sort((a, b) => a.data.order - b.da
 const apps = allApps.filter((a) => !a.data.developedFor);
 const clientApps = allApps.filter((a) => a.data.developedFor);
 
-// A card's App Store link: VibeRater gets an Apple Ads campaign token so home-page
-// installs are attributable; everything else uses the plain store URL.
-const storeUrlFor = (app: any) =>
-  app.data.appStoreId === APP_STORE.vibeRater
-    ? appStoreCampaignUrl(app.data.appStoreId, VIBERATER_ASC_TOKENS.home)
-    : appStoreUrl(app.data.appStoreId);
-
-const liveCount = allApps.filter((a) => a.data.status === 'live' && !!a.data.appStoreId).length;
+// Every public App Store card link must carry pt + ct for attribution hygiene.
+// Each placement gets its own stable, unique ct — never shared across surfaces.
+const HOME_CARD_TOKENS: Record<string, string> = {
+  [APP_STORE.tableTalk]:                    TABLE_TALK_ASC_TOKENS.homeCard,
+  [APP_STORE.vibeRater]:                    VIBERATER_ASC_TOKENS.home,
+  [APP_STORE.monetaryPolicyIndependenceDay]: POWELL_PROWL_ASC_TOKENS.homeCard,
+  [APP_STORE.econByte]:                     ECONBYTE_ASC_TOKENS.homeCard,
+  [APP_STORE.dudeWheresThisHouse]:          DUDE_WHERES_ASC_TOKENS.homeCard,
+};
+const storeUrlFor = (app: any): string => {
+  const id: string = app.data.appStoreId;
+  if (!id) return '';
+  const token = HOME_CARD_TOKENS[id];
+  return token ? appStoreCampaignUrl(id, token) : '';
+};
 
 const posts = (await getPublishedPosts()).slice(0, 3);
 
@@ -28,13 +42,13 @@ const schema = {
   url: ORIGIN,
 };
 const description =
-  'Dudley Development is a small independent studio building polished, playful iPhone apps. Maker of VibeRater Social, Table Talk, EconByte and more — free to play, privacy-first.';
+  'Table Talk: Conversation Cards is free on the App Store — 420 hand-written conversation starters for dinner tables, first dates, and friend groups. From Dudley Development, an independent iOS studio.';
 
 const values = [
   {
     icon: '🎁',
-    title: 'Free to start',
-    body: 'Every app is free to download and play. No paywall standing between you and the fun.',
+    title: 'Free to download',
+    body: 'Every app is free. No subscription gatekeeping the features — paid upgrades (like Remove Ads) are optional.',
   },
   {
     icon: '🔒',
@@ -55,24 +69,30 @@ const values = [
 ---
 <Base title="Dudley Development — iOS apps with character" description={description} path="/" schema={schema}>
   <main>
-    <!-- ---------- Hero ---------- -->
+    <!-- ---------- Hero — Table Talk September GTM ---------- -->
     <section class="hero">
       <div class="wrap">
         <div class="hero-inner">
-          <span class="eyebrow">Independent iOS studio</span>
-          <h1>Small apps with<br /><span class="grad">real character.</span></h1>
+          <span class="eyebrow">New from Dudley Development</span>
+          <h1>Put the phones down.<br /><span class="grad">Start the talk.</span></h1>
           <p class="lede">
-            We build polished, playful iPhone apps — the kind you actually want to open.
-            Free to play, privacy-first, and made with care.
+            Table Talk is 420 hand-written conversation-starter cards for dinner tables,
+            first dates, friend groups, and work teams. Free on iPhone. No account.
+            Works offline, always.
           </p>
           <div class="actions">
-            <a class="btn primary" href="#apps">See the apps</a>
-            <a class="btn secondary" href={rel('/contact/')}>Get in touch</a>
+            <a
+              class="btn primary"
+              href={appStoreCampaignUrl(APP_STORE.tableTalk, TABLE_TALK_ASC_TOKENS.homeHero)}
+              rel="noopener"
+              aria-label="Download Table Talk: Conversation Cards on the App Store"
+            >Download free on the App Store</a>
+            <a class="btn secondary" href={rel('/apps/table-talk/')}>Learn more</a>
           </div>
           <ul class="hero-facts">
-            <li>{liveCount} apps live on the App Store</li>
+            <li>420 hand-written prompts</li>
             <li>Free to download</li>
-            <li>No cross-app tracking</li>
+            <li>No account, works offline</li>
           </ul>
         </div>
       </div>
@@ -84,7 +104,7 @@ const values = [
         <div class="section-head split">
           <div class="section-head-text">
             <h2>The apps</h2>
-            <p class="sub">Free on the App Store. Clear privacy choices. No nonsense.</p>
+            <p class="sub">Free on the App Store. Clear privacy choices. No subscriptions.</p>
           </div>
           <a class="btn ghost small" href={rel('/about')}>About the studio</a>
         </div>

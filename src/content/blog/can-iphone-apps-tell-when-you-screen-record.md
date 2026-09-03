@@ -87,7 +87,7 @@ The relevant VibeRater privacy habit is intentional sharing. A private rating st
 
 VibeRater results also stay in the entertainment lane. Scores, auras, archetypes, anthems, Vibies, Vibescope outputs, and share cards are playful reactions, not biometric, health, identity, attractiveness, personality, dating, clinical, or authenticity measurements.
 
-[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-can-iphone-apps-tell-whe-aug26-v1&mt=8) if you want a just-for-fun photo result you can keep private, save, or share deliberately.
+[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-can-iphone-apps-tell-when-aug26-v1&mt=8) if you want a just-for-fun photo result you can keep private, save, or share deliberately.
 
 ## A Safer Screen Recording Rule
 

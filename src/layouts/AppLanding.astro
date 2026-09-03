@@ -3,8 +3,8 @@ import Base from './Base.astro';
 import FAQ from '../components/FAQ.astro';
 import InternalLinks from '../components/InternalLinks.astro';
 import AppCTA from '../components/AppCTA.astro';
-import { STUDIO, ORIGIN, rel, abs, appStoreUrl } from '../consts';
-import { VIBERATER_ASC_TOKENS } from '../lib/campaignLinks.mjs';
+import { STUDIO, ORIGIN, rel, abs, appStoreUrl, APP_STORE } from '../consts';
+import { VIBERATER_ASC_TOKENS, TABLE_TALK_ASC_TOKENS, POWELL_PROWL_ASC_TOKENS, ECONBYTE_ASC_TOKENS } from '../lib/campaignLinks.mjs';
 import { appBannerIdFor } from '../lib/appBanner';
 
 export interface Props {
@@ -79,7 +79,13 @@ const pageSchema = faqSchema ? [appSchema, faqSchema] : appSchema;
         appName={app.name}
         appStoreId={app.appStoreId}
         status={app.status}
-        campaignToken={app.appStoreId === '6780704282' ? VIBERATER_ASC_TOKENS.appDetail : undefined}
+        campaignToken={
+          app.appStoreId === APP_STORE.vibeRater                    ? VIBERATER_ASC_TOKENS.appDetail :
+          app.appStoreId === APP_STORE.tableTalk                    ? TABLE_TALK_ASC_TOKENS.appDetail :
+          app.appStoreId === APP_STORE.monetaryPolicyIndependenceDay ? POWELL_PROWL_ASC_TOKENS.appDetail :
+          app.appStoreId === APP_STORE.econByte                     ? ECONBYTE_ASC_TOKENS.appDetail :
+          undefined
+        }
       />
 
       <FAQ items={app.faq} />

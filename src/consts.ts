@@ -25,8 +25,6 @@ export const CONTACT_EMAIL = 'hello@dudleyapps.com'; // general / say-hi contact
 export interface Social { name: string; label: string; url: string; icon: string; }
 export const SOCIALS: Social[] = [
   { name: 'X', label: 'Follow Dudley Development on X', url: 'https://x.com/DudleyAppDev', icon: 'x' },
-  { name: 'Instagram', label: 'Follow Dudley Development on Instagram', url: 'https://instagram.com/dudleyappdev', icon: 'instagram' },
-  { name: 'TikTok', label: 'Follow Dudley Development on TikTok', url: 'https://tiktok.com/@dudley_apps', icon: 'tiktok' },
 ];
 
 // Schema sameAs derives from the same list, so it never drifts.
@@ -49,6 +47,7 @@ export const APP_STORE = {
   vibeRater: '6780704282',
   dudeWheresThisHouse: '6779785617',
   econByte: '6780714383',
+  tableTalk: '6780714565',
 };
 
 export function appStoreUrl(id: string): string {

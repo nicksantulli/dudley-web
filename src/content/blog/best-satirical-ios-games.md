@@ -37,7 +37,7 @@ The satirical joke is that this is a *game* — the absurd literalization of "ja
 
 **Cost:** Free. Ad-supported.
 
-**Download:** [Powell Prowl: Rate Chase on the App Store](https://apps.apple.com/app/id6775539250)
+**Download:** [Powell Prowl: Rate Chase on the App Store](https://apps.apple.com/app/id6775539250?pt=128970277&ct=pp-web-blog-best-satirical-sep26-v1&mt=8)
 
 ---
 

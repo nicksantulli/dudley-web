@@ -31,7 +31,7 @@ Yes, Gemini Apps can let some users turn off the visible AI watermark on newly g
 
 The practical answer: if you are making an AI photo for a joke, profile image, group chat, or social post, do not treat the missing visible badge as permission to make the image look like unedited evidence. Use the watermark setting for presentation, not for hiding context.
 
-Sources: [Google Gemini Apps Help: Manage watermark settings](https://support.google.com/gemini/answer/17405358?hl=en-GB), [Google Gemini Apps Help: Verify AI-generated images, videos, and audio](https://support.google.com/gemini/answer/16722517?co=GENIE.Platform%3DDesktop&hl=en), [Google DeepMind: SynthID](https://deepmind.google/models/synthid/), [Gemini Apps Privacy Hub](https://support.google.com/gemini/answer/13594961?hl=en), [Apple App Review Guidelines](https://developer.apple.com/app-store/review/guidelines/), and the current [VibeRater Social App Store listing](https://apps.apple.com/us/app/viberater-social/id6780704282).
+Sources: [Google Gemini Apps Help: Manage watermark settings](https://support.google.com/gemini/answer/17405358?hl=en-GB), [Google Gemini Apps Help: Verify AI-generated images, videos, and audio](https://support.google.com/gemini/answer/16722517?co=GENIE.Platform%3DDesktop&hl=en), [Google DeepMind: SynthID](https://deepmind.google/models/synthid/), [Gemini Apps Privacy Hub](https://support.google.com/gemini/answer/13594961?hl=en), [Apple App Review Guidelines](https://developer.apple.com/app-store/review/guidelines/), and [VibeRater Social](https://dudleyapps.com/apps/vibe-rater/).
 
 ## The Short Answer
 

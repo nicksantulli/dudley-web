@@ -1,4 +1,5 @@
-import { abs, appStoreUrl, APP_STORE, SUPPORT_EMAIL, CONTACT_EMAIL } from '../consts';
+import { abs, APP_STORE, SUPPORT_EMAIL, CONTACT_EMAIL } from '../consts';
+import { appStoreCampaignUrl, DUDE_WHERES_ASC_TOKENS } from '../lib/campaignLinks.mjs';
 import { getPublishedPosts } from '../lib/blog';
 
 // llms.txt is generated so the Blog section stays current automatically — the Content
@@ -18,12 +19,13 @@ export async function GET() {
 
 ## Apps
 
-- [Powell Prowl: Rate Chase](${abs('/apps/monetary-policy-independence-day/')}): A free satirical iPhone economics game — chase the Fed Chair across 60 levels to force a rate cut. Live on the App Store. Requires iOS 16.6+. (A rename and 100-level overhaul, Monetary Policy: Independence Day, is in the works.)
-- [Dude, Where's This House?](${appStoreUrl(APP_STORE.dudeWheresThisHouse)}): A free iPhone geography game built for HomeLight with 5,000 approved U.S. residential locations. Explore Street View, play five timed rounds, pin each house on the map, and score by distance. Optional player accounts save scores and leaderboard identity. Live on the App Store as version 1.1. Requires iOS 17+.
-- [VibeRater Social](${abs('/apps/vibe-rater/')}): A free iPhone social app built around playful photo ratings, VibeRodeo video/photo posts, a customizable Repli avatar and room, VibeShop, one-way Following, Squad, Radar, Rise, and optional SlopGuard. Choose a photo, get a VibeMeter score, aura-style read, archetype, and vibe anthem, then decide whether to keep it private, post it, or share it. Live on the App Store. Requires iOS 17+.
-- [Table Talk: Conversation Cards](${abs('/apps/table-talk/')}): A free iPhone app of beautifully designed conversation-starter cards for date nights, family dinners, friend groups, work teams, deep questions, and light fun. 185 prompts, no account, works offline, free with optional one-time ad-free upgrade. Live on the App Store. Requires iOS 16.6+.
-- Last Human: A free satirical top-down arcade game for iPhone — you're the last human in an AI-automated office, dodging AutoBots to reach the time clock before the timer runs out. Free with optional ad-free upgrade (in-app purchase). iOS. Launching on the App Store soon.
-- EconByte: A free iPhone app that explains economics in bite-sized daily cards — inflation, interest rates, GDP, trade — like a smart friend, not a textbook. Educational only, not investment advice. Free with optional ad-free upgrade (in-app purchase). iOS. Launching on the App Store soon.
+- [Table Talk: Conversation Cards](${abs('/apps/table-talk/')}): A free iPhone app of hand-written conversation-starter cards for dinner tables, first dates, friend groups, and work teams. 420 prompts across 6 categories plus an 80-card Would You Rather deck. No account needed, works offline. Ad-supported with a one-time Remove Ads purchase. Live on the App Store. Requires iOS 16.6+.
+- [VibeRater Social](${abs('/apps/vibe-rater/')}): A free iPhone social app built around playful photo ratings, VibeRodeo video/photo posts, a customizable Repli avatar and room, VibeShop, one-way Following, Squad, Radar, Rise, and optional SlopGuard. For entertainment only. Live on the App Store. Requires iOS 17+.
+- [Powell Prowl: Rate Chase](${abs('/apps/monetary-policy-independence-day/')}): A free satirical iPhone mini-game collection — hand-tuned levels across multiple mini-game types including chase, sniper, canoe race, and more. Live on the App Store. Requires iOS 16.6+.
+- [EconByte: Daily Economics](${abs('/apps/econbyte/')}): A free iPhone app that explains economics in bite-sized daily cards — inflation, interest rates, GDP, trade — sourced to named institutions. Two topics free; 13 more unlock with a one-time $0.99 purchase. Educational only. Live on the App Store. Requires iOS 16.6+.
+- [Dude, Where's This House?](${appStoreCampaignUrl(APP_STORE.dudeWheresThisHouse, DUDE_WHERES_ASC_TOKENS.llms)}): A free iPhone geography game built for HomeLight with 5,000 approved U.S. residential locations. Live on the App Store. Requires iOS 17+.
+- Last Human: A free satirical top-down arcade game for iPhone. Coming soon to the App Store.
+- Beat the Dealer: Card Counting: An offline blackjack trainer for adults 18+. Coming soon to the App Store.
 
 ## Archetypes (VibeRater Social)
 

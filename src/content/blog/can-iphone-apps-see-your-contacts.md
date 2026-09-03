@@ -29,7 +29,7 @@ iPhone apps cannot see your contacts by default. They can ask for Contacts acces
 
 The practical answer is simple: Contacts permission is a device access choice, not a blank answer to every privacy question. An app may need contacts to help you find friends, invite people, fill forms, or sync an address book. What happens after that depends on the app's design, privacy policy, and App Store privacy label.
 
-Sources: [Apple Support: Control access to your contacts on iPhone](https://support.apple.com/guide/iphone/control-access-to-contacts-iph9536aa9a5/ios), [Apple Developer: Accessing the contact store](https://developer.apple.com/documentation/contacts/accessing-the-contact-store), [Apple Developer: App Privacy Details](https://developer.apple.com/app-store/app-privacy-details/), and the current [VibeRater Social App Store listing](https://apps.apple.com/us/app/viberater-social/id6780704282).
+Sources: [Apple Support: Control access to your contacts on iPhone](https://support.apple.com/guide/iphone/control-access-to-contacts-iph9536aa9a5/ios), [Apple Developer: Accessing the contact store](https://developer.apple.com/documentation/contacts/accessing-the-contact-store), [Apple Developer: App Privacy Details](https://developer.apple.com/app-store/app-privacy-details/), and [VibeRater Social](https://dudleyapps.com/apps/vibe-rater/).
 
 ## The Short Answer
 
