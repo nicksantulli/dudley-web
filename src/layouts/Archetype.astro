@@ -52,10 +52,11 @@ const schema = { '@context': 'https://schema.org', ...articleSchema };
 
       <slot />
 
+
       <AppCTA
         appName="VibeRater Social"
         appStoreId={APP_STORE.vibeRater}
-        status={APP_STORE.vibeRater ? 'live' : 'coming_soon'}
+        status="live"
         campaignToken={VIBERATER_ASC_TOKENS.archetype}
         blurb={`See if you have ${archetype.name} — VibeRater Social turns a photo into a playful vibe read you can keep private or share.`}
       />

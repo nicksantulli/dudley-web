@@ -28,7 +28,7 @@ Limited Access for Photos on iPhone means an app can use only the photos and vid
 
 That setting controls library permission. It does not make every upload private forever, and it does not override the app's own privacy policy. Once you deliberately upload, post, save, or share a selected image, the app may process or store that selected content according to its feature and policy.
 
-Sources: [Apple Support: Control access to information in apps on iPhone](https://support.apple.com/guide/iphone/control-access-to-information-in-apps-iph251e92810/ios), [Apple Developer Documentation: PhotosUI](https://developer.apple.com/documentation/photosui), [Apple Support: About App Privacy Report](https://support.apple.com/en-us/102188), and the current [VibeRater Social App Store listing](https://apps.apple.com/us/app/viberater-social/id6780704282).
+Sources: [Apple Support: Control access to information in apps on iPhone](https://support.apple.com/guide/iphone/control-access-to-information-in-apps-iph251e92810/ios), [Apple Developer Documentation: PhotosUI](https://developer.apple.com/documentation/photosui), [Apple Support: About App Privacy Report](https://support.apple.com/en-us/102188), and [VibeRater Social](https://dudleyapps.com/apps/vibe-rater/).
 
 ## The Short Answer
 

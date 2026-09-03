@@ -86,7 +86,7 @@ Your Fed take: Cut. Everything makes more sense when rates go down. Just cut.
 
 ## Find Out Which One You Actually Are
 
-We built [Powell Prowl: Rate Chase](https://apps.apple.com/app/id6775539250) so you can stop yelling at the Fed and start chasing it — you play the President, hunting the Fed Chair across 60 levels to force your rate-cut memo on him. It's free, it's extremely educational in a completely irresponsible way, and it turns out catching the guy who actually sets rates is a lot harder than having opinions about him.
+We built [Powell Prowl: Rate Chase](https://apps.apple.com/app/id6775539250?pt=128970277&ct=pp-web-blog-sep26-v1&mt=8) so you can stop yelling at the Fed and start chasing it — you play the President, hunting the Fed Chair across 60 levels to force your rate-cut memo on him. It's free, it's extremely educational in a completely irresponsible way, and it turns out catching the guy who actually sets rates is a lot harder than having opinions about him.
 
 If you want to know your actual vibe archetype (not the monetary policy version), that's VibeRater Social, now live on the App Store. Upload a photo, get your archetype, aura color, and a score across all six dimensions.
 

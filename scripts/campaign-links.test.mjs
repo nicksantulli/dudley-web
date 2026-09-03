@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as campaignLinks from '../src/lib/campaignLinks.mjs';
 
-const { appStoreCampaignUrl, blogCampaignToken } = campaignLinks;
+const { appStoreCampaignUrl, blogCampaignToken, TABLE_TALK_ASC_TOKENS } = campaignLinks;
 
 test('builds a VibeRater campaign link with a stable campaign token', () => {
   assert.equal(
@@ -30,4 +30,25 @@ test('rejects missing or malformed campaign tokens', () => {
 test('keeps generated blog tokens valid when a slug is truncated', () => {
   const token = blogCampaignToken('can-ai-use-your-instagram-photos');
   assert.match(token, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+});
+
+test('Table Talk home card uses preserved live token tabletalk-web-home', () => {
+  assert.equal(TABLE_TALK_ASC_TOKENS.homeCard, 'tabletalk-web-home');
+});
+
+test('Table Talk app detail uses preserved live token tabletalk-web-app', () => {
+  assert.equal(TABLE_TALK_ASC_TOKENS.appDetail, 'tabletalk-web-app');
+});
+
+test('builds a Table Talk campaign link with correct pt and mt', () => {
+  const url = appStoreCampaignUrl('6780714565', TABLE_TALK_ASC_TOKENS.homeCard);
+  assert.ok(url.includes('pt=128970277'), 'missing pt');
+  assert.ok(url.includes('ct=tabletalk-web-home'), 'wrong ct');
+  assert.ok(url.includes('mt=8'), 'missing mt=8');
+});
+
+test('ALL_REGISTERED_TOKENS contains no duplicates', () => {
+  const tokens = campaignLinks.ALL_REGISTERED_TOKENS;
+  const set = new Set(tokens);
+  assert.equal(set.size, tokens.length, `Duplicate tokens found: ${tokens.filter((t, i) => tokens.indexOf(t) !== i).join(', ')}`);
 });

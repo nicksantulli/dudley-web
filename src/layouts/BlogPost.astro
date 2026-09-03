@@ -5,7 +5,7 @@ import InternalLinks from '../components/InternalLinks.astro';
 import AppCTA from '../components/AppCTA.astro';
 import { STUDIO, ORIGIN, rel, abs, APP_STORE } from '../consts';
 import { postTags, tagSlug, tagLabel, formatDate } from '../lib/blog';
-import { blogCampaignToken } from '../lib/campaignLinks.mjs';
+import { blogCampaignToken, POWELL_PROWL_ASC_TOKENS, ECONBYTE_ASC_TOKENS } from '../lib/campaignLinks.mjs';
 import { appBannerIdFor } from '../lib/appBanner';
 
 export interface Props {
@@ -94,7 +94,12 @@ const schema = { '@context': 'https://schema.org', ...articleSchema };
         appName={cta.name}
         appStoreId={cta.id}
         status={cta.id ? 'live' : 'coming_soon'}
-        campaignToken={ctaKey === 'vibe-rater' ? blogCampaignToken(post.slug) : undefined}
+        campaignToken={
+          ctaKey === 'vibe-rater' ? blogCampaignToken(post.slug) :
+          ctaKey === 'monetary-policy-independence-day' ? POWELL_PROWL_ASC_TOKENS.blog :
+          ctaKey === 'econbyte' ? ECONBYTE_ASC_TOKENS.appDetail :
+          undefined
+        }
         blurb={`Liked this? ${cta.name} ${cta.id ? 'is free on the App Store.' : 'is launching on the App Store soon.'}`}
       />
 

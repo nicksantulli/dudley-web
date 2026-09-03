@@ -33,7 +33,7 @@ Google says Gemini features in Google Photos, including Ask Photos, do not use y
 
 The practical answer is more nuanced: Ask Photos still processes your library so it can answer questions, suggest edits, identify memories, use face groups, and remember facts you explicitly give it. If you share a photo from Google Photos into another app or connect Google Photos to another Google service, that other service's policies may apply.
 
-Sources: [Google Photos Gemini features privacy hub](https://support.google.com/photos/answer/15344015?hl=en), [Google: Ask button and Ask Photos tips](https://blog.google/products-and-platforms/products/photos/ask-button-ask-photos-tips/), [Google Photos face groups help](https://support.google.com/photos/answer/6128838?hl=en), [Apple Developer: App privacy details](https://developer.apple.com/app-store/app-privacy-details/), and the current [VibeRater Social App Store listing](https://apps.apple.com/us/app/viberater-social/id6780704282).
+Sources: [Google Photos Gemini features privacy hub](https://support.google.com/photos/answer/15344015?hl=en), [Google: Ask button and Ask Photos tips](https://blog.google/products-and-platforms/products/photos/ask-button-ask-photos-tips/), [Google Photos face groups help](https://support.google.com/photos/answer/6128838?hl=en), [Apple Developer: App privacy details](https://developer.apple.com/app-store/app-privacy-details/), and [VibeRater Social](https://dudleyapps.com/apps/vibe-rater/).
 
 ## The Short Answer
 
