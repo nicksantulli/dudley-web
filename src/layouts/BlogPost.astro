@@ -5,7 +5,7 @@ import InternalLinks from '../components/InternalLinks.astro';
 import AppCTA from '../components/AppCTA.astro';
 import { STUDIO, ORIGIN, rel, abs, APP_STORE } from '../consts';
 import { postTags, tagSlug, tagLabel, formatDate } from '../lib/blog';
-import { blogCampaignToken, powellProwlBlogCampaignToken, econbyteBlogCampaignToken } from '../lib/campaignLinks.mjs';
+import { blogCampaignToken, powellProwlBlogCampaignToken, econbyteBlogCampaignToken, tableTalkBlogCampaignToken } from '../lib/campaignLinks.mjs';
 import { appBannerIdFor } from '../lib/appBanner';
 
 export interface Props {
@@ -98,6 +98,7 @@ const schema = { '@context': 'https://schema.org', ...articleSchema };
           ctaKey === 'vibe-rater'                       ? blogCampaignToken(post.slug) :
           ctaKey === 'monetary-policy-independence-day'  ? powellProwlBlogCampaignToken(post.slug) :
           ctaKey === 'econbyte'                          ? econbyteBlogCampaignToken(post.slug) :
+          ctaKey === 'table-talk'                        ? tableTalkBlogCampaignToken(post.slug) :
           undefined
         }
         blurb={`Liked this? ${cta.name} ${cta.id ? 'is free on the App Store.' : 'is launching on the App Store soon.'}`}
