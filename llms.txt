@@ -38,6 +38,7 @@ VibeRater Social assigns one of several vibe archetypes based on your photo:
 
 The Dudley Blog covers internet culture, vibe archetypes, and honest app roundups. Full index: https://dudleyapps.com/blog/ (RSS: https://dudleyapps.com/blog/rss.xml).
 
+- [The Phone in the Middle of the Table](https://dudleyapps.com/blog/phone-in-the-middle/): Two posts on September 2 showed opposite ways people handle a pause: disappear into a private phone, or share one object the whole table can talk about.
 - [What Is Age Assurance in Apps?](https://dudleyapps.com/blog/what-is-age-assurance-in-apps/): Age assurance is how an app or app store estimates, checks, or receives a user's age range so it can apply age-appropriate rules. Here is what it means for social apps, photo apps, and VibeRater users.
 - [Does Google Photos Ask Photos Use Your Photos for AI Training?](https://dudleyapps.com/blog/does-google-photos-ask-photos-use-your-photos-for-ai-training/): Google says Gemini features in Google Photos do not use your personal Photos data for ads or to train generative AI models outside Google Photos. Here is the privacy catch to understand before you ask AI about your camera roll.
 - [What Are Content Credentials on AI Photos?](https://dudleyapps.com/blog/what-are-content-credentials-ai-photos/): Content Credentials are provenance metadata that can show how a photo was created or edited. Here is what they mean, what they do not prove, and how to read them before sharing AI photos.
