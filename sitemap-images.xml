@@ -3,11 +3,11 @@
   <url>
     <loc>https://dudleyapps.com/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/table-talk-icon.png</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/vibe-rater-icon.png</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/econbyte-icon.png</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/last-human-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/powell-prowl-icon.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/vibe-rater-icon.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/table-talk-icon.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/last-human-icon.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/econbyte-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/beat-the-dealer-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dude-wheres-this-house-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
@@ -231,11 +231,6 @@
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.svg</image:loc></image:image>
   </url>
   <url>
-    <loc>https://dudleyapps.com/blog/phone-in-the-middle/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.svg</image:loc></image:image>
-  </url>
-  <url>
     <loc>https://dudleyapps.com/blog/photo-rating-apps-2026/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.svg</image:loc></image:image>
@@ -366,11 +361,6 @@
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://dudleyapps.com/blog/tags/awkward-silence/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
-  </url>
-  <url>
     <loc>https://dudleyapps.com/blog/tags/c2pa/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
@@ -392,11 +382,6 @@
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/tags/content-credentials/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/conversation-starter/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
   </url>
@@ -516,11 +501,6 @@
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://dudleyapps.com/blog/tags/phones-at-dinner/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
-  </url>
-  <url>
     <loc>https://dudleyapps.com/blog/tags/photo-apps/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
@@ -607,11 +587,6 @@
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/tags/synthid/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/table-talk/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
   </url>

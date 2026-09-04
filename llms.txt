@@ -4,13 +4,12 @@
 
 ## Apps
 
-- [Table Talk: Conversation Cards](https://dudleyapps.com/apps/table-talk/): A free iPhone app of hand-written conversation-starter cards for dinner tables, first dates, friend groups, and work teams. 420 prompts across 6 categories plus an 80-card Would You Rather deck. No account needed, works offline. Ad-supported with a one-time Remove Ads purchase. Live on the App Store. Requires iOS 16.6+.
-- [VibeRater Social](https://dudleyapps.com/apps/vibe-rater/): A free iPhone social app built around playful photo ratings, VibeRodeo video/photo posts, a customizable Repli avatar and room, VibeShop, one-way Following, Squad, Radar, Rise, and optional SlopGuard. For entertainment only. Live on the App Store. Requires iOS 17+.
-- [Powell Prowl: Rate Chase](https://dudleyapps.com/apps/monetary-policy-independence-day/): A free satirical iPhone mini-game collection — hand-tuned levels across multiple mini-game types including chase, sniper, canoe race, and more. Live on the App Store. Requires iOS 16.6+.
-- [EconByte: Daily Economics](https://dudleyapps.com/apps/econbyte/): A free iPhone app that explains economics in bite-sized daily cards — inflation, interest rates, GDP, trade — sourced to named institutions. Two topics free; 13 more unlock with a one-time $0.99 purchase. Educational only. Live on the App Store. Requires iOS 16.6+.
-- [Dude, Where's This House?](https://apps.apple.com/app/id6779785617?pt=128970277&ct=dwh-web-llms-sep26-v1&mt=8): A free iPhone geography game built for HomeLight with 5,000 approved U.S. residential locations. Live on the App Store. Requires iOS 17+.
-- Last Human: A free satirical top-down arcade game for iPhone. Coming soon to the App Store.
-- Beat the Dealer: Card Counting: An offline blackjack trainer for adults 18+. Coming soon to the App Store.
+- [Powell Prowl: Rate Chase](https://dudleyapps.com/apps/monetary-policy-independence-day/): A free satirical iPhone economics game — chase the Fed Chair across 60 levels to force a rate cut. Live on the App Store. Requires iOS 16.6+. (A rename and 100-level overhaul, Monetary Policy: Independence Day, is in the works.)
+- [Dude, Where's This House?](https://apps.apple.com/app/id6779785617): A free iPhone geography game built for HomeLight with 5,000 approved U.S. residential locations. Explore Street View, play five timed rounds, pin each house on the map, and score by distance. Optional player accounts save scores and leaderboard identity. Live on the App Store as version 1.1. Requires iOS 17+.
+- [VibeRater Social](https://dudleyapps.com/apps/vibe-rater/): A free iPhone social app built around playful photo ratings, VibeRodeo video/photo posts, a customizable Repli avatar and room, VibeShop, one-way Following, Squad, Radar, Rise, and optional SlopGuard. Choose a photo, get a VibeMeter score, aura-style read, archetype, and vibe anthem, then decide whether to keep it private, post it, or share it. Live on the App Store. Requires iOS 17+.
+- [Table Talk: Conversation Cards](https://dudleyapps.com/apps/table-talk/): A free iPhone app of beautifully designed conversation-starter cards for date nights, family dinners, friend groups, work teams, deep questions, and light fun. 185 prompts, no account, works offline, free with optional one-time ad-free upgrade. Live on the App Store. Requires iOS 16.6+.
+- Last Human: A free satirical top-down arcade game for iPhone — you're the last human in an AI-automated office, dodging AutoBots to reach the time clock before the timer runs out. Free with optional ad-free upgrade (in-app purchase). iOS. Launching on the App Store soon.
+- EconByte: A free iPhone app that explains economics in bite-sized daily cards — inflation, interest rates, GDP, trade — like a smart friend, not a textbook. Educational only, not investment advice. Free with optional ad-free upgrade (in-app purchase). iOS. Launching on the App Store soon.
 
 ## Archetypes (VibeRater Social)
 
@@ -38,7 +37,6 @@ VibeRater Social assigns one of several vibe archetypes based on your photo:
 
 The Dudley Blog covers internet culture, vibe archetypes, and honest app roundups. Full index: https://dudleyapps.com/blog/ (RSS: https://dudleyapps.com/blog/rss.xml).
 
-- [The Phone in the Middle of the Table](https://dudleyapps.com/blog/phone-in-the-middle/): Two posts on September 2 showed opposite ways people handle a pause: disappear into a private phone, or share one object the whole table can talk about.
 - [What Is Age Assurance in Apps?](https://dudleyapps.com/blog/what-is-age-assurance-in-apps/): Age assurance is how an app or app store estimates, checks, or receives a user's age range so it can apply age-appropriate rules. Here is what it means for social apps, photo apps, and VibeRater users.
 - [Does Google Photos Ask Photos Use Your Photos for AI Training?](https://dudleyapps.com/blog/does-google-photos-ask-photos-use-your-photos-for-ai-training/): Google says Gemini features in Google Photos do not use your personal Photos data for ads or to train generative AI models outside Google Photos. Here is the privacy catch to understand before you ask AI about your camera roll.
 - [What Are Content Credentials on AI Photos?](https://dudleyapps.com/blog/what-are-content-credentials-ai-photos/): Content Credentials are provenance metadata that can show how a photo was created or edited. Here is what they mean, what they do not prove, and how to read them before sharing AI photos.
@@ -75,9 +73,9 @@ The Dudley Blog covers internet culture, vibe archetypes, and honest app roundup
 - [The Quiet Luxury Era Is Over — Here's What Actually Won](https://dudleyapps.com/blog/quiet-luxury-2026/): Quiet luxury peaked with Succession. By 2024, H&M was selling a 'stealth wealth capsule.' The trend cycle moved on. But the aesthetic's successor isn't what you'd expect — and the archetype remains.
 - [In Defense of the NPC (It's a Compliment Now)](https://dudleyapps.com/blog/npc-defense/): NPC started as an internet insult. It became a TikTok content genre. Now 'NPC energy' is a genuine compliment — for people who have mastered the art of not performing for anyone. We explain the full arc.
 - [What Your Phone Case Says About Your Vibe](https://dudleyapps.com/blog/phone-case-vibe/): The phone case is the one accessory you chose while panicking about dropping your phone. What that split-second decision reveals about your archetype — according to vibe science (not real science).
+- [Gorpcore Prophet: The Archetype That Won the 2020s Without Trying](https://dudleyapps.com/blog/gorpcore-prophet-won/): Gorpcore didn't go mainstream. Everyone else went gorpcore. A look at the decade's most unlikely aesthetic winner — and what separates a Gorpcore Prophet from someone who just owns a vest.
 - [The Best Satirical iOS Games That Actually Respect Your Intelligence](https://dudleyapps.com/blog/best-satirical-ios-games/): Most 'funny' games on the App Store are slot machines with a hat. These six satire games on iPhone are genuinely good — including one about the Federal Reserve.
 - [What Your Federal Reserve Opinion Says About Your Vibe](https://dudleyapps.com/blog/fed-opinion-vibe/): Your gut reaction to a Fed rate decision reveals your archetype. We matched every possible take on monetary policy to a VibeRater result.
-- [Gorpcore Prophet: The Archetype That Won the 2020s Without Trying](https://dudleyapps.com/blog/gorpcore-prophet-won/): Gorpcore didn't go mainstream. Everyone else went gorpcore. A look at the decade's most unlikely aesthetic winner — and what separates a Gorpcore Prophet from someone who just owns a vest.
 
 ## About
 
