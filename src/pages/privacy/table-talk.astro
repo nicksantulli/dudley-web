@@ -8,14 +8,15 @@ const description = `Privacy policy for Table Talk: Conversation Cards by ${LEGA
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/privacy/')}>← All privacy policies</a>
       <h1>Privacy Policy</h1>
-      <p class="updated">Table Talk: Conversation Cards · Last updated July 20, 2026</p>
+      <p class="updated">Table Talk: Conversation Cards · Effective date: September 4, 2026</p>
 
       <h2>The short version</h2>
       <p>
-        {LEGAL_NAME} operates Table Talk, a free conversation-card app supported by ads. We do not run accounts,
-        analytics, or trackers of our own, and we never see your personal information. The prompts
-        are bundled in the app, bookmarks stay on your device, and the app works without an account
-        or internet connection.
+        {LEGAL_NAME} operates Table Talk, a free conversation-card app supported by ads. There are no
+        accounts, and we never see your prompts, answers, or bookmarks — those stay on your device. As of
+        version 1.1.1, Table Talk also sends <strong>anonymous crash reports</strong> (Sentry) and, unless
+        you turn it off in Settings, <strong>anonymous usage analytics</strong> (PostHog) — both described
+        below. Neither is linked to your identity or used to track you, and neither is used for advertising.
       </p>
 
       <h2>What stays on your device</h2>
@@ -36,17 +37,58 @@ const description = `Privacy policy for Table Talk: Conversation Cards by ${LEGA
         Messages or a social app, handles that share under its own privacy practices.
       </p>
 
+      <h2>Usage analytics (PostHog) — on by default, with a Settings opt-out</h2>
+      <p>
+        Table Talk sends a small set of anonymous, bucketed product events — for example, that a deck was
+        opened, a card was advanced, or a bookmark was added — never a prompt, an answer, a bookmark's
+        content, or anything you type. Events are tied to a random ID generated on your device, not to your
+        name or any account (Table Talk has no accounts). Analytics is on by default; you can turn it off
+        any time in <strong>Settings → Privacy</strong>.
+      </p>
+      <ul>
+        <li>Turning analytics off stops new events immediately, clears the send queue on your device, and resets your ID.</li>
+        <li>Events already sent are kept for <strong>90 days</strong> as individual records and up to <strong>13 months</strong> as aggregated statistics.</li>
+        <li>To have your already-sent events deleted, copy the analytics ID shown under the toggle in Settings and email it to <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> — copy it before turning analytics off, since switching off resets the ID.</li>
+      </ul>
+
+      <h2>Crash reporting (Sentry) — always on</h2>
+      <p>
+        If Table Talk crashes, it sends an anonymous crash report — the stack trace and your iOS version —
+        so we can find and fix the problem. A crash report never contains a prompt, an answer, a bookmark,
+        or anything else you typed or saved. There is no switch for crash reporting, because a report
+        carries no user data to begin with. Crash reports are kept for <strong>30 days</strong>.
+      </p>
+
+      <h2>Apple Search Ads attribution</h2>
+      <p>
+        The first time you open Table Talk, the app asks Apple's own <strong>AdServices</strong> API whether
+        your download came from an Apple Search Ads campaign, so we can tell whether that advertising is
+        working. This is a first-party Apple API, not a tracking SDK: it does not use the advertising
+        identifier (IDFA), does not trigger Apple's App Tracking Transparency prompt, and the raw response
+        token is sent to Apple and then discarded — we only keep whether the check succeeded, not the token
+        itself, and it is not linked to anything you do in the app.
+      </p>
+
       <h2>Advertising (Google AdMob)</h2>
       <p>
         The free version may show an ad as you leave a card session — never during one. Ads are served by <strong>Google AdMob</strong>,
-        a third-party advertising network. To serve and measure ads, Google may collect device information
-        such as the advertising identifier, IP address, and coarse ad-interaction data. We do not receive,
-        store, or link any of this to you.
+        a third-party advertising network. Table Talk requests <strong>non-personalized</strong> ads and does not
+        show Apple's tracking prompt, because it does not ask for cross-app tracking. To serve and measure
+        ads, Google may still collect device information such as a device identifier, IP address, and coarse
+        ad-interaction data. We do not receive, store, or link any of this to you, and it is never joined
+        with the analytics described above.
       </p>
       <ul>
         <li>How Google uses this data is described in <a href="https://policies.google.com/technologies/ads">Google's advertising policy</a> and <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</li>
         <li>The optional Remove Ads purchase removes ads from the app.</li>
       </ul>
+
+      <h2>Used to track you</h2>
+      <p>
+        None of the data described on this page is used to track you across other companies' apps or
+        websites, and none of it is combined with data from a data broker. This is true for analytics,
+        crash reports, Apple Search Ads attribution, and advertising alike.
+      </p>
 
       <h2>Children</h2>
       <p>

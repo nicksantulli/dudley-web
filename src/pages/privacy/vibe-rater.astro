@@ -8,7 +8,7 @@ const description = `Privacy policy for VibeRater by ${LEGAL_NAME}.`;
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/privacy/')}>← All privacy policies</a>
       <h1>Privacy Policy</h1>
-      <p class="updated">VibeRater · Last updated July 20, 2026</p>
+      <p class="updated">VibeRater · Effective date: September 4, 2026</p>
 
       <h2>The short version</h2>
       <p>
@@ -21,13 +21,23 @@ const description = `Privacy policy for VibeRater by ${LEGAL_NAME}.`;
         VibeRater does not request permission to track you across other companies' apps or websites.
       </p>
 
-      <h2>Rating a photo (processed, not stored)</h2>
+      <h2>Rating a photo (the image itself is not stored)</h2>
       <p>
         When you pick or take a photo to rate, VibeRater sends it to our rating service, which uses a
         third-party AI provider (Anthropic) to produce the playful score, verdict, archetype, and aura.
-        <strong>A photo you only rate is used solely to generate that rating, processed in memory, and is
-        never stored, retained, logged, or used to train models</strong>. The camera and photo-library
-        permissions exist only so you can choose the image you want rated.
+        <strong>A photo you only rate — one you don't post or share — is used solely to generate that
+        rating, processed in memory, and the image itself is never stored, retained, logged, or used to
+        train models.</strong> The camera and photo-library permissions exist only so you can choose the
+        image you want rated.
+      </p>
+      <p>
+        As long as VibeRater has a profile identifier for you — created automatically the first time you
+        use the app, even in guest mode, or tied to your account if you sign in — we keep one thing derived
+        from each rating: a short, AI-written text note of your look (for example, a one-line style
+        summary, colors, and garment types — not the photo) plus your score, archetype, and mode. This lets
+        the rater make personalized callbacks on your next few ratings ("still into that jacket?"). Up to
+        your five most recent notes are kept. Deleting your account deletes them along with everything else
+        described under Retention below.
       </p>
 
       <h2>Accounts and profiles</h2>
@@ -109,9 +119,12 @@ const description = `Privacy policy for VibeRater by ${LEGAL_NAME}.`;
       <h2>Retention and deleting your data</h2>
       <p>
         Content you post is retained until you delete it or delete your account. You can delete individual
-        posts in the app, and you can <strong>delete your account</strong> from Settings, which removes your
-        profile and associated social content and anonymizes your identifiers. Photos you only rate are
-        never stored, so there is nothing to delete on our side.
+        posts in the app, and you can <strong>delete your account</strong> from Settings — from the app or
+        at <a href="https://vibe-rater-service-production.up.railway.app/delete-account">this web page</a> —
+        which removes or anonymizes your profile, posts, comments, friendships, chats, Radar visibility, and
+        the style notes described above. The image from a photo you only rate is never stored, so there is
+        no image to delete on our side — but if you had a profile identifier at the time, the short text
+        note describing that look is deleted along with your account, as described above.
       </p>
 
       <h2>For entertainment only</h2>
