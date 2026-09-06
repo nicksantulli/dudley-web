@@ -8,7 +8,7 @@ const description = 'Privacy policies for Dudley Development apps.';
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/')}>← Home</a>
       <h1>Privacy</h1>
-      <p class="updated">Effective date: September 4, 2026 · One policy per app — pick yours below.</p>
+      <p class="updated">Effective date: September 5, 2026 · One policy per app — pick yours below.</p>
 
       <p>
         {LEGAL_NAME} makes several separate apps, and they don't all collect the same things, so there
@@ -59,9 +59,9 @@ const description = 'Privacy policies for Dudley Development apps.';
             </tr>
             <tr>
               <td style="padding:8px 10px 8px 0;">Last Human: Dodge the Bots</td>
-              <td style="padding:8px 10px;">No</td>
-              <td style="padding:8px 10px;">No</td>
-              <td style="padding:8px 10px;">Google AdMob (planned), non-personalized, no ATT prompt</td>
+              <td style="padding:8px 10px;">Yes (Sentry)</td>
+              <td style="padding:8px 10px;">Yes (PostHog, on by default, opt-out in Settings)</td>
+              <td style="padding:8px 10px;">Google AdMob, non-personalized, no ATT prompt</td>
             </tr>
           </tbody>
         </table>
@@ -99,7 +99,7 @@ const description = 'Privacy policies for Dudley Development apps.';
         <li>
           <a class="row" href={rel('/privacy/last-human')}>
             <img src={rel('/assets/last-human-icon.png')} alt="Last Human app icon" width="44" height="44" loading="lazy" />
-            <span class="meta"><b>Last Human: Dodge the Bots</b><span>Privacy policy (coming soon)</span></span>
+            <span class="meta"><b>Last Human: Dodge the Bots</b><span>Privacy policy</span></span>
             <span class="chev">→</span>
           </a>
         </li>

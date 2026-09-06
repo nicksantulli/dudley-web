@@ -8,19 +8,15 @@ const description = `Privacy policy for Last Human: Dodge the Bots by ${LEGAL_NA
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/privacy/')}>← All privacy policies</a>
       <h1>Privacy Policy</h1>
-      <p class="updated">Last Human: Dodge the Bots · Last updated September 1, 2026</p>
-
-      <p>
-        <strong>Last Human is coming soon and not yet available on the App Store.</strong> This policy
-        describes the app as designed and will be finalized against the shipped build before launch.
-      </p>
+      <p class="updated">Last Human: Dodge the Bots · Effective date: September 5, 2026</p>
 
       <h2>The short version</h2>
       <p>
-        {LEGAL_NAME} is building Last Human as a free arcade game supported by ads, matching the privacy
-        practice already shipped in our other apps. We don't plan to run accounts, analytics, or trackers
-        of our own, and we won't see your personal information. Gameplay and high scores are designed to
-        stay on your device.
+        {LEGAL_NAME} operates Last Human, a free arcade game supported by ads. There are no accounts, and
+        we never see your high score or app settings — those stay on your device. Last Human sends
+        <strong>anonymous crash reports</strong> (Sentry) and, unless you turn it off in Settings,
+        <strong>anonymous usage analytics</strong> (PostHog) — both described below. Neither is linked to
+        your identity or used to track you, and neither is used for advertising.
       </p>
 
       <h2>What stays on your device</h2>
@@ -29,33 +25,64 @@ const description = `Privacy policy for Last Human: Dodge the Bots by ${LEGAL_NA
         <li>Your app settings, including purchase/ads state.</li>
       </ul>
       <p>
-        This information is designed to be stored locally on your device. We do not plan to receive it.
-        Deleting the app removes local app data from your device.
+        This information is stored locally on your device. We do not receive it. Deleting the app removes
+        local app data from your device.
+      </p>
+
+      <h2>Usage analytics (PostHog) — on by default, with a Settings opt-out</h2>
+      <p>
+        Last Human sends a small set of anonymous, bucketed product events — for example, that a level was
+        started or completed, how many attempts it took, or that Remove Ads was purchased — never your
+        score, your progress, or anything you type. Events are tied to a random ID generated on your
+        device, not to your name or any account (Last Human has no accounts). Analytics is on by default;
+        you can turn it off any time in <strong>Settings → Privacy</strong>.
+      </p>
+      <ul>
+        <li>Turning analytics off stops new events immediately, clears the send queue on your device, and resets your ID.</li>
+        <li>Events already sent are kept for <strong>90 days</strong> as individual records and up to <strong>13 months</strong> as aggregated statistics.</li>
+        <li>To have your already-sent events deleted, copy the analytics ID shown under the toggle in Settings and email it to <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> — copy it before turning analytics off, since switching off resets the ID.</li>
+      </ul>
+
+      <h2>Crash reporting (Sentry) — always on</h2>
+      <p>
+        If Last Human crashes, it sends an anonymous crash report — the stack trace and your iOS version —
+        so we can find and fix the problem. A crash report never contains your score, your progress, or
+        anything else you typed or saved. There is no switch for crash reporting, because a report carries
+        no user data to begin with. Crash reports are kept for <strong>30 days</strong>.
       </p>
 
       <h2>Advertising (Google AdMob)</h2>
       <p>
-        The free version is planned to show an interstitial ad between levels. Ads are expected to be
-        served by <strong>Google AdMob</strong>, a third-party advertising network — the same provider
-        used across our other apps. To serve ads, Google may collect a device identifier for advertising
-        purposes; this is not linked to your identity and is not used to track you across other apps or
-        websites. We do not receive, store, or link any of this to you.
+        The free version may show an interstitial ad every few levels — never mid-level. Ads are served by
+        <strong>Google AdMob</strong>, a third-party advertising network. Last Human requests
+        <strong>non-personalized</strong> ads and does not show Apple's tracking prompt, because it does
+        not ask for cross-app tracking. Last Human does not show ads at all to players in the EU, EEA, or
+        UK. To serve and measure ads, Google may still collect device information such as a device
+        identifier, IP address, and coarse ad-interaction data. We do not receive, store, or link any of
+        this to you, and it is never joined with the analytics described above.
       </p>
       <ul>
         <li>How Google uses this data is described in <a href="https://policies.google.com/technologies/ads">Google's advertising policy</a> and <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</li>
-        <li>The planned Remove Ads purchase ($0.99) would remove ads from the app.</li>
+        <li>The optional Remove Ads purchase ($0.99) removes ads from the app.</li>
       </ul>
+
+      <h2>Used to track you</h2>
+      <p>
+        None of the data described on this page is used to track you across other companies' apps or
+        websites, and none of it is combined with data from a data broker. This is true for analytics,
+        crash reports, and advertising alike.
+      </p>
 
       <h2>Children</h2>
       <p>
-        We do not plan to knowingly collect any data from anyone, including children under 13. There are
-        no accounts, profiles, or in-app messaging planned for this app.
+        We do not knowingly collect any data from anyone, including children under 13. There are no
+        accounts, profiles, or in-app messaging.
       </p>
 
       <h2>Changes</h2>
       <p>
-        This policy will be updated to match the shipped app before Last Human launches, and any material
-        change after that will be posted at this URL with an updated date above.
+        If this policy ever changes materially, the new version will be posted at this URL with an updated
+        date above. Continued use of the app after a change constitutes acceptance.
       </p>
 
       <h2>Contact</h2>
