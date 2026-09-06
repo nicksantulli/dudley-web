@@ -176,6 +176,11 @@
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.svg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://dudleyapps.com/blog/do-dating-apps-use-face-recognition/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.svg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://dudleyapps.com/blog/does-apple-intelligence-label-ai-edited-photos/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.svg</image:loc></image:image>
@@ -361,6 +366,11 @@
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://dudleyapps.com/blog/tags/biometric-privacy/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://dudleyapps.com/blog/tags/c2pa/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
@@ -396,7 +406,17 @@
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://dudleyapps.com/blog/tags/dating-apps/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://dudleyapps.com/blog/tags/exif/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://dudleyapps.com/blog/tags/face-recognition/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
   </url>
@@ -542,6 +562,11 @@
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/tags/photo-uploads/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://dudleyapps.com/blog/tags/photo-verification/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-lockup.png</image:loc></image:image>
   </url>
