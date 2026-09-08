@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { rel } from '../../consts';
+import { rel, SUPPORT_EMAIL, LEGAL_NAME } from '../../consts';
 const description = 'Privacy policies for Dudley Development apps.';
 ---
 <Base title="Privacy" description={description} path="/privacy/">
@@ -8,13 +8,70 @@ const description = 'Privacy policies for Dudley Development apps.';
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/')}>← Home</a>
       <h1>Privacy</h1>
-      <p class="updated">One policy per app. Pick yours below.</p>
+      <p class="updated">Effective date: September 7, 2026 · One policy per app — pick yours below.</p>
 
       <p>
-        The short version that's true of every Dudley app: we don't run our own accounts, analytics, or
-        trackers, and we never see your personal information. Our free apps show ads through Google AdMob,
-        which is disclosed in each policy, and you can always decline tracking.
+        {LEGAL_NAME} makes several separate apps, and they don't all collect the same things, so there
+        isn't one policy that's accurate for all of them. Read the policy for the app you actually use —
+        the table below is a quick summary, and each app's own page has the full detail. A few things are
+        true everywhere: we never sell your personal data, we don't share data across our own apps to
+        build a profile of you, none of our apps are directed at children, and any usage analytics we run
+        ourselves is anonymous and disclosed on the app's page below. Some free apps show ads through
+        Google AdMob, which is disclosed per app, including whether the ad requests are personalized and
+        whether Apple's tracking permission is involved.
       </p>
+
+      <h2>Quick comparison</h2>
+      <div class="table-scroll" style="overflow-x:auto; margin:1rem 0;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.92rem;">
+          <thead>
+            <tr>
+              <th style="text-align:left; padding:6px 10px 6px 0; border-bottom:1px solid var(--border, #333);">App</th>
+              <th style="text-align:left; padding:6px 10px; border-bottom:1px solid var(--border, #333);">Crash reports</th>
+              <th style="text-align:left; padding:6px 10px; border-bottom:1px solid var(--border, #333);">Usage analytics</th>
+              <th style="text-align:left; padding:6px 10px; border-bottom:1px solid var(--border, #333);">Ads</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:8px 10px 8px 0; border-bottom:1px solid var(--border, #222);">Powell Prowl: Rate Chase</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">No</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">No</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Google AdMob, with an ATT prompt (personalized unless you decline)</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 10px 8px 0; border-bottom:1px solid var(--border, #222);">VibeRater Social</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Yes (Sentry)</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Yes (PostHog, pseudonymous; off in Private mode)</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Google AdMob, non-personalized, no ATT prompt</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 10px 8px 0; border-bottom:1px solid var(--border, #222);">Table Talk: Conversation Cards</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Yes (Sentry, from v1.1.1)</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Yes (PostHog, on by default, opt-out in Settings, from v1.1.1)</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Google AdMob, non-personalized, no ATT prompt</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 10px 8px 0; border-bottom:1px solid var(--border, #222);">EconByte: Daily Economics</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Off by default (Settings opt-in)</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Off by default (Settings opt-in)</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Google AdMob, non-personalized, no ATT prompt</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 10px 8px 0; border-bottom:1px solid var(--border, #222);">Last Human: Dodge the Bots</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Yes (Sentry)</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Yes (PostHog, on by default, opt-out in Settings)</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Google AdMob, non-personalized, no ATT prompt, plus an optional rewarded ad to continue a run</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 10px 8px 0;">Beat the Dealer: Card Counting</td>
+              <td style="padding:8px 10px;">Yes when configured (Sentry)</td>
+              <td style="padding:8px 10px;">Opt-in only (PostHog, off until Enable Optional Analytics)</td>
+              <td style="padding:8px 10px;">Google AdMob, non-personalized, no ATT prompt; no ads in EEA/UK/CH</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <ul class="policy-list">
         <li>
@@ -48,11 +105,29 @@ const description = 'Privacy policies for Dudley Development apps.';
         <li>
           <a class="row" href={rel('/privacy/last-human')}>
             <img src={rel('/assets/last-human-icon.png')} alt="Last Human app icon" width="44" height="44" loading="lazy" />
-            <span class="meta"><b>Last Human: Dodge the Bots</b><span>Privacy policy (coming soon)</span></span>
+            <span class="meta"><b>Last Human: Dodge the Bots</b><span>Privacy policy</span></span>
+            <span class="chev">→</span>
+          </a>
+        </li>
+        <li>
+          <a class="row" href={rel('/privacy/beat-the-dealer')}>
+            <img src={rel('/assets/beat-the-dealer-icon.png')} alt="Beat the Dealer: Card Counting app icon" width="44" height="44" loading="lazy" />
+            <span class="meta"><b>Beat the Dealer: Card Counting</b><span>Privacy policy</span></span>
             <span class="chev">→</span>
           </a>
         </li>
       </ul>
+
+      <h2>What's true across every Dudley app</h2>
+      <ul>
+        <li>{LEGAL_NAME} is the developer of every app listed here. We are not a data broker and we do not sell personal data.</li>
+        <li>None of our apps use your data from one Dudley app to target or personalize another.</li>
+        <li>None of our apps are directed at children, and none knowingly collect data from anyone under 13 (VibeRater requires users to be at least 16).</li>
+        <li>Where an app runs its own crash reporting or usage analytics, it is disclosed on that app's page, uses a random per-install or per-account identifier rather than your name or contact details, and is never used to serve ads.</li>
+      </ul>
+
+      <h2>Contact</h2>
+      <p>Questions about any app, or a data request? Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
     </div>
   </main>
 </Base>

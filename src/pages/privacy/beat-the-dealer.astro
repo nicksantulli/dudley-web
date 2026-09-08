@@ -1,0 +1,111 @@
+---
+import Base from '../../layouts/Base.astro';
+import { rel, SUPPORT_EMAIL, LEGAL_NAME } from '../../consts';
+const description = `Privacy policy for Beat the Dealer: Card Counting by ${LEGAL_NAME}.`;
+---
+<Base title="Privacy Policy · Beat the Dealer: Card Counting" description={description} path="/privacy/beat-the-dealer">
+  <main class="page">
+    <div class="wrap" style="max-width:720px;">
+      <a class="back" href={rel('/privacy/')}>← All privacy policies</a>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Beat the Dealer: Card Counting · Effective date: September 7, 2026</p>
+
+      <h2>The short version</h2>
+      <p>
+        {LEGAL_NAME} operates Beat the Dealer, a free offline blackjack trainer for adults 18+ supported
+        by ads. There are no accounts, and your lessons, drills, progress, and settings stay on your
+        device. If you choose to turn it on in Settings, Beat the Dealer can send
+        <strong>anonymous usage analytics</strong> (PostHog). When a crash-reporting project is configured
+        for a release build, it can also send <strong>anonymous crash reports</strong> (Sentry). Neither
+        is linked to your identity or used to track you, and neither is used for advertising.
+      </p>
+
+      <h2>What stays on your device</h2>
+      <ul>
+        <li>Your lesson and drill progress.</li>
+        <li>Your app settings, including purchase/ads state and optional analytics consent.</li>
+      </ul>
+      <p>
+        This information is stored locally on your device. We do not receive lesson content, answers,
+        cards, counts, or free text you see in the app. Deleting the app removes local app data from
+        your device.
+      </p>
+
+      <h2>Usage analytics (PostHog) — off by default, Settings opt-in</h2>
+      <p>
+        Optional first-party product analytics can measure orientation and supported lesson or drill
+        completion, plus coarse ad-funnel steps. Events contain no cards, answers, or free text. Events
+        are tied to a random ID generated on your device after you opt in, not to your name or any
+        account (Beat the Dealer has no accounts). Analytics stays off until you tap
+        <strong>Enable Optional Analytics</strong> in Settings.
+      </p>
+      <ul>
+        <li>
+          <strong>Disable and Delete Analytics</strong> in Settings stops new events, clears the local
+          send queue, and requests deletion of already-sent events for that install ID.
+        </li>
+        <li>
+          Events already sent are kept for <strong>90 days</strong> as individual records and up to
+          <strong>13 months</strong> as aggregated statistics.
+        </li>
+        <li>
+          If you need help with a deletion request, copy the analytics ID shown in Settings (before you
+          turn analytics off, since switching off resets the ID) and email
+          <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+        </li>
+      </ul>
+
+      <h2>Crash reporting (Sentry)</h2>
+      <p>
+        When crash reporting is configured for a release build, a crash can send an anonymous report —
+        the stack trace and your iOS version — so we can find and fix the problem. A crash report never
+        contains cards, answers, progress detail, or anything else from your lessons. Crash reports are
+        kept for <strong>30 days</strong>.
+      </p>
+
+      <h2>Advertising (Google AdMob)</h2>
+      <p>
+        The free version may show interstitial ads between sessions. Ads are served by
+        <strong>Google AdMob</strong>, a third-party advertising network. Beat the Dealer requests
+        <strong>non-personalized</strong> ads and does not show Apple's tracking prompt, because it does
+        not ask for cross-app tracking. Ads are not shown in the EU, EEA, UK, or Switzerland. To serve
+        and measure ads, Google may still collect device information such as a device identifier, IP
+        address, and coarse ad-interaction data. We do not receive, store, or link any of this to you,
+        and it is never joined with the analytics described above.
+      </p>
+      <ul>
+        <li>
+          How Google uses this data is described in
+          <a href="https://policies.google.com/technologies/ads">Google's advertising policy</a> and
+          <a href="https://policies.google.com/privacy">Google's privacy policy</a>.
+        </li>
+        <li>
+          A one-time Remove Ads purchase (price shown in the app) removes those interstitial ads for
+          the life of the app on your device and restores across devices signed in to the same Apple ID.
+        </li>
+      </ul>
+
+      <h2>Used to track you</h2>
+      <p>
+        None of the data described on this page is used to track you across other companies' apps or
+        websites, and none of it is combined with data from a data broker. This is true for analytics,
+        crash reports, and advertising alike.
+      </p>
+
+      <h2>Children and age</h2>
+      <p>
+        Beat the Dealer is for adults 18 and older. We do not knowingly collect any data from anyone
+        under 13. There are no accounts, profiles, or in-app messaging.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        If this policy ever changes materially, the new version will be posted at this URL with an updated
+        date above. Continued use of the app after a change constitutes acceptance.
+      </p>
+
+      <h2>Contact</h2>
+      <p>Questions? Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
+    </div>
+  </main>
+</Base>
