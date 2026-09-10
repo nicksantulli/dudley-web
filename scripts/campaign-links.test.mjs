@@ -12,10 +12,12 @@ const {
 const TABLE_TALK_APP_ID = '6780714565';
 const PHONE_IN_THE_MIDDLE_SLUG = 'phone-in-the-middle';
 const PHONE_IN_THE_MIDDLE_CT = 'tt-web-blog-phone-in-the-middle-sep26-v1';
+const TABLE_TALK_TIKTOK_CT = 'tabletalk-tiktok-20260910';
 const FORBIDDEN_TABLE_TALK_REUSE = [
   'tabletalk-web-home',
   'tabletalk-web-app',
   'tt-web-hero-sep26-v1',
+  TABLE_TALK_TIKTOK_CT,
   'tabletalk-blog-phone-in-the-middle',
 ];
 
@@ -151,6 +153,27 @@ test('Table Talk blog token is not a reused live Table Talk web token', () => {
 test('unregistered campaign tokens still fail resolveTokenDefinition', () => {
   assert.equal(campaignLinks.resolveTokenDefinition('tabletalk-blog-phone-in-the-middle'), null);
   assert.equal(campaignLinks.resolveTokenDefinition('not-a-real-campaign-token'), null);
+});
+
+test('Table Talk TikTok token is a registered static definition', () => {
+  assert.equal(TABLE_TALK_ASC_TOKENS.tiktok, TABLE_TALK_TIKTOK_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(TABLE_TALK_TIKTOK_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(TABLE_TALK_TIKTOK_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, TABLE_TALK_APP_ID);
+  assert.equal(resolved.ct, TABLE_TALK_TIKTOK_CT);
+  assert.equal(resolved.channel, 'tiktok');
+  assert.equal(resolved.ppid, null);
+});
+
+test('Table Talk TikTok App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(TABLE_TALK_APP_ID, TABLE_TALK_ASC_TOKENS.tiktok);
+  assert.equal(
+    url,
+    `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${TABLE_TALK_TIKTOK_CT}&mt=8`,
+  );
 });
 
 test('Table Talk blog token on the wrong app id fails placement validation', () => {
