@@ -24,7 +24,7 @@
 //   appId       — Apple App Store app ID
 //   surface     — human description of the placement
 //   path        — URL path pattern this token represents (exact or glob)
-//   channel     — 'web' | 'blog-inline'
+//   channel     — 'web' | 'blog-inline' | 'tiktok'
 //   ppid        — CPP product page ID, null for default product pages
 //   registeredAt   — ISO date string when the token was registered in source
 //   activatedAt    — ISO date string when deployment activation is proven; null if unknown/not deployed
@@ -68,6 +68,18 @@ export const TOKEN_REGISTRY = Object.freeze([
     activatedAt: null,
     firstVerifiedAt: '2026-09-03',
     status: 'maintenance',
+  },
+  {
+    ct: 'tabletalk-tiktok-20260910',
+    appId: '6780714565',
+    surface: 'TikTok App Store campaign (2026-09-10)',
+    path: 'tiktok',
+    channel: 'tiktok',
+    ppid: null,
+    registeredAt: '2026-09-10',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
   },
   // Table Talk blog CTAs follow the pattern `tt-web-blog-<slug>-sep26-v1`.
   // Generated per-post by tableTalkBlogCampaignToken(slug) — not individually listed.
@@ -326,6 +338,8 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   appDetail: 'tabletalk-web-app',    // /apps/table-talk/ page CTA (live, deployed)
   // Hero is a new placement added Sep 2026 (was not on the previous homepage).
   homeHero:  'tt-web-hero-sep26-v1', // homepage hero primary CTA (new)
+  // Off-site TikTok surface — one-off dated token, not a blog slug generator.
+  tiktok:    'tabletalk-tiktok-20260910',
 });
 
 export const VIBERATER_ASC_TOKENS = Object.freeze({
