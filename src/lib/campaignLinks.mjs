@@ -81,6 +81,18 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  {
+    ct: 'tabletalk-tiktok-20260911',
+    appId: '6780714565',
+    surface: 'TikTok App Store campaign (2026-09-11)',
+    path: 'tiktok',
+    channel: 'tiktok',
+    ppid: null,
+    registeredAt: '2026-09-11',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // Table Talk blog CTAs follow the pattern `tt-web-blog-<slug>-sep26-v1`.
   // Generated per-post by tableTalkBlogCampaignToken(slug) — not individually listed.
 
@@ -338,8 +350,8 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   appDetail: 'tabletalk-web-app',    // /apps/table-talk/ page CTA (live, deployed)
   // Hero is a new placement added Sep 2026 (was not on the previous homepage).
   homeHero:  'tt-web-hero-sep26-v1', // homepage hero primary CTA (new)
-  // Off-site TikTok surface — one-off dated token, not a blog slug generator.
-  tiktok:    'tabletalk-tiktok-20260910',
+  // Off-site TikTok surface — dated tokens stay in TOKEN_REGISTRY; alias tracks current.
+  tiktok:    'tabletalk-tiktok-20260911',
 });
 
 export const VIBERATER_ASC_TOKENS = Object.freeze({
