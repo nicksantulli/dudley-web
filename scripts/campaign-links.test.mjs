@@ -12,11 +12,13 @@ const {
 const TABLE_TALK_APP_ID = '6780714565';
 const PHONE_IN_THE_MIDDLE_SLUG = 'phone-in-the-middle';
 const PHONE_IN_THE_MIDDLE_CT = 'tt-web-blog-phone-in-the-middle-sep26-v1';
-const TABLE_TALK_TIKTOK_CT = 'tabletalk-tiktok-20260910';
+const TABLE_TALK_TIKTOK_CT = 'tabletalk-tiktok-20260911';
+const TABLE_TALK_TIKTOK_CT_PREV = 'tabletalk-tiktok-20260910';
 const FORBIDDEN_TABLE_TALK_REUSE = [
   'tabletalk-web-home',
   'tabletalk-web-app',
   'tt-web-hero-sep26-v1',
+  TABLE_TALK_TIKTOK_CT_PREV,
   TABLE_TALK_TIKTOK_CT,
   'tabletalk-blog-phone-in-the-middle',
 ];
@@ -156,8 +158,13 @@ test('unregistered campaign tokens still fail resolveTokenDefinition', () => {
 });
 
 test('Table Talk TikTok token is a registered static definition', () => {
+  assert.equal(TABLE_TALK_TIKTOK_CT, 'tabletalk-tiktok-20260911');
   assert.equal(TABLE_TALK_ASC_TOKENS.tiktok, TABLE_TALK_TIKTOK_CT);
   assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(TABLE_TALK_TIKTOK_CT));
+  assert.ok(
+    campaignLinks.ALL_REGISTERED_TOKENS.includes(TABLE_TALK_TIKTOK_CT_PREV),
+    'previous dated TikTok token must remain registered',
+  );
 
   const resolved = campaignLinks.resolveTokenDefinition(TABLE_TALK_TIKTOK_CT);
   assert.ok(resolved, 'resolveTokenDefinition returned null');
