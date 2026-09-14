@@ -13,11 +13,13 @@ const TABLE_TALK_APP_ID = '6780714565';
 const PHONE_IN_THE_MIDDLE_SLUG = 'phone-in-the-middle';
 const PHONE_IN_THE_MIDDLE_CT = 'tt-web-blog-phone-in-the-middle-sep26-v1';
 const TABLE_TALK_TIKTOK_CT = 'tabletalk-tiktok-20260910';
+const TABLE_TALK_X_COLLECTOR_CT = 'tabletalk-x-collector-20260914';
 const FORBIDDEN_TABLE_TALK_REUSE = [
   'tabletalk-web-home',
   'tabletalk-web-app',
   'tt-web-hero-sep26-v1',
   TABLE_TALK_TIKTOK_CT,
+  TABLE_TALK_X_COLLECTOR_CT,
   'tabletalk-blog-phone-in-the-middle',
 ];
 
@@ -173,6 +175,27 @@ test('Table Talk TikTok App Store URL uses pt, registered ct, and mt=8', () => {
   assert.equal(
     url,
     `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${TABLE_TALK_TIKTOK_CT}&mt=8`,
+  );
+});
+
+test('Table Talk X collector token is a registered static definition', () => {
+  assert.equal(TABLE_TALK_ASC_TOKENS.xCollector, TABLE_TALK_X_COLLECTOR_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(TABLE_TALK_X_COLLECTOR_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(TABLE_TALK_X_COLLECTOR_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, TABLE_TALK_APP_ID);
+  assert.equal(resolved.ct, TABLE_TALK_X_COLLECTOR_CT);
+  assert.equal(resolved.channel, 'x');
+  assert.equal(resolved.ppid, null);
+});
+
+test('Table Talk X collector App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(TABLE_TALK_APP_ID, TABLE_TALK_ASC_TOKENS.xCollector);
+  assert.equal(
+    url,
+    `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${TABLE_TALK_X_COLLECTOR_CT}&mt=8`,
   );
 });
 

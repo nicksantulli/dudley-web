@@ -24,7 +24,7 @@
 //   appId       — Apple App Store app ID
 //   surface     — human description of the placement
 //   path        — URL path pattern this token represents (exact or glob)
-//   channel     — 'web' | 'blog-inline' | 'tiktok'
+//   channel     — 'web' | 'blog-inline' | 'tiktok' | 'x'
 //   ppid        — CPP product page ID, null for default product pages
 //   registeredAt   — ISO date string when the token was registered in source
 //   activatedAt    — ISO date string when deployment activation is proven; null if unknown/not deployed
@@ -77,6 +77,18 @@ export const TOKEN_REGISTRY = Object.freeze([
     channel: 'tiktok',
     ppid: null,
     registeredAt: '2026-09-10',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  {
+    ct: 'tabletalk-x-collector-20260914',
+    appId: '6780714565',
+    surface: 'X collector App Store campaign (2026-09-14)',
+    path: 'x',
+    channel: 'x',
+    ppid: null,
+    registeredAt: '2026-09-14',
     activatedAt: null,
     firstVerifiedAt: null,
     status: 'proposed',
@@ -340,6 +352,8 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   homeHero:  'tt-web-hero-sep26-v1', // homepage hero primary CTA (new)
   // Off-site TikTok surface — one-off dated token, not a blog slug generator.
   tiktok:    'tabletalk-tiktok-20260910',
+  // Off-site X collector surface — one-off dated token, not a blog slug generator.
+  xCollector: 'tabletalk-x-collector-20260914',
 });
 
 export const VIBERATER_ASC_TOKENS = Object.freeze({
