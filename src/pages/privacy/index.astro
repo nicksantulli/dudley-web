@@ -8,17 +8,17 @@ const description = 'Privacy policies for Dudley Development apps.';
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/')}>← Home</a>
       <h1>Privacy</h1>
-      <p class="updated">Effective date: September 7, 2026 · One policy per app — pick yours below.</p>
+      <p class="updated">Effective date: September 15, 2026 · One policy per app — pick yours below.</p>
 
       <p>
         {LEGAL_NAME} makes several separate apps, and they don't all collect the same things, so there
         isn't one policy that's accurate for all of them. Read the policy for the app you actually use —
         the table below is a quick summary, and each app's own page has the full detail. A few things are
-        true everywhere: we never sell your personal data, we don't share data across our own apps to
+        true everywhere: we don't sell personal data for money, we don't share data across our own apps to
         build a profile of you, none of our apps are directed at children, and any usage analytics we run
-        ourselves is anonymous and disclosed on the app's page below. Some free apps show ads through
-        Google AdMob, which is disclosed per app, including whether the ad requests are personalized and
-        whether Apple's tracking permission is involved.
+        ourselves is anonymous and disclosed on the app's page below. Free apps show ads through Google
+        AdMob. Each app's page says whether its ads can be personalized and whether Apple's tracking
+        prompt is involved.
       </p>
 
       <h2>Quick comparison</h2>
@@ -47,15 +47,15 @@ const description = 'Privacy policies for Dudley Development apps.';
             </tr>
             <tr>
               <td style="padding:8px 10px 8px 0; border-bottom:1px solid var(--border, #222);">Table Talk: Conversation Cards</td>
-              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Yes (Sentry, from v1.1.1)</td>
-              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Yes (PostHog, on by default, opt-out in Settings, from v1.1.1)</td>
-              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Google AdMob, non-personalized, no ATT prompt</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Yes (Sentry), on if you allow tracking; switch in Settings</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Yes (PostHog), on if you allow tracking; switch in Settings</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Google AdMob plus partner networks; personalized only if you tap “Allow” on Apple's tracking prompt, otherwise non-personalized; no ads in EEA/UK/CH</td>
             </tr>
             <tr>
               <td style="padding:8px 10px 8px 0; border-bottom:1px solid var(--border, #222);">EconByte: Daily Economics</td>
-              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Off by default (Settings opt-in)</td>
-              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Off by default (Settings opt-in)</td>
-              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Google AdMob, non-personalized, no ATT prompt</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Sentry, on if you allow tracking; switch in Settings</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">PostHog, on if you allow tracking; switch in Settings</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Google AdMob plus partner networks; personalized only if you tap “Allow” on Apple's tracking prompt, otherwise non-personalized; no ads in EEA/UK/CH</td>
             </tr>
             <tr>
               <td style="padding:8px 10px 8px 0; border-bottom:1px solid var(--border, #222);">Last Human: Dodge the Bots</td>
@@ -118,9 +118,28 @@ const description = 'Privacy policies for Dudley Development apps.';
         </li>
       </ul>
 
+      <h2>What changed on September 15, 2026</h2>
+      <ul>
+        <li><strong>Table Talk</strong> and <strong>EconByte</strong> can now show personalized ads, but only to people who tap “Allow” on Apple's tracking prompt. Everyone else gets non-personalized ads.</li>
+        <li>In those two apps, ads can now come from Google AdMob and its partner networks: AppLovin, Meta Audience Network, Unity Ads, Liftoff Monetize, Mintegral, InMobi and Pangle.</li>
+        <li>Those two apps show no ads in the EEA, the UK or Switzerland, and they show non-personalized ads when the app can't read your device's region.</li>
+        <li>Their policies now explain US state privacy rights (California, Virginia, Colorado, Connecticut, Utah, Texas, Oregon and others), including how to opt out.</li>
+      </ul>
+
+      <h2>Personalized ads and US state privacy rights</h2>
+      <p>
+        We don't sell personal information for money. In an app that shows personalized ads, tapping “Allow”
+        on Apple's tracking prompt lets ad networks receive your advertising identifier and ad activity. Some US
+        state laws call that a “sale”, “sharing” or “targeted advertising”. To opt out, turn tracking off in iOS
+        <strong>Settings → Privacy &amp; Security → Tracking</strong>, or open <strong>Settings → Manage tracking</strong>
+        in the app. The full details, and how to make other privacy requests, are on the
+        <a href={rel('/privacy/table-talk#us-state-privacy-rights')}>Table Talk</a> and
+        <a href={rel('/privacy/econbyte#us-state-privacy-rights')}>EconByte</a> policies.
+      </p>
+
       <h2>What's true across every Dudley app</h2>
       <ul>
-        <li>{LEGAL_NAME} is the developer of every app listed here. We are not a data broker and we do not sell personal data.</li>
+        <li>{LEGAL_NAME} is the developer of every app listed here. We are not a data broker and we don't sell personal data for money. Where an app offers personalized ads, it is only with your permission through Apple's tracking prompt, as described above.</li>
         <li>None of our apps use your data from one Dudley app to target or personalize another.</li>
         <li>None of our apps are directed at children, and none knowingly collect data from anyone under 13 (VibeRater requires users to be at least 16).</li>
         <li>Where an app runs its own crash reporting or usage analytics, it is disclosed on that app's page, uses a random per-install or per-account identifier rather than your name or contact details, and is never used to serve ads.</li>

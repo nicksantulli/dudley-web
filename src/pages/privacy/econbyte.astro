@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PersonalizedAdsPrivacy from '../../components/PersonalizedAdsPrivacy.astro';
 import { rel, SUPPORT_EMAIL, LEGAL_NAME } from '../../consts';
 const description = `Privacy policy for EconByte: Daily Economics by ${LEGAL_NAME}.`;
 ---
@@ -8,81 +9,116 @@ const description = `Privacy policy for EconByte: Daily Economics by ${LEGAL_NAM
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/privacy/')}>← All privacy policies</a>
       <h1>Privacy Policy</h1>
-      <p class="updated">EconByte: Daily Economics · Last updated September 1, 2026</p>
+      <p class="updated">EconByte: Daily Economics · Effective September 15, 2026</p>
 
       <h2>The short version</h2>
+      <ul>
+        <li>EconByte is a free economics-learning app. It's paid for by ads, optional one-time purchases and an optional EconByte Pro subscription. There are no accounts, and your progress and bookmarks stay on your device.</li>
+        <li>When you first open the app, Apple asks two questions: may the app track you, and may it send notifications. Tapping “Allow” on tracking allows <strong>personalized ads</strong> and turns on anonymous <strong>usage analytics</strong> and <strong>crash reports</strong>. Otherwise ads are non-personalized, and analytics and crash reports stay off unless you turn them on.</li>
+        <li><strong>No ads at all in the EEA, the UK or Switzerland.</strong></li>
+        <li>We don't sell your data for money. Some US state laws count personalized ads as “selling” or “sharing”, and you can <a href="#us-state-privacy-rights">opt out at any time</a> by turning tracking off.</li>
+      </ul>
+
+      <h2>What changed on September 15, 2026</h2>
+      <ul>
+        <li>Ads can now be personalized, but only for people who tap “Allow” on Apple's tracking prompt. Everyone else gets non-personalized ads.</li>
+        <li>Besides Google AdMob, ads can now come from partner networks: AppLovin, Meta Audience Network, Unity Ads, Liftoff Monetize, Mintegral, InMobi and Pangle.</li>
+        <li>This policy now states that there are no ads in the EEA, the UK or Switzerland, and that ads are non-personalized when the app can't read your region.</li>
+        <li>New section on US state privacy rights (California, Virginia, Colorado, Connecticut, Utah, Texas, Oregon and others), including how to opt out.</li>
+        <li>Updated to cover the tracking prompt at first launch, EconByte Pro, topic packs and the Daily Brief. We also removed hard-coded prices, which can change.</li>
+      </ul>
+      <p>Versions of the app released before this date request non-personalized ads only.</p>
+
+      <h2>Your choices at first launch</h2>
+      <ul>
+        <li><strong>Tracking (Apple's prompt).</strong> “Allow” allows personalized ads and turns on usage analytics and crash reports. “Ask App Not to Track” keeps ads non-personalized and leaves analytics and crash reports off. If you updated from an earlier version, your earlier analytics choices are kept.</li>
+        <li><strong>Notifications (Apple's prompt).</strong> “Allow” turns on the optional daily reminder. “Don't Allow” leaves it off.</li>
+      </ul>
       <p>
-        {LEGAL_NAME} operates EconByte, a free economics-education app supported by ads and two optional
-        one-time purchases. We do not run accounts, and we never see your personal information. All 120
-        cards are bundled in the app, your progress and bookmarks stay on your device, and the app works
-        without an account or internet connection.
+        You can change all of this later. EconByte's <strong>Settings</strong> has switches for <strong>Usage
+        analytics</strong>, <strong>Crash reports</strong> and the <strong>Daily reminder</strong>. To change tracking, see
+        <a href="#advertising">Advertising</a> below.
       </p>
 
       <h2>What stays on your device</h2>
       <ul>
-        <li>Your streak, daily-set progress, and bookmarks.</li>
-        <li>Your purchase state for Unlock All Topics and Remove Ads.</li>
-        <li>Your reminder, analytics, and diagnostics preferences (see below).</li>
+        <li>Your streak, daily-set and course progress, and bookmarks.</li>
+        <li>Your purchase and subscription state.</li>
+        <li>Your reminder, analytics and crash-report preferences.</li>
       </ul>
+      <p>We don't receive any of this. Deleting the app removes it from your device.</p>
+
+      <h2>Daily Brief</h2>
       <p>
-        This information is stored locally on your device in iOS <code>UserDefaults</code>. We do not
-        receive it. Deleting the app removes local app data from your device.
+        To show the Daily Brief, EconByte downloads the latest brief from our server, which is hosted by
+        <a href="https://railway.com/legal/privacy" rel="noopener">Railway</a>. The request carries no account, no
+        advertising or analytics ID, and nothing about you. Like any web request, it reveals your IP address to the
+        server so the response can be delivered, and we don't use that address to identify you. The brief's content
+        comes from official public sources and is the same for everyone.
       </p>
 
-      <h2>Optional daily reminder</h2>
+      <h2>Daily reminder</h2>
       <p>
-        EconByte can send a local notification reminding you to do today's set. This is off until you
-        turn it on in Settings, and iOS asks your permission before any notification can appear. Turning
-        it off stops it immediately. The reminder is scheduled entirely on your device — no server is
-        involved.
+        EconByte can send a local notification reminding you to do today's set. iOS asks your permission first, and
+        you can change the time or turn it off in Settings. The reminder is scheduled on your device; no server is involved.
       </p>
 
-      <h2>Optional usage analytics and crash diagnostics</h2>
+      <h2>Usage analytics (PostHog)</h2>
       <p>
-        Settings has separate toggles for usage analytics and crash diagnostics, both off by default.
-        When off, no analytics or diagnostic events leave your device. If you turn either on, the app may
-        record app-level events (like which screen you're on or that a card was flipped) or technical
-        crash information to help us find and fix problems — never card content you wrote, never precise
-        location, and never anything tied to your identity. You can turn either toggle off again at any
-        time in Settings.
+        When usage analytics is on, the app sends simple usage events to <strong>PostHog</strong>, our analytics
+        provider. Examples are which screen you opened or that you finished a set. Each event comes with a random ID
+        created for this install (you can reset it in Settings), the app version, device model and iOS version. We
+        don't create a profile of you, and we never send your name, email or anything you type. Like any internet service,
+        PostHog receives your IP address when the app connects, and it may use that to estimate a rough location.
+        Analytics is never used for advertising. When you turn the switch off, collection stops. See
+        <a href="https://posthog.com/privacy" rel="noopener">PostHog's privacy policy</a>.
       </p>
 
-      <h2>Advertising (Google AdMob)</h2>
+      <h2>Crash reports (Sentry)</h2>
       <p>
-        The free version may show a short ad when you finish a daily set and return to the home screen —
-        never while you're reading a card. Ads are served by <strong>Google AdMob</strong>, a third-party
-        advertising network. To serve ads, Google may collect a device identifier for advertising
-        purposes; this is not linked to your identity and is not used to track you across other apps or
-        websites. We do not receive, store, or link any of this to you.
+        When crash reports are on, a crash or serious error sends a technical report to <strong>Sentry</strong>. It
+        contains what went wrong in the code, the app version, device model and iOS version, so we can fix it. Crash
+        reports don't include your name or contact details, and Sentry's option for collecting personal information is
+        turned off. See <a href="https://sentry.io/privacy/" rel="noopener">Sentry's privacy policy</a>.
       </p>
-      <ul>
-        <li>How Google uses this data is described in <a href="https://policies.google.com/technologies/ads">Google's advertising policy</a> and <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</li>
-        <li>The optional Remove Ads purchase removes ads from the app.</li>
-      </ul>
 
-      <h2>Purchases</h2>
+      <PersonalizedAdsPrivacy
+        appName="EconByte"
+        placements="The free version shows a banner ad in the feed. It may also show a full-screen ad at a natural break, such as after you finish a set, never while you're reading a card."
+        adFreeOptions="Buying Remove Ads, or having an active EconByte Pro subscription,"
+      />
+
+      <h2>Purchases and EconByte Pro</h2>
       <p>
-        EconByte offers two separate one-time, non-consumable in-app purchases — Unlock All Topics
-        ($0.99) and Remove Ads ($0.99) — processed by Apple through StoreKit. We do not see or store your
-        payment details; Apple handles billing under
-        <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. Both purchases restore
-        on any device signed in to the same Apple ID.
+        EconByte offers optional one-time purchases (Unlock All Topics, Remove Ads, topic packs and a pack bundle)
+        and <strong>EconByte Pro</strong>, an auto-renewing monthly or annual subscription. Apple processes all of them.
+        We never see or store your payment details, and Apple handles billing under
+        <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. You can manage or cancel Pro in your
+        Apple Account's subscription settings, or from <strong>Settings → Manage Subscription</strong> in the app.
+        Purchases can be restored on any device signed in to the same Apple Account from <strong>Settings → Restore Purchases</strong>.
+      </p>
+
+      <h2>How long data is kept</h2>
+      <p>
+        Data on your device stays until you delete the app. Analytics and crash data are kept only as long as they
+        help us improve the app, then deleted under our PostHog and Sentry retention settings. We don't combine them
+        with data from other sources or from our other apps.
       </p>
 
       <h2>Children</h2>
       <p>
-        We do not knowingly collect any data from anyone, including children under 13. There are no
-        accounts, profiles, or in-app messaging.
+        EconByte is a general-audience app. It isn't directed at children, and we don't knowingly collect personal
+        information from children under 13. If you think a child has sent us personal information, email us and we'll delete it.
       </p>
 
       <h2>Changes</h2>
       <p>
-        If this policy ever changes materially, the new version will be posted at this URL with an
-        updated date above. Continued use of the app after a change constitutes acceptance.
+        If this policy changes materially, the new version will be posted at this URL with a new effective date and
+        a summary of what changed.
       </p>
 
       <h2>Contact</h2>
-      <p>Questions? Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
+      <p>{LEGAL_NAME}, Colorado, USA. Questions or privacy requests: <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
     </div>
   </main>
 </Base>
