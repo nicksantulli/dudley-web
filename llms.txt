@@ -37,6 +37,7 @@ VibeRater Social assigns one of several vibe archetypes based on your photo:
 
 The Dudley Blog covers internet culture, vibe archetypes, and honest app roundups. Full index: https://dudleyapps.com/blog/ (RSS: https://dudleyapps.com/blog/rss.xml).
 
+- [Why Are Prices Still High If Inflation Is Down?](https://dudleyapps.com/blog/why-are-prices-still-high-if-inflation-is-down/): Inflation going down usually means prices are rising more slowly, not that the grocery bill has gone back to its old level. Here is the plain-English difference.
 - [Do Dating Apps Use Face Recognition?](https://dudleyapps.com/blog/do-dating-apps-use-face-recognition/): Some dating apps now use face scans, video selfies, liveness checks, or photo verification to fight bots and impersonation. Here is what that means for privacy, verification badges, and photo apps like VibeRater.
 - [What Is a Phased Release on the App Store?](https://dudleyapps.com/blog/what-is-phased-release-app-store/): A phased release means an iPhone app update rolls out gradually to automatic updates over seven days. Here is what users and small app studios should know.
 - [What Is Age Assurance in Apps?](https://dudleyapps.com/blog/what-is-age-assurance-in-apps/): Age assurance is how an app or app store estimates, checks, or receives a user's age range so it can apply age-appropriate rules. Here is what it means for social apps, photo apps, and VibeRater users.
