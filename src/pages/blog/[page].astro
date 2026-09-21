@@ -1,138 +1,37 @@
 ---
-// Numbered blog pages (/blog/2/, /blog/3/, ...). Page 1 lives at src/pages/blog/index.astro —
-// this route starts at page 2 so the two never collide. Kept a hand-rolled slice (rather than
-// Astro's paginate() helper) because page 1's route is a separate file from this one and
-// paginate() expects a single dynamic route to own every page including the first.
 import Base from '../../layouts/Base.astro';
+import AnswerCard from '../../components/AnswerCard.astro';
 import { STUDIO, ORIGIN, rel, abs } from '../../consts';
-import { getPublishedPosts, formatDate, POSTS_PER_PAGE } from '../../lib/blog';
-import { eligibleTopicHubs, topicsForPost, unmappedLabelsForPost } from '../../lib/topics';
+import { getPublishedPosts, POSTS_PER_PAGE } from '../../lib/blog';
 
 export async function getStaticPaths() {
   const posts = await getPublishedPosts();
   const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
-  const paths = [];
-  for (let n = 2; n <= totalPages; n++) {
-    paths.push({
-      params: { page: String(n) },
-      props: {
-        pageNum: n,
-        totalPages,
-        posts: posts.slice((n - 1) * POSTS_PER_PAGE, n * POSTS_PER_PAGE),
-        eligibleTopicSlugs: eligibleTopicHubs(posts).map((hub) => hub.slug),
-      },
-    });
-  }
-  return paths;
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => {
+    const pageNum = index + 2;
+    return { params: { page: String(pageNum) }, props: { pageNum, totalPages, posts: posts.slice((pageNum - 1) * POSTS_PER_PAGE, pageNum * POSTS_PER_PAGE) } };
+  });
 }
 
-const { pageNum, totalPages, posts, eligibleTopicSlugs } = Astro.props;
-const eligibleTopics = new Set(eligibleTopicSlugs);
+const { pageNum, totalPages, posts } = Astro.props;
 const path = `/blog/${pageNum}/`;
 const title = `The Dudley Blog — Page ${pageNum}`;
-const description = `More posts from the Dudley Blog. Page ${pageNum} of ${totalPages}.`;
-
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'CollectionPage',
-  name: title,
-  description,
-  url: abs(path),
-  isPartOf: { '@type': 'Blog', name: 'The Dudley Blog', url: abs('/blog/') },
-  publisher: { '@type': 'Organization', name: STUDIO, url: ORIGIN },
-};
+const description = `Plain-English answers from the Dudley Blog, page ${pageNum} of ${totalPages}.`;
+const schema = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: title, description, url: abs(path), isPartOf: { '@type': 'Blog', name: 'The Dudley Blog', url: abs('/blog/') }, publisher: { '@type': 'Organization', name: STUDIO, url: ORIGIN } };
 ---
 <Base title={title} description={description} path={path} schema={schema} breadcrumbLeaf={`Page ${pageNum}`}>
-  <main class="page">
+  <main class="page editorial-page">
     <div class="wrap blog-wrap">
-      <nav class="crumbs">
-        <a href={rel('/')}>Home</a><span class="sep">/</span>
-        <a href={rel('/blog/')}>Blog</a><span class="sep">/</span>
-        <span>Page {pageNum}</span>
-      </nav>
-      <header class="blog-hero">
-        <h1>The Dudley Blog</h1>
-        <p>Page {pageNum} of {totalPages}.</p>
-      </header>
-
-      <ul class="post-grid">
-        {posts.map((p) => (
-          <li class="post-card">
-            <a class="post-card-link" href={rel(`/blog/${p.slug}/`)}>
-              <time datetime={p.data.publishDate.toISOString().slice(0, 10)}>
-                {formatDate(p.data.publishDate)}
-              </time>
-              <h3>{p.data.title}</h3>
-              <p>{p.data.description}</p>
-            </a>
-            <div class="post-card-tags">
-              {topicsForPost(p, eligibleTopics).slice(0, 2).map((topic) => (
-                <a class="chip chip-sm" href={rel(`/blog/topics/${topic.slug}/`)}>{topic.title}</a>
-              ))}
-              {unmappedLabelsForPost(p).slice(0, 1).map((label) => (
-                <span class="chip chip-sm tag-label">{label}</span>
-              ))}
-            </div>
-          </li>
-        ))}
-      </ul>
-
+      <nav class="crumbs" aria-label="Breadcrumb"><a href={rel('/')}>Home</a><span>/</span><a href={rel('/blog/')}>Blog</a><span>/</span><span>Page {pageNum}</span></nav>
+      <header class="blog-hero"><p class="section-label">Archive</p><h1>More straight answers.</h1><p>Page {pageNum} of {totalPages}.</p></header>
+      <div class="answer-grid">
+        {posts.map((post) => <AnswerCard title={post.data.title} description={post.data.answerSummary ?? post.data.description} href={`/blog/${post.slug}/`} date={post.data.publishDate} topic={post.data.category} />)}
+      </div>
       <nav class="pagination" aria-label="Blog pages">
         <a class="btn" href={pageNum <= 2 ? rel('/blog/') : rel(`/blog/${pageNum - 1}/`)}>← Previous</a>
-        <span class="page-current" aria-current="page">Page {pageNum} of {totalPages}</span>
-        {pageNum < totalPages ? (
-          <a class="btn" href={rel(`/blog/${pageNum + 1}/`)}>Next →</a>
-        ) : (
-          <span />
-        )}
+        <span aria-current="page">Page {pageNum} of {totalPages}</span>
+        {pageNum < totalPages ? <a class="btn" href={rel(`/blog/${pageNum + 1}/`)}>Next →</a> : <span />}
       </nav>
     </div>
   </main>
 </Base>
-
-<style>
-  .blog-wrap { max-width: 880px; }
-  .crumbs { font-size: 13px; color: var(--fg-faint, var(--ink-faint, rgba(42, 18, 8, 0.38))); margin: 0 0 18px; display: flex; gap: 8px; flex-wrap: wrap; }
-  .crumbs a { color: var(--fg-muted, var(--ink-muted, #7A4B33)); }
-  .crumbs .sep { color: var(--fg-faint, var(--ink-faint, rgba(42, 18, 8, 0.38))); }
-
-  .blog-hero { margin: 0 0 22px; }
-  .blog-hero h1 { margin: 0 0 10px; }
-  .blog-hero p { color: var(--fg-muted, var(--ink-muted, #7A4B33)); font-size: 16px; margin: 0; }
-
-  .post-grid { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; grid-template-columns: 1fr; }
-  @media (min-width: 720px) {
-    .post-grid { grid-template-columns: 1fr 1fr; }
-  }
-  .post-card {
-    display: flex; flex-direction: column;
-    background: var(--card, var(--surface, #F8F2E4));
-    border: 1px solid var(--border, rgba(61, 28, 8, 0.12));
-    border-radius: var(--radius, 16px); padding: 22px 24px;
-  }
-  .post-card:hover { border-color: var(--accent, #9A3D04); }
-  .post-card-link { display: block; color: var(--fg, var(--ink, #2A1208)); flex: 1; }
-  .post-card-link:hover { text-decoration: none; }
-  .post-card-link time { color: var(--fg-faint, var(--ink-faint, rgba(42, 18, 8, 0.38))); font-size: 13px; }
-  .post-card-link h3 { font-size: 19px; font-weight: 800; letter-spacing: -0.3px; margin: 6px 0 8px; color: var(--fg, var(--ink, #2A1208)); }
-  .post-card-link p {
-    color: var(--fg-muted, var(--ink-muted, #7A4B33)); font-size: 14.5px; margin: 0;
-    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-  }
-  .post-card-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-  .chip {
-    display: inline-flex; align-items: center; gap: 6px; min-height: 32px; box-sizing: border-box;
-    font-size: 12px; font-weight: 600; line-height: 1;
-    color: var(--fg-muted, var(--ink-muted, #7A4B33));
-    background: var(--card, var(--surface, #F8F2E4));
-    border: 1px solid var(--border, rgba(61, 28, 8, 0.12));
-    border-radius: 999px; padding: 6px 11px;
-  }
-  .chip:hover { color: var(--fg, var(--ink, #2A1208)); border-color: var(--accent, #9A3D04); text-decoration: none; }
-
-  .pagination {
-    display: flex; align-items: center; justify-content: space-between; gap: 12px;
-    margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--border, rgba(61, 28, 8, 0.12));
-  }
-  .page-current { font-size: 13px; color: var(--fg-faint, var(--ink-faint, rgba(42, 18, 8, 0.38))); }
-</style>

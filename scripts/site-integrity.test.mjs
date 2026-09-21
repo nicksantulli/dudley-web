@@ -163,3 +163,18 @@ test('client work has attribution and a tagged store action without a broken det
   assert.match(band, /id6779785617\?pt=128970277&(?:amp;)?ct=/);
   assert.doesNotMatch(band, /href="\/apps\/dude-wheres-this-house\//);
 });
+
+test('app pages expose pricing, account, offline, and privacy facts', () => {
+  const html = readFileSync(resolve('dist/apps/last-human/index.html'), 'utf8');
+  for (const label of ['Pricing', 'Account', 'Offline', 'Privacy']) {
+    assert.match(html, new RegExp(`>${label}<`));
+  }
+  assert.match(html, /Live on the App Store/);
+});
+
+test('answer articles lead with a summary and provenance', () => {
+  const html = readFileSync(resolve('dist/blog/can-iphone-apps-see-your-contacts/index.html'), 'utf8');
+  assert.match(html, /class="answer-summary"/);
+  assert.match(html, /Written by Nicholas Santulli/);
+  assert.match(html, /<time/);
+});

@@ -94,7 +94,7 @@ const schema = faqSchema
             )}
             {post.reviewedBy && <><span class="sep">·</span><span>Reviewed by {post.reviewedBy}</span></>}
           </p>
-          <p class="post-dek">{post.answerSummary ?? post.description}</p>
+          <p class="answer-summary">{post.answerSummary ?? post.description}</p>
           <nav class="post-tags" aria-label="Topics and labels">
             {topicLinks.map((topic) => (
               <a class="tag" href={rel(`/blog/topics/${topic.slug}/`)}>{topic.title}</a>
@@ -121,6 +121,7 @@ const schema = faqSchema
         }
         blurb={`Liked this? ${cta.name} ${cta.id ? 'is free on the App Store.' : 'is launching on the App Store soon.'}`}
       />
+      <p class="app-promotion-disclosure">Dudley Development makes the app mentioned above. The editorial answer is written to stand on its own.</p>
 
       <FAQ items={post.faq} />
       <InternalLinks pages={related} heading="Keep reading" />
