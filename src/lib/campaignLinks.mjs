@@ -489,6 +489,15 @@ export const LLMS_APP_STORE_TOKENS = Object.freeze({
   '6808782611': LAST_HUMAN_ASC_TOKENS.llms,
 });
 
+export const HOME_APP_STORE_TOKENS = Object.freeze({
+  '6780704282': VIBERATER_ASC_TOKENS.home,
+  '6780714565': TABLE_TALK_ASC_TOKENS.homeCard,
+  '6775539250': POWELL_PROWL_ASC_TOKENS.homeCard,
+  '6780714383': ECONBYTE_ASC_TOKENS.homeCard,
+  '6779785617': DUDE_WHERES_ASC_TOKENS.homeCard,
+  '6808782611': LAST_HUMAN_ASC_TOKENS.homeCard,
+});
+
 // ---------------------------------------------------------------------------
 // Token generators for blog post CTAs
 // ---------------------------------------------------------------------------

@@ -148,3 +148,18 @@ test('homepage ships no Astro hydration', () => {
   const home = readFileSync(resolve('dist/index.html'), 'utf8');
   assert.doesNotMatch(home, /astro-island|client:(?:load|idle|visible|media|only)/);
 });
+
+test('homepage uses the approved product-first message', () => {
+  const home = readFileSync(resolve('dist/index.html'), 'utf8');
+  assert.match(home, /Pick an app\. See what happens\./);
+  assert.match(home, /Games, conversation starters, and useful things for iPhone\./);
+  assert.doesNotMatch(home, /Why Dudley|Polish is the point|feature-icon|class="grad"/);
+});
+
+test('client work has attribution and a tagged store action without a broken detail link', () => {
+  const home = readFileSync(resolve('dist/index.html'), 'utf8');
+  const band = home.match(/<section[^>]+data-app="dude-wheres-this-house"[\s\S]*?<\/section>/)?.[0] ?? '';
+  assert.match(band, /Built for HomeLight|Created for HomeLight/);
+  assert.match(band, /id6779785617\?pt=128970277&(?:amp;)?ct=/);
+  assert.doesNotMatch(band, /href="\/apps\/dude-wheres-this-house\//);
+});

@@ -1,42 +1,34 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import { rel, ORIGIN, APP_STORE, SUPPORT_EMAIL, abs } from '../consts';
-import {
-  appStoreCampaignUrl,
-  VIBERATER_ASC_TOKENS,
-  TABLE_TALK_ASC_TOKENS,
-  POWELL_PROWL_ASC_TOKENS,
-  ECONBYTE_ASC_TOKENS,
-  DUDE_WHERES_ASC_TOKENS,
-  LAST_HUMAN_ASC_TOKENS,
-} from '../lib/campaignLinks.mjs';
-import { getPublishedPosts, formatDate } from '../lib/blog';
+import AppPosterBand from '../components/AppPosterBand.astro';
+import AnswerCard from '../components/AnswerCard.astro';
+import { ORIGIN, SUPPORT_EMAIL, abs, rel } from '../consts';
+import { appStoreCampaignUrl, HOME_APP_STORE_TOKENS } from '../lib/campaignLinks.mjs';
+import { getPublishedPosts } from '../lib/blog';
 
-const allApps = (await getCollection('apps')).sort((a, b) => a.data.order - b.data.order);
-// Studio's own apps vs. client work (apps built for a partner — see `developedFor`).
-const apps = allApps.filter((a) => !a.data.developedFor);
-const clientApps = allApps.filter((a) => a.data.developedFor);
+const allApps = await getCollection('apps');
+const order = ['last-human', 'table-talk', 'vibe-rater', 'econbyte', 'monetary-policy-independence-day'];
+const rank = new Map(order.map((slug, index) => [slug, index]));
+const ownedLive = allApps
+  .filter((app) => !app.data.developedFor && app.data.status === 'live')
+  .sort((a, b) => (rank.get(a.slug) ?? 99) - (rank.get(b.slug) ?? 99));
+const upcoming = allApps
+  .filter((app) => !app.data.developedFor && app.data.status !== 'live')
+  .sort((a, b) => a.data.order - b.data.order);
+const clientApps = allApps
+  .filter((app) => app.data.developedFor)
+  .sort((a, b) => a.data.order - b.data.order);
 
-// Every public App Store card link must carry pt + ct for attribution hygiene.
-// Each placement gets its own stable, unique ct — never shared across surfaces.
-const HOME_CARD_TOKENS: Record<string, string> = {
-  [APP_STORE.tableTalk]:                    TABLE_TALK_ASC_TOKENS.homeCard,
-  [APP_STORE.vibeRater]:                    VIBERATER_ASC_TOKENS.home,
-  [APP_STORE.monetaryPolicyIndependenceDay]: POWELL_PROWL_ASC_TOKENS.homeCard,
-  [APP_STORE.econByte]:                     ECONBYTE_ASC_TOKENS.homeCard,
-  [APP_STORE.dudeWheresThisHouse]:          DUDE_WHERES_ASC_TOKENS.homeCard,
-  [APP_STORE.lastHuman]:                    LAST_HUMAN_ASC_TOKENS.homeCard,
-};
 const storeUrlFor = (app: any): string => {
-  const id: string = app.data.appStoreId;
+  const id = app.data.appStoreId as string;
   if (!id) return '';
-  const token = HOME_CARD_TOKENS[id];
-  return token ? appStoreCampaignUrl(id, token) : '';
+  const token = HOME_APP_STORE_TOKENS[id];
+  if (!token) throw new Error(`Missing homepage campaign token for ${app.data.name} (${id})`);
+  return appStoreCampaignUrl(id, token);
 };
 
-const posts = (await getPublishedPosts()).slice(0, 3);
-
+const posts = (await getPublishedPosts()).slice(0, 4);
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -45,251 +37,119 @@ const schema = {
   url: ORIGIN,
   publisher: { '@id': abs('/#organization') },
 };
-const description =
-  'Games, conversation starters, and useful things for iPhone, including Last Human, Table Talk, VibeRater Social, EconByte, and Powell Prowl.';
-
-const values = [
-  {
-    icon: '🎁',
-    title: 'Free to download',
-    body: 'Every app is free. No subscription gatekeeping the features — paid upgrades (like Remove Ads) are optional.',
-  },
-  {
-    icon: '🔒',
-    title: 'Privacy-first',
-    body: 'Each policy spells out what stays on your device, what reaches a service, and why. No cross-app tracking prompts.',
-  },
-  {
-    icon: '📣',
-    title: 'Honest about ads',
-    body: 'Our free apps are ad-supported through AdMob, requested as non-personalized, and disclosed plainly.',
-  },
-  {
-    icon: '✨',
-    title: 'Polish is the point',
-    body: 'Tight controls, real haptics, and a sense of humor — details that make an app feel made, not generated.',
-  },
-];
+const description = 'Games, conversation starters, and useful things for iPhone, including Last Human, Table Talk, VibeRater Social, EconByte, and Powell Prowl.';
 ---
-<Base title="Dudley Development — iOS apps with character" description={description} path="/" schema={schema}>
+<Base title="Dudley Development — iPhone games and apps" description={description} path="/" schema={schema}>
   <main>
-    <!-- ---------- Hero — Table Talk September GTM ---------- -->
-    <section class="hero">
-      <div class="wrap">
-        <div class="hero-inner">
-          <span class="eyebrow">New from Dudley Development</span>
-          <h1>Put the phones down.<br /><span class="grad">Start the talk.</span></h1>
-          <p class="lede">
-            Table Talk is 420 hand-written conversation-starter cards for dinner tables,
-            first dates, friend groups, and work teams. Free on iPhone. No account.
-            Works offline, always.
-          </p>
-          <div class="actions">
-            <a
-              class="btn primary"
-              href={appStoreCampaignUrl(APP_STORE.tableTalk, TABLE_TALK_ASC_TOKENS.homeHero)}
-              rel="noopener"
-              aria-label="Download Table Talk: Conversation Cards on the App Store"
-            >Download free on the App Store</a>
-            <a class="btn secondary" href={rel('/apps/table-talk/')}>Learn more</a>
-          </div>
-          <ul class="hero-facts">
-            <li>420 hand-written prompts</li>
-            <li>Free to download</li>
-            <li>No account, works offline</li>
-          </ul>
-        </div>
+    <section class="home-intro">
+      <div class="wrap home-intro-inner">
+        <h1>Pick an app. See what happens.</h1>
+        <p>Games, conversation starters, and useful things for iPhone.</p>
       </div>
     </section>
 
-    <!-- ---------- The apps ---------- -->
-    <section id="apps">
-      <div class="wrap">
-        <div class="section-head split">
-          <div class="section-head-text">
-            <h2>The apps</h2>
-            <p class="sub">Free on the App Store. Clear privacy choices. No subscriptions.</p>
-          </div>
-          <a class="btn ghost small" href={rel('/about/')}>About the studio</a>
-        </div>
+    <div id="apps" class="poster-wall">
+      {ownedLive.map((app, index) => (
+        <AppPosterBand
+          slug={app.slug}
+          name={app.data.name}
+          headline={app.data.posterHeadline}
+          description={app.data.description}
+          icon={app.data.icon}
+          facts={app.data.posterFacts}
+          status={app.data.status}
+          storeHref={storeUrlFor(app)}
+          detailHref={`/apps/${app.slug}/`}
+          art={app.data.ogImage}
+          reverse={index % 2 === 1}
+        />
+      ))}
+    </div>
 
-        <ul class="apps">
-          {apps.map((app) => {
-            const url = storeUrlFor(app);
-            const live = app.data.status === 'live' && !!url;
-            const hasPage = app.data.landingPage !== false;
-            return (
-              <li class="app-card">
-                <div class="top">
-                  <img
-                    class="icon"
-                    src={rel(app.data.icon)}
-                    alt={`${app.data.name} app icon`}
-                    width="60" height="60" loading="lazy" decoding="async"
-                  />
-                  <div>
-                    <h3>{app.data.name}</h3>
-                    <p class="tagline">{app.data.tagline}</p>
-                  </div>
-                </div>
-                <div class="card-meta">
-                  <span class={`badge ${live ? 'live' : 'soon'}`}>
-                    <span class="dot"></span> {live ? 'Live' : 'Coming soon'}
-                  </span>
-                  <span class="partner-tag">{app.data.category}</span>
-                </div>
-                <p class="desc">{app.data.description}</p>
-                <div class="actions">
-                  {live && (
-                    <a
-                      class="btn app-store-badge compact"
-                      href={url}
-                      rel="noopener"
-                      aria-label={`Download ${app.data.name} on the App Store`}
-                    >
-                      <span class="top">Download on the</span>
-                      <span class="bottom">App Store</span>
-                    </a>
-                  )}
-                  {hasPage && (
-                    <a class={`btn${live ? '' : ' primary'}`} href={rel(`/apps/${app.slug}/`)}>
-                      Learn more<span class="sr-only"> about {app.data.name}</span>
-                    </a>
-                  )}
-                  {!live && !hasPage && <span class="btn disabled" aria-disabled="true">Coming soon</span>}
-                </div>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </section>
-
-    <!-- ---------- Client work ---------- -->
-    {clientApps.length > 0 && (
-      <section id="client-work" class="alt-band">
-        <div class="wrap">
-          <div class="section-head">
-            <h2>Client work</h2>
-            <p class="sub">Apps we design and build for partners, under their brand. Have one in mind? <a href={rel('/contact/?topic=build-an-app')}>Tell us about it →</a></p>
-          </div>
-
-          <ul class="apps">
-            {clientApps.map((app) => {
-              const url = storeUrlFor(app);
-              const live = app.data.status === 'live' && !!url;
-              const hasPage = app.data.landingPage !== false;
-              return (
-                <li class="app-card">
-                  <div class="top">
-                    <img
-                      class="icon"
-                      src={rel(app.data.icon)}
-                      alt={`${app.data.name} app icon`}
-                      width="60" height="60" loading="lazy" decoding="async"
-                    />
-                    <div>
-                      <h3>{app.data.name}</h3>
-                      <p class="tagline">{app.data.tagline}</p>
-                    </div>
-                  </div>
-                  <div class="card-meta">
-                    <span class={`badge ${live ? 'live' : 'soon'}`}>
-                      <span class="dot"></span> {live ? 'Live' : 'Coming soon'}
-                    </span>
-                    <span class="partner-tag">Created for {app.data.developedFor}</span>
-                  </div>
-                  <p class="desc">{app.data.description}</p>
-                  <div class="actions">
-                    {live && (
-                      <a
-                        class="btn app-store-badge compact"
-                        href={url}
-                        rel="noopener"
-                        aria-label={`Download ${app.data.name} on the App Store`}
-                      >
-                        <span class="top">Download on the</span>
-                        <span class="bottom">App Store</span>
-                      </a>
-                    )}
-                    {hasPage && (
-                      <a class={`btn${live ? '' : ' primary'}`} href={rel(`/apps/${app.slug}/`)}>
-                        Learn more<span class="sr-only"> about {app.data.name}</span>
-                      </a>
-                    )}
-                    {!live && !hasPage && <span class="btn disabled" aria-disabled="true">Coming soon</span>}
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </section>
-    )}
-
-    <!-- ---------- Latest from the blog ---------- -->
     {posts.length > 0 && (
-      <section id="blog">
+      <section class="answers-band" aria-labelledby="latest-answers">
         <div class="wrap">
-          <div class="section-head split">
-            <div class="section-head-text">
-              <h2>Latest from the blog</h2>
-              <p class="sub">Plain-English answers about phones, photos, privacy, and the internet's weirder corners.</p>
+          <div class="editorial-head">
+            <div>
+              <p class="section-label">The Dudley Blog</p>
+              <h2 id="latest-answers">Straight answers, useful context.</h2>
             </div>
-            <a class="btn ghost small" href={rel('/blog/')}>All posts</a>
+            <a href={rel('/blog/')}>Read every answer</a>
           </div>
-
-          <ul class="post-list cols-3">
+          <div class="answer-grid">
             {posts.map((post) => (
-              <li class="post-card">
-                <a class="post-card-link" href={rel(`/blog/${post.slug}/`)}>
-                  <time datetime={post.data.publishDate.toISOString().slice(0, 10)}>
-                    {formatDate(post.data.publishDate)}
-                  </time>
-                  <h3>{post.data.title}</h3>
-                  <p>{post.data.description}</p>
-                </a>
-              </li>
+              <AnswerCard
+                title={post.data.title}
+                description={post.data.answerSummary ?? post.data.description}
+                href={`/blog/${post.slug}/`}
+                date={post.data.publishDate}
+                topic={post.data.category}
+              />
             ))}
-          </ul>
+          </div>
         </div>
       </section>
     )}
 
-    <!-- ---------- Why Dudley ---------- -->
-    <section id="why-dudley" class="alt-band">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Why Dudley</h2>
-          <p class="sub">Built honestly, shipped carefully — the same four rules on every app.</p>
+    {upcoming.length > 0 && (
+      <section class="catalog-heading" aria-labelledby="next-from-dudley">
+        <div class="wrap">
+          <p class="section-label">In the works</p>
+          <h2 id="next-from-dudley">Next from Dudley</h2>
         </div>
+      </section>
+    )}
+    {upcoming.map((app, index) => (
+      <AppPosterBand
+        slug={app.slug}
+        name={app.data.name}
+        headline={app.data.posterHeadline}
+        description={app.data.description}
+        icon={app.data.icon}
+        facts={app.data.posterFacts}
+        status={app.data.status}
+        detailHref={app.data.landingPage === false ? undefined : `/apps/${app.slug}/`}
+        art={app.data.ogImage}
+        reverse={index % 2 === 0}
+      />
+    ))}
 
-        <ul class="feature-grid cols-4">
-          {values.map((v) => (
-            <li class="feature">
-              <span class="feature-icon" aria-hidden="true">{v.icon}</span>
-              <h3>{v.title}</h3>
-              <p>{v.body}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+    {clientApps.length > 0 && (
+      <section class="catalog-heading client-heading" aria-labelledby="built-for-others">
+        <div class="wrap">
+          <p class="section-label">Client work</p>
+          <h2 id="built-for-others">Built for others</h2>
+          <p>Products designed and built for partners under their brand.</p>
+        </div>
+      </section>
+    )}
+    {clientApps.map((app, index) => (
+      <AppPosterBand
+        slug={app.slug}
+        name={app.data.name}
+        headline={app.data.posterHeadline}
+        description={app.data.description}
+        icon={app.data.icon}
+        facts={app.data.posterFacts}
+        status={app.data.status}
+        storeHref={storeUrlFor(app)}
+        detailHref={app.data.landingPage === false ? undefined : `/apps/${app.slug}/`}
+        developedFor={app.data.developedFor}
+        art={app.data.ogImage}
+        reverse={index % 2 === 1}
+      />
+    ))}
 
-    <!-- ---------- Contact ---------- -->
-    <section id="contact">
-      <div class="wrap">
-        <div class="cta-block">
-          <h2>Questions, bugs, or an idea?</h2>
-          <p>
-            Send us a note and it lands in the studio inbox — usually answered within a couple of days.
-            Already using one of our apps? Support has the quick answers.
-          </p>
-          <div class="actions">
-            <a class="btn primary" href={rel('/contact/')}>Get in touch</a>
-            <a class="btn" href={rel('/support/')}>Visit support</a>
-            <a class="btn ghost" href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
-          </div>
+    <section class="home-help" aria-labelledby="need-a-hand">
+      <div class="wrap home-help-inner">
+        <div>
+          <p class="section-label">Support</p>
+          <h2 id="need-a-hand">Need a hand, or have an app in mind?</h2>
+        </div>
+        <div class="home-help-actions">
+          <a href={rel('/support/')}>Get app support</a>
+          <a href={rel('/contact/')}>Start a conversation</a>
+          <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
         </div>
       </div>
     </section>

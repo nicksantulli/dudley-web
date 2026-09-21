@@ -12,7 +12,7 @@
  *   2a. No duplicate placement tokens (ct) on the same page.
  *   2b. No static ct used on pages outside its registered path pattern.
  *   3.  No ppid parameter on any App Store link.
- *   4.  Table Talk is the first app card on the homepage.
+ *   4.  Last Human is the first live Dudley product on the homepage.
  *   5.  No "no paywall" language in built HTML.
  *   6.  No "36 lessons" Beat the Dealer promises in built HTML.
  *   7.  No Dudley Instagram/TikTok profile links in built HTML.
@@ -253,15 +253,13 @@ test('no ppid parameter on any App Store link', () => {
   assert.deepEqual(failures, [], `Unexpected ppid on App Store links:\n${failures.join('\n')}`);
 });
 
-// ── Test 4: Table Talk is first app card on homepage ──────────────────────
+// ── Test 4: Last Human leads the live product wall ────────────────────────
 
-test('Table Talk is the first app card on the homepage', () => {
-  const home = pages.find((p) => p.rel === '/index.html');
-  assert.ok(home, 'dist/index.html not found');
-  const firstCardMatch = home.html.match(/<li class="app-card"[\s\S]*?<h3>([\s\S]*?)<\/h3>/);
-  assert.ok(firstCardMatch, 'No app card found on homepage');
-  const cardName = firstCardMatch[1].trim();
-  assert.ok(cardName.includes('Table Talk'), `Expected first app card to be "Table Talk…", got "${cardName}"`);
+test('Last Human is the first live Dudley product', () => {
+  const home = pages.find((p) => p.rel === '/index.html')?.html ?? '';
+  const lastHuman = home.indexOf('data-app="last-human"');
+  const tableTalk = home.indexOf('data-app="table-talk"');
+  assert.ok(lastHuman >= 0 && tableTalk > lastHuman);
 });
 
 // ── Test 5: No "no paywall" language ──────────────────────────────────────
