@@ -8,7 +8,7 @@ const description = 'Privacy policies for Dudley Development apps.';
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/')}>← Home</a>
       <h1>Privacy</h1>
-      <p class="updated">Effective date: September 7, 2026 · One policy per app — pick yours below.</p>
+      <p class="updated">Effective date: September 21, 2026 · One policy per app — pick yours below.</p>
 
       <p>
         {LEGAL_NAME} makes several separate apps, and they don't all collect the same things, so there
@@ -64,10 +64,16 @@ const description = 'Privacy policies for Dudley Development apps.';
               <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Google AdMob, non-personalized, no ATT prompt, plus an optional rewarded ad to continue a run</td>
             </tr>
             <tr>
-              <td style="padding:8px 10px 8px 0;">Beat the Dealer: Card Counting</td>
-              <td style="padding:8px 10px;">Yes when configured (Sentry)</td>
-              <td style="padding:8px 10px;">Opt-in only (PostHog, off until Enable Optional Analytics)</td>
-              <td style="padding:8px 10px;">Google AdMob, non-personalized, no ATT prompt; no ads in EEA/UK/CH</td>
+              <td style="padding:8px 10px 8px 0; border-bottom:1px solid var(--border, #222);">Beat the Dealer: Card Counting</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Yes when configured (Sentry)</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Opt-in only (PostHog, off until Enable Optional Analytics)</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Google AdMob, non-personalized, no ATT prompt; no ads in EEA/UK/CH</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 10px 8px 0;">Packed Yet? Trip Checklist</td>
+              <td style="padding:8px 10px;">No</td>
+              <td style="padding:8px 10px;">No</td>
+              <td style="padding:8px 10px;">Google AdMob, non-personalized, no ATT prompt; no ads in EEA/UK/CH or unknown regions</td>
             </tr>
           </tbody>
         </table>
@@ -113,6 +119,13 @@ const description = 'Privacy policies for Dudley Development apps.';
           <a class="row" href={rel('/privacy/beat-the-dealer')}>
             <img src={rel('/assets/beat-the-dealer-icon.png')} alt="Beat the Dealer: Card Counting app icon" width="44" height="44" loading="lazy" />
             <span class="meta"><b>Beat the Dealer: Card Counting</b><span>Privacy policy</span></span>
+            <span class="chev">→</span>
+          </a>
+        </li>
+        <li>
+          <a class="row" href={rel('/privacy/packed-yet')}>
+            <img src={rel('/assets/packed-yet-icon.svg')} alt="Packed Yet? Trip Checklist app icon" width="44" height="44" loading="lazy" />
+            <span class="meta"><b>Packed Yet? Trip Checklist</b><span>Privacy policy</span></span>
             <span class="chev">→</span>
           </a>
         </li>
