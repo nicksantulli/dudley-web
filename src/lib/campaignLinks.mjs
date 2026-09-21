@@ -350,6 +350,18 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  {
+    ct: 'lh-web-privacy-sep26-v1',
+    appId: '6808782611',
+    surface: '/privacy/last-human/ launch status link',
+    path: '/privacy/last-human/',
+    channel: 'web',
+    ppid: null,
+    registeredAt: '2026-09-21',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
 ]);
 
 // ---------------------------------------------------------------------------
@@ -478,6 +490,7 @@ export const LAST_HUMAN_ASC_TOKENS = Object.freeze({
   homeCard: 'lh-web-card-sep26-v1',
   appDetail: 'lh-web-app-sep26-v1',
   llms: 'lh-web-llms-sep26-v1',
+  privacy: 'lh-web-privacy-sep26-v1',
 });
 
 export const LLMS_APP_STORE_TOKENS = Object.freeze({

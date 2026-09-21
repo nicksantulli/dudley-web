@@ -80,6 +80,7 @@ test('registers unique Last Human tokens for each launch surface', () => {
     homeCard: 'lh-web-card-sep26-v1',
     appDetail: 'lh-web-app-sep26-v1',
     llms: 'lh-web-llms-sep26-v1',
+    privacy: 'lh-web-privacy-sep26-v1',
   });
 
   for (const token of Object.values(LAST_HUMAN_ASC_TOKENS)) {

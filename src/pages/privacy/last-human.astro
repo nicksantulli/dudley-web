@@ -1,65 +1,119 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { rel, SUPPORT_EMAIL, LEGAL_NAME } from '../../consts';
+import { APP_STORE, rel, SUPPORT_EMAIL, LEGAL_NAME } from '../../consts';
+import { appStoreCampaignUrl, LAST_HUMAN_ASC_TOKENS } from '../../lib/campaignLinks.mjs';
 const description = `Privacy policy for Last Human: Dodge the Bots by ${LEGAL_NAME}.`;
+const appStoreHref = appStoreCampaignUrl(APP_STORE.lastHuman, LAST_HUMAN_ASC_TOKENS.privacy);
 ---
 <Base title="Privacy Policy · Last Human: Dodge the Bots" description={description} path="/privacy/last-human">
   <main class="page">
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/privacy/')}>← All privacy policies</a>
       <h1>Privacy Policy</h1>
-      <p class="updated">Last Human: Dodge the Bots · Last updated September 1, 2026</p>
+      <p class="updated">Last Human: Dodge the Bots · Effective date: September 21, 2026</p>
 
       <p>
-        <strong>Last Human is coming soon and not yet available on the App Store.</strong> This policy
-        describes the app as designed and will be finalized against the shipped build before launch.
+        <strong><a href={appStoreHref}>Last Human is available on the App Store.</a></strong>
+        This policy describes version 1.0 as shipped.
       </p>
 
       <h2>The short version</h2>
       <p>
-        {LEGAL_NAME} is building Last Human as a free arcade game supported by ads, matching the privacy
-        practice already shipped in our other apps. We don't plan to run accounts, analytics, or trackers
-        of our own, and we won't see your personal information. Gameplay and high scores are designed to
-        stay on your device.
+        {LEGAL_NAME} operates Last Human, a free arcade game supported by ads. There are no accounts,
+        and your progress, high scores, settings, and purchase state stay on your device. The app sends
+        limited anonymous usage analytics through PostHog and anonymous crash reports through Sentry.
+        Google AdMob serves non-personalized ads. None of these services is used to track you across
+        other companies' apps or websites.
       </p>
 
       <h2>What stays on your device</h2>
       <ul>
-        <li>Your persistent high score.</li>
-        <li>Your app settings, including purchase/ads state.</li>
+        <li>Your unlocked floors, stars, high scores, and other gameplay progress.</li>
+        <li>Your app settings, analytics preference, and Remove Ads purchase state.</li>
       </ul>
       <p>
-        This information is designed to be stored locally on your device. We do not plan to receive it.
-        Deleting the app removes local app data from your device.
+        This information is stored locally on your device. We do not receive your score, progress map,
+        or anything you type. Deleting the app removes its local app data from your device; App Store
+        purchase records remain with Apple so eligible purchases can be restored.
+      </p>
+
+      <h2>Usage analytics (PostHog) — on by default, Settings opt-out</h2>
+      <p>
+        Last Human sends a small set of product events: app opened, floor started, completed, or failed,
+        Remove Ads purchased or restored, and Settings opened. The events use bounded values such as a
+        floor number, attempt-count range, star count, and failure reason. They do not include free text,
+        exact scores, your progress map, transaction IDs, advertising identifiers, or contact information.
+      </p>
+      <ul>
+        <li>
+          Analytics uses a random, app-specific installation ID shown in Settings. It is not tied to a
+          Dudley account because Last Human has no accounts.
+        </li>
+        <li>
+          Turn off <strong>Share anonymous usage analytics</strong> in Settings to stop new events,
+          clear the unsent queue on your device, and discard that ID. Turning analytics back on creates
+          a new ID.
+        </li>
+        <li>
+          Sent events are retained for <strong>90 days</strong> as individual records and up to
+          <strong>13 months</strong> as aggregated statistics. To request deletion of sent events, copy
+          the Analytics ID before turning analytics off and email
+          <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+        </li>
+      </ul>
+
+      <h2>Crash reporting (Sentry)</h2>
+      <p>
+        If Last Human crashes, Sentry can receive an anonymous crash report containing the stack trace
+        and coarse technical details such as the app version, iOS major version, device class, and
+        lifecycle state. Crash reporting does not include a user profile, screenshots, view hierarchy,
+        gameplay progress, scores, or advertising state. Crash reports are retained for
+        <strong>30 days</strong>.
       </p>
 
       <h2>Advertising (Google AdMob)</h2>
       <p>
-        The free version is planned to show an interstitial ad between levels. Ads are expected to be
-        served by <strong>Google AdMob</strong>, a third-party advertising network — the same provider
-        used across our other apps. To serve ads, Google may collect a device identifier for advertising
-        purposes; this is not linked to your identity and is not used to track you across other apps or
-        websites. We do not receive, store, or link any of this to you.
+        Interstitial ads can appear on the corporate memo screen between floors, never during gameplay.
+        One optional rewarded ad can also let you continue a run. Ads are served by
+        <strong>Google AdMob</strong>, a third-party advertising network. Last Human requests
+        <strong>non-personalized</strong> ads, does not request Apple's cross-app tracking permission,
+        and does not request ads in the EEA or UK. Google may still process device, coarse location,
+        ad-interaction, performance, and diagnostic information to provide and measure ads. Dudley does
+        not join that information with the app's analytics or use it to build a profile of you.
       </p>
       <ul>
-        <li>How Google uses this data is described in <a href="https://policies.google.com/technologies/ads">Google's advertising policy</a> and <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</li>
-        <li>The planned Remove Ads purchase ($0.99) would remove ads from the app.</li>
+        <li>
+          How Google uses this data is described in
+          <a href="https://policies.google.com/technologies/ads">Google's advertising policy</a> and
+          <a href="https://policies.google.com/privacy">Google's privacy policy</a>.
+        </li>
+        <li>
+          A one-time Remove Ads purchase at the price shown in the app removes between-floor
+          interstitial ads. The optional watch-to-continue ad remains available once per run.
+        </li>
       </ul>
+
+      <h2>Used to track you</h2>
+      <p>
+        None of the data described on this page is used to track you across other companies' apps or
+        websites, linked to your identity, or combined with data from a data broker. We do not sell
+        your personal data.
+      </p>
 
       <h2>Children</h2>
       <p>
-        We do not plan to knowingly collect any data from anyone, including children under 13. There are
-        no accounts, profiles, or in-app messaging planned for this app.
+        Last Human is not directed at children, and we do not knowingly collect personal data from
+        anyone under 13. The app has no accounts, profiles, chat, or in-app messaging.
       </p>
 
       <h2>Changes</h2>
       <p>
-        This policy will be updated to match the shipped app before Last Human launches, and any material
-        change after that will be posted at this URL with an updated date above.
+        If this policy changes materially, the new version will be posted at this URL with an updated
+        effective date above.
       </p>
 
       <h2>Contact</h2>
-      <p>Questions? Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
+      <p>Questions or a data request? Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
     </div>
   </main>
 </Base>

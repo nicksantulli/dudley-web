@@ -107,6 +107,17 @@ test('Last Human live facts agree across HTML and llms.txt', () => {
   }
 });
 
+test('Last Human privacy policy describes the shipped app, not a pre-launch plan', () => {
+  const html = readFileSync(resolve('dist/privacy/last-human/index.html'), 'utf8');
+  assert.match(html, /Last Human is available on the App Store/);
+  assert.match(html, /version 1\.0 as shipped/);
+  assert.match(html, /PostHog/);
+  assert.match(html, /Sentry/);
+  assert.match(html, /non-personalized/);
+  assert.match(html, /optional watch-to-continue ad remains available once per run/);
+  assert.doesNotMatch(html, /coming soon|not yet available|planned|before launch/i);
+});
+
 test('article schema links a person, publisher, dates, and main entity', () => {
   const html = readFileSync(resolve('dist/blog/can-iphone-apps-see-your-contacts/index.html'), 'utf8');
   assert.match(html, /"@type":"BlogPosting"/);
