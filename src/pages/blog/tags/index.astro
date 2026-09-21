@@ -1,59 +1,40 @@
 ---
 import Base from '../../../layouts/Base.astro';
-import { STUDIO, ORIGIN, rel, abs } from '../../../consts';
-import { getAllTags, tagLabel } from '../../../lib/blog';
+import { rel } from '../../../consts';
+import { getPublishedPosts } from '../../../lib/blog';
+import { eligibleTopicHubs } from '../../../lib/topics';
 
-const tags = await getAllTags();
-// Group alphabetically by first letter for scanability across ~80 topics.
-const groups = new Map<string, typeof tags>();
-for (const t of tags) {
-  const letter = /[a-z]/i.test(t.tag[0]) ? t.tag[0].toUpperCase() : '#';
-  if (!groups.has(letter)) groups.set(letter, []);
-  groups.get(letter)!.push(t);
-}
-const sortedGroups = [...groups.entries()].sort(([a], [b]) => a.localeCompare(b));
-for (const [, list] of sortedGroups) list.sort((a, b) => a.tag.localeCompare(b.tag));
+const hubs = eligibleTopicHubs(await getPublishedPosts());
 
 const path = '/blog/tags/';
-const title = 'All Topics';
-const description = `Every topic covered on the Dudley Blog — ${tags.length} tags across our posts on vibe culture, photo privacy, and AI apps.`;
-
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'CollectionPage',
-  name: `${title} — The Dudley Blog`,
-  description,
-  url: abs(path),
-  isPartOf: { '@type': 'Blog', name: 'The Dudley Blog', url: abs('/blog/') },
-  publisher: { '@type': 'Organization', name: STUDIO, url: ORIGIN },
-};
+const title = 'Legacy Blog Tags';
+const description = 'This compatibility page points old Dudley Blog tag links to the smaller set of maintained topics.';
 ---
-<Base title={`${title} — The Dudley Blog`} description={description} path={path} schema={schema} breadcrumbLeaf="All Topics">
+<Base title={`${title} — The Dudley Blog`} description={description} path={path} robots="noindex,follow" breadcrumbLeaf="Legacy Tags">
   <main class="page">
     <div class="wrap tags-wrap">
       <nav class="crumbs">
         <a href={rel('/')}>Home</a><span class="sep">/</span>
         <a href={rel('/blog/')}>Blog</a><span class="sep">/</span>
-        <span>All Topics</span>
+        <span>Legacy Tags</span>
       </nav>
       <header class="tags-hero">
-        <h1>All Topics</h1>
-        <p>{tags.length} tags across the Dudley Blog. Pick one to see everything we've written on it.</p>
+        <h1>Blog topics moved.</h1>
+        <p>Older tag links still work, but the maintained topic directory is smaller and more useful.</p>
+        <a class="btn" href={rel('/blog/topics/')}>Browse current topics</a>
       </header>
 
-      {sortedGroups.map(([letter, list]) => (
-        <section class="letter-group">
-          <h2>{letter}</h2>
-          <div class="tag-grid">
-            {list.map((t) => (
-              <a class="tag-row" href={rel(`/blog/tags/${t.slug}/`)}>
-                <span class="tag-name">{tagLabel(t.tag)}</span>
-                <span class="tag-count">{t.count}</span>
-              </a>
-            ))}
-          </div>
-        </section>
-      ))}
+      <section class="letter-group">
+        <h2>Maintained topics</h2>
+        <div class="tag-grid">
+          {hubs.map((hub) => (
+            <a class="tag-row" href={rel(`/blog/topics/${hub.slug}/`)}>
+              <span class="tag-name">{hub.title}</span>
+              <span class="tag-count">{hub.posts.length}</span>
+            </a>
+          ))}
+        </div>
+      </section>
     </div>
   </main>
 </Base>

@@ -37,3 +37,10 @@ test('Last Human source facts are live', () => {
   assert.match(data, /^appStoreId: "6808782611"$/m);
   assert.doesNotMatch(data, /coming soon/i);
 });
+
+test('topic registry defines the six durable hub slugs', () => {
+  const source = readFileSync(resolve('src/lib/topics.ts'), 'utf8');
+  for (const slug of ['iphone-privacy', 'ai-media', 'internet-culture', 'economics', 'app-store', 'dudley-guides']) {
+    assert.match(source, new RegExp(`['"]${slug}['"]\\s*:`), `missing topic ${slug}`);
+  }
+});

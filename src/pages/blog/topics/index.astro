@@ -1,0 +1,51 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { rel } from '../../../consts';
+import { getPublishedPosts } from '../../../lib/blog';
+import { eligibleTopicHubs } from '../../../lib/topics';
+
+const hubs = eligibleTopicHubs(await getPublishedPosts());
+const path = '/blog/topics/';
+const title = 'Dudley Blog Topics';
+const description = 'Durable guides to iPhone privacy, AI media, internet culture, economics, the App Store, and Dudley apps.';
+---
+<Base title={title} description={description} path={path} breadcrumbLeaf="Topics">
+  <main class="page">
+    <div class="wrap topic-index">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href={rel('/')}>Home</a><span aria-hidden="true">/</span>
+        <a href={rel('/blog/')}>Blog</a><span aria-hidden="true">/</span>
+        <span>Topics</span>
+      </nav>
+      <header class="topic-intro">
+        <h1>Useful topics, not a tag cloud.</h1>
+        <p>{description}</p>
+      </header>
+      <ul class="topic-list">
+        {hubs.map((hub) => (
+          <li>
+            <a href={rel(`/blog/topics/${hub.slug}/`)}>
+              <span><strong>{hub.title}</strong>{hub.description}</span>
+              <span class="count">{hub.posts.length} answers</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .topic-index { max-width: 900px; }
+  .crumbs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; font-size: 13px; }
+  .topic-intro { max-width: 680px; margin-bottom: 32px; }
+  .topic-intro h1 { margin-bottom: 12px; }
+  .topic-intro p { color: var(--ink-muted, #6b4a38); }
+  .topic-list { list-style: none; margin: 0; padding: 0; border-top: 2px solid currentColor; }
+  .topic-list li { border-bottom: 1px solid currentColor; }
+  .topic-list a { display: flex; justify-content: space-between; gap: 24px; padding: 22px 0; color: inherit; }
+  .topic-list strong { display: block; font-size: 20px; margin-bottom: 5px; }
+  .topic-list span:first-child { max-width: 640px; }
+  .count { white-space: nowrap; font-size: 13px; }
+  @media (max-width: 560px) { .topic-list a { display: block; } .count { display: block; margin-top: 10px; } }
+</style>

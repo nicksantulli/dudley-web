@@ -1,49 +1,50 @@
 ---
 import Base from '../../../layouts/Base.astro';
-import { STUDIO, ORIGIN, rel, abs } from '../../../consts';
+import { rel } from '../../../consts';
 import { getPublishedPosts, getAllTags, postTags, tagSlug, tagLabel, formatDate } from '../../../lib/blog';
+import { TOPIC_HUBS, eligibleTopicHubs, topicForLabel, topicsForPost, unmappedLabelsForPost } from '../../../lib/topics';
 
 export async function getStaticPaths() {
   const posts = await getPublishedPosts();
+  const eligibleTopicSlugs = eligibleTopicHubs(posts).map((hub) => hub.slug);
   const tags = await getAllTags(); // already merged/deduped by slug — one static path per topic
   return tags.map(({ tag, slug }) => ({
     params: { tag: slug },
     props: {
       tag,
       posts: posts.filter((p) => postTags(p).some((t) => tagSlug(t) === slug)),
+      eligibleTopicSlugs,
     },
   }));
 }
 
-const { tag, posts } = Astro.props;
+const { tag, posts, eligibleTopicSlugs } = Astro.props;
+const eligibleTopics = new Set(eligibleTopicSlugs);
 const label = tagLabel(tag);
 const path = `/blog/tags/${tagSlug(tag)}/`;
 const title = `${label} — The Dudley Blog`;
 const description = `Every Dudley Development post tagged ${label}. ${posts.length} ${posts.length === 1 ? 'post' : 'posts'}.`;
-
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'CollectionPage',
-  name: title,
-  description,
-  url: abs(path),
-  isPartOf: { '@type': 'Blog', name: 'The Dudley Blog', url: abs('/blog/') },
-  publisher: { '@type': 'Organization', name: STUDIO, url: ORIGIN },
-};
+const mappedTopicCandidate = topicForLabel(tag);
+const mappedTopic = mappedTopicCandidate && eligibleTopics.has(mappedTopicCandidate) ? mappedTopicCandidate : undefined;
+const mappedMeta = mappedTopic ? TOPIC_HUBS[mappedTopic] : null;
 ---
-<Base title={title} description={description} path={path} schema={schema} breadcrumbLeaf={label}>
+<Base title={title} description={description} path={path} robots="noindex,follow" breadcrumbLeaf={label}>
   <main class="page">
     <div class="wrap tag-wrap">
       <nav class="crumbs">
         <a href={rel('/')}>Home</a><span class="sep">/</span>
         <a href={rel('/blog/')}>Blog</a><span class="sep">/</span>
-        <a href={rel('/blog/tags/')}>Topics</a><span class="sep">/</span>
+        <a href={rel('/blog/topics/')}>Topics</a><span class="sep">/</span>
         <span>{label}</span>
       </nav>
       <header class="tag-hero">
         <h1>{label}</h1>
-        <p>{posts.length} {posts.length === 1 ? 'post' : 'posts'} tagged {label}.</p>
-        <a class="all-topics" href={rel('/blog/tags/')}>← All topics</a>
+        <p>This legacy label is kept for old links. Browse the {posts.length} {posts.length === 1 ? 'post' : 'posts'} below.</p>
+        {mappedTopic && mappedMeta ? (
+          <a class="all-topics" href={rel(`/blog/topics/${mappedTopic}/`)}>Go to {mappedMeta.title} →</a>
+        ) : (
+          <a class="all-topics" href={rel('/blog/')}>← Back to the blog</a>
+        )}
       </header>
 
       <ul class="post-grid">
@@ -57,9 +58,10 @@ const schema = {
               <p>{p.data.description}</p>
             </a>
             <div class="post-card-tags">
-              {[...new Set(postTags(p).map(tagLabel))].slice(0, 3).map((t) => (
-                <a class="chip" href={rel(`/blog/tags/${tagSlug(t)}/`)}>{t}</a>
+              {topicsForPost(p, eligibleTopics).slice(0, 2).map((topic) => (
+                <a class="chip" href={rel(`/blog/topics/${topic.slug}/`)}>{topic.title}</a>
               ))}
+              {unmappedLabelsForPost(p).slice(0, 1).map((text) => <span class="chip tag-label">{text}</span>)}
             </div>
           </li>
         ))}

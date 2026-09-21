@@ -3,20 +3,15 @@ import Base from '../../layouts/Base.astro';
 import { STUDIO, ORIGIN, rel, abs } from '../../consts';
 import {
   getPublishedPosts,
-  getAllTags,
-  getTopTags,
   getFeaturedPost,
-  postTags,
-  tagSlug,
-  tagLabel,
   formatDate,
   POSTS_PER_PAGE,
 } from '../../lib/blog';
+import { eligibleTopicHubs, topicsForPost, unmappedLabelsForPost } from '../../lib/topics';
 
 const allPosts = await getPublishedPosts();
-const allTags = await getAllTags();
-const topTags = await getTopTags(8);
-const longTailTags = allTags.slice(topTags.length);
+const topicHubs = eligibleTopicHubs(allPosts);
+const eligibleTopicSlugs = new Set(topicHubs.map((hub) => hub.slug));
 
 const featuredPost = allPosts.length > 0 ? getFeaturedPost(allPosts) : undefined;
 
@@ -59,30 +54,17 @@ const blogSchema = {
         <a class="feed-link" href={rel('/blog/rss.xml')}>RSS feed</a>
       </header>
 
-      {allTags.length > 0 && (
+      {topicHubs.length > 0 && (
         <nav class="browse" aria-label="Browse by topic">
           <span class="browse-label">Browse:</span>
           <div class="browse-strip">
-            {topTags.map((t) => (
-              <a class="chip" href={rel(`/blog/tags/${t.slug}/`)}>
-                {tagLabel(t.tag)} <span class="count">{t.count}</span>
+            {topicHubs.map((hub) => (
+              <a class="chip" href={rel(`/blog/topics/${hub.slug}/`)}>
+                {hub.title} <span class="count">{hub.posts.length}</span>
               </a>
             ))}
-            <a class="chip chip-all" href={rel('/blog/tags/')}>All topics →</a>
+            <a class="chip chip-all" href={rel('/blog/topics/')}>All topics →</a>
           </div>
-
-          {longTailTags.length > 0 && (
-            <details class="more-topics">
-              <summary>More topics ({longTailTags.length})</summary>
-              <div class="more-topics-list">
-                {longTailTags.map((t) => (
-                  <a class="chip" href={rel(`/blog/tags/${t.slug}/`)}>
-                    {tagLabel(t.tag)} <span class="count">{t.count}</span>
-                  </a>
-                ))}
-              </div>
-            </details>
-          )}
         </nav>
       )}
 
@@ -112,8 +94,11 @@ const blogSchema = {
                   <p>{p.data.description}</p>
                 </a>
                 <div class="post-card-tags">
-                  {[...new Set(postTags(p).map(tagLabel))].slice(0, 3).map((label) => (
-                    <a class="chip chip-sm" href={rel(`/blog/tags/${tagSlug(label)}/`)}>{label}</a>
+                  {topicsForPost(p, eligibleTopicSlugs).slice(0, 2).map((topic) => (
+                    <a class="chip chip-sm" href={rel(`/blog/topics/${topic.slug}/`)}>{topic.title}</a>
+                  ))}
+                  {unmappedLabelsForPost(p).slice(0, 1).map((label) => (
+                    <span class="chip chip-sm tag-label">{label}</span>
                   ))}
                 </div>
               </li>

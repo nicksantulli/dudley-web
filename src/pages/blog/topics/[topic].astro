@@ -1,0 +1,76 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { abs, rel } from '../../../consts';
+import { formatDate, getPublishedPosts } from '../../../lib/blog';
+import { eligibleTopicHubs } from '../../../lib/topics';
+
+export async function getStaticPaths() {
+  const hubs = eligibleTopicHubs(await getPublishedPosts());
+  return hubs.map((hub) => ({ params: { topic: hub.slug }, props: { hub } }));
+}
+
+const { hub } = Astro.props;
+const path = `/blog/topics/${hub.slug}/`;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: hub.title,
+  description: hub.description,
+  url: abs(path),
+  isPartOf: { '@type': 'Blog', name: 'The Dudley Blog', url: abs('/blog/') },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: hub.posts.length,
+    itemListElement: hub.posts.map((post: any, index: number) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: abs(`/blog/${post.slug}/`),
+      name: post.data.title,
+    })),
+  },
+};
+---
+<Base title={`${hub.title} — The Dudley Blog`} description={hub.description} path={path} schema={schema} breadcrumbLeaf={hub.title}>
+  <main class="page">
+    <div class="wrap topic-page">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href={rel('/')}>Home</a><span aria-hidden="true">/</span>
+        <a href={rel('/blog/')}>Blog</a><span aria-hidden="true">/</span>
+        <a href={rel('/blog/topics/')}>Topics</a><span aria-hidden="true">/</span>
+        <span>{hub.title}</span>
+      </nav>
+      <header class="topic-intro">
+        <p class="kicker">Dudley Blog topic</p>
+        <h1>{hub.title}</h1>
+        <p>{hub.description}</p>
+        <span>{hub.posts.length} {hub.posts.length === 1 ? 'answer' : 'answers'}</span>
+      </header>
+      <ol class="answer-list">
+        {hub.posts.map((post: any) => (
+          <li>
+            <a href={rel(`/blog/${post.slug}/`)}>
+              <time datetime={post.data.publishDate.toISOString().slice(0, 10)}>{formatDate(post.data.publishDate)}</time>
+              <h2>{post.data.title}</h2>
+              <p>{post.data.description}</p>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .topic-page { max-width: 900px; }
+  .crumbs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; font-size: 13px; }
+  .topic-intro { max-width: 700px; margin-bottom: 36px; }
+  .topic-intro h1 { margin: 4px 0 12px; }
+  .topic-intro > p:not(.kicker) { font-size: 18px; }
+  .kicker { text-transform: uppercase; letter-spacing: .09em; font-size: 12px; font-weight: 800; }
+  .answer-list { list-style: none; margin: 0; padding: 0; border-top: 2px solid currentColor; }
+  .answer-list li { border-bottom: 1px solid currentColor; }
+  .answer-list a { display: block; padding: 22px 0; color: inherit; }
+  .answer-list time { font-size: 13px; }
+  .answer-list h2 { margin: 5px 0 8px; font-size: clamp(20px, 3vw, 28px); }
+  .answer-list p { max-width: 68ch; margin: 0; }
+</style>

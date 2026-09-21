@@ -75,3 +75,16 @@ test('root-relative HTML links resolve to built routes', () => {
     }
   }
 });
+
+test('legacy tag pages are noindex and absent from the page sitemap', () => {
+  const sitemap = readFileSync(resolve('dist/sitemap-0.xml'), 'utf8');
+  assert.doesNotMatch(sitemap, /\/blog\/tags\//);
+  const legacy = readFileSync(resolve('dist/blog/tags/privacy/index.html'), 'utf8');
+  assert.match(legacy, /<meta name="robots" content="noindex,follow"/);
+});
+
+test('an unmapped freeform tag is text, not a dead link', () => {
+  const article = readFileSync(resolve('dist/blog/npc-defense/index.html'), 'utf8');
+  assert.match(article, />Archetype Deep Dive</);
+  assert.doesNotMatch(article, /href="\/blog\/tags\/archetype-deep-dive\//);
+});

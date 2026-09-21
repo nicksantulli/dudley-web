@@ -8,7 +8,7 @@ export interface Props {
   path: string;            // site-relative path, e.g. "/apps/monetary-policy-independence-day/"
   ogImage?: string;        // site-relative or absolute
   schema?: object | null;  // page-specific JSON-LD
-  noindex?: boolean;
+  robots?: 'index,follow' | 'noindex,follow' | 'noindex,nofollow';
   // Human-readable name for the final breadcrumb crumb (the current page). When
   // omitted, the cleaned page title is used. Pass this when the page title is long
   // or differs from how the page reads in a trail (e.g. an app's full tagline).
@@ -18,7 +18,7 @@ export interface Props {
   appBannerId?: string;
 }
 
-const { title, description, path, ogImage = '/assets/dudley-lockup.png', schema = null, noindex = false, breadcrumbLeaf, appBannerId } = Astro.props;
+const { title, description, path, ogImage = '/assets/dudley-lockup.png', schema = null, robots, breadcrumbLeaf, appBannerId } = Astro.props;
 const publicPath = normalizePublicPath(path);
 const canonical = abs(publicPath);
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : abs(ogImage);
@@ -117,7 +117,7 @@ const SOCIAL_ICONS: Record<string, string> = {
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
-  {noindex && <meta name="robots" content="noindex" />}
+  {robots && <meta name="robots" content={robots} />}
   {BING_VERIFICATION && <meta name="msvalidate.01" content={BING_VERIFICATION} />}
   <meta name="theme-color" content="#1C0D06" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#F2E8D5" media="(prefers-color-scheme: light)" />

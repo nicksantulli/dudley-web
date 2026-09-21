@@ -5,7 +5,8 @@
 // paginate() expects a single dynamic route to own every page including the first.
 import Base from '../../layouts/Base.astro';
 import { STUDIO, ORIGIN, rel, abs } from '../../consts';
-import { getPublishedPosts, postTags, tagSlug, tagLabel, formatDate, POSTS_PER_PAGE } from '../../lib/blog';
+import { getPublishedPosts, formatDate, POSTS_PER_PAGE } from '../../lib/blog';
+import { eligibleTopicHubs, topicsForPost, unmappedLabelsForPost } from '../../lib/topics';
 
 export async function getStaticPaths() {
   const posts = await getPublishedPosts();
@@ -18,13 +19,15 @@ export async function getStaticPaths() {
         pageNum: n,
         totalPages,
         posts: posts.slice((n - 1) * POSTS_PER_PAGE, n * POSTS_PER_PAGE),
+        eligibleTopicSlugs: eligibleTopicHubs(posts).map((hub) => hub.slug),
       },
     });
   }
   return paths;
 }
 
-const { pageNum, totalPages, posts } = Astro.props;
+const { pageNum, totalPages, posts, eligibleTopicSlugs } = Astro.props;
+const eligibleTopics = new Set(eligibleTopicSlugs);
 const path = `/blog/${pageNum}/`;
 const title = `The Dudley Blog — Page ${pageNum}`;
 const description = `More posts from the Dudley Blog. Page ${pageNum} of ${totalPages}.`;
@@ -63,8 +66,11 @@ const schema = {
               <p>{p.data.description}</p>
             </a>
             <div class="post-card-tags">
-              {[...new Set(postTags(p).map(tagLabel))].slice(0, 3).map((label) => (
-                <a class="chip chip-sm" href={rel(`/blog/tags/${tagSlug(label)}/`)}>{label}</a>
+              {topicsForPost(p, eligibleTopics).slice(0, 2).map((topic) => (
+                <a class="chip chip-sm" href={rel(`/blog/topics/${topic.slug}/`)}>{topic.title}</a>
+              ))}
+              {unmappedLabelsForPost(p).slice(0, 1).map((label) => (
+                <span class="chip chip-sm tag-label">{label}</span>
               ))}
             </div>
           </li>
