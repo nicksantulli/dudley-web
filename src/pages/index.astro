@@ -12,7 +12,7 @@ const order = ['last-human', 'table-talk', 'vibe-rater', 'econbyte', 'monetary-p
 const rank = new Map(order.map((slug, index) => [slug, index]));
 const ownedLive = allApps
   .filter((app) => !app.data.developedFor && app.data.status === 'live')
-  .sort((a, b) => (rank.get(a.slug) ?? 99) - (rank.get(b.slug) ?? 99));
+  .sort((a, b) => (rank.get(a.id) ?? 99) - (rank.get(b.id) ?? 99));
 const upcoming = allApps
   .filter((app) => !app.data.developedFor && app.data.status !== 'live')
   .sort((a, b) => a.data.order - b.data.order);
@@ -51,7 +51,7 @@ const description = 'Games, conversation starters, and useful things for iPhone,
     <div id="apps" class="poster-wall">
       {ownedLive.map((app, index) => (
         <AppPosterBand
-          slug={app.slug}
+          slug={app.id}
           name={app.data.name}
           headline={app.data.posterHeadline}
           description={app.data.description}
@@ -59,7 +59,7 @@ const description = 'Games, conversation starters, and useful things for iPhone,
           facts={app.data.posterFacts}
           status={app.data.status}
           storeHref={storeUrlFor(app)}
-          detailHref={`/apps/${app.slug}/`}
+          detailHref={`/apps/${app.id}/`}
           art={app.data.ogImage}
           reverse={index % 2 === 1}
         />
@@ -81,7 +81,7 @@ const description = 'Games, conversation starters, and useful things for iPhone,
               <AnswerCard
                 title={post.data.title}
                 description={post.data.answerSummary ?? post.data.description}
-                href={`/blog/${post.slug}/`}
+                href={`/blog/${post.id}/`}
                 date={post.data.publishDate}
                 topic={post.data.category}
               />
@@ -101,14 +101,14 @@ const description = 'Games, conversation starters, and useful things for iPhone,
     )}
     {upcoming.map((app, index) => (
       <AppPosterBand
-        slug={app.slug}
+        slug={app.id}
         name={app.data.name}
         headline={app.data.posterHeadline}
         description={app.data.description}
         icon={app.data.icon}
         facts={app.data.posterFacts}
         status={app.data.status}
-        detailHref={app.data.landingPage === false ? undefined : `/apps/${app.slug}/`}
+        detailHref={app.data.landingPage === false ? undefined : `/apps/${app.id}/`}
         art={app.data.ogImage}
         reverse={index % 2 === 0}
       />
@@ -125,7 +125,7 @@ const description = 'Games, conversation starters, and useful things for iPhone,
     )}
     {clientApps.map((app, index) => (
       <AppPosterBand
-        slug={app.slug}
+        slug={app.id}
         name={app.data.name}
         headline={app.data.posterHeadline}
         description={app.data.description}
@@ -133,7 +133,7 @@ const description = 'Games, conversation starters, and useful things for iPhone,
         facts={app.data.posterFacts}
         status={app.data.status}
         storeHref={storeUrlFor(app)}
-        detailHref={app.data.landingPage === false ? undefined : `/apps/${app.slug}/`}
+        detailHref={app.data.landingPage === false ? undefined : `/apps/${app.id}/`}
         developedFor={app.data.developedFor}
         art={app.data.ogImage}
         reverse={index % 2 === 1}

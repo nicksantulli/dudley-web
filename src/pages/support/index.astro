@@ -28,7 +28,7 @@ const description = 'Support for Dudley Development apps — pick your app for F
       <ul class="policy-list">
         {apps.map((app) => (
           <li>
-            <a class="row" href={rel(`/support/${app.slug}`)}>
+            <a class="row" href={rel(`/support/${app.id}`)}>
               <img src={rel(app.data.icon)} alt={`${app.data.name} app icon`} width="44" height="44" loading="lazy" />
               <span class="meta"><b>{app.data.name}</b><span>Help &amp; FAQs</span></span>
               <span class="chev">→</span>

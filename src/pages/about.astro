@@ -45,7 +45,7 @@ const statusLabel = (s: string) =>
           <li>
             <span class="about-app-name">
               {a.data.landingPage !== false
-                ? <a href={rel(`/apps/${a.slug}/`)}>{a.data.name}</a>
+                ? <a href={rel(`/apps/${a.id}/`)}>{a.data.name}</a>
                 : a.data.name}
             </span>
             <span class="about-app-tagline">{a.data.tagline}</span>

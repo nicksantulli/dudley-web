@@ -47,7 +47,7 @@ const redirectBackTo = abs('/contact/?sent=1');
 const contentApps = (await getCollection('apps')).sort((a, b) => a.data.order - b.data.order);
 const appOptions = [
   { value: 'general', label: 'General' },
-  ...contentApps.map((a) => ({ value: a.slug, label: a.data.name })),
+  ...contentApps.map((a) => ({ value: a.id, label: a.data.name })),
   { value: 'build-an-app', label: 'Build an app for us (custom development)' },
   { value: 'partnerships', label: 'Partnerships & press' },
   { value: 'other', label: 'Other' },

@@ -7,7 +7,7 @@ export async function getStaticPaths() {
   // One support page per app that has support content. Apps without a `support`
   // block (e.g. coming-soon stubs) don't get a page until they add one.
   const apps = (await getCollection('apps')).filter((a) => a.data.support && a.data.support.length > 0);
-  return apps.map((app) => ({ params: { slug: app.slug }, props: { app } }));
+  return apps.map((app) => ({ params: { slug: app.id }, props: { app } }));
 }
 
 const { app } = Astro.props;
@@ -24,7 +24,7 @@ const description = `Support and FAQs for ${data.name} by Dudley Development.`;
 <Base
   title={`Support · ${data.name}`}
   description={description}
-  path={`/support/${app.slug}/`}
+  path={`/support/${app.id}/`}
   ogImage={data.icon}
   breadcrumbLeaf={data.name}
 >

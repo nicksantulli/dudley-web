@@ -50,7 +50,7 @@ const mappedMeta = mappedTopic ? TOPIC_HUBS[mappedTopic] : null;
       <ul class="post-grid">
         {posts.map((p) => (
           <li class="post-card">
-            <a class="post-card-link" href={rel(`/blog/${p.slug}/`)}>
+            <a class="post-card-link" href={rel(`/blog/${p.id}/`)}>
               <time datetime={p.data.publishDate.toISOString().slice(0, 10)}>
                 {formatDate(p.data.publishDate)}
               </time>

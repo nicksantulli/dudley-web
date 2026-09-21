@@ -25,7 +25,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'CollectionPage', na
       <nav class="crumbs" aria-label="Breadcrumb"><a href={rel('/')}>Home</a><span>/</span><a href={rel('/blog/')}>Blog</a><span>/</span><span>Page {pageNum}</span></nav>
       <header class="blog-hero"><p class="section-label">Archive</p><h1>More straight answers.</h1><p>Page {pageNum} of {totalPages}.</p></header>
       <div class="answer-grid">
-        {posts.map((post) => <AnswerCard title={post.data.title} description={post.data.answerSummary ?? post.data.description} href={`/blog/${post.slug}/`} date={post.data.publishDate} topic={post.data.category} />)}
+        {posts.map((post) => <AnswerCard title={post.data.title} description={post.data.answerSummary ?? post.data.description} href={`/blog/${post.id}/`} date={post.data.publishDate} topic={post.data.category} />)}
       </div>
       <nav class="pagination" aria-label="Blog pages">
         <a class="btn" href={pageNum <= 2 ? rel('/blog/') : rel(`/blog/${pageNum - 1}/`)}>← Previous</a>

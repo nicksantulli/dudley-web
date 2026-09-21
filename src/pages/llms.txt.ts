@@ -10,7 +10,7 @@ export async function GET() {
 
   const appLines = apps.map((app) => {
     const data = app.data;
-    const ownedPage = !data.developedFor && data.landingPage !== false ? abs(`/apps/${app.slug}/`) : '';
+    const ownedPage = !data.developedFor && data.landingPage !== false ? abs(`/apps/${app.id}/`) : '';
     const name = ownedPage ? `[${data.name}](${ownedPage})` : data.name;
     const release = data.status === 'live' ? 'Live on the App Store.' : 'Not yet released on the App Store.';
     let store = '';
@@ -28,7 +28,7 @@ export async function GET() {
 
   const blogLines = posts
     .slice(0, 12)
-    .map((p) => `- [${p.data.title}](${abs(`/blog/${p.slug}/`)}): ${p.data.description}`)
+    .map((p) => `- [${p.data.title}](${abs(`/blog/${p.id}/`)}): ${p.data.description}`)
     .join('\n');
 
   const body = `# Dudley Development

@@ -487,9 +487,9 @@ test('Last Human renders as a live 50-floor App Store release across launch surf
   const llmsUrl = 'https://apps.apple.com/us/app/last-human-dodge-the-bots/id6808782611?pt=128970277&ct=lh-web-llms-sep26-v1&mt=8';
   const llms = readFileSync(llmsPath, 'utf-8');
 
-  assert.ok(home.html.includes(homeUrl), 'homepage is missing the Last Human App Store CTA');
+  assert.ok(extractAppStoreHrefs(home.html).includes(homeUrl), 'homepage is missing the Last Human App Store CTA');
   assert.ok(appPage.html.includes('Live on the App Store'), 'Last Human app page is not marked live');
-  assert.ok(appPage.html.includes(appUrl), 'Last Human app page is missing its attributed App Store CTA');
+  assert.ok(extractAppStoreHrefs(appPage.html).includes(appUrl), 'Last Human app page is missing its attributed App Store CTA');
   assert.match(appPage.html, /50 floors/i);
   assert.doesNotMatch(appPage.html, /10 levels/i);
   assert.ok(llms.includes(llmsUrl), 'llms.txt is missing the attributed Last Human App Store link');

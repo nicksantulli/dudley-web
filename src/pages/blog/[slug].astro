@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
 import { getPublishedPosts, postTags, tagSlug } from '../../lib/blog';
 
@@ -8,8 +8,8 @@ export async function getStaticPaths() {
   const archetypes = await getCollection('archetypes');
   // Only apps with a real landing page are linkable (skip "Coming soon" stubs).
   const apps = (await getCollection('apps')).filter((a) => a.data.landingPage !== false);
-  const archBySlug = new Map(archetypes.map((a) => [a.slug, a]));
-  const appBySlug = new Map(apps.map((a) => [a.slug, a]));
+  const archBySlug = new Map(archetypes.map((a) => [a.id, a]));
+  const appBySlug = new Map(apps.map((a) => [a.id, a]));
 
   return posts.map((entry) => {
     const related: { title: string; url: string; description: string }[] = [];
@@ -17,40 +17,40 @@ export async function getStaticPaths() {
     // Link to existing app pages this post references.
     for (const s of entry.data.relatedApps) {
       const app = appBySlug.get(s);
-      if (app) related.push({ title: app.data.name, url: `/apps/${app.slug}/`, description: app.data.tagline });
+      if (app) related.push({ title: app.data.name, url: `/apps/${app.id}/`, description: app.data.tagline });
     }
     // Link to existing archetype pages (skip ones without a page yet).
     for (const s of entry.data.relatedArchetypes) {
       const a = archBySlug.get(s);
-      if (a) related.push({ title: a.data.name, url: `/archetypes/${a.slug}/`, description: a.data.tagline });
+      if (a) related.push({ title: a.data.name, url: `/archetypes/${a.id}/`, description: a.data.tagline });
     }
     // Fill out with other recent posts that share a tag, then any recent post.
     // Matched by slug (not raw string) so case/wording variants of the same tag
     // ("Privacy" vs "privacy", "AI photo apps" vs "ai photo apps") still count
     // as a shared topic — see tagSlug's normalization in lib/blog.ts.
     const tagSlugs = new Set(postTags(entry).map(tagSlug));
-    const others = posts.filter((p) => p.slug !== entry.slug);
+    const others = posts.filter((p) => p.id !== entry.id);
     const ranked = [
       ...others.filter((p) => postTags(p).some((t) => tagSlugs.has(tagSlug(t)))),
       ...others,
     ];
     for (const p of ranked) {
       if (related.length >= 5) break;
-      const url = `/blog/${p.slug}/`;
+      const url = `/blog/${p.id}/`;
       if (related.some((r) => r.url === url)) continue;
       related.push({ title: p.data.title, url, description: p.data.description });
     }
 
     return {
-      params: { slug: entry.slug },
+      params: { slug: entry.id },
       props: { entry, related },
     };
   });
 }
 
 const { entry, related } = Astro.props;
-const { Content } = await entry.render();
-const post = { ...entry.data, slug: entry.slug };
+const { Content } = await render(entry);
+const post = { ...entry.data, slug: entry.id };
 ---
 <BlogPost post={post} related={related}>
   <Content />

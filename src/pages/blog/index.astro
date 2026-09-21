@@ -9,7 +9,7 @@ const allPosts = await getPublishedPosts();
 const topicHubs = eligibleTopicHubs(allPosts);
 const featuredPost = allPosts.length > 0 ? getFeaturedPost(allPosts) : undefined;
 const totalPages = Math.max(1, Math.ceil(allPosts.length / POSTS_PER_PAGE));
-const pagePosts = allPosts.slice(0, POSTS_PER_PAGE).filter((post) => post.slug !== featuredPost?.slug);
+const pagePosts = allPosts.slice(0, POSTS_PER_PAGE).filter((post) => post.id !== featuredPost?.id);
 const path = '/blog/';
 const title = 'The Dudley Blog';
 const description = 'Plain-English answers about iPhone privacy, AI media, internet culture, economics, and Dudley apps.';
@@ -18,7 +18,7 @@ const blogSchema = {
   publisher: { '@type': 'Organization', name: STUDIO, url: ORIGIN, logo: { '@type': 'ImageObject', url: abs('/assets/dudley-mark.svg') } },
   blogPost: allPosts.slice(0, POSTS_PER_PAGE).map((post) => ({
     '@type': 'BlogPosting', headline: post.data.title, description: post.data.description,
-    url: abs(`/blog/${post.slug}/`), datePublished: post.data.publishDate.toISOString().slice(0, 10),
+    url: abs(`/blog/${post.id}/`), datePublished: post.data.publishDate.toISOString().slice(0, 10),
     author: { '@type': 'Person', name: post.data.author },
   })),
 };
@@ -44,7 +44,7 @@ const blogSchema = {
       )}
 
       {featuredPost && (
-        <a class="featured" href={rel(`/blog/${featuredPost.slug}/`)}>
+        <a class="featured" href={rel(`/blog/${featuredPost.id}/`)}>
           <span class="section-label">{featuredPost.data.featured ? 'Featured answer' : 'Latest answer'}</span>
           <h2>{featuredPost.data.title}</h2>
           <p>{featuredPost.data.answerSummary ?? featuredPost.data.description}</p>
@@ -56,7 +56,7 @@ const blogSchema = {
         <h2 id="recent-answers">Recent answers</h2>
         <div class="answer-grid">
           {pagePosts.map((post) => (
-            <AnswerCard title={post.data.title} description={post.data.answerSummary ?? post.data.description} href={`/blog/${post.slug}/`} date={post.data.publishDate} topic={post.data.category} />
+            <AnswerCard title={post.data.title} description={post.data.answerSummary ?? post.data.description} href={`/blog/${post.id}/`} date={post.data.publishDate} topic={post.data.category} />
           ))}
         </div>
       </section>

@@ -1,9 +1,11 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 const faqItem = z.object({ q: z.string(), a: z.string() });
 
 const apps = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/apps' }),
   schema: z.object({
     name: z.string(),
     tagline: z.string(),
@@ -61,7 +63,7 @@ const apps = defineCollection({
 });
 
 const archetypes = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/archetypes' }),
   schema: z.object({
     name: z.string(),
     emoji: z.string(),
@@ -77,7 +79,7 @@ const archetypes = defineCollection({
 });
 
 const comparisons = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/comparisons' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -103,7 +105,7 @@ const comparisons = defineCollection({
 });
 
 const tools = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/tools' }),
   schema: z.object({
     title: z.string(),
     tagline: z.string(),
@@ -120,7 +122,7 @@ const tools = defineCollection({
 // Everything optional has a sensible default so a minimal post (title + description +
 // publishDate + category) still builds. Adding a post requires zero layout changes.
 const blog = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
