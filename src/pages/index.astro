@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import { rel, ORIGIN, APP_STORE, SUPPORT_EMAIL } from '../consts';
+import { rel, ORIGIN, APP_STORE, SUPPORT_EMAIL, abs } from '../consts';
 import {
   appStoreCampaignUrl,
   VIBERATER_ASC_TOKENS,
@@ -40,8 +40,10 @@ const posts = (await getPublishedPosts()).slice(0, 3);
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': abs('/#website'),
   name: 'Dudley Development',
   url: ORIGIN,
+  publisher: { '@id': abs('/#organization') },
 };
 const description =
   'Table Talk: Conversation Cards is free on the App Store — 420 hand-written conversation starters for dinner tables, first dates, and friend groups. From Dudley Development, an independent iOS studio.';
@@ -108,7 +110,7 @@ const values = [
             <h2>The apps</h2>
             <p class="sub">Free on the App Store. Clear privacy choices. No subscriptions.</p>
           </div>
-          <a class="btn ghost small" href={rel('/about')}>About the studio</a>
+          <a class="btn ghost small" href={rel('/about/')}>About the studio</a>
         </div>
 
         <ul class="apps">
@@ -285,7 +287,7 @@ const values = [
           </p>
           <div class="actions">
             <a class="btn primary" href={rel('/contact/')}>Get in touch</a>
-            <a class="btn" href={rel('/support')}>Visit support</a>
+            <a class="btn" href={rel('/support/')}>Visit support</a>
             <a class="btn ghost" href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
           </div>
         </div>

@@ -1,5 +1,6 @@
 ---
 import { STUDIO, LEGAL_NAME, SUPPORT_EMAIL, CONTACT_EMAIL, SOCIAL_LINKS, SOCIALS, BING_VERIFICATION, ORIGIN, rel, abs } from '../consts';
+import { normalizePublicPath } from '../lib/urls.mjs';
 
 export interface Props {
   title: string;
@@ -18,17 +19,21 @@ export interface Props {
 }
 
 const { title, description, path, ogImage = '/assets/dudley-lockup.png', schema = null, noindex = false, breadcrumbLeaf, appBannerId } = Astro.props;
-const canonical = abs(path);
+const publicPath = normalizePublicPath(path);
+const canonical = abs(publicPath);
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : abs(ogImage);
 const fullTitle = title.includes(STUDIO) ? title : `${title} | ${STUDIO}`;
+const orgId = abs('/#organization');
+const websiteId = abs('/#website');
 
 const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': orgId,
   name: STUDIO,
   legalName: LEGAL_NAME,
   url: ORIGIN,
-  logo: { '@type': 'ImageObject', url: abs('/assets/dudley-mark.png') },
+  logo: { '@type': 'ImageObject', url: abs('/assets/dudley-mark.svg') },
   contactPoint: { '@type': 'ContactPoint', email: SUPPORT_EMAIL, contactType: 'customer support' },
   sameAs: SOCIAL_LINKS,
 };
@@ -74,8 +79,8 @@ const nav = [
   { href: rel('/'), label: 'Home', match: '/' },
   { href: rel('/#apps'), label: 'Apps', match: '/#apps' },
   { href: rel('/blog/'), label: 'Blog', match: '/blog' },
-  { href: rel('/about'), label: 'About', match: '/about' },
-  { href: rel('/support'), label: 'Support', match: '/support' },
+  { href: rel('/about/'), label: 'About', match: '/about' },
+  { href: rel('/support/'), label: 'Support', match: '/support' },
   { href: rel('/contact/'), label: 'Contact', match: '/contact' },
 ];
 const normalized = '/' + segs.join('/');
@@ -84,11 +89,11 @@ const isCurrent = (match: string) =>
 
 const footerLegal = [
   { href: rel('/privacy/'), label: 'Privacy' },
-  { href: rel('/terms/vibe-rater'), label: 'VibeRater Terms' },
-  { href: rel('/about'), label: 'About the studio' },
+  { href: rel('/terms/vibe-rater/'), label: 'VibeRater Terms' },
+  { href: rel('/about/'), label: 'About the studio' },
 ];
 const footerHelp = [
-  { href: rel('/support'), label: 'Support' },
+  { href: rel('/support/'), label: 'Support' },
   { href: rel('/contact/'), label: 'Contact us' },
   { href: rel('/blog/'), label: 'The Dudley Blog' },
   { href: rel('/blog/rss.xml'), label: 'RSS feed' },

@@ -9,7 +9,7 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
   site: 'https://dudleyapps.com',
   base: '/',
-  trailingSlash: 'ignore',
+  trailingSlash: 'always',
   integrations: [
     mdx(),
     sitemap({
@@ -18,6 +18,8 @@ export default defineConfig({
       filter: (page) =>
         !page.includes('/privacy') &&
         !page.includes('/support') &&
+        !page.includes('/blog/tags') &&
+        !page.includes('/apps/powell-prowl') &&
         !page.includes('/rss.xml') &&
         !page.includes('/llms.txt'),
     }),

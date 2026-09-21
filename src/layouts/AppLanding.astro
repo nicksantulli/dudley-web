@@ -3,7 +3,7 @@ import Base from './Base.astro';
 import FAQ from '../components/FAQ.astro';
 import InternalLinks from '../components/InternalLinks.astro';
 import AppCTA from '../components/AppCTA.astro';
-import { STUDIO, ORIGIN, rel, abs, appStoreUrl, APP_STORE } from '../consts';
+import { rel, abs, appStoreUrl, APP_STORE } from '../consts';
 import { VIBERATER_ASC_TOKENS, TABLE_TALK_ASC_TOKENS, POWELL_PROWL_ASC_TOKENS, ECONBYTE_ASC_TOKENS, LAST_HUMAN_ASC_TOKENS } from '../lib/campaignLinks.mjs';
 import { appBannerIdFor } from '../lib/appBanner';
 
@@ -27,7 +27,9 @@ const appSchema: Record<string, any> = {
   applicationCategory: app.applicationCategory,
   operatingSystem: app.operatingSystem,
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-  author: { '@type': 'Organization', name: STUDIO, url: ORIGIN },
+  author: { '@id': abs('/#organization') },
+  publisher: { '@id': abs('/#organization') },
+  mainEntityOfPage: { '@id': abs(path) },
   featureList: app.featureList,
 };
 if (url) appSchema.downloadUrl = url;
