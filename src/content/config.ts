@@ -8,6 +8,12 @@ const apps = defineCollection({
     name: z.string(),
     tagline: z.string(),
     description: z.string(),
+    posterHeadline: z.string().min(12).max(90),
+    posterFacts: z.array(z.string().min(3).max(100)).min(2).max(3),
+    pricingSummary: z.string().min(3).max(180),
+    accountSummary: z.string().min(3).max(180),
+    offlineSummary: z.string().min(3).max(180),
+    privacySummary: z.string().min(3).max(220),
     appStoreId: z.string().optional().default(''),
     bundleId: z.string().optional(),
     icon: z.string(),
@@ -39,6 +45,18 @@ const apps = defineCollection({
     order: z.number().default(99),
     dateAdded: z.date(),
     lastUpdated: z.date(),
+  }).superRefine((app, ctx) => {
+    const issue = (path: string, message: string) =>
+      ctx.addIssue({ code: z.ZodIssueCode.custom, path: [path], message });
+    if (app.status === 'live' && !app.appStoreId) {
+      issue('appStoreId', 'Live apps require an App Store ID');
+    }
+    if (app.status === 'live' && !app.developedFor && app.landingPage === false) {
+      issue('landingPage', 'Live Dudley-owned apps require a landing page');
+    }
+    if (app.status !== 'live' && app.appStoreId) {
+      issue('appStoreId', 'Unreleased apps cannot expose an App Store ID');
+    }
   }),
 });
 

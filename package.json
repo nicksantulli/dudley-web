@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "test": "npm run build && node --test scripts/campaign-links.test.mjs && node --test scripts/built-output.test.mjs",
+    "test": "node --test scripts/content-contract.test.mjs && npm run build && node --test scripts/campaign-links.test.mjs && node --test scripts/built-output.test.mjs && node --test scripts/site-integrity.test.mjs",
     "postbuild": "node scripts/gen-image-sitemap.mjs",
     "preview": "astro preview",
     "deploy": "node scripts/deploy-gh-pages.mjs"
