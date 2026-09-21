@@ -101,7 +101,7 @@ const id = (base: string) => `cf-${base}-${uid}`;
       <p class="cf-hint" data-hint-for="build-an-app" hidden>
         Want us to build an app for your brand? Tell us what it should do, who it's for, your
         rough timeline, and a budget range if you have one. We design, build, and ship iPhone
-        apps end to end — <a href={rel('/#client-work')}>Where's This House?</a> for HomeLight is
+        apps end to end — <a href={rel('/#apps')}>Where's This House?</a> for HomeLight is
         a recent example.
       </p>
     </div>
@@ -277,8 +277,8 @@ const id = (base: string) => `cf-${base}-${uid}`;
 <style>
   .contact-form {
     background: var(--surface, #f8f2e4);
-    border: 1px solid var(--border, rgba(61, 28, 8, 0.12));
-    border-radius: var(--radius, 16px);
+    border: 2px solid var(--ink, #0b0b0a);
+    border-radius: var(--radius, 4px);
     padding: 28px;
   }
   .contact-form.compact {
@@ -340,8 +340,8 @@ const id = (base: string) => `cf-${base}-${uid}`;
     line-height: 1.4;
     color: var(--ink, #2a1208);
     background: var(--bg, #f2e8d5);
-    border: 1px solid var(--border, rgba(61, 28, 8, 0.12));
-    border-radius: 10px;
+    border: 2px solid var(--ink, #0b0b0a);
+    border-radius: var(--radius, 4px);
     padding: 12px 14px;
     /* Comfortably clears the 44px tap-target minimum with default padding + line-height. */
     min-height: 44px;
@@ -355,8 +355,8 @@ const id = (base: string) => `cf-${base}-${uid}`;
   .cf-field input:focus,
   .cf-field select:focus,
   .cf-field textarea:focus {
-    outline: 2px solid var(--accent, #9a3d04);
-    outline-offset: 1px;
+    outline: 3px solid var(--focus, #1463ff);
+    outline-offset: 2px;
   }
 
   .cf-hint {

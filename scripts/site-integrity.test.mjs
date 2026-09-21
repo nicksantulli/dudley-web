@@ -178,3 +178,18 @@ test('answer articles lead with a summary and provenance', () => {
   assert.match(html, /Written by Nicholas Santulli/);
   assert.match(html, /<time/);
 });
+
+test('discovery pages contain no rejected studio copy', () => {
+  const discovery = htmlPages().filter((page) => !page.rel.startsWith('/privacy/'));
+  for (const page of discovery) {
+    assert.doesNotMatch(page.html, /Independent iOS studio|small apps with real character|Polish is the point/i, page.rel);
+  }
+});
+
+test('every HTML page has one h1 and a skip-link target', () => {
+  for (const page of htmlPages()) {
+    assert.equal([...page.html.matchAll(/<h1\b/g)].length, 1, `${page.rel} h1 count`);
+    assert.match(page.html, /href="#main"/);
+    assert.match(page.html, /id="main"/);
+  }
+});

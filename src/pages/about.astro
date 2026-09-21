@@ -24,20 +24,19 @@ const statusLabel = (s: string) =>
       </nav>
 
       <h1>About Dudley Development</h1>
-      <p class="updated">{LEGAL_NAME} · United States</p>
+      <p class="updated">{LEGAL_NAME} · Founded by Nicholas Santulli · United States</p>
 
       <p class="tldr">
         Dudley Development builds iPhone products you can understand before you download: games,
         conversation starters, social tools, and short lessons with clear prices and privacy boundaries.
       </p>
 
-      <h2>What we believe</h2>
+      <h2>How the apps work</h2>
       <ul>
-        <li><strong>Free to download.</strong> Every app is free on the App Store. Paid upgrades like Remove Ads are optional — the core experience ships unlocked.</li>
-        <li><strong>Low-friction by default.</strong> You can start using our apps immediately after download. If a social feature needs a profile, we explain what it stores and give you deletion controls.</li>
-        <li><strong>Privacy by feature.</strong> Each privacy policy says what stays on-device, what reaches a service, what is stored, and why.</li>
-        <li><strong>Honest about ads.</strong> Our free apps are ad-supported through Google AdMob and disclosed plainly. The ads are requested as non-personalized, and our apps do not request cross-app tracking permission.</li>
-        <li><strong>Polish is the point.</strong> Tight controls, real haptics, and a sense of humor — details that make an app feel made, not generated.</li>
+        <li><strong>Download price.</strong> Every Dudley app is free on the App Store. Optional purchases, when offered, are described on the app page.</li>
+        <li><strong>Accounts.</strong> Most apps work without one. VibeRater uses profiles for its social features and provides account-deletion controls.</li>
+        <li><strong>Privacy.</strong> Each app page states what works offline, what stays on the device, and where to read the full policy.</li>
+        <li><strong>Ads.</strong> Ad-supported apps request non-personalized ads and do not request Apple’s cross-app tracking permission.</li>
       </ul>
 
       <h2>The apps</h2>
@@ -85,7 +84,7 @@ const statusLabel = (s: string) =>
     align-items: baseline;
     gap: 6px 12px;
     padding: 0.75rem 0;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 2px solid var(--ink);
   }
   .about-apps li:last-child { border-bottom: 0; }
   .about-app-name { font-weight: 700; font-size: 1.0625rem; color: var(--ink); }
