@@ -93,6 +93,18 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  {
+    ct: 'tt-web-llms-sep26-v1',
+    appId: '6780714565',
+    surface: 'llms.txt app link',
+    path: '/llms.txt',
+    channel: 'web',
+    ppid: null,
+    registeredAt: '2026-09-21',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // Table Talk blog CTAs follow the pattern `tt-web-blog-<slug>-sep26-v1`.
   // Generated per-post by tableTalkBlogCampaignToken(slug) — not individually listed.
 
@@ -157,6 +169,18 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'maintenance',
   },
+  {
+    ct: 'vr-web-llms-sep26-v1',
+    appId: '6780704282',
+    surface: 'llms.txt app link',
+    path: '/llms.txt',
+    channel: 'web',
+    ppid: null,
+    registeredAt: '2026-09-21',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // Blog post CTAs — each post gets its own token via blogCampaignToken(slug).
   // They follow the pattern `vr-web-blog-<slug-fragment>-aug26-v1` and are not
   // individually listed here; they are validated structurally by the test suite.
@@ -210,6 +234,18 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'maintenance',
   },
+  {
+    ct: 'pp-web-llms-sep26-v1',
+    appId: '6775539250',
+    surface: 'llms.txt app link',
+    path: '/llms.txt',
+    channel: 'web',
+    ppid: null,
+    registeredAt: '2026-09-21',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
 
   // ── EconByte: Daily Economics (6780714383) ───────────────────────────────
   {
@@ -235,6 +271,18 @@ export const TOKEN_REGISTRY = Object.freeze([
     activatedAt: null,
     firstVerifiedAt: null,
     status: 'maintenance',
+  },
+  {
+    ct: 'eb-web-llms-sep26-v1',
+    appId: '6780714383',
+    surface: 'llms.txt app link',
+    path: '/llms.txt',
+    channel: 'web',
+    ppid: null,
+    registeredAt: '2026-09-21',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
   },
   // EconByte blog CTAs follow the pattern `eb-web-blog-<slug>-sep26-v1`.
   // Generated per-post by econbyteBlogCampaignToken(slug) — not individually listed.
@@ -395,6 +443,7 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   tiktok:    'tabletalk-tiktok-20260910',
   // Off-site X collector surface — one-off dated token, not a blog slug generator.
   xCollector: 'tabletalk-x-collector-20260914',
+  llms:       'tt-web-llms-sep26-v1',
 });
 
 export const VIBERATER_ASC_TOKENS = Object.freeze({
@@ -403,6 +452,7 @@ export const VIBERATER_ASC_TOKENS = Object.freeze({
   archetype:  'vr-web-archetype-aug26-v1',  // /archetypes/[slug]/ CTA
   comparison: 'vr-web-comparison-aug26-v1', // /compare/[slug]/ CTA
   tool:       'vr-web-tool-aug26-v1',       // /tools/[slug]/ CTA
+  llms:       'vr-web-llms-sep26-v1',       // llms.txt app link
 });
 
 export const POWELL_PROWL_ASC_TOKENS = Object.freeze({
@@ -410,11 +460,13 @@ export const POWELL_PROWL_ASC_TOKENS = Object.freeze({
   appDetail:        'pp-web-app-sep26-v1',                      // /apps/monetary-policy-independence-day/ CTA
   blogFedOpinion:   'pp-web-blog-fed-opinion-vibe-sep26-v1',    // /blog/fed-opinion-vibe/ inline link
   blogBestSatirical:'pp-web-blog-best-satirical-sep26-v1',      // /blog/best-satirical-ios-games/ inline link
+  llms:             'pp-web-llms-sep26-v1',                     // llms.txt app link
 });
 
 export const ECONBYTE_ASC_TOKENS = Object.freeze({
   homeCard:  'eb-web-card-sep26-v1', // homepage app card badge
   appDetail: 'eb-web-app-sep26-v1',  // /apps/econbyte/ CTA
+  llms:      'eb-web-llms-sep26-v1', // llms.txt app link
 });
 
 export const DUDE_WHERES_ASC_TOKENS = Object.freeze({
@@ -426,6 +478,15 @@ export const LAST_HUMAN_ASC_TOKENS = Object.freeze({
   homeCard: 'lh-web-card-sep26-v1',
   appDetail: 'lh-web-app-sep26-v1',
   llms: 'lh-web-llms-sep26-v1',
+});
+
+export const LLMS_APP_STORE_TOKENS = Object.freeze({
+  '6780704282': VIBERATER_ASC_TOKENS.llms,
+  '6780714565': TABLE_TALK_ASC_TOKENS.llms,
+  '6775539250': POWELL_PROWL_ASC_TOKENS.llms,
+  '6780714383': ECONBYTE_ASC_TOKENS.llms,
+  '6779785617': DUDE_WHERES_ASC_TOKENS.llms,
+  '6808782611': LAST_HUMAN_ASC_TOKENS.llms,
 });
 
 // ---------------------------------------------------------------------------

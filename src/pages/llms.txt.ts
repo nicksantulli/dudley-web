@@ -1,31 +1,43 @@
-import { abs, APP_STORE, SUPPORT_EMAIL, CONTACT_EMAIL } from '../consts';
-import { appStoreCampaignUrl, DUDE_WHERES_ASC_TOKENS, LAST_HUMAN_ASC_TOKENS } from '../lib/campaignLinks.mjs';
+import { getCollection } from 'astro:content';
+import { abs, SUPPORT_EMAIL, CONTACT_EMAIL } from '../consts';
+import { appStoreCampaignUrl, LLMS_APP_STORE_TOKENS } from '../lib/campaignLinks.mjs';
 import { getPublishedPosts } from '../lib/blog';
+import { eligibleTopicHubs } from '../lib/topics';
 
-// llms.txt is generated so the Blog section stays current automatically — the Content
-// Writer drops a markdown file and the next build lists it here for answer engines.
-// The Apps / Archetypes / Tools / Comparisons sections are stable hand-written prose
-// (curated for AEO); only the Blog section is generated from the content collection.
 export async function GET() {
   const posts = await getPublishedPosts();
+  const apps = (await getCollection('apps')).sort((a, b) => a.data.order - b.data.order);
+
+  const appLines = apps.map((app) => {
+    const data = app.data;
+    const ownedPage = !data.developedFor && data.landingPage !== false ? abs(`/apps/${app.slug}/`) : '';
+    const name = ownedPage ? `[${data.name}](${ownedPage})` : data.name;
+    const release = data.status === 'live' ? 'Live on the App Store.' : 'Not yet released on the App Store.';
+    let store = '';
+    if (data.status === 'live') {
+      const token = LLMS_APP_STORE_TOKENS[data.appStoreId];
+      if (!token) throw new Error(`Missing llms.txt campaign token for ${data.name} (${data.appStoreId})`);
+      store = ` [Download on the App Store](${appStoreCampaignUrl(data.appStoreId, token)}).`;
+    }
+    return `- ${name}: ${data.description} ${release} ${data.operatingSystem}. ${data.accountSummary} ${data.offlineSummary} ${data.pricingSummary}${store}`;
+  }).join('\n');
+
+  const topicLines = eligibleTopicHubs(posts)
+    .map((hub) => `- [${hub.title}](${abs(`/blog/topics/${hub.slug}/`)}): ${hub.description} ${hub.posts.length} published answers.`)
+    .join('\n');
 
   const blogLines = posts
+    .slice(0, 12)
     .map((p) => `- [${p.data.title}](${abs(`/blog/${p.slug}/`)}): ${p.data.description}`)
     .join('\n');
 
   const body = `# Dudley Development
 
-> Dudley Development is an independent iOS app studio. We build small, polished, playful apps for iPhone — mostly funny, sometimes useful. Every app is free, and every app explains its account, cloud-data, analytics, advertising, and tracking behavior in a dedicated privacy policy. Founded and run by Nicholas Santulli.
+> Dudley Development, LLC builds and publishes iPhone games, conversation tools, social apps, and plain-English learning products. The catalog is run by Nicholas Santulli and includes Last Human, Table Talk, VibeRater Social, EconByte, and Powell Prowl. Each app page states its release status, price model, account requirement, offline behavior, and privacy boundary.
 
 ## Apps
 
-- [Table Talk: Conversation Cards](${abs('/apps/table-talk/')}): A free iPhone app of hand-written conversation-starter cards for dinner tables, first dates, friend groups, and work teams. 420 prompts across 6 categories plus an 80-card Would You Rather deck. No account needed, works offline. Ad-supported with a one-time Remove Ads purchase. Live on the App Store. Requires iOS 16.6+.
-- [VibeRater Social](${abs('/apps/vibe-rater/')}): A free iPhone social app built around playful photo ratings, VibeRodeo video/photo posts, a customizable Repli avatar and room, VibeShop, one-way Following, Squad, Radar, Rise, and optional SlopGuard. For entertainment only. Live on the App Store. Requires iOS 17+.
-- [Powell Prowl: Rate Chase](${abs('/apps/monetary-policy-independence-day/')}): A free satirical iPhone mini-game collection — hand-tuned levels across multiple mini-game types including chase, sniper, canoe race, and more. Live on the App Store. Requires iOS 16.6+.
-- [EconByte: Daily Economics](${abs('/apps/econbyte/')}): A free iPhone app that explains economics in bite-sized daily cards — inflation, interest rates, GDP, trade — sourced to named institutions. Two topics free; 13 more unlock with a one-time $0.99 purchase. Educational only. Live on the App Store. Requires iOS 16.6+.
-- [Dude, Where's This House?](${appStoreCampaignUrl(APP_STORE.dudeWheresThisHouse, DUDE_WHERES_ASC_TOKENS.llms)}): A free iPhone geography game built for HomeLight with 5,000 approved U.S. residential locations. Live on the App Store. Requires iOS 17+.
-- [Last Human: Dodge the Bots](${appStoreCampaignUrl(APP_STORE.lastHuman, LAST_HUMAN_ASC_TOKENS.llms)}): A free satirical top-down arcade game for iPhone. Dodge office bots, collect power-ups, and reach the time clock across 50 floors. No account required; plays offline. Live on the App Store. Requires iOS 16.6+.
-- Beat the Dealer: Card Counting: An offline blackjack trainer for adults 18+. Coming soon to the App Store.
+${appLines}
 
 ## Archetypes (VibeRater Social)
 
@@ -49,9 +61,13 @@ VibeRater Social assigns one of several vibe archetypes based on your photo:
 - [Best Photo Rating Apps for iPhone (2026)](${abs('/compare/best-photo-rating-apps/')}): An honest comparison of photo, vibe, and aura rating apps on iPhone.
 - [Best Vibe Check Apps for iPhone (2026)](${abs('/compare/vibe-check-apps/')}): An honest comparison of vibe check and aura apps on iPhone.
 
-## Blog
+## Maintained Blog Topics
 
-The Dudley Blog covers internet culture, vibe archetypes, and honest app roundups. Full index: ${abs('/blog/')} (RSS: ${abs('/blog/rss.xml')}).
+${topicLines}
+
+## Recent Answers
+
+The Dudley Blog publishes direct, sourced answers about iPhone privacy, AI media, internet culture, economics, the App Store, and Dudley products. Full index: ${abs('/blog/')} (RSS: ${abs('/blog/rss.xml')}).
 
 ${blogLines}
 

@@ -23,6 +23,11 @@ function htmlPages() {
 }
 
 const capture = (html, pattern) => html.match(pattern)?.[1]?.trim() ?? '';
+const jsonLd = (html) => [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+  .flatMap((match) => {
+    const value = JSON.parse(match[1]);
+    return Array.isArray(value) ? value : [value];
+  });
 
 test('site integrity suite is wired', () => {});
 
@@ -87,4 +92,48 @@ test('an unmapped freeform tag is text, not a dead link', () => {
   const article = readFileSync(resolve('dist/blog/npc-defense/index.html'), 'utf8');
   assert.match(article, />Archetype Deep Dive</);
   assert.doesNotMatch(article, /href="\/blog\/tags\/archetype-deep-dive\//);
+});
+
+test('Last Human live facts agree across HTML and llms.txt', () => {
+  const outputs = [
+    readFileSync(resolve('dist/apps/last-human/index.html'), 'utf8'),
+    readFileSync(resolve('dist/index.html'), 'utf8'),
+    readFileSync(resolve('dist/llms.txt'), 'utf8'),
+  ];
+  for (const output of outputs) {
+    assert.match(output, /Last Human/);
+    assert.match(output, /6808782611|Live on the App Store/);
+    assert.doesNotMatch(output, /Last Human[\s\S]{0,180}coming soon/i);
+  }
+});
+
+test('article schema links a person, publisher, dates, and main entity', () => {
+  const html = readFileSync(resolve('dist/blog/can-iphone-apps-see-your-contacts/index.html'), 'utf8');
+  assert.match(html, /"@type":"BlogPosting"/);
+  assert.match(html, /"author":\{"@type":"Person"/);
+  assert.match(html, /"publisher":\{"@id":"https:\/\/dudleyapps\.com\/#organization"\}/);
+  assert.match(html, /"dateModified":/);
+  assert.match(html, /"mainEntityOfPage":/);
+});
+
+test('every JSON-LD block parses', () => {
+  for (const page of htmlPages()) {
+    const blocks = [...page.html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+    blocks.forEach((match, index) => assert.doesNotThrow(() => JSON.parse(match[1]), `${page.rel} JSON-LD block ${index}`));
+  }
+});
+
+test('representative schema facts match visible pages', () => {
+  const appHtml = readFileSync(resolve('dist/apps/last-human/index.html'), 'utf8');
+  const app = jsonLd(appHtml).find((value) => value['@type'] === 'SoftwareApplication');
+  assert.equal(app.name, 'Last Human: Dodge the Bots');
+  assert.match(app.downloadUrl, /id6808782611/);
+  assert.match(appHtml, new RegExp(app.name));
+  assert.match(appHtml, /Live on the App Store/);
+
+  const postHtml = readFileSync(resolve('dist/blog/can-iphone-apps-see-your-contacts/index.html'), 'utf8');
+  const post = jsonLd(postHtml).find((value) => value['@type'] === 'BlogPosting');
+  assert.match(postHtml, new RegExp(post.headline.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+  assert.match(postHtml, new RegExp(`datetime="${post.datePublished.slice(0, 10)}`));
+  assert.match(postHtml, new RegExp(`datetime="${post.dateModified.slice(0, 10)}`));
 });

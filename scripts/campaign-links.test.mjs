@@ -88,6 +88,20 @@ test('registers unique Last Human tokens for each launch surface', () => {
   }
 });
 
+test('llms.txt has one registered token for every live App Store app', () => {
+  assert.deepEqual(campaignLinks.LLMS_APP_STORE_TOKENS, {
+    '6780704282': 'vr-web-llms-sep26-v1',
+    '6780714565': 'tt-web-llms-sep26-v1',
+    '6775539250': 'pp-web-llms-sep26-v1',
+    '6780714383': 'eb-web-llms-sep26-v1',
+    '6779785617': 'dwh-web-llms-sep26-v1',
+    '6808782611': 'lh-web-llms-sep26-v1',
+  });
+  for (const [appId, token] of Object.entries(campaignLinks.LLMS_APP_STORE_TOKENS)) {
+    assert.equal(campaignLinks.resolveTokenDefinition(token)?.appId, appId);
+  }
+});
+
 test('ALL_REGISTERED_TOKENS contains no duplicates', () => {
   const tokens = campaignLinks.ALL_REGISTERED_TOKENS;
   const set = new Set(tokens);

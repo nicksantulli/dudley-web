@@ -42,16 +42,28 @@ const articleSchema = {
   url: abs(path),
   datePublished: published.toISOString(),
   dateModified: updated.toISOString(),
-  author: { '@id': abs('/#organization') },
+  author: { '@type': 'Person', name: post.author },
+  ...(post.reviewedBy ? { reviewedBy: { '@type': 'Person', name: post.reviewedBy } } : {}),
   publisher: { '@id': abs('/#organization') },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': abs(path) },
+  mainEntityOfPage: { '@id': abs(path) },
   image: abs(ogImage),
   keywords: tags.join(', '),
   ...(post.primaryKeyword ? { about: { '@type': 'Thing', name: post.primaryKeyword } } : {}),
 };
-// BreadcrumbList is emitted site-wide by Base (Home / Blog / <title>). No FAQPage
-// markup — Google restricts FAQ rich results, so we keep the visible FAQ only.
-const schema = { '@context': 'https://schema.org', ...articleSchema };
+// BreadcrumbList is emitted site-wide by Base. FAQ schema is included only when
+// the same questions and answers are rendered visibly below the article.
+const faqSchema = post.faq?.length ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: post.faq.map((item: { q: string; a: string }) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+} : null;
+const schema = faqSchema
+  ? [{ '@context': 'https://schema.org', ...articleSchema }, faqSchema]
+  : { '@context': 'https://schema.org', ...articleSchema };
 ---
 <Base
   title={post.title}
@@ -74,11 +86,15 @@ const schema = { '@context': 'https://schema.org', ...articleSchema };
         <header class="post-head">
           <h1>{post.title}</h1>
           <p class="post-meta">
-            <span class="byline">{post.author ?? STUDIO}</span>
-            <span class="sep">·</span>
+            <span class="byline">Written by {post.author ?? STUDIO}</span>
+            <span class="sep">·</span><span>Published </span>
             <time datetime={published.toISOString().slice(0, 10)}>{formatDate(published)}</time>
+            {updated.getTime() !== published.getTime() && (
+              <><span class="sep">·</span><span>Updated </span><time datetime={updated.toISOString().slice(0, 10)}>{formatDate(updated)}</time></>
+            )}
+            {post.reviewedBy && <><span class="sep">·</span><span>Reviewed by {post.reviewedBy}</span></>}
           </p>
-          <p class="post-dek">{post.description}</p>
+          <p class="post-dek">{post.answerSummary ?? post.description}</p>
           <nav class="post-tags" aria-label="Topics and labels">
             {topicLinks.map((topic) => (
               <a class="tag" href={rel(`/blog/topics/${topic.slug}/`)}>{topic.title}</a>

@@ -21,12 +21,14 @@ const url = appStoreUrl(app.appStoreId);
 const appSchema: Record<string, any> = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
+  '@id': abs(`${path}#app`),
   name: app.name,
   description: app.description,
   url: abs(path),
   applicationCategory: app.applicationCategory,
   operatingSystem: app.operatingSystem,
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  isAccessibleForFree: true,
   author: { '@id': abs('/#organization') },
   publisher: { '@id': abs('/#organization') },
   mainEntityOfPage: { '@id': abs(path) },
@@ -75,6 +77,8 @@ const pageSchema = faqSchema ? [appSchema, faqSchema] : appSchema;
         </div>
       </div>
 
+      <p class="app-answer">{app.description}</p>
+
       <slot />
 
       <AppCTA
@@ -99,4 +103,5 @@ const pageSchema = faqSchema ? [appSchema, faqSchema] : appSchema;
 
 <style>
   .lede-hero-status { margin: 8px 0 0; }
+  .app-answer { margin: 0 0 32px; max-width: 68ch; font-size: 18px; line-height: 1.55; }
 </style>
