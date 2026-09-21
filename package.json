@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "optimize:assets": "node scripts/optimize-assets.mjs",
     "test": "node --test scripts/content-contract.test.mjs && npm run build && node --test scripts/campaign-links.test.mjs && node --test scripts/built-output.test.mjs && node --test scripts/site-integrity.test.mjs",
     "postbuild": "node scripts/gen-image-sitemap.mjs",
     "preview": "astro preview",
@@ -16,5 +17,8 @@
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.3.0",
     "astro": "^5.7.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
   }
 }

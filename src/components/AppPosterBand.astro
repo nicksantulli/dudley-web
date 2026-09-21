@@ -19,6 +19,8 @@ interface Props {
 
 const { slug, name, headline, description, icon, facts, status, storeHref = '', detailHref, developedFor, art, reverse = false } = Astro.props;
 const statusText = status === 'live' ? 'Live on the App Store' : status === 'coming_soon' ? 'Coming to the App Store' : 'In development';
+const visual = art ?? icon;
+const webp = visual.replace(/\.png$/i, '.webp');
 ---
 <section class:list={['poster-band', `poster-${slug}`, { reverse }]} data-app={slug}>
   <div class="poster-inner wrap">
@@ -34,7 +36,10 @@ const statusText = status === 'live' ? 'Live on the App Store' : status === 'com
       </div>
     </div>
     <div class="poster-media">
-      <img src={rel(art ?? icon)} alt={art ? `${name} product artwork` : `${name} app icon`} width={art ? '1200' : '512'} height={art ? '630' : '512'} loading="lazy" decoding="async" />
+      <picture>
+        <source srcset={rel(webp)} type="image/webp" />
+        <img src={rel(visual)} alt={art ? `${name} product artwork` : `${name} app icon`} width={art ? '1200' : '512'} height={art ? '630' : '512'} loading={slug === 'last-human' ? 'eager' : 'lazy'} fetchpriority={slug === 'last-human' ? 'high' : 'auto'} decoding="async" />
+      </picture>
     </div>
   </div>
 </section>

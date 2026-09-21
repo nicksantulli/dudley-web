@@ -20,7 +20,7 @@ export interface Props {
   appBannerId?: string;
 }
 
-const { title, description, path, ogImage = '/assets/dudley-lockup.png', schema = null, robots, breadcrumbLeaf, appBannerId } = Astro.props;
+const { title, description, path, ogImage = '/assets/og-home.png', schema = null, robots, breadcrumbLeaf, appBannerId } = Astro.props;
 const publicPath = normalizePublicPath(path);
 const canonical = abs(publicPath);
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : abs(ogImage);

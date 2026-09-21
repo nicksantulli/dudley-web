@@ -24,7 +24,7 @@ const schema = {
       <nav class="crumbs" aria-label="Breadcrumb"><a href={rel('/')}>Home</a><span>/</span><a href={rel('/blog/')}>Blog</a><span>/</span><a href={rel('/blog/topics/')}>Topics</a><span>/</span><span>{hub.title}</span></nav>
       <header class="topic-intro"><p class="section-label">Dudley Blog topic · {hub.posts.length} answers</p><h1>{hub.title}</h1><p>{hub.description}</p></header>
       <div class="answer-grid">
-        {hub.posts.map((post: any) => <AnswerCard title={post.data.title} description={post.data.answerSummary ?? post.data.description} href={`/blog/${post.slug}/`} date={post.data.publishDate} topic={hub.title} />)}
+        {hub.posts.map((post: any) => <AnswerCard title={post.data.title} description={post.data.answerSummary ?? post.data.description} href={`/blog/${post.slug}/`} date={post.data.publishDate} topic={hub.title} headingLevel={2} />)}
       </div>
     </div>
   </main>

@@ -23,6 +23,7 @@ const campaignToken =
   app.appStoreId === APP_STORE.lastHuman ? LAST_HUMAN_ASC_TOKENS.appDetail :
   undefined;
 const taggedStoreUrl = campaignToken && app.appStoreId ? appStoreCampaignUrl(app.appStoreId, campaignToken) : '';
+const iconWebp = app.icon.replace(/\.png$/i, '.webp');
 
 // SoftwareApplication is Google's app-listing rich-result type (name, category,
 // OS, free Offer). aggregateRating is intentionally omitted until we have real App
@@ -80,7 +81,10 @@ const pageSchema = faqSchema ? [appSchema, faqSchema] : appSchema;
           <p class="app-answer">{app.description}</p>
           <AppStoreAction appName={app.name} href={taggedStoreUrl} />
         </div>
-        <img class="app-detail-icon" src={rel(app.icon)} alt={`${app.name} app icon`} width="512" height="512" decoding="async" />
+        <picture>
+          <source srcset={rel(iconWebp)} type="image/webp" />
+          <img class="app-detail-icon" src={rel(app.icon)} alt={`${app.name} app icon`} width="512" height="512" decoding="async" fetchpriority="high" />
+        </picture>
       </div>
     </section>
 

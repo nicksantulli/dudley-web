@@ -1,8 +1,9 @@
 ---
 import { formatDate } from '../lib/blog';
 import { rel } from '../consts';
-interface Props { title: string; description: string; href: string; date: Date; topic?: string; }
-const { title, description, href, date, topic } = Astro.props;
+interface Props { title: string; description: string; href: string; date: Date; topic?: string; headingLevel?: 2 | 3; }
+const { title, description, href, date, topic, headingLevel = 3 } = Astro.props;
+const Heading = `h${headingLevel}` as 'h2' | 'h3';
 ---
 <article class="answer-card">
   <a href={rel(href)}>
@@ -10,7 +11,7 @@ const { title, description, href, date, topic } = Astro.props;
       {topic && <span>{topic}</span>}
       <time datetime={date.toISOString().slice(0, 10)}>{formatDate(date)}</time>
     </div>
-    <h3>{title}</h3>
+    <Heading>{title}</Heading>
     <p>{description}</p>
     <span class="answer-link">Read the answer</span>
   </a>

@@ -3,7 +3,7 @@ interface Props { appName: string; href: string; compact?: boolean; }
 const { appName, href, compact = false } = Astro.props;
 ---
 {href && (
-  <a class:list={['store-action', { compact }]} href={href} rel="noopener" aria-label={`Download ${appName} on the App Store`}>
+  <a class:list={['store-action', { compact }]} href={href} rel="noopener" aria-label={`Download on the App Store: ${appName}`}>
     <span>Download on the</span>
     <strong>App Store</strong>
   </a>

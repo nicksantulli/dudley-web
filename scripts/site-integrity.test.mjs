@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { normalizePublicPath } from '../src/lib/urls.mjs';
 
@@ -192,4 +192,22 @@ test('every HTML page has one h1 and a skip-link target', () => {
     assert.match(page.html, /href="#main"/);
     assert.match(page.html, /id="main"/);
   }
+});
+
+test('shared and rendered assets stay within budgets', () => {
+  assert.ok(statSync(resolve('public/assets/dudley-mark.svg')).size < 5_000);
+  assert.ok(statSync(resolve('public/assets/style.css')).size <= 45_000);
+  for (const name of ['last-human-icon', 'table-talk-icon', 'vibe-rater-icon', 'econbyte-icon', 'powell-prowl-icon', 'dude-wheres-this-house-icon']) {
+    const files = ['avif', 'webp', 'png'].map((ext) => resolve(`public/assets/${name}.${ext}`)).filter(existsSync);
+    assert.ok(files.some((file) => statSync(file).size <= 100_000), `${name} lacks a <=100 KB source`);
+  }
+});
+
+test('homepage app bands deliver WebP sources without the legacy lockup', () => {
+  const home = readFileSync(resolve('dist/index.html'), 'utf8');
+  const bands = [...home.matchAll(/<section[^>]+data-app="[^"]+"[\s\S]*?<\/section>/g)].map((match) => match[0]);
+  assert.ok(bands.length >= 7);
+  bands.forEach((band) => assert.match(band, /<source[^>]+type="image\/webp"/));
+  assert.doesNotMatch(home, /dudley-lockup\.png/);
+  for (const page of htmlPages()) assert.doesNotMatch(page.html, /dudley-lockup\.png/, page.rel);
 });
