@@ -44,7 +44,7 @@ The same move is available without a daily puzzle. One prompt, face-up, in the m
 
 ## What Table Talk is for
 
-[Table Talk](/apps/table-talk/) is built for that second job. 420 hand-written prompts across six categories, plus an 80-card Would You Rather deck. You pick Date Night, Family Dinner, Friend Group, Work Team, Deep Questions, or Light & Fun, then swipe. The Daily Featured card is a different pick every day and works offline.
+[Table Talk conversation cards](/apps/table-talk/) are built for that second job. 420 hand-written prompts across six categories, plus an 80-card Would You Rather deck. You pick Date Night, Family Dinner, Friend Group, Work Team, Deep Questions, or Light & Fun, then swipe. The Daily Featured card is a different pick every day and works offline.
 
 No account. Every card is free. Ads stay out of a sitting — never during a session, never on the first one — and the Remove Ads purchase is a one-time buy if you want them gone.
 
