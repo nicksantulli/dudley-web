@@ -1,0 +1,17 @@
+---
+import { formatDate } from '../lib/blog';
+import { rel } from '../consts';
+interface Props { title: string; description: string; href: string; date: Date; topic?: string; }
+const { title, description, href, date, topic } = Astro.props;
+---
+<article class="answer-card">
+  <a href={rel(href)}>
+    <div class="answer-meta">
+      {topic && <span>{topic}</span>}
+      <time datetime={date.toISOString().slice(0, 10)}>{formatDate(date)}</time>
+    </div>
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <span class="answer-link">Read the answer</span>
+  </a>
+</article>

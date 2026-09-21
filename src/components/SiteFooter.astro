@@ -1,0 +1,60 @@
+---
+import { CONTACT_EMAIL, LEGAL_NAME, SOCIALS, STUDIO, SUPPORT_EMAIL, rel } from '../consts';
+
+interface NavItem { href: string; label: string; }
+interface Props { explore: NavItem[]; }
+
+const { explore } = Astro.props;
+const year = new Date().getFullYear();
+const help = [
+  { href: rel('/support/'), label: 'Support' },
+  { href: rel('/contact/'), label: 'Contact' },
+  { href: rel('/blog/'), label: 'The Dudley Blog' },
+  { href: rel('/blog/rss.xml'), label: 'RSS feed' },
+];
+const legal = [
+  { href: rel('/privacy/'), label: 'Privacy' },
+  { href: rel('/terms/vibe-rater/'), label: 'VibeRater Terms' },
+  { href: rel('/about/'), label: 'About Dudley' },
+];
+---
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href={rel('/')}>
+          <img class="mark" src={rel('/assets/dudley-mark.svg')} alt="" aria-hidden="true" width="30" height="30" />
+          <span>{STUDIO}</span>
+        </a>
+        <p>Games, conversation starters, and useful things for iPhone.</p>
+        {SOCIALS.length > 0 && (
+          <nav class="socials" aria-label="Dudley Development on social media">
+            {SOCIALS.map((social) => (
+              <a href={social.url} target="_blank" rel="noopener noreferrer" aria-label={social.label}>{social.name}</a>
+            ))}
+          </nav>
+        )}
+      </div>
+      <div class="foot-col">
+        <h3>Explore</h3>
+        <nav aria-label="Footer — explore">{explore.map((item) => <a href={item.href}>{item.label}</a>)}</nav>
+      </div>
+      <div class="foot-col">
+        <h3>Help</h3>
+        <nav aria-label="Footer — help">{help.map((item) => <a href={item.href}>{item.label}</a>)}</nav>
+      </div>
+      <div class="foot-col">
+        <h3>Legal</h3>
+        <nav aria-label="Footer — legal">{legal.map((item) => <a href={item.href}>{item.label}</a>)}</nav>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="copy">© {year} {LEGAL_NAME}. All rights reserved.</div>
+      <div class="foot-mail">
+        Support <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
+        <span aria-hidden="true"> · </span>
+        Say hi <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,69 @@
+---
+import { STUDIO, rel } from '../consts';
+
+interface NavItem {
+  href: string;
+  label: string;
+  match: string;
+}
+
+interface Props {
+  nav: NavItem[];
+  currentPath: string;
+}
+
+const { nav, currentPath } = Astro.props;
+const isCurrent = (match: string) =>
+  match === '/' ? currentPath === '/' : match !== '/#apps' && currentPath.startsWith(match);
+---
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href={rel('/')} aria-label={`${STUDIO} — home`}>
+      <img class="mark" src={rel('/assets/dudley-mark.svg')} alt="" aria-hidden="true" width="30" height="30" />
+      <span>{STUDIO}</span>
+    </a>
+
+    <nav class="top" aria-label="Primary">
+      {nav.map((item) => (
+        <a href={item.href} aria-current={isCurrent(item.match) ? 'page' : undefined}>{item.label}</a>
+      ))}
+    </nav>
+
+    <details class="nav-toggle" id="nav-toggle">
+      <summary aria-label="Open the main menu">Menu</summary>
+      <div class="nav-panel">
+        <nav aria-label="Primary, mobile">
+          {nav.map((item) => (
+            <a href={item.href} aria-current={isCurrent(item.match) ? 'page' : undefined}>{item.label}</a>
+          ))}
+          <a href={rel('/privacy/')}>Privacy</a>
+        </nav>
+      </div>
+    </details>
+  </div>
+</header>
+
+<script is:inline>
+  (function () {
+    var menu = document.getElementById('nav-toggle');
+    if (!menu) return;
+    var close = function () { menu.open = false; };
+    menu.addEventListener('click', function (event) {
+      if (event.target instanceof Element && event.target.closest('.nav-panel a')) close();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && menu.open) {
+        close();
+        var summary = menu.querySelector('summary');
+        if (summary) summary.focus();
+      }
+    });
+    document.addEventListener('click', function (event) {
+      if (menu.open && event.target instanceof Node && !menu.contains(event.target)) close();
+    });
+    var mq = window.matchMedia('(min-width: 861px)');
+    var onChange = function (event) { if (event.matches) close(); };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  })();
+</script>

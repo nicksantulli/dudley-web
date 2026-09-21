@@ -1,0 +1,40 @@
+---
+import AppStoreAction from './AppStoreAction.astro';
+import { rel } from '../consts';
+
+interface Props {
+  slug: string;
+  name: string;
+  headline: string;
+  description: string;
+  icon: string;
+  facts: string[];
+  status: 'live' | 'coming_soon' | 'in_development';
+  storeHref?: string;
+  detailHref?: string;
+  developedFor?: string;
+  art?: string;
+  reverse?: boolean;
+}
+
+const { slug, name, headline, description, icon, facts, status, storeHref = '', detailHref, developedFor, art, reverse = false } = Astro.props;
+const statusText = status === 'live' ? 'Live on the App Store' : status === 'coming_soon' ? 'Coming to the App Store' : 'In development';
+---
+<section class:list={['poster-band', `poster-${slug}`, { reverse }]} data-app={slug}>
+  <div class="poster-inner wrap">
+    <div class="poster-copy">
+      <p class="poster-status">{developedFor ? `Created for ${developedFor} · ` : ''}{statusText}</p>
+      <h2>{name}</h2>
+      <p class="poster-headline">{headline}</p>
+      <p class="poster-description">{description}</p>
+      <ul class="poster-facts">{facts.map((fact) => <li>{fact}</li>)}</ul>
+      <div class="poster-actions">
+        <AppStoreAction appName={name} href={storeHref} compact />
+        {detailHref && <a class="detail-action" href={rel(detailHref)}>See {name}</a>}
+      </div>
+    </div>
+    <div class="poster-media">
+      <img src={rel(art ?? icon)} alt={art ? `${name} product artwork` : `${name} app icon`} width={art ? '1200' : '512'} height={art ? '630' : '512'} loading="lazy" decoding="async" />
+    </div>
+  </div>
+</section>

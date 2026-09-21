@@ -137,3 +137,14 @@ test('representative schema facts match visible pages', () => {
   assert.match(postHtml, new RegExp(`datetime="${post.datePublished.slice(0, 10)}`));
   assert.match(postHtml, new RegExp(`datetime="${post.dateModified.slice(0, 10)}`));
 });
+
+test('shared shell uses the SVG mark and avoids rejected copy', () => {
+  const home = readFileSync(resolve('dist/index.html'), 'utf8');
+  assert.match(home, /src="\/assets\/dudley-mark\.svg"/);
+  assert.doesNotMatch(home, /Independent iOS studio|small apps with real character/i);
+});
+
+test('homepage ships no Astro hydration', () => {
+  const home = readFileSync(resolve('dist/index.html'), 'utf8');
+  assert.doesNotMatch(home, /astro-island|client:(?:load|idle|visible|media|only)/);
+});

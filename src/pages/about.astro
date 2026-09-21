@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { rel, SUPPORT_EMAIL, CONTACT_EMAIL, LEGAL_NAME } from '../consts';
-const description = 'Dudley Development is a small independent studio building polished, playful iPhone apps.';
+const description = 'Dudley Development builds and publishes iPhone games, conversation tools, social apps, and plain-English learning products.';
 
 // "The apps" is data-driven off the same content collection that powers the app cards,
 // per-app pages, and launch-status mechanism (DUD-182) — so the list, ordering, and
@@ -24,11 +24,11 @@ const statusLabel = (s: string) =>
       </nav>
 
       <h1>About Dudley Development</h1>
-      <p class="updated">Independent iOS studio · {LEGAL_NAME} · United States</p>
+      <p class="updated">{LEGAL_NAME} · United States</p>
 
       <p class="tldr">
-        Dudley Development is a small independent studio making iPhone apps — the kind that are quick
-        to pick up, do one thing with a bit of personality, and don't ask anything of you to start playing.
+        Dudley Development builds iPhone products you can understand before you download: games,
+        conversation starters, social tools, and short lessons with clear prices and privacy boundaries.
       </p>
 
       <h2>What we believe</h2>
