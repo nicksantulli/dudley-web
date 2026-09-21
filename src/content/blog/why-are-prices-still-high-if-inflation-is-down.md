@@ -34,7 +34,7 @@ In August 2026, the Bureau of Labor Statistics reported that the Consumer Price 
 
 So the short version is: a slower increase is still an increase. To get broad price declines, the inflation rate would have to turn negative. That is deflation, not disinflation.
 
-Sources: [BLS Consumer Price Index Summary for August 2026](https://www.bls.gov/news.release/cpi.nr0.htm), [St. Louis Fed: The Inflation Rate Is Falling, but Prices Are Not](https://www.stlouisfed.org/publications/page-one-economics/2024/03/01/the-inflation-rate-is-falling-but-prices-are-not), [St. Louis Fed: Prices vs. Inflation Explained](https://www.stlouisfed.org/open-vault/2025/july/differences-prices-inflation-explained), [Federal Reserve FAQ on inflation measures](https://www.federalreserve.gov/faqs/economy_14419.htm), and the current [EconByte: Daily Economics App Store listing](https://apps.apple.com/us/app/econbyte-daily-economics/id6780714383).
+Sources: [BLS Consumer Price Index Summary for August 2026](https://www.bls.gov/news.release/cpi.nr0.htm), [St. Louis Fed: The Inflation Rate Is Falling, but Prices Are Not](https://www.stlouisfed.org/publications/page-one-economics/2024/03/01/the-inflation-rate-is-falling-but-prices-are-not), [St. Louis Fed: Prices vs. Inflation Explained](https://www.stlouisfed.org/open-vault/2025/july/differences-prices-inflation-explained), [Federal Reserve FAQ on inflation measures](https://www.federalreserve.gov/faqs/economy_14419.htm), and the current [EconByte: Daily Economics app page](/apps/econbyte/).
 
 ## The Short Answer
 
