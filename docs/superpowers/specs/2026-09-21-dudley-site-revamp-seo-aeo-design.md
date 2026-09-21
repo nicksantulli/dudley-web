@@ -1,8 +1,8 @@
 # Dudley Website Revamp, SEO, and AEO Design
 
-**Date:** 2026-09-21  
-**Status:** Approved design direction; implementation pending plan approval  
-**Repository:** `dudley-web`  
+**Date:** 2026-09-21
+**Status:** Approved and implemented
+**Repository:** `dudley-web`
 **Target:** `https://dudleyapps.com/`
 
 ## 1. Decision summary
