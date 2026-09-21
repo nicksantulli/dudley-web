@@ -10,6 +10,11 @@ const apps = defineCollection({
     name: z.string(),
     tagline: z.string(),
     description: z.string(),
+    // Optional document-head overrides. On-page copy and SoftwareApplication
+    // JSON-LD keep `name`, `tagline`, and `description`. Base still appends
+    // " | Dudley Development" unless the title already includes the studio name.
+    seoTitle: z.string().min(8).max(70).optional(),
+    seoDescription: z.string().min(40).max(170).optional(),
     posterHeadline: z.string().min(12).max(90),
     posterFacts: z.array(z.string().min(3).max(100)).min(2).max(3),
     pricingSummary: z.string().min(3).max(180),

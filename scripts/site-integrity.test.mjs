@@ -134,6 +134,42 @@ test('every JSON-LD block parses', () => {
   }
 });
 
+test('Table Talk money page uses the search title, snippet, and app schema', () => {
+  const html = readFileSync(resolve('dist/apps/table-talk/index.html'), 'utf8');
+  assert.match(html, /<title>Table Talk: Conversation Cards for iPhone \| Dudley Development<\/title>/);
+  assert.match(html, /<meta name="description" content="Free iPhone conversation starter cards — 420 prompts \+ Would You Rather\. Offline, no account\. Dinner, dates, friends, teams\."/);
+  const blocks = jsonLd(html);
+  const app = blocks.find((value) => value['@type'] === 'SoftwareApplication');
+  assert.equal(app.name, 'Table Talk: Conversation Cards');
+  assert.match(app.description, /420 prompts plus a Would You Rather deck/);
+  assert.equal(app.operatingSystem, 'iOS 16.6 or later');
+  assert.equal(app.applicationCategory, 'EntertainmentApplication');
+  assert.equal(app.url, 'https://dudleyapps.com/apps/table-talk/');
+  assert.equal(app.offers.price, '0');
+  assert.equal(app.offers.priceCurrency, 'USD');
+  assert.equal(app.isAccessibleForFree, true);
+  assert.equal(app.aggregateRating, undefined);
+  assert.equal(app.reviewCount, undefined);
+  const faq = blocks.find((value) => value['@type'] === 'FAQPage');
+  assert.ok(faq.mainEntity.length >= 1);
+  assert.equal(faq.mainEntity[0].name, 'What is Table Talk: Conversation Cards?');
+  assert.match(faq.mainEntity[0].acceptedAnswer.text, /free iPhone app/);
+});
+
+test('homepage head mentions Table Talk once', () => {
+  const home = readFileSync(resolve('dist/index.html'), 'utf8');
+  assert.match(home, /<title>Dudley Development — iPhone apps, games &amp; conversation cards<\/title>/);
+  const description = capture(home, /<meta name="description" content="([^"]+)"/i);
+  assert.equal(description, 'Games, conversation starters, and useful things for iPhone, including Table Talk.');
+  assert.equal(description.match(/Table Talk/g)?.length, 1);
+  assert.equal(description.match(/conversation/gi)?.length, 1);
+});
+
+test('phone-in-the-middle links to Table Talk with a descriptive anchor', () => {
+  const html = readFileSync(resolve('dist/blog/phone-in-the-middle/index.html'), 'utf8');
+  assert.match(html, /<a href="\/apps\/table-talk\/">Table Talk conversation cards<\/a>/);
+});
+
 test('representative schema facts match visible pages', () => {
   const appHtml = readFileSync(resolve('dist/apps/last-human/index.html'), 'utf8');
   const app = jsonLd(appHtml).find((value) => value['@type'] === 'SoftwareApplication');
