@@ -48,6 +48,7 @@ export const APP_STORE = {
   dudeWheresThisHouse: '6779785617',
   econByte: '6780714383',
   tableTalk: '6780714565',
+  lastHuman: '6808782611',
 };
 
 export function appStoreUrl(id: string): string {

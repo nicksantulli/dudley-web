@@ -264,6 +264,44 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+
+  // ── Last Human: Dodge the Bots (6808782611) ─────────────────────────────
+  {
+    ct: 'lh-web-card-sep26-v1',
+    appId: '6808782611',
+    surface: 'Homepage app card badge',
+    path: '/',
+    channel: 'web',
+    ppid: null,
+    registeredAt: '2026-09-21',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  {
+    ct: 'lh-web-app-sep26-v1',
+    appId: '6808782611',
+    surface: '/apps/last-human/ AppCTA',
+    path: '/apps/last-human/',
+    channel: 'web',
+    ppid: null,
+    registeredAt: '2026-09-21',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  {
+    ct: 'lh-web-llms-sep26-v1',
+    appId: '6808782611',
+    surface: 'llms.txt app link',
+    path: '/llms.txt',
+    channel: 'web',
+    ppid: null,
+    registeredAt: '2026-09-21',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
 ]);
 
 // ---------------------------------------------------------------------------
@@ -312,6 +350,7 @@ export const FIRST_PARTY_APP_IDS = Object.freeze([
   '6775539250', // Powell Prowl: Rate Chase
   '6780714383', // EconByte: Daily Economics
   '6779785617', // Dude, Where's This House?
+  '6808782611', // Last Human: Dodge the Bots
 ]);
 
 // ---------------------------------------------------------------------------
@@ -322,6 +361,7 @@ export const FIRST_PARTY_APP_IDS = Object.freeze([
 // Table Talk uses the plain /app/id... path (no named slug confirmed yet).
 const APP_STORE_SLUGS = Object.freeze({
   '6780704282': 'viberater-social',
+  '6808782611': 'last-human-dodge-the-bots',
 });
 
 const TOKEN_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
@@ -339,6 +379,7 @@ const APP_STORE_PROVIDER_TOKENS = Object.freeze({
   '6775539250': PROVIDER_TOKEN, // Powell Prowl: Rate Chase
   '6780714383': PROVIDER_TOKEN, // EconByte: Daily Economics
   '6779785617': PROVIDER_TOKEN, // Dude, Where's This House?
+  '6808782611': PROVIDER_TOKEN, // Last Human: Dodge the Bots
 });
 
 // Placement token sets — keyed by app, grouped by surface.
@@ -379,6 +420,12 @@ export const ECONBYTE_ASC_TOKENS = Object.freeze({
 export const DUDE_WHERES_ASC_TOKENS = Object.freeze({
   homeCard: 'dwh-web-card-sep26-v1', // homepage app card badge (client work section)
   llms: 'dwh-web-llms-sep26-v1',     // llms.txt app link
+});
+
+export const LAST_HUMAN_ASC_TOKENS = Object.freeze({
+  homeCard: 'lh-web-card-sep26-v1',
+  appDetail: 'lh-web-app-sep26-v1',
+  llms: 'lh-web-llms-sep26-v1',
 });
 
 // ---------------------------------------------------------------------------

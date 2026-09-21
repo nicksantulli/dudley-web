@@ -4,7 +4,7 @@ import FAQ from '../components/FAQ.astro';
 import InternalLinks from '../components/InternalLinks.astro';
 import AppCTA from '../components/AppCTA.astro';
 import { STUDIO, ORIGIN, rel, abs, appStoreUrl, APP_STORE } from '../consts';
-import { VIBERATER_ASC_TOKENS, TABLE_TALK_ASC_TOKENS, POWELL_PROWL_ASC_TOKENS, ECONBYTE_ASC_TOKENS } from '../lib/campaignLinks.mjs';
+import { VIBERATER_ASC_TOKENS, TABLE_TALK_ASC_TOKENS, POWELL_PROWL_ASC_TOKENS, ECONBYTE_ASC_TOKENS, LAST_HUMAN_ASC_TOKENS } from '../lib/campaignLinks.mjs';
 import { appBannerIdFor } from '../lib/appBanner';
 
 export interface Props {
@@ -84,6 +84,7 @@ const pageSchema = faqSchema ? [appSchema, faqSchema] : appSchema;
           app.appStoreId === APP_STORE.tableTalk                    ? TABLE_TALK_ASC_TOKENS.appDetail :
           app.appStoreId === APP_STORE.monetaryPolicyIndependenceDay ? POWELL_PROWL_ASC_TOKENS.appDetail :
           app.appStoreId === APP_STORE.econByte                     ? ECONBYTE_ASC_TOKENS.appDetail :
+          app.appStoreId === APP_STORE.lastHuman                    ? LAST_HUMAN_ASC_TOKENS.appDetail :
           undefined
         }
       />

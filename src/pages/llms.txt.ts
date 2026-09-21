@@ -1,5 +1,5 @@
 import { abs, APP_STORE, SUPPORT_EMAIL, CONTACT_EMAIL } from '../consts';
-import { appStoreCampaignUrl, DUDE_WHERES_ASC_TOKENS } from '../lib/campaignLinks.mjs';
+import { appStoreCampaignUrl, DUDE_WHERES_ASC_TOKENS, LAST_HUMAN_ASC_TOKENS } from '../lib/campaignLinks.mjs';
 import { getPublishedPosts } from '../lib/blog';
 
 // llms.txt is generated so the Blog section stays current automatically — the Content
@@ -24,7 +24,7 @@ export async function GET() {
 - [Powell Prowl: Rate Chase](${abs('/apps/monetary-policy-independence-day/')}): A free satirical iPhone mini-game collection — hand-tuned levels across multiple mini-game types including chase, sniper, canoe race, and more. Live on the App Store. Requires iOS 16.6+.
 - [EconByte: Daily Economics](${abs('/apps/econbyte/')}): A free iPhone app that explains economics in bite-sized daily cards — inflation, interest rates, GDP, trade — sourced to named institutions. Two topics free; 13 more unlock with a one-time $0.99 purchase. Educational only. Live on the App Store. Requires iOS 16.6+.
 - [Dude, Where's This House?](${appStoreCampaignUrl(APP_STORE.dudeWheresThisHouse, DUDE_WHERES_ASC_TOKENS.llms)}): A free iPhone geography game built for HomeLight with 5,000 approved U.S. residential locations. Live on the App Store. Requires iOS 17+.
-- Last Human: A free satirical top-down arcade game for iPhone. Coming soon to the App Store.
+- [Last Human: Dodge the Bots](${appStoreCampaignUrl(APP_STORE.lastHuman, LAST_HUMAN_ASC_TOKENS.llms)}): A free satirical top-down arcade game for iPhone. Dodge office bots, collect power-ups, and reach the time clock across 50 floors. No account required; plays offline. Live on the App Store. Requires iOS 16.6+.
 - Beat the Dealer: Card Counting: An offline blackjack trainer for adults 18+. Coming soon to the App Store.
 
 ## Archetypes (VibeRater Social)

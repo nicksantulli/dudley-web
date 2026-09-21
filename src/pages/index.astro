@@ -9,6 +9,7 @@ import {
   POWELL_PROWL_ASC_TOKENS,
   ECONBYTE_ASC_TOKENS,
   DUDE_WHERES_ASC_TOKENS,
+  LAST_HUMAN_ASC_TOKENS,
 } from '../lib/campaignLinks.mjs';
 import { getPublishedPosts, formatDate } from '../lib/blog';
 
@@ -25,6 +26,7 @@ const HOME_CARD_TOKENS: Record<string, string> = {
   [APP_STORE.monetaryPolicyIndependenceDay]: POWELL_PROWL_ASC_TOKENS.homeCard,
   [APP_STORE.econByte]:                     ECONBYTE_ASC_TOKENS.homeCard,
   [APP_STORE.dudeWheresThisHouse]:          DUDE_WHERES_ASC_TOKENS.homeCard,
+  [APP_STORE.lastHuman]:                    LAST_HUMAN_ASC_TOKENS.homeCard,
 };
 const storeUrlFor = (app: any): string => {
   const id: string = app.data.appStoreId;

@@ -474,3 +474,27 @@ test('llms.txt App Store links are tagged, registered, and correctly paired', ()
 
   assert.deepEqual(failures, [], `llms.txt attribution failures:\n${failures.join('\n')}`);
 });
+
+test('Last Human renders as a live 50-floor App Store release across launch surfaces', () => {
+  const home = pages.find((p) => p.rel === '/index.html');
+  const appPage = pages.find((p) => p.rel === '/apps/last-human/index.html');
+  const llmsPath = join(DIST, 'llms.txt');
+
+  assert.ok(home, 'dist/index.html not found');
+  assert.ok(appPage, 'dist/apps/last-human/index.html not found');
+  assert.ok(existsSync(llmsPath), 'dist/llms.txt does not exist');
+
+  const homeUrl = 'https://apps.apple.com/us/app/last-human-dodge-the-bots/id6808782611?pt=128970277&ct=lh-web-card-sep26-v1&mt=8';
+  const appUrl = 'https://apps.apple.com/us/app/last-human-dodge-the-bots/id6808782611?pt=128970277&ct=lh-web-app-sep26-v1&mt=8';
+  const llmsUrl = 'https://apps.apple.com/us/app/last-human-dodge-the-bots/id6808782611?pt=128970277&ct=lh-web-llms-sep26-v1&mt=8';
+  const llms = readFileSync(llmsPath, 'utf-8');
+
+  assert.ok(home.html.includes(homeUrl), 'homepage is missing the Last Human App Store CTA');
+  assert.ok(appPage.html.includes('Live on the App Store'), 'Last Human app page is not marked live');
+  assert.ok(appPage.html.includes(appUrl), 'Last Human app page is missing its attributed App Store CTA');
+  assert.match(appPage.html, /50 floors/i);
+  assert.doesNotMatch(appPage.html, /10 levels/i);
+  assert.ok(llms.includes(llmsUrl), 'llms.txt is missing the attributed Last Human App Store link');
+  assert.match(llms, /Last Human[^\n]+Live on the App Store/i);
+  assert.doesNotMatch(llms, /Last Human[^\n]+Coming soon/i);
+});

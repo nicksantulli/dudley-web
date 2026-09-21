@@ -7,9 +7,11 @@ const {
   blogCampaignToken,
   tableTalkBlogCampaignToken,
   TABLE_TALK_ASC_TOKENS,
+  LAST_HUMAN_ASC_TOKENS,
 } = campaignLinks;
 
 const TABLE_TALK_APP_ID = '6780714565';
+const LAST_HUMAN_APP_ID = '6808782611';
 const PHONE_IN_THE_MIDDLE_SLUG = 'phone-in-the-middle';
 const PHONE_IN_THE_MIDDLE_CT = 'tt-web-blog-phone-in-the-middle-sep26-v1';
 const TABLE_TALK_TIKTOK_CT = 'tabletalk-tiktok-20260910';
@@ -64,6 +66,26 @@ test('builds a Table Talk campaign link with correct pt and mt', () => {
   assert.ok(url.includes('pt=128970277'), 'missing pt');
   assert.ok(url.includes('ct=tabletalk-web-home'), 'wrong ct');
   assert.ok(url.includes('mt=8'), 'missing mt=8');
+});
+
+test('builds the verified Last Human App Store URL for the homepage card', () => {
+  assert.equal(
+    appStoreCampaignUrl(LAST_HUMAN_APP_ID, LAST_HUMAN_ASC_TOKENS.homeCard),
+    'https://apps.apple.com/us/app/last-human-dodge-the-bots/id6808782611?pt=128970277&ct=lh-web-card-sep26-v1&mt=8',
+  );
+});
+
+test('registers unique Last Human tokens for each launch surface', () => {
+  assert.deepEqual(LAST_HUMAN_ASC_TOKENS, {
+    homeCard: 'lh-web-card-sep26-v1',
+    appDetail: 'lh-web-app-sep26-v1',
+    llms: 'lh-web-llms-sep26-v1',
+  });
+
+  for (const token of Object.values(LAST_HUMAN_ASC_TOKENS)) {
+    const resolved = campaignLinks.resolveTokenDefinition(token);
+    assert.equal(resolved?.appId, LAST_HUMAN_APP_ID);
+  }
 });
 
 test('ALL_REGISTERED_TOKENS contains no duplicates', () => {
