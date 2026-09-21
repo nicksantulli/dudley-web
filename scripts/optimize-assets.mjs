@@ -12,6 +12,21 @@ const names = [
   'dude-wheres-this-house',
 ];
 
+const dudleyMark = resolve('public/assets/dudley-mark.png');
+if (existsSync(dudleyMark)) {
+  await sharp(dudleyMark)
+    .resize({ width: 360, withoutEnlargement: true })
+    .png({ compressionLevel: 9 })
+    .toFile(resolve('public/assets/dudley-mark-logo.png'));
+
+  await sharp(dudleyMark)
+    .resize({ width: 108, withoutEnlargement: true })
+    .ensureAlpha()
+    .linear([0, 0, 0, 1], [245, 240, 230, 0])
+    .webp({ quality: 88, effort: 5 })
+    .toFile(resolve('public/assets/dudley-mark-header.webp'));
+}
+
 for (const name of names) {
   const icon = resolve(`public/assets/${name}-icon.png`);
   if (existsSync(icon)) {

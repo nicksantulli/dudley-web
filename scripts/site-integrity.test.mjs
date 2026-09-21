@@ -138,9 +138,9 @@ test('representative schema facts match visible pages', () => {
   assert.match(postHtml, new RegExp(`datetime="${post.dateModified.slice(0, 10)}`));
 });
 
-test('shared shell uses the SVG mark and avoids rejected copy', () => {
+test('shared shell uses the optimized visible mark and avoids rejected copy', () => {
   const home = readFileSync(resolve('dist/index.html'), 'utf8');
-  assert.match(home, /src="\/assets\/dudley-mark\.svg"/);
+  assert.match(home, /src="\/assets\/dudley-mark-header\.webp"/);
   assert.doesNotMatch(home, /Independent iOS studio|small apps with real character/i);
 });
 
@@ -196,6 +196,8 @@ test('every HTML page has one h1 and a skip-link target', () => {
 
 test('shared and rendered assets stay within budgets', () => {
   assert.ok(statSync(resolve('public/assets/dudley-mark.svg')).size < 5_000);
+  assert.ok(statSync(resolve('public/assets/dudley-mark-header.webp')).size <= 12_000);
+  assert.ok(statSync(resolve('public/assets/dudley-mark-logo.png')).size <= 150_000);
   assert.ok(statSync(resolve('public/assets/style.css')).size <= 45_000);
   for (const name of ['last-human-icon', 'table-talk-icon', 'vibe-rater-icon', 'econbyte-icon', 'powell-prowl-icon', 'dude-wheres-this-house-icon']) {
     const files = ['avif', 'webp', 'png'].map((ext) => resolve(`public/assets/${name}.${ext}`)).filter(existsSync);

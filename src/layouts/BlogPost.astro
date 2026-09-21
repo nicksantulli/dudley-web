@@ -28,7 +28,7 @@ const APP_META: Record<string, { name: string; id: string }> = {
 const ctaKey = post.relatedApps?.find((a: string) => APP_META[a]) ?? 'vibe-rater';
 const cta = APP_META[ctaKey];
 
-const ogImage = post.ogImage ?? '/assets/dudley-mark.svg';
+const ogImage = post.ogImage ?? '/assets/og-home.png';
 const tags = postTags({ data: post } as any);
 const postEntry = { data: post } as any;
 const eligibleTopics = new Set(eligibleTopicHubs(await getPublishedPosts()).map((hub) => hub.slug));
