@@ -1,0 +1,87 @@
+---
+import Base from '../../layouts/Base.astro';
+import { rel, SUPPORT_EMAIL, LEGAL_NAME } from '../../consts';
+const description = `Privacy policy for ActionCard: Next Steps by ${LEGAL_NAME}.`;
+---
+<Base title="Privacy Policy · ActionCard: Next Steps" description={description} path="/privacy/action-card">
+  <main class="page">
+    <div class="wrap" style="max-width:720px;">
+      <a class="back" href={rel('/privacy/')}>← All privacy policies</a>
+      <h1>Privacy Policy</h1>
+      <p class="updated">ActionCard: Next Steps · Effective date: September 21, 2026</p>
+
+      <h2>The short version</h2>
+      <p>
+        {LEGAL_NAME} operates ActionCard, a free action-item app supported by ads. There are no accounts.
+        Your action text, owner names, due dates, notes, completion state, and history stay on your iPhone
+        and are never sent to Dudley Development, Google, or another service.
+      </p>
+
+      <h2>What stays on your device</h2>
+      <ul>
+        <li>Action text and owner names.</li>
+        <li>Due dates and supporting notes.</li>
+        <li>Completion state and timestamps.</li>
+        <li>App settings and the local Remove Ads entitlement state.</li>
+      </ul>
+      <p>
+        ActionCard stores this information locally. Deleting the app removes its local data. Sharing an
+        action uses the standard iOS share sheet and sends only the text or image you choose through the
+        destination you choose; Dudley Development does not receive a copy.
+      </p>
+
+      <h2>Advertising (Google AdMob)</h2>
+      <p>
+        The free version uses <strong>Google AdMob</strong>. ActionCard requests
+        <strong>non-personalized ads</strong>, disables Google's publisher first-party identifier, and does
+        not request Apple's tracking permission. No ad request is made in the European Economic Area,
+        United Kingdom, Switzerland, or when the app cannot determine the device's region.
+      </p>
+      <p>
+        Where ads are allowed, Google's advertising software may process an IP address, device or app-scoped
+        identifiers, coarse location inferred from the IP address, ad impressions and interactions,
+        product interaction, performance data, and diagnostic information to deliver, limit, measure, and
+        protect ads and provide app functionality. ActionCard never includes action text, owner names, dates,
+        or notes in an ad request. Dudley Development does not run a separate analytics or crash-reporting
+        service in this app.
+      </p>
+      <ul>
+        <li>Google's practices are described in <a href="https://policies.google.com/technologies/ads">Google's advertising policy</a> and <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</li>
+        <li>Interstitial ads appear only after natural breaks and are limited by session, time, and daily caps.</li>
+        <li>A one-time Remove Ads purchase removes both banner and interstitial ads.</li>
+      </ul>
+
+      <h2>App Store privacy label</h2>
+      <p>
+        ActionCard's App Store privacy answers conservatively disclose the data types and purposes declared
+        by the bundled Google Mobile Ads and User Messaging Platform software, including Device ID,
+        Advertising Data, Coarse Location, Product Interaction, Crash Data, Performance Data, and Other
+        Diagnostic Data. Google Mobile Ads declares Device ID for tracking, so the App Store label says the
+        app may track even though ActionCard requests only non-personalized ads and does not show Apple's
+        tracking permission prompt.
+      </p>
+
+      <h2>Purchases</h2>
+      <p>
+        Apple processes the Remove Ads purchase. Dudley Development does not receive your payment-card
+        information. The app asks Apple's StoreKit service whether the purchase is active so it can remove
+        ads and restore the entitlement on devices using the same Apple Account.
+      </p>
+
+      <h2>Children</h2>
+      <p>
+        ActionCard is not directed at children under 13 and does not knowingly collect personal information
+        from children. It has no accounts, profiles, chat, or user-submitted public content.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        If this policy changes materially, the updated policy will appear at this URL with a new effective
+        date before the changed practice ships.
+      </p>
+
+      <h2>Contact</h2>
+      <p>Questions or privacy requests? Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
+    </div>
+  </main>
+</Base>
