@@ -9,6 +9,9 @@
     <image:image><image:loc>https://dudleyapps.com/assets/econbyte-og.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/powell-prowl-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/beat-the-dealer-icon.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/packed-yet-icon.svg</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/action-card-icon.svg</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/reply-gate-icon.svg</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dude-wheres-this-house-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
   </url>
@@ -16,6 +19,11 @@
     <loc>https://dudleyapps.com/about/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://dudleyapps.com/apps/action-card/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/action-card-icon.svg</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/apps/econbyte/</loc>
@@ -33,6 +41,16 @@
     <loc>https://dudleyapps.com/apps/monetary-policy-independence-day/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/powell-prowl-icon.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://dudleyapps.com/apps/packed-yet/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/packed-yet-icon.svg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://dudleyapps.com/apps/reply-gate/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/reply-gate-icon.svg</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/apps/table-talk/</loc>
