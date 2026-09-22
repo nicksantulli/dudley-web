@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">ActionCard app icon</title>
+  <desc id="desc">A navy index card with an orange spine, punched hole, and white check.</desc>
+  <rect width="1024" height="1024" fill="#F7F3EA"/>
+  <rect x="164" y="170" width="696" height="684" rx="124" fill="#0D2145"/>
+  <rect x="164" y="170" width="34" height="684" rx="17" fill="#F25A1F"/>
+  <circle cx="771" cy="257" r="33" fill="#F7F3EA"/>
+  <path d="M322 519 L448 645 L704 383" fill="none" stroke="#FFFFFF" stroke-width="86" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
