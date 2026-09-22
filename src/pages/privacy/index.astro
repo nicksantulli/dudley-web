@@ -8,7 +8,7 @@ const description = 'Privacy policies for Dudley Development apps.';
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/')}>← Home</a>
       <h1>Privacy</h1>
-      <p class="updated">Effective date: September 21, 2026 · One policy per app — pick yours below.</p>
+      <p class="updated">Effective date: September 22, 2026 · One policy per app — pick yours below.</p>
 
       <p>
         {LEGAL_NAME} makes several separate apps, and they don't all collect the same things, so there
@@ -76,7 +76,13 @@ const description = 'Privacy policies for Dudley Development apps.';
               <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Google AdMob, non-personalized, no ATT prompt; no ads in EEA/UK/CH or unknown regions</td>
             </tr>
             <tr>
-              <td style="padding:8px 10px 8px 0;">ActionCard: Next Steps</td>
+              <td style="padding:8px 10px 8px 0; border-bottom:1px solid var(--border, #222);">ActionCard: Next Steps</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">No</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">No</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Google AdMob, non-personalized, no ATT prompt; no ads in EEA/UK/CH or unknown regions</td>
+            </tr>
+            <tr>
+              <td style="padding:8px 10px 8px 0;">ReplyGate: Reply or Skip</td>
               <td style="padding:8px 10px;">No</td>
               <td style="padding:8px 10px;">No</td>
               <td style="padding:8px 10px;">Google AdMob, non-personalized, no ATT prompt; no ads in EEA/UK/CH or unknown regions</td>
@@ -139,6 +145,13 @@ const description = 'Privacy policies for Dudley Development apps.';
           <a class="row" href={rel('/privacy/action-card')}>
             <img src={rel('/assets/action-card-icon.svg')} alt="ActionCard app icon" width="44" height="44" loading="lazy" />
             <span class="meta"><b>ActionCard: Next Steps</b><span>Privacy policy</span></span>
+            <span class="chev">→</span>
+          </a>
+        </li>
+        <li>
+          <a class="row" href={rel('/privacy/reply-gate')}>
+            <img src={rel('/assets/reply-gate-icon.svg')} alt="ReplyGate app icon" width="44" height="44" loading="lazy" />
+            <span class="meta"><b>ReplyGate: Reply or Skip</b><span>Privacy policy</span></span>
             <span class="chev">→</span>
           </a>
         </li>
