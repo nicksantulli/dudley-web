@@ -1,0 +1,93 @@
+---
+import Base from '../../layouts/Base.astro';
+import { rel, SUPPORT_EMAIL, LEGAL_NAME } from '../../consts';
+const description = `Privacy policy for SendBrake: Message Check by ${LEGAL_NAME}.`;
+---
+<Base title="Privacy Policy · SendBrake: Message Check" description={description} path="/privacy/send-brake">
+  <main class="page">
+    <div class="wrap" style="max-width:720px;">
+      <a class="back" href={rel('/privacy/')}>← All privacy policies</a>
+      <h1>Privacy Policy</h1>
+      <p class="updated">SendBrake: Message Check · Effective date: September 22, 2026</p>
+
+      <h2>The short version</h2>
+      <p>
+        {LEGAL_NAME} operates SendBrake, a free message-decision app supported by ads. It has no account
+        or inbox connection and cannot send a message. The default check runs on your iPhone. The optional
+        Jev check sends the draft and any note you entered to our Cloudflare proxy and TypeSafe AI only
+        after you choose the online check and see its disclosure. Jev returns Send, Rewrite, or Leave unsent;
+        it does not write a message for you.
+      </p>
+
+      <h2>What stays on your device</h2>
+      <ul>
+        <li>The draft and optional note during the active check.</li>
+        <li>History containing your decision, optional short label, and dates, but not the draft or note.</li>
+        <li>App settings, ad-frequency counters, and the local Remove Ads entitlement state.</li>
+      </ul>
+      <p>
+        The draft and note are cleared after Save, Start over, or backgrounding. The iOS share extension
+        can receive text or a URL you explicitly share into SendBrake; it does not connect to your inbox.
+        The original text is not saved to history, diagnostics, result cards, or ad requests. Deleting the
+        app removes its local history.
+      </p>
+
+      <h2>Optional online Jev check</h2>
+      <p>
+        If you select Check with Jev, SendBrake sends the draft, message-channel choice, and any optional
+        note over HTTPS to a Dudley Development Cloudflare Worker. The Worker forwards that input to
+        <a href="https://typesafe.ai/legal/privacy-policy">TypeSafe AI</a> for a closed-set decision.
+        TypeSafe may retain API input under its policy; do not use this option for text you are unwilling
+        to share with that provider. The Worker logs only response status, not the draft or note.
+      </p>
+      <p>
+        Cloudflare supplies the request IP address to the Worker. It is hashed with a server secret for a
+        daily abuse-limit counter; the counter does not store the raw IP address or draft. Cloudflare and
+        TypeSafe process data under their own privacy terms. If the online service fails or reaches its
+        limit, SendBrake labels the on-device fallback instead of presenting it as a Jev result.
+      </p>
+
+      <h2>Sharing</h2>
+      <p>
+        Sharing a result uses the iOS share sheet and includes the decision summary you choose, not the
+        source draft. The destination you select receives that shared content under its own privacy
+        practices; Dudley Development does not receive a copy.
+      </p>
+
+      <h2>Advertising (Google AdMob)</h2>
+      <p>
+        The free version uses Google AdMob. SendBrake requests non-personalized ads, disables Google's
+        publisher first-party identifier, and does not request Apple's tracking permission. It makes no
+        ad request in the European Economic Area, United Kingdom, Switzerland, or if it cannot determine
+        the device's region. No draft, note, label, or decision is included in an ad request.
+      </p>
+      <p>
+        Where ads are allowed, Google's SDKs may process an IP address, device or app-scoped identifiers,
+        coarse location inferred from IP, advertising data, product interactions, impressions, crash data,
+        performance data, and other diagnostics to deliver, measure, limit, and protect ads and provide app
+        functionality. Google's manifests may declare tracking for Device ID even though this app requests
+        non-personalized ads and does not show an Apple tracking-permission prompt. We do not run separate
+        PostHog or Sentry services in SendBrake.
+      </p>
+      <ul>
+        <li>Read <a href="https://policies.google.com/technologies/ads">Google's advertising policy</a> and <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</li>
+        <li>A banner appears only on History; an interstitial may appear only after a natural break, subject to session, time, and daily caps.</li>
+        <li>A one-time Remove Ads purchase removes banner and interstitial ads.</li>
+      </ul>
+
+      <h2>Purchases</h2>
+      <p>
+        Apple processes the Remove Ads purchase. We do not receive payment-card details. The app checks
+        StoreKit for an active entitlement so it can remove ads and restore the purchase.
+      </p>
+
+      <h2>Children, changes, and contact</h2>
+      <p>
+        SendBrake is not directed at children under 13 and does not knowingly collect their personal
+        information. Material policy changes will appear here with a new effective date before the changed
+        practice ships. Questions or privacy requests? Email
+        <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+      </p>
+    </div>
+  </main>
+</Base>
