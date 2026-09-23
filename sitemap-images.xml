@@ -12,6 +12,7 @@
     <image:image><image:loc>https://dudleyapps.com/assets/packed-yet-icon.svg</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/action-card-icon.svg</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/reply-gate-icon.svg</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/send-brake-icon.svg</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/dude-wheres-this-house-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
   </url>
@@ -51,6 +52,11 @@
     <loc>https://dudleyapps.com/apps/reply-gate/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/reply-gate-icon.svg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://dudleyapps.com/apps/send-brake/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/send-brake-icon.svg</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/apps/table-talk/</loc>
