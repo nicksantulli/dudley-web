@@ -93,6 +93,20 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // @DudleyAppDev X collector original posted 2026-09-24 MT
+  // https://x.com/DudleyAppDev/status/2103173916412055838
+  {
+    ct: 'tabletalk-x-collector-20260924',
+    appId: '6780714565',
+    surface: 'X collector App Store campaign (2026-09-24)',
+    path: 'x',
+    channel: 'x',
+    ppid: null,
+    registeredAt: '2026-09-24',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   {
     ct: 'tt-web-llms-sep26-v1',
     appId: '6780714565',
@@ -453,8 +467,9 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   homeHero:  'tt-web-hero-sep26-v1', // homepage hero primary CTA (new)
   // Off-site TikTok surface — one-off dated token, not a blog slug generator.
   tiktok:    'tabletalk-tiktok-20260910',
-  // Off-site X collector surface — one-off dated token, not a blog slug generator.
+  // Off-site X collector surfaces — one-off dated tokens, not a blog slug generator.
   xCollector: 'tabletalk-x-collector-20260914',
+  xCollector20260924: 'tabletalk-x-collector-20260924',
   llms:       'tt-web-llms-sep26-v1',
 });
 
