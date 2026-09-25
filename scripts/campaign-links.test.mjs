@@ -26,6 +26,12 @@ const TABLE_TALK_OUTREACH_INDIEDEVMONDAY_20260925_CT = 'da_outreach_indiedevmond
 const TABLE_TALK_OUTREACH_TIDBITS_20260925_CT = 'tt_outreach_tidbits_20260925';
 const TABLE_TALK_OUTREACH_MACSTORIES_20260925_CT = 'tt_outreach_macstories_20260925';
 const SHARED_INDIEDEVMONDAY_CT = 'da_outreach_indiedevmonday_20260925';
+const LAST_HUMAN_OUTREACH_CULTOFMAC_20260925_CT = 'lh_outreach_cultofmac_20260925';
+const ECONBYTE_OUTREACH_MONEYGIRL_20260925_CT = 'eb_outreach_moneygirl_20260925';
+const LAST_HUMAN_OUTREACH_INDIETOOLS_20260925_CT = 'lh_outreach_indietools_20260925';
+const TABLE_TALK_OUTREACH_INDIETOOLS_20260925_CT = 'tt_outreach_indietools_20260925';
+const ECONBYTE_OUTREACH_INDIETOOLS_20260925_CT = 'eb_outreach_indietools_20260925';
+const STUDIO_OUTREACH_INDIETOOLS_20260925_CT = 'da_outreach_indietools_20260925';
 const PHONE_IN_THE_MIDDLE_SLUG = 'phone-in-the-middle';
 const PHONE_IN_THE_MIDDLE_CT = 'tt-web-blog-phone-in-the-middle-sep26-v1';
 const TABLE_TALK_TIKTOK_CT = 'tabletalk-tiktok-20260910';
@@ -103,6 +109,8 @@ test('registers unique Last Human tokens for each launch surface', () => {
     outreachIndieDevMonday20260925: LAST_HUMAN_OUTREACH_INDIEDEVMONDAY_20260925_CT,
     outreachPocketgamer20260925: LAST_HUMAN_OUTREACH_POCKETGAMER_20260925_CT,
     outreach148apps20260925: LAST_HUMAN_OUTREACH_148APPS_20260925_CT,
+    outreachCultofmac20260925: LAST_HUMAN_OUTREACH_CULTOFMAC_20260925_CT,
+    outreachIndietools20260925: LAST_HUMAN_OUTREACH_INDIETOOLS_20260925_CT,
   });
 
   for (const token of Object.values(LAST_HUMAN_ASC_TOKENS)) {
@@ -591,6 +599,174 @@ test('Table Talk MacStories outreach 2026-09-25 App Store URL uses pt, registere
   assert.equal(
     url,
     `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${TABLE_TALK_OUTREACH_MACSTORIES_20260925_CT}&mt=8`,
+  );
+});
+
+test('Last Human Cult of Mac outreach 2026-09-25 token is a registered static definition', () => {
+  assert.equal(LAST_HUMAN_ASC_TOKENS.outreachCultofmac20260925, LAST_HUMAN_OUTREACH_CULTOFMAC_20260925_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(LAST_HUMAN_OUTREACH_CULTOFMAC_20260925_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(LAST_HUMAN_OUTREACH_CULTOFMAC_20260925_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, LAST_HUMAN_APP_ID);
+  assert.equal(resolved.ct, LAST_HUMAN_OUTREACH_CULTOFMAC_20260925_CT);
+  assert.equal(resolved.channel, 'email');
+  assert.equal(resolved.path, 'email');
+  assert.equal(resolved.surface, 'Email outreach Cult of Mac reviews@ (Last Human)');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-25');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+  assert.equal(campaignLinks.CT_TO_APP_ID[LAST_HUMAN_OUTREACH_CULTOFMAC_20260925_CT], LAST_HUMAN_APP_ID);
+});
+
+test('Last Human Cult of Mac outreach 2026-09-25 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(LAST_HUMAN_APP_ID, LAST_HUMAN_ASC_TOKENS.outreachCultofmac20260925);
+  assert.equal(
+    url,
+    `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${LAST_HUMAN_OUTREACH_CULTOFMAC_20260925_CT}&mt=8`,
+  );
+});
+
+test('EconByte Money Girl outreach 2026-09-25 token is a registered static definition', () => {
+  assert.equal(ECONBYTE_ASC_TOKENS.outreachMoneygirl20260925, ECONBYTE_OUTREACH_MONEYGIRL_20260925_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(ECONBYTE_OUTREACH_MONEYGIRL_20260925_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(ECONBYTE_OUTREACH_MONEYGIRL_20260925_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, ECONBYTE_APP_ID);
+  assert.equal(resolved.ct, ECONBYTE_OUTREACH_MONEYGIRL_20260925_CT);
+  assert.equal(resolved.channel, 'email');
+  assert.equal(resolved.path, 'email');
+  assert.equal(resolved.surface, 'Email outreach Laura Adams / Money Girl (EconByte)');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-25');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+  assert.equal(campaignLinks.CT_TO_APP_ID[ECONBYTE_OUTREACH_MONEYGIRL_20260925_CT], ECONBYTE_APP_ID);
+});
+
+test('EconByte Money Girl outreach 2026-09-25 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(ECONBYTE_APP_ID, ECONBYTE_ASC_TOKENS.outreachMoneygirl20260925);
+  assert.equal(
+    url,
+    `https://apps.apple.com/app/id${ECONBYTE_APP_ID}?pt=128970277&ct=${ECONBYTE_OUTREACH_MONEYGIRL_20260925_CT}&mt=8`,
+  );
+});
+
+test('Last Human IndieTools outreach 2026-09-25 token is a registered static definition', () => {
+  assert.equal(LAST_HUMAN_ASC_TOKENS.outreachIndietools20260925, LAST_HUMAN_OUTREACH_INDIETOOLS_20260925_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(LAST_HUMAN_OUTREACH_INDIETOOLS_20260925_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(LAST_HUMAN_OUTREACH_INDIETOOLS_20260925_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, LAST_HUMAN_APP_ID);
+  assert.equal(resolved.ct, LAST_HUMAN_OUTREACH_INDIETOOLS_20260925_CT);
+  assert.equal(resolved.channel, 'email');
+  assert.equal(resolved.path, 'email');
+  assert.equal(resolved.surface, 'Email outreach IndieTools free listing Path B (Last Human)');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-25');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+  assert.equal(campaignLinks.CT_TO_APP_ID[LAST_HUMAN_OUTREACH_INDIETOOLS_20260925_CT], LAST_HUMAN_APP_ID);
+});
+
+test('Last Human IndieTools outreach 2026-09-25 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(LAST_HUMAN_APP_ID, LAST_HUMAN_ASC_TOKENS.outreachIndietools20260925);
+  assert.equal(
+    url,
+    `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${LAST_HUMAN_OUTREACH_INDIETOOLS_20260925_CT}&mt=8`,
+  );
+});
+
+test('Table Talk IndieTools outreach 2026-09-25 token is a registered static definition', () => {
+  assert.equal(TABLE_TALK_ASC_TOKENS.outreachIndietools20260925, TABLE_TALK_OUTREACH_INDIETOOLS_20260925_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(TABLE_TALK_OUTREACH_INDIETOOLS_20260925_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(TABLE_TALK_OUTREACH_INDIETOOLS_20260925_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, TABLE_TALK_APP_ID);
+  assert.equal(resolved.ct, TABLE_TALK_OUTREACH_INDIETOOLS_20260925_CT);
+  assert.equal(resolved.channel, 'email');
+  assert.equal(resolved.path, 'email');
+  assert.equal(resolved.surface, 'Email outreach IndieTools free listing (Table Talk)');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-25');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+  assert.equal(campaignLinks.CT_TO_APP_ID[TABLE_TALK_OUTREACH_INDIETOOLS_20260925_CT], TABLE_TALK_APP_ID);
+});
+
+test('Table Talk IndieTools outreach 2026-09-25 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(TABLE_TALK_APP_ID, TABLE_TALK_ASC_TOKENS.outreachIndietools20260925);
+  assert.equal(
+    url,
+    `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${TABLE_TALK_OUTREACH_INDIETOOLS_20260925_CT}&mt=8`,
+  );
+});
+
+test('EconByte IndieTools outreach 2026-09-25 token is a registered static definition', () => {
+  assert.equal(ECONBYTE_ASC_TOKENS.outreachIndietools20260925, ECONBYTE_OUTREACH_INDIETOOLS_20260925_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(ECONBYTE_OUTREACH_INDIETOOLS_20260925_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(ECONBYTE_OUTREACH_INDIETOOLS_20260925_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, ECONBYTE_APP_ID);
+  assert.equal(resolved.ct, ECONBYTE_OUTREACH_INDIETOOLS_20260925_CT);
+  assert.equal(resolved.channel, 'email');
+  assert.equal(resolved.path, 'email');
+  assert.equal(resolved.surface, 'Email outreach IndieTools free listing (EconByte)');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-25');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+  assert.equal(campaignLinks.CT_TO_APP_ID[ECONBYTE_OUTREACH_INDIETOOLS_20260925_CT], ECONBYTE_APP_ID);
+});
+
+test('EconByte IndieTools outreach 2026-09-25 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(ECONBYTE_APP_ID, ECONBYTE_ASC_TOKENS.outreachIndietools20260925);
+  assert.equal(
+    url,
+    `https://apps.apple.com/app/id${ECONBYTE_APP_ID}?pt=128970277&ct=${ECONBYTE_OUTREACH_INDIETOOLS_20260925_CT}&mt=8`,
+  );
+});
+
+test('IndieTools studio outreach 2026-09-25 token is a registered static definition on Table Talk', () => {
+  assert.equal(TABLE_TALK_ASC_TOKENS.outreachIndietoolsStudio20260925, STUDIO_OUTREACH_INDIETOOLS_20260925_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(STUDIO_OUTREACH_INDIETOOLS_20260925_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(STUDIO_OUTREACH_INDIETOOLS_20260925_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, TABLE_TALK_APP_ID);
+  assert.equal(resolved.ct, STUDIO_OUTREACH_INDIETOOLS_20260925_CT);
+  assert.equal(resolved.channel, 'email');
+  assert.equal(resolved.path, 'email');
+  assert.equal(resolved.surface, 'Email outreach IndieTools studio listing Path B (Table Talk studio utility exemplar)');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-25');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+  assert.equal(campaignLinks.CT_TO_APP_ID[STUDIO_OUTREACH_INDIETOOLS_20260925_CT], TABLE_TALK_APP_ID);
+});
+
+test('IndieTools studio outreach 2026-09-25 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(TABLE_TALK_APP_ID, TABLE_TALK_ASC_TOKENS.outreachIndietoolsStudio20260925);
+  assert.equal(
+    url,
+    `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${STUDIO_OUTREACH_INDIETOOLS_20260925_CT}&mt=8`,
   );
 });
 

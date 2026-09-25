@@ -171,6 +171,33 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach IndieTools free listing ASC link (Table Talk) (2026-09-25)
+  {
+    ct: 'tt_outreach_indietools_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach IndieTools free listing (Table Talk)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach IndieTools studio listing / Path B. One ct maps to one appId;
+  // Table Talk is the studio utility exemplar (2026-09-25).
+  {
+    ct: 'da_outreach_indietools_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach IndieTools studio listing Path B (Table Talk studio utility exemplar)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // Table Talk blog CTAs follow the pattern `tt-web-blog-<slug>-sep26-v1`.
   // Generated per-post by tableTalkBlogCampaignToken(slug) — not individually listed.
 
@@ -363,6 +390,32 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Soft literacy email to Laura Adams / Money Girl (EconByte) (2026-09-25)
+  {
+    ct: 'eb_outreach_moneygirl_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach Laura Adams / Money Girl (EconByte)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach IndieTools free listing ASC link (EconByte) (2026-09-25)
+  {
+    ct: 'eb_outreach_indietools_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach IndieTools free listing (EconByte)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // EconByte blog CTAs follow the pattern `eb-web-blog-<slug>-sep26-v1`.
   // Generated per-post by econbyteBlogCampaignToken(slug) — not individually listed.
 
@@ -519,6 +572,32 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email tip to Cult of Mac reviews@ (Last Human) (2026-09-25)
+  {
+    ct: 'lh_outreach_cultofmac_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach Cult of Mac reviews@ (Last Human)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach IndieTools free listing / Path B ASC link (Last Human) (2026-09-25)
+  {
+    ct: 'lh_outreach_indietools_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach IndieTools free listing Path B (Last Human)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
 ]);
 
 // ---------------------------------------------------------------------------
@@ -620,6 +699,9 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   outreachIndieDevMonday20260925: 'da_outreach_indiedevmonday_tt_20260925',
   outreachTidbits20260925: 'tt_outreach_tidbits_20260925',
   outreachMacstories20260925: 'tt_outreach_macstories_20260925',
+  outreachIndietools20260925: 'tt_outreach_indietools_20260925',
+  // Studio IndieTools listing. Registry is one ct → one appId; Table Talk is the exemplar.
+  outreachIndietoolsStudio20260925: 'da_outreach_indietools_20260925',
 });
 
 export const VIBERATER_ASC_TOKENS = Object.freeze({
@@ -645,6 +727,8 @@ export const ECONBYTE_ASC_TOKENS = Object.freeze({
   llms:      'eb-web-llms-sep26-v1', // llms.txt app link
   // Off-site email outreach — one-off dated token, not a blog slug generator.
   outreachEconedlink20260925: 'eb_outreach_econedlink_20260925',
+  outreachMoneygirl20260925: 'eb_outreach_moneygirl_20260925',
+  outreachIndietools20260925: 'eb_outreach_indietools_20260925',
 });
 
 export const DUDE_WHERES_ASC_TOKENS = Object.freeze({
@@ -665,6 +749,8 @@ export const LAST_HUMAN_ASC_TOKENS = Object.freeze({
   outreachIndieDevMonday20260925: 'da_outreach_indiedevmonday_lh_20260925',
   outreachPocketgamer20260925: 'lh_outreach_pocketgamer_20260925',
   outreach148apps20260925: 'lh_outreach_148apps_20260925',
+  outreachCultofmac20260925: 'lh_outreach_cultofmac_20260925',
+  outreachIndietools20260925: 'lh_outreach_indietools_20260925',
 });
 
 export const LLMS_APP_STORE_TOKENS = Object.freeze({
