@@ -12,6 +12,8 @@ const {
 
 const TABLE_TALK_APP_ID = '6780714565';
 const LAST_HUMAN_APP_ID = '6808782611';
+const LAST_HUMAN_X_MEMO_20260925_CT = 'lh_x_memo_20260925';
+const LAST_HUMAN_X_OFFLINE_20260925_CT = 'lh_x_offline_20260925';
 const PHONE_IN_THE_MIDDLE_SLUG = 'phone-in-the-middle';
 const PHONE_IN_THE_MIDDLE_CT = 'tt-web-blog-phone-in-the-middle-sep26-v1';
 const TABLE_TALK_TIKTOK_CT = 'tabletalk-tiktok-20260910';
@@ -83,6 +85,8 @@ test('registers unique Last Human tokens for each launch surface', () => {
     appDetail: 'lh-web-app-sep26-v1',
     llms: 'lh-web-llms-sep26-v1',
     privacy: 'lh-web-privacy-sep26-v1',
+    xMemo20260925: LAST_HUMAN_X_MEMO_20260925_CT,
+    xOffline20260925: LAST_HUMAN_X_OFFLINE_20260925_CT,
   });
 
   for (const token of Object.values(LAST_HUMAN_ASC_TOKENS)) {
@@ -261,6 +265,58 @@ test('Table Talk X collector 2026-09-24 App Store URL uses pt, registered ct, an
   assert.equal(
     url,
     `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${TABLE_TALK_X_COLLECTOR_20260924_CT}&mt=8`,
+  );
+});
+
+test('Last Human X memo 2026-09-25 token is a registered static definition', () => {
+  assert.equal(LAST_HUMAN_ASC_TOKENS.xMemo20260925, LAST_HUMAN_X_MEMO_20260925_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(LAST_HUMAN_X_MEMO_20260925_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(LAST_HUMAN_X_MEMO_20260925_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, LAST_HUMAN_APP_ID);
+  assert.equal(resolved.ct, LAST_HUMAN_X_MEMO_20260925_CT);
+  assert.equal(resolved.channel, 'x');
+  assert.equal(resolved.path, 'x');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-25');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+});
+
+test('Last Human X memo 2026-09-25 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(LAST_HUMAN_APP_ID, LAST_HUMAN_ASC_TOKENS.xMemo20260925);
+  assert.equal(
+    url,
+    `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${LAST_HUMAN_X_MEMO_20260925_CT}&mt=8`,
+  );
+});
+
+test('Last Human X offline 2026-09-25 token is a registered static definition', () => {
+  assert.equal(LAST_HUMAN_ASC_TOKENS.xOffline20260925, LAST_HUMAN_X_OFFLINE_20260925_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(LAST_HUMAN_X_OFFLINE_20260925_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(LAST_HUMAN_X_OFFLINE_20260925_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, LAST_HUMAN_APP_ID);
+  assert.equal(resolved.ct, LAST_HUMAN_X_OFFLINE_20260925_CT);
+  assert.equal(resolved.channel, 'x');
+  assert.equal(resolved.path, 'x');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-25');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+});
+
+test('Last Human X offline 2026-09-25 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(LAST_HUMAN_APP_ID, LAST_HUMAN_ASC_TOKENS.xOffline20260925);
+  assert.equal(
+    url,
+    `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${LAST_HUMAN_X_OFFLINE_20260925_CT}&mt=8`,
   );
 });
 
