@@ -10,11 +10,12 @@ const appStoreHref = appStoreCampaignUrl(APP_STORE.lastHuman, LAST_HUMAN_ASC_TOK
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/privacy/')}>← All privacy policies</a>
       <h1>Privacy Policy</h1>
-      <p class="updated">Last Human: Dodge the Bots · Effective date: September 21, 2026</p>
+      <p class="updated">Last Human: Dodge the Bots · Effective date: September 25, 2026</p>
 
       <p>
         <strong><a href={appStoreHref}>Last Human is available on the App Store.</a></strong>
-        This policy describes version 1.0 as shipped.
+        This policy describes version 1.0.1. Version 1.0 never asked for tracking permission and
+        requested only non-personalized ads; everything else below applies to both versions.
       </p>
 
       <h2>The short version</h2>
@@ -22,8 +23,9 @@ const appStoreHref = appStoreCampaignUrl(APP_STORE.lastHuman, LAST_HUMAN_ASC_TOK
         {LEGAL_NAME} operates Last Human, a free arcade game supported by ads. There are no accounts,
         and your progress, high scores, settings, and purchase state stay on your device. The app sends
         limited anonymous usage analytics through PostHog and anonymous crash reports through Sentry.
-        Google AdMob serves non-personalized ads. None of these services is used to track you across
-        other companies' apps or websites.
+        Google AdMob serves ads. They are personalized only if you allow tracking when Apple's
+        permission prompt appears; otherwise they are non-personalized. The app's own analytics and
+        crash reports are never used to track you.
       </p>
 
       <h2>What stays on your device</h2>
@@ -37,7 +39,7 @@ const appStoreHref = appStoreCampaignUrl(APP_STORE.lastHuman, LAST_HUMAN_ASC_TOK
         purchase records remain with Apple so eligible purchases can be restored.
       </p>
 
-      <h2>Usage analytics (PostHog) — on by default, Settings opt-out</h2>
+      <h2>Usage analytics (PostHog), with a Settings switch</h2>
       <p>
         Last Human sends a small set of product events: app opened, floor started, completed, or failed,
         Remove Ads purchased or restored, and Settings opened. The events use bounded values such as a
@@ -48,6 +50,11 @@ const appStoreHref = appStoreCampaignUrl(APP_STORE.lastHuman, LAST_HUMAN_ASC_TOK
         <li>
           Analytics uses a random, app-specific installation ID shown in Settings. It is not tied to a
           Dudley account because Last Human has no accounts.
+        </li>
+        <li>
+          If you have never set the analytics switch yourself, your answer to Apple's tracking prompt
+          sets it the first time you see the prompt: Allow turns analytics on, and Ask App Not to Track
+          turns it off. You can change it in Settings at any time either way.
         </li>
         <li>
           Turn off <strong>Share anonymous usage analytics</strong> in Settings to stop new events,
@@ -75,11 +82,31 @@ const appStoreHref = appStoreCampaignUrl(APP_STORE.lastHuman, LAST_HUMAN_ASC_TOK
       <p>
         Interstitial ads can appear on the corporate memo screen between floors, never during gameplay.
         One optional rewarded ad can also let you continue a run. Ads are served by
-        <strong>Google AdMob</strong>, a third-party advertising network. Last Human requests
-        <strong>non-personalized</strong> ads, does not request Apple's cross-app tracking permission,
-        and does not request ads in the EEA or UK. Google may still process device, coarse location,
-        ad-interaction, performance, and diagnostic information to provide and measure ads. Dudley does
-        not join that information with the app's analytics or use it to build a profile of you.
+        <strong>Google AdMob</strong>, a third-party advertising network.
+      </p>
+      <ul>
+        <li>
+          <strong>Apple's tracking prompt.</strong> Shortly after you first open the app, Apple's App
+          Tracking Transparency prompt asks whether Last Human may track you. No ad is requested until
+          you answer. If you choose Allow, ads may be personalized using your device's advertising
+          identifier. If you choose Ask App Not to Track, or tracking is restricted on your device,
+          every ad request is non-personalized with restricted data processing.
+        </li>
+        <li>
+          Change your answer any time in <strong>Settings &gt; Privacy &gt; Manage tracking</strong> in
+          the app, which opens Last Human's page in iOS Settings, or in iOS Settings &gt; Privacy &amp;
+          Security &gt; Tracking. The next ad request follows the new answer.
+        </li>
+        <li>
+          No ads are requested at all in the EEA, the United Kingdom, or Switzerland. If your region
+          cannot be determined, ads are non-personalized.
+        </li>
+      </ul>
+      <p>
+        Either way, Google may process device, coarse location, ad-interaction, performance, and
+        diagnostic information to provide and measure ads. Dudley does not receive the advertising
+        identifier, and does not join ad data with the app's analytics or use it to build a profile of
+        you.
       </p>
       <ul>
         <li>
@@ -89,15 +116,17 @@ const appStoreHref = appStoreCampaignUrl(APP_STORE.lastHuman, LAST_HUMAN_ASC_TOK
         </li>
         <li>
           A one-time Remove Ads purchase at the price shown in the app removes between-floor
-          interstitial ads. The optional watch-to-continue ad remains available once per run.
+          interstitial ads and makes the once-per-run revive free, with no ad to watch.
         </li>
       </ul>
 
       <h2>Used to track you</h2>
       <p>
-        None of the data described on this page is used to track you across other companies' apps or
-        websites, linked to your identity, or combined with data from a data broker. We do not sell
-        your personal data.
+        Only if you allow tracking: Google AdMob may then use your device's advertising identifier and
+        ad-interaction data to personalize and measure ads across other companies' apps and websites.
+        If you decline, nothing is used to track you. The app's own analytics and crash reports are
+        never used to track you, never linked to your identity, and never combined with data from a
+        data broker. We do not sell your personal data.
       </p>
 
       <h2>Children</h2>
