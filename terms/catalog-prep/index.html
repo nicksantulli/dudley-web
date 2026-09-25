@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Terms of Service · Catalog Prep | Dudley Development</title><meta name="description" content="Terms of Service for Dudley Catalog Prep by Dudley Development, LLC."><link rel="canonical" href="https://dudleyapps.com/terms/catalog-prep/"><meta name="theme-color" content="#0b0b0a"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="stylesheet" href="/assets/style.css"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="The Dudley Blog" href="/blog/rss.xml"><!-- Open Graph --><meta property="og:title" content="Terms of Service · Catalog Prep | Dudley Development"><meta property="og:description" content="Terms of Service for Dudley Catalog Prep by Dudley Development, LLC."><meta property="og:url" content="https://dudleyapps.com/terms/catalog-prep/"><meta property="og:type" content="website"><meta property="og:image" content="https://dudleyapps.com/assets/og-home.png"><meta property="og:site_name" content="Dudley Development"><!-- Twitter / X --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@DudleyAppDev"><meta name="twitter:title" content="Terms of Service · Catalog Prep | Dudley Development"><meta name="twitter:description" content="Terms of Service for Dudley Catalog Prep by Dudley Development, LLC."><meta name="twitter:image" content="https://dudleyapps.com/assets/og-home.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://dudleyapps.com/#organization","name":"Dudley Development","legalName":"Dudley Development, LLC","url":"https://dudleyapps.com","logo":{"@type":"ImageObject","url":"https://dudleyapps.com/assets/dudley-mark-logo.png"},"contactPoint":{"@type":"ContactPoint","email":"support@dudleyapps.com","contactType":"customer support"},"sameAs":["https://x.com/DudleyAppDev"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dudleyapps.com/"},{"@type":"ListItem","position":2,"name":"Terms","item":"https://dudleyapps.com/terms/"},{"@type":"ListItem","position":3,"name":"Terms of Service · Catalog Prep","item":"https://dudleyapps.com/terms/catalog-prep/"}]}</script></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site"> <div class="wrap"> <a class="brand" href="/" aria-label="Dudley Development — home"> <img class="mark" src="/assets/dudley-mark-header.webp" alt="" aria-hidden="true" width="54" height="30"> <span>Dudley Development</span> </a> <nav class="top" aria-label="Primary"> <a href="/">Home</a><a href="/#apps">Apps</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/support/">Support</a><a href="/contact/">Contact</a> </nav> <details class="nav-toggle" id="nav-toggle"> <summary aria-label="Open the main menu">Menu</summary> <div class="nav-panel"> <nav aria-label="Primary, mobile"> <a href="/">Home</a><a href="/#apps">Apps</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/support/">Support</a><a href="/contact/">Contact</a> <a href="/privacy/">Privacy</a> </nav> </div> </details> </div> </header> <script>
+  (function () {
+    var menu = document.getElementById('nav-toggle');
+    if (!menu) return;
+    var close = function () { menu.open = false; };
+    menu.addEventListener('click', function (event) {
+      if (event.target instanceof Element && event.target.closest('.nav-panel a')) close();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && menu.open) {
+        close();
+        var summary = menu.querySelector('summary');
+        if (summary) summary.focus();
+      }
+    });
+    document.addEventListener('click', function (event) {
+      if (menu.open && event.target instanceof Node && !menu.contains(event.target)) close();
+    });
+    var mq = window.matchMedia('(min-width: 861px)');
+    var onChange = function (event) { if (event.matches) close(); };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  })();
+</script> <div id="main">  <main class="page"> <div class="wrap" style="max-width:720px;"> <a class="back" href="/privacy/catalog-prep">← Catalog Prep privacy policy</a> <h1>Terms of Service</h1> <p class="updated">Dudley Catalog Prep · Last updated September 25, 2026</p> <p>
+These Terms of Service ("Terms") are an agreement between you and Dudley Development, LLC ("we," "us") for
+        Dudley Catalog Prep and its MCP server at mcp.dudleyapps.com (the "Service"). By connecting the
+        Service to an AI assistant or otherwise using it, you agree to these Terms. If you use the Service
+        for a business, you agree on behalf of that business and confirm you can bind it. If you do not
+        agree, do not use the Service.
+</p> <h2>What the Service does</h2> <p>
+The Service reads a supplier catalog file and a store import template that you provide and
+        prepares an import file, plus a list of every field it could not fill in with confidence. It only
+        prepares files. It never sends anything to your store or any other system, and it never makes up a
+        value it cannot find in your files, such as a price, SKU, hazmat flag, or certification.
+</p> <h2>Prototype for sample data</h2> <p>
+The Service is currently a free prototype offered for evaluation with sample data. Do not upload
+        real customer, personal, or confidential business data. Features, limits, and availability may
+        change, and we may suspend or end the prototype at any time.
+</p> <h2>You review before you use</h2> <p>
+Results can be incomplete or wrong. You are responsible for reviewing every result before you
+        import it into a store or rely on it, and for filling in the fields the Service lists as
+        unresolved. Nothing the Service produces is published or applied anywhere without your own action.
+</p> <h2>Your files</h2> <p>
+You keep all rights to the files you upload and to the results produced from them. You give us a
+        limited permission to store and process them only to provide the Service to you. You confirm that
+        you have the right to upload each file. How we handle your files is described in the
+<a href="/privacy/catalog-prep">Catalog Prep privacy policy</a>.
+</p> <h2>Your account and assistants</h2> <p>
+You are responsible for activity under your account, including actions an AI assistant takes on
+        your behalf after you connect it. Keep your sign-in secure. You can disconnect every assistant at
+        any time from the <a href="https://mcp.dudleyapps.com/v1/deletion-approvals/disconnect">disconnect
+        page</a>. Your use of an assistant such as ChatGPT, Claude, Grok, or Meta Muse is governed by that
+        provider's own terms, and we are not responsible for those services.
+</p> <h2>Acceptable use</h2> <p>You agree not to:</p> <ul> <li>upload anything unlawful, or files you have no right to use;</li> <li>try to access another account's jobs or files, or get around sign-in, permissions, rate
+          limits, or the deletion approval;</li> <li>overload, disrupt, probe, or attack the Service, except through a security report to us;</li> <li>resell or provide the Service to others without our written permission.</li> </ul> <h2>Fees</h2> <p>
+The prototype is free. If we introduce paid plans, we will tell you before any charge applies, and
+        paid features will have their own terms.
+</p> <h2>Suspension and termination</h2> <p>
+You can stop using the Service at any time and delete your jobs. We may suspend or end your access
+        if you break these Terms, if needed to protect the Service or other users, or when the prototype
+        ends.
+</p> <h2>Disclaimers</h2> <p>
+The Service is provided "as is" and "as available," without warranties of any kind, express or
+        implied, including merchantability, fitness for a particular purpose, and non-infringement. We do
+        not warrant that the Service will be uninterrupted, error-free, or that results will be accurate
+        or complete.
+</p> <h2>Limitation of liability</h2> <p>
+To the fullest extent permitted by law, Dudley Development, LLC will not be liable for any indirect,
+        incidental, special, consequential, or punitive damages, or for lost profits, revenue, or data,
+        arising from your use of the Service. Our total liability for any claim relating to the Service is
+        limited to one hundred U.S. dollars (US$100).
+</p> <h2>Governing law</h2> <p>
+These Terms are governed by the laws of the State of Colorado, without regard to its conflict of
+        laws rules.
+</p> <h2>Changes</h2> <p>
+We may update these Terms. The new version will be posted at this URL with an updated date above,
+        and continued use of the Service after a change means you accept it.
+</p> <h2>Contact</h2> <p>Questions? Email <a href="mailto:support@dudleyapps.com">support@dudleyapps.com</a>.</p> </div> </main>  </div> <footer class="site"> <div class="wrap"> <div class="foot-grid"> <div class="foot-brand"> <a class="brand" href="/" aria-label="Dudley Development home"> <img class="mark" src="/assets/dudley-mark-header.webp" alt="" aria-hidden="true" width="54" height="30"> <span>Dudley Development</span> </a> <p>Games, conversation starters, and useful things for iPhone.</p> <nav class="socials" aria-label="Dudley Development on social media"> <a href="https://x.com/DudleyAppDev" target="_blank" rel="noopener noreferrer" aria-label="Follow Dudley Development on X">X</a> </nav> </div> <div class="foot-col"> <h3>Explore</h3> <nav aria-label="Footer — explore"><a href="/">Home</a><a href="/#apps">Apps</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav> </div> <div class="foot-col"> <h3>Help</h3> <nav aria-label="Footer — help"><a href="/support/">Support</a><a href="/contact/">Contact</a><a href="/blog/">The Dudley Blog</a><a href="/blog/rss.xml">RSS feed</a></nav> </div> <div class="foot-col"> <h3>Legal</h3> <nav aria-label="Footer — legal"><a href="/privacy/">Privacy</a><a href="/terms/vibe-rater/">VibeRater Terms</a><a href="/about/">About Dudley</a></nav> </div> </div> <div class="foot-bottom"> <div class="copy">© 2026 Dudley Development, LLC. All rights reserved.</div> <div class="foot-mail">
+Support <a href="mailto:support@dudleyapps.com">support@dudleyapps.com</a> <span aria-hidden="true"> · </span>
+Say hi <a href="mailto:hello@dudleyapps.com">hello@dudleyapps.com</a> </div> </div> </div> </footer> </body></html>
