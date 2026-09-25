@@ -24,7 +24,7 @@
 //   appId       — Apple App Store app ID
 //   surface     — human description of the placement
 //   path        — URL path pattern this token represents (exact or glob)
-//   channel     — 'web' | 'blog-inline' | 'tiktok' | 'x'
+//   channel     — 'web' | 'blog-inline' | 'tiktok' | 'x' | 'email'
 //   ppid        — CPP product page ID, null for default product pages
 //   registeredAt   — ISO date string when the token was registered in source
 //   activatedAt    — ISO date string when deployment activation is proven; null if unknown/not deployed
@@ -115,6 +115,230 @@ export const TOKEN_REGISTRY = Object.freeze([
     channel: 'web',
     ppid: null,
     registeredAt: '2026-09-21',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to party.pro (Nick Gray) for a Table Talk mention (2026-09-25)
+  {
+    ct: 'tt_outreach_partypro_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach party.pro Nick Gray (Table Talk)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Indie Dev Monday Look At Me — Table Talk link in the studio pitch (2026-09-25)
+  {
+    ct: 'da_outreach_indiedevmonday_tt_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach Indie Dev Monday Look At Me (Table Talk link in studio pitch)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email pitch to TidBITS (ace@tidbits.com) for Table Talk as a utility (conversation cards); not a game (2026-09-25)
+  {
+    ct: 'tt_outreach_tidbits_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach TidBITS ace@tidbits.com (Table Talk utility, not a game)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Soft email note to MacStories (voorhees@macstories.net) for Table Talk coverage consideration (2026-09-25)
+  {
+    ct: 'tt_outreach_macstories_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach MacStories voorhees@macstories.net (Table Talk coverage consideration)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach IndieTools free listing ASC link (Table Talk) (2026-09-25)
+  {
+    ct: 'tt_outreach_indietools_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach IndieTools free listing (Table Talk)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach IndieTools studio listing / Path B. One ct maps to one appId;
+  // Table Talk is the studio utility exemplar (2026-09-25).
+  {
+    ct: 'da_outreach_indietools_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach IndieTools studio listing Path B (Table Talk studio utility exemplar)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Family Dinner Project via contact form for Table Talk (2026-09-25)
+  {
+    ct: 'tt_outreach_familydinnerproject_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach Family Dinner Project contact form (Table Talk)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Six Colors apps@ for a Table Talk App Report tip (2026-09-25)
+  {
+    ct: 'tt_outreach_sixcolors_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach Six Colors apps@ (Table Talk App Report tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to 9to5Mac Indie App Spotlight — Table Talk link (2026-09-25)
+  {
+    ct: 'da_outreach_9to5mac_tt_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach 9to5Mac Indie App Spotlight (Table Talk link)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to MS Extension webteam for a Table Talk resource-adjacency note (2026-09-25)
+  {
+    ct: 'tt_outreach_msextension_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach MS Extension webteam (Table Talk resource-adjacency note)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach LaunchFree free listing ASC link (Table Talk) (2026-09-25)
+  {
+    ct: 'tt_outreach_launchfree_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach LaunchFree free listing (Table Talk)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach LaunchFree studio hub. One ct maps to one appId;
+  // Table Talk is the studio utility exemplar (2026-09-25).
+  {
+    ct: 'da_outreach_launchfree_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach LaunchFree studio hub (Table Talk studio utility exemplar)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Money Prodigy for a Table Talk resource-adjacency note (2026-09-25)
+  {
+    ct: 'tt_outreach_moneyprodigy_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach Money Prodigy resource adjacency (Table Talk)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach VibbleLaunch free listing ASC link (Table Talk) (2026-09-25)
+  {
+    ct: 'tt_outreach_vibblelaunch_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach VibbleLaunch free listing (Table Talk)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach VibbleLaunch studio hub. One ct maps to one appId;
+  // Table Talk is the studio utility exemplar (2026-09-25).
+  {
+    ct: 'da_outreach_vibblelaunch_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach VibbleLaunch studio hub (Table Talk studio utility exemplar)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Gourmet Host for a Table Talk soft tip (2026-09-25)
+  {
+    ct: 'tt_outreach_gourmethost_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach Gourmet Host (Table Talk soft tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Board Game Barrage for a Table Talk soft tip (2026-09-25)
+  {
+    ct: 'tt_outreach_bgbarrage_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach Board Game Barrage (Table Talk soft tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
     activatedAt: null,
     firstVerifiedAt: null,
     status: 'proposed',
@@ -298,6 +522,162 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach to Council for Economic Education press / EconEdLink (literacy and classroom framing only) (2026-09-25)
+  {
+    ct: 'eb_outreach_econedlink_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach EconEdLink / Council for Economic Education press (literacy and classroom framing)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Soft literacy email to Laura Adams / Money Girl (EconByte) (2026-09-25)
+  {
+    ct: 'eb_outreach_moneygirl_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach Laura Adams / Money Girl (EconByte)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach IndieTools free listing ASC link (EconByte) (2026-09-25)
+  {
+    ct: 'eb_outreach_indietools_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach IndieTools free listing (EconByte)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to 9to5Mac Indie App Spotlight — EconByte link (2026-09-25)
+  {
+    ct: 'da_outreach_9to5mac_eb_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach 9to5Mac Indie App Spotlight (EconByte link)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Jump$tart Clearinghouse for an EconByte listing-process ask (2026-09-25)
+  {
+    ct: 'eb_outreach_jumpstart_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach Jump$tart Clearinghouse (EconByte listing-process ask)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to NGPF info@ for an EconByte soft classroom intro (2026-09-25)
+  {
+    ct: 'eb_outreach_ngpf_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach NGPF info@ (EconByte soft classroom intro)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Federal Reserve Education amanda.geiger@ for an EconByte soft classroom note (2026-09-25)
+  {
+    ct: 'eb_outreach_freded_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach Federal Reserve Education amanda.geiger@ (EconByte soft classroom note)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to edshelf tool-submissions@ for an EconByte listing ask (2026-09-25)
+  {
+    ct: 'eb_outreach_edshelf_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach edshelf tool-submissions@ (EconByte listing ask)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach LaunchFree free listing ASC link (EconByte) (2026-09-25)
+  {
+    ct: 'eb_outreach_launchfree_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach LaunchFree free listing (EconByte)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Learnamic for an EconByte Standard process ask (2026-09-25)
+  {
+    ct: 'eb_outreach_learnamic_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach Learnamic Standard process ask (EconByte)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach VibbleLaunch free listing ASC link (EconByte) (2026-09-25)
+  {
+    ct: 'eb_outreach_vibblelaunch_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach VibbleLaunch free listing (EconByte)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Teacher Money Show for an EconByte soft literacy intro (2026-09-25)
+  {
+    ct: 'eb_outreach_teachermoney_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach Teacher Money Show (EconByte soft literacy intro)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // EconByte blog CTAs follow the pattern `eb-web-blog-<slug>-sep26-v1`.
   // Generated per-post by econbyteBlogCampaignToken(slug) — not individually listed.
 
@@ -402,6 +782,175 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach to TouchArcade tips@ for a Last Human editorial tip (2026-09-25)
+  {
+    ct: 'lh_outreach_toucharcade_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach TouchArcade tips@ (Last Human)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Indie Dev Monday Look At Me — Last Human link in the studio pitch (2026-09-25)
+  {
+    ct: 'da_outreach_indiedevmonday_lh_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach Indie Dev Monday Look At Me (Last Human link in studio pitch)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Pocket Gamer reviews@ for a Last Human review tip (2026-09-25)
+  {
+    ct: 'lh_outreach_pocketgamer_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach Pocket Gamer reviews@ (Last Human review tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to 148 Apps (Campbell Bird) for a Last Human app review submit (2026-09-25)
+  {
+    ct: 'lh_outreach_148apps_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach 148 Apps Campbell Bird (Last Human app review submit)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email tip to Cult of Mac reviews@ (Last Human) (2026-09-25)
+  {
+    ct: 'lh_outreach_cultofmac_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach Cult of Mac reviews@ (Last Human)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach IndieTools free listing / Path B ASC link (Last Human) (2026-09-25)
+  {
+    ct: 'lh_outreach_indietools_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach IndieTools free listing Path B (Last Human)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Gamezebo editor@ for a Last Human review tip (2026-09-25)
+  {
+    ct: 'lh_outreach_gamezebo_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach Gamezebo editor@ (Last Human review tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to AppSpy reviews@ for a Last Human tip (2026-09-25)
+  {
+    ct: 'lh_outreach_appspy_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach AppSpy reviews@ (Last Human tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Siliconera tips@ for a Last Human soft tip (2026-09-25)
+  {
+    ct: 'lh_outreach_siliconera_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach Siliconera tips@ (Last Human soft tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach LaunchFree free listing ASC link (Last Human) (2026-09-25)
+  {
+    ct: 'lh_outreach_launchfree_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach LaunchFree free listing (Last Human)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach VibbleLaunch free listing ASC link (Last Human) (2026-09-25)
+  {
+    ct: 'lh_outreach_vibblelaunch_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach VibbleLaunch free listing (Last Human)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Kodeco Podcast for a Last Human soft guest/tip (2026-09-25)
+  {
+    ct: 'lh_outreach_kodeco_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach Kodeco Podcast (Last Human soft guest/tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Launched (Charlie Chapman) for a Last Human soft guest ask (2026-09-25)
+  {
+    ct: 'lh_outreach_launched_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach Launched Charlie Chapman (Last Human soft guest ask)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
 ]);
 
 // ---------------------------------------------------------------------------
@@ -464,7 +1013,7 @@ const APP_STORE_SLUGS = Object.freeze({
   '6808782611': 'last-human-dodge-the-bots',
 });
 
-// Hyphens for site tokens; underscores for posted Last Human X cts such as lh_x_memo_20260925.
+// Hyphens for site tokens; underscores for posted off-site cts such as lh_x_memo_20260925.
 const TOKEN_PATTERN = /^[a-z0-9]+(?:[-_][a-z0-9]+)*$/;
 const PROVIDER_TOKEN_PATTERN = /^\d+$/;
 
@@ -498,6 +1047,27 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   xCollector: 'tabletalk-x-collector-20260914',
   xCollector20260924: 'tabletalk-x-collector-20260924',
   llms:       'tt-web-llms-sep26-v1',
+  // Off-site email outreach — one-off dated tokens, not a blog slug generator.
+  outreachPartypro20260925: 'tt_outreach_partypro_20260925',
+  outreachIndieDevMonday20260925: 'da_outreach_indiedevmonday_tt_20260925',
+  outreachTidbits20260925: 'tt_outreach_tidbits_20260925',
+  outreachMacstories20260925: 'tt_outreach_macstories_20260925',
+  outreachIndietools20260925: 'tt_outreach_indietools_20260925',
+  // Studio IndieTools listing. Registry is one ct → one appId; Table Talk is the exemplar.
+  outreachIndietoolsStudio20260925: 'da_outreach_indietools_20260925',
+  outreachFamilydinnerproject20260925: 'tt_outreach_familydinnerproject_20260925',
+  outreachSixcolors20260925: 'tt_outreach_sixcolors_20260925',
+  outreach9to5mac20260925: 'da_outreach_9to5mac_tt_20260925',
+  outreachMsextension20260925: 'tt_outreach_msextension_20260925',
+  outreachLaunchfree20260925: 'tt_outreach_launchfree_20260925',
+  // Studio LaunchFree listing. Registry is one ct → one appId; Table Talk is the exemplar.
+  outreachLaunchfreeStudio20260925: 'da_outreach_launchfree_20260925',
+  outreachMoneyprodigy20260925: 'tt_outreach_moneyprodigy_20260925',
+  outreachVibblelaunch20260925: 'tt_outreach_vibblelaunch_20260925',
+  // Studio VibbleLaunch listing. Registry is one ct → one appId; Table Talk is the exemplar.
+  outreachVibblelaunchStudio20260925: 'da_outreach_vibblelaunch_20260925',
+  outreachGourmethost20260925: 'tt_outreach_gourmethost_20260925',
+  outreachBgbarrage20260925: 'tt_outreach_bgbarrage_20260925',
 });
 
 export const VIBERATER_ASC_TOKENS = Object.freeze({
@@ -521,6 +1091,19 @@ export const ECONBYTE_ASC_TOKENS = Object.freeze({
   homeCard:  'eb-web-card-sep26-v1', // homepage app card badge
   appDetail: 'eb-web-app-sep26-v1',  // /apps/econbyte/ CTA
   llms:      'eb-web-llms-sep26-v1', // llms.txt app link
+  // Off-site email outreach — one-off dated token, not a blog slug generator.
+  outreachEconedlink20260925: 'eb_outreach_econedlink_20260925',
+  outreachMoneygirl20260925: 'eb_outreach_moneygirl_20260925',
+  outreachIndietools20260925: 'eb_outreach_indietools_20260925',
+  outreach9to5mac20260925: 'da_outreach_9to5mac_eb_20260925',
+  outreachJumpstart20260925: 'eb_outreach_jumpstart_20260925',
+  outreachNgpf20260925: 'eb_outreach_ngpf_20260925',
+  outreachFreded20260925: 'eb_outreach_freded_20260925',
+  outreachEdshelf20260925: 'eb_outreach_edshelf_20260925',
+  outreachLaunchfree20260925: 'eb_outreach_launchfree_20260925',
+  outreachLearnamic20260925: 'eb_outreach_learnamic_20260925',
+  outreachVibblelaunch20260925: 'eb_outreach_vibblelaunch_20260925',
+  outreachTeachermoney20260925: 'eb_outreach_teachermoney_20260925',
 });
 
 export const DUDE_WHERES_ASC_TOKENS = Object.freeze({
@@ -536,6 +1119,20 @@ export const LAST_HUMAN_ASC_TOKENS = Object.freeze({
   // Off-site X originals — one-off dated tokens, not a blog slug generator.
   xMemo20260925: 'lh_x_memo_20260925',
   xOffline20260925: 'lh_x_offline_20260925',
+  // Off-site email outreach — one-off dated tokens, not a blog slug generator.
+  outreachToucharcade20260925: 'lh_outreach_toucharcade_20260925',
+  outreachIndieDevMonday20260925: 'da_outreach_indiedevmonday_lh_20260925',
+  outreachPocketgamer20260925: 'lh_outreach_pocketgamer_20260925',
+  outreach148apps20260925: 'lh_outreach_148apps_20260925',
+  outreachCultofmac20260925: 'lh_outreach_cultofmac_20260925',
+  outreachIndietools20260925: 'lh_outreach_indietools_20260925',
+  outreachGamezebo20260925: 'lh_outreach_gamezebo_20260925',
+  outreachAppspy20260925: 'lh_outreach_appspy_20260925',
+  outreachSiliconera20260925: 'lh_outreach_siliconera_20260925',
+  outreachLaunchfree20260925: 'lh_outreach_launchfree_20260925',
+  outreachVibblelaunch20260925: 'lh_outreach_vibblelaunch_20260925',
+  outreachKodeco20260925: 'lh_outreach_kodeco_20260925',
+  outreachLaunched20260925: 'lh_outreach_launched_20260925',
 });
 
 export const LLMS_APP_STORE_TOKENS = Object.freeze({
