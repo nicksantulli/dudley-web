@@ -156,6 +156,73 @@ test('Table Talk money page uses the search title, snippet, and app schema', () 
   assert.match(faq.mainEntity[0].acceptedAnswer.text, /free iPhone app/);
 });
 
+test('EconByte and Last Human money pages use short search titles and snippets', () => {
+  const econ = readFileSync(resolve('dist/apps/econbyte/index.html'), 'utf8');
+  const last = readFileSync(resolve('dist/apps/last-human/index.html'), 'utf8');
+  const econTitle = capture(econ, /<title>([^<]+)<\/title>/i);
+  const lastTitle = capture(last, /<title>([^<]+)<\/title>/i);
+  assert.equal(econTitle, 'EconByte: Daily Economics for iPhone | Dudley Development');
+  assert.equal(lastTitle, 'Last Human: Dodge the Bots on iPhone | Dudley Development');
+  assert.ok(econTitle.length <= 60, `EconByte title is ${econTitle.length}`);
+  assert.ok(lastTitle.length <= 60, `Last Human title is ${lastTitle.length}`);
+  const econDesc = capture(econ, /<meta name="description" content="([^"]+)"/i);
+  const lastDesc = capture(last, /<meta name="description" content="([^"]+)"/i);
+  assert.equal(econDesc, 'EconByte is a free iPhone app of plain-language daily economics cards — inflation, rates, GDP, and trade. No account. Works offline. Not financial advice.');
+  assert.equal(lastDesc, 'Satirical iPhone arcade: dodge office bots across 50 floors before they optimize your desk. Free to play, no account, and playable offline after download.');
+  assert.ok(econDesc.length <= 160, `EconByte description is ${econDesc.length}`);
+  assert.ok(lastDesc.length <= 160, `Last Human description is ${lastDesc.length}`);
+  assert.match(lastDesc, /offline/i);
+  assert.match(econDesc, /plain-language|Not financial advice/);
+  assert.doesNotMatch(`${econTitle} ${econDesc}`, /returns|beat the market/i);
+  for (const html of [econ, last]) {
+    const app = jsonLd(html).find((value) => value['@type'] === 'SoftwareApplication');
+    assert.equal(app.aggregateRating, undefined);
+    assert.equal(app.reviewCount, undefined);
+  }
+});
+
+test('money-page app schema images reuse the page OG png', () => {
+  for (const slug of ['last-human', 'table-talk', 'econbyte']) {
+    const html = readFileSync(resolve(`dist/apps/${slug}/index.html`), 'utf8');
+    const app = jsonLd(html).find((value) => value['@type'] === 'SoftwareApplication');
+    const og = capture(html, /<meta property="og:image" content="([^"]+)"/i);
+    assert.equal(app.image, og);
+    assert.match(app.image, new RegExp(`/assets/${slug}-og\\.png$`));
+    assert.equal(app.aggregateRating, undefined);
+  }
+});
+
+test('Last Human, Table Talk, and EconByte cross-link without dropping existing cards', () => {
+  const moreFrom = (slug) => {
+    const html = readFileSync(resolve(`dist/apps/${slug}/index.html`), 'utf8');
+    return html.match(/<h2>More from Dudley Development<\/h2>[\s\S]*?<\/nav>/)?.[0] ?? '';
+  };
+  const last = moreFrom('last-human');
+  const table = moreFrom('table-talk');
+  const econ = moreFrom('econbyte');
+  assert.match(last, /href="\/apps\/table-talk\/"/);
+  assert.match(last, /href="\/apps\/econbyte\/"/);
+  assert.match(last, /href="\/apps\/monetary-policy-independence-day\/"/);
+  assert.match(table, /href="\/apps\/last-human\/"/);
+  assert.match(table, /href="\/apps\/econbyte\/"/);
+  assert.match(table, /href="\/apps\/monetary-policy-independence-day\/"/);
+  assert.match(econ, /href="\/apps\/last-human\/"/);
+  assert.match(econ, /href="\/apps\/table-talk\/"/);
+  assert.match(econ, /href="\/apps\/monetary-policy-independence-day\/"/);
+  assert.match(econ, /href="\/apps\/vibe-rater\/"/);
+});
+
+test('Table Talk and EconByte money pages link their posts in the body', () => {
+  const table = readFileSync(resolve('dist/apps/table-talk/index.html'), 'utf8');
+  const tableBody = table.match(/<article class="app-body">[\s\S]*?<\/article>/)?.[0] ?? '';
+  assert.match(tableBody, /href="\/blog\/phone-in-the-middle\/"/);
+  assert.match(tableBody, /href="\/blog\/openers-not-interviews\/"/);
+  const econ = readFileSync(resolve('dist/apps/econbyte/index.html'), 'utf8');
+  const econBody = econ.match(/<article class="app-body">[\s\S]*?<\/article>/)?.[0] ?? '';
+  assert.match(econBody, /href="\/blog\/why-are-prices-still-high-if-inflation-is-down\/"/);
+  assert.doesNotMatch(econBody, /returns|beat the market/i);
+});
+
 test('homepage head mentions Table Talk once', () => {
   const home = readFileSync(resolve('dist/index.html'), 'utf8');
   assert.match(home, /<title>Dudley Development — iPhone apps, games &amp; conversation cards<\/title>/);
