@@ -198,6 +198,45 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach to Family Dinner Project via contact form for Table Talk (2026-09-25)
+  {
+    ct: 'tt_outreach_familydinnerproject_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach Family Dinner Project contact form (Table Talk)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Six Colors apps@ for a Table Talk App Report tip (2026-09-25)
+  {
+    ct: 'tt_outreach_sixcolors_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach Six Colors apps@ (Table Talk App Report tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to 9to5Mac Indie App Spotlight — Table Talk link (2026-09-25)
+  {
+    ct: 'da_outreach_9to5mac_tt_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach 9to5Mac Indie App Spotlight (Table Talk link)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // Table Talk blog CTAs follow the pattern `tt-web-blog-<slug>-sep26-v1`.
   // Generated per-post by tableTalkBlogCampaignToken(slug) — not individually listed.
 
@@ -416,6 +455,19 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach to 9to5Mac Indie App Spotlight — EconByte link (2026-09-25)
+  {
+    ct: 'da_outreach_9to5mac_eb_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach 9to5Mac Indie App Spotlight (EconByte link)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // EconByte blog CTAs follow the pattern `eb-web-blog-<slug>-sep26-v1`.
   // Generated per-post by econbyteBlogCampaignToken(slug) — not individually listed.
 
@@ -598,6 +650,32 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach to Gamezebo editor@ for a Last Human review tip (2026-09-25)
+  {
+    ct: 'lh_outreach_gamezebo_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach Gamezebo editor@ (Last Human review tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to AppSpy reviews@ for a Last Human tip (2026-09-25)
+  {
+    ct: 'lh_outreach_appspy_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach AppSpy reviews@ (Last Human tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
 ]);
 
 // ---------------------------------------------------------------------------
@@ -702,6 +780,9 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   outreachIndietools20260925: 'tt_outreach_indietools_20260925',
   // Studio IndieTools listing. Registry is one ct → one appId; Table Talk is the exemplar.
   outreachIndietoolsStudio20260925: 'da_outreach_indietools_20260925',
+  outreachFamilydinnerproject20260925: 'tt_outreach_familydinnerproject_20260925',
+  outreachSixcolors20260925: 'tt_outreach_sixcolors_20260925',
+  outreach9to5mac20260925: 'da_outreach_9to5mac_tt_20260925',
 });
 
 export const VIBERATER_ASC_TOKENS = Object.freeze({
@@ -729,6 +810,7 @@ export const ECONBYTE_ASC_TOKENS = Object.freeze({
   outreachEconedlink20260925: 'eb_outreach_econedlink_20260925',
   outreachMoneygirl20260925: 'eb_outreach_moneygirl_20260925',
   outreachIndietools20260925: 'eb_outreach_indietools_20260925',
+  outreach9to5mac20260925: 'da_outreach_9to5mac_eb_20260925',
 });
 
 export const DUDE_WHERES_ASC_TOKENS = Object.freeze({
@@ -751,6 +833,8 @@ export const LAST_HUMAN_ASC_TOKENS = Object.freeze({
   outreach148apps20260925: 'lh_outreach_148apps_20260925',
   outreachCultofmac20260925: 'lh_outreach_cultofmac_20260925',
   outreachIndietools20260925: 'lh_outreach_indietools_20260925',
+  outreachGamezebo20260925: 'lh_outreach_gamezebo_20260925',
+  outreachAppspy20260925: 'lh_outreach_appspy_20260925',
 });
 
 export const LLMS_APP_STORE_TOKENS = Object.freeze({
