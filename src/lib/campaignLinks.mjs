@@ -317,6 +317,32 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach to Gourmet Host for a Table Talk soft tip (2026-09-25)
+  {
+    ct: 'tt_outreach_gourmethost_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach Gourmet Host (Table Talk soft tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Board Game Barrage for a Table Talk soft tip (2026-09-25)
+  {
+    ct: 'tt_outreach_bgbarrage_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach Board Game Barrage (Table Talk soft tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // Table Talk blog CTAs follow the pattern `tt-web-blog-<slug>-sep26-v1`.
   // Generated per-post by tableTalkBlogCampaignToken(slug) — not individually listed.
 
@@ -639,6 +665,19 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach to Teacher Money Show for an EconByte soft literacy intro (2026-09-25)
+  {
+    ct: 'eb_outreach_teachermoney_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach Teacher Money Show (EconByte soft literacy intro)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // EconByte blog CTAs follow the pattern `eb-web-blog-<slug>-sep26-v1`.
   // Generated per-post by econbyteBlogCampaignToken(slug) — not individually listed.
 
@@ -886,6 +925,32 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach to Kodeco Podcast for a Last Human soft guest/tip (2026-09-25)
+  {
+    ct: 'lh_outreach_kodeco_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach Kodeco Podcast (Last Human soft guest/tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Launched (Charlie Chapman) for a Last Human soft guest ask (2026-09-25)
+  {
+    ct: 'lh_outreach_launched_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach Launched Charlie Chapman (Last Human soft guest ask)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
 ]);
 
 // ---------------------------------------------------------------------------
@@ -1001,6 +1066,8 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   outreachVibblelaunch20260925: 'tt_outreach_vibblelaunch_20260925',
   // Studio VibbleLaunch listing. Registry is one ct → one appId; Table Talk is the exemplar.
   outreachVibblelaunchStudio20260925: 'da_outreach_vibblelaunch_20260925',
+  outreachGourmethost20260925: 'tt_outreach_gourmethost_20260925',
+  outreachBgbarrage20260925: 'tt_outreach_bgbarrage_20260925',
 });
 
 export const VIBERATER_ASC_TOKENS = Object.freeze({
@@ -1036,6 +1103,7 @@ export const ECONBYTE_ASC_TOKENS = Object.freeze({
   outreachLaunchfree20260925: 'eb_outreach_launchfree_20260925',
   outreachLearnamic20260925: 'eb_outreach_learnamic_20260925',
   outreachVibblelaunch20260925: 'eb_outreach_vibblelaunch_20260925',
+  outreachTeachermoney20260925: 'eb_outreach_teachermoney_20260925',
 });
 
 export const DUDE_WHERES_ASC_TOKENS = Object.freeze({
@@ -1063,6 +1131,8 @@ export const LAST_HUMAN_ASC_TOKENS = Object.freeze({
   outreachSiliconera20260925: 'lh_outreach_siliconera_20260925',
   outreachLaunchfree20260925: 'lh_outreach_launchfree_20260925',
   outreachVibblelaunch20260925: 'lh_outreach_vibblelaunch_20260925',
+  outreachKodeco20260925: 'lh_outreach_kodeco_20260925',
+  outreachLaunched20260925: 'lh_outreach_launched_20260925',
 });
 
 export const LLMS_APP_STORE_TOKENS = Object.freeze({
