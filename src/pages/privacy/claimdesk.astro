@@ -9,30 +9,47 @@ const description = `Privacy policy for ClaimDesk by ${LEGAL_NAME}.`;
       <a class="back" href={rel('/privacy/')}>← All privacy policies</a>
       <h1>Privacy Policy</h1>
       <p class="updated">ClaimDesk · Last updated September 25, 2026</p>
-      <p>This policy describes ClaimDesk version 1.0 and later.</p>
+      <p>This policy describes ClaimDesk version 1.1 and later.</p>
 
       <h2>The short version</h2>
       <p>
         ClaimDesk keeps track of claims you have already started (insurance, warranty, chargeback): who it's with,
-        the reference number, its status, the next date you need to act, and a log of what happened. Everything
-        stays on your iPhone. {LEGAL_NAME} doesn't receive your claims. The app has no account, no analytics, no
-        ads and no tracking.
+        the reference number, its status, the next date you need to act, and a log of what happened. Your claims stay
+        on your iPhone unless you choose to sign in so an AI assistant can work with them. The app has no ads and no
+        tracking.
       </p>
 
       <h2>What stays on your device</h2>
       <ul>
         <li>The claims you add and the touches you log, including any proof notes.</li>
-        <li>Your reminder permission and, if you set one up, your connector address and device token (the token is kept in the iOS Keychain).</li>
+        <li>Your reminder permission and, if you sign in, a sync token kept in the iOS Keychain.</li>
       </ul>
-      <p>Deleting the app removes all of it.</p>
+      <p>If you never sign in, {LEGAL_NAME} receives nothing. Deleting the app removes all of it.</p>
 
-      <h2>The optional connector</h2>
+      <h2>If you sign in to use an AI assistant (optional)</h2>
       <p>
-        If you set up a ClaimDesk connector in Settings, your phone sends your saved claims and touch logs to the
-        address you enter, and nowhere else. The connector is software you, or someone you choose, run; it isn't
-        operated by {LEGAL_NAME}. Only apps you approve on that connector can read those claims, set a claim to
-        "waiting" or "needs me", log touches, and ask to close a claim (you confirm the close in the app). Removing
-        the connector in Settings stops syncing; data already on the connector stays wherever you run it.
+        Under Settings → AI assistant you can sign in with Apple or Google. We ask them for an account ID only: no
+        name and no email. After you sign in:
+      </p>
+      <ul>
+        <li>
+          your saved claims and touch logs sync to ClaimDesk's server at claimdesk.dudleyapps.com, where they are
+          stored encrypted at rest in a vault that only your account can reach;
+        </li>
+        <li>
+          an AI assistant you connect (for example Claude, ChatGPT or Muse), after you approve it by signing in with
+          the same account, can read those claims, set a claim to "waiting" or "needs me", log touches, and ask to
+          close a claim. It can't add or delete claims, and nothing closes until you confirm it in the app;
+        </li>
+        <li>
+          we use this data only to provide the sync and the assistant connection. We don't sell it, share it for
+          advertising, or use it to train models.
+        </li>
+      </ul>
+      <p>
+        Sign out in the app to stop syncing from that iPhone. <strong>Delete hosted data</strong> in the same screen
+        removes the server copy and disconnects every assistant immediately; claims on your iPhone stay. What an
+        assistant does with the information it reads is governed by that assistant's own privacy policy.
       </p>
 
       <h2>Share sheet</h2>
@@ -56,6 +73,9 @@ const description = `Privacy policy for ClaimDesk by ${LEGAL_NAME}.`;
       <h2>Used to track you</h2>
       <p>Nothing. ClaimDesk has no advertising or analytics SDKs, and we do not sell personal data.</p>
 
+      <h2>Retention</h2>
+      <p>Hosted data is kept until you delete it in the app. We also delete it on request by email.</p>
+
       <h2>Children</h2>
       <p>ClaimDesk is not directed at children under 13, and we do not knowingly collect personal data from them.</p>
 
@@ -63,7 +83,7 @@ const description = `Privacy policy for ClaimDesk by ${LEGAL_NAME}.`;
       <p>If this policy changes materially, the new version will be posted at this URL with an updated date above.</p>
 
       <h2>Contact</h2>
-      <p>Questions? Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
+      <p>Questions or a deletion request? Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
     </div>
   </main>
 </Base>
