@@ -56,6 +56,8 @@ const ECONBYTE_OUTREACH_VIBBLELAUNCH_20260925_CT = 'eb_outreach_vibblelaunch_202
 const STUDIO_OUTREACH_VIBBLELAUNCH_20260925_CT = 'da_outreach_vibblelaunch_20260925';
 const TABLE_TALK_OUTREACH_GOURMETHOST_20260925_CT = 'tt_outreach_gourmethost_20260925';
 const TABLE_TALK_OUTREACH_BGBARRAGE_20260925_CT = 'tt_outreach_bgbarrage_20260925';
+const TABLE_TALK_OUTREACH_DINNERPLAN_20260925_CT = 'tt_outreach_dinnerplan_20260925';
+const TABLE_TALK_OUTREACH_BETTYEATZ_20260925_CT = 'tt_outreach_bettyeatz_20260925';
 const LAST_HUMAN_OUTREACH_KODECO_20260925_CT = 'lh_outreach_kodeco_20260925';
 const LAST_HUMAN_OUTREACH_LAUNCHED_20260925_CT = 'lh_outreach_launched_20260925';
 const ECONBYTE_OUTREACH_TEACHERMONEY_20260925_CT = 'eb_outreach_teachermoney_20260925';
@@ -1323,6 +1325,62 @@ test('Table Talk Board Game Barrage outreach 2026-09-25 App Store URL uses pt, r
   assert.equal(
     url,
     `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${TABLE_TALK_OUTREACH_BGBARRAGE_20260925_CT}&mt=8`,
+  );
+});
+
+test('Table Talk The Dinner Plan outreach 2026-09-25 token is a registered static definition', () => {
+  assert.equal(TABLE_TALK_ASC_TOKENS.outreachDinnerplan20260925, TABLE_TALK_OUTREACH_DINNERPLAN_20260925_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(TABLE_TALK_OUTREACH_DINNERPLAN_20260925_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(TABLE_TALK_OUTREACH_DINNERPLAN_20260925_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, TABLE_TALK_APP_ID);
+  assert.equal(resolved.ct, TABLE_TALK_OUTREACH_DINNERPLAN_20260925_CT);
+  assert.equal(resolved.channel, 'email');
+  assert.equal(resolved.path, 'email');
+  assert.equal(resolved.surface, 'Email outreach The Dinner Plan Maggie Hoffman (Table Talk press tip)');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-25');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+  assert.equal(campaignLinks.CT_TO_APP_ID[TABLE_TALK_OUTREACH_DINNERPLAN_20260925_CT], TABLE_TALK_APP_ID);
+});
+
+test('Table Talk The Dinner Plan outreach 2026-09-25 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(TABLE_TALK_APP_ID, TABLE_TALK_ASC_TOKENS.outreachDinnerplan20260925);
+  assert.equal(
+    url,
+    `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${TABLE_TALK_OUTREACH_DINNERPLAN_20260925_CT}&mt=8`,
+  );
+});
+
+test('Table Talk Betty Eatz outreach 2026-09-25 token is a registered static definition', () => {
+  assert.equal(TABLE_TALK_ASC_TOKENS.outreachBettyeatz20260925, TABLE_TALK_OUTREACH_BETTYEATZ_20260925_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(TABLE_TALK_OUTREACH_BETTYEATZ_20260925_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(TABLE_TALK_OUTREACH_BETTYEATZ_20260925_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, TABLE_TALK_APP_ID);
+  assert.equal(resolved.ct, TABLE_TALK_OUTREACH_BETTYEATZ_20260925_CT);
+  assert.equal(resolved.channel, 'email');
+  assert.equal(resolved.path, 'email');
+  assert.equal(resolved.surface, 'Email outreach Betty Eatz (Table Talk press tip)');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-25');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+  assert.equal(campaignLinks.CT_TO_APP_ID[TABLE_TALK_OUTREACH_BETTYEATZ_20260925_CT], TABLE_TALK_APP_ID);
+});
+
+test('Table Talk Betty Eatz outreach 2026-09-25 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(TABLE_TALK_APP_ID, TABLE_TALK_ASC_TOKENS.outreachBettyeatz20260925);
+  assert.equal(
+    url,
+    `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${TABLE_TALK_OUTREACH_BETTYEATZ_20260925_CT}&mt=8`,
   );
 });
 

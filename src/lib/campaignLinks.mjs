@@ -343,6 +343,32 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach to The Dinner Plan (Maggie Hoffman) for a Table Talk press tip (2026-09-25)
+  {
+    ct: 'tt_outreach_dinnerplan_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach The Dinner Plan Maggie Hoffman (Table Talk press tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Betty Eatz for a Table Talk press tip (2026-09-25)
+  {
+    ct: 'tt_outreach_bettyeatz_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach Betty Eatz (Table Talk press tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // Table Talk blog CTAs follow the pattern `tt-web-blog-<slug>-sep26-v1`.
   // Generated per-post by tableTalkBlogCampaignToken(slug) — not individually listed.
 
@@ -1068,6 +1094,8 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   outreachVibblelaunchStudio20260925: 'da_outreach_vibblelaunch_20260925',
   outreachGourmethost20260925: 'tt_outreach_gourmethost_20260925',
   outreachBgbarrage20260925: 'tt_outreach_bgbarrage_20260925',
+  outreachDinnerplan20260925: 'tt_outreach_dinnerplan_20260925',
+  outreachBettyeatz20260925: 'tt_outreach_bettyeatz_20260925',
 });
 
 export const VIBERATER_ASC_TOKENS = Object.freeze({
