@@ -369,6 +369,58 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Common Sense Media family Request a review form for a Table Talk soft tip (2026-09-25)
+  {
+    ct: 'tt_outreach_commonsensemedia_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach Common Sense Media Request a review form (Table Talk soft tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Soft tip email AppAddict (Table Talk) 2026-09-25
+  {
+    ct: 'tt_outreach_appaddict_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach AppAddict (Table Talk soft tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Soft tip email iDownloadBlog (Table Talk) 2026-09-25
+  {
+    ct: 'tt_outreach_idownloadblog_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach iDownloadBlog (Table Talk soft tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Soft tip to While Entertaining / Amber Mayfield for a Table Talk mention (2026-09-25)
+  {
+    ct: 'tt_outreach_whileentertaining_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach While Entertaining Amber Mayfield (Table Talk soft tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // Table Talk blog CTAs follow the pattern `tt-web-blog-<slug>-sep26-v1`.
   // Generated per-post by tableTalkBlogCampaignToken(slug) — not individually listed.
 
@@ -1096,6 +1148,10 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   outreachBgbarrage20260925: 'tt_outreach_bgbarrage_20260925',
   outreachDinnerplan20260925: 'tt_outreach_dinnerplan_20260925',
   outreachBettyeatz20260925: 'tt_outreach_bettyeatz_20260925',
+  outreachCommonsensemedia20260925: 'tt_outreach_commonsensemedia_20260925',
+  outreachAppaddict20260925: 'tt_outreach_appaddict_20260925',
+  outreachIdownloadblog20260925: 'tt_outreach_idownloadblog_20260925',
+  outreachWhileentertaining20260925: 'tt_outreach_whileentertaining_20260925',
 });
 
 export const VIBERATER_ASC_TOKENS = Object.freeze({

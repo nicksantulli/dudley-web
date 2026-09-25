@@ -58,6 +58,10 @@ const TABLE_TALK_OUTREACH_GOURMETHOST_20260925_CT = 'tt_outreach_gourmethost_202
 const TABLE_TALK_OUTREACH_BGBARRAGE_20260925_CT = 'tt_outreach_bgbarrage_20260925';
 const TABLE_TALK_OUTREACH_DINNERPLAN_20260925_CT = 'tt_outreach_dinnerplan_20260925';
 const TABLE_TALK_OUTREACH_BETTYEATZ_20260925_CT = 'tt_outreach_bettyeatz_20260925';
+const TABLE_TALK_OUTREACH_COMMONSENSEMEDIA_20260925_CT = 'tt_outreach_commonsensemedia_20260925';
+const TABLE_TALK_OUTREACH_APPADDICT_20260925_CT = 'tt_outreach_appaddict_20260925';
+const TABLE_TALK_OUTREACH_IDOWNLOADBLOG_20260925_CT = 'tt_outreach_idownloadblog_20260925';
+const TABLE_TALK_OUTREACH_WHILEENTERTAINING_20260925_CT = 'tt_outreach_whileentertaining_20260925';
 const LAST_HUMAN_OUTREACH_KODECO_20260925_CT = 'lh_outreach_kodeco_20260925';
 const LAST_HUMAN_OUTREACH_LAUNCHED_20260925_CT = 'lh_outreach_launched_20260925';
 const ECONBYTE_OUTREACH_TEACHERMONEY_20260925_CT = 'eb_outreach_teachermoney_20260925';
@@ -1382,6 +1386,71 @@ test('Table Talk Betty Eatz outreach 2026-09-25 App Store URL uses pt, registere
     url,
     `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${TABLE_TALK_OUTREACH_BETTYEATZ_20260925_CT}&mt=8`,
   );
+});
+
+test('Table Talk Common Sense Media, AppAddict, iDownloadBlog, and While Entertaining outreach 2026-09-25 tokens are registered static definitions', () => {
+  const rows = [
+    {
+      key: 'outreachCommonsensemedia20260925',
+      ct: TABLE_TALK_OUTREACH_COMMONSENSEMEDIA_20260925_CT,
+      surface: 'Email outreach Common Sense Media Request a review form (Table Talk soft tip)',
+    },
+    {
+      key: 'outreachAppaddict20260925',
+      ct: TABLE_TALK_OUTREACH_APPADDICT_20260925_CT,
+      surface: 'Email outreach AppAddict (Table Talk soft tip)',
+    },
+    {
+      key: 'outreachIdownloadblog20260925',
+      ct: TABLE_TALK_OUTREACH_IDOWNLOADBLOG_20260925_CT,
+      surface: 'Email outreach iDownloadBlog (Table Talk soft tip)',
+    },
+    {
+      key: 'outreachWhileentertaining20260925',
+      ct: TABLE_TALK_OUTREACH_WHILEENTERTAINING_20260925_CT,
+      surface: 'Email outreach While Entertaining Amber Mayfield (Table Talk soft tip)',
+    },
+  ];
+
+  assert.equal(rows.length, 4);
+  const cts = rows.map((row) => row.ct);
+  assert.equal(new Set(cts).size, cts.length);
+
+  for (const row of rows) {
+    assert.equal(TABLE_TALK_ASC_TOKENS[row.key], row.ct);
+    assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(row.ct));
+
+    const resolved = campaignLinks.resolveTokenDefinition(row.ct);
+    assert.ok(resolved, 'resolveTokenDefinition returned null');
+    assert.equal(resolved.kind, 'static');
+    assert.equal(resolved.appId, TABLE_TALK_APP_ID);
+    assert.equal(resolved.ct, row.ct);
+    assert.equal(resolved.channel, 'email');
+    assert.equal(resolved.path, 'email');
+    assert.equal(resolved.surface, row.surface);
+    assert.equal(resolved.ppid, null);
+    assert.equal(resolved.status, 'proposed');
+    assert.equal(resolved.registeredAt, '2026-09-25');
+    assert.equal(resolved.activatedAt, null);
+    assert.equal(resolved.firstVerifiedAt, null);
+    assert.equal(campaignLinks.CT_TO_APP_ID[row.ct], TABLE_TALK_APP_ID);
+  }
+});
+
+test('Table Talk Common Sense Media, AppAddict, iDownloadBlog, and While Entertaining outreach 2026-09-25 App Store URLs use pt, registered ct, and mt=8', () => {
+  const rows = [
+    ['outreachCommonsensemedia20260925', TABLE_TALK_OUTREACH_COMMONSENSEMEDIA_20260925_CT],
+    ['outreachAppaddict20260925', TABLE_TALK_OUTREACH_APPADDICT_20260925_CT],
+    ['outreachIdownloadblog20260925', TABLE_TALK_OUTREACH_IDOWNLOADBLOG_20260925_CT],
+    ['outreachWhileentertaining20260925', TABLE_TALK_OUTREACH_WHILEENTERTAINING_20260925_CT],
+  ];
+
+  for (const [key, ct] of rows) {
+    assert.equal(
+      appStoreCampaignUrl(TABLE_TALK_APP_ID, TABLE_TALK_ASC_TOKENS[key]),
+      `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${ct}&mt=8`,
+    );
+  }
 });
 
 test('Last Human Kodeco Podcast outreach 2026-09-25 token is a registered static definition', () => {
