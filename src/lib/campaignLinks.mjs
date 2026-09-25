@@ -145,6 +145,32 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email pitch to TidBITS (ace@tidbits.com) for Table Talk as a utility (conversation cards); not a game (2026-09-25)
+  {
+    ct: 'tt_outreach_tidbits_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach TidBITS ace@tidbits.com (Table Talk utility, not a game)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Soft email note to MacStories (voorhees@macstories.net) for Table Talk coverage consideration (2026-09-25)
+  {
+    ct: 'tt_outreach_macstories_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach MacStories voorhees@macstories.net (Table Talk coverage consideration)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // Table Talk blog CTAs follow the pattern `tt-web-blog-<slug>-sep26-v1`.
   // Generated per-post by tableTalkBlogCampaignToken(slug) — not individually listed.
 
@@ -553,6 +579,8 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   // Off-site email outreach — one-off dated tokens, not a blog slug generator.
   outreachPartypro20260925: 'tt_outreach_partypro_20260925',
   outreachIndieDevMonday20260925: 'da_outreach_indiedevmonday_tt_20260925',
+  outreachTidbits20260925: 'tt_outreach_tidbits_20260925',
+  outreachMacstories20260925: 'tt_outreach_macstories_20260925',
 });
 
 export const VIBERATER_ASC_TOKENS = Object.freeze({
