@@ -43,6 +43,17 @@ const ECONBYTE_OUTREACH_JUMPSTART_20260925_CT = 'eb_outreach_jumpstart_20260925'
 const ECONBYTE_OUTREACH_NGPF_20260925_CT = 'eb_outreach_ngpf_20260925';
 const TABLE_TALK_OUTREACH_MSEXTENSION_20260925_CT = 'tt_outreach_msextension_20260925';
 const ECONBYTE_OUTREACH_FREDED_20260925_CT = 'eb_outreach_freded_20260925';
+const ECONBYTE_OUTREACH_EDSHELF_20260925_CT = 'eb_outreach_edshelf_20260925';
+const LAST_HUMAN_OUTREACH_LAUNCHFREE_20260925_CT = 'lh_outreach_launchfree_20260925';
+const TABLE_TALK_OUTREACH_LAUNCHFREE_20260925_CT = 'tt_outreach_launchfree_20260925';
+const ECONBYTE_OUTREACH_LAUNCHFREE_20260925_CT = 'eb_outreach_launchfree_20260925';
+const STUDIO_OUTREACH_LAUNCHFREE_20260925_CT = 'da_outreach_launchfree_20260925';
+const ECONBYTE_OUTREACH_LEARNAMIC_20260925_CT = 'eb_outreach_learnamic_20260925';
+const TABLE_TALK_OUTREACH_MONEYPRODIGY_20260925_CT = 'tt_outreach_moneyprodigy_20260925';
+const LAST_HUMAN_OUTREACH_VIBBLELAUNCH_20260925_CT = 'lh_outreach_vibblelaunch_20260925';
+const TABLE_TALK_OUTREACH_VIBBLELAUNCH_20260925_CT = 'tt_outreach_vibblelaunch_20260925';
+const ECONBYTE_OUTREACH_VIBBLELAUNCH_20260925_CT = 'eb_outreach_vibblelaunch_20260925';
+const STUDIO_OUTREACH_VIBBLELAUNCH_20260925_CT = 'da_outreach_vibblelaunch_20260925';
 const PHONE_IN_THE_MIDDLE_SLUG = 'phone-in-the-middle';
 const PHONE_IN_THE_MIDDLE_CT = 'tt-web-blog-phone-in-the-middle-sep26-v1';
 const TABLE_TALK_TIKTOK_CT = 'tabletalk-tiktok-20260910';
@@ -125,6 +136,8 @@ test('registers unique Last Human tokens for each launch surface', () => {
     outreachGamezebo20260925: LAST_HUMAN_OUTREACH_GAMEZEBO_20260925_CT,
     outreachAppspy20260925: LAST_HUMAN_OUTREACH_APPSPY_20260925_CT,
     outreachSiliconera20260925: LAST_HUMAN_OUTREACH_SILICONERA_20260925_CT,
+    outreachLaunchfree20260925: LAST_HUMAN_OUTREACH_LAUNCHFREE_20260925_CT,
+    outreachVibblelaunch20260925: LAST_HUMAN_OUTREACH_VIBBLELAUNCH_20260925_CT,
   });
 
   for (const token of Object.values(LAST_HUMAN_ASC_TOKENS)) {
@@ -1089,6 +1102,164 @@ test('EconByte Federal Reserve Education outreach 2026-09-25 App Store URL uses 
   assert.equal(
     url,
     `https://apps.apple.com/app/id${ECONBYTE_APP_ID}?pt=128970277&ct=${ECONBYTE_OUTREACH_FREDED_20260925_CT}&mt=8`,
+  );
+});
+
+test('edshelf, LaunchFree, Learnamic, Money Prodigy, and VibbleLaunch outreach tokens are registered static definitions', () => {
+  const rows = [
+    {
+      tokens: ECONBYTE_ASC_TOKENS,
+      key: 'outreachEdshelf20260925',
+      ct: ECONBYTE_OUTREACH_EDSHELF_20260925_CT,
+      appId: ECONBYTE_APP_ID,
+      surface: 'Email outreach edshelf tool-submissions@ (EconByte listing ask)',
+    },
+    {
+      tokens: LAST_HUMAN_ASC_TOKENS,
+      key: 'outreachLaunchfree20260925',
+      ct: LAST_HUMAN_OUTREACH_LAUNCHFREE_20260925_CT,
+      appId: LAST_HUMAN_APP_ID,
+      surface: 'Email outreach LaunchFree free listing (Last Human)',
+    },
+    {
+      tokens: TABLE_TALK_ASC_TOKENS,
+      key: 'outreachLaunchfree20260925',
+      ct: TABLE_TALK_OUTREACH_LAUNCHFREE_20260925_CT,
+      appId: TABLE_TALK_APP_ID,
+      surface: 'Email outreach LaunchFree free listing (Table Talk)',
+    },
+    {
+      tokens: ECONBYTE_ASC_TOKENS,
+      key: 'outreachLaunchfree20260925',
+      ct: ECONBYTE_OUTREACH_LAUNCHFREE_20260925_CT,
+      appId: ECONBYTE_APP_ID,
+      surface: 'Email outreach LaunchFree free listing (EconByte)',
+    },
+    {
+      tokens: TABLE_TALK_ASC_TOKENS,
+      key: 'outreachLaunchfreeStudio20260925',
+      ct: STUDIO_OUTREACH_LAUNCHFREE_20260925_CT,
+      appId: TABLE_TALK_APP_ID,
+      surface: 'Email outreach LaunchFree studio hub (Table Talk studio utility exemplar)',
+    },
+    {
+      tokens: ECONBYTE_ASC_TOKENS,
+      key: 'outreachLearnamic20260925',
+      ct: ECONBYTE_OUTREACH_LEARNAMIC_20260925_CT,
+      appId: ECONBYTE_APP_ID,
+      surface: 'Email outreach Learnamic Standard process ask (EconByte)',
+    },
+    {
+      tokens: TABLE_TALK_ASC_TOKENS,
+      key: 'outreachMoneyprodigy20260925',
+      ct: TABLE_TALK_OUTREACH_MONEYPRODIGY_20260925_CT,
+      appId: TABLE_TALK_APP_ID,
+      surface: 'Email outreach Money Prodigy resource adjacency (Table Talk)',
+    },
+    {
+      tokens: LAST_HUMAN_ASC_TOKENS,
+      key: 'outreachVibblelaunch20260925',
+      ct: LAST_HUMAN_OUTREACH_VIBBLELAUNCH_20260925_CT,
+      appId: LAST_HUMAN_APP_ID,
+      surface: 'Email outreach VibbleLaunch free listing (Last Human)',
+    },
+    {
+      tokens: TABLE_TALK_ASC_TOKENS,
+      key: 'outreachVibblelaunch20260925',
+      ct: TABLE_TALK_OUTREACH_VIBBLELAUNCH_20260925_CT,
+      appId: TABLE_TALK_APP_ID,
+      surface: 'Email outreach VibbleLaunch free listing (Table Talk)',
+    },
+    {
+      tokens: ECONBYTE_ASC_TOKENS,
+      key: 'outreachVibblelaunch20260925',
+      ct: ECONBYTE_OUTREACH_VIBBLELAUNCH_20260925_CT,
+      appId: ECONBYTE_APP_ID,
+      surface: 'Email outreach VibbleLaunch free listing (EconByte)',
+    },
+    {
+      tokens: TABLE_TALK_ASC_TOKENS,
+      key: 'outreachVibblelaunchStudio20260925',
+      ct: STUDIO_OUTREACH_VIBBLELAUNCH_20260925_CT,
+      appId: TABLE_TALK_APP_ID,
+      surface: 'Email outreach VibbleLaunch studio hub (Table Talk studio utility exemplar)',
+    },
+  ];
+
+  assert.equal(rows.length, 11);
+  const cts = rows.map((row) => row.ct);
+  assert.equal(new Set(cts).size, cts.length);
+
+  for (const row of rows) {
+    assert.equal(row.tokens[row.key], row.ct);
+    assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(row.ct));
+
+    const resolved = campaignLinks.resolveTokenDefinition(row.ct);
+    assert.ok(resolved, 'resolveTokenDefinition returned null');
+    assert.equal(resolved.kind, 'static');
+    assert.equal(resolved.appId, row.appId);
+    assert.equal(resolved.ct, row.ct);
+    assert.equal(resolved.channel, 'email');
+    assert.equal(resolved.path, 'email');
+    assert.equal(resolved.surface, row.surface);
+    assert.equal(resolved.ppid, null);
+    assert.equal(resolved.status, 'proposed');
+    assert.equal(resolved.registeredAt, '2026-09-25');
+    assert.equal(resolved.activatedAt, null);
+    assert.equal(resolved.firstVerifiedAt, null);
+    assert.equal(campaignLinks.CT_TO_APP_ID[row.ct], row.appId);
+  }
+});
+
+test('edshelf, LaunchFree, Learnamic, Money Prodigy, and VibbleLaunch outreach App Store URLs use pt, registered ct, and mt=8', () => {
+  const lastHuman = (ct) =>
+    `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${ct}&mt=8`;
+  const plain = (appId, ct) =>
+    `https://apps.apple.com/app/id${appId}?pt=128970277&ct=${ct}&mt=8`;
+
+  assert.equal(
+    appStoreCampaignUrl(ECONBYTE_APP_ID, ECONBYTE_ASC_TOKENS.outreachEdshelf20260925),
+    plain(ECONBYTE_APP_ID, ECONBYTE_OUTREACH_EDSHELF_20260925_CT),
+  );
+  assert.equal(
+    appStoreCampaignUrl(LAST_HUMAN_APP_ID, LAST_HUMAN_ASC_TOKENS.outreachLaunchfree20260925),
+    lastHuman(LAST_HUMAN_OUTREACH_LAUNCHFREE_20260925_CT),
+  );
+  assert.equal(
+    appStoreCampaignUrl(TABLE_TALK_APP_ID, TABLE_TALK_ASC_TOKENS.outreachLaunchfree20260925),
+    plain(TABLE_TALK_APP_ID, TABLE_TALK_OUTREACH_LAUNCHFREE_20260925_CT),
+  );
+  assert.equal(
+    appStoreCampaignUrl(ECONBYTE_APP_ID, ECONBYTE_ASC_TOKENS.outreachLaunchfree20260925),
+    plain(ECONBYTE_APP_ID, ECONBYTE_OUTREACH_LAUNCHFREE_20260925_CT),
+  );
+  assert.equal(
+    appStoreCampaignUrl(TABLE_TALK_APP_ID, TABLE_TALK_ASC_TOKENS.outreachLaunchfreeStudio20260925),
+    plain(TABLE_TALK_APP_ID, STUDIO_OUTREACH_LAUNCHFREE_20260925_CT),
+  );
+  assert.equal(
+    appStoreCampaignUrl(ECONBYTE_APP_ID, ECONBYTE_ASC_TOKENS.outreachLearnamic20260925),
+    plain(ECONBYTE_APP_ID, ECONBYTE_OUTREACH_LEARNAMIC_20260925_CT),
+  );
+  assert.equal(
+    appStoreCampaignUrl(TABLE_TALK_APP_ID, TABLE_TALK_ASC_TOKENS.outreachMoneyprodigy20260925),
+    plain(TABLE_TALK_APP_ID, TABLE_TALK_OUTREACH_MONEYPRODIGY_20260925_CT),
+  );
+  assert.equal(
+    appStoreCampaignUrl(LAST_HUMAN_APP_ID, LAST_HUMAN_ASC_TOKENS.outreachVibblelaunch20260925),
+    lastHuman(LAST_HUMAN_OUTREACH_VIBBLELAUNCH_20260925_CT),
+  );
+  assert.equal(
+    appStoreCampaignUrl(TABLE_TALK_APP_ID, TABLE_TALK_ASC_TOKENS.outreachVibblelaunch20260925),
+    plain(TABLE_TALK_APP_ID, TABLE_TALK_OUTREACH_VIBBLELAUNCH_20260925_CT),
+  );
+  assert.equal(
+    appStoreCampaignUrl(ECONBYTE_APP_ID, ECONBYTE_ASC_TOKENS.outreachVibblelaunch20260925),
+    plain(ECONBYTE_APP_ID, ECONBYTE_OUTREACH_VIBBLELAUNCH_20260925_CT),
+  );
+  assert.equal(
+    appStoreCampaignUrl(TABLE_TALK_APP_ID, TABLE_TALK_ASC_TOKENS.outreachVibblelaunchStudio20260925),
+    plain(TABLE_TALK_APP_ID, STUDIO_OUTREACH_VIBBLELAUNCH_20260925_CT),
   );
 });
 

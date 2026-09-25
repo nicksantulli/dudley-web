@@ -250,6 +250,73 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach LaunchFree free listing ASC link (Table Talk) (2026-09-25)
+  {
+    ct: 'tt_outreach_launchfree_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach LaunchFree free listing (Table Talk)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach LaunchFree studio hub. One ct maps to one appId;
+  // Table Talk is the studio utility exemplar (2026-09-25).
+  {
+    ct: 'da_outreach_launchfree_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach LaunchFree studio hub (Table Talk studio utility exemplar)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Money Prodigy for a Table Talk resource-adjacency note (2026-09-25)
+  {
+    ct: 'tt_outreach_moneyprodigy_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach Money Prodigy resource adjacency (Table Talk)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach VibbleLaunch free listing ASC link (Table Talk) (2026-09-25)
+  {
+    ct: 'tt_outreach_vibblelaunch_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach VibbleLaunch free listing (Table Talk)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach VibbleLaunch studio hub. One ct maps to one appId;
+  // Table Talk is the studio utility exemplar (2026-09-25).
+  {
+    ct: 'da_outreach_vibblelaunch_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach VibbleLaunch studio hub (Table Talk studio utility exemplar)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // Table Talk blog CTAs follow the pattern `tt-web-blog-<slug>-sep26-v1`.
   // Generated per-post by tableTalkBlogCampaignToken(slug) — not individually listed.
 
@@ -520,6 +587,58 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach to edshelf tool-submissions@ for an EconByte listing ask (2026-09-25)
+  {
+    ct: 'eb_outreach_edshelf_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach edshelf tool-submissions@ (EconByte listing ask)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach LaunchFree free listing ASC link (EconByte) (2026-09-25)
+  {
+    ct: 'eb_outreach_launchfree_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach LaunchFree free listing (EconByte)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Learnamic for an EconByte Standard process ask (2026-09-25)
+  {
+    ct: 'eb_outreach_learnamic_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach Learnamic Standard process ask (EconByte)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach VibbleLaunch free listing ASC link (EconByte) (2026-09-25)
+  {
+    ct: 'eb_outreach_vibblelaunch_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach VibbleLaunch free listing (EconByte)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // EconByte blog CTAs follow the pattern `eb-web-blog-<slug>-sep26-v1`.
   // Generated per-post by econbyteBlogCampaignToken(slug) — not individually listed.
 
@@ -741,6 +860,32 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach LaunchFree free listing ASC link (Last Human) (2026-09-25)
+  {
+    ct: 'lh_outreach_launchfree_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach LaunchFree free listing (Last Human)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach VibbleLaunch free listing ASC link (Last Human) (2026-09-25)
+  {
+    ct: 'lh_outreach_vibblelaunch_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach VibbleLaunch free listing (Last Human)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
 ]);
 
 // ---------------------------------------------------------------------------
@@ -849,6 +994,13 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   outreachSixcolors20260925: 'tt_outreach_sixcolors_20260925',
   outreach9to5mac20260925: 'da_outreach_9to5mac_tt_20260925',
   outreachMsextension20260925: 'tt_outreach_msextension_20260925',
+  outreachLaunchfree20260925: 'tt_outreach_launchfree_20260925',
+  // Studio LaunchFree listing. Registry is one ct → one appId; Table Talk is the exemplar.
+  outreachLaunchfreeStudio20260925: 'da_outreach_launchfree_20260925',
+  outreachMoneyprodigy20260925: 'tt_outreach_moneyprodigy_20260925',
+  outreachVibblelaunch20260925: 'tt_outreach_vibblelaunch_20260925',
+  // Studio VibbleLaunch listing. Registry is one ct → one appId; Table Talk is the exemplar.
+  outreachVibblelaunchStudio20260925: 'da_outreach_vibblelaunch_20260925',
 });
 
 export const VIBERATER_ASC_TOKENS = Object.freeze({
@@ -880,6 +1032,10 @@ export const ECONBYTE_ASC_TOKENS = Object.freeze({
   outreachJumpstart20260925: 'eb_outreach_jumpstart_20260925',
   outreachNgpf20260925: 'eb_outreach_ngpf_20260925',
   outreachFreded20260925: 'eb_outreach_freded_20260925',
+  outreachEdshelf20260925: 'eb_outreach_edshelf_20260925',
+  outreachLaunchfree20260925: 'eb_outreach_launchfree_20260925',
+  outreachLearnamic20260925: 'eb_outreach_learnamic_20260925',
+  outreachVibblelaunch20260925: 'eb_outreach_vibblelaunch_20260925',
 });
 
 export const DUDE_WHERES_ASC_TOKENS = Object.freeze({
@@ -905,6 +1061,8 @@ export const LAST_HUMAN_ASC_TOKENS = Object.freeze({
   outreachGamezebo20260925: 'lh_outreach_gamezebo_20260925',
   outreachAppspy20260925: 'lh_outreach_appspy_20260925',
   outreachSiliconera20260925: 'lh_outreach_siliconera_20260925',
+  outreachLaunchfree20260925: 'lh_outreach_launchfree_20260925',
+  outreachVibblelaunch20260925: 'lh_outreach_vibblelaunch_20260925',
 });
 
 export const LLMS_APP_STORE_TOKENS = Object.freeze({
