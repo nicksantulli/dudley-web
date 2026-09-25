@@ -324,6 +324,19 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach to Council for Economic Education press / EconEdLink (literacy and classroom framing only) (2026-09-25)
+  {
+    ct: 'eb_outreach_econedlink_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach EconEdLink / Council for Economic Education press (literacy and classroom framing)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // EconByte blog CTAs follow the pattern `eb-web-blog-<slug>-sep26-v1`.
   // Generated per-post by econbyteBlogCampaignToken(slug) — not individually listed.
 
@@ -454,6 +467,32 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach to Pocket Gamer reviews@ for a Last Human review tip (2026-09-25)
+  {
+    ct: 'lh_outreach_pocketgamer_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach Pocket Gamer reviews@ (Last Human review tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to 148 Apps (Campbell Bird) for a Last Human app review submit (2026-09-25)
+  {
+    ct: 'lh_outreach_148apps_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach 148 Apps Campbell Bird (Last Human app review submit)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
 ]);
 
 // ---------------------------------------------------------------------------
@@ -576,6 +615,8 @@ export const ECONBYTE_ASC_TOKENS = Object.freeze({
   homeCard:  'eb-web-card-sep26-v1', // homepage app card badge
   appDetail: 'eb-web-app-sep26-v1',  // /apps/econbyte/ CTA
   llms:      'eb-web-llms-sep26-v1', // llms.txt app link
+  // Off-site email outreach — one-off dated token, not a blog slug generator.
+  outreachEconedlink20260925: 'eb_outreach_econedlink_20260925',
 });
 
 export const DUDE_WHERES_ASC_TOKENS = Object.freeze({
@@ -594,6 +635,8 @@ export const LAST_HUMAN_ASC_TOKENS = Object.freeze({
   // Off-site email outreach — one-off dated tokens, not a blog slug generator.
   outreachToucharcade20260925: 'lh_outreach_toucharcade_20260925',
   outreachIndieDevMonday20260925: 'da_outreach_indiedevmonday_lh_20260925',
+  outreachPocketgamer20260925: 'lh_outreach_pocketgamer_20260925',
+  outreach148apps20260925: 'lh_outreach_148apps_20260925',
 });
 
 export const LLMS_APP_STORE_TOKENS = Object.freeze({

@@ -8,13 +8,18 @@ const {
   tableTalkBlogCampaignToken,
   TABLE_TALK_ASC_TOKENS,
   LAST_HUMAN_ASC_TOKENS,
+  ECONBYTE_ASC_TOKENS,
 } = campaignLinks;
 
 const TABLE_TALK_APP_ID = '6780714565';
 const LAST_HUMAN_APP_ID = '6808782611';
+const ECONBYTE_APP_ID = '6780714383';
 const LAST_HUMAN_X_MEMO_20260925_CT = 'lh_x_memo_20260925';
 const LAST_HUMAN_X_OFFLINE_20260925_CT = 'lh_x_offline_20260925';
 const LAST_HUMAN_OUTREACH_TOUCHARCADE_20260925_CT = 'lh_outreach_toucharcade_20260925';
+const LAST_HUMAN_OUTREACH_POCKETGAMER_20260925_CT = 'lh_outreach_pocketgamer_20260925';
+const LAST_HUMAN_OUTREACH_148APPS_20260925_CT = 'lh_outreach_148apps_20260925';
+const ECONBYTE_OUTREACH_ECONEDLINK_20260925_CT = 'eb_outreach_econedlink_20260925';
 const TABLE_TALK_OUTREACH_PARTYPRO_20260925_CT = 'tt_outreach_partypro_20260925';
 const LAST_HUMAN_OUTREACH_INDIEDEVMONDAY_20260925_CT = 'da_outreach_indiedevmonday_lh_20260925';
 const TABLE_TALK_OUTREACH_INDIEDEVMONDAY_20260925_CT = 'da_outreach_indiedevmonday_tt_20260925';
@@ -94,6 +99,8 @@ test('registers unique Last Human tokens for each launch surface', () => {
     xOffline20260925: LAST_HUMAN_X_OFFLINE_20260925_CT,
     outreachToucharcade20260925: LAST_HUMAN_OUTREACH_TOUCHARCADE_20260925_CT,
     outreachIndieDevMonday20260925: LAST_HUMAN_OUTREACH_INDIEDEVMONDAY_20260925_CT,
+    outreachPocketgamer20260925: LAST_HUMAN_OUTREACH_POCKETGAMER_20260925_CT,
+    outreach148apps20260925: LAST_HUMAN_OUTREACH_148APPS_20260925_CT,
   });
 
   for (const token of Object.values(LAST_HUMAN_ASC_TOKENS)) {
@@ -436,6 +443,90 @@ test('Indie Dev Monday Table Talk outreach 2026-09-25 App Store URL uses pt, reg
   assert.equal(
     url,
     `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${TABLE_TALK_OUTREACH_INDIEDEVMONDAY_20260925_CT}&mt=8`,
+  );
+});
+
+test('Last Human Pocket Gamer outreach 2026-09-25 token is a registered static definition', () => {
+  assert.equal(LAST_HUMAN_ASC_TOKENS.outreachPocketgamer20260925, LAST_HUMAN_OUTREACH_POCKETGAMER_20260925_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(LAST_HUMAN_OUTREACH_POCKETGAMER_20260925_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(LAST_HUMAN_OUTREACH_POCKETGAMER_20260925_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, LAST_HUMAN_APP_ID);
+  assert.equal(resolved.ct, LAST_HUMAN_OUTREACH_POCKETGAMER_20260925_CT);
+  assert.equal(resolved.channel, 'email');
+  assert.equal(resolved.path, 'email');
+  assert.equal(resolved.surface, 'Email outreach Pocket Gamer reviews@ (Last Human review tip)');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-25');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+  assert.equal(campaignLinks.CT_TO_APP_ID[LAST_HUMAN_OUTREACH_POCKETGAMER_20260925_CT], LAST_HUMAN_APP_ID);
+});
+
+test('Last Human Pocket Gamer outreach 2026-09-25 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(LAST_HUMAN_APP_ID, LAST_HUMAN_ASC_TOKENS.outreachPocketgamer20260925);
+  assert.equal(
+    url,
+    `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${LAST_HUMAN_OUTREACH_POCKETGAMER_20260925_CT}&mt=8`,
+  );
+});
+
+test('Last Human 148 Apps outreach 2026-09-25 token is a registered static definition', () => {
+  assert.equal(LAST_HUMAN_ASC_TOKENS.outreach148apps20260925, LAST_HUMAN_OUTREACH_148APPS_20260925_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(LAST_HUMAN_OUTREACH_148APPS_20260925_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(LAST_HUMAN_OUTREACH_148APPS_20260925_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, LAST_HUMAN_APP_ID);
+  assert.equal(resolved.ct, LAST_HUMAN_OUTREACH_148APPS_20260925_CT);
+  assert.equal(resolved.channel, 'email');
+  assert.equal(resolved.path, 'email');
+  assert.equal(resolved.surface, 'Email outreach 148 Apps Campbell Bird (Last Human app review submit)');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-25');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+  assert.equal(campaignLinks.CT_TO_APP_ID[LAST_HUMAN_OUTREACH_148APPS_20260925_CT], LAST_HUMAN_APP_ID);
+});
+
+test('Last Human 148 Apps outreach 2026-09-25 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(LAST_HUMAN_APP_ID, LAST_HUMAN_ASC_TOKENS.outreach148apps20260925);
+  assert.equal(
+    url,
+    `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${LAST_HUMAN_OUTREACH_148APPS_20260925_CT}&mt=8`,
+  );
+});
+
+test('EconByte EconEdLink outreach 2026-09-25 token is a registered static definition', () => {
+  assert.equal(ECONBYTE_ASC_TOKENS.outreachEconedlink20260925, ECONBYTE_OUTREACH_ECONEDLINK_20260925_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(ECONBYTE_OUTREACH_ECONEDLINK_20260925_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(ECONBYTE_OUTREACH_ECONEDLINK_20260925_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, ECONBYTE_APP_ID);
+  assert.equal(resolved.ct, ECONBYTE_OUTREACH_ECONEDLINK_20260925_CT);
+  assert.equal(resolved.channel, 'email');
+  assert.equal(resolved.path, 'email');
+  assert.equal(resolved.surface, 'Email outreach EconEdLink / Council for Economic Education press (literacy and classroom framing)');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-25');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+  assert.equal(campaignLinks.CT_TO_APP_ID[ECONBYTE_OUTREACH_ECONEDLINK_20260925_CT], ECONBYTE_APP_ID);
+});
+
+test('EconByte EconEdLink outreach 2026-09-25 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(ECONBYTE_APP_ID, ECONBYTE_ASC_TOKENS.outreachEconedlink20260925);
+  assert.equal(
+    url,
+    `https://apps.apple.com/app/id${ECONBYTE_APP_ID}?pt=128970277&ct=${ECONBYTE_OUTREACH_ECONEDLINK_20260925_CT}&mt=8`,
   );
 });
 
