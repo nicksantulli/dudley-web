@@ -24,7 +24,7 @@
 //   appId       — Apple App Store app ID
 //   surface     — human description of the placement
 //   path        — URL path pattern this token represents (exact or glob)
-//   channel     — 'web' | 'blog-inline' | 'tiktok' | 'x' | 'email'
+//   channel     — 'web' | 'blog-inline' | 'tiktok' | 'instagram' | 'x' | 'email'
 //   ppid        — CPP product page ID, null for default product pages
 //   registeredAt   — ISO date string when the token was registered in source
 //   activatedAt    — ISO date string when deployment activation is proven; null if unknown/not deployed
@@ -899,6 +899,84 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Proposed Last Human floor promo TikTok post (2026-09-28)
+  {
+    ct: 'lh_promo_floor_tt_20260928',
+    appId: '6808782611',
+    surface: 'TikTok floor promo App Store campaign (2026-09-28)',
+    path: 'tiktok',
+    channel: 'tiktok',
+    ppid: null,
+    registeredAt: '2026-09-28',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Proposed Last Human bots promo TikTok post (2026-09-29)
+  {
+    ct: 'lh_promo_bots_tt_20260929',
+    appId: '6808782611',
+    surface: 'TikTok bots promo App Store campaign (2026-09-29)',
+    path: 'tiktok',
+    channel: 'tiktok',
+    ppid: null,
+    registeredAt: '2026-09-29',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Proposed Last Human hr promo TikTok post (2026-09-30)
+  {
+    ct: 'lh_promo_hr_tt_20260930',
+    appId: '6808782611',
+    surface: 'TikTok hr promo App Store campaign (2026-09-30)',
+    path: 'tiktok',
+    channel: 'tiktok',
+    ppid: null,
+    registeredAt: '2026-09-30',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Proposed Last Human floor promo Instagram post (2026-09-28)
+  {
+    ct: 'lh_promo_floor_ig_20260928',
+    appId: '6808782611',
+    surface: 'Instagram floor promo App Store campaign (2026-09-28)',
+    path: 'instagram',
+    channel: 'instagram',
+    ppid: null,
+    registeredAt: '2026-09-28',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Proposed Last Human bots promo Instagram post (2026-09-29)
+  {
+    ct: 'lh_promo_bots_ig_20260929',
+    appId: '6808782611',
+    surface: 'Instagram bots promo App Store campaign (2026-09-29)',
+    path: 'instagram',
+    channel: 'instagram',
+    ppid: null,
+    registeredAt: '2026-09-29',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Proposed Last Human hr promo Instagram post (2026-09-30)
+  {
+    ct: 'lh_promo_hr_ig_20260930',
+    appId: '6808782611',
+    surface: 'Instagram hr promo App Store campaign (2026-09-30)',
+    path: 'instagram',
+    channel: 'instagram',
+    ppid: null,
+    registeredAt: '2026-09-30',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // Email outreach to TouchArcade tips@ for a Last Human editorial tip (2026-09-25)
   {
     ct: 'lh_outreach_toucharcade_20260925',
@@ -1245,6 +1323,12 @@ export const LAST_HUMAN_ASC_TOKENS = Object.freeze({
   xPromoFloor20260928: 'lh_promo_floor_x_20260928',
   xPromoBots20260929: 'lh_promo_bots_x_20260929',
   xPromoHr20260930: 'lh_promo_hr_x_20260930',
+  ttPromoFloor20260928: 'lh_promo_floor_tt_20260928',
+  ttPromoBots20260929: 'lh_promo_bots_tt_20260929',
+  ttPromoHr20260930: 'lh_promo_hr_tt_20260930',
+  igPromoFloor20260928: 'lh_promo_floor_ig_20260928',
+  igPromoBots20260929: 'lh_promo_bots_ig_20260929',
+  igPromoHr20260930: 'lh_promo_hr_ig_20260930',
   // Off-site email outreach — one-off dated tokens, not a blog slug generator.
   outreachToucharcade20260925: 'lh_outreach_toucharcade_20260925',
   outreachIndieDevMonday20260925: 'da_outreach_indiedevmonday_lh_20260925',

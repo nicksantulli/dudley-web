@@ -19,6 +19,12 @@ const LAST_HUMAN_X_OFFLINE_20260925_CT = 'lh_x_offline_20260925';
 const LAST_HUMAN_X_PROMO_FLOOR_20260928_CT = 'lh_promo_floor_x_20260928';
 const LAST_HUMAN_X_PROMO_BOTS_20260929_CT = 'lh_promo_bots_x_20260929';
 const LAST_HUMAN_X_PROMO_HR_20260930_CT = 'lh_promo_hr_x_20260930';
+const LAST_HUMAN_TT_PROMO_FLOOR_20260928_CT = 'lh_promo_floor_tt_20260928';
+const LAST_HUMAN_TT_PROMO_BOTS_20260929_CT = 'lh_promo_bots_tt_20260929';
+const LAST_HUMAN_TT_PROMO_HR_20260930_CT = 'lh_promo_hr_tt_20260930';
+const LAST_HUMAN_IG_PROMO_FLOOR_20260928_CT = 'lh_promo_floor_ig_20260928';
+const LAST_HUMAN_IG_PROMO_BOTS_20260929_CT = 'lh_promo_bots_ig_20260929';
+const LAST_HUMAN_IG_PROMO_HR_20260930_CT = 'lh_promo_hr_ig_20260930';
 const LAST_HUMAN_OUTREACH_TOUCHARCADE_20260925_CT = 'lh_outreach_toucharcade_20260925';
 const LAST_HUMAN_OUTREACH_POCKETGAMER_20260925_CT = 'lh_outreach_pocketgamer_20260925';
 const LAST_HUMAN_OUTREACH_148APPS_20260925_CT = 'lh_outreach_148apps_20260925';
@@ -144,6 +150,12 @@ test('registers unique Last Human tokens for each launch surface', () => {
     xPromoFloor20260928: LAST_HUMAN_X_PROMO_FLOOR_20260928_CT,
     xPromoBots20260929: LAST_HUMAN_X_PROMO_BOTS_20260929_CT,
     xPromoHr20260930: LAST_HUMAN_X_PROMO_HR_20260930_CT,
+    ttPromoFloor20260928: LAST_HUMAN_TT_PROMO_FLOOR_20260928_CT,
+    ttPromoBots20260929: LAST_HUMAN_TT_PROMO_BOTS_20260929_CT,
+    ttPromoHr20260930: LAST_HUMAN_TT_PROMO_HR_20260930_CT,
+    igPromoFloor20260928: LAST_HUMAN_IG_PROMO_FLOOR_20260928_CT,
+    igPromoBots20260929: LAST_HUMAN_IG_PROMO_BOTS_20260929_CT,
+    igPromoHr20260930: LAST_HUMAN_IG_PROMO_HR_20260930_CT,
     outreachToucharcade20260925: LAST_HUMAN_OUTREACH_TOUCHARCADE_20260925_CT,
     outreachIndieDevMonday20260925: LAST_HUMAN_OUTREACH_INDIEDEVMONDAY_20260925_CT,
     outreachPocketgamer20260925: LAST_HUMAN_OUTREACH_POCKETGAMER_20260925_CT,
@@ -465,6 +477,162 @@ test('Last Human X hr promo 2026-09-30 App Store URL uses pt, registered ct, and
   assert.equal(
     url,
     `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${LAST_HUMAN_X_PROMO_HR_20260930_CT}&mt=8`,
+  );
+});
+
+test('Last Human TikTok floor promo 2026-09-28 token is a registered static definition', () => {
+  assert.equal(LAST_HUMAN_ASC_TOKENS.ttPromoFloor20260928, LAST_HUMAN_TT_PROMO_FLOOR_20260928_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(LAST_HUMAN_TT_PROMO_FLOOR_20260928_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(LAST_HUMAN_TT_PROMO_FLOOR_20260928_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, LAST_HUMAN_APP_ID);
+  assert.equal(resolved.ct, LAST_HUMAN_TT_PROMO_FLOOR_20260928_CT);
+  assert.equal(resolved.channel, 'tiktok');
+  assert.equal(resolved.path, 'tiktok');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-28');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+});
+
+test('Last Human TikTok floor promo 2026-09-28 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(LAST_HUMAN_APP_ID, LAST_HUMAN_ASC_TOKENS.ttPromoFloor20260928);
+  assert.equal(
+    url,
+    `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${LAST_HUMAN_TT_PROMO_FLOOR_20260928_CT}&mt=8`,
+  );
+});
+
+test('Last Human TikTok bots promo 2026-09-29 token is a registered static definition', () => {
+  assert.equal(LAST_HUMAN_ASC_TOKENS.ttPromoBots20260929, LAST_HUMAN_TT_PROMO_BOTS_20260929_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(LAST_HUMAN_TT_PROMO_BOTS_20260929_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(LAST_HUMAN_TT_PROMO_BOTS_20260929_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, LAST_HUMAN_APP_ID);
+  assert.equal(resolved.ct, LAST_HUMAN_TT_PROMO_BOTS_20260929_CT);
+  assert.equal(resolved.channel, 'tiktok');
+  assert.equal(resolved.path, 'tiktok');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-29');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+});
+
+test('Last Human TikTok bots promo 2026-09-29 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(LAST_HUMAN_APP_ID, LAST_HUMAN_ASC_TOKENS.ttPromoBots20260929);
+  assert.equal(
+    url,
+    `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${LAST_HUMAN_TT_PROMO_BOTS_20260929_CT}&mt=8`,
+  );
+});
+
+test('Last Human TikTok hr promo 2026-09-30 token is a registered static definition', () => {
+  assert.equal(LAST_HUMAN_ASC_TOKENS.ttPromoHr20260930, LAST_HUMAN_TT_PROMO_HR_20260930_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(LAST_HUMAN_TT_PROMO_HR_20260930_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(LAST_HUMAN_TT_PROMO_HR_20260930_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, LAST_HUMAN_APP_ID);
+  assert.equal(resolved.ct, LAST_HUMAN_TT_PROMO_HR_20260930_CT);
+  assert.equal(resolved.channel, 'tiktok');
+  assert.equal(resolved.path, 'tiktok');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-30');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+});
+
+test('Last Human TikTok hr promo 2026-09-30 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(LAST_HUMAN_APP_ID, LAST_HUMAN_ASC_TOKENS.ttPromoHr20260930);
+  assert.equal(
+    url,
+    `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${LAST_HUMAN_TT_PROMO_HR_20260930_CT}&mt=8`,
+  );
+});
+
+test('Last Human Instagram floor promo 2026-09-28 token is a registered static definition', () => {
+  assert.equal(LAST_HUMAN_ASC_TOKENS.igPromoFloor20260928, LAST_HUMAN_IG_PROMO_FLOOR_20260928_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(LAST_HUMAN_IG_PROMO_FLOOR_20260928_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(LAST_HUMAN_IG_PROMO_FLOOR_20260928_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, LAST_HUMAN_APP_ID);
+  assert.equal(resolved.ct, LAST_HUMAN_IG_PROMO_FLOOR_20260928_CT);
+  assert.equal(resolved.channel, 'instagram');
+  assert.equal(resolved.path, 'instagram');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-28');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+});
+
+test('Last Human Instagram floor promo 2026-09-28 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(LAST_HUMAN_APP_ID, LAST_HUMAN_ASC_TOKENS.igPromoFloor20260928);
+  assert.equal(
+    url,
+    `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${LAST_HUMAN_IG_PROMO_FLOOR_20260928_CT}&mt=8`,
+  );
+});
+
+test('Last Human Instagram bots promo 2026-09-29 token is a registered static definition', () => {
+  assert.equal(LAST_HUMAN_ASC_TOKENS.igPromoBots20260929, LAST_HUMAN_IG_PROMO_BOTS_20260929_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(LAST_HUMAN_IG_PROMO_BOTS_20260929_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(LAST_HUMAN_IG_PROMO_BOTS_20260929_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, LAST_HUMAN_APP_ID);
+  assert.equal(resolved.ct, LAST_HUMAN_IG_PROMO_BOTS_20260929_CT);
+  assert.equal(resolved.channel, 'instagram');
+  assert.equal(resolved.path, 'instagram');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-29');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+});
+
+test('Last Human Instagram bots promo 2026-09-29 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(LAST_HUMAN_APP_ID, LAST_HUMAN_ASC_TOKENS.igPromoBots20260929);
+  assert.equal(
+    url,
+    `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${LAST_HUMAN_IG_PROMO_BOTS_20260929_CT}&mt=8`,
+  );
+});
+
+test('Last Human Instagram hr promo 2026-09-30 token is a registered static definition', () => {
+  assert.equal(LAST_HUMAN_ASC_TOKENS.igPromoHr20260930, LAST_HUMAN_IG_PROMO_HR_20260930_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(LAST_HUMAN_IG_PROMO_HR_20260930_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(LAST_HUMAN_IG_PROMO_HR_20260930_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, LAST_HUMAN_APP_ID);
+  assert.equal(resolved.ct, LAST_HUMAN_IG_PROMO_HR_20260930_CT);
+  assert.equal(resolved.channel, 'instagram');
+  assert.equal(resolved.path, 'instagram');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-30');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+});
+
+test('Last Human Instagram hr promo 2026-09-30 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(LAST_HUMAN_APP_ID, LAST_HUMAN_ASC_TOKENS.igPromoHr20260930);
+  assert.equal(
+    url,
+    `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${LAST_HUMAN_IG_PROMO_HR_20260930_CT}&mt=8`,
   );
 });
 
