@@ -123,7 +123,20 @@ export const TOKEN_REGISTRY = Object.freeze([
   {
     ct: 'tt_outreach_partypro_20260925',
     appId: '6780714565',
-    surface: 'Email outreach to party.pro (Nick Gray) for Table Talk mention (2026-09-25)',
+    surface: 'Email outreach party.pro Nick Gray (Table Talk)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Indie Dev Monday Look At Me — Table Talk link in the studio pitch (2026-09-25)
+  {
+    ct: 'da_outreach_indiedevmonday_tt_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach Indie Dev Monday Look At Me (Table Talk link in studio pitch)',
     path: 'email',
     channel: 'email',
     ppid: null,
@@ -419,7 +432,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   {
     ct: 'lh_outreach_toucharcade_20260925',
     appId: '6808782611',
-    surface: 'Email outreach to TouchArcade tips@ for Last Human editorial tip (2026-09-25)',
+    surface: 'Email outreach TouchArcade tips@ (Last Human)',
     path: 'email',
     channel: 'email',
     ppid: null,
@@ -428,13 +441,11 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
-  // Studio outreach email to Indie Dev Monday Look At Me (2026-09-25).
-  // Registry rows allow one appId per ct. Last Human is the primary registration.
-  // The same ct string is also used on the Table Talk (6780714565) link in that email.
+  // Email outreach to Indie Dev Monday Look At Me — Last Human link in the studio pitch (2026-09-25)
   {
-    ct: 'da_outreach_indiedevmonday_20260925',
+    ct: 'da_outreach_indiedevmonday_lh_20260925',
     appId: '6808782611',
-    surface: 'Studio email outreach to Indie Dev Monday Look At Me (2026-09-25)',
+    surface: 'Email outreach Indie Dev Monday Look At Me (Last Human link in studio pitch)',
     path: 'email',
     channel: 'email',
     ppid: null,
@@ -539,8 +550,9 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   xCollector: 'tabletalk-x-collector-20260914',
   xCollector20260924: 'tabletalk-x-collector-20260924',
   llms:       'tt-web-llms-sep26-v1',
-  // Off-site email outreach — one-off dated token, not a blog slug generator.
+  // Off-site email outreach — one-off dated tokens, not a blog slug generator.
   outreachPartypro20260925: 'tt_outreach_partypro_20260925',
+  outreachIndieDevMonday20260925: 'da_outreach_indiedevmonday_tt_20260925',
 });
 
 export const VIBERATER_ASC_TOKENS = Object.freeze({
@@ -580,10 +592,8 @@ export const LAST_HUMAN_ASC_TOKENS = Object.freeze({
   xMemo20260925: 'lh_x_memo_20260925',
   xOffline20260925: 'lh_x_offline_20260925',
   // Off-site email outreach — one-off dated tokens, not a blog slug generator.
-  // outreachIndieDevMonday20260925 is the primary Last Human registration.
-  // Table Talk links in that same studio email reuse the ct string.
   outreachToucharcade20260925: 'lh_outreach_toucharcade_20260925',
-  outreachIndieDevMonday20260925: 'da_outreach_indiedevmonday_20260925',
+  outreachIndieDevMonday20260925: 'da_outreach_indiedevmonday_lh_20260925',
 });
 
 export const LLMS_APP_STORE_TOKENS = Object.freeze({

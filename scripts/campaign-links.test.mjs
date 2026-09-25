@@ -16,7 +16,9 @@ const LAST_HUMAN_X_MEMO_20260925_CT = 'lh_x_memo_20260925';
 const LAST_HUMAN_X_OFFLINE_20260925_CT = 'lh_x_offline_20260925';
 const LAST_HUMAN_OUTREACH_TOUCHARCADE_20260925_CT = 'lh_outreach_toucharcade_20260925';
 const TABLE_TALK_OUTREACH_PARTYPRO_20260925_CT = 'tt_outreach_partypro_20260925';
-const STUDIO_OUTREACH_INDIEDEVMONDAY_20260925_CT = 'da_outreach_indiedevmonday_20260925';
+const LAST_HUMAN_OUTREACH_INDIEDEVMONDAY_20260925_CT = 'da_outreach_indiedevmonday_lh_20260925';
+const TABLE_TALK_OUTREACH_INDIEDEVMONDAY_20260925_CT = 'da_outreach_indiedevmonday_tt_20260925';
+const SHARED_INDIEDEVMONDAY_CT = 'da_outreach_indiedevmonday_20260925';
 const PHONE_IN_THE_MIDDLE_SLUG = 'phone-in-the-middle';
 const PHONE_IN_THE_MIDDLE_CT = 'tt-web-blog-phone-in-the-middle-sep26-v1';
 const TABLE_TALK_TIKTOK_CT = 'tabletalk-tiktok-20260910';
@@ -91,7 +93,7 @@ test('registers unique Last Human tokens for each launch surface', () => {
     xMemo20260925: LAST_HUMAN_X_MEMO_20260925_CT,
     xOffline20260925: LAST_HUMAN_X_OFFLINE_20260925_CT,
     outreachToucharcade20260925: LAST_HUMAN_OUTREACH_TOUCHARCADE_20260925_CT,
-    outreachIndieDevMonday20260925: STUDIO_OUTREACH_INDIEDEVMONDAY_20260925_CT,
+    outreachIndieDevMonday20260925: LAST_HUMAN_OUTREACH_INDIEDEVMONDAY_20260925_CT,
   });
 
   for (const token of Object.values(LAST_HUMAN_ASC_TOKENS)) {
@@ -336,11 +338,13 @@ test('Last Human TouchArcade outreach 2026-09-25 token is a registered static de
   assert.equal(resolved.ct, LAST_HUMAN_OUTREACH_TOUCHARCADE_20260925_CT);
   assert.equal(resolved.channel, 'email');
   assert.equal(resolved.path, 'email');
+  assert.equal(resolved.surface, 'Email outreach TouchArcade tips@ (Last Human)');
   assert.equal(resolved.ppid, null);
   assert.equal(resolved.status, 'proposed');
   assert.equal(resolved.registeredAt, '2026-09-25');
   assert.equal(resolved.activatedAt, null);
   assert.equal(resolved.firstVerifiedAt, null);
+  assert.equal(campaignLinks.CT_TO_APP_ID[LAST_HUMAN_OUTREACH_TOUCHARCADE_20260925_CT], LAST_HUMAN_APP_ID);
 });
 
 test('Last Human TouchArcade outreach 2026-09-25 App Store URL uses pt, registered ct, and mt=8', () => {
@@ -362,11 +366,13 @@ test('Table Talk party.pro outreach 2026-09-25 token is a registered static defi
   assert.equal(resolved.ct, TABLE_TALK_OUTREACH_PARTYPRO_20260925_CT);
   assert.equal(resolved.channel, 'email');
   assert.equal(resolved.path, 'email');
+  assert.equal(resolved.surface, 'Email outreach party.pro Nick Gray (Table Talk)');
   assert.equal(resolved.ppid, null);
   assert.equal(resolved.status, 'proposed');
   assert.equal(resolved.registeredAt, '2026-09-25');
   assert.equal(resolved.activatedAt, null);
   assert.equal(resolved.firstVerifiedAt, null);
+  assert.equal(campaignLinks.CT_TO_APP_ID[TABLE_TALK_OUTREACH_PARTYPRO_20260925_CT], TABLE_TALK_APP_ID);
 });
 
 test('Table Talk party.pro outreach 2026-09-25 App Store URL uses pt, registered ct, and mt=8', () => {
@@ -377,34 +383,66 @@ test('Table Talk party.pro outreach 2026-09-25 App Store URL uses pt, registered
   );
 });
 
-test('Indie Dev Monday studio outreach 2026-09-25 token is registered on Last Human', () => {
-  assert.equal(LAST_HUMAN_ASC_TOKENS.outreachIndieDevMonday20260925, STUDIO_OUTREACH_INDIEDEVMONDAY_20260925_CT);
-  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(STUDIO_OUTREACH_INDIEDEVMONDAY_20260925_CT));
-  assert.equal(
-    campaignLinks.ALL_REGISTERED_TOKENS.filter((ct) => ct === STUDIO_OUTREACH_INDIEDEVMONDAY_20260925_CT).length,
-    1,
-  );
+test('Indie Dev Monday Last Human outreach 2026-09-25 token is a registered static definition', () => {
+  assert.equal(LAST_HUMAN_ASC_TOKENS.outreachIndieDevMonday20260925, LAST_HUMAN_OUTREACH_INDIEDEVMONDAY_20260925_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(LAST_HUMAN_OUTREACH_INDIEDEVMONDAY_20260925_CT));
 
-  const resolved = campaignLinks.resolveTokenDefinition(STUDIO_OUTREACH_INDIEDEVMONDAY_20260925_CT);
+  const resolved = campaignLinks.resolveTokenDefinition(LAST_HUMAN_OUTREACH_INDIEDEVMONDAY_20260925_CT);
   assert.ok(resolved, 'resolveTokenDefinition returned null');
   assert.equal(resolved.kind, 'static');
   assert.equal(resolved.appId, LAST_HUMAN_APP_ID);
-  assert.equal(resolved.ct, STUDIO_OUTREACH_INDIEDEVMONDAY_20260925_CT);
+  assert.equal(resolved.ct, LAST_HUMAN_OUTREACH_INDIEDEVMONDAY_20260925_CT);
   assert.equal(resolved.channel, 'email');
   assert.equal(resolved.path, 'email');
+  assert.equal(resolved.surface, 'Email outreach Indie Dev Monday Look At Me (Last Human link in studio pitch)');
   assert.equal(resolved.ppid, null);
   assert.equal(resolved.status, 'proposed');
   assert.equal(resolved.registeredAt, '2026-09-25');
   assert.equal(resolved.activatedAt, null);
   assert.equal(resolved.firstVerifiedAt, null);
+  assert.equal(campaignLinks.CT_TO_APP_ID[LAST_HUMAN_OUTREACH_INDIEDEVMONDAY_20260925_CT], LAST_HUMAN_APP_ID);
 });
 
-test('Indie Dev Monday studio outreach 2026-09-25 App Store URL uses pt, registered ct, and mt=8', () => {
+test('Indie Dev Monday Last Human outreach 2026-09-25 App Store URL uses pt, registered ct, and mt=8', () => {
   const url = appStoreCampaignUrl(LAST_HUMAN_APP_ID, LAST_HUMAN_ASC_TOKENS.outreachIndieDevMonday20260925);
   assert.equal(
     url,
-    `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${STUDIO_OUTREACH_INDIEDEVMONDAY_20260925_CT}&mt=8`,
+    `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${LAST_HUMAN_OUTREACH_INDIEDEVMONDAY_20260925_CT}&mt=8`,
   );
+});
+
+test('Indie Dev Monday Table Talk outreach 2026-09-25 token is a registered static definition', () => {
+  assert.equal(TABLE_TALK_ASC_TOKENS.outreachIndieDevMonday20260925, TABLE_TALK_OUTREACH_INDIEDEVMONDAY_20260925_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(TABLE_TALK_OUTREACH_INDIEDEVMONDAY_20260925_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(TABLE_TALK_OUTREACH_INDIEDEVMONDAY_20260925_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, TABLE_TALK_APP_ID);
+  assert.equal(resolved.ct, TABLE_TALK_OUTREACH_INDIEDEVMONDAY_20260925_CT);
+  assert.equal(resolved.channel, 'email');
+  assert.equal(resolved.path, 'email');
+  assert.equal(resolved.surface, 'Email outreach Indie Dev Monday Look At Me (Table Talk link in studio pitch)');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-25');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+  assert.equal(campaignLinks.CT_TO_APP_ID[TABLE_TALK_OUTREACH_INDIEDEVMONDAY_20260925_CT], TABLE_TALK_APP_ID);
+});
+
+test('Indie Dev Monday Table Talk outreach 2026-09-25 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(TABLE_TALK_APP_ID, TABLE_TALK_ASC_TOKENS.outreachIndieDevMonday20260925);
+  assert.equal(
+    url,
+    `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${TABLE_TALK_OUTREACH_INDIEDEVMONDAY_20260925_CT}&mt=8`,
+  );
+});
+
+test('shared Indie Dev Monday ct is not registered', () => {
+  assert.equal(campaignLinks.ALL_REGISTERED_TOKENS.includes(SHARED_INDIEDEVMONDAY_CT), false);
+  assert.equal(campaignLinks.resolveTokenDefinition(SHARED_INDIEDEVMONDAY_CT), null);
+  assert.equal(campaignLinks.CT_TO_APP_ID[SHARED_INDIEDEVMONDAY_CT], undefined);
 });
 
 test('Table Talk blog token on the wrong app id fails placement validation', () => {
