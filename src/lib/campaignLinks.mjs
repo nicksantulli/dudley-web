@@ -237,6 +237,19 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach to MS Extension webteam for a Table Talk resource-adjacency note (2026-09-25)
+  {
+    ct: 'tt_outreach_msextension_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach MS Extension webteam (Table Talk resource-adjacency note)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // Table Talk blog CTAs follow the pattern `tt-web-blog-<slug>-sep26-v1`.
   // Generated per-post by tableTalkBlogCampaignToken(slug) — not individually listed.
 
@@ -468,6 +481,45 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach to Jump$tart Clearinghouse for an EconByte listing-process ask (2026-09-25)
+  {
+    ct: 'eb_outreach_jumpstart_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach Jump$tart Clearinghouse (EconByte listing-process ask)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to NGPF info@ for an EconByte soft classroom intro (2026-09-25)
+  {
+    ct: 'eb_outreach_ngpf_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach NGPF info@ (EconByte soft classroom intro)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to Federal Reserve Education amanda.geiger@ for an EconByte soft classroom note (2026-09-25)
+  {
+    ct: 'eb_outreach_freded_20260925',
+    appId: '6780714383',
+    surface: 'Email outreach Federal Reserve Education amanda.geiger@ (EconByte soft classroom note)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // EconByte blog CTAs follow the pattern `eb-web-blog-<slug>-sep26-v1`.
   // Generated per-post by econbyteBlogCampaignToken(slug) — not individually listed.
 
@@ -676,6 +728,19 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach to Siliconera tips@ for a Last Human soft tip (2026-09-25)
+  {
+    ct: 'lh_outreach_siliconera_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach Siliconera tips@ (Last Human soft tip)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
 ]);
 
 // ---------------------------------------------------------------------------
@@ -783,6 +848,7 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   outreachFamilydinnerproject20260925: 'tt_outreach_familydinnerproject_20260925',
   outreachSixcolors20260925: 'tt_outreach_sixcolors_20260925',
   outreach9to5mac20260925: 'da_outreach_9to5mac_tt_20260925',
+  outreachMsextension20260925: 'tt_outreach_msextension_20260925',
 });
 
 export const VIBERATER_ASC_TOKENS = Object.freeze({
@@ -811,6 +877,9 @@ export const ECONBYTE_ASC_TOKENS = Object.freeze({
   outreachMoneygirl20260925: 'eb_outreach_moneygirl_20260925',
   outreachIndietools20260925: 'eb_outreach_indietools_20260925',
   outreach9to5mac20260925: 'da_outreach_9to5mac_eb_20260925',
+  outreachJumpstart20260925: 'eb_outreach_jumpstart_20260925',
+  outreachNgpf20260925: 'eb_outreach_ngpf_20260925',
+  outreachFreded20260925: 'eb_outreach_freded_20260925',
 });
 
 export const DUDE_WHERES_ASC_TOKENS = Object.freeze({
@@ -835,6 +904,7 @@ export const LAST_HUMAN_ASC_TOKENS = Object.freeze({
   outreachIndietools20260925: 'lh_outreach_indietools_20260925',
   outreachGamezebo20260925: 'lh_outreach_gamezebo_20260925',
   outreachAppspy20260925: 'lh_outreach_appspy_20260925',
+  outreachSiliconera20260925: 'lh_outreach_siliconera_20260925',
 });
 
 export const LLMS_APP_STORE_TOKENS = Object.freeze({
