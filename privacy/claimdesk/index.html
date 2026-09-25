@@ -21,17 +21,28 @@
     if (mq.addEventListener) mq.addEventListener('change', onChange);
     else if (mq.addListener) mq.addListener(onChange);
   })();
-</script> <div id="main">  <main class="page"> <div class="wrap" style="max-width:720px;"> <a class="back" href="/privacy/">← All privacy policies</a> <h1>Privacy Policy</h1> <p class="updated">ClaimDesk · Last updated September 25, 2026</p> <p>This policy describes ClaimDesk version 1.0 and later.</p> <h2>The short version</h2> <p>
+</script> <div id="main">  <main class="page"> <div class="wrap" style="max-width:720px;"> <a class="back" href="/privacy/">← All privacy policies</a> <h1>Privacy Policy</h1> <p class="updated">ClaimDesk · Last updated September 25, 2026</p> <p>This policy describes ClaimDesk version 1.1 and later.</p> <h2>The short version</h2> <p>
 ClaimDesk keeps track of claims you have already started (insurance, warranty, chargeback): who it's with,
-        the reference number, its status, the next date you need to act, and a log of what happened. Everything
-        stays on your iPhone. Dudley Development, LLC doesn't receive your claims. The app has no account, no analytics, no
-        ads and no tracking.
-</p> <h2>What stays on your device</h2> <ul> <li>The claims you add and the touches you log, including any proof notes.</li> <li>Your reminder permission and, if you set one up, your connector address and device token (the token is kept in the iOS Keychain).</li> </ul> <p>Deleting the app removes all of it.</p> <h2>The optional connector</h2> <p>
-If you set up a ClaimDesk connector in Settings, your phone sends your saved claims and touch logs to the
-        address you enter, and nowhere else. The connector is software you, or someone you choose, run; it isn't
-        operated by Dudley Development, LLC. Only apps you approve on that connector can read those claims, set a claim to
-        "waiting" or "needs me", log touches, and ask to close a claim (you confirm the close in the app). Removing
-        the connector in Settings stops syncing; data already on the connector stays wherever you run it.
+        the reference number, its status, the next date you need to act, and a log of what happened. Your claims stay
+        on your iPhone unless you choose to sign in so an AI assistant can work with them. The app has no ads and no
+        tracking.
+</p> <h2>What stays on your device</h2> <ul> <li>The claims you add and the touches you log, including any proof notes.</li> <li>Your reminder permission and, if you sign in, a sync token kept in the iOS Keychain.</li> </ul> <p>If you never sign in, Dudley Development, LLC receives nothing. Deleting the app removes all of it.</p> <h2>If you sign in to use an AI assistant (optional)</h2> <p>
+Under Settings → AI assistant you can sign in with Apple or Google. We ask them for an account ID only: no
+        name and no email. After you sign in:
+</p> <ul> <li>
+your saved claims and touch logs sync to ClaimDesk's server at claimdesk.dudleyapps.com, where they are
+          stored encrypted at rest in a vault that only your account can reach;
+</li> <li>
+an AI assistant you connect (for example Claude, ChatGPT or Muse), after you approve it by signing in with
+          the same account, can read those claims, set a claim to "waiting" or "needs me", log touches, and ask to
+          close a claim. It can't add or delete claims, and nothing closes until you confirm it in the app;
+</li> <li>
+we use this data only to provide the sync and the assistant connection. We don't sell it, share it for
+          advertising, or use it to train models.
+</li> </ul> <p>
+Sign out in the app to stop syncing from that iPhone. <strong>Delete hosted data</strong> in the same screen
+        removes the server copy and disconnects every assistant immediately; claims on your iPhone stay. What an
+        assistant does with the information it reads is governed by that assistant's own privacy policy.
 </p> <h2>Share sheet</h2> <p>
 When you share something into ClaimDesk it records a short note: the link, the start of the text, or a
         file's name and SHA-256 fingerprint. It doesn't copy the file.
@@ -41,6 +52,6 @@ Next-action reminders are local notifications scheduled on your iPhone, and only
 </p> <h2>Purchases</h2> <p>
 ClaimDesk Pro, a one-time purchase, lets you track more than one open claim. Apple processes payment
         through StoreKit; we never see your payment details. Purchases can be restored from Settings.
-</p> <h2>Used to track you</h2> <p>Nothing. ClaimDesk has no advertising or analytics SDKs, and we do not sell personal data.</p> <h2>Children</h2> <p>ClaimDesk is not directed at children under 13, and we do not knowingly collect personal data from them.</p> <h2>Changes</h2> <p>If this policy changes materially, the new version will be posted at this URL with an updated date above.</p> <h2>Contact</h2> <p>Questions? Email <a href="mailto:support@dudleyapps.com">support@dudleyapps.com</a>.</p> </div> </main>  </div> <footer class="site"> <div class="wrap"> <div class="foot-grid"> <div class="foot-brand"> <a class="brand" href="/" aria-label="Dudley Development home"> <img class="mark" src="/assets/dudley-mark-header.webp" alt="" aria-hidden="true" width="54" height="30"> <span>Dudley Development</span> </a> <p>Games, conversation starters, and useful things for iPhone.</p> <nav class="socials" aria-label="Dudley Development on social media"> <a href="https://x.com/DudleyAppDev" target="_blank" rel="noopener noreferrer" aria-label="Follow Dudley Development on X">X</a> </nav> </div> <div class="foot-col"> <h3>Explore</h3> <nav aria-label="Footer — explore"><a href="/">Home</a><a href="/#apps">Apps</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav> </div> <div class="foot-col"> <h3>Help</h3> <nav aria-label="Footer — help"><a href="/support/">Support</a><a href="/contact/">Contact</a><a href="/blog/">The Dudley Blog</a><a href="/blog/rss.xml">RSS feed</a></nav> </div> <div class="foot-col"> <h3>Legal</h3> <nav aria-label="Footer — legal"><a href="/privacy/">Privacy</a><a href="/terms/vibe-rater/">VibeRater Terms</a><a href="/about/">About Dudley</a></nav> </div> </div> <div class="foot-bottom"> <div class="copy">© 2026 Dudley Development, LLC. All rights reserved.</div> <div class="foot-mail">
+</p> <h2>Used to track you</h2> <p>Nothing. ClaimDesk has no advertising or analytics SDKs, and we do not sell personal data.</p> <h2>Retention</h2> <p>Hosted data is kept until you delete it in the app. We also delete it on request by email.</p> <h2>Children</h2> <p>ClaimDesk is not directed at children under 13, and we do not knowingly collect personal data from them.</p> <h2>Changes</h2> <p>If this policy changes materially, the new version will be posted at this URL with an updated date above.</p> <h2>Contact</h2> <p>Questions or a deletion request? Email <a href="mailto:support@dudleyapps.com">support@dudleyapps.com</a>.</p> </div> </main>  </div> <footer class="site"> <div class="wrap"> <div class="foot-grid"> <div class="foot-brand"> <a class="brand" href="/" aria-label="Dudley Development home"> <img class="mark" src="/assets/dudley-mark-header.webp" alt="" aria-hidden="true" width="54" height="30"> <span>Dudley Development</span> </a> <p>Games, conversation starters, and useful things for iPhone.</p> <nav class="socials" aria-label="Dudley Development on social media"> <a href="https://x.com/DudleyAppDev" target="_blank" rel="noopener noreferrer" aria-label="Follow Dudley Development on X">X</a> </nav> </div> <div class="foot-col"> <h3>Explore</h3> <nav aria-label="Footer — explore"><a href="/">Home</a><a href="/#apps">Apps</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav> </div> <div class="foot-col"> <h3>Help</h3> <nav aria-label="Footer — help"><a href="/support/">Support</a><a href="/contact/">Contact</a><a href="/blog/">The Dudley Blog</a><a href="/blog/rss.xml">RSS feed</a></nav> </div> <div class="foot-col"> <h3>Legal</h3> <nav aria-label="Footer — legal"><a href="/privacy/">Privacy</a><a href="/terms/vibe-rater/">VibeRater Terms</a><a href="/about/">About Dudley</a></nav> </div> </div> <div class="foot-bottom"> <div class="copy">© 2026 Dudley Development, LLC. All rights reserved.</div> <div class="foot-mail">
 Support <a href="mailto:support@dudleyapps.com">support@dudleyapps.com</a> <span aria-hidden="true"> · </span>
 Say hi <a href="mailto:hello@dudleyapps.com">hello@dudleyapps.com</a> </div> </div> </div> </footer> </body></html>
