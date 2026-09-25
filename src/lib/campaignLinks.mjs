@@ -24,7 +24,7 @@
 //   appId       — Apple App Store app ID
 //   surface     — human description of the placement
 //   path        — URL path pattern this token represents (exact or glob)
-//   channel     — 'web' | 'blog-inline' | 'tiktok' | 'x'
+//   channel     — 'web' | 'blog-inline' | 'tiktok' | 'x' | 'email'
 //   ppid        — CPP product page ID, null for default product pages
 //   registeredAt   — ISO date string when the token was registered in source
 //   activatedAt    — ISO date string when deployment activation is proven; null if unknown/not deployed
@@ -115,6 +115,19 @@ export const TOKEN_REGISTRY = Object.freeze([
     channel: 'web',
     ppid: null,
     registeredAt: '2026-09-21',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email outreach to party.pro (Nick Gray) for a Table Talk mention (2026-09-25)
+  {
+    ct: 'tt_outreach_partypro_20260925',
+    appId: '6780714565',
+    surface: 'Email outreach to party.pro (Nick Gray) for Table Talk mention (2026-09-25)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
     activatedAt: null,
     firstVerifiedAt: null,
     status: 'proposed',
@@ -402,6 +415,34 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Email outreach to TouchArcade tips@ for a Last Human editorial tip (2026-09-25)
+  {
+    ct: 'lh_outreach_toucharcade_20260925',
+    appId: '6808782611',
+    surface: 'Email outreach to TouchArcade tips@ for Last Human editorial tip (2026-09-25)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Studio outreach email to Indie Dev Monday Look At Me (2026-09-25).
+  // Registry rows allow one appId per ct. Last Human is the primary registration.
+  // The same ct string is also used on the Table Talk (6780714565) link in that email.
+  {
+    ct: 'da_outreach_indiedevmonday_20260925',
+    appId: '6808782611',
+    surface: 'Studio email outreach to Indie Dev Monday Look At Me (2026-09-25)',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
 ]);
 
 // ---------------------------------------------------------------------------
@@ -464,7 +505,7 @@ const APP_STORE_SLUGS = Object.freeze({
   '6808782611': 'last-human-dodge-the-bots',
 });
 
-// Hyphens for site tokens; underscores for posted Last Human X cts such as lh_x_memo_20260925.
+// Hyphens for site tokens; underscores for posted off-site cts such as lh_x_memo_20260925.
 const TOKEN_PATTERN = /^[a-z0-9]+(?:[-_][a-z0-9]+)*$/;
 const PROVIDER_TOKEN_PATTERN = /^\d+$/;
 
@@ -498,6 +539,8 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   xCollector: 'tabletalk-x-collector-20260914',
   xCollector20260924: 'tabletalk-x-collector-20260924',
   llms:       'tt-web-llms-sep26-v1',
+  // Off-site email outreach — one-off dated token, not a blog slug generator.
+  outreachPartypro20260925: 'tt_outreach_partypro_20260925',
 });
 
 export const VIBERATER_ASC_TOKENS = Object.freeze({
@@ -536,6 +579,11 @@ export const LAST_HUMAN_ASC_TOKENS = Object.freeze({
   // Off-site X originals — one-off dated tokens, not a blog slug generator.
   xMemo20260925: 'lh_x_memo_20260925',
   xOffline20260925: 'lh_x_offline_20260925',
+  // Off-site email outreach — one-off dated tokens, not a blog slug generator.
+  // outreachIndieDevMonday20260925 is the primary Last Human registration.
+  // Table Talk links in that same studio email reuse the ct string.
+  outreachToucharcade20260925: 'lh_outreach_toucharcade_20260925',
+  outreachIndieDevMonday20260925: 'da_outreach_indiedevmonday_20260925',
 });
 
 export const LLMS_APP_STORE_TOKENS = Object.freeze({
