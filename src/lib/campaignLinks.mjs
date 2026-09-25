@@ -860,6 +860,45 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Proposed Last Human floor promo X post (2026-09-28)
+  {
+    ct: 'lh_promo_floor_x_20260928',
+    appId: '6808782611',
+    surface: 'X floor promo App Store campaign (2026-09-28)',
+    path: 'x',
+    channel: 'x',
+    ppid: null,
+    registeredAt: '2026-09-28',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Proposed Last Human bots promo X post (2026-09-29)
+  {
+    ct: 'lh_promo_bots_x_20260929',
+    appId: '6808782611',
+    surface: 'X bots promo App Store campaign (2026-09-29)',
+    path: 'x',
+    channel: 'x',
+    ppid: null,
+    registeredAt: '2026-09-29',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Proposed Last Human hr promo X post (2026-09-30)
+  {
+    ct: 'lh_promo_hr_x_20260930',
+    appId: '6808782611',
+    surface: 'X hr promo App Store campaign (2026-09-30)',
+    path: 'x',
+    channel: 'x',
+    ppid: null,
+    registeredAt: '2026-09-30',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // Email outreach to TouchArcade tips@ for a Last Human editorial tip (2026-09-25)
   {
     ct: 'lh_outreach_toucharcade_20260925',
@@ -1203,6 +1242,9 @@ export const LAST_HUMAN_ASC_TOKENS = Object.freeze({
   // Off-site X originals — one-off dated tokens, not a blog slug generator.
   xMemo20260925: 'lh_x_memo_20260925',
   xOffline20260925: 'lh_x_offline_20260925',
+  xPromoFloor20260928: 'lh_promo_floor_x_20260928',
+  xPromoBots20260929: 'lh_promo_bots_x_20260929',
+  xPromoHr20260930: 'lh_promo_hr_x_20260930',
   // Off-site email outreach — one-off dated tokens, not a blog slug generator.
   outreachToucharcade20260925: 'lh_outreach_toucharcade_20260925',
   outreachIndieDevMonday20260925: 'da_outreach_indiedevmonday_lh_20260925',
