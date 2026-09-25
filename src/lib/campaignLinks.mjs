@@ -376,6 +376,32 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // @DudleyAppDev memo creative X original posted Fri 2026-09-25
+  {
+    ct: 'lh_x_memo_20260925',
+    appId: '6808782611',
+    surface: 'X memo creative App Store campaign (2026-09-25)',
+    path: 'x',
+    channel: 'x',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // @DudleyAppDev offline creative X original posted Fri 2026-09-25
+  {
+    ct: 'lh_x_offline_20260925',
+    appId: '6808782611',
+    surface: 'X offline creative App Store campaign (2026-09-25)',
+    path: 'x',
+    channel: 'x',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
 ]);
 
 // ---------------------------------------------------------------------------
@@ -438,7 +464,8 @@ const APP_STORE_SLUGS = Object.freeze({
   '6808782611': 'last-human-dodge-the-bots',
 });
 
-const TOKEN_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+// Hyphens for site tokens; underscores for posted Last Human X cts such as lh_x_memo_20260925.
+const TOKEN_PATTERN = /^[a-z0-9]+(?:[-_][a-z0-9]+)*$/;
 const PROVIDER_TOKEN_PATTERN = /^\d+$/;
 
 export const PROVIDER_TOKEN = '128970277';
@@ -506,6 +533,9 @@ export const LAST_HUMAN_ASC_TOKENS = Object.freeze({
   appDetail: 'lh-web-app-sep26-v1',
   llms: 'lh-web-llms-sep26-v1',
   privacy: 'lh-web-privacy-sep26-v1',
+  // Off-site X originals — one-off dated tokens, not a blog slug generator.
+  xMemo20260925: 'lh_x_memo_20260925',
+  xOffline20260925: 'lh_x_offline_20260925',
 });
 
 export const LLMS_APP_STORE_TOKENS = Object.freeze({
@@ -669,7 +699,7 @@ export function validateProviderToken(providerToken) {
 export function appStoreCampaignUrl(appStoreId, campaignToken) {
   if (!appStoreId) return '';
   if (!campaignToken || !TOKEN_PATTERN.test(campaignToken)) {
-    throw new Error('A lowercase, hyphenated campaign token is required');
+    throw new Error('A lowercase campaign token is required');
   }
   const providerToken = validateProviderToken(APP_STORE_PROVIDER_TOKENS[appStoreId]);
   const slug = APP_STORE_SLUGS[appStoreId];
