@@ -45,6 +45,8 @@ const appSchema: Record<string, any> = {
   featureList: app.featureList,
 };
 if (url) appSchema.downloadUrl = url;
+// Reuse the PNG already declared as this page's og:image.
+if (app.ogImage) appSchema.image = abs(app.ogImage);
 
 // FAQPage JSON-LD built from app.faq. Google won't render an FAQ rich result for a
 // non-gov/health source, but this is still valid structured data and the Owner wants
