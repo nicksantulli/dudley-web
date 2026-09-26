@@ -1,0 +1,148 @@
+---
+import Base from '../../layouts/Base.astro';
+import { rel, abs, SUPPORT_EMAIL, LEGAL_NAME } from '../../consts';
+
+const ENDPOINT = 'https://mcp.dudleyapps.com/mcp';
+const title = 'Catalog Prep: supplier files to store-ready CSV in your AI assistant';
+const description =
+  'Dudley Catalog Prep turns messy corrugated box supplier files into a clean import file for your store template, and lists every field it could not fill. Works in Claude, ChatGPT, and other MCP assistants.';
+
+const faq = [
+  {
+    q: 'What does Catalog Prep need from me?',
+    a: 'Two files: the supplier catalog (CSV or Excel) and your store’s import template (a CSV with your store’s column headers). Your assistant uploads both and runs the job.',
+  },
+  {
+    q: 'Will it guess prices or SKUs it cannot find?',
+    a: 'No. Catalog Prep never invents a value that is not in your files, such as a price, SKU, hazmat flag, or certification. Those fields go into the unresolved list for a person to fill in.',
+  },
+  {
+    q: 'Does it publish anything to my store?',
+    a: 'No. It only prepares files. Nothing is sent to your store or any other system; you review the import file and upload it yourself.',
+  },
+  {
+    q: 'Is it free?',
+    a: 'Yes, while it is a prototype for sample data. A new account gets its own private sandbox: 10 jobs over 30 days, 2 at a time.',
+  },
+  {
+    q: 'Can I use real customer data?',
+    a: 'Not yet. Catalog Prep is a prototype for sample data. Please use sample or synthetic files until a production version is announced.',
+  },
+  {
+    q: 'How do I delete my files?',
+    a: 'Ask your assistant to delete the job. Deletion always needs your own approval: you get a link, sign in with a passkey, and approve (or choose “Don’t delete”). Finished jobs are removed automatically after 7 days.',
+  },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Dudley Catalog Prep',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Any (MCP connector for AI assistants)',
+    description,
+    url: abs('/connectors/catalog-prep/'),
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    publisher: { '@type': 'Organization', name: LEGAL_NAME },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  },
+];
+---
+<Base
+  title={title}
+  description={description}
+  path="/connectors/catalog-prep/"
+  schema={schema}
+  breadcrumbLeaf="Catalog Prep"
+>
+  <main class="page">
+    <div class="wrap" style="max-width:760px;">
+      <nav class="crumbs">
+        <a href={rel('/')}>Home</a><span class="sep">/</span>
+        <span>Catalog Prep</span>
+      </nav>
+
+      <h1>Catalog Prep</h1>
+      <p class="updated">An MCP connector by {LEGAL_NAME} · Prototype for sample data · Free</p>
+
+      <p class="tldr">
+        Catalog Prep turns messy corrugated box supplier files into a clean import file for your
+        store’s template, and lists every field it could not fill in with confidence. You run it from
+        your AI assistant, such as Claude or ChatGPT. Nothing publishes without your review.
+      </p>
+
+      <h2>What it does</h2>
+      <p>Give your assistant two files, the supplier’s catalog and your store’s import template. Catalog Prep returns:</p>
+      <ul>
+        <li><strong>importable.csv:</strong> the supplier’s rows mapped into your template’s columns.</li>
+        <li><strong>unresolved.json:</strong> every field it could not fill, with the source rows that caused it.</li>
+        <li><strong>summary.json and manifest.json:</strong> counts and checksums, so you can verify what changed.</li>
+      </ul>
+
+      <h2>Before and after</h2>
+      <p>A real run. The supplier file, and a store template with the columns <code>sku, title, dimensions, price</code>:</p>
+<pre style="overflow-x:auto;background:#f6f6f6;padding:10px;border-radius:6px;font-size:.9rem;">sku,name,length_in,width_in,height_in,price
+GT-100,Gate test carton,12,10,8,1.25
+GT-200,Shipping box no price,18,12,12,</pre>
+      <p><strong>importable.csv</strong>, the rows mapped into your template:</p>
+<pre style="overflow-x:auto;background:#f6f6f6;padding:10px;border-radius:6px;font-size:.9rem;">sku,title,dimensions,price
+GT-100,Gate test carton,,1.25
+GT-200,Shipping box no price,,</pre>
+      <p><strong>unresolved.json</strong>, what a person still needs to fill in:</p>
+      <ul>
+        <li><code>GT-100</code> and <code>GT-200</code> · dimensions · missing, left empty rather than guessed.</li>
+        <li><code>GT-200</code> · price · missing, <strong>must be confirmed by a person</strong> (a price is never invented), traced to <code>supplier.csv row 3, price</code>.</li>
+      </ul>
+      <p>That is the point: you get a file your store accepts and a short list of exactly what is missing, instead of silent guesses.</p>
+
+      <h2>Try it in your assistant</h2>
+      <ol>
+        <li>Add a custom connector with this address: <code>{ENDPOINT}</code>
+          <br><span style="color:#666;">Claude: Settings → Connectors → Add custom connector. ChatGPT: Settings → Apps → Create (developer mode).</span></li>
+        <li>Sign up when asked, and verify your email. You get your own private sandbox.</li>
+        <li>Attach a supplier file and your store template, and ask: “Turn this supplier price list into a CSV I can import into my store.”</li>
+      </ol>
+      <p>More prompts to try:</p>
+      <ul>
+        <li>“Which rows in my supplier file are missing dimensions or pricing?”</li>
+        <li>“Convert this corrugated box catalog into my ecommerce import format and show me what you couldn’t match.”</li>
+      </ul>
+
+      <h2>Limits and safeguards</h2>
+      <ul>
+        <li><strong>Sample data only</strong> while Catalog Prep is a prototype.</li>
+        <li><strong>Size:</strong> up to 5,000 rows and 4 MB per file.</li>
+        <li><strong>Your sandbox:</strong> 10 jobs over 30 days, 2 at a time.</li>
+        <li><strong>Retention:</strong> finished jobs are removed after 7 days, or sooner when you delete them.</li>
+        <li><strong>Deletes need you:</strong> the assistant can ask, but only your passkey approval deletes anything.</li>
+        <li><strong>No model on our side:</strong> files are processed by a fixed rule pack, not a language model.</li>
+      </ul>
+
+      <h2>Questions</h2>
+      <dl>
+        {faq.map((item) => (
+          <>
+            <dt><strong>{item.q}</strong></dt>
+            <dd style="margin:0 0 1rem 0;">{item.a}</dd>
+          </>
+        ))}
+      </dl>
+
+      <h2>Details</h2>
+      <ul>
+        <li><a href="https://mcp.dudleyapps.com/docs">Technical docs</a> (tools, sign-in, limits)</li>
+        <li><a href={rel('/privacy/catalog-prep')}>Privacy policy</a> · <a href={rel('/terms/catalog-prep')}>Terms of service</a></li>
+        <li>Support: <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a></li>
+      </ul>
+    </div>
+  </main>
+</Base>
