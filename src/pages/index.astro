@@ -67,6 +67,27 @@ const description = 'Arcade satire, dinner-table cards, and plain-language tools
     </div>
 
     {posts.length > 0 && (
+      <section class="answers-band connectors-band" aria-labelledby="connectors">
+        <div class="wrap">
+          <div class="editorial-head">
+            <div>
+              <p class="section-label">For businesses</p>
+              <h2 id="connectors">Connectors for your AI assistant</h2>
+            </div>
+            <a href={rel('/connectors/catalog-prep/')}>See Catalog Prep</a>
+          </div>
+          <div class="answer-grid">
+            <article class="answer-card">
+              <a href={rel('/connectors/catalog-prep/')}>
+                <div class="answer-meta"><span>MCP connector</span><span>Free prototype</span></div>
+                <h3>Catalog Prep</h3>
+                <p>Turn messy corrugated box supplier files into a clean import file for your store, plus a list of every field it could not fill. Works in Claude and ChatGPT.</p>
+                <span class="answer-link">How it works</span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
       <section class="answers-band" aria-labelledby="latest-answers">
         <div class="wrap">
           <div class="editorial-head">
