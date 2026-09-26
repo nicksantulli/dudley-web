@@ -54,11 +54,6 @@
     <image:image><image:loc>https://dudleyapps.com/assets/reply-gate-icon.svg</image:loc></image:image>
   </url>
   <url>
-    <loc>https://dudleyapps.com/apps/send-brake/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/send-brake-icon.svg</image:loc></image:image>
-  </url>
-  <url>
     <loc>https://dudleyapps.com/apps/table-talk/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/table-talk-icon.png</image:loc></image:image>
@@ -810,7 +805,17 @@
     <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://dudleyapps.com/connectors/catalog-prep/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://dudleyapps.com/contact/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://dudleyapps.com/terms/catalog-prep/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
   </url>
