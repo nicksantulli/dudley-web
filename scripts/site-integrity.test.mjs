@@ -223,13 +223,12 @@ test('Table Talk and EconByte money pages link their posts in the body', () => {
   assert.doesNotMatch(econBody, /returns|beat the market/i);
 });
 
-test('homepage head mentions Table Talk once', () => {
+test('homepage head uses the locked studio title', () => {
   const home = readFileSync(resolve('dist/index.html'), 'utf8');
-  assert.match(home, /<title>Dudley Development — iPhone apps, games &amp; conversation cards<\/title>/);
+  assert.match(home, /<title>Dudley Development — apps that earn the tap<\/title>/);
   const description = capture(home, /<meta name="description" content="([^"]+)"/i);
-  assert.equal(description, 'Games, conversation starters, and useful things for iPhone, including Table Talk.');
-  assert.equal(description.match(/Table Talk/g)?.length, 1);
-  assert.equal(description.match(/conversation/gi)?.length, 1);
+  assert.equal(description, 'Arcade satire, dinner-table cards, and plain-language tools. No signup as a cover charge.');
+  assert.doesNotMatch(home, /iPhone apps, games &amp; conversation cards/);
 });
 
 test('phone-in-the-middle links to Table Talk with a descriptive anchor', () => {
@@ -265,9 +264,23 @@ test('homepage ships no Astro hydration', () => {
 
 test('homepage uses the approved product-first message', () => {
   const home = readFileSync(resolve('dist/index.html'), 'utf8');
-  assert.match(home, /Pick an app\. See what happens\./);
-  assert.match(home, /Games, conversation starters, and useful things for iPhone\./);
+  assert.match(home, /Apps that work before they ask who you are\./);
+  assert.match(home, /Arcade satire, dinner-table cards, and plain-language tools\. No signup as a cover charge\./);
+  assert.match(home, /Notes from the shop/);
+  assert.match(home, /On deck/);
+  assert.match(home, /Rate the moment\. Keep your people close\./);
+  assert.match(home, /SendBrake: Message Check/);
+  assert.match(home, /One more look before it leaves\./);
+  assert.doesNotMatch(home, /Pick an app\. See what happens\.|LIVE ON THE APP STORE|Straight answers, useful context|Next from Dudley/);
   assert.doesNotMatch(home, /Why Dudley|Polish is the point|feature-icon|class="grad"/);
+  const band = (slug) => home.match(new RegExp(`<section[^>]+data-app="${slug}"[\\s\\S]*?<\\/section>`))?.[0] ?? '';
+  assert.match(band('last-human'), /Play free on the App Store/);
+  assert.match(band('table-talk'), /Get the deck on the App Store/);
+  assert.match(band('econbyte'), /Read a card on the App Store/);
+  assert.match(band('monetary-policy-independence-day'), /Chase it on the App Store/);
+  assert.match(band('vibe-rater'), /Try it on the App Store/);
+  assert.doesNotMatch(band('vibe-rater'), /VibeMeter|VibeRodeo|VibeShop|Radar|Rise/);
+  assert.match(band('last-human'), /50 escalating office floors/);
 });
 
 test('client work has attribution and a tagged store action without a broken detail link', () => {
