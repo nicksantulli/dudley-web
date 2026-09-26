@@ -182,6 +182,52 @@ test('EconByte and Last Human money pages use short search titles and snippets',
   }
 });
 
+test('Powell Prowl and VibeRater use short search titles', () => {
+  const powell = readFileSync(resolve('dist/apps/monetary-policy-independence-day/index.html'), 'utf8');
+  const vibe = readFileSync(resolve('dist/apps/vibe-rater/index.html'), 'utf8');
+  const powellTitle = capture(powell, /<title>([^<]+)<\/title>/i);
+  const vibeTitle = capture(vibe, /<title>([^<]+)<\/title>/i);
+  assert.equal(powellTitle, 'Powell Prowl: Rate Chase for iPhone | Dudley Development');
+  assert.equal(vibeTitle, 'VibeRater Social for iPhone | Dudley Development');
+  assert.ok(powellTitle.length <= 60, `Powell title is ${powellTitle.length}`);
+  assert.ok(vibeTitle.length <= 60, `VibeRater title is ${vibeTitle.length}`);
+  const powellDesc = capture(powell, /<meta name="description" content="([^"]+)"/i);
+  const vibeDesc = capture(vibe, /<meta name="description" content="([^"]+)"/i);
+  assert.equal(powellDesc, 'Free satirical iPhone mini-game collection. El Pres chases Le Chair across 60 levels for a rate-cut memo. Parody only, no Dudley account.');
+  assert.equal(vibeDesc, 'A social app that stays playful on purpose. Rate a photo, share it with people you chose, and leave the infinite feed out of it.');
+  assert.ok(powellDesc.length <= 160, `Powell description is ${powellDesc.length}`);
+  assert.ok(vibeDesc.length <= 160, `VibeRater description is ${vibeDesc.length}`);
+  assert.doesNotMatch(powellTitle, /tag, sniper|canoe|whack/i);
+  assert.match(powell, /<h1>Powell Prowl: Rate Chase<\/h1>/);
+  assert.match(vibe, /<h1>VibeRater Social<\/h1>/);
+  assert.match(powell, /Chase the rate cut through sixty rounds of paper-cutout chaos\./);
+  assert.match(vibe, /Rate the moment\. Keep your people close\./);
+  const powellApp = jsonLd(powell).find((value) => value['@type'] === 'SoftwareApplication');
+  assert.equal(powellApp.aggregateRating, undefined);
+  assert.equal(powellApp.name, 'Powell Prowl: Rate Chase');
+});
+
+test('On deck and related apps link live money pages', () => {
+  const home = readFileSync(resolve('dist/index.html'), 'utf8');
+  const onDeck = home.match(/id="next-from-dudley"[\s\S]*?<\/section>/)?.[0] ?? '';
+  assert.match(onDeck, /Already on the App Store/);
+  assert.match(onDeck, /href="\/apps\/last-human\/">Last Human</);
+  assert.match(onDeck, /href="\/apps\/table-talk\/">Table Talk</);
+  assert.match(onDeck, /href="\/apps\/econbyte\/">EconByte</);
+  assert.match(home, /Apps that work before they ask who you are\./);
+  const moreFrom = (slug) => {
+    const html = readFileSync(resolve(`dist/apps/${slug}/index.html`), 'utf8');
+    return html.match(/<h2>More from Dudley Development<\/h2>[\s\S]*?<\/nav>/)?.[0] ?? '';
+  };
+  const powell = moreFrom('monetary-policy-independence-day');
+  assert.match(powell, /href="\/apps\/last-human\/"/);
+  assert.match(powell, /href="\/apps\/econbyte\/"/);
+  assert.match(powell, /href="\/apps\/vibe-rater\/"/);
+  const vibe = moreFrom('vibe-rater');
+  assert.match(vibe, /href="\/apps\/table-talk\/"/);
+  assert.match(vibe, /href="\/apps\/monetary-policy-independence-day\/"/);
+});
+
 test('money-page app schema images reuse the page OG png', () => {
   for (const slug of ['last-human', 'table-talk', 'econbyte']) {
     const html = readFileSync(resolve(`dist/apps/${slug}/index.html`), 'utf8');
