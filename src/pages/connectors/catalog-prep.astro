@@ -89,20 +89,20 @@ const schema = [
       </ul>
 
       <h2>Before and after</h2>
-      <p>A real run. The supplier file, and a store template with the columns <code>sku, title, dimensions, price</code>:</p>
-<pre style="overflow-x:auto;background:#f6f6f6;padding:10px;border-radius:6px;font-size:.9rem;">sku,name,length_in,width_in,height_in,price
-GT-100,Gate test carton,12,10,8,1.25
-GT-200,Shipping box no price,18,12,12,</pre>
-      <p><strong>importable.csv</strong>, the rows mapped into your template:</p>
-<pre style="overflow-x:auto;background:#f6f6f6;padding:10px;border-radius:6px;font-size:.9rem;">sku,title,dimensions,price
-GT-100,Gate test carton,,1.25
-GT-200,Shipping box no price,,</pre>
+      <p>A real run. A messy supplier file:</p>
+<pre style="overflow-x:auto;background:#f6f6f6;padding:10px;border-radius:6px;font-size:.9rem;">Item #,Description,Size,Flute,ECT,Bundle,Unit Price
+RSC-1210,Shipping carton,12 x 10 x 8 in,C flute,32 ECT,25/bdl,$1.25 ea
+RSC-1812,Moving box,18x12x12,B,44,20,</pre>
+      <p><strong>importable.csv</strong>, mapped into a store template with separate columns for each size, board, and pack field:</p>
+<pre style="overflow-x:auto;background:#f6f6f6;padding:10px;border-radius:6px;font-size:.9rem;">sku,title,length_in,width_in,depth_in,flute,ect,pack_qty,price
+RSC-1210,Shipping carton,12,10,8,C,32,25,1.25
+RSC-1812,Moving box,,,,B,44,20,</pre>
       <p><strong>unresolved.json</strong>, what a person still needs to fill in:</p>
       <ul>
-        <li><code>GT-100</code> and <code>GT-200</code> · dimensions · missing, left empty rather than guessed.</li>
-        <li><code>GT-200</code> · price · missing, <strong>must be confirmed by a person</strong> (a price is never invented), traced to <code>supplier.csv row 3, price</code>.</li>
+        <li><code>RSC-1812</code> · length, width, depth · “18x12x12” has no unit, so it is not guessed.</li>
+        <li><code>RSC-1812</code> · price · missing, and <strong>must be confirmed by a person</strong> (a price is never invented).</li>
       </ul>
-      <p>That is the point: you get a file your store accepts and a short list of exactly what is missing, instead of silent guesses.</p>
+      <p>You get a file your store accepts and a short list of exactly what is missing, instead of silent guesses.</p>
 
       <h2>Try it in your assistant</h2>
       <ol>
@@ -113,6 +113,7 @@ GT-200,Shipping box no price,,</pre>
       </ol>
       <p>More prompts to try:</p>
       <ul>
+        <li>“Clean up this carton spreadsheet: sizes, board grade, and case pack in separate columns.”</li>
         <li>“Which rows in my supplier file are missing dimensions or pricing?”</li>
         <li>“Convert this corrugated box catalog into my ecommerce import format and show me what you couldn’t match.”</li>
       </ul>
