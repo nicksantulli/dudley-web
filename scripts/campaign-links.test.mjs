@@ -73,6 +73,12 @@ const TABLE_TALK_OUTREACH_IDOWNLOADBLOG_20260925_CT = 'tt_outreach_idownloadblog
 const TABLE_TALK_OUTREACH_WHILEENTERTAINING_20260925_CT = 'tt_outreach_whileentertaining_20260925';
 const LAST_HUMAN_OUTREACH_KODECO_20260925_CT = 'lh_outreach_kodeco_20260925';
 const LAST_HUMAN_OUTREACH_LAUNCHED_20260925_CT = 'lh_outreach_launched_20260925';
+const LAST_HUMAN_PRESS_COMPILESWIFT_20260926_CT = 'lh_press_compileswift_20260926';
+const LAST_HUMAN_PRESS_GAMIGION_20260926_CT = 'lh_press_gamigion_20260926';
+const TABLE_TALK_PRESS_DICETOWER_20260926_CT = 'tt_press_dicetower_20260926';
+const LAST_HUMAN_OUTREACH_INDIEGAMEWEBSITE_20260926_CT = 'lh_outreach_indiegamewebsite_20260926';
+const TABLE_TALK_OUTREACH_REALMOMNUTRITION_20260926_CT = 'tt_outreach_realmomnutrition_20260926';
+const TABLE_TALK_OUTREACH_NEBRASKAEXTENSION_20260926_CT = 'tt_outreach_nebraskaextension_20260926';
 const ECONBYTE_OUTREACH_TEACHERMONEY_20260925_CT = 'eb_outreach_teachermoney_20260925';
 const PHONE_IN_THE_MIDDLE_SLUG = 'phone-in-the-middle';
 const PHONE_IN_THE_MIDDLE_CT = 'tt-web-blog-phone-in-the-middle-sep26-v1';
@@ -173,6 +179,9 @@ test('registers unique Last Human tokens for each launch surface', () => {
     outreachVibblelaunch20260925: LAST_HUMAN_OUTREACH_VIBBLELAUNCH_20260925_CT,
     outreachKodeco20260925: LAST_HUMAN_OUTREACH_KODECO_20260925_CT,
     outreachLaunched20260925: LAST_HUMAN_OUTREACH_LAUNCHED_20260925_CT,
+    pressCompileswift20260926: LAST_HUMAN_PRESS_COMPILESWIFT_20260926_CT,
+    pressGamigion20260926: LAST_HUMAN_PRESS_GAMIGION_20260926_CT,
+    outreachIndiegamewebsite20260926: LAST_HUMAN_OUTREACH_INDIEGAMEWEBSITE_20260926_CT,
   });
 
   for (const token of Object.values(LAST_HUMAN_ASC_TOKENS)) {
@@ -1817,6 +1826,87 @@ test('Table Talk Common Sense Media, AppAddict, iDownloadBlog, and While Enterta
   }
 });
 
+test('Table Talk Dice Tower press 2026-09-26 token is a registered static definition', () => {
+  assert.equal(TABLE_TALK_ASC_TOKENS.pressDicetower20260926, TABLE_TALK_PRESS_DICETOWER_20260926_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(TABLE_TALK_PRESS_DICETOWER_20260926_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(TABLE_TALK_PRESS_DICETOWER_20260926_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, TABLE_TALK_APP_ID);
+  assert.equal(resolved.ct, TABLE_TALK_PRESS_DICETOWER_20260926_CT);
+  assert.equal(resolved.channel, 'email');
+  assert.equal(resolved.path, 'email');
+  assert.equal(resolved.surface, 'Email Dice Tower free-review soft tip (Table Talk) 2026-09-26');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-26');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+  assert.equal(campaignLinks.CT_TO_APP_ID[TABLE_TALK_PRESS_DICETOWER_20260926_CT], TABLE_TALK_APP_ID);
+});
+
+test('Table Talk Dice Tower press 2026-09-26 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(TABLE_TALK_APP_ID, TABLE_TALK_ASC_TOKENS.pressDicetower20260926);
+  assert.equal(
+    url,
+    `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${TABLE_TALK_PRESS_DICETOWER_20260926_CT}&mt=8`,
+  );
+});
+
+test('Table Talk Real Mom Nutrition and Nebraska Extension outreach 2026-09-26 tokens are registered static definitions', () => {
+  const rows = [
+    {
+      key: 'outreachRealmomnutrition20260926',
+      ct: TABLE_TALK_OUTREACH_REALMOMNUTRITION_20260926_CT,
+      surface: 'Email Real Mom Nutrition editorial resource tip (Table Talk) 2026-09-26',
+    },
+    {
+      key: 'outreachNebraskaextension20260926',
+      ct: TABLE_TALK_OUTREACH_NEBRASKAEXTENSION_20260926_CT,
+      surface: 'Email Nebraska Extension EAT Family Style resource-update tip (Table Talk) 2026-09-26',
+    },
+  ];
+
+  assert.equal(rows.length, 2);
+  const cts = rows.map((row) => row.ct);
+  assert.equal(new Set(cts).size, cts.length);
+
+  for (const row of rows) {
+    assert.equal(TABLE_TALK_ASC_TOKENS[row.key], row.ct);
+    assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(row.ct));
+
+    const resolved = campaignLinks.resolveTokenDefinition(row.ct);
+    assert.ok(resolved, 'resolveTokenDefinition returned null');
+    assert.equal(resolved.kind, 'static');
+    assert.equal(resolved.appId, TABLE_TALK_APP_ID);
+    assert.equal(resolved.ct, row.ct);
+    assert.equal(resolved.channel, 'email');
+    assert.equal(resolved.path, 'email');
+    assert.equal(resolved.surface, row.surface);
+    assert.equal(resolved.ppid, null);
+    assert.equal(resolved.status, 'proposed');
+    assert.equal(resolved.registeredAt, '2026-09-26');
+    assert.equal(resolved.activatedAt, null);
+    assert.equal(resolved.firstVerifiedAt, null);
+    assert.equal(campaignLinks.CT_TO_APP_ID[row.ct], TABLE_TALK_APP_ID);
+  }
+});
+
+test('Table Talk Real Mom Nutrition and Nebraska Extension outreach 2026-09-26 App Store URLs use pt, registered ct, and mt=8', () => {
+  const rows = [
+    ['outreachRealmomnutrition20260926', TABLE_TALK_OUTREACH_REALMOMNUTRITION_20260926_CT],
+    ['outreachNebraskaextension20260926', TABLE_TALK_OUTREACH_NEBRASKAEXTENSION_20260926_CT],
+  ];
+
+  for (const [key, ct] of rows) {
+    assert.equal(
+      appStoreCampaignUrl(TABLE_TALK_APP_ID, TABLE_TALK_ASC_TOKENS[key]),
+      `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${ct}&mt=8`,
+    );
+  }
+});
+
 test('Last Human Kodeco Podcast outreach 2026-09-25 token is a registered static definition', () => {
   assert.equal(LAST_HUMAN_ASC_TOKENS.outreachKodeco20260925, LAST_HUMAN_OUTREACH_KODECO_20260925_CT);
   assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(LAST_HUMAN_OUTREACH_KODECO_20260925_CT));
@@ -1870,6 +1960,94 @@ test('Last Human Launched outreach 2026-09-25 App Store URL uses pt, registered 
   assert.equal(
     url,
     `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${LAST_HUMAN_OUTREACH_LAUNCHED_20260925_CT}&mt=8`,
+  );
+});
+
+test('Last Human Compile Swift and Gamigion press 2026-09-26 tokens are registered static definitions', () => {
+  const rows = [
+    {
+      key: 'pressCompileswift20260926',
+      ct: LAST_HUMAN_PRESS_COMPILESWIFT_20260926_CT,
+      surface: 'Compile Swift guest form soft tip (Last Human) 2026-09-26',
+      path: 'form',
+      channel: 'form',
+    },
+    {
+      key: 'pressGamigion20260926',
+      ct: LAST_HUMAN_PRESS_GAMIGION_20260926_CT,
+      surface: 'Email Gamigion quiet release soft tip (Last Human) 2026-09-26',
+      path: 'email',
+      channel: 'email',
+    },
+  ];
+
+  assert.equal(rows.length, 2);
+  const cts = rows.map((row) => row.ct);
+  assert.equal(new Set(cts).size, cts.length);
+
+  for (const row of rows) {
+    assert.equal(LAST_HUMAN_ASC_TOKENS[row.key], row.ct);
+    assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(row.ct));
+
+    const resolved = campaignLinks.resolveTokenDefinition(row.ct);
+    assert.ok(resolved, 'resolveTokenDefinition returned null');
+    assert.equal(resolved.kind, 'static');
+    assert.equal(resolved.appId, LAST_HUMAN_APP_ID);
+    assert.equal(resolved.ct, row.ct);
+    assert.equal(resolved.channel, row.channel);
+    assert.equal(resolved.path, row.path);
+    assert.equal(resolved.surface, row.surface);
+    assert.equal(resolved.ppid, null);
+    assert.equal(resolved.status, 'proposed');
+    assert.equal(resolved.registeredAt, '2026-09-26');
+    assert.equal(resolved.activatedAt, null);
+    assert.equal(resolved.firstVerifiedAt, null);
+    assert.equal(campaignLinks.CT_TO_APP_ID[row.ct], LAST_HUMAN_APP_ID);
+  }
+});
+
+test('Last Human Compile Swift and Gamigion press 2026-09-26 App Store URLs use pt, registered ct, and mt=8', () => {
+  const rows = [
+    ['pressCompileswift20260926', LAST_HUMAN_PRESS_COMPILESWIFT_20260926_CT],
+    ['pressGamigion20260926', LAST_HUMAN_PRESS_GAMIGION_20260926_CT],
+  ];
+
+  for (const [key, ct] of rows) {
+    assert.equal(
+      appStoreCampaignUrl(LAST_HUMAN_APP_ID, LAST_HUMAN_ASC_TOKENS[key]),
+      `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${ct}&mt=8`,
+    );
+  }
+});
+
+test('Last Human Indie Game Website outreach 2026-09-26 token is a registered static definition', () => {
+  assert.equal(
+    LAST_HUMAN_ASC_TOKENS.outreachIndiegamewebsite20260926,
+    LAST_HUMAN_OUTREACH_INDIEGAMEWEBSITE_20260926_CT,
+  );
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(LAST_HUMAN_OUTREACH_INDIEGAMEWEBSITE_20260926_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(LAST_HUMAN_OUTREACH_INDIEGAMEWEBSITE_20260926_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, LAST_HUMAN_APP_ID);
+  assert.equal(resolved.ct, LAST_HUMAN_OUTREACH_INDIEGAMEWEBSITE_20260926_CT);
+  assert.equal(resolved.channel, 'email');
+  assert.equal(resolved.path, 'email');
+  assert.equal(resolved.surface, 'Email Indie Game Website coverage tip (Last Human) 2026-09-26');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-26');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+  assert.equal(campaignLinks.CT_TO_APP_ID[LAST_HUMAN_OUTREACH_INDIEGAMEWEBSITE_20260926_CT], LAST_HUMAN_APP_ID);
+});
+
+test('Last Human Indie Game Website outreach 2026-09-26 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(LAST_HUMAN_APP_ID, LAST_HUMAN_ASC_TOKENS.outreachIndiegamewebsite20260926);
+  assert.equal(
+    url,
+    `https://apps.apple.com/us/app/last-human-dodge-the-bots/id${LAST_HUMAN_APP_ID}?pt=128970277&ct=${LAST_HUMAN_OUTREACH_INDIEGAMEWEBSITE_20260926_CT}&mt=8`,
   );
 });
 

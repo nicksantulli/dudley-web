@@ -24,7 +24,7 @@
 //   appId       — Apple App Store app ID
 //   surface     — human description of the placement
 //   path        — URL path pattern this token represents (exact or glob)
-//   channel     — 'web' | 'blog-inline' | 'tiktok' | 'instagram' | 'x' | 'email'
+//   channel     — 'web' | 'blog-inline' | 'tiktok' | 'instagram' | 'x' | 'email' | 'form'
 //   ppid        — CPP product page ID, null for default product pages
 //   registeredAt   — ISO date string when the token was registered in source
 //   activatedAt    — ISO date string when deployment activation is proven; null if unknown/not deployed
@@ -456,6 +456,45 @@ export const TOKEN_REGISTRY = Object.freeze([
     channel: 'email',
     ppid: null,
     registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email Dice Tower free-review soft tip (Table Talk) 2026-09-26
+  {
+    ct: 'tt_press_dicetower_20260926',
+    appId: '6780714565',
+    surface: 'Email Dice Tower free-review soft tip (Table Talk) 2026-09-26',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-26',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email Real Mom Nutrition editorial resource tip (Table Talk) 2026-09-26
+  {
+    ct: 'tt_outreach_realmomnutrition_20260926',
+    appId: '6780714565',
+    surface: 'Email Real Mom Nutrition editorial resource tip (Table Talk) 2026-09-26',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-26',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email Nebraska Extension EAT Family Style resource-update tip (Table Talk) 2026-09-26
+  {
+    ct: 'tt_outreach_nebraskaextension_20260926',
+    appId: '6780714565',
+    surface: 'Email Nebraska Extension EAT Family Style resource-update tip (Table Talk) 2026-09-26',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-26',
     activatedAt: null,
     firstVerifiedAt: null,
     status: 'proposed',
@@ -1198,6 +1237,45 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Compile Swift guest form soft tip (Last Human) 2026-09-26
+  {
+    ct: 'lh_press_compileswift_20260926',
+    appId: '6808782611',
+    surface: 'Compile Swift guest form soft tip (Last Human) 2026-09-26',
+    path: 'form',
+    channel: 'form',
+    ppid: null,
+    registeredAt: '2026-09-26',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email Gamigion quiet release soft tip (Last Human) 2026-09-26
+  {
+    ct: 'lh_press_gamigion_20260926',
+    appId: '6808782611',
+    surface: 'Email Gamigion quiet release soft tip (Last Human) 2026-09-26',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-26',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Email Indie Game Website coverage tip (Last Human) 2026-09-26
+  {
+    ct: 'lh_outreach_indiegamewebsite_20260926',
+    appId: '6808782611',
+    surface: 'Email Indie Game Website coverage tip (Last Human) 2026-09-26',
+    path: 'email',
+    channel: 'email',
+    ppid: null,
+    registeredAt: '2026-09-26',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
 ]);
 
 // ---------------------------------------------------------------------------
@@ -1325,6 +1403,9 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   outreachAppaddict20260925: 'tt_outreach_appaddict_20260925',
   outreachIdownloadblog20260925: 'tt_outreach_idownloadblog_20260925',
   outreachWhileentertaining20260925: 'tt_outreach_whileentertaining_20260925',
+  pressDicetower20260926: 'tt_press_dicetower_20260926',
+  outreachRealmomnutrition20260926: 'tt_outreach_realmomnutrition_20260926',
+  outreachNebraskaextension20260926: 'tt_outreach_nebraskaextension_20260926',
 });
 
 export const VIBERATER_ASC_TOKENS = Object.freeze({
@@ -1401,6 +1482,9 @@ export const LAST_HUMAN_ASC_TOKENS = Object.freeze({
   outreachVibblelaunch20260925: 'lh_outreach_vibblelaunch_20260925',
   outreachKodeco20260925: 'lh_outreach_kodeco_20260925',
   outreachLaunched20260925: 'lh_outreach_launched_20260925',
+  pressCompileswift20260926: 'lh_press_compileswift_20260926',
+  pressGamigion20260926: 'lh_press_gamigion_20260926',
+  outreachIndiegamewebsite20260926: 'lh_outreach_indiegamewebsite_20260926',
 });
 
 export const LLMS_APP_STORE_TOKENS = Object.freeze({
