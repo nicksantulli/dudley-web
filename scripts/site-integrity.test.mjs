@@ -167,13 +167,14 @@ test('EconByte and Last Human money pages use short search titles and snippets',
   assert.ok(lastTitle.length <= 60, `Last Human title is ${lastTitle.length}`);
   const econDesc = capture(econ, /<meta name="description" content="([^"]+)"/i);
   const lastDesc = capture(last, /<meta name="description" content="([^"]+)"/i);
-  assert.equal(econDesc, 'EconByte is a free iPhone app of plain-language daily economics cards — inflation, rates, GDP, and trade. No account. Works offline. Not financial advice.');
+  assert.equal(econDesc, 'Plain-language economics cards sourced to Fed/BLS. Five-minute daily sets. Education only — not trading tips.');
   assert.equal(lastDesc, 'Satirical iPhone arcade: dodge office bots across 50 floors before they optimize your desk. Free to play, no account, and playable offline after download.');
   assert.ok(econDesc.length <= 160, `EconByte description is ${econDesc.length}`);
   assert.ok(lastDesc.length <= 160, `Last Human description is ${lastDesc.length}`);
   assert.match(lastDesc, /offline/i);
-  assert.match(econDesc, /plain-language|Not financial advice/);
-  assert.doesNotMatch(`${econTitle} ${econDesc}`, /returns|beat the market/i);
+  assert.match(econDesc, /plain-language|Education only/);
+  assert.match(econDesc, /not trading tips/);
+  assert.doesNotMatch(`${econTitle} ${econDesc}`, /returns|beat the market|120 cards/i);
   for (const html of [econ, last]) {
     const app = jsonLd(html).find((value) => value['@type'] === 'SoftwareApplication');
     assert.equal(app.aggregateRating, undefined);
@@ -210,6 +211,30 @@ test('Last Human, Table Talk, and EconByte cross-link without dropping existing 
   assert.match(econ, /href="\/apps\/table-talk\/"/);
   assert.match(econ, /href="\/apps\/monetary-policy-independence-day\/"/);
   assert.match(econ, /href="\/apps\/vibe-rater\/"/);
+});
+
+test('EconByte built pages use the 180-card listing, not the old 120-card prices', () => {
+  const econ = readFileSync(resolve('dist/apps/econbyte/index.html'), 'utf8');
+  const support = readFileSync(resolve('dist/support/econbyte/index.html'), 'utf8');
+  const home = readFileSync(resolve('dist/index.html'), 'utf8');
+  const band = home.match(/data-app="econbyte"[\s\S]*?<\/section>/)?.[0] ?? '';
+  assert.match(band, /180 cards across 15 topics, 12 each/);
+  assert.match(band, /Eight-card daily sessions/);
+  assert.doesNotMatch(band, /120 cards|120 sourced|\$0\.99/);
+  assert.match(econ, /180 cards/);
+  assert.match(econ, /12 cards each/);
+  assert.match(econ, /topic packs/i);
+  assert.match(econ, /EconByte Pro/);
+  assert.match(econ, /not financial or investment advice/);
+  assert.doesNotMatch(econ, /120 cards|120 sourced|\$0\.99|eight cards per topic|eight cards each/);
+  assert.doesNotMatch(support, /120 cards|\$0\.99/);
+  const app = jsonLd(econ).find((value) => value['@type'] === 'SoftwareApplication');
+  assert.match(app.featureList.join('\n'), /180 sourced cards across 15 core topics, 12 cards per topic/);
+  assert.equal(app.aggregateRating, undefined);
+  const last = readFileSync(resolve('dist/apps/last-human/index.html'), 'utf8');
+  assert.match(last, /50 floors/);
+  assert.match(last, /50 escalating office floors/);
+  assert.doesNotMatch(last, /180 cards/);
 });
 
 test('Table Talk and EconByte money pages link their posts in the body', () => {
