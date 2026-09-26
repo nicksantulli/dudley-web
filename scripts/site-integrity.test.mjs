@@ -268,10 +268,13 @@ test('homepage uses the approved product-first message', () => {
   assert.match(home, /Arcade satire, dinner-table cards, and plain-language tools\. No signup as a cover charge\./);
   assert.match(home, /Notes from the shop/);
   assert.match(home, /On deck/);
+  assert.doesNotMatch(home, /In the works/);
+  assert.match(home, /Arcade satire, dinner-table cards, and plain-language tools\.<\/p>/);
   assert.match(home, /Rate the moment\. Keep your people close\./);
   assert.match(home, /SendBrake: Message Check/);
   assert.match(home, /One more look before it leaves\./);
-  assert.doesNotMatch(home, /Pick an app\. See what happens\.|LIVE ON THE APP STORE|Straight answers, useful context|Next from Dudley/);
+  assert.match(home, /ReplyGate: Reply or Skip/);
+  assert.doesNotMatch(home, /Pick an app\. See what happens\.|LIVE ON THE APP STORE|Straight answers, useful context|Next from Dudley|Games, conversation starters, and useful things for iPhone/);
   assert.doesNotMatch(home, /Why Dudley|Polish is the point|feature-icon|class="grad"/);
   const band = (slug) => home.match(new RegExp(`<section[^>]+data-app="${slug}"[\\s\\S]*?<\\/section>`))?.[0] ?? '';
   assert.match(band('last-human'), /Play free on the App Store/);
@@ -281,6 +284,12 @@ test('homepage uses the approved product-first message', () => {
   assert.match(band('vibe-rater'), /Try it on the App Store/);
   assert.doesNotMatch(band('vibe-rater'), /VibeMeter|VibeRodeo|VibeShop|Radar|Rise/);
   assert.match(band('last-human'), /50 escalating office floors/);
+  assert.match(band('send-brake'), /One more look before it leaves\./);
+  assert.match(band('send-brake'), /Paste a draft you&#39;re about to send\. Get three next steps\./);
+  assert.match(band('send-brake'), /One draft, three possible next steps/);
+  assert.match(band('send-brake'), /Coming soon/);
+  assert.doesNotMatch(band('send-brake'), /href="\/apps\/send-brake\//);
+  assert.match(band('reply-gate'), /ReplyGate: Reply or Skip/);
 });
 
 test('client work has attribution and a tagged store action without a broken detail link', () => {

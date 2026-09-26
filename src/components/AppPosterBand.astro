@@ -28,7 +28,7 @@ const liveStoreLine: Record<string, string> = {
 const statusText = status === 'live'
   ? (liveStoreLine[slug] ?? 'On the App Store')
   : status === 'coming_soon'
-    ? 'Coming to the App Store'
+    ? 'Coming soon'
     : 'In development';
 const visual = art ?? icon;
 const webp = visual.replace(/\.png$/i, '.webp');
