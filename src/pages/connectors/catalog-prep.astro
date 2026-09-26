@@ -111,6 +111,14 @@ RSC-1812,Moving box,,,,B,44,20,</pre>
         <li>Sign up when asked, and verify your email. You get your own private sandbox.</li>
         <li>Attach a supplier file and your store template, and ask: “Turn this supplier price list into a CSV I can import into my store.”</li>
       </ol>
+      <h3>No supplier file handy? Use ours</h3>
+      <p>
+        Download a <a href={rel('/connectors/catalog-prep/sample-supplier.csv')} download>sample supplier file</a>
+        (6 boxes, deliberately messy) and a <a href={rel('/connectors/catalog-prep/sample-template.csv')} download>store template</a>,
+        attach both, and ask your assistant to prepare the import. You should get 6 importable rows and 4
+        unresolved fields: the moving box’s size has no unit and its price is missing, so Catalog Prep
+        flags them instead of guessing.
+      </p>
       <p>More prompts to try:</p>
       <ul>
         <li>“Clean up this carton spreadsheet: sizes, board grade, and case pack in separate columns.”</li>
