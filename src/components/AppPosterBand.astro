@@ -18,7 +18,18 @@ interface Props {
 }
 
 const { slug, name, headline, description, icon, facts, status, storeHref = '', detailHref, developedFor, art, reverse = false } = Astro.props;
-const statusText = status === 'live' ? 'Live on the App Store' : status === 'coming_soon' ? 'Coming to the App Store' : 'In development';
+const liveStoreLine: Record<string, string> = {
+  'last-human': 'Play free on the App Store',
+  'table-talk': 'Get the deck on the App Store',
+  'econbyte': 'Read a card on the App Store',
+  'monetary-policy-independence-day': 'Chase it on the App Store',
+  'vibe-rater': 'Try it on the App Store',
+};
+const statusText = status === 'live'
+  ? (liveStoreLine[slug] ?? 'On the App Store')
+  : status === 'coming_soon'
+    ? 'Coming soon'
+    : 'In development';
 const visual = art ?? icon;
 const webp = visual.replace(/\.png$/i, '.webp');
 ---
