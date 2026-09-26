@@ -107,6 +107,45 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Proposed Table Talk square promo X original (2026-10-01)
+  {
+    ct: 'tt_promo_square_x_20261001',
+    appId: '6780714565',
+    surface: 'X original Table Talk square promo 2026-10-01',
+    path: 'x',
+    channel: 'x',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Proposed Table Talk square promo TikTok post (2026-10-01)
+  {
+    ct: 'tt_promo_square_tt_20261001',
+    appId: '6780714565',
+    surface: 'TikTok Table Talk square promo 2026-10-01',
+    path: 'tiktok',
+    channel: 'tiktok',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  // Proposed Table Talk square promo Instagram Reel (2026-10-01)
+  {
+    ct: 'tt_promo_square_ig_20261001',
+    appId: '6780714565',
+    surface: 'Instagram Reel Table Talk square promo 2026-10-01',
+    path: 'instagram',
+    channel: 'instagram',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   {
     ct: 'tt-web-llms-sep26-v1',
     appId: '6780714565',
@@ -756,6 +795,19 @@ export const TOKEN_REGISTRY = Object.freeze([
     firstVerifiedAt: null,
     status: 'proposed',
   },
+  // Proposed EconByte square promo X original (2026-10-02)
+  {
+    ct: 'eb_promo_square_x_20261002',
+    appId: '6780714383',
+    surface: 'X original EconByte square promo 2026-10-02',
+    path: 'x',
+    channel: 'x',
+    ppid: null,
+    registeredAt: '2026-09-25',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
   // EconByte blog CTAs follow the pattern `eb-web-blog-<slug>-sep26-v1`.
   // Generated per-post by econbyteBlogCampaignToken(slug) — not individually listed.
 
@@ -1241,6 +1293,10 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   // Off-site X collector surfaces — one-off dated tokens, not a blog slug generator.
   xCollector: 'tabletalk-x-collector-20260914',
   xCollector20260924: 'tabletalk-x-collector-20260924',
+  // Off-site square promo surfaces — one-off dated tokens, not a blog slug generator.
+  xPromoSquare20261001: 'tt_promo_square_x_20261001',
+  ttPromoSquare20261001: 'tt_promo_square_tt_20261001',
+  igPromoSquare20261001: 'tt_promo_square_ig_20261001',
   llms:       'tt-web-llms-sep26-v1',
   // Off-site email outreach — one-off dated tokens, not a blog slug generator.
   outreachPartypro20260925: 'tt_outreach_partypro_20260925',
@@ -1305,6 +1361,8 @@ export const ECONBYTE_ASC_TOKENS = Object.freeze({
   outreachLearnamic20260925: 'eb_outreach_learnamic_20260925',
   outreachVibblelaunch20260925: 'eb_outreach_vibblelaunch_20260925',
   outreachTeachermoney20260925: 'eb_outreach_teachermoney_20260925',
+  // Off-site square promo — one-off dated token, not a blog slug generator.
+  xPromoSquare20261002: 'eb_promo_square_x_20261002',
 });
 
 export const DUDE_WHERES_ASC_TOKENS = Object.freeze({
