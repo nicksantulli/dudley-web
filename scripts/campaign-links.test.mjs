@@ -79,6 +79,10 @@ const PHONE_IN_THE_MIDDLE_CT = 'tt-web-blog-phone-in-the-middle-sep26-v1';
 const TABLE_TALK_TIKTOK_CT = 'tabletalk-tiktok-20260910';
 const TABLE_TALK_X_COLLECTOR_CT = 'tabletalk-x-collector-20260914';
 const TABLE_TALK_X_COLLECTOR_20260924_CT = 'tabletalk-x-collector-20260924';
+const TABLE_TALK_X_PROMO_SQUARE_20261001_CT = 'tt_promo_square_x_20261001';
+const TABLE_TALK_TT_PROMO_SQUARE_20261001_CT = 'tt_promo_square_tt_20261001';
+const TABLE_TALK_IG_PROMO_SQUARE_20261001_CT = 'tt_promo_square_ig_20261001';
+const ECONBYTE_X_PROMO_SQUARE_20261002_CT = 'eb_promo_square_x_20261002';
 const FORBIDDEN_TABLE_TALK_REUSE = [
   'tabletalk-web-home',
   'tabletalk-web-app',
@@ -347,6 +351,114 @@ test('Table Talk X collector 2026-09-24 App Store URL uses pt, registered ct, an
   assert.equal(
     url,
     `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${TABLE_TALK_X_COLLECTOR_20260924_CT}&mt=8`,
+  );
+});
+
+test('Table Talk X square promo 2026-10-01 token is a registered static definition', () => {
+  assert.equal(TABLE_TALK_ASC_TOKENS.xPromoSquare20261001, TABLE_TALK_X_PROMO_SQUARE_20261001_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(TABLE_TALK_X_PROMO_SQUARE_20261001_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(TABLE_TALK_X_PROMO_SQUARE_20261001_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, TABLE_TALK_APP_ID);
+  assert.equal(resolved.ct, TABLE_TALK_X_PROMO_SQUARE_20261001_CT);
+  assert.equal(resolved.channel, 'x');
+  assert.equal(resolved.path, 'x');
+  assert.equal(resolved.surface, 'X original Table Talk square promo 2026-10-01');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-25');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+});
+
+test('Table Talk X square promo 2026-10-01 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(TABLE_TALK_APP_ID, TABLE_TALK_ASC_TOKENS.xPromoSquare20261001);
+  assert.equal(
+    url,
+    `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${TABLE_TALK_X_PROMO_SQUARE_20261001_CT}&mt=8`,
+  );
+});
+
+test('Table Talk TikTok square promo 2026-10-01 token is a registered static definition', () => {
+  assert.equal(TABLE_TALK_ASC_TOKENS.ttPromoSquare20261001, TABLE_TALK_TT_PROMO_SQUARE_20261001_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(TABLE_TALK_TT_PROMO_SQUARE_20261001_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(TABLE_TALK_TT_PROMO_SQUARE_20261001_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, TABLE_TALK_APP_ID);
+  assert.equal(resolved.ct, TABLE_TALK_TT_PROMO_SQUARE_20261001_CT);
+  assert.equal(resolved.channel, 'tiktok');
+  assert.equal(resolved.path, 'tiktok');
+  assert.equal(resolved.surface, 'TikTok Table Talk square promo 2026-10-01');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-25');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+});
+
+test('Table Talk TikTok square promo 2026-10-01 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(TABLE_TALK_APP_ID, TABLE_TALK_ASC_TOKENS.ttPromoSquare20261001);
+  assert.equal(
+    url,
+    `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${TABLE_TALK_TT_PROMO_SQUARE_20261001_CT}&mt=8`,
+  );
+});
+
+test('Table Talk Instagram square promo 2026-10-01 token is a registered static definition', () => {
+  assert.equal(TABLE_TALK_ASC_TOKENS.igPromoSquare20261001, TABLE_TALK_IG_PROMO_SQUARE_20261001_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(TABLE_TALK_IG_PROMO_SQUARE_20261001_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(TABLE_TALK_IG_PROMO_SQUARE_20261001_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, TABLE_TALK_APP_ID);
+  assert.equal(resolved.ct, TABLE_TALK_IG_PROMO_SQUARE_20261001_CT);
+  assert.equal(resolved.channel, 'instagram');
+  assert.equal(resolved.path, 'instagram');
+  assert.equal(resolved.surface, 'Instagram Reel Table Talk square promo 2026-10-01');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-25');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+});
+
+test('Table Talk Instagram square promo 2026-10-01 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(TABLE_TALK_APP_ID, TABLE_TALK_ASC_TOKENS.igPromoSquare20261001);
+  assert.equal(
+    url,
+    `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${TABLE_TALK_IG_PROMO_SQUARE_20261001_CT}&mt=8`,
+  );
+});
+
+test('EconByte X square promo 2026-10-02 token is a registered static definition', () => {
+  assert.equal(ECONBYTE_ASC_TOKENS.xPromoSquare20261002, ECONBYTE_X_PROMO_SQUARE_20261002_CT);
+  assert.ok(campaignLinks.ALL_REGISTERED_TOKENS.includes(ECONBYTE_X_PROMO_SQUARE_20261002_CT));
+
+  const resolved = campaignLinks.resolveTokenDefinition(ECONBYTE_X_PROMO_SQUARE_20261002_CT);
+  assert.ok(resolved, 'resolveTokenDefinition returned null');
+  assert.equal(resolved.kind, 'static');
+  assert.equal(resolved.appId, ECONBYTE_APP_ID);
+  assert.equal(resolved.ct, ECONBYTE_X_PROMO_SQUARE_20261002_CT);
+  assert.equal(resolved.channel, 'x');
+  assert.equal(resolved.path, 'x');
+  assert.equal(resolved.surface, 'X original EconByte square promo 2026-10-02');
+  assert.equal(resolved.ppid, null);
+  assert.equal(resolved.status, 'proposed');
+  assert.equal(resolved.registeredAt, '2026-09-25');
+  assert.equal(resolved.activatedAt, null);
+  assert.equal(resolved.firstVerifiedAt, null);
+});
+
+test('EconByte X square promo 2026-10-02 App Store URL uses pt, registered ct, and mt=8', () => {
+  const url = appStoreCampaignUrl(ECONBYTE_APP_ID, ECONBYTE_ASC_TOKENS.xPromoSquare20261002);
+  assert.equal(
+    url,
+    `https://apps.apple.com/app/id${ECONBYTE_APP_ID}?pt=128970277&ct=${ECONBYTE_X_PROMO_SQUARE_20261002_CT}&mt=8`,
   );
 });
 
