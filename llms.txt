@@ -43,12 +43,13 @@ VibeRater Social assigns one of several vibe archetypes based on your photo:
 - [iPhone Privacy](https://dudleyapps.com/blog/topics/iphone-privacy/): Plain-English answers about photo access, contacts, location, screenshots, metadata, and app permissions. 23 published answers.
 - [AI Images & Media](https://dudleyapps.com/blog/topics/ai-media/): How AI-generated media, labels, training controls, watermarks, provenance, and authenticity signals work. 14 published answers.
 - [Internet Culture](https://dudleyapps.com/blog/topics/internet-culture/): Clear explanations of vibe language, social trends, group-chat behavior, and the internet’s stranger corners. 14 published answers.
-- [Dudley App Guides](https://dudleyapps.com/blog/topics/dudley-guides/): How Dudley apps work, what they cost, and what to expect before downloading. 31 published answers.
+- [Dudley App Guides](https://dudleyapps.com/blog/topics/dudley-guides/): How Dudley apps work, what they cost, and what to expect before downloading. 32 published answers.
 
 ## Recent Answers
 
 The Dudley Blog publishes direct, sourced answers about iPhone privacy, AI media, internet culture, economics, the App Store, and Dudley products. Full index: https://dudleyapps.com/blog/ (RSS: https://dudleyapps.com/blog/rss.xml).
 
+- [Why Would You Rather Works at the Dinner Table](https://dudleyapps.com/blog/would-you-rather-table/): A forced binary can restart a stalled dinner when an open question gets a shrug. How to build a Would You Rather that splits the table, and when to skip it.
 - [Conversation Openers That Don't Feel Like an Interview](https://dudleyapps.com/blog/openers-not-interviews/): Interview-style questions stall a date or a dinner because they ask for a résumé fact. Better openers ask for a preference, a choice, or a small story.
 - [Why Are Prices Still High If Inflation Is Down?](https://dudleyapps.com/blog/why-are-prices-still-high-if-inflation-is-down/): Inflation going down usually means prices are rising more slowly, not that the grocery bill has gone back to its old level. Here is the plain-English difference.
 - [The Phone in the Middle of the Table](https://dudleyapps.com/blog/phone-in-the-middle/): Two posts on September 2 showed opposite ways people handle a pause: disappear into a private phone, or share one object the whole table can talk about.
@@ -60,7 +61,6 @@ The Dudley Blog publishes direct, sourced answers about iPhone privacy, AI media
 - [Can iPhone Apps Tell When You Screen Record?](https://dudleyapps.com/blog/can-iphone-apps-tell-when-you-screen-record/): An iPhone app can often tell when its own screen is being recorded or mirrored, but that does not mean it can read the recording file or browse your old screen recordings.
 - [Can iPhone Apps See Your Contacts?](https://dudleyapps.com/blog/can-iphone-apps-see-your-contacts/): iPhone apps can see contacts only after you grant Contacts access, and newer iOS controls can limit that access to selected people. Here is what to check before using social and friend-finder apps.
 - [Does Visual Intelligence Send Photos to ChatGPT?](https://dudleyapps.com/blog/does-visual-intelligence-send-photos-to-chatgpt/): Visual Intelligence can send a photo, screenshot, or onscreen item to ChatGPT only when you choose a ChatGPT action. Here is what Apple and OpenAI say is shared, saved, and controlled.
-- [What Does Limited Access Mean for Photos on iPhone?](https://dudleyapps.com/blog/what-does-limited-access-mean-photos-iphone/): Limited Access means an iPhone app can use only the photos and videos you select, not your whole photo library. Here is what it changes, how to check it, and what to watch before using photo apps.
 
 ## About
 
