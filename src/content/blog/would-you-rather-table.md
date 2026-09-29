@@ -29,14 +29,14 @@ An open question can sit on the table and get a shrug back. "What has been on yo
 
 A Would You Rather question does a different job. It hands over two options and asks for a side. The side is small. The reason is where the talk starts. Then the rest of the table has something to react to: they wanted the other one, or they wanted the same one for a reason nobody expected.
 
-People keep looking for this format. [The Gourmet Host](https://thegourmethost.com/food-would-you-rather-questions-for-the-table/) published a dinner guide of food trade-offs and tells a host to read one prompt between courses, then go around so each guest picks and explains. [Calm's question-games guide](https://www.calm.com/blog/question-games) calls Would You Rather a low-pressure way to show a personality, and points to it for a high-energy hang. Open dinner-question lists keep appearing beside the binary ones, including [Calm's dinner-party questions](https://www.calm.com/blog/dinner-party-questions) and [KF.Social's set of 75](https://kf.social/guides/making-friends/conversation-starters). That is public craft demand. It is a record of what hosts publish, with no download number attached.
+People keep looking for this format. [The Gourmet Host](https://thegourmethost.com/food-would-you-rather-questions-for-the-table/) published a dinner guide of food trade-offs and tells a host to read one prompt between courses, then go around so each guest picks and explains. [Calm's question-games guide](https://www.calm.com/blog/question-games) calls Would You Rather a low-pressure way to show a personality, and points to it for a high-energy hang. Open dinner-question lists keep appearing beside the binary ones, including [Calm's dinner-party questions](https://www.calm.com/blog/dinner-party-questions) and [KF.Social's set of 75](https://kf.social/guides/making-friends/conversation-starters).
 
 ## The mechanic
 
 A useful dilemma runs in three beats.
 
 1. **Forced choice.** Two options. Passing is allowed. "Both" and "neither" end the round before it starts.
-2. **Opinion plus a reason.** "The same Sunday dinner" is a vote. "The same Sunday dinner, because Tuesday is the only night we sit down" is a person.
+2. **Opinion plus a reason.** "The same Sunday dinner" is a vote. "The same Sunday dinner, because that is the only night we all sit down" is a person.
 3. **Group reaction.** Someone else wanted a different plan and says why. The table is now comparing two real preferences.
 
 The open-ended version of the same moment is a preference or a small story with no menu attached. That shape has its own craft, and [Conversation Openers That Don't Feel Like an Interview](/blog/openers-not-interviews/) is the post for it. This one stays with the binary.
@@ -68,7 +68,7 @@ These stay on the meal and the company. They show the shape. They are not a deck
 
 **The repeat.** "Would you rather keep Sunday dinner exactly the same for a year, or let a different person plan it every week?" Loyalty and boredom both have a case. Stay with whichever reason shows up.
 
-Ask one. If they mention Tuesday, ask about Tuesday. Leave the next dilemma in your pocket.
+Ask one. Stay with the reason they actually gave. Leave the next dilemma in your pocket.
 
 ## When it helps, and when it flattens
 
