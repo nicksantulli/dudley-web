@@ -8,7 +8,7 @@ const description = 'Privacy policies for Dudley Development apps.';
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/')}>← Home</a>
       <h1>Privacy</h1>
-      <p class="updated">Effective date: September 22, 2026 · One policy per app — pick yours below.</p>
+      <p class="updated">Effective date: September 29, 2026 · One policy per app — pick yours below.</p>
 
       <p>
         {LEGAL_NAME} makes several separate apps, and they don't all collect the same things, so there
@@ -181,6 +181,51 @@ const description = 'Privacy policies for Dudley Development apps.';
             <span class="chev">→</span>
           </a>
         </li>
+      </ul>
+
+      <h2 id="pattern-gym-waitlist">Pattern Gym waitlist (waitlist.dudleyapps.com)</h2>
+      <p>
+        Pattern Gym is a chart-reading practice app we have not released yet. Its waitlist at
+        waitlist.dudleyapps.com is a web page, separate from every app above, and this section is its
+        whole policy. {LEGAL_NAME} is the controller; contact us at
+        <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+      </p>
+      <ul>
+        <li><b>What we keep:</b> the email address you type; a short source tag from the link you
+          arrived by (for example <code>x</code> when the link came from our X account); when you
+          signed up and when you confirmed; and which version of the consent sentence you ticked.
+          We do not keep your IP address, device or browser details, and the page sets no cookies of
+          its own.</li>
+        <li><b>Why, and the legal basis:</b> your consent (GDPR Art. 6(1)(a)), given with the checkbox
+          on the form. We use the address for exactly two emails: one to confirm it, and one when
+          Pattern Gym is on the App Store. It is never added to a newsletter, used for another Dudley
+          app, sold or shared for anyone's marketing.</li>
+        <li><b>Spam check:</b> the form uses Cloudflare Turnstile to check that a person, not a bot,
+          filled it in. Turnstile processes your IP address and browser signals for that check. Our
+          server passes your IP address to Turnstile for the check and does not store it.</li>
+        <li><b>Who processes it for us:</b> Cloudflare, Inc. hosts the page and its database
+          (Workers and D1), runs Turnstile, and sends the two emails (Cloudflare Email Sending). Data
+          may be processed in the United States; Cloudflare's data processing addendum, including the
+          EU Standard Contractual Clauses, covers the transfer.</li>
+        <li><b>How long we keep it:</b>
+          <ul>
+            <li>If you never confirm: deleted 7 days after the confirmation email.</li>
+            <li>If you confirm: deleted 7 days after we send the launch email.</li>
+            <li>If we decide not to release Pattern Gym: every address is deleted within 30 days of
+              that decision, and we will not email you.</li>
+            <li>In any case: deleted no later than 12 months after you signed up.</li>
+            <li>If you click "Remove my email" in either email, the address is deleted straight
+              away.</li>
+          </ul>
+        </li>
+        <li><b>Counts we keep:</b> the number of confirmed signups per day and per source tag. These
+          counts contain no email address and are kept after the addresses are deleted, so we can
+          judge how much interest there was.</li>
+        <li><b>Your rights:</b> you can withdraw consent and delete your address at any time with the
+          link in either email, or by writing to <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+          You can also ask for a copy of what we hold or have it corrected. If you are in the EEA,
+          the UK or Switzerland, you can complain to your data protection authority.</li>
+        <li><b>Age:</b> the waitlist is not meant for anyone under 16.</li>
       </ul>
 
       <h2>What's true across every Dudley app</h2>
