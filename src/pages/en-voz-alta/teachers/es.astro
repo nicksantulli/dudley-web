@@ -1,0 +1,163 @@
+---
+import Standalone from '../../../layouts/Standalone.astro';
+import { rel, SUPPORT_EMAIL } from '../../../consts';
+
+const description = 'En Voz Alta es una herramienta de práctica para la entrevista de ciudadanía de EE. UU., no ayuda legal. Qué cubre, versiones del contenido, privacidad y precio, para maestros de ciudadanía.';
+const reportSubject = encodeURIComponent('En Voz Alta: respuesta incorrecta');
+---
+<Standalone
+  title="En Voz Alta para maestros de ciudadanía"
+  description={description}
+  path="/en-voz-alta/teachers/es/"
+  lang="es"
+  ogImage="/assets/en-voz-alta-icon.png"
+  alternates={[{ lang: 'en', path: '/en-voz-alta/teachers/' }]}
+>
+  <main class="page">
+    <div class="wrap" style="max-width:720px;">
+      <p class="updated"><a href={rel('/en-voz-alta/teachers/')} hreflang="en" lang="en">Read in English</a></p>
+      <h1>En Voz Alta, para maestros de ciudadanía</h1>
+
+      <p><strong>En Voz Alta es una herramienta de práctica, no ayuda legal.</strong></p>
+      <p>
+        Permite que un estudiante practique la entrevista de ciudadanía de EE. UU. en voz alta, en inglés, con
+        explicaciones en español cuando las necesite. No estamos afiliados con USCIS ni con ninguna agencia del gobierno.
+      </p>
+      <p>En Voz Alta todavía no está en el App Store. Esta página tendrá el enlace cuando lo esté.</p>
+
+      <h2>Qué es</h2>
+      <ul>
+        <li>
+          Todas las preguntas cívicas publicadas por USCIS: el examen de 2025 (128 preguntas) y el de 2008 (100
+          preguntas). El estudiante indica la fecha en que presentó su N-400, y la app le muestra el examen que
+          corresponde a esa fecha.
+        </li>
+        <li>
+          Rondas de práctica: el oficial de práctica pregunta y el estudiante responde en voz alta, por escrito, o
+          dice la respuesta y la revisa por su cuenta. Las rondas siguen el número de preguntas y las reglas para
+          terminar que USCIS publica para cada examen.
+        </li>
+        <li>Cualquier pregunta se puede repetir u oír más despacio.</li>
+        <li>
+          Práctica de las preguntas "Have you ever..." del N-400. La app muestra primero el texto exacto del
+          formulario en inglés y nunca sugiere qué responder. Si la respuesta es sí, o si hay dudas, indica dónde
+          buscar ayuda legal.
+        </li>
+        <li>
+          Práctica de lectura y escritura con oraciones que escribimos a partir del vocabulario de USCIS. La app las
+          identifica como oraciones de práctica nuestras.
+        </li>
+        <li>
+          Las respuestas que cambian (senadores, representante, gobernador, capital del estado) no vienen fijas: el
+          estudiante las busca según dónde vive. Las respuestas sobre funcionarios muestran la fecha en que se
+          verificaron y un enlace para verificar la respuesta actual.
+        </li>
+        <li>
+          Las explicaciones en español usan "usted". El español de las preguntas de 2025 es nuestra propia
+          traducción, y la app lo identifica como "Traducción no oficial". Para las preguntas de 2008, USCIS publica
+          su propia traducción al español, y la app usa esa.
+        </li>
+      </ul>
+
+      <h2>Qué no es</h2>
+      <ul>
+        <li>No da asesoría legal, no decide si alguien califica y no revisa ni llena formularios.</li>
+        <li>No promete ningún resultado en la entrevista.</li>
+        <li>No estamos afiliados con USCIS ni con ninguna agencia del gobierno.</li>
+      </ul>
+      <p>
+        Para preguntas legales, el estudiante debe hablar con un abogado de inmigración con licencia o un
+        representante acreditado por el DOJ. Busque un abogado con licencia o un representante acreditado por el DOJ
+        en una organización reconocida:
+        <a href="https://www.uscis.gov/scams-fraud-and-misconduct/avoid-scams/find-legal-services">'Encuentre servicios legales' de USCIS</a>
+        y la
+        <a href="https://www.justice.gov/eoir/recognition-accreditation-roster-reports">lista de organizaciones reconocidas del Departamento de Justicia</a>
+        (páginas en inglés).
+      </p>
+
+      <h2>Versiones del contenido</h2>
+      <ul>
+        <li>Examen de educación cívica de 2025: M-1778 (09/25), 128 preguntas.</li>
+        <li>Examen de educación cívica de 2008: OoC V1 (rev. 08/21), 100 preguntas.</li>
+        <li>N-400: edición del 01/20/25.</li>
+        <li>Respuestas sobre funcionarios verificadas el 2026-09-28.</li>
+      </ul>
+
+      <h2>Materiales de estudio gratuitos</h2>
+      <p>Todo lo que usa la app viene de fuentes públicas y gratuitas que sus estudiantes pueden usar sin ella:</p>
+      <ul>
+        <li><a href="https://www.uscis.gov/es/ciudadania/encuentre-materiales-de-estudio-y-recursos/estudie-para-el-examen">Materiales de estudio gratuitos: la página "Estudie para el examen" que USCIS publica</a></li>
+        <li><a href="https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf">Las 128 preguntas publicadas por USCIS (examen de 2025, PDF en inglés)</a></li>
+        <li><a href="https://www.uscis.gov/sites/default/files/document/questions-and-answers/100q_Spanish_2021_SPA.docx">Las 100 preguntas publicadas por USCIS en español (examen de 2008)</a></li>
+        <li><a href="https://www.uscis.gov/es/ciudadania/encuentre-materiales-de-estudio-y-recursos/actualizaciones-al-examen-de-civismo">Las respuestas actuales sobre funcionarios publicadas por USCIS</a></li>
+      </ul>
+
+      <h2>Datos de privacidad</h2>
+      <h3>Lo que se queda en este iPhone</h3>
+      <ul>
+        <li>Su voz. Nunca se graba; el reconocimiento se hace en la memoria del teléfono y luego se descarta.</li>
+        <li>Lo que usted dijo, como texto. Se borra al terminar la ronda.</li>
+        <li>
+          Sus resultados de práctica, su fecha de presentación, la fecha opcional de su entrevista, su estado y los
+          nombres que escribió. <strong>No se incluyen en la copia de seguridad de iCloud</strong>, así que no pasan a
+          un teléfono nuevo.
+        </li>
+        <li>Su práctica del N-400. La app <strong>nunca guarda su sí o su no</strong>, ni nada de lo que diga en esas preguntas.</li>
+      </ul>
+      <h3>Lo que esta app nunca tiene</h3>
+      <ul>
+        <li>Sin cuenta, sin anuncios, sin rastreo, sin analíticas, sin servidor.</li>
+        <li>Nosotros nunca vemos sus respuestas.</li>
+      </ul>
+      <h3>Dónde participa Apple</h3>
+      <ul>
+        <li><strong>Voz.</strong> Esta app le pide al iPhone que reconozca la voz solo en el teléfono. El mensaje de permiso que ve lo escribe Apple.</li>
+        <li><strong>Archivos de dictado.</strong> El iPhone descarga de Apple los archivos de dictado o de voz en inglés. La descarga no envía nada de lo que usted dijo.</li>
+        <li><strong>Teclado.</strong> La tecla del micrófono del teclado es el Dictado de Apple, bajo la configuración de Apple, no de esta app. Los teclados de otras empresas están desactivados dentro de esta app.</li>
+        <li><strong>Compras.</strong> Las compras y la restauración pasan por su cuenta de Apple. Vemos totales de ventas, nunca quién compró.</li>
+        <li><strong>Compartir con desarrolladores.</strong> Si activó "Compartir con desarrolladores de apps" en la configuración del iPhone, Apple puede enviarnos informes de fallos y totales de uso sin su nombre.</li>
+        <li><strong>Recordatorios.</strong> Se crean en este iPhone. Ningún servidor los envía.</li>
+        <li><strong>Enlaces.</strong> Los enlaces (uscis.gov, senate.gov, directorios de ayuda legal) se abren en Safari. Esos sitios ven su visita.</li>
+      </ul>
+      <p>La política completa: <a href={rel('/privacy/en-voz-alta/es/')}>política de privacidad de En Voz Alta</a>.</p>
+
+      <h2>Precio y qué es gratis</h2>
+      <ul>
+        <li>
+          <strong>Gratis:</strong> todas las preguntas cívicas, práctica para escuchar las preguntas, práctica de
+          lectura y escritura en inglés, 2 rondas al día y una primera mirada a las preguntas del N-400 (la pantalla
+          de entrada, los enlaces de ayuda legal y una pregunta de muestra).
+        </li>
+        <li>
+          <strong>Pro, un solo pago de $14.99 y sin suscripción:</strong> entrevistas de práctica ilimitadas, la
+          práctica completa del N-400, un repaso de cada respuesta al final de la ronda, con la redacción de USCIS,
+          y progreso por tema. Compatible con En Familia.
+        </li>
+        <li>Sin cuenta y sin anuncios. Necesita un iPhone con iOS 17 o posterior y funciona sin conexión.</li>
+      </ul>
+
+      <h2>Preguntas</h2>
+      <div class="card">
+        <strong>¿Quién hace esta app?</strong>
+        <p style="margin:6px 0 0;">Dudley Apps, un estudio de una sola persona. Entre nuestras otras apps hay juegos y herramientas de finanzas. Esta no tiene anuncios y no recopila datos.</p>
+      </div>
+      <div class="card">
+        <strong>¿Cómo reporto una respuesta incorrecta?</strong>
+        <p style="margin:6px 0 0;">
+          En la app, abra la pregunta y toque la opción para reportar una respuesta incorrecta, o escriba a
+          <a href={`mailto:${SUPPORT_EMAIL}?subject=${reportSubject}`}>{SUPPORT_EMAIL}</a>. Revisamos cada reporte
+          con las listas publicadas por USCIS. Los errores confirmados se corrigen en una actualización de la app en
+          un plazo de 7 días.
+        </p>
+      </div>
+      <div class="card">
+        <strong>¿Funciona si el iPhone del estudiante no puede revisar las respuestas habladas?</strong>
+        <p style="margin:6px 0 0;">
+          Sí. Para revisar las respuestas habladas en el iPhone se necesita el dictado en inglés (EE. UU.). Sin él,
+          la app muestra cómo activarlo, y el estudiante puede decir la respuesta en voz alta y revisarla por su
+          cuenta, o escribirla.
+        </p>
+      </div>
+    </div>
+  </main>
+</Standalone>

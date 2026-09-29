@@ -1,0 +1,151 @@
+---
+import Standalone from '../../layouts/Standalone.astro';
+import { rel, SUPPORT_EMAIL } from '../../consts';
+
+const description = 'En Voz Alta is a practice tool for the U.S. citizenship interview, not legal help. What it covers, its content versions, privacy facts and price, for citizenship teachers.';
+const reportSubject = encodeURIComponent('En Voz Alta: wrong answer');
+---
+<Standalone
+  title="En Voz Alta for citizenship teachers"
+  description={description}
+  path="/en-voz-alta/teachers/"
+  lang="en"
+  ogImage="/assets/en-voz-alta-icon.png"
+  alternates={[{ lang: 'es', path: '/en-voz-alta/teachers/es/' }]}
+>
+  <main class="page">
+    <div class="wrap" style="max-width:720px;">
+      <p class="updated"><a href={rel('/en-voz-alta/teachers/es/')} hreflang="es" lang="es">Leer en español</a></p>
+      <h1>En Voz Alta, for citizenship teachers</h1>
+
+      <p><strong>En Voz Alta is a practice tool, not legal help.</strong></p>
+      <p>
+        It lets a student practice the U.S. citizenship interview out loud, in English, with explanations in Spanish
+        when they want them. Not affiliated with USCIS or any government agency.
+      </p>
+      <p>En Voz Alta is not on the App Store yet. This page will link to it once it is.</p>
+
+      <h2>What it is</h2>
+      <ul>
+        <li>
+          Every civics question published by USCIS: the 2025 test (128 questions) and the 2008 test (100 questions).
+          The student enters the date they filed their N-400, and the app shows the test that goes with that date.
+        </li>
+        <li>
+          Practice rounds: a practice officer asks, and the student answers out loud, types, or says the answer and
+          then checks it themselves. Rounds use the question counts and stopping rules USCIS publishes for each test.
+        </li>
+        <li>Any question can be repeated or read more slowly.</li>
+        <li>
+          N-400 "Have you ever..." practice. The app shows the form's exact English first and never suggests what to
+          answer. If the answer is yes, or the student isn't sure, it points them to legal help.
+        </li>
+        <li>Reading and writing practice with sentences we wrote from the USCIS vocabulary lists. The app labels them as our practice sentences.</li>
+        <li>
+          Answers that change (senators, representative, governor, state capital) are never hard-coded. The student
+          looks them up for where they live. Answers about officeholders show the date they were checked and a link
+          to check the current answer.
+        </li>
+        <li>
+          Spanish explanations use "usted". The Spanish for the 2025 questions is our own translation, and the app
+          labels it "Traducción no oficial". The Spanish for the 2008 questions is the translation USCIS publishes.
+        </li>
+      </ul>
+
+      <h2>What it is not</h2>
+      <ul>
+        <li>It gives no legal advice, makes no eligibility decisions, and does not review or fill in forms.</li>
+        <li>It makes no promise about anyone's interview result.</li>
+        <li>Not affiliated with USCIS or any government agency.</li>
+      </ul>
+      <p>
+        For legal questions, students should talk to a licensed immigration attorney or a DOJ-accredited
+        representative. Find a licensed attorney or a DOJ-accredited representative at a recognized organization:
+        <a href="https://www.uscis.gov/scams-fraud-and-misconduct/avoid-scams/find-legal-services">USCIS 'Find Legal Services'</a>
+        and the Justice Department's
+        <a href="https://www.justice.gov/eoir/recognition-accreditation-roster-reports">roster of recognized organizations</a>.
+      </p>
+
+      <h2>Content versions</h2>
+      <ul>
+        <li>2025 civics test: M-1778 (09/25), 128 questions.</li>
+        <li>2008 civics test: OoC V1 (rev. 08/21), 100 questions.</li>
+        <li>N-400: edition 01/20/25.</li>
+        <li>Officeholder answers checked on 2026-09-28.</li>
+      </ul>
+
+      <h2>Free study materials</h2>
+      <p>Everything in the app comes from free public sources your students can use without it:</p>
+      <ul>
+        <li><a href="https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test">The free USCIS study materials</a></li>
+        <li><a href="https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf">The 128 civics questions published by USCIS (2025 test, PDF)</a></li>
+        <li><a href="https://www.uscis.gov/sites/default/files/document/questions-and-answers/OoC_100_Questions_2008_Civics_Test_V1.pdf">The 100 civics questions published by USCIS (2008 test, PDF)</a></li>
+        <li><a href="https://www.uscis.gov/citizenship/find-study-materials-and-resources/check-for-test-updates">Current officeholder answers published by USCIS</a></li>
+      </ul>
+
+      <h2>Privacy facts</h2>
+      <h3>What stays on this iPhone</h3>
+      <ul>
+        <li>Your voice. It is never recorded; speech is processed in memory and discarded.</li>
+        <li>What you said, as text. It is erased when the round ends.</li>
+        <li>
+          Your practice results, your filing date, your optional interview date, your state and the names you typed.
+          They are <strong>not included in iCloud Backup</strong>, so they don't move to a new phone.
+        </li>
+        <li>Your N-400 practice. The app <strong>never saves your yes or no</strong>, or anything you say to those questions.</li>
+      </ul>
+      <h3>What this app never has</h3>
+      <ul>
+        <li>No account, no ads, no tracking, no analytics, no server.</li>
+        <li>We never see your answers.</li>
+      </ul>
+      <h3>Where Apple is involved</h3>
+      <ul>
+        <li><strong>Speech.</strong> This app tells iPhone to recognize speech on the device only. The permission message you see is written by Apple.</li>
+        <li><strong>Dictation files.</strong> iPhone downloads English dictation or speech files from Apple. Downloading sends nothing you said.</li>
+        <li><strong>Keyboard.</strong> The microphone key on the keyboard is Apple Dictation, under Apple's settings, not this app's. Other companies' keyboards are turned off inside this app.</li>
+        <li><strong>Purchases.</strong> Purchases and Restore go through your Apple Account. We see sales totals, never who bought.</li>
+        <li><strong>Sharing with developers.</strong> If you turned on "Share with App Developers" in iPhone settings, Apple may send us crash reports and usage totals without your name.</li>
+        <li><strong>Reminders.</strong> They are created on this iPhone. No server sends them.</li>
+        <li><strong>Links.</strong> Links (uscis.gov, senate.gov, legal-help directories) open in Safari. Those websites see your visit.</li>
+      </ul>
+      <p>The full policy: <a href={rel('/privacy/en-voz-alta/')}>En Voz Alta privacy policy</a>.</p>
+
+      <h2>Price, and what is free</h2>
+      <ul>
+        <li>
+          <strong>Free:</strong> all civics questions, listening practice, English reading and writing practice, 2
+          practice rounds a day, and a first look at the N-400 questions (the entry screen, the legal-help links and
+          one sample item).
+        </li>
+        <li>
+          <strong>Pro, one payment of $14.99 with no subscription:</strong> unlimited full mock interviews, the full
+          N-400 practice, a review of every answer after the round with the USCIS wording, and progress by topic.
+          Family Sharing is on.
+        </li>
+        <li>No account and no ads. It needs an iPhone with iOS 17 or later and works offline.</li>
+      </ul>
+
+      <h2>Questions</h2>
+      <div class="card">
+        <strong>Who makes this?</strong>
+        <p style="margin:6px 0 0;">Dudley Apps, a one-person studio. Our other apps include games and finance tools. This one has no ads and collects no data.</p>
+      </div>
+      <div class="card">
+        <strong>How do I report a wrong answer?</strong>
+        <p style="margin:6px 0 0;">
+          In the app, open the question and tap Report a wrong answer, or email
+          <a href={`mailto:${SUPPORT_EMAIL}?subject=${reportSubject}`}>{SUPPORT_EMAIL}</a>. We check every report
+          against the lists published by USCIS. Confirmed errors are fixed in an app update within 7 days.
+        </p>
+      </div>
+      <div class="card">
+        <strong>Does it work if spoken answers can't be checked on a student's iPhone?</strong>
+        <p style="margin:6px 0 0;">
+          Yes. Checking spoken answers on the iPhone needs English (US) dictation turned on. Without it, the app shows
+          how to turn it on, and the student can still say the answer out loud and check it themselves, or type.
+        </p>
+      </div>
+    </div>
+  </main>
+</Standalone>

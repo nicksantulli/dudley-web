@@ -1,0 +1,76 @@
+---
+import Base from '../../layouts/Base.astro';
+import { rel, SUPPORT_EMAIL, LEGAL_NAME } from '../../consts';
+const description = `Privacy policy for En Voz Alta, the citizenship interview practice app by ${LEGAL_NAME}: what stays on your iPhone and where Apple is involved.`;
+---
+<Base title="Privacy Policy · En Voz Alta" description={description} path="/privacy/en-voz-alta" breadcrumbLeaf="En Voz Alta">
+  <main class="page">
+    <div class="wrap" style="max-width:720px;">
+      <a class="back" href={rel('/privacy/')}>← All privacy policies</a>
+      <h1>Privacy Policy</h1>
+      <p class="updated">En Voz Alta · Last updated September 28, 2026 · <a href={rel('/privacy/en-voz-alta/es/')} hreflang="es" lang="es">Leer en español</a></p>
+
+      <h2>The short version</h2>
+      <p>
+        En Voz Alta is a practice tool for the U.S. citizenship interview. It has no account, no ads, no tracking,
+        no analytics and no server. Its App Store privacy label is Data Not Collected. This page lists what stays on
+        your iPhone and exactly where Apple is involved.
+      </p>
+
+      <h2>What stays on this iPhone</h2>
+      <ul>
+        <li>Your voice. It is never recorded; speech is processed in memory and discarded.</li>
+        <li>What you said, as text. It is erased when the round ends.</li>
+        <li>
+          Your practice results, your filing date, your optional interview date, your state and the names you typed.
+          They are <strong>not included in iCloud Backup</strong>, so they don't move to a new phone.
+        </li>
+        <li>Your N-400 practice. The app <strong>never saves your yes or no</strong>, or anything you say to those questions.</li>
+      </ul>
+
+      <h2>What this app never has</h2>
+      <ul>
+        <li>No account, no ads, no tracking, no analytics, no server.</li>
+        <li>We never see your answers.</li>
+      </ul>
+
+      <h2>Where Apple is involved</h2>
+      <ul>
+        <li><strong>Speech.</strong> This app tells iPhone to recognize speech on the device only. The permission message you see is written by Apple.</li>
+        <li><strong>Dictation files.</strong> iPhone downloads English dictation or speech files from Apple. Downloading sends nothing you said.</li>
+        <li><strong>Keyboard.</strong> The microphone key on the keyboard is Apple Dictation, under Apple's settings, not this app's. Other companies' keyboards are turned off inside this app.</li>
+        <li><strong>Purchases.</strong> Purchases and Restore go through your Apple Account. We see sales totals, never who bought.</li>
+        <li><strong>Sharing with developers.</strong> If you turned on "Share with App Developers" in iPhone settings, Apple may send us crash reports and usage totals without your name.</li>
+        <li><strong>Reminders.</strong> They are created on this iPhone. No server sends them.</li>
+        <li><strong>Links.</strong> Links (uscis.gov, senate.gov, legal-help directories) open in Safari. Those websites see your visit.</li>
+      </ul>
+
+      <h2>If you email us</h2>
+      <p>
+        Email opens only when you tap a support link or Report a wrong answer. A wrong-answer report fills in the
+        question number, the test version and the app version, and none of your answers. We receive what you choose
+        to send, including your email address, and use it only to reply and to fix the app.
+      </p>
+
+      <h2>Erasing your data</h2>
+      <p>
+        In the app, Settings &gt; Erase practice data deletes everything the app stored on this iPhone. Deleting the
+        app does the same. Pro stays with your Apple Account and can be restored.
+      </p>
+
+      <h2>Children</h2>
+      <p>En Voz Alta is not directed at children under 13, and we do not knowingly collect personal data from them.</p>
+
+      <h2>Changes</h2>
+      <p>If this policy changes materially, the new version will be posted at this URL with an updated date above.</p>
+
+      <h2>Contact</h2>
+      <p>Questions? Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
+
+      <p>
+        En Voz Alta is a practice tool, not legal advice. Not affiliated with USCIS or any government agency.
+        It is made by {LEGAL_NAME}.
+      </p>
+    </div>
+  </main>
+</Base>

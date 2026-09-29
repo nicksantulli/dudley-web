@@ -1,0 +1,62 @@
+---
+// Standalone page shell: no site navigation, no footer portfolio links.
+// Used for trust-sensitive pages that are shared on their own (for example the
+// En Voz Alta "For teachers" pages), where links to the rest of the catalog
+// would work against the page. The only studio link is a plain "Dudley Apps"
+// text link to the support email.
+import { SUPPORT_EMAIL, rel, abs } from '../consts';
+import { normalizePublicPath } from '../lib/urls.mjs';
+
+export interface Props {
+  title: string;
+  description: string;
+  path: string;              // site-relative path, e.g. "/en-voz-alta/teachers/"
+  lang?: string;             // BCP 47 document language; defaults to English
+  ogImage?: string;          // site-relative or absolute
+  // Other-language versions of this page, emitted as hreflang alternates.
+  alternates?: { lang: string; path: string }[];
+}
+
+const { title, description, path, lang = 'en', ogImage = '/assets/og-home.png', alternates = [] } = Astro.props;
+const canonical = abs(normalizePublicPath(path));
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : abs(ogImage);
+const hreflang = alternates.length > 0
+  ? [{ lang, path }, ...alternates].map((alt) => ({ lang: alt.lang, href: abs(normalizePublicPath(alt.path)) }))
+  : [];
+---
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {hreflang.map((alt) => <link rel="alternate" hreflang={alt.lang} href={alt.href} />)}
+  <meta name="theme-color" content="#0b0b0a" />
+  <link rel="icon" href={rel('/favicon.ico')} sizes="any" />
+  <link rel="stylesheet" href={rel('/assets/style.css')} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content={ogImageUrl} />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageUrl} />
+</head>
+<body>
+  <a class="skip-link" href="#main">{lang === 'es' ? 'Ir al contenido' : 'Skip to content'}</a>
+
+  <div id="main">
+    <slot />
+  </div>
+
+  <footer class="standalone-footer" style="border-top:1px solid var(--border); margin-top:3rem;">
+    <div class="wrap" style="max-width:720px; padding-top:1.25rem; padding-bottom:2rem;">
+      <p style="margin:0;"><a href={`mailto:${SUPPORT_EMAIL}`}>Dudley Apps</a></p>
+    </div>
+  </footer>
+</body>
+</html>

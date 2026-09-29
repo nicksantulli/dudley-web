@@ -18,9 +18,11 @@ export interface Props {
   // App Store id for a Safari Smart App Banner. Set only on pages promoting a
   // single live app; omit on multi-app pages like the homepage.
   appBannerId?: string;
+  // Document language (BCP 47). Defaults to English; Spanish pages pass 'es'.
+  lang?: string;
 }
 
-const { title, description, path, ogImage = '/assets/og-home.png', schema = null, robots, breadcrumbLeaf, appBannerId } = Astro.props;
+const { title, description, path, ogImage = '/assets/og-home.png', schema = null, robots, breadcrumbLeaf, appBannerId, lang = 'en' } = Astro.props;
 const publicPath = normalizePublicPath(path);
 const canonical = abs(publicPath);
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : abs(ogImage);
@@ -89,7 +91,7 @@ const footerExplore = nav.filter((n) => n.label !== 'Contact' && n.label !== 'Su
 const normalized = '/' + segs.join('/');
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />

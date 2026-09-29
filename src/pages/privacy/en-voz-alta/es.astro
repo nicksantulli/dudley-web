@@ -1,0 +1,78 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { rel, SUPPORT_EMAIL, LEGAL_NAME } from '../../../consts';
+const description = `Política de privacidad de En Voz Alta, la app de práctica para la entrevista de ciudadanía de ${LEGAL_NAME}: lo que se queda en su iPhone y dónde participa Apple.`;
+---
+<Base title="Política de privacidad · En Voz Alta" description={description} path="/privacy/en-voz-alta/es" breadcrumbLeaf="Español" lang="es">
+  <main class="page">
+    <div class="wrap" style="max-width:720px;">
+      <a class="back" href={rel('/privacy/')} lang="en">← All privacy policies</a>
+      <h1>Política de privacidad</h1>
+      <p class="updated">En Voz Alta · Última actualización: 28 de septiembre de 2026 · <a href={rel('/privacy/en-voz-alta/')} hreflang="en" lang="en">Read in English</a></p>
+
+      <h2>En pocas palabras</h2>
+      <p>
+        En Voz Alta es una herramienta de práctica para la entrevista de ciudadanía de EE. UU. No tiene cuenta,
+        anuncios, rastreo, analíticas ni servidor. Su etiqueta de privacidad en el App Store es "Datos no
+        recopilados". Esta página explica lo que se queda en su iPhone y exactamente dónde participa Apple.
+      </p>
+
+      <h2>Lo que se queda en este iPhone</h2>
+      <ul>
+        <li>Su voz. Nunca se graba; el reconocimiento se hace en la memoria del teléfono y luego se descarta.</li>
+        <li>Lo que usted dijo, como texto. Se borra al terminar la ronda.</li>
+        <li>
+          Sus resultados de práctica, su fecha de presentación, la fecha opcional de su entrevista, su estado y los
+          nombres que escribió. <strong>No se incluyen en la copia de seguridad de iCloud</strong>, así que no pasan a
+          un teléfono nuevo.
+        </li>
+        <li>Su práctica del N-400. La app <strong>nunca guarda su sí o su no</strong>, ni nada de lo que diga en esas preguntas.</li>
+      </ul>
+
+      <h2>Lo que esta app nunca tiene</h2>
+      <ul>
+        <li>Sin cuenta, sin anuncios, sin rastreo, sin analíticas, sin servidor.</li>
+        <li>Nosotros nunca vemos sus respuestas.</li>
+      </ul>
+
+      <h2>Dónde participa Apple</h2>
+      <ul>
+        <li><strong>Voz.</strong> Esta app le pide al iPhone que reconozca la voz solo en el teléfono. El mensaje de permiso que ve lo escribe Apple.</li>
+        <li><strong>Archivos de dictado.</strong> El iPhone descarga de Apple los archivos de dictado o de voz en inglés. La descarga no envía nada de lo que usted dijo.</li>
+        <li><strong>Teclado.</strong> La tecla del micrófono del teclado es el Dictado de Apple, bajo la configuración de Apple, no de esta app. Los teclados de otras empresas están desactivados dentro de esta app.</li>
+        <li><strong>Compras.</strong> Las compras y la restauración pasan por su cuenta de Apple. Vemos totales de ventas, nunca quién compró.</li>
+        <li><strong>Compartir con desarrolladores.</strong> Si activó "Compartir con desarrolladores de apps" en la configuración del iPhone, Apple puede enviarnos informes de fallos y totales de uso sin su nombre.</li>
+        <li><strong>Recordatorios.</strong> Se crean en este iPhone. Ningún servidor los envía.</li>
+        <li><strong>Enlaces.</strong> Los enlaces (uscis.gov, senate.gov, directorios de ayuda legal) se abren en Safari. Esos sitios ven su visita.</li>
+      </ul>
+
+      <h2>Si nos escribe</h2>
+      <p>
+        El correo se abre solo si usted elige un enlace de soporte o la opción para reportar una respuesta incorrecta. Un
+        reporte de respuesta incorrecta incluye el número de la pregunta, la versión del examen y la versión de la
+        app, y ninguna de sus respuestas. Recibimos lo que usted decida enviar, incluida su dirección de correo, y lo
+        usamos solo para responderle y corregir la app.
+      </p>
+
+      <h2>Cómo borrar sus datos</h2>
+      <p>
+        En la app, la opción de Configuración para borrar los datos de práctica elimina todo lo que la app guardó en
+        este iPhone. Eliminar la app hace lo mismo. Pro queda en su cuenta de Apple y se puede restaurar.
+      </p>
+
+      <h2>Menores de edad</h2>
+      <p>En Voz Alta no está dirigida a menores de 13 años, y no recopilamos a sabiendas datos personales de ellos.</p>
+
+      <h2>Cambios</h2>
+      <p>Si esta política cambia de forma importante, publicaremos la nueva versión en esta dirección con la fecha actualizada arriba.</p>
+
+      <h2>Contacto</h2>
+      <p>¿Tiene preguntas? Escríbanos a <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
+
+      <p>
+        En Voz Alta es una herramienta de práctica. No es asesoría legal. No estamos afiliados con USCIS ni con
+        ninguna agencia del gobierno. La hace {LEGAL_NAME}.
+      </p>
+    </div>
+  </main>
+</Base>
