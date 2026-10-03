@@ -12,7 +12,7 @@
 // references both the page sitemap and the image sitemap. robots.txt lists the
 // image sitemap too (static, see public/robots.txt). DUD-209.
 
-import { readdirSync, readFileSync, writeFileSync, statSync, existsSync } from 'node:fs';
+import { copyFileSync, readdirSync, readFileSync, writeFileSync, statSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
 
 const DIST = 'dist';
@@ -72,8 +72,13 @@ function imagesIn(html) {
 const SKIP = /\/(privacy|support|404)(\/|$)/;
 
 const pages = htmlFiles(DIST)
-  .map((file) => ({ url: pageUrl(file), images: imagesIn(readFileSync(file, 'utf8')) }))
+  .map((file) => {
+    const html = readFileSync(file, 'utf8');
+    return { url: pageUrl(file), images: imagesIn(html), html };
+  })
   .filter((p) => p.images.length > 0 && !SKIP.test(p.url))
+  .filter((p) => !p.url.includes('/blog/tags/'))
+  .filter((p) => !/<meta name="robots" content="[^"]*noindex/i.test(p.html))
   .sort((a, b) => a.url.localeCompare(b.url));
 
 const imageCount = pages.reduce((n, p) => n + p.images.length, 0);
@@ -107,6 +112,7 @@ if (existsSync(indexPath)) {
     );
     writeFileSync(indexPath, idx);
   }
+  copyFileSync(indexPath, join(DIST, 'sitemap.xml'));
 } else {
   console.warn('sitemap-index.xml not found — image sitemap written but not referenced from index.');
 }

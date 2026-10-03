@@ -110,11 +110,11 @@ test('Last Human live facts agree across HTML and llms.txt', () => {
 test('Last Human privacy policy describes the shipped app, not a pre-launch plan', () => {
   const html = readFileSync(resolve('dist/privacy/last-human/index.html'), 'utf8');
   assert.match(html, /Last Human is available on the App Store/);
-  assert.match(html, /version 1\.0 as shipped/);
+  assert.match(html, /version 1\.0\.1/);
   assert.match(html, /PostHog/);
   assert.match(html, /Sentry/);
   assert.match(html, /non-personalized/);
-  assert.match(html, /optional watch-to-continue ad remains available once per run/);
+  assert.match(html, /optional rewarded ad can also let you continue a run/);
   assert.doesNotMatch(html, /coming soon|not yet available|planned|before launch/i);
 });
 
@@ -410,6 +410,86 @@ test('shared and rendered assets stay within budgets', () => {
     const files = ['avif', 'webp', 'png'].map((ext) => resolve(`public/assets/${name}.${ext}`)).filter(existsSync);
     assert.ok(files.some((file) => statSync(file).size <= 100_000), `${name} lacks a <=100 KB source`);
   }
+});
+
+test('built pages do not link to slashless internal routes', () => {
+  const failures = [];
+  for (const page of htmlPages()) {
+    for (const match of page.html.matchAll(/href="(\/[^"]*)"/g)) {
+      const path = match[1].split(/[?#]/)[0];
+      if (path === '/' || path.endsWith('/')) continue;
+      if (/\.[a-z0-9]+$/i.test(path)) continue;
+      failures.push(`${page.rel} → ${match[1]}`);
+    }
+  }
+  assert.deepEqual(failures, []);
+});
+
+test('sitemap.xml is the sitemap index and lists privacy and support', () => {
+  const index = readFileSync(resolve('dist/sitemap-index.xml'), 'utf8');
+  assert.equal(readFileSync(resolve('dist/sitemap.xml'), 'utf8'), index);
+  const pages = readFileSync(resolve('dist/sitemap-0.xml'), 'utf8');
+  assert.match(pages, /https:\/\/dudleyapps\.com\/privacy\//);
+  assert.match(pages, /https:\/\/dudleyapps\.com\/support\//);
+});
+
+test('image sitemap omits noindex tag pages', () => {
+  const images = readFileSync(resolve('dist/sitemap-images.xml'), 'utf8');
+  assert.doesNotMatch(images, /\/blog\/tags\//);
+});
+
+test('author page and bylines point at Nick Santulli', () => {
+  const author = readFileSync(resolve('dist/about/nick-santulli/index.html'), 'utf8');
+  assert.match(author, /Nick Santulli is the founder of Dudley Development\./);
+  assert.match(author, /"@type":"Person"/);
+  const post = readFileSync(resolve('dist/blog/can-iphone-apps-see-your-contacts/index.html'), 'utf8');
+  assert.match(post, /href="\/about\/nick-santulli\/"[^>]*>Written by Nicholas Santulli/);
+  assert.match(post, /Nick Santulli<\/a> is the founder of Dudley Development\./);
+});
+
+test('blog posts do not repeat the FAQ inside the article body', () => {
+  const html = readFileSync(resolve('dist/blog/what-is-ai-slop/index.html'), 'utf8');
+  const body = html.match(/<div class="post-body">[\s\S]*?<\/div>/)?.[0] ?? '';
+  assert.doesNotMatch(body, /<h2[^>]*>\s*(FAQ|Frequently Asked Questions)\s*<\/h2>/i);
+  assert.match(html, /id="faq-heading"/);
+});
+
+test('public pages and llms.txt do not use the internal codename Jev', () => {
+  for (const page of htmlPages()) assert.doesNotMatch(page.html, /\bJev\b/, page.rel);
+  assert.doesNotMatch(readFileSync(resolve('dist/llms.txt'), 'utf8'), /\bJev\b/);
+});
+
+test('the site links the Pattern Gym waitlist', () => {
+  const home = readFileSync(resolve('dist/index.html'), 'utf8');
+  assert.match(home, /href="https:\/\/waitlist\.dudleyapps\.com\/"/);
+});
+
+test('Packed Yet page has a store link, smart banner, and downloadUrl', () => {
+  const html = readFileSync(resolve('dist/apps/packed-yet/index.html'), 'utf8');
+  assert.match(html, /name="apple-itunes-app" content="app-id=6814598931"/);
+  assert.match(html, /id6814598931\?pt=128970277&(?:amp;)?ct=py-web-app&(?:amp;)?mt=8/);
+  const app = jsonLd(html).find((value) => value['@type'] === 'SoftwareApplication');
+  assert.match(app.downloadUrl, /id6814598931/);
+  assert.match(readFileSync(resolve('dist/llms.txt'), 'utf8'), /Packed Yet/);
+  assert.match(readFileSync(resolve('dist/llms.txt'), 'utf8'), /\/about\/nick-santulli\//);
+});
+
+test('blog posts use a generated share card', () => {
+  const html = readFileSync(resolve('dist/blog/what-is-ai-slop/index.html'), 'utf8');
+  assert.match(html, /property="og:image" content="https:\/\/dudleyapps\.com\/assets\/share\/what-is-ai-slop\.png"/);
+  assert.ok(existsSync(resolve('dist/assets/share/what-is-ai-slop.png')));
+});
+
+test('built campaign tokens stay within 30 characters', () => {
+  const texts = [...htmlPages().map((page) => page.html), readFileSync(resolve('dist/llms.txt'), 'utf8')];
+  const long = new Set();
+  for (const text of texts) {
+    for (const match of text.matchAll(/[?&](?:amp;)?ct=([^&"'\s<]+)/g)) {
+      const ct = decodeURIComponent(match[1]);
+      if (ct.length > 30) long.add(ct);
+    }
+  }
+  assert.deepEqual([...long], []);
 });
 
 test('homepage app bands deliver WebP sources without the legacy lockup', () => {

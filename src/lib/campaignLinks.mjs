@@ -11,7 +11,10 @@
 //   4. `mt=8` always included.
 //   5. No `ppid` on default product pages. CPP links must use their real assigned
 //      ppid from Apple; do not invent one.
-//   6. `status` reflects lifecycle truthfully:
+//   6. `ct` is at most 30 characters (Apple's campaign-link limit). Tokens
+//      already within that limit stay as registered. Longer tokens were
+//      shortened on 2026-10-03; see docs/ops/2026-10-03-campaign-ct-rename.json.
+//   7. `status` reflects lifecycle truthfully:
 //      - proposed: token added in code, not yet deployed
 //      - maintenance: existing non-primary surface kept tagged/accurate
 //      - active: reserved for explicitly owner-confirmed deployed GTM surfaces
@@ -173,7 +176,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach to Indie Dev Monday Look At Me — Table Talk link in the studio pitch (2026-09-25)
   {
-    ct: 'da_outreach_indiedevmonday_tt_20260925',
+    ct: 'tt-idm-20260925',
     appId: '6780714565',
     surface: 'Email outreach Indie Dev Monday Look At Me (Table Talk link in studio pitch)',
     path: 'email',
@@ -199,7 +202,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Soft email note to MacStories (voorhees@macstories.net) for Table Talk coverage consideration (2026-09-25)
   {
-    ct: 'tt_outreach_macstories_20260925',
+    ct: 'tt-macstories-20260925',
     appId: '6780714565',
     surface: 'Email outreach MacStories voorhees@macstories.net (Table Talk coverage consideration)',
     path: 'email',
@@ -212,7 +215,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach IndieTools free listing ASC link (Table Talk) (2026-09-25)
   {
-    ct: 'tt_outreach_indietools_20260925',
+    ct: 'tt-indietools-20260925',
     appId: '6780714565',
     surface: 'Email outreach IndieTools free listing (Table Talk)',
     path: 'email',
@@ -226,7 +229,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   // Email outreach IndieTools studio listing / Path B. One ct maps to one appId;
   // Table Talk is the studio utility exemplar (2026-09-25).
   {
-    ct: 'da_outreach_indietools_20260925',
+    ct: 'tt-indietools-studio-0925',
     appId: '6780714565',
     surface: 'Email outreach IndieTools studio listing Path B (Table Talk studio utility exemplar)',
     path: 'email',
@@ -239,7 +242,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach to Family Dinner Project via contact form for Table Talk (2026-09-25)
   {
-    ct: 'tt_outreach_familydinnerproject_20260925',
+    ct: 'tt-familydinner-20260925',
     appId: '6780714565',
     surface: 'Email outreach Family Dinner Project contact form (Table Talk)',
     path: 'email',
@@ -265,7 +268,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach to 9to5Mac Indie App Spotlight — Table Talk link (2026-09-25)
   {
-    ct: 'da_outreach_9to5mac_tt_20260925',
+    ct: 'tt-9to5mac-20260925',
     appId: '6780714565',
     surface: 'Email outreach 9to5Mac Indie App Spotlight (Table Talk link)',
     path: 'email',
@@ -278,7 +281,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach to MS Extension webteam for a Table Talk resource-adjacency note (2026-09-25)
   {
-    ct: 'tt_outreach_msextension_20260925',
+    ct: 'tt-msextension-20260925',
     appId: '6780714565',
     surface: 'Email outreach MS Extension webteam (Table Talk resource-adjacency note)',
     path: 'email',
@@ -291,7 +294,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach LaunchFree free listing ASC link (Table Talk) (2026-09-25)
   {
-    ct: 'tt_outreach_launchfree_20260925',
+    ct: 'tt-launchfree-20260925',
     appId: '6780714565',
     surface: 'Email outreach LaunchFree free listing (Table Talk)',
     path: 'email',
@@ -305,7 +308,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   // Email outreach LaunchFree studio hub. One ct maps to one appId;
   // Table Talk is the studio utility exemplar (2026-09-25).
   {
-    ct: 'da_outreach_launchfree_20260925',
+    ct: 'tt-launchfree-studio-0925',
     appId: '6780714565',
     surface: 'Email outreach LaunchFree studio hub (Table Talk studio utility exemplar)',
     path: 'email',
@@ -318,7 +321,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach to Money Prodigy for a Table Talk resource-adjacency note (2026-09-25)
   {
-    ct: 'tt_outreach_moneyprodigy_20260925',
+    ct: 'tt-moneyprodigy-20260925',
     appId: '6780714565',
     surface: 'Email outreach Money Prodigy resource adjacency (Table Talk)',
     path: 'email',
@@ -331,7 +334,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach VibbleLaunch free listing ASC link (Table Talk) (2026-09-25)
   {
-    ct: 'tt_outreach_vibblelaunch_20260925',
+    ct: 'tt-vibble-20260925',
     appId: '6780714565',
     surface: 'Email outreach VibbleLaunch free listing (Table Talk)',
     path: 'email',
@@ -345,7 +348,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   // Email outreach VibbleLaunch studio hub. One ct maps to one appId;
   // Table Talk is the studio utility exemplar (2026-09-25).
   {
-    ct: 'da_outreach_vibblelaunch_20260925',
+    ct: 'tt-vibble-studio-20260925',
     appId: '6780714565',
     surface: 'Email outreach VibbleLaunch studio hub (Table Talk studio utility exemplar)',
     path: 'email',
@@ -358,7 +361,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach to Gourmet Host for a Table Talk soft tip (2026-09-25)
   {
-    ct: 'tt_outreach_gourmethost_20260925',
+    ct: 'tt-gourmethost-20260925',
     appId: '6780714565',
     surface: 'Email outreach Gourmet Host (Table Talk soft tip)',
     path: 'email',
@@ -384,7 +387,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach to The Dinner Plan (Maggie Hoffman) for a Table Talk press tip (2026-09-25)
   {
-    ct: 'tt_outreach_dinnerplan_20260925',
+    ct: 'tt-dinnerplan-20260925',
     appId: '6780714565',
     surface: 'Email outreach The Dinner Plan Maggie Hoffman (Table Talk press tip)',
     path: 'email',
@@ -410,7 +413,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Common Sense Media family Request a review form for a Table Talk soft tip (2026-09-25)
   {
-    ct: 'tt_outreach_commonsensemedia_20260925',
+    ct: 'tt-commonsensemedia-0925',
     appId: '6780714565',
     surface: 'Email outreach Common Sense Media Request a review form (Table Talk soft tip)',
     path: 'email',
@@ -436,7 +439,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Soft tip email iDownloadBlog (Table Talk) 2026-09-25
   {
-    ct: 'tt_outreach_idownloadblog_20260925',
+    ct: 'tt-idownloadblog-20260925',
     appId: '6780714565',
     surface: 'Email outreach iDownloadBlog (Table Talk soft tip)',
     path: 'email',
@@ -449,7 +452,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Soft tip to While Entertaining / Amber Mayfield for a Table Talk mention (2026-09-25)
   {
-    ct: 'tt_outreach_whileentertaining_20260925',
+    ct: 'tt-whileentertain-0925',
     appId: '6780714565',
     surface: 'Email outreach While Entertaining Amber Mayfield (Table Talk soft tip)',
     path: 'email',
@@ -475,7 +478,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email Real Mom Nutrition editorial resource tip (Table Talk) 2026-09-26
   {
-    ct: 'tt_outreach_realmomnutrition_20260926',
+    ct: 'tt-realmom-20260926',
     appId: '6780714565',
     surface: 'Email Real Mom Nutrition editorial resource tip (Table Talk) 2026-09-26',
     path: 'email',
@@ -488,7 +491,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email Nebraska Extension EAT Family Style resource-update tip (Table Talk) 2026-09-26
   {
-    ct: 'tt_outreach_nebraskaextension_20260926',
+    ct: 'tt-nebraskaext-20260926',
     appId: '6780714565',
     surface: 'Email Nebraska Extension EAT Family Style resource-update tip (Table Talk) 2026-09-26',
     path: 'email',
@@ -605,7 +608,7 @@ export const TOKEN_REGISTRY = Object.freeze([
     status: 'maintenance',
   },
   {
-    ct: 'pp-web-blog-fed-opinion-vibe-sep26-v1',
+    ct: 'pp-w-fed-opinion-vibe',
     appId: '6775539250',
     surface: '/blog/fed-opinion-vibe/ inline body link',
     path: '/blog/fed-opinion-vibe/',
@@ -617,7 +620,7 @@ export const TOKEN_REGISTRY = Object.freeze([
     status: 'maintenance',
   },
   {
-    ct: 'pp-web-blog-best-satirical-sep26-v1',
+    ct: 'pp-w-best-satirical-ios-games',
     appId: '6775539250',
     surface: '/blog/best-satirical-ios-games/ inline body link',
     path: '/blog/best-satirical-ios-games/',
@@ -680,7 +683,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach to Council for Economic Education press / EconEdLink (literacy and classroom framing only) (2026-09-25)
   {
-    ct: 'eb_outreach_econedlink_20260925',
+    ct: 'eb-econedlink-20260925',
     appId: '6780714383',
     surface: 'Email outreach EconEdLink / Council for Economic Education press (literacy and classroom framing)',
     path: 'email',
@@ -706,7 +709,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach IndieTools free listing ASC link (EconByte) (2026-09-25)
   {
-    ct: 'eb_outreach_indietools_20260925',
+    ct: 'eb-indietools-20260925',
     appId: '6780714383',
     surface: 'Email outreach IndieTools free listing (EconByte)',
     path: 'email',
@@ -719,7 +722,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach to 9to5Mac Indie App Spotlight — EconByte link (2026-09-25)
   {
-    ct: 'da_outreach_9to5mac_eb_20260925',
+    ct: 'eb-9to5mac-20260925',
     appId: '6780714383',
     surface: 'Email outreach 9to5Mac Indie App Spotlight (EconByte link)',
     path: 'email',
@@ -784,7 +787,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach LaunchFree free listing ASC link (EconByte) (2026-09-25)
   {
-    ct: 'eb_outreach_launchfree_20260925',
+    ct: 'eb-launchfree-20260925',
     appId: '6780714383',
     surface: 'Email outreach LaunchFree free listing (EconByte)',
     path: 'email',
@@ -810,7 +813,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach VibbleLaunch free listing ASC link (EconByte) (2026-09-25)
   {
-    ct: 'eb_outreach_vibblelaunch_20260925',
+    ct: 'eb-vibble-20260925',
     appId: '6780714383',
     surface: 'Email outreach VibbleLaunch free listing (EconByte)',
     path: 'email',
@@ -823,7 +826,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach to Teacher Money Show for an EconByte soft literacy intro (2026-09-25)
   {
-    ct: 'eb_outreach_teachermoney_20260925',
+    ct: 'eb-teachermoney-20260925',
     appId: '6780714383',
     surface: 'Email outreach Teacher Money Show (EconByte soft literacy intro)',
     path: 'email',
@@ -1070,7 +1073,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach to TouchArcade tips@ for a Last Human editorial tip (2026-09-25)
   {
-    ct: 'lh_outreach_toucharcade_20260925',
+    ct: 'lh-toucharcade-20260925',
     appId: '6808782611',
     surface: 'Email outreach TouchArcade tips@ (Last Human)',
     path: 'email',
@@ -1083,7 +1086,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach to Indie Dev Monday Look At Me — Last Human link in the studio pitch (2026-09-25)
   {
-    ct: 'da_outreach_indiedevmonday_lh_20260925',
+    ct: 'lh-idm-20260925',
     appId: '6808782611',
     surface: 'Email outreach Indie Dev Monday Look At Me (Last Human link in studio pitch)',
     path: 'email',
@@ -1096,7 +1099,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach to Pocket Gamer reviews@ for a Last Human review tip (2026-09-25)
   {
-    ct: 'lh_outreach_pocketgamer_20260925',
+    ct: 'lh-pocketgamer-20260925',
     appId: '6808782611',
     surface: 'Email outreach Pocket Gamer reviews@ (Last Human review tip)',
     path: 'email',
@@ -1135,7 +1138,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach IndieTools free listing / Path B ASC link (Last Human) (2026-09-25)
   {
-    ct: 'lh_outreach_indietools_20260925',
+    ct: 'lh-indietools-20260925',
     appId: '6808782611',
     surface: 'Email outreach IndieTools free listing Path B (Last Human)',
     path: 'email',
@@ -1174,7 +1177,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach to Siliconera tips@ for a Last Human soft tip (2026-09-25)
   {
-    ct: 'lh_outreach_siliconera_20260925',
+    ct: 'lh-siliconera-20260925',
     appId: '6808782611',
     surface: 'Email outreach Siliconera tips@ (Last Human soft tip)',
     path: 'email',
@@ -1187,7 +1190,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach LaunchFree free listing ASC link (Last Human) (2026-09-25)
   {
-    ct: 'lh_outreach_launchfree_20260925',
+    ct: 'lh-launchfree-20260925',
     appId: '6808782611',
     surface: 'Email outreach LaunchFree free listing (Last Human)',
     path: 'email',
@@ -1200,7 +1203,7 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email outreach VibbleLaunch free listing ASC link (Last Human) (2026-09-25)
   {
-    ct: 'lh_outreach_vibblelaunch_20260925',
+    ct: 'lh-vibble-20260925',
     appId: '6808782611',
     surface: 'Email outreach VibbleLaunch free listing (Last Human)',
     path: 'email',
@@ -1265,13 +1268,51 @@ export const TOKEN_REGISTRY = Object.freeze([
   },
   // Email Indie Game Website coverage tip (Last Human) 2026-09-26
   {
-    ct: 'lh_outreach_indiegamewebsite_20260926',
+    ct: 'lh-indiegame-20260926',
     appId: '6808782611',
     surface: 'Email Indie Game Website coverage tip (Last Human) 2026-09-26',
     path: 'email',
     channel: 'email',
     ppid: null,
     registeredAt: '2026-09-26',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+
+  // ── Packed Yet? Trip Checklist (6814598931) — live 2026-10-02 ───────────
+  {
+    ct: 'py-web-home',
+    appId: '6814598931',
+    surface: 'Homepage app card badge',
+    path: '/',
+    channel: 'web',
+    ppid: null,
+    registeredAt: '2026-10-03',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  {
+    ct: 'py-web-app',
+    appId: '6814598931',
+    surface: '/apps/packed-yet/ AppCTA',
+    path: '/apps/packed-yet/',
+    channel: 'web',
+    ppid: null,
+    registeredAt: '2026-10-03',
+    activatedAt: null,
+    firstVerifiedAt: null,
+    status: 'proposed',
+  },
+  {
+    ct: 'py-web-llms',
+    appId: '6814598931',
+    surface: 'llms.txt app link',
+    path: '/llms.txt',
+    channel: 'web',
+    ppid: null,
+    registeredAt: '2026-10-03',
     activatedAt: null,
     firstVerifiedAt: null,
     status: 'proposed',
@@ -1300,10 +1341,10 @@ export const CT_TO_PATH = Object.freeze(
 // Blog token patterns — generated per-post, not statically listed.
 // Each function below produces tokens matching these patterns.
 export const BLOG_TOKEN_PATTERNS = Object.freeze([
-  { pattern: /^vr-web-blog-.+-aug26-v1$/, appId: '6780704282' },
-  { pattern: /^pp-web-blog-.+-sep26-v1$/, appId: '6775539250' },
-  { pattern: /^eb-web-blog-.+-sep26-v1$/, appId: '6780714383' },
-  { pattern: /^tt-web-blog-.+-sep26-v1$/, appId: '6780714565' },
+  { pattern: /^vr-w-[a-z0-9]+(?:-[a-z0-9]+)*$/, appId: '6780704282' },
+  { pattern: /^pp-w-[a-z0-9]+(?:-[a-z0-9]+)*$/, appId: '6775539250' },
+  { pattern: /^eb-w-[a-z0-9]+(?:-[a-z0-9]+)*$/, appId: '6780714383' },
+  { pattern: /^tt-w-[a-z0-9]+(?:-[a-z0-9]+)*$/, appId: '6780714565' },
 ]);
 
 // Explicit template-class tokens allowed across many paths.
@@ -1325,6 +1366,7 @@ export const FIRST_PARTY_APP_IDS = Object.freeze([
   '6780714383', // EconByte: Daily Economics
   '6779785617', // Dude, Where's This House?
   '6808782611', // Last Human: Dodge the Bots
+  '6814598931', // Packed Yet? Trip Checklist
 ]);
 
 // ---------------------------------------------------------------------------
@@ -1355,6 +1397,7 @@ const APP_STORE_PROVIDER_TOKENS = Object.freeze({
   '6780714383': PROVIDER_TOKEN, // EconByte: Daily Economics
   '6779785617': PROVIDER_TOKEN, // Dude, Where's This House?
   '6808782611': PROVIDER_TOKEN, // Last Human: Dodge the Bots
+  '6814598931': PROVIDER_TOKEN, // Packed Yet? Trip Checklist
 });
 
 // Placement token sets — keyed by app, grouped by surface.
@@ -1378,34 +1421,34 @@ export const TABLE_TALK_ASC_TOKENS = Object.freeze({
   llms:       'tt-web-llms-sep26-v1',
   // Off-site email outreach — one-off dated tokens, not a blog slug generator.
   outreachPartypro20260925: 'tt_outreach_partypro_20260925',
-  outreachIndieDevMonday20260925: 'da_outreach_indiedevmonday_tt_20260925',
+  outreachIndieDevMonday20260925: 'tt-idm-20260925',
   outreachTidbits20260925: 'tt_outreach_tidbits_20260925',
-  outreachMacstories20260925: 'tt_outreach_macstories_20260925',
-  outreachIndietools20260925: 'tt_outreach_indietools_20260925',
+  outreachMacstories20260925: 'tt-macstories-20260925',
+  outreachIndietools20260925: 'tt-indietools-20260925',
   // Studio IndieTools listing. Registry is one ct → one appId; Table Talk is the exemplar.
-  outreachIndietoolsStudio20260925: 'da_outreach_indietools_20260925',
-  outreachFamilydinnerproject20260925: 'tt_outreach_familydinnerproject_20260925',
+  outreachIndietoolsStudio20260925: 'tt-indietools-studio-0925',
+  outreachFamilydinnerproject20260925: 'tt-familydinner-20260925',
   outreachSixcolors20260925: 'tt_outreach_sixcolors_20260925',
-  outreach9to5mac20260925: 'da_outreach_9to5mac_tt_20260925',
-  outreachMsextension20260925: 'tt_outreach_msextension_20260925',
-  outreachLaunchfree20260925: 'tt_outreach_launchfree_20260925',
+  outreach9to5mac20260925: 'tt-9to5mac-20260925',
+  outreachMsextension20260925: 'tt-msextension-20260925',
+  outreachLaunchfree20260925: 'tt-launchfree-20260925',
   // Studio LaunchFree listing. Registry is one ct → one appId; Table Talk is the exemplar.
-  outreachLaunchfreeStudio20260925: 'da_outreach_launchfree_20260925',
-  outreachMoneyprodigy20260925: 'tt_outreach_moneyprodigy_20260925',
-  outreachVibblelaunch20260925: 'tt_outreach_vibblelaunch_20260925',
+  outreachLaunchfreeStudio20260925: 'tt-launchfree-studio-0925',
+  outreachMoneyprodigy20260925: 'tt-moneyprodigy-20260925',
+  outreachVibblelaunch20260925: 'tt-vibble-20260925',
   // Studio VibbleLaunch listing. Registry is one ct → one appId; Table Talk is the exemplar.
-  outreachVibblelaunchStudio20260925: 'da_outreach_vibblelaunch_20260925',
-  outreachGourmethost20260925: 'tt_outreach_gourmethost_20260925',
+  outreachVibblelaunchStudio20260925: 'tt-vibble-studio-20260925',
+  outreachGourmethost20260925: 'tt-gourmethost-20260925',
   outreachBgbarrage20260925: 'tt_outreach_bgbarrage_20260925',
-  outreachDinnerplan20260925: 'tt_outreach_dinnerplan_20260925',
+  outreachDinnerplan20260925: 'tt-dinnerplan-20260925',
   outreachBettyeatz20260925: 'tt_outreach_bettyeatz_20260925',
-  outreachCommonsensemedia20260925: 'tt_outreach_commonsensemedia_20260925',
+  outreachCommonsensemedia20260925: 'tt-commonsensemedia-0925',
   outreachAppaddict20260925: 'tt_outreach_appaddict_20260925',
-  outreachIdownloadblog20260925: 'tt_outreach_idownloadblog_20260925',
-  outreachWhileentertaining20260925: 'tt_outreach_whileentertaining_20260925',
+  outreachIdownloadblog20260925: 'tt-idownloadblog-20260925',
+  outreachWhileentertaining20260925: 'tt-whileentertain-0925',
   pressDicetower20260926: 'tt_press_dicetower_20260926',
-  outreachRealmomnutrition20260926: 'tt_outreach_realmomnutrition_20260926',
-  outreachNebraskaextension20260926: 'tt_outreach_nebraskaextension_20260926',
+  outreachRealmomnutrition20260926: 'tt-realmom-20260926',
+  outreachNebraskaextension20260926: 'tt-nebraskaext-20260926',
 });
 
 export const VIBERATER_ASC_TOKENS = Object.freeze({
@@ -1420,8 +1463,8 @@ export const VIBERATER_ASC_TOKENS = Object.freeze({
 export const POWELL_PROWL_ASC_TOKENS = Object.freeze({
   homeCard:         'pp-web-card-sep26-v1',                     // homepage app card badge
   appDetail:        'pp-web-app-sep26-v1',                      // /apps/monetary-policy-independence-day/ CTA
-  blogFedOpinion:   'pp-web-blog-fed-opinion-vibe-sep26-v1',    // /blog/fed-opinion-vibe/ inline link
-  blogBestSatirical:'pp-web-blog-best-satirical-sep26-v1',      // /blog/best-satirical-ios-games/ inline link
+  blogFedOpinion:   'pp-w-fed-opinion-vibe',            // /blog/fed-opinion-vibe/ inline link
+  blogBestSatirical:'pp-w-best-satirical-ios-games',    // /blog/best-satirical-ios-games/ inline link
   llms:             'pp-web-llms-sep26-v1',                     // llms.txt app link
 });
 
@@ -1430,18 +1473,18 @@ export const ECONBYTE_ASC_TOKENS = Object.freeze({
   appDetail: 'eb-web-app-sep26-v1',  // /apps/econbyte/ CTA
   llms:      'eb-web-llms-sep26-v1', // llms.txt app link
   // Off-site email outreach — one-off dated token, not a blog slug generator.
-  outreachEconedlink20260925: 'eb_outreach_econedlink_20260925',
+  outreachEconedlink20260925: 'eb-econedlink-20260925',
   outreachMoneygirl20260925: 'eb_outreach_moneygirl_20260925',
-  outreachIndietools20260925: 'eb_outreach_indietools_20260925',
-  outreach9to5mac20260925: 'da_outreach_9to5mac_eb_20260925',
+  outreachIndietools20260925: 'eb-indietools-20260925',
+  outreach9to5mac20260925: 'eb-9to5mac-20260925',
   outreachJumpstart20260925: 'eb_outreach_jumpstart_20260925',
   outreachNgpf20260925: 'eb_outreach_ngpf_20260925',
   outreachFreded20260925: 'eb_outreach_freded_20260925',
   outreachEdshelf20260925: 'eb_outreach_edshelf_20260925',
-  outreachLaunchfree20260925: 'eb_outreach_launchfree_20260925',
+  outreachLaunchfree20260925: 'eb-launchfree-20260925',
   outreachLearnamic20260925: 'eb_outreach_learnamic_20260925',
-  outreachVibblelaunch20260925: 'eb_outreach_vibblelaunch_20260925',
-  outreachTeachermoney20260925: 'eb_outreach_teachermoney_20260925',
+  outreachVibblelaunch20260925: 'eb-vibble-20260925',
+  outreachTeachermoney20260925: 'eb-teachermoney-20260925',
   // Off-site square promo — one-off dated token, not a blog slug generator.
   xPromoSquare20261002: 'eb_promo_square_x_20261002',
 });
@@ -1469,22 +1512,28 @@ export const LAST_HUMAN_ASC_TOKENS = Object.freeze({
   igPromoBots20260929: 'lh_promo_bots_ig_20260929',
   igPromoHr20260930: 'lh_promo_hr_ig_20260930',
   // Off-site email outreach — one-off dated tokens, not a blog slug generator.
-  outreachToucharcade20260925: 'lh_outreach_toucharcade_20260925',
-  outreachIndieDevMonday20260925: 'da_outreach_indiedevmonday_lh_20260925',
-  outreachPocketgamer20260925: 'lh_outreach_pocketgamer_20260925',
+  outreachToucharcade20260925: 'lh-toucharcade-20260925',
+  outreachIndieDevMonday20260925: 'lh-idm-20260925',
+  outreachPocketgamer20260925: 'lh-pocketgamer-20260925',
   outreach148apps20260925: 'lh_outreach_148apps_20260925',
   outreachCultofmac20260925: 'lh_outreach_cultofmac_20260925',
-  outreachIndietools20260925: 'lh_outreach_indietools_20260925',
+  outreachIndietools20260925: 'lh-indietools-20260925',
   outreachGamezebo20260925: 'lh_outreach_gamezebo_20260925',
   outreachAppspy20260925: 'lh_outreach_appspy_20260925',
-  outreachSiliconera20260925: 'lh_outreach_siliconera_20260925',
-  outreachLaunchfree20260925: 'lh_outreach_launchfree_20260925',
-  outreachVibblelaunch20260925: 'lh_outreach_vibblelaunch_20260925',
+  outreachSiliconera20260925: 'lh-siliconera-20260925',
+  outreachLaunchfree20260925: 'lh-launchfree-20260925',
+  outreachVibblelaunch20260925: 'lh-vibble-20260925',
   outreachKodeco20260925: 'lh_outreach_kodeco_20260925',
   outreachLaunched20260925: 'lh_outreach_launched_20260925',
   pressCompileswift20260926: 'lh_press_compileswift_20260926',
   pressGamigion20260926: 'lh_press_gamigion_20260926',
-  outreachIndiegamewebsite20260926: 'lh_outreach_indiegamewebsite_20260926',
+  outreachIndiegamewebsite20260926: 'lh-indiegame-20260926',
+});
+
+export const PACKED_YET_ASC_TOKENS = Object.freeze({
+  homeCard: 'py-web-home',
+  appDetail: 'py-web-app',
+  llms: 'py-web-llms',
 });
 
 export const LLMS_APP_STORE_TOKENS = Object.freeze({
@@ -1494,6 +1543,7 @@ export const LLMS_APP_STORE_TOKENS = Object.freeze({
   '6780714383': ECONBYTE_ASC_TOKENS.llms,
   '6779785617': DUDE_WHERES_ASC_TOKENS.llms,
   '6808782611': LAST_HUMAN_ASC_TOKENS.llms,
+  '6814598931': PACKED_YET_ASC_TOKENS.llms,
 });
 
 export const HOME_APP_STORE_TOKENS = Object.freeze({
@@ -1503,58 +1553,73 @@ export const HOME_APP_STORE_TOKENS = Object.freeze({
   '6780714383': ECONBYTE_ASC_TOKENS.homeCard,
   '6779785617': DUDE_WHERES_ASC_TOKENS.homeCard,
   '6808782611': LAST_HUMAN_ASC_TOKENS.homeCard,
+  '6814598931': PACKED_YET_ASC_TOKENS.homeCard,
 });
 
 // ---------------------------------------------------------------------------
 // Token generators for blog post CTAs
+// Apple's campaign-link ct limit is 30 characters. Prefix + "-w-" leaves 25
+// characters for a readable slug fragment. Drop middle words before cutting
+// a word so nearby posts stay distinct.
 // ---------------------------------------------------------------------------
 
-/** Per-post VibeRater blog CTA token. Pattern: vr-web-blog-<slug>-aug26-v1 */
+export const CT_MAX_LENGTH = 30;
+
+const BLOG_TOKEN_STOP_WORDS = new Set([
+  'a', 'an', 'the', 'to', 'of', 'in', 'on', 'for', 'and', 'or',
+  'can', 'do', 'does', 'did', 'what', 'is', 'are', 'was',
+  'your', 'you', 'my', 'me', 'how', 'why', 'should', 'when',
+  'if', 'still', 'with', 'from', 'by', 'get', 'made', 'it', 'that', 'this',
+]);
+
+export function shortBlogToken(prefix, slug) {
+  const safe = String(slug ?? '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+  if (!safe) throw new Error('Blog slug is required for a campaign token');
+  const head = `${prefix}-w-`;
+  const budget = CT_MAX_LENGTH - head.length;
+  if (safe.length <= budget) return head + safe;
+  const words = safe.split('-').filter(Boolean);
+  const last = words[words.length - 1];
+  let pool = words.slice(0, -1).filter((word) => !BLOG_TOKEN_STOP_WORDS.has(word));
+  if (!pool.length) pool = words.slice(0, -1);
+  const kept = [];
+  for (const word of pool) {
+    const trial = [...kept, word, last].join('-');
+    if (trial.length <= budget) kept.push(word);
+  }
+  let body = [...kept, last].join('-');
+  if (body.length > budget) {
+    body = kept[0] ? `${kept[0]}-${last}` : last;
+    if (body.length > budget) body = body.slice(0, budget).replace(/-+$/g, '');
+  }
+  const token = head + body;
+  if (!body || token.length > CT_MAX_LENGTH) {
+    throw new Error(`Campaign token exceeds ${CT_MAX_LENGTH} characters`);
+  }
+  return token;
+}
+
+/** Per-post VibeRater blog CTA token. Pattern: vr-w-<slug> */
 export function blogCampaignToken(slug) {
-  const safeSlug = String(slug ?? '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '')
-    .slice(0, 26)
-    .replace(/-+$/, '');
-  if (!safeSlug) throw new Error('Blog slug is required for a campaign token');
-  return `vr-web-blog-${safeSlug}-aug26-v1`;
+  return shortBlogToken('vr', slug);
 }
 
-/** Per-post Powell Prowl blog CTA token. Pattern: pp-web-blog-<slug>-sep26-v1 */
+/** Per-post Powell Prowl blog CTA token. Pattern: pp-w-<slug> */
 export function powellProwlBlogCampaignToken(slug) {
-  const safeSlug = String(slug ?? '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '')
-    .slice(0, 24)
-    .replace(/-+$/, '');
-  if (!safeSlug) throw new Error('Blog slug is required for a campaign token');
-  return `pp-web-blog-${safeSlug}-sep26-v1`;
+  return shortBlogToken('pp', slug);
 }
 
-/** Per-post EconByte blog CTA token. Pattern: eb-web-blog-<slug>-sep26-v1 */
+/** Per-post EconByte blog CTA token. Pattern: eb-w-<slug> */
 export function econbyteBlogCampaignToken(slug) {
-  const safeSlug = String(slug ?? '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '')
-    .slice(0, 24)
-    .replace(/-+$/, '');
-  if (!safeSlug) throw new Error('Blog slug is required for a campaign token');
-  return `eb-web-blog-${safeSlug}-sep26-v1`;
+  return shortBlogToken('eb', slug);
 }
 
-/** Per-post Table Talk blog CTA token. Pattern: tt-web-blog-<slug>-sep26-v1 */
+/** Per-post Table Talk blog CTA token. Pattern: tt-w-<slug> */
 export function tableTalkBlogCampaignToken(slug) {
-  const safeSlug = String(slug ?? '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '')
-    .slice(0, 24)
-    .replace(/-+$/, '');
-  if (!safeSlug) throw new Error('Blog slug is required for a campaign token');
-  return `tt-web-blog-${safeSlug}-sep26-v1`;
+  return shortBlogToken('tt', slug);
 }
 
 function normalizeLogicalPath(path) {
@@ -1649,6 +1714,9 @@ export function appStoreCampaignUrl(appStoreId, campaignToken) {
   if (!appStoreId) return '';
   if (!campaignToken || !TOKEN_PATTERN.test(campaignToken)) {
     throw new Error('A lowercase campaign token is required');
+  }
+  if (campaignToken.length > CT_MAX_LENGTH) {
+    throw new Error(`Campaign token exceeds ${CT_MAX_LENGTH} characters`);
   }
   const providerToken = validateProviderToken(APP_STORE_PROVIDER_TOKENS[appStoreId]);
   const slug = APP_STORE_SLUGS[appStoreId];

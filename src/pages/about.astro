@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { rel, SUPPORT_EMAIL, CONTACT_EMAIL, LEGAL_NAME } from '../consts';
+import { liveApps, storeListName } from '../lib/liveApps.mjs';
 const description = 'Dudley Development builds and publishes iPhone games, conversation tools, social apps, and plain-English learning products.';
 
 // "The apps" is data-driven off the same content collection that powers the app cards,
@@ -9,9 +10,11 @@ const description = 'Dudley Development builds and publishes iPhone games, conve
 // live/coming-soon status here can never drift from the rest of the site again.
 // Client work (developedFor set, e.g. HomeLight) is excluded — those are the studio's
 // own apps only. Flip an app's `status` in its .mdx and every surface updates together.
-const ownApps = (await getCollection('apps'))
+const allApps = await getCollection('apps');
+const ownApps = allApps
   .filter((a) => !a.data.developedFor)
   .sort((x, y) => x.data.order - y.data.order);
+const storeListed = liveApps(allApps).filter((app) => !app.data.developedFor && app.data.landingPage !== false);
 const statusLabel = (s: string) =>
   s === 'live' ? 'Live on the App Store' : s === 'in_development' ? 'In development' : 'Coming soon';
 ---
@@ -24,7 +27,7 @@ const statusLabel = (s: string) =>
       </nav>
 
       <h1>About Dudley Development</h1>
-      <p class="updated">{LEGAL_NAME} · Founded by Nicholas Santulli · United States</p>
+      <p class="updated">{LEGAL_NAME} · Founded by <a href={rel('/about/nick-santulli/')}>Nicholas Santulli</a> · United States</p>
 
       <p class="tldr">
         Dudley Development builds iPhone products you can understand before you download: games,
@@ -55,6 +58,12 @@ const statusLabel = (s: string) =>
           </li>
         ))}
       </ul>
+      <p>Already on the App Store: {storeListed.flatMap((app, index) => {
+        const link = <a href={rel(`/apps/${app.id}/`)}>{storeListName(app)}</a>;
+        if (index === 0) return [link];
+        const joiner = index === storeListed.length - 1 ? (storeListed.length === 2 ? ' and ' : ', and ') : ', ';
+        return [joiner, link];
+      })}.</p>
       <p>See them all — plus our client work — on the <a href={rel('/#apps')}>home page</a>.</p>
 
       <h2>Get in touch</h2>

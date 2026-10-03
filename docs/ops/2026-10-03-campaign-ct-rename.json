@@ -1,0 +1,445 @@
+{
+  "renamedOn": "2026-10-03",
+  "reason": "Apple's campaign-link help page limits the ct parameter to 30 characters. Tokens already within that limit were left unchanged. pt=128970277 and mt=8 are unchanged.",
+  "limit": 30,
+  "renames": [
+    {
+      "old": "da_outreach_9to5mac_eb_20260925",
+      "new": "eb-9to5mac-20260925",
+      "appId": "6780714383",
+      "surface": "registry"
+    },
+    {
+      "old": "da_outreach_9to5mac_tt_20260925",
+      "new": "tt-9to5mac-20260925",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "da_outreach_indiedevmonday_lh_20260925",
+      "new": "lh-idm-20260925",
+      "appId": "6808782611",
+      "surface": "registry"
+    },
+    {
+      "old": "da_outreach_indiedevmonday_tt_20260925",
+      "new": "tt-idm-20260925",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "da_outreach_indietools_20260925",
+      "new": "tt-indietools-studio-0925",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "da_outreach_launchfree_20260925",
+      "new": "tt-launchfree-studio-0925",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "da_outreach_vibblelaunch_20260925",
+      "new": "tt-vibble-studio-20260925",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "eb_outreach_econedlink_20260925",
+      "new": "eb-econedlink-20260925",
+      "appId": "6780714383",
+      "surface": "registry"
+    },
+    {
+      "old": "eb_outreach_indietools_20260925",
+      "new": "eb-indietools-20260925",
+      "appId": "6780714383",
+      "surface": "registry"
+    },
+    {
+      "old": "eb_outreach_launchfree_20260925",
+      "new": "eb-launchfree-20260925",
+      "appId": "6780714383",
+      "surface": "registry"
+    },
+    {
+      "old": "eb_outreach_teachermoney_20260925",
+      "new": "eb-teachermoney-20260925",
+      "appId": "6780714383",
+      "surface": "registry"
+    },
+    {
+      "old": "eb_outreach_vibblelaunch_20260925",
+      "new": "eb-vibble-20260925",
+      "appId": "6780714383",
+      "surface": "registry"
+    },
+    {
+      "old": "lh_outreach_indiegamewebsite_20260926",
+      "new": "lh-indiegame-20260926",
+      "appId": "6808782611",
+      "surface": "registry"
+    },
+    {
+      "old": "lh_outreach_indietools_20260925",
+      "new": "lh-indietools-20260925",
+      "appId": "6808782611",
+      "surface": "registry"
+    },
+    {
+      "old": "lh_outreach_launchfree_20260925",
+      "new": "lh-launchfree-20260925",
+      "appId": "6808782611",
+      "surface": "registry"
+    },
+    {
+      "old": "lh_outreach_pocketgamer_20260925",
+      "new": "lh-pocketgamer-20260925",
+      "appId": "6808782611",
+      "surface": "registry"
+    },
+    {
+      "old": "lh_outreach_siliconera_20260925",
+      "new": "lh-siliconera-20260925",
+      "appId": "6808782611",
+      "surface": "registry"
+    },
+    {
+      "old": "lh_outreach_toucharcade_20260925",
+      "new": "lh-toucharcade-20260925",
+      "appId": "6808782611",
+      "surface": "registry"
+    },
+    {
+      "old": "lh_outreach_vibblelaunch_20260925",
+      "new": "lh-vibble-20260925",
+      "appId": "6808782611",
+      "surface": "registry"
+    },
+    {
+      "old": "pp-web-blog-best-satirical-sep26-v1",
+      "new": "pp-w-best-satirical-ios-games",
+      "appId": "6775539250",
+      "surface": "/blog/best-satirical-ios-games/"
+    },
+    {
+      "old": "pp-web-blog-fed-opinion-vibe-sep26-v1",
+      "new": "pp-w-fed-opinion-vibe",
+      "appId": "6775539250",
+      "surface": "/blog/fed-opinion-vibe/"
+    },
+    {
+      "old": "tt_outreach_commonsensemedia_20260925",
+      "new": "tt-commonsensemedia-0925",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "tt_outreach_dinnerplan_20260925",
+      "new": "tt-dinnerplan-20260925",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "tt_outreach_familydinnerproject_20260925",
+      "new": "tt-familydinner-20260925",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "tt_outreach_gourmethost_20260925",
+      "new": "tt-gourmethost-20260925",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "tt_outreach_idownloadblog_20260925",
+      "new": "tt-idownloadblog-20260925",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "tt_outreach_indietools_20260925",
+      "new": "tt-indietools-20260925",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "tt_outreach_launchfree_20260925",
+      "new": "tt-launchfree-20260925",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "tt_outreach_macstories_20260925",
+      "new": "tt-macstories-20260925",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "tt_outreach_moneyprodigy_20260925",
+      "new": "tt-moneyprodigy-20260925",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "tt_outreach_msextension_20260925",
+      "new": "tt-msextension-20260925",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "tt_outreach_nebraskaextension_20260926",
+      "new": "tt-nebraskaext-20260926",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "tt_outreach_realmomnutrition_20260926",
+      "new": "tt-realmom-20260926",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "tt_outreach_vibblelaunch_20260925",
+      "new": "tt-vibble-20260925",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "tt_outreach_whileentertaining_20260925",
+      "new": "tt-whileentertain-0925",
+      "appId": "6780714565",
+      "surface": "registry"
+    },
+    {
+      "old": "tt-web-blog-openers-not-interviews-sep26-v1",
+      "new": "tt-w-openers-not-interviews",
+      "appId": "6780714565",
+      "surface": "/blog/openers-not-interviews/"
+    },
+    {
+      "old": "tt-web-blog-phone-in-the-middle-sep26-v1",
+      "new": "tt-w-phone-in-the-middle",
+      "appId": "6780714565",
+      "surface": "/blog/phone-in-the-middle/"
+    },
+    {
+      "old": "tt-web-blog-would-you-rather-table-sep26-v1",
+      "new": "tt-w-would-you-rather-table",
+      "appId": "6780714565",
+      "surface": "/blog/would-you-rather-table/"
+    },
+    {
+      "old": "vr-web-blog-are-aura-apps-real-aug26-v1",
+      "new": "vr-w-are-aura-apps-real",
+      "appId": "6780704282",
+      "surface": "/blog/are-aura-apps-real/"
+    },
+    {
+      "old": "vr-web-blog-can-ai-photo-apps-use-your-aug26-v1",
+      "new": "vr-w-ai-photo-apps-use-ai",
+      "appId": "6780704282",
+      "surface": "/blog/can-ai-photo-apps-use-your-photos-to-train-ai/"
+    },
+    {
+      "old": "vr-web-blog-can-ai-use-your-instagram-aug26-v1",
+      "new": "vr-w-ai-use-instagram-photos",
+      "appId": "6780704282",
+      "surface": "/blog/can-ai-use-your-instagram-photos/"
+    },
+    {
+      "old": "vr-web-blog-can-apps-see-all-your-phot-aug26-v1",
+      "new": "vr-w-apps-see-all-iphone",
+      "appId": "6780704282",
+      "surface": "/blog/can-apps-see-all-your-photos-iphone/"
+    },
+    {
+      "old": "vr-web-blog-can-apps-see-hidden-photos-aug26-v1",
+      "new": "vr-w-apps-see-hidden-iphone",
+      "appId": "6780704282",
+      "surface": "/blog/can-apps-see-hidden-photos-iphone/"
+    },
+    {
+      "old": "vr-web-blog-can-iphone-apps-see-your-c-aug26-v1",
+      "new": "vr-w-iphone-apps-see-contacts",
+      "appId": "6780704282",
+      "surface": "/blog/can-iphone-apps-see-your-contacts/"
+    },
+    {
+      "old": "vr-web-blog-can-iphone-apps-see-your-s-aug26-v1",
+      "new": "vr-w-iphone-apps-screenshots",
+      "appId": "6780704282",
+      "surface": "/blog/can-iphone-apps-see-your-screenshots/"
+    },
+    {
+      "old": "vr-web-blog-can-iphone-apps-tell-when-aug26-v1",
+      "new": "vr-w-iphone-apps-tell-record",
+      "appId": "6780704282",
+      "surface": "/blog/can-iphone-apps-tell-when-you-screen-record/"
+    },
+    {
+      "old": "vr-web-blog-can-iphone-prove-photo-is-aug26-v1",
+      "new": "vr-w-iphone-prove-photo-real",
+      "appId": "6780704282",
+      "surface": "/blog/can-iphone-prove-photo-is-real/"
+    },
+    {
+      "old": "vr-web-blog-can-people-see-reels-you-l-aug26-v1",
+      "new": "vr-w-people-see-instagram",
+      "appId": "6780704282",
+      "surface": "/blog/can-people-see-reels-you-liked-on-instagram/"
+    },
+    {
+      "old": "vr-web-blog-can-photo-apps-see-your-lo-aug26-v1",
+      "new": "vr-w-photo-apps-see-location",
+      "appId": "6780704282",
+      "surface": "/blog/can-photo-apps-see-your-location/"
+    },
+    {
+      "old": "vr-web-blog-can-smart-glasses-record-y-aug26-v1",
+      "new": "vr-w-smart-glasses-record-you",
+      "appId": "6780704282",
+      "surface": "/blog/can-smart-glasses-record-you/"
+    },
+    {
+      "old": "vr-web-blog-do-ai-photo-apps-need-ai-a-aug26-v1",
+      "new": "vr-w-ai-photo-apps-need-labels",
+      "appId": "6780704282",
+      "surface": "/blog/do-ai-photo-apps-need-ai-act-labels/"
+    },
+    {
+      "old": "vr-web-blog-do-ai-photo-apps-need-labe-aug26-v1",
+      "new": "vr-w-ai-photo-apps-need-tiktok",
+      "appId": "6780704282",
+      "surface": "/blog/do-ai-photo-apps-need-labels-on-tiktok/"
+    },
+    {
+      "old": "vr-web-blog-do-photo-apps-use-facial-r-aug26-v1",
+      "new": "vr-w-photo-apps-recognition",
+      "appId": "6780704282",
+      "surface": "/blog/do-photo-apps-use-facial-recognition/"
+    },
+    {
+      "old": "vr-web-blog-does-apple-intelligence-la-aug26-v1",
+      "new": "vr-w-apple-intelligence-photos",
+      "appId": "6780704282",
+      "surface": "/blog/does-apple-intelligence-label-ai-edited-photos/"
+    },
+    {
+      "old": "vr-web-blog-does-chatgpt-use-your-phot-aug26-v1",
+      "new": "vr-w-chatgpt-use-photos-ai",
+      "appId": "6780704282",
+      "surface": "/blog/does-chatgpt-use-your-photos-to-train-ai/"
+    },
+    {
+      "old": "vr-web-blog-does-instagram-map-show-yo-aug26-v1",
+      "new": "vr-w-instagram-map-show-photos",
+      "appId": "6780704282",
+      "surface": "/blog/does-instagram-map-show-your-location-from-photos/"
+    },
+    {
+      "old": "vr-web-blog-does-iphone-share-photo-me-aug26-v1",
+      "new": "vr-w-iphone-share-metadata",
+      "appId": "6780704282",
+      "surface": "/blog/does-iphone-share-photo-metadata/"
+    },
+    {
+      "old": "vr-web-blog-does-visual-intelligence-s-aug26-v1",
+      "new": "vr-w-visual-send-chatgpt",
+      "appId": "6780704282",
+      "surface": "/blog/does-visual-intelligence-send-photos-to-chatgpt/"
+    },
+    {
+      "old": "vr-web-blog-gorpcore-prophet-won-aug26-v1",
+      "new": "vr-w-gorpcore-prophet-won",
+      "appId": "6780704282",
+      "surface": "/blog/gorpcore-prophet-won/"
+    },
+    {
+      "old": "vr-web-blog-how-to-do-a-vibe-check-in-aug26-v1",
+      "new": "vr-w-vibe-check-group-chat",
+      "appId": "6780704282",
+      "surface": "/blog/how-to-do-a-vibe-check-in-a-group-chat/"
+    },
+    {
+      "old": "vr-web-blog-npc-defense-aug26-v1",
+      "new": "vr-w-npc-defense",
+      "appId": "6780704282",
+      "surface": "/blog/npc-defense/"
+    },
+    {
+      "old": "vr-web-blog-phone-case-vibe-aug26-v1",
+      "new": "vr-w-phone-case-vibe",
+      "appId": "6780704282",
+      "surface": "/blog/phone-case-vibe/"
+    },
+    {
+      "old": "vr-web-blog-photo-rating-apps-2026-aug26-v1",
+      "new": "vr-w-photo-rating-apps-2026",
+      "appId": "6780704282",
+      "surface": "/blog/photo-rating-apps-2026/"
+    },
+    {
+      "old": "vr-web-blog-quiet-luxury-2026-aug26-v1",
+      "new": "vr-w-quiet-luxury-2026",
+      "appId": "6780704282",
+      "surface": "/blog/quiet-luxury-2026/"
+    },
+    {
+      "old": "vr-web-blog-should-you-give-ai-photo-a-aug26-v1",
+      "new": "vr-w-give-ai-photo-app-access",
+      "appId": "6780704282",
+      "surface": "/blog/should-you-give-ai-photo-app-full-photo-access/"
+    },
+    {
+      "old": "vr-web-blog-what-does-aura-mean-in-sla-aug26-v1",
+      "new": "vr-w-aura-mean-slang",
+      "appId": "6780704282",
+      "surface": "/blog/what-does-aura-mean-in-slang/"
+    },
+    {
+      "old": "vr-web-blog-what-does-limited-access-m-aug26-v1",
+      "new": "vr-w-limited-access-iphone",
+      "appId": "6780704282",
+      "surface": "/blog/what-does-limited-access-mean-photos-iphone/"
+    },
+    {
+      "old": "vr-web-blog-what-is-a-vibe-check-aug26-v1",
+      "new": "vr-w-what-is-a-vibe-check",
+      "appId": "6780704282",
+      "surface": "/blog/what-is-a-vibe-check/"
+    },
+    {
+      "old": "vr-web-blog-what-is-age-assurance-in-a-aug26-v1",
+      "new": "vr-w-age-assurance-apps",
+      "appId": "6780704282",
+      "surface": "/blog/what-is-age-assurance-in-apps/"
+    },
+    {
+      "old": "vr-web-blog-what-is-ai-slop-aug26-v1",
+      "new": "vr-w-what-is-ai-slop",
+      "appId": "6780704282",
+      "surface": "/blog/what-is-ai-slop/"
+    },
+    {
+      "old": "vr-web-blog-what-is-an-ai-persona-aug26-v1",
+      "new": "vr-w-what-is-an-ai-persona",
+      "appId": "6780704282",
+      "surface": "/blog/what-is-an-ai-persona/"
+    },
+    {
+      "old": "vr-web-blog-what-is-captured-by-me-iph-aug26-v1",
+      "new": "vr-w-captured-iphone",
+      "appId": "6780704282",
+      "surface": "/blog/what-is-captured-by-me-iphone/"
+    },
+    {
+      "old": "vr-web-blog-why-did-my-photo-get-made-aug26-v1",
+      "new": "vr-w-photo-ai-label",
+      "appId": "6780704282",
+      "surface": "/blog/why-did-my-photo-get-made-with-ai-label/"
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # build output
 dist/
+# generated per-post share cards (scripts/gen-share-cards.mjs)
+public/assets/share/
 # dependencies
 node_modules/
 # astro

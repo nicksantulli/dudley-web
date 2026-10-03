@@ -4,15 +4,13 @@ import Base from '../layouts/Base.astro';
 import AppPosterBand from '../components/AppPosterBand.astro';
 import AnswerCard from '../components/AnswerCard.astro';
 import { ORIGIN, SUPPORT_EMAIL, abs, rel } from '../consts';
-import { appStoreCampaignUrl, HOME_APP_STORE_TOKENS } from '../lib/campaignLinks.mjs';
+import { liveApps, storeListName, storeUrlForLiveApp } from '../lib/liveApps.mjs';
 import { getPublishedPosts } from '../lib/blog';
 
 const allApps = await getCollection('apps');
-const order = ['last-human', 'table-talk', 'vibe-rater', 'econbyte', 'monetary-policy-independence-day'];
-const rank = new Map(order.map((slug, index) => [slug, index]));
-const ownedLive = allApps
-  .filter((app) => !app.data.developedFor && app.data.status === 'live')
-  .sort((a, b) => (rank.get(a.id) ?? 99) - (rank.get(b.id) ?? 99));
+const live = liveApps(allApps);
+const ownedLive = live.filter((app) => !app.data.developedFor);
+const storeListed = ownedLive.filter((app) => app.data.landingPage !== false);
 const upcoming = allApps
   .filter((app) => !app.data.developedFor && app.data.status !== 'live')
   .sort((a, b) => a.data.order - b.data.order);
@@ -20,13 +18,7 @@ const clientApps = allApps
   .filter((app) => app.data.developedFor)
   .sort((a, b) => a.data.order - b.data.order);
 
-const storeUrlFor = (app: any): string => {
-  const id = app.data.appStoreId as string;
-  if (!id) return '';
-  const token = HOME_APP_STORE_TOKENS[id];
-  if (!token) throw new Error(`Missing homepage campaign token for ${app.data.name} (${id})`);
-  return appStoreCampaignUrl(id, token);
-};
+const storeUrlFor = (app: any): string => storeUrlForLiveApp(app);
 
 const posts = (await getPublishedPosts()).slice(0, 4);
 const schema = {
@@ -116,7 +108,12 @@ const description = 'Arcade satire, dinner-table cards, and plain-language tools
       <section class="catalog-heading" aria-labelledby="next-from-dudley">
         <div class="wrap">
           <h2 id="next-from-dudley">On deck</h2>
-          <p>Already on the App Store: <a href={rel('/apps/last-human/')}>Last Human</a>, <a href={rel('/apps/table-talk/')}>Table Talk</a>, and <a href={rel('/apps/econbyte/')}>EconByte</a>.</p>
+          <p>Already on the App Store: {storeListed.flatMap((app, index) => {
+            const link = <a href={rel(`/apps/${app.id}/`)}>{storeListName(app)}</a>;
+            if (index === 0) return [link];
+            const joiner = index === storeListed.length - 1 ? (storeListed.length === 2 ? ' and ' : ', and ') : ', ';
+            return [joiner, link];
+          })}.</p>
         </div>
       </section>
     )}

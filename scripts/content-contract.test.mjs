@@ -53,6 +53,13 @@ test('EconByte source matches the public App Store 1.1.5 listing', () => {
   assert.doesNotMatch(source, /120 sourced|120 cards|\$0\.99|eight cards per topic|eight cards each|each with 8 cards/);
 });
 
+test('Packed Yet source facts are live', () => {
+  const data = frontmatter('packed-yet.mdx');
+  assert.match(data, /^status: "live"$/m);
+  assert.match(data, /^appStoreId: "6814598931"$/m);
+  assert.match(data, /^lastUpdated: 2026-10-02$/m);
+});
+
 test('topic registry defines the six durable hub slugs', () => {
   const source = readFileSync(resolve('src/lib/topics.ts'), 'utf8');
   for (const slug of ['iphone-privacy', 'ai-media', 'internet-culture', 'economics', 'app-store', 'dudley-guides']) {

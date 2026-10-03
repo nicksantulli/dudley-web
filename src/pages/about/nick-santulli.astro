@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+import { abs, rel } from '../../consts';
+
+const path = '/about/nick-santulli/';
+// Longer bio goes here when Nick writes it. Do not invent credentials.
+const description = 'Nick Santulli is the founder of Dudley Development.';
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': abs(`${path}#person`),
+  name: 'Nick Santulli',
+  url: abs(path),
+  description,
+  jobTitle: 'Founder of Dudley Development',
+  worksFor: { '@id': abs('/#organization') },
+};
+---
+<Base title="Nick Santulli" description={description} path={path} schema={schema} breadcrumbLeaf="Nick Santulli">
+  <main class="page">
+    <div class="wrap" style="max-width:760px;">
+      <nav class="crumbs">
+        <a href={rel('/')}>Home</a><span class="sep">/</span>
+        <a href={rel('/about/')}>About</a><span class="sep">/</span>
+        <span>Nick Santulli</span>
+      </nav>
+      <h1>Nick Santulli</h1>
+      <!-- Longer bio goes here when Nick writes it. Do not invent credentials. -->
+      <p class="tldr">{description}</p>
+      <p><a href={rel('/about/')}>About Dudley Development</a></p>
+    </div>
+  </main>
+</Base>

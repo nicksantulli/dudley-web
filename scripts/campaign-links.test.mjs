@@ -25,63 +25,63 @@ const LAST_HUMAN_TT_PROMO_HR_20260930_CT = 'lh_promo_hr_tt_20260930';
 const LAST_HUMAN_IG_PROMO_FLOOR_20260928_CT = 'lh_promo_floor_ig_20260928';
 const LAST_HUMAN_IG_PROMO_BOTS_20260929_CT = 'lh_promo_bots_ig_20260929';
 const LAST_HUMAN_IG_PROMO_HR_20260930_CT = 'lh_promo_hr_ig_20260930';
-const LAST_HUMAN_OUTREACH_TOUCHARCADE_20260925_CT = 'lh_outreach_toucharcade_20260925';
-const LAST_HUMAN_OUTREACH_POCKETGAMER_20260925_CT = 'lh_outreach_pocketgamer_20260925';
+const LAST_HUMAN_OUTREACH_TOUCHARCADE_20260925_CT = 'lh-toucharcade-20260925';
+const LAST_HUMAN_OUTREACH_POCKETGAMER_20260925_CT = 'lh-pocketgamer-20260925';
 const LAST_HUMAN_OUTREACH_148APPS_20260925_CT = 'lh_outreach_148apps_20260925';
-const ECONBYTE_OUTREACH_ECONEDLINK_20260925_CT = 'eb_outreach_econedlink_20260925';
+const ECONBYTE_OUTREACH_ECONEDLINK_20260925_CT = 'eb-econedlink-20260925';
 const TABLE_TALK_OUTREACH_PARTYPRO_20260925_CT = 'tt_outreach_partypro_20260925';
-const LAST_HUMAN_OUTREACH_INDIEDEVMONDAY_20260925_CT = 'da_outreach_indiedevmonday_lh_20260925';
-const TABLE_TALK_OUTREACH_INDIEDEVMONDAY_20260925_CT = 'da_outreach_indiedevmonday_tt_20260925';
+const LAST_HUMAN_OUTREACH_INDIEDEVMONDAY_20260925_CT = 'lh-idm-20260925';
+const TABLE_TALK_OUTREACH_INDIEDEVMONDAY_20260925_CT = 'tt-idm-20260925';
 const TABLE_TALK_OUTREACH_TIDBITS_20260925_CT = 'tt_outreach_tidbits_20260925';
-const TABLE_TALK_OUTREACH_MACSTORIES_20260925_CT = 'tt_outreach_macstories_20260925';
+const TABLE_TALK_OUTREACH_MACSTORIES_20260925_CT = 'tt-macstories-20260925';
 const LAST_HUMAN_OUTREACH_GAMEZEBO_20260925_CT = 'lh_outreach_gamezebo_20260925';
 const LAST_HUMAN_OUTREACH_APPSPY_20260925_CT = 'lh_outreach_appspy_20260925';
-const TABLE_TALK_OUTREACH_FAMILYDINNERPROJECT_20260925_CT = 'tt_outreach_familydinnerproject_20260925';
+const TABLE_TALK_OUTREACH_FAMILYDINNERPROJECT_20260925_CT = 'tt-familydinner-20260925';
 const TABLE_TALK_OUTREACH_SIXCOLORS_20260925_CT = 'tt_outreach_sixcolors_20260925';
-const TABLE_TALK_OUTREACH_9TO5MAC_20260925_CT = 'da_outreach_9to5mac_tt_20260925';
-const ECONBYTE_OUTREACH_9TO5MAC_20260925_CT = 'da_outreach_9to5mac_eb_20260925';
+const TABLE_TALK_OUTREACH_9TO5MAC_20260925_CT = 'tt-9to5mac-20260925';
+const ECONBYTE_OUTREACH_9TO5MAC_20260925_CT = 'eb-9to5mac-20260925';
 const SHARED_INDIEDEVMONDAY_CT = 'da_outreach_indiedevmonday_20260925';
 const LAST_HUMAN_OUTREACH_CULTOFMAC_20260925_CT = 'lh_outreach_cultofmac_20260925';
 const ECONBYTE_OUTREACH_MONEYGIRL_20260925_CT = 'eb_outreach_moneygirl_20260925';
-const LAST_HUMAN_OUTREACH_INDIETOOLS_20260925_CT = 'lh_outreach_indietools_20260925';
-const TABLE_TALK_OUTREACH_INDIETOOLS_20260925_CT = 'tt_outreach_indietools_20260925';
-const ECONBYTE_OUTREACH_INDIETOOLS_20260925_CT = 'eb_outreach_indietools_20260925';
-const STUDIO_OUTREACH_INDIETOOLS_20260925_CT = 'da_outreach_indietools_20260925';
-const LAST_HUMAN_OUTREACH_SILICONERA_20260925_CT = 'lh_outreach_siliconera_20260925';
+const LAST_HUMAN_OUTREACH_INDIETOOLS_20260925_CT = 'lh-indietools-20260925';
+const TABLE_TALK_OUTREACH_INDIETOOLS_20260925_CT = 'tt-indietools-20260925';
+const ECONBYTE_OUTREACH_INDIETOOLS_20260925_CT = 'eb-indietools-20260925';
+const STUDIO_OUTREACH_INDIETOOLS_20260925_CT = 'tt-indietools-studio-0925';
+const LAST_HUMAN_OUTREACH_SILICONERA_20260925_CT = 'lh-siliconera-20260925';
 const ECONBYTE_OUTREACH_JUMPSTART_20260925_CT = 'eb_outreach_jumpstart_20260925';
 const ECONBYTE_OUTREACH_NGPF_20260925_CT = 'eb_outreach_ngpf_20260925';
-const TABLE_TALK_OUTREACH_MSEXTENSION_20260925_CT = 'tt_outreach_msextension_20260925';
+const TABLE_TALK_OUTREACH_MSEXTENSION_20260925_CT = 'tt-msextension-20260925';
 const ECONBYTE_OUTREACH_FREDED_20260925_CT = 'eb_outreach_freded_20260925';
 const ECONBYTE_OUTREACH_EDSHELF_20260925_CT = 'eb_outreach_edshelf_20260925';
-const LAST_HUMAN_OUTREACH_LAUNCHFREE_20260925_CT = 'lh_outreach_launchfree_20260925';
-const TABLE_TALK_OUTREACH_LAUNCHFREE_20260925_CT = 'tt_outreach_launchfree_20260925';
-const ECONBYTE_OUTREACH_LAUNCHFREE_20260925_CT = 'eb_outreach_launchfree_20260925';
-const STUDIO_OUTREACH_LAUNCHFREE_20260925_CT = 'da_outreach_launchfree_20260925';
+const LAST_HUMAN_OUTREACH_LAUNCHFREE_20260925_CT = 'lh-launchfree-20260925';
+const TABLE_TALK_OUTREACH_LAUNCHFREE_20260925_CT = 'tt-launchfree-20260925';
+const ECONBYTE_OUTREACH_LAUNCHFREE_20260925_CT = 'eb-launchfree-20260925';
+const STUDIO_OUTREACH_LAUNCHFREE_20260925_CT = 'tt-launchfree-studio-0925';
 const ECONBYTE_OUTREACH_LEARNAMIC_20260925_CT = 'eb_outreach_learnamic_20260925';
-const TABLE_TALK_OUTREACH_MONEYPRODIGY_20260925_CT = 'tt_outreach_moneyprodigy_20260925';
-const LAST_HUMAN_OUTREACH_VIBBLELAUNCH_20260925_CT = 'lh_outreach_vibblelaunch_20260925';
-const TABLE_TALK_OUTREACH_VIBBLELAUNCH_20260925_CT = 'tt_outreach_vibblelaunch_20260925';
-const ECONBYTE_OUTREACH_VIBBLELAUNCH_20260925_CT = 'eb_outreach_vibblelaunch_20260925';
-const STUDIO_OUTREACH_VIBBLELAUNCH_20260925_CT = 'da_outreach_vibblelaunch_20260925';
-const TABLE_TALK_OUTREACH_GOURMETHOST_20260925_CT = 'tt_outreach_gourmethost_20260925';
+const TABLE_TALK_OUTREACH_MONEYPRODIGY_20260925_CT = 'tt-moneyprodigy-20260925';
+const LAST_HUMAN_OUTREACH_VIBBLELAUNCH_20260925_CT = 'lh-vibble-20260925';
+const TABLE_TALK_OUTREACH_VIBBLELAUNCH_20260925_CT = 'tt-vibble-20260925';
+const ECONBYTE_OUTREACH_VIBBLELAUNCH_20260925_CT = 'eb-vibble-20260925';
+const STUDIO_OUTREACH_VIBBLELAUNCH_20260925_CT = 'tt-vibble-studio-20260925';
+const TABLE_TALK_OUTREACH_GOURMETHOST_20260925_CT = 'tt-gourmethost-20260925';
 const TABLE_TALK_OUTREACH_BGBARRAGE_20260925_CT = 'tt_outreach_bgbarrage_20260925';
-const TABLE_TALK_OUTREACH_DINNERPLAN_20260925_CT = 'tt_outreach_dinnerplan_20260925';
+const TABLE_TALK_OUTREACH_DINNERPLAN_20260925_CT = 'tt-dinnerplan-20260925';
 const TABLE_TALK_OUTREACH_BETTYEATZ_20260925_CT = 'tt_outreach_bettyeatz_20260925';
-const TABLE_TALK_OUTREACH_COMMONSENSEMEDIA_20260925_CT = 'tt_outreach_commonsensemedia_20260925';
+const TABLE_TALK_OUTREACH_COMMONSENSEMEDIA_20260925_CT = 'tt-commonsensemedia-0925';
 const TABLE_TALK_OUTREACH_APPADDICT_20260925_CT = 'tt_outreach_appaddict_20260925';
-const TABLE_TALK_OUTREACH_IDOWNLOADBLOG_20260925_CT = 'tt_outreach_idownloadblog_20260925';
-const TABLE_TALK_OUTREACH_WHILEENTERTAINING_20260925_CT = 'tt_outreach_whileentertaining_20260925';
+const TABLE_TALK_OUTREACH_IDOWNLOADBLOG_20260925_CT = 'tt-idownloadblog-20260925';
+const TABLE_TALK_OUTREACH_WHILEENTERTAINING_20260925_CT = 'tt-whileentertain-0925';
 const LAST_HUMAN_OUTREACH_KODECO_20260925_CT = 'lh_outreach_kodeco_20260925';
 const LAST_HUMAN_OUTREACH_LAUNCHED_20260925_CT = 'lh_outreach_launched_20260925';
 const LAST_HUMAN_PRESS_COMPILESWIFT_20260926_CT = 'lh_press_compileswift_20260926';
 const LAST_HUMAN_PRESS_GAMIGION_20260926_CT = 'lh_press_gamigion_20260926';
 const TABLE_TALK_PRESS_DICETOWER_20260926_CT = 'tt_press_dicetower_20260926';
-const LAST_HUMAN_OUTREACH_INDIEGAMEWEBSITE_20260926_CT = 'lh_outreach_indiegamewebsite_20260926';
-const TABLE_TALK_OUTREACH_REALMOMNUTRITION_20260926_CT = 'tt_outreach_realmomnutrition_20260926';
-const TABLE_TALK_OUTREACH_NEBRASKAEXTENSION_20260926_CT = 'tt_outreach_nebraskaextension_20260926';
-const ECONBYTE_OUTREACH_TEACHERMONEY_20260925_CT = 'eb_outreach_teachermoney_20260925';
+const LAST_HUMAN_OUTREACH_INDIEGAMEWEBSITE_20260926_CT = 'lh-indiegame-20260926';
+const TABLE_TALK_OUTREACH_REALMOMNUTRITION_20260926_CT = 'tt-realmom-20260926';
+const TABLE_TALK_OUTREACH_NEBRASKAEXTENSION_20260926_CT = 'tt-nebraskaext-20260926';
+const ECONBYTE_OUTREACH_TEACHERMONEY_20260925_CT = 'eb-teachermoney-20260925';
 const PHONE_IN_THE_MIDDLE_SLUG = 'phone-in-the-middle';
-const PHONE_IN_THE_MIDDLE_CT = 'tt-web-blog-phone-in-the-middle-sep26-v1';
+const PHONE_IN_THE_MIDDLE_CT = 'tt-w-phone-in-the-middle';
 const TABLE_TALK_TIKTOK_CT = 'tabletalk-tiktok-20260910';
 const TABLE_TALK_X_COLLECTOR_CT = 'tabletalk-x-collector-20260914';
 const TABLE_TALK_X_COLLECTOR_20260924_CT = 'tabletalk-x-collector-20260924';
@@ -198,6 +198,7 @@ test('llms.txt has one registered token for every live App Store app', () => {
     '6780714383': 'eb-web-llms-sep26-v1',
     '6779785617': 'dwh-web-llms-sep26-v1',
     '6808782611': 'lh-web-llms-sep26-v1',
+    '6814598931': 'py-web-llms',
   });
   for (const [appId, token] of Object.entries(campaignLinks.LLMS_APP_STORE_TOKENS)) {
     assert.equal(campaignLinks.resolveTokenDefinition(token)?.appId, appId);
@@ -2097,5 +2098,50 @@ test('Table Talk blog App Store URL uses pt, generated ct, and mt=8', () => {
   assert.equal(
     url,
     `https://apps.apple.com/app/id${TABLE_TALK_APP_ID}?pt=128970277&ct=${PHONE_IN_THE_MIDDLE_CT}&mt=8`,
+  );
+});
+
+test('every registered and generated campaign token is at most 30 characters', async () => {
+  const { readdirSync } = await import('node:fs');
+  const tooLong = campaignLinks.TOKEN_REGISTRY
+    .map((row) => row.ct)
+    .filter((ct) => ct.length > 30);
+  for (const file of readdirSync(new URL('../src/content/blog/', import.meta.url))) {
+    if (!file.endsWith('.md') && !file.endsWith('.mdx')) continue;
+    const slug = file.replace(/\.mdx?$/, '');
+    for (const token of [
+      blogCampaignToken(slug),
+      tableTalkBlogCampaignToken(slug),
+      campaignLinks.powellProwlBlogCampaignToken(slug),
+      campaignLinks.econbyteBlogCampaignToken(slug),
+    ]) {
+      if (token.length > 30) tooLong.push(token);
+    }
+  }
+  assert.deepEqual(tooLong, []);
+});
+
+test('Packed Yet store links keep pt, mt, and the py-web tokens', () => {
+  assert.equal(campaignLinks.PACKED_YET_ASC_TOKENS.homeCard, 'py-web-home');
+  assert.equal(campaignLinks.PACKED_YET_ASC_TOKENS.appDetail, 'py-web-app');
+  assert.equal(campaignLinks.PACKED_YET_ASC_TOKENS.llms, 'py-web-llms');
+  assert.equal(
+    appStoreCampaignUrl('6814598931', 'py-web-app'),
+    'https://apps.apple.com/app/id6814598931?pt=128970277&ct=py-web-app&mt=8',
+  );
+});
+
+test('a live app without a store link is rejected', async () => {
+  const { storeUrlForLiveApp } = await import('../src/lib/liveApps.mjs');
+  assert.throws(
+    () => storeUrlForLiveApp({ id: 'missing', data: { name: 'Missing', status: 'live', appStoreId: '' } }),
+    /no App Store link/,
+  );
+});
+
+test('appStoreCampaignUrl rejects a ct longer than 30 characters', () => {
+  assert.throws(
+    () => appStoreCampaignUrl('6780714565', 'tt-web-blog-phone-in-the-middle-sep26-v1'),
+    /30/,
   );
 });
