@@ -50,7 +50,7 @@ No account. Every card is free. Ads stay out of a sitting — never during a ses
 
 The move is physical: put the phone in the middle of the table. Not four phones. One.
 
-[Table Talk is free on the App Store](https://apps.apple.com/app/id6780714565?pt=128970277&ct=tt-web-blog-phone-in-the-middle-sep26-v1&mt=8).
+[Table Talk is free on the App Store](https://apps.apple.com/app/id6780714565?pt=128970277&ct=tt-w-phone-in-the-middle&mt=8).
 
 ## Frequently Asked Questions
 

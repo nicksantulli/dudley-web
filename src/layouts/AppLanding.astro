@@ -5,8 +5,9 @@ import InternalLinks from '../components/InternalLinks.astro';
 import AppCTA from '../components/AppCTA.astro';
 import AppStoreAction from '../components/AppStoreAction.astro';
 import { rel, abs, appStoreUrl, APP_STORE } from '../consts';
-import { appStoreCampaignUrl, VIBERATER_ASC_TOKENS, TABLE_TALK_ASC_TOKENS, POWELL_PROWL_ASC_TOKENS, ECONBYTE_ASC_TOKENS, LAST_HUMAN_ASC_TOKENS } from '../lib/campaignLinks.mjs';
+import { appStoreCampaignUrl, VIBERATER_ASC_TOKENS, TABLE_TALK_ASC_TOKENS, POWELL_PROWL_ASC_TOKENS, ECONBYTE_ASC_TOKENS, LAST_HUMAN_ASC_TOKENS, PACKED_YET_ASC_TOKENS } from '../lib/campaignLinks.mjs';
 import { appBannerIdFor } from '../lib/appBanner';
+import { webpSibling } from '../lib/urls.mjs';
 
 export interface Props {
   app: any;
@@ -21,9 +22,10 @@ const campaignToken =
   app.appStoreId === APP_STORE.monetaryPolicyIndependenceDay ? POWELL_PROWL_ASC_TOKENS.appDetail :
   app.appStoreId === APP_STORE.econByte ? ECONBYTE_ASC_TOKENS.appDetail :
   app.appStoreId === APP_STORE.lastHuman ? LAST_HUMAN_ASC_TOKENS.appDetail :
+  app.appStoreId === APP_STORE.packedYet ? PACKED_YET_ASC_TOKENS.appDetail :
   undefined;
 const taggedStoreUrl = campaignToken && app.appStoreId ? appStoreCampaignUrl(app.appStoreId, campaignToken) : '';
-const iconWebp = app.icon.replace(/\.png$/i, '.webp');
+const iconWebp = webpSibling(app.icon);
 
 // SoftwareApplication is Google's app-listing rich-result type (name, category,
 // OS, free Offer). aggregateRating is intentionally omitted until we have real App

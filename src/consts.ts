@@ -49,6 +49,7 @@ export const APP_STORE = {
   econByte: '6780714383',
   tableTalk: '6780714565',
   lastHuman: '6808782611',
+  packedYet: '6814598931',
 };
 
 export function appStoreUrl(id: string): string {

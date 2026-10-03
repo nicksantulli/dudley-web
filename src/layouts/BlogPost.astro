@@ -3,11 +3,12 @@ import Base from './Base.astro';
 import FAQ from '../components/FAQ.astro';
 import InternalLinks from '../components/InternalLinks.astro';
 import AppCTA from '../components/AppCTA.astro';
-import { STUDIO, rel, abs, APP_STORE } from '../consts';
+import { rel, abs, APP_STORE } from '../consts';
 import { postTags, formatDate, getPublishedPosts } from '../lib/blog';
 import { eligibleTopicHubs, topicsForPost, unmappedLabelsForPost } from '../lib/topics';
 import { blogCampaignToken, powellProwlBlogCampaignToken, econbyteBlogCampaignToken, tableTalkBlogCampaignToken } from '../lib/campaignLinks.mjs';
 import { appBannerIdFor } from '../lib/appBanner';
+import { gitCommitIso } from '../lib/gitDates.mjs';
 
 export interface Props {
   post: any; // blog entry data + slug
@@ -17,6 +18,11 @@ const { post, related } = Astro.props;
 const path = `/blog/${post.slug}/`;
 const published = post.publishDate as Date;
 const updated = (post.updatedDate ?? post.publishDate) as Date;
+const gitIso = gitCommitIso(post.filePath);
+const modifiedIso = gitIso || updated.toISOString();
+const modifiedDay = modifiedIso.slice(0, 10);
+const modifiedDisplay = new Date(`${modifiedDay}T12:00:00Z`);
+const publishedDay = published.toISOString().slice(0, 10);
 
 // Which app to surface in the CTA — first related app, defaulting to VibeRater Social.
 const APP_META: Record<string, { name: string; id: string }> = {
@@ -28,7 +34,7 @@ const APP_META: Record<string, { name: string; id: string }> = {
 const ctaKey = post.relatedApps?.find((a: string) => APP_META[a]) ?? 'vibe-rater';
 const cta = APP_META[ctaKey];
 
-const ogImage = post.ogImage ?? '/assets/og-home.png';
+const ogImage = post.ogImage ?? `/assets/share/${post.slug}.png`;
 const tags = postTags({ data: post } as any);
 const postEntry = { data: post } as any;
 const eligibleTopics = new Set(eligibleTopicHubs(await getPublishedPosts()).map((hub) => hub.slug));
@@ -41,8 +47,13 @@ const articleSchema = {
   description: post.description,
   url: abs(path),
   datePublished: published.toISOString(),
-  dateModified: updated.toISOString(),
-  author: { '@type': 'Person', name: post.author },
+  dateModified: modifiedIso,
+  author: {
+    '@type': 'Person',
+    name: post.author,
+    url: abs('/about/nick-santulli/'),
+    '@id': abs('/about/nick-santulli/#person'),
+  },
   ...(post.reviewedBy ? { reviewedBy: { '@type': 'Person', name: post.reviewedBy } } : {}),
   publisher: { '@id': abs('/#organization') },
   mainEntityOfPage: { '@id': abs(path) },
@@ -86,11 +97,11 @@ const schema = faqSchema
         <header class="post-head">
           <h1>{post.title}</h1>
           <p class="post-meta">
-            <span class="byline">Written by {post.author ?? STUDIO}</span>
+            <a class="byline" href={rel('/about/nick-santulli/')}>Written by {post.author ?? 'Nicholas Santulli'}</a>
             <span class="sep">·</span><span>Published </span>
-            <time datetime={published.toISOString().slice(0, 10)}>{formatDate(published)}</time>
-            {updated.getTime() !== published.getTime() && (
-              <><span class="sep">·</span><span>Updated </span><time datetime={updated.toISOString().slice(0, 10)}>{formatDate(updated)}</time></>
+            <time datetime={publishedDay}>{formatDate(published)}</time>
+            {modifiedDay !== publishedDay && (
+              <><span class="sep">·</span><span>Updated </span><time datetime={modifiedDay}>{formatDate(modifiedDisplay)}</time></>
             )}
             {post.reviewedBy && <><span class="sep">·</span><span>Reviewed by {post.reviewedBy}</span></>}
           </p>
@@ -106,6 +117,10 @@ const schema = faqSchema
         <div class="post-body">
           <slot />
         </div>
+        <aside class="author-box">
+          <p><a href={rel('/about/nick-santulli/')}>Nick Santulli</a> is the founder of Dudley Development.</p>
+          <!-- Longer bio goes here when Nick writes it. Do not invent credentials. -->
+        </aside>
       </article>
 
       <AppCTA
@@ -128,3 +143,9 @@ const schema = faqSchema
     </div>
   </main>
 </Base>
+
+<style>
+  .author-box { border-top: 2px solid var(--ink); margin-top: 2rem; padding-top: 1rem; }
+  .author-box p { margin: 0; }
+  .byline { color: inherit; }
+</style>

@@ -93,7 +93,7 @@ Sometimes the awkward part is inventing the dilemma while you are also passing t
 
 There is no account, and the cards work offline. Every card is free. Ads stay out of a sitting, and the Remove Ads purchase is a one-time buy if you want them gone.
 
-[Table Talk is free on the App Store](https://apps.apple.com/app/id6780714565?pt=128970277&ct=tt-web-blog-would-you-rather-table-sep26-v1&mt=8).
+[Table Talk is free on the App Store](https://apps.apple.com/app/id6780714565?pt=128970277&ct=tt-w-would-you-rather-table&mt=8).
 
 ## Frequently Asked Questions
 

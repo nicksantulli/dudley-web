@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "node scripts/gen-share-cards.mjs",
     "build": "astro build",
     "optimize:assets": "node scripts/optimize-assets.mjs",
     "test": "node --test scripts/content-contract.test.mjs && npm run build && node --test scripts/campaign-links.test.mjs && node --test scripts/built-output.test.mjs && node --test scripts/site-integrity.test.mjs",

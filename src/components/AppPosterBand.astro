@@ -1,6 +1,7 @@
 ---
 import AppStoreAction from './AppStoreAction.astro';
 import { rel } from '../consts';
+import { webpSibling } from '../lib/urls.mjs';
 
 interface Props {
   slug: string;
@@ -31,7 +32,7 @@ const statusText = status === 'live'
     ? 'Coming soon'
     : 'In development';
 const visual = art ?? icon;
-const webp = visual.replace(/\.png$/i, '.webp');
+const webp = webpSibling(visual);
 ---
 <section class:list={['poster-band', `poster-${slug}`, { reverse }]} data-app={slug}>
   <div class="poster-inner wrap">

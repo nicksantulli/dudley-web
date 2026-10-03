@@ -409,7 +409,7 @@ test('Table Talk post /blog/phone-in-the-middle/ requires the generated blog tok
   assert.ok(page, 'dist/blog/phone-in-the-middle/index.html not found');
 
   const expectedCt = tableTalkBlogCampaignToken('phone-in-the-middle');
-  assert.equal(expectedCt, 'tt-web-blog-phone-in-the-middle-sep26-v1');
+  assert.equal(expectedCt, 'tt-w-phone-in-the-middle');
 
   const hrefs = [...new Set(extractAppStoreHrefs(page.html))].filter(isFirstParty);
   assert.ok(hrefs.length > 0, 'no first-party App Store links on /blog/phone-in-the-middle/');

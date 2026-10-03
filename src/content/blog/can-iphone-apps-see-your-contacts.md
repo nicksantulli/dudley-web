@@ -107,7 +107,7 @@ That is the right privacy shape for this kind of feature: Contacts can be helpfu
 
 VibeRater's broader product boundary is also important. Its scores, auras, archetypes, anthems, and Vibescope outputs are entertainment, not biometric, health, identity, attractiveness, clinical, personality, or dating analysis. Contacts may help you find people; they do not make a vibe result more "real."
 
-[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-web-blog-can-iphone-apps-see-your-c-aug26-v1&mt=8) if you want playful photo reactions with friend options that are separate from your whole address book.
+[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-iphone-apps-see-contacts&mt=8) if you want playful photo reactions with friend options that are separate from your whole address book.
 
 ## A Safer Contacts Rule
 
