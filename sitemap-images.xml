@@ -8,8 +8,8 @@
     <image:image><image:loc>https://dudleyapps.com/assets/vibe-rater-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/econbyte-og.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/powell-prowl-icon.png</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/beat-the-dealer-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/packed-yet-icon.svg</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/beat-the-dealer-icon.png</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/action-card-icon.svg</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/reply-gate-icon.svg</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/send-brake-icon.svg</image:loc></image:image>
@@ -18,6 +18,11 @@
   </url>
   <url>
     <loc>https://dudleyapps.com/about/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://dudleyapps.com/about/nick-santulli/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
   </url>
@@ -117,612 +122,162 @@
   <url>
     <loc>https://dudleyapps.com/blog/are-aura-apps-real/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/are-aura-apps-real.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/best-satirical-ios-games/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/best-satirical-ios-games.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/can-ai-photo-apps-use-your-photos-to-train-ai/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/can-ai-photo-apps-use-your-photos-to-train-ai.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/can-ai-use-your-instagram-photos/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/can-ai-use-your-instagram-photos.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/can-apps-see-all-your-photos-iphone/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/can-apps-see-all-your-photos-iphone.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/can-apps-see-hidden-photos-iphone/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/can-apps-see-hidden-photos-iphone.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/can-iphone-apps-see-your-contacts/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/can-iphone-apps-see-your-contacts.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/can-iphone-apps-see-your-screenshots/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/can-iphone-apps-see-your-screenshots.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/can-iphone-apps-tell-when-you-screen-record/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/can-iphone-apps-tell-when-you-screen-record.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/can-iphone-prove-photo-is-real/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/can-iphone-prove-photo-is-real.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/can-people-see-reels-you-liked-on-instagram/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/can-people-see-reels-you-liked-on-instagram.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/can-photo-apps-see-your-location/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/can-photo-apps-see-your-location.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/can-smart-glasses-record-you/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/can-smart-glasses-record-you.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/can-you-remove-gemini-ai-watermark/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/can-you-remove-gemini-ai-watermark.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/do-ai-photo-apps-need-ai-act-labels/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/do-ai-photo-apps-need-ai-act-labels.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/do-ai-photo-apps-need-labels-on-tiktok/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/do-ai-photo-apps-need-labels-on-tiktok.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/does-apple-intelligence-label-ai-edited-photos/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/does-apple-intelligence-label-ai-edited-photos.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/does-chatgpt-use-your-photos-to-train-ai/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/does-chatgpt-use-your-photos-to-train-ai.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/does-google-photos-ask-photos-use-your-photos-for-ai-training/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/does-google-photos-ask-photos-use-your-photos-for-ai-training.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/does-instagram-map-show-your-location-from-photos/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/does-instagram-map-show-your-location-from-photos.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/does-iphone-share-photo-metadata/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/does-iphone-share-photo-metadata.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/does-visual-intelligence-send-photos-to-chatgpt/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/does-visual-intelligence-send-photos-to-chatgpt.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/fed-opinion-vibe/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/fed-opinion-vibe.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/gorpcore-prophet-won/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/gorpcore-prophet-won.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/how-to-do-a-vibe-check-in-a-group-chat/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/how-to-do-a-vibe-check-in-a-group-chat.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/npc-defense/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/npc-defense.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/openers-not-interviews/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/openers-not-interviews.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/phone-case-vibe/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/phone-case-vibe.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/phone-in-the-middle/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/phone-in-the-middle.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/photo-rating-apps-2026/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/photo-rating-apps-2026.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/quiet-luxury-2026/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/quiet-luxury-2026.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/should-you-give-ai-photo-app-full-photo-access/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/age-assurance/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/ai-act/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/ai-content-labels/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/ai-culture/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/ai-glasses/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/ai-labels/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/ai-photo-apps/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/ai-photo-labels/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/ai-photo-privacy/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/ai-photos/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/ai-slop/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/ai-training/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/answers/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/app-permissions/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/app-privacy/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/app-store/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/apple-intelligence/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/archetype-deep-dive/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/ask-photos/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/aura-apps/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/aura-points/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/aura-slang/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/awkward-silence/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/c2pa/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/camera-roll/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/chatgpt/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/contacts/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/content-credentials/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/conversation-starter/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/cpi/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/culture/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/data-controls/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/dinner-conversation/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/disinflation/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/econbyte/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/economics/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/exif/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/first-date/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/gemini/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/gen-z-slang/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/google-photos/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/grocery-prices/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/group-chat/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/hidden-photos/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/how-to/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/inflation/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/instagram-map/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/instagram/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/ios-27/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/iphone-photo-privacy/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/iphone-photos/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/iphone-privacy/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/limited-access/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/location-metadata/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/location-privacy/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/location/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/model-training/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/nano-banana/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/online-safety/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/outfit-explainer/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/phones-at-dinner/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/photo-apps/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/photo-authenticity/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/photo-editing/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/photo-games/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/photo-metadata/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/photo-permissions/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/photo-privacy/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/photo-sharing/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/photo-uploads/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/price-level/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/reels/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/roundup/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/screen-recording/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/screenshots/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/smart-glasses/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/social-apps/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/social-media-privacy/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/social-media/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/synthid/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/table-talk/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/tiktok/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/vibe-check/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/vibe-meaning/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/vibe-rater/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/viberater/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/visual-intelligence/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/watermarks/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://dudleyapps.com/blog/tags/would-you-rather/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/should-you-give-ai-photo-app-full-photo-access.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/topics/</loc>
@@ -752,57 +307,57 @@
   <url>
     <loc>https://dudleyapps.com/blog/what-are-content-credentials-ai-photos/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/what-are-content-credentials-ai-photos.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/what-does-aura-mean-in-slang/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/what-does-aura-mean-in-slang.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/what-does-limited-access-mean-photos-iphone/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/what-does-limited-access-mean-photos-iphone.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/what-is-a-vibe-check/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/what-is-a-vibe-check.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/what-is-age-assurance-in-apps/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/what-is-age-assurance-in-apps.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/what-is-ai-slop/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/what-is-ai-slop.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/what-is-captured-by-me-iphone/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/what-is-captured-by-me-iphone.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/what-is-nano-banana-ai/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/what-is-nano-banana-ai.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/why-are-prices-still-high-if-inflation-is-down/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/why-are-prices-still-high-if-inflation-is-down.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/why-did-my-photo-get-made-with-ai-label/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/why-did-my-photo-get-made-with-ai-label.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/would-you-rather-table/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
-    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/would-you-rather-table.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/compare/best-photo-rating-apps/</loc>
