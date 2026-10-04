@@ -16,9 +16,10 @@ interface Props {
   developedFor?: string;
   art?: string;
   reverse?: boolean;
+  priority?: boolean;
 }
 
-const { slug, name, headline, description, icon, facts, status, storeHref = '', detailHref, developedFor, art, reverse = false } = Astro.props;
+const { slug, name, headline, description, icon, facts, status, storeHref = '', detailHref, developedFor, art, reverse = false, priority = false } = Astro.props;
 const liveStoreLine: Record<string, string> = {
   'last-human': 'Play free on the App Store',
   'table-talk': 'Get the deck on the App Store',
@@ -50,7 +51,7 @@ const webp = webpSibling(visual);
     <div class="poster-media">
       <picture>
         <source srcset={rel(webp)} type="image/webp" />
-        <img src={rel(visual)} alt={art ? `${name} product artwork` : `${name} app icon`} width={art ? '1200' : '512'} height={art ? '630' : '512'} loading={slug === 'last-human' ? 'eager' : 'lazy'} fetchpriority={slug === 'last-human' ? 'high' : 'auto'} decoding="async" />
+        <img src={rel(visual)} alt={art ? `${name} product artwork` : `${name} app icon`} width={art ? '1200' : '512'} height={art ? '630' : '512'} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : 'auto'} decoding="async" />
       </picture>
     </div>
   </div>

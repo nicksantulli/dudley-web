@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { rel, SUPPORT_EMAIL, CONTACT_EMAIL, LEGAL_NAME } from '../consts';
-import { liveApps, storeListName } from '../lib/liveApps.mjs';
+import { byCatalogOrder, listedApps, liveApps, storeListName } from '../lib/liveApps.mjs';
 const description = 'Dudley Development builds and publishes iPhone games, conversation tools, social apps, and plain-English learning products.';
 
 // "The apps" is data-driven off the same content collection that powers the app cards,
@@ -11,9 +11,9 @@ const description = 'Dudley Development builds and publishes iPhone games, conve
 // Client work (developedFor set, e.g. HomeLight) is excluded — those are the studio's
 // own apps only. Flip an app's `status` in its .mdx and every surface updates together.
 const allApps = await getCollection('apps');
-const ownApps = allApps
+const ownApps = listedApps(allApps)
   .filter((a) => !a.data.developedFor)
-  .sort((x, y) => x.data.order - y.data.order);
+  .sort(byCatalogOrder);
 const storeListed = liveApps(allApps).filter((app) => !app.data.developedFor && app.data.landingPage !== false);
 const statusLabel = (s: string) =>
   s === 'live' ? 'Live on the App Store' : s === 'in_development' ? 'In development' : 'Coming soon';

@@ -12,7 +12,7 @@
  *   2a. No duplicate placement tokens (ct) on the same page.
  *   2b. No static ct used on pages outside its registered path pattern.
  *   3.  No ppid parameter on any App Store link.
- *   4.  Last Human is the first live Dudley product on the homepage.
+ *   4.  Homepage live apps stay in the approved order, without VibeRater.
  *   5.  No "no paywall" language in built HTML.
  *   6.  No "36 lessons" Beat the Dealer promises in built HTML.
  *   7.  No Dudley Instagram/TikTok profile links in built HTML.
@@ -253,13 +253,59 @@ test('no ppid parameter on any App Store link', () => {
   assert.deepEqual(failures, [], `Unexpected ppid on App Store links:\n${failures.join('\n')}`);
 });
 
-// ── Test 4: Last Human leads the live product wall ────────────────────────
+// ── Test 4: Approved live-app order on the homepage ──────────────────────
 
-test('Last Human is the first live Dudley product', () => {
+const APPROVED_LIVE_ORDER = [
+  'table-talk',
+  'econbyte',
+  'last-human',
+  'packed-yet',
+  'monetary-policy-independence-day',
+];
+
+test('homepage live apps stay in the approved order', () => {
   const home = pages.find((p) => p.rel === '/index.html')?.html ?? '';
-  const lastHuman = home.indexOf('data-app="last-human"');
-  const tableTalk = home.indexOf('data-app="table-talk"');
-  assert.ok(lastHuman >= 0 && tableTalk > lastHuman);
+  const wall = home.slice(home.indexOf('class="poster-wall"'), home.indexOf('id="connectors"'));
+  const slugs = [...wall.matchAll(/data-app="([^"]+)"/g)].map((match) => match[1]);
+  assert.deepEqual(slugs, APPROVED_LIVE_ORDER);
+  const sentence = home.match(/Already on the App Store:[\s\S]*?\./)?.[0] ?? '';
+  assert.deepEqual(
+    [...sentence.matchAll(/\/apps\/([^/]+)\//g)].map((match) => match[1]),
+    APPROVED_LIVE_ORDER,
+  );
+  assert.doesNotMatch(home, /VibeRater|vibe-rater|Beat the Dealer|beat-the-dealer/);
+});
+
+test('VibeRater and Beat the Dealer stay out of the shared app lists', () => {
+  const about = pages.find((p) => p.rel === '/about/index.html')?.html ?? '';
+  const aboutApps = about.match(/<ul class="about-apps">[\s\S]*?<\/ul>/)?.[0] ?? '';
+  assert.doesNotMatch(aboutApps, /VibeRater|vibe-rater|Beat the Dealer|beat-the-dealer/);
+  const aboutStore = about.match(/Already on the App Store:[\s\S]*?\./)?.[0] ?? '';
+  assert.deepEqual(
+    [...aboutStore.matchAll(/\/apps\/([^/]+)\//g)].map((match) => match[1]),
+    APPROVED_LIVE_ORDER,
+  );
+
+  const llms = readFileSync(join(DIST, 'llms.txt'), 'utf8');
+  const catalog = llms.split('## Archetypes')[0];
+  assert.doesNotMatch(catalog, /VibeRater|vibe-rater|Beat the Dealer|beat-the-dealer/);
+  let cursor = -1;
+  for (const name of [
+    'Table Talk: Conversation Cards',
+    'EconByte: Daily Economics',
+    'Last Human: Dodge the Bots',
+    'Packed Yet? Trip Checklist',
+    'Powell Prowl: Rate Chase',
+  ]) {
+    const at = catalog.indexOf(name);
+    assert.ok(at > cursor, `${name} is missing from the llms.txt live catalog`);
+    cursor = at;
+  }
+
+  const contact = pages.find((p) => p.rel === '/contact/index.html')?.html ?? '';
+  assert.doesNotMatch(contact, /VibeRater|Beat the Dealer|beat-the-dealer/);
+  assert.ok(existsSync(join(DIST, 'apps/vibe-rater/index.html')));
+  assert.ok(existsSync(join(DIST, 'privacy/beat-the-dealer/index.html')));
 });
 
 // ── Test 5: No "no paywall" language ──────────────────────────────────────
