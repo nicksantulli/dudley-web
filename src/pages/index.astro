@@ -4,16 +4,14 @@ import Base from '../layouts/Base.astro';
 import AppPosterBand from '../components/AppPosterBand.astro';
 import AnswerCard from '../components/AnswerCard.astro';
 import { ORIGIN, SUPPORT_EMAIL, abs, rel } from '../consts';
-import { liveApps, storeListName, storeUrlForLiveApp } from '../lib/liveApps.mjs';
+import { comingSoonApps, liveApps, storeListName, storeUrlForLiveApp } from '../lib/liveApps.mjs';
 import { getPublishedPosts } from '../lib/blog';
 
 const allApps = await getCollection('apps');
 const live = liveApps(allApps);
 const ownedLive = live.filter((app) => !app.data.developedFor);
 const storeListed = ownedLive.filter((app) => app.data.landingPage !== false);
-const upcoming = allApps
-  .filter((app) => !app.data.developedFor && app.data.status !== 'live')
-  .sort((a, b) => a.data.order - b.data.order);
+const upcoming = comingSoonApps(allApps);
 const clientApps = allApps
   .filter((app) => app.data.developedFor)
   .sort((a, b) => a.data.order - b.data.order);
@@ -54,6 +52,7 @@ const description = 'Arcade satire, dinner-table cards, and plain-language tools
           detailHref={`/apps/${app.id}/`}
           art={app.data.ogImage}
           reverse={index % 2 === 1}
+          priority={index === 0}
         />
       ))}
     </div>

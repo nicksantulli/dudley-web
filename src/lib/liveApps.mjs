@@ -2,15 +2,39 @@
 // all read this so a launch cannot update one surface and leave the others stale.
 import { HOME_APP_STORE_TOKENS, appStoreCampaignUrl } from './campaignLinks.mjs';
 
-const LIVE_RANK = [
-  'last-human',
+// Newly approved apps go at the top.
+export const LIVE_APP_ORDER = [
   'table-talk',
-  'vibe-rater',
   'econbyte',
-  'monetary-policy-independence-day',
+  'last-human',
   'packed-yet',
-  'dude-wheres-this-house',
+  'monetary-policy-independence-day',
 ];
+
+// Kept off the home page and every shared app list. Standalone pages stay.
+const UNLISTED = new Set([
+  'vibe-rater',
+  'beat-the-dealer',
+]);
+
+const rank = new Map(LIVE_APP_ORDER.map((slug, index) => [slug, index]));
+
+export function isListedApp(app) {
+  return !UNLISTED.has(app?.id);
+}
+
+export function listedApps(apps) {
+  return apps.filter(isListedApp);
+}
+
+export function byCatalogOrder(a, b) {
+  const ar = rank.get(a.id);
+  const br = rank.get(b.id);
+  if (ar !== undefined && br !== undefined) return ar - br;
+  if (ar !== undefined) return -1;
+  if (br !== undefined) return 1;
+  return (a.data.order ?? 99) - (b.data.order ?? 99);
+}
 
 export function storeUrlForLiveApp(app) {
   const id = app?.data?.appStoreId || '';
@@ -27,12 +51,17 @@ export function storeUrlForLiveApp(app) {
 }
 
 export function liveApps(apps) {
-  const rank = new Map(LIVE_RANK.map((slug, index) => [slug, index]));
-  const live = apps
+  const live = listedApps(apps)
     .filter((app) => app.data.status === 'live')
-    .sort((a, b) => (rank.get(a.id) ?? 99) - (rank.get(b.id) ?? 99) || a.data.order - b.data.order);
+    .sort(byCatalogOrder);
   for (const app of live) storeUrlForLiveApp(app);
   return live;
+}
+
+export function comingSoonApps(apps) {
+  return listedApps(apps)
+    .filter((app) => !app.data.developedFor && app.data.status !== 'live')
+    .sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 }
 
 export function englishList(items) {

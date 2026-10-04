@@ -341,7 +341,7 @@ test('homepage uses the approved product-first message', () => {
   assert.match(home, /On deck/);
   assert.doesNotMatch(home, /In the works/);
   assert.match(home, /Arcade satire, dinner-table cards, and plain-language tools\.<\/p>/);
-  assert.match(home, /Rate the moment\. Keep your people close\./);
+  assert.doesNotMatch(home, /VibeRater|vibe-rater|Beat the Dealer|beat-the-dealer/);
   assert.match(home, /SendBrake: Message Check/);
   assert.match(home, /One more look before it leaves\./);
   assert.match(home, /ReplyGate: Reply or Skip/);
@@ -352,8 +352,8 @@ test('homepage uses the approved product-first message', () => {
   assert.match(band('table-talk'), /Get the deck on the App Store/);
   assert.match(band('econbyte'), /Read a card on the App Store/);
   assert.match(band('monetary-policy-independence-day'), /Chase it on the App Store/);
-  assert.match(band('vibe-rater'), /Try it on the App Store/);
-  assert.doesNotMatch(band('vibe-rater'), /VibeMeter|VibeRodeo|VibeShop|Radar|Rise/);
+  assert.equal(band('vibe-rater'), '');
+  assert.match(band('packed-yet'), /On the App Store/);
   assert.match(band('last-human'), /50 escalating office floors/);
   assert.match(band('send-brake'), /One more look before it leaves\./);
   assert.match(band('send-brake'), /Paste a draft you&#39;re about to send\. Get three next steps\./);

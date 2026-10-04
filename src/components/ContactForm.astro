@@ -10,6 +10,7 @@
 // before it will actually deliver mail to a brand-new target address.
 import { getCollection } from 'astro:content';
 import { rel, abs, SUPPORT_EMAIL } from '../consts';
+import { byCatalogOrder, listedApps } from '../lib/liveApps.mjs';
 
 export interface Props {
   // Heading rendered above the form. Omit to render no heading at all (e.g. when the
@@ -44,7 +45,7 @@ const redirectBackTo = abs('/contact/?sent=1');
 // app cards, /apps/<slug>/ pages, and the support index, so this list can't drift as
 // apps ship, get renamed, or get added. Client work (developedFor, e.g. HomeLight) is
 // included too — those apps get support questions same as any other.
-const contentApps = (await getCollection('apps')).sort((a, b) => a.data.order - b.data.order);
+const contentApps = listedApps(await getCollection('apps')).sort(byCatalogOrder);
 const appOptions = [
   { value: 'general', label: 'General' },
   ...contentApps.map((a) => ({ value: a.id, label: a.data.name })),

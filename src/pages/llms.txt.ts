@@ -1,13 +1,13 @@
 import { getCollection } from 'astro:content';
 import { abs, SUPPORT_EMAIL, CONTACT_EMAIL } from '../consts';
 import { appStoreCampaignUrl, LLMS_APP_STORE_TOKENS } from '../lib/campaignLinks.mjs';
-import { englishList, liveApps } from '../lib/liveApps.mjs';
+import { byCatalogOrder, englishList, listedApps, liveApps } from '../lib/liveApps.mjs';
 import { getPublishedPosts } from '../lib/blog';
 import { eligibleTopicHubs } from '../lib/topics';
 
 export async function GET() {
   const posts = await getPublishedPosts();
-  const apps = (await getCollection('apps')).sort((a, b) => a.data.order - b.data.order);
+  const apps = listedApps(await getCollection('apps')).sort(byCatalogOrder);
 
   const appLines = apps.map((app) => {
     const data = app.data;
