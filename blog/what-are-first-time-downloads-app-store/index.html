@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>What Are First-Time Downloads in App Store Connect? | Dudley Development</title><meta name="description" content="First-Time Downloads show new App Store downloads, but they are not the same as active users, retention, revenue, or product-market fit. Here is the plain-English version."><link rel="canonical" href="https://dudleyapps.com/blog/what-are-first-time-downloads-app-store/"><meta name="theme-color" content="#0b0b0a"><meta name="apple-itunes-app" content="app-id=6780714565"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="stylesheet" href="/assets/style.css"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="The Dudley Blog" href="/blog/rss.xml"><!-- Open Graph --><meta property="og:title" content="What Are First-Time Downloads in App Store Connect? | Dudley Development"><meta property="og:description" content="First-Time Downloads show new App Store downloads, but they are not the same as active users, retention, revenue, or product-market fit. Here is the plain-English version."><meta property="og:url" content="https://dudleyapps.com/blog/what-are-first-time-downloads-app-store/"><meta property="og:type" content="website"><meta property="og:image" content="https://dudleyapps.com/assets/share/what-are-first-time-downloads-app-store.png"><meta property="og:site_name" content="Dudley Development"><!-- Twitter / X --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@DudleyAppDev"><meta name="twitter:title" content="What Are First-Time Downloads in App Store Connect? | Dudley Development"><meta name="twitter:description" content="First-Time Downloads show new App Store downloads, but they are not the same as active users, retention, revenue, or product-market fit. Here is the plain-English version."><meta name="twitter:image" content="https://dudleyapps.com/assets/share/what-are-first-time-downloads-app-store.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://dudleyapps.com/#organization","name":"Dudley Development","legalName":"Dudley Development, LLC","url":"https://dudleyapps.com","logo":{"@type":"ImageObject","url":"https://dudleyapps.com/assets/dudley-mark-logo.png"},"contactPoint":{"@type":"ContactPoint","email":"support@dudleyapps.com","contactType":"customer support"},"sameAs":["https://x.com/DudleyAppDev"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dudleyapps.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://dudleyapps.com/blog/"},{"@type":"ListItem","position":3,"name":"What Are First-Time Downloads in App Store Connect?","item":"https://dudleyapps.com/blog/what-are-first-time-downloads-app-store/"}]}</script><script type="application/ld+json">[{"@context":"https://schema.org","@type":"BlogPosting","headline":"What Are First-Time Downloads in App Store Connect?","description":"First-Time Downloads show new App Store downloads, but they are not the same as active users, retention, revenue, or product-market fit. Here is the plain-English version.","url":"https://dudleyapps.com/blog/what-are-first-time-downloads-app-store/","datePublished":"2026-10-05T00:00:00.000Z","dateModified":"2026-10-05T00:00:00.000Z","author":{"@type":"Person","name":"Nicholas Santulli","url":"https://dudleyapps.com/about/nick-santulli/","@id":"https://dudleyapps.com/about/nick-santulli/#person"},"publisher":{"@id":"https://dudleyapps.com/#organization"},"mainEntityOfPage":{"@id":"https://dudleyapps.com/blog/what-are-first-time-downloads-app-store/"},"image":"https://dudleyapps.com/assets/share/what-are-first-time-downloads-app-store.png","keywords":"app analytics, App Store Connect, first-time downloads, App Store search, indie apps, Table Talk","about":{"@type":"Thing","name":"first-time downloads app store connect"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are First-Time Downloads in App Store Connect?","acceptedAnswer":{"@type":"Answer","text":"First-Time Downloads are an App Store Connect Analytics download metric for people downloading an app for the first time. They are useful for acquisition, but they are not the same as active users, retention, or revenue."}},{"@type":"Question","name":"Do First-Time Downloads include redownloads?","acceptedAnswer":{"@type":"Answer","text":"No. Apple separates first-time downloads, redownloads, and total downloads in its downloads metrics, so those numbers should not be treated as interchangeable."}},{"@type":"Question","name":"Does a First-Time Download mean someone used the app?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. A download means the app was acquired. Usage needs separate metrics such as sessions, active devices, retention, crashes, support messages, or in-app events."}},{"@type":"Question","name":"What does App Store Search mean in analytics?","acceptedAnswer":{"@type":"Answer","text":"Apple describes App Store Search as users who discovered the app within App Store search results. Apple says Search Ads results are included in that source type."}},{"@type":"Question","name":"Is Table Talk's download data public?","acceptedAnswer":{"@type":"Answer","text":"No. Dudley can discuss its own measurement approach in public, but private App Store Connect analytics should not be treated as public benchmark data unless Dudley explicitly publishes a sourced window and denominator."}}]}]</script><style>.author-box[data-astro-cid-tldeq5d5]{border-top:2px solid var(--ink);margin-top:2rem;padding-top:1rem}.author-box[data-astro-cid-tldeq5d5] p[data-astro-cid-tldeq5d5]{margin:0}.byline[data-astro-cid-tldeq5d5]{color:inherit}
+</style></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site"><div class="wrap"><a class="brand" href="/" aria-label="Dudley Development — home"><img class="mark" src="/assets/dudley-mark-header.webp" alt="" aria-hidden="true" width="54" height="30"><span>Dudley Development</span></a><nav class="top" aria-label="Primary"><a href="/">Home</a><a href="/#apps">Apps</a><a href="/blog/" aria-current="page">Blog</a><a href="/about/">About</a><a href="/support/">Support</a><a href="/contact/">Contact</a></nav><details class="nav-toggle" id="nav-toggle"><summary aria-label="Open the main menu">Menu</summary><div class="nav-panel"><nav aria-label="Primary, mobile"><a href="/">Home</a><a href="/#apps">Apps</a><a href="/blog/" aria-current="page">Blog</a><a href="/about/">About</a><a href="/support/">Support</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a></nav></div></details></div></header><script>
+  (function () {
+    var menu = document.getElementById('nav-toggle');
+    if (!menu) return;
+    var close = function () { menu.open = false; };
+    menu.addEventListener('click', function (event) {
+      if (event.target instanceof Element && event.target.closest('.nav-panel a')) close();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && menu.open) {
+        close();
+        var summary = menu.querySelector('summary');
+        if (summary) summary.focus();
+      }
+    });
+    document.addEventListener('click', function (event) {
+      if (menu.open && event.target instanceof Node && !menu.contains(event.target)) close();
+    });
+    var mq = window.matchMedia('(min-width: 861px)');
+    var onChange = function (event) { if (event.matches) close(); };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+    else if (mq.addListener) mq.addListener(onChange);
+  })();
+</script><div id="main"><main class="page" data-astro-cid-tldeq5d5><div class="wrap" style="max-width:720px;" data-astro-cid-tldeq5d5><nav class="crumbs" data-astro-cid-tldeq5d5><a href="/" data-astro-cid-tldeq5d5>Home</a><span class="sep" data-astro-cid-tldeq5d5>/</span><a href="/blog/" data-astro-cid-tldeq5d5>Blog</a><span class="sep" data-astro-cid-tldeq5d5>/</span><span data-astro-cid-tldeq5d5>What Are First-Time Downloads in App Store Connect?</span></nav><article class="post" data-astro-cid-tldeq5d5><header class="post-head" data-astro-cid-tldeq5d5><h1 data-astro-cid-tldeq5d5>What Are First-Time Downloads in App Store Connect?</h1><p class="post-meta" data-astro-cid-tldeq5d5><a class="byline" href="/about/nick-santulli/" data-astro-cid-tldeq5d5>Written by Nicholas Santulli</a><span class="sep" data-astro-cid-tldeq5d5>·</span><span data-astro-cid-tldeq5d5>Published </span><time datetime="2026-10-05" data-astro-cid-tldeq5d5>October 5, 2026</time></p><p class="answer-summary" data-astro-cid-tldeq5d5>First-Time Downloads show new App Store downloads, but they are not the same as active users, retention, revenue, or product-market fit. Here is the plain-English version.</p><nav class="post-tags" aria-label="Topics and labels" data-astro-cid-tldeq5d5><a class="tag" href="/blog/topics/dudley-guides/" data-astro-cid-tldeq5d5>Dudley App Guides</a><span class="tag tag-label" data-astro-cid-tldeq5d5>App Analytics</span><span class="tag tag-label" data-astro-cid-tldeq5d5>App Store Connect</span><span class="tag tag-label" data-astro-cid-tldeq5d5>First Time Downloads</span><span class="tag tag-label" data-astro-cid-tldeq5d5>App Store Search</span><span class="tag tag-label" data-astro-cid-tldeq5d5>Indie Apps</span></nav></header><div class="post-body" data-astro-cid-tldeq5d5><p>First-Time Downloads in App Store Connect are a useful acquisition signal: they tell an app maker how many people downloaded the app for the first time. They do not, by themselves, prove that people opened the app, came back later, made a purchase, saw an ad, shared it, or liked it.</p>
+<p>That distinction matters. A download is a distribution event. Product health needs separate evidence from usage, quality, support, and money.</p>
+<p>Sources: <a href="https://developer.apple.com/help/app-store-connect-analytics/reference/metrics-definitions/">Apple App Store Connect Analytics: metric definitions</a>, <a href="https://developer.apple.com/help/app-store-connect-analytics/acquisition/acquisition/">Apple App Store Connect Analytics: acquisition</a>, <a href="https://developer.apple.com/app-store-connect/analytics/">Apple App Store Connect: App Analytics overview</a>, <a href="https://developer.apple.com/app-store/search/">Apple App Store search guidance</a>, and the current <a href="https://apps.apple.com/us/app/table-talk-conversation-cards/id6780714565">Table Talk: Conversation Cards App Store listing</a>.</p>
+<h2 id="the-short-answer">The Short Answer</h2>
+<p>First-Time Downloads answer one narrow question: how many first-time app downloads happened in the selected App Store Connect window?</p>
+<p>They are not the same as:</p>
+<ul>
+<li>total downloads;</li>
+<li>redownloads;</li>
+<li>active devices;</li>
+<li>sessions;</li>
+<li>retention;</li>
+<li>conversion to paid;</li>
+<li>ad revenue;</li>
+<li>reviews;</li>
+<li>product-market fit.</li>
+</ul>
+<p>Apple’s own Analytics documentation groups metrics into different jobs. Downloads metrics measure how acquisition turns into installs. Usage metrics show how people engage after downloading. Sales metrics cover proceeds, in-app purchases, paying users, and refunds.</p>
+<p>So the clean rule is: use First-Time Downloads to understand acquisition, then use other metrics to understand what happened after acquisition.</p>
+<h2 id="first-time-downloads-vs-total-downloads">First-Time Downloads vs. Total Downloads</h2>
+<p>Apple separates first-time downloads, redownloads, and total downloads. That separation is important because each number answers a different question.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What it is useful for</th>
+<th>What it does not prove</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First-Time Downloads</td>
+<td>New acquisition</td>
+<td>Whether the user opened or kept using the app</td>
+</tr>
+<tr>
+<td>Redownloads</td>
+<td>Returning device or account behavior</td>
+<td>New-user demand</td>
+</tr>
+<tr>
+<td>Total Downloads</td>
+<td>A broader distribution count</td>
+<td>The quality of the user base</td>
+</tr>
+<tr>
+<td>Sessions</td>
+<td>App usage after install</td>
+<td>New-user acquisition by itself</td>
+</tr>
+<tr>
+<td>Proceeds</td>
+<td>Money from App Store commerce</td>
+<td>Retention or user satisfaction by itself</td>
+</tr>
+</tbody>
+</table>
+<p>If a small app gets five First-Time Downloads in a day, that can be a real signal. It just is not the whole story. The next question is whether those people opened the app, understood it, came back, hit a bug, made a purchase, or told someone else.</p>
+<h2 id="what-app-store-search-means">What App Store Search Means</h2>
+<p>App Store Connect can also show how users discovered an app. Apple’s acquisition documentation says Analytics can show downloads from sources such as App Store search, App Store browse, app referrers, web referrers, and custom marketing campaigns.</p>
+<p>For App Store Search specifically, Apple describes the source type as users who discovered the app within App Store search results. Apple’s search guidance also notes that Apple Ads performance can show up in App Store Search reporting.</p>
+<p>That means “App Store Search” is not the same as “someone typed the exact brand name organically and chose the app.” It is a discovery source bucket. Useful, yes. A complete user story, no.</p>
+<h2 id="why-small-app-studios-can-misread-the-number">Why Small App Studios Can Misread the Number</h2>
+<p>First-Time Downloads feel exciting because they are easy to count. That is the trap.</p>
+<p>For a small iPhone app, a download spike can come from search, a friend sharing a link, a social post, a product-page change, a press mention, Apple featuring, paid ads, or plain randomness. If the sample is tiny, one or two people can make the day look meaningful.</p>
+<p>The responsible interpretation is usually:</p>
+<ul>
+<li>state the exact date range;</li>
+<li>keep the denominator visible;</li>
+<li>separate first-time downloads from redownloads;</li>
+<li>avoid blending App Store Connect, PostHog, Sentry, AdMob, and support data unless each source is labeled;</li>
+<li>mark missing data as unmeasured, not zero.</li>
+</ul>
+<p>That last point is the most important one. If a report is delayed, unavailable, or below a privacy threshold, the right word is “unmeasured.” Calling it zero invents certainty the data does not provide.</p>
+<h2 id="what-to-check-after-downloads">What to Check After Downloads</h2>
+<p>After First-Time Downloads, the better questions are practical:</p>
+<ul>
+<li>Did people open the app?</li>
+<li>Did sessions happen after the first day?</li>
+<li>Did users reach the core action?</li>
+<li>Did crashes or support messages appear?</li>
+<li>Did the app make any proceeds or ad revenue?</li>
+<li>Did campaign links or source types match the theory?</li>
+<li>Did reviews or ratings move?</li>
+</ul>
+<p>Apple’s Analytics overview frames this broader job as measuring discovery, engagement, monetization, retention, and quality. A studio that only watches downloads is flying with one instrument.</p>
+<h2 id="where-table-talk-fits">Where Table Talk Fits</h2>
+<p><a href="/apps/table-talk/">Table Talk: Conversation Cards</a> is a live iPhone app from Dudley Development. The current U.S. App Store lookup identifies it as an Entertainment app, bundle <code>com.nsantulli.tabletalk</code>, version 1.1.10, requiring iOS 16.6 or later, with the current version release date listed as October 2, 2026.</p>
+<p>Table Talk is a useful example because it is a simple consumer app: free conversation cards, no account, offline prompts, optional one-time Remove Ads purchase. For an app like that, First-Time Downloads can tell Dudley whether people are finding the product page. They cannot prove the table actually started talking.</p>
+<p>To judge that, Dudley needs separate evidence: sessions, share behavior, support load, crashes, ad and purchase behavior, and whether users come back. The download is the door opening. It is not the dinner.</p>
+<p><a href="https://apps.apple.com/app/id6780714565?pt=128970277&amp;ct=tt-web-blog-first-time-downloads-oct05-v1&amp;mt=8">Table Talk is free on the App Store</a> if you want conversation cards for dinner tables, date nights, friend groups, and work teams.</p>
+<h2 id="related-dudley-reading">Related Dudley Reading</h2>
+<p>If you are comparing rollout and outcome, keep the same discipline across every metric. A rollout state can tell you whether an update is available. First-Time Downloads measure new acquisition. Neither one proves retention, revenue, or customer love on its own.</p>
+</div><aside class="author-box" data-astro-cid-tldeq5d5><p data-astro-cid-tldeq5d5><a href="/about/nick-santulli/" data-astro-cid-tldeq5d5>Nick Santulli</a> is the founder of Dudley Development.</p><!-- Longer bio goes here when Nick writes it. Do not invent credentials. --></aside></article><div class="cta-block"><h3>Download Table Talk: Conversation Cards</h3><p>Liked this? Table Talk: Conversation Cards is free on the App Store.</p><a class="btn app-store-badge" href="https://apps.apple.com/app/id6780714565?pt=128970277&amp;ct=tt-w-first-time-app-store&amp;mt=8" rel="noopener" aria-label="Download on the App Store: Table Talk: Conversation Cards"><span class="top">Download on the</span><span class="bottom">App Store</span></a></div><p class="app-promotion-disclosure" data-astro-cid-tldeq5d5>Dudley Development makes the app mentioned above. The editorial answer is written to stand on its own.</p><section aria-labelledby="faq-heading"><h2 id="faq-heading">Frequently asked questions</h2><div class="faq"><details><summary>What are First-Time Downloads in App Store Connect?</summary><p>First-Time Downloads are an App Store Connect Analytics download metric for people downloading an app for the first time. They are useful for acquisition, but they are not the same as active users, retention, or revenue.</p></details><details><summary>Do First-Time Downloads include redownloads?</summary><p>No. Apple separates first-time downloads, redownloads, and total downloads in its downloads metrics, so those numbers should not be treated as interchangeable.</p></details><details><summary>Does a First-Time Download mean someone used the app?</summary><p>Not necessarily. A download means the app was acquired. Usage needs separate metrics such as sessions, active devices, retention, crashes, support messages, or in-app events.</p></details><details><summary>What does App Store Search mean in analytics?</summary><p>Apple describes App Store Search as users who discovered the app within App Store search results. Apple says Search Ads results are included in that source type.</p></details><details><summary>Is Table Talk&#39;s download data public?</summary><p>No. Dudley can discuss its own measurement approach in public, but private App Store Connect analytics should not be treated as public benchmark data unless Dudley explicitly publishes a sourced window and denominator.</p></details></div></section><section><h2>Keep reading</h2><nav class="see-also"><a href="/apps/table-talk/"><b>Table Talk: Conversation Cards</b><span>Break the ice. Start the talk. 420 conversation cards for any table.</span></a><a href="/blog/would-you-rather-table/"><b>Why Would You Rather Works at the Dinner Table</b><span>A forced binary can restart a stalled dinner when an open question gets a shrug. How to build a Would You Rather that splits the table, and when to skip it.</span></a><a href="/blog/openers-not-interviews/"><b>Conversation Openers That Don&#39;t Feel Like an Interview</b><span>Interview-style questions stall a date or a dinner because they ask for a résumé fact. Better openers ask for a preference, a choice, or a small story.</span></a><a href="/blog/phone-in-the-middle/"><b>The Phone in the Middle of the Table</b><span>Two posts on September 2 showed opposite ways people handle a pause: disappear into a private phone, or share one object the whole table can talk about.</span></a><a href="/blog/why-are-prices-still-high-if-inflation-is-down/"><b>Why Are Prices Still High If Inflation Is Down?</b><span>Inflation going down usually means prices are rising more slowly, not that the grocery bill has gone back to its old level. Here is the plain-English difference.</span></a></nav></section></div></main></div><footer class="site"><div class="wrap"><div class="foot-grid"><div class="foot-brand"><a class="brand" href="/" aria-label="Dudley Development home"><img class="mark" src="/assets/dudley-mark-header.webp" alt="" aria-hidden="true" width="54" height="30"><span>Dudley Development</span></a><p>Arcade satire, dinner-table cards, and plain-language tools.</p><nav class="socials" aria-label="Dudley Development on social media"><a href="https://x.com/DudleyAppDev" target="_blank" rel="noopener noreferrer" aria-label="Follow Dudley Development on X">X</a></nav></div><div class="foot-col"><h3>Explore</h3><nav aria-label="Footer — explore"><a href="/">Home</a><a href="/#apps">Apps</a><a href="/blog/">Blog</a><a href="/about/">About</a></nav></div><div class="foot-col"><h3>Help</h3><nav aria-label="Footer — help"><a href="/support/">Support</a><a href="/contact/">Contact</a><a href="/blog/">The Dudley Blog</a><a href="/blog/rss.xml">RSS feed</a><a href="https://waitlist.dudleyapps.com/">Pattern Gym waitlist</a></nav></div><div class="foot-col"><h3>Legal</h3><nav aria-label="Footer — legal"><a href="/privacy/">Privacy</a><a href="/about/">About Dudley</a></nav></div></div><div class="foot-bottom"><div class="copy">© 2026 Dudley Development, LLC. All rights reserved.</div><div class="foot-mail">Support <a href="mailto:support@dudleyapps.com">support@dudleyapps.com</a><span aria-hidden="true"> · </span>Say hi <a href="mailto:hello@dudleyapps.com">hello@dudleyapps.com</a></div></div></div></footer></body></html>
