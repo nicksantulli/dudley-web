@@ -31,7 +31,7 @@ No account required means you can use an iPhone app without creating a login. It
 
 The clean way to read it is this: no account required answers the sign-in question. For the rest, check what data stays on the device, what services the app uses, what the App Store privacy section says, and what the developer privacy policy explains.
 
-Sources: [Apple User Privacy and Data Use](https://developer.apple.com/app-store/user-privacy-and-data-use/), [Apple App Store Connect help on app privacy](https://developer.apple.com/help/app-store-connect/manage-app-information/manage-app-privacy), [Apple privacy controls](https://www.apple.com/privacy/control/), the current [Table Talk: Conversation Cards App Store listing](https://apps.apple.com/us/app/table-talk-conversation-cards/id6780714565), and the [Table Talk privacy policy](/privacy/table-talk/).
+Sources: [Apple User Privacy and Data Use](https://developer.apple.com/app-store/user-privacy-and-data-use/), [Apple App Store Connect help on app privacy](https://developer.apple.com/help/app-store-connect/manage-app-information/manage-app-privacy), [Apple privacy controls](https://www.apple.com/privacy/control/), a current U.S. Apple lookup for Table Talk: Conversation Cards, and the [Table Talk privacy policy](/privacy/table-talk/).
 
 ## The Short Answer
 
@@ -118,7 +118,7 @@ Table Talk is a useful example because its core promise is simple: open the app,
 
 That does not mean every privacy detail fits into the phrase "no account." Table Talk's privacy policy separately discusses local bookmarks and settings, sharing through the iOS share sheet, usage analytics, crash reporting, Apple Search Ads attribution, advertising, and tracking language. That separation is the point: no account required is the sign-in claim, not the entire privacy policy.
 
-[Table Talk is free on the App Store](https://apps.apple.com/app/id6780714565?pt=128970277&ct=tt-web-blog-no-account-required-oct08-v1&mt=8) if you want a no-sign-in conversation-card app for dinner tables, date nights, friend groups, and work teams.
+The Table Talk App Store link on this page points to the current public listing.
 
 ## How to Check Any App
 
