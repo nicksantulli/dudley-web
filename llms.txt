@@ -41,12 +41,13 @@ VibeRater Social assigns one of several vibe archetypes based on your photo:
 - [iPhone Privacy](https://dudleyapps.com/blog/topics/iphone-privacy/): Plain-English answers about photo access, contacts, location, screenshots, metadata, and app permissions. 25 published answers.
 - [AI Images & Media](https://dudleyapps.com/blog/topics/ai-media/): How AI-generated media, labels, training controls, watermarks, provenance, and authenticity signals work. 14 published answers.
 - [Internet Culture](https://dudleyapps.com/blog/topics/internet-culture/): Clear explanations of vibe language, social trends, group-chat behavior, and the internet’s stranger corners. 14 published answers.
-- [Dudley App Guides](https://dudleyapps.com/blog/topics/dudley-guides/): How Dudley apps work, what they cost, and what to expect before downloading. 33 published answers.
+- [Dudley App Guides](https://dudleyapps.com/blog/topics/dudley-guides/): How Dudley apps work, what they cost, and what to expect before downloading. 34 published answers.
 
 ## Recent Answers
 
 The Dudley Blog publishes direct, sourced answers about iPhone privacy, AI media, internet culture, economics, the App Store, and Dudley products. Full index: https://dudleyapps.com/blog/ (RSS: https://dudleyapps.com/blog/rss.xml).
 
+- [What Does Ready for Distribution Mean in App Store Connect?](https://dudleyapps.com/blog/what-does-ready-for-distribution-mean-app-store-connect/): Ready for Distribution means Apple has accepted the app version and it can be distributed, but it does not prove downloads, usage, revenue, or crash-free performance.
 - [What Does No Account Required Mean in an iPhone App?](https://dudleyapps.com/blog/what-does-no-account-required-mean-iphone-app/): No account required usually means you can use the app without signing in. It does not automatically mean no data, no ads, no purchases, or no privacy label.
 - [What Does Not Enough Data Mean in App Store Connect?](https://dudleyapps.com/blog/what-does-not-enough-data-mean-app-store-connect/): Not Enough Data usually means App Store Connect does not have enough eligible data to show a metric. It is not the same as zero installs, zero usage, or zero revenue.
 - [Why Would You Rather Works at the Dinner Table](https://dudleyapps.com/blog/would-you-rather-table/): A forced binary can restart a stalled dinner when an open question gets a shrug. How to build a Would You Rather that splits the table, and when to skip it.
@@ -58,7 +59,6 @@ The Dudley Blog publishes direct, sourced answers about iPhone privacy, AI media
 - [What Are Content Credentials on AI Photos?](https://dudleyapps.com/blog/what-are-content-credentials-ai-photos/): Content Credentials are provenance metadata that can show how a photo was created or edited. Here is what they mean, what they do not prove, and how to read them before sharing AI photos.
 - [Can You Remove the Gemini AI Watermark?](https://dudleyapps.com/blog/can-you-remove-gemini-ai-watermark/): Gemini now lets some users turn off visible watermarks on AI-generated media. Here is what changes, what still stays in the file, and what to check before sharing AI-edited photos.
 - [What Is Nano Banana AI?](https://dudleyapps.com/blog/what-is-nano-banana-ai/): Nano Banana is Google's nickname for Gemini image generation and editing models. Here is what the trend means, what it can do with photos, and what to check before sharing AI-edited images.
-- [Can iPhone Apps Tell When You Screen Record?](https://dudleyapps.com/blog/can-iphone-apps-tell-when-you-screen-record/): An iPhone app can often tell when its own screen is being recorded or mirrored, but that does not mean it can read the recording file or browse your old screen recordings.
 
 ## About
 
