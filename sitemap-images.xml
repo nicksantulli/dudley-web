@@ -118,6 +118,11 @@
     <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://dudleyapps.com/blog/3/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://dudleyapps.com/blog/are-aura-apps-real/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/share/are-aura-apps-real.png</image:loc></image:image>
@@ -278,6 +283,11 @@
     <image:image><image:loc>https://dudleyapps.com/assets/share/should-you-give-ai-photo-app-full-photo-access.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://dudleyapps.com/blog/thanksgiving-dinner-conversation/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/thanksgiving-dinner-conversation.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://dudleyapps.com/blog/topics/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
@@ -306,6 +316,11 @@
     <loc>https://dudleyapps.com/blog/what-are-content-credentials-ai-photos/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/share/what-are-content-credentials-ai-photos.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://dudleyapps.com/blog/what-are-first-time-downloads-app-store/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/what-are-first-time-downloads-app-store.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dudleyapps.com/blog/what-does-aura-mean-in-slang/</loc>
@@ -417,7 +432,4 @@
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
   </url>
-<url>
-    <loc>https://dudleyapps.com/blog/what-are-first-time-downloads-app-store/</loc>
-    <image:image><image:loc>https://dudleyapps.com/assets/share/what-are-first-time-downloads-app-store.png</image:loc></image:image>
-  </url></urlset>
+</urlset>

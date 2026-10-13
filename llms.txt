@@ -41,24 +41,24 @@ VibeRater Social assigns one of several vibe archetypes based on your photo:
 - [iPhone Privacy](https://dudleyapps.com/blog/topics/iphone-privacy/): Plain-English answers about photo access, contacts, location, screenshots, metadata, and app permissions. 26 published answers.
 - [AI Images & Media](https://dudleyapps.com/blog/topics/ai-media/): How AI-generated media, labels, training controls, watermarks, provenance, and authenticity signals work. 14 published answers.
 - [Internet Culture](https://dudleyapps.com/blog/topics/internet-culture/): Clear explanations of vibe language, social trends, group-chat behavior, and the internet’s stranger corners. 14 published answers.
-- [Dudley App Guides](https://dudleyapps.com/blog/topics/dudley-guides/): How Dudley apps work, what they cost, and what to expect before downloading. 36 published answers.
+- [Dudley App Guides](https://dudleyapps.com/blog/topics/dudley-guides/): How Dudley apps work, what they cost, and what to expect before downloading. 38 published answers.
 
 ## Recent Answers
 
 The Dudley Blog publishes direct, sourced answers about iPhone privacy, AI media, internet culture, economics, the App Store, and Dudley products. Full index: https://dudleyapps.com/blog/ (RSS: https://dudleyapps.com/blog/rss.xml).
 
+- [How to Keep Thanksgiving Dinner Conversation From Turning Into Politics (or Silence)](https://dudleyapps.com/blog/thanksgiving-dinner-conversation/): How to host Thanksgiving dinner conversation that stays warm: questions for mixed ages, a redirect when politics starts, and a way through the silent table.
 - [What Does Offline-First Mean in an iPhone App?](https://dudleyapps.com/blog/what-does-offline-first-mean-iphone-app/): Offline-first means an app can do its main job without a live internet connection. It is useful, but it is not the same thing as no data collection.
 - [What Does Not Enough Ratings Mean on the App Store?](https://dudleyapps.com/blog/what-does-not-enough-ratings-mean-app-store/): Not enough ratings means the App Store is not showing a reliable public rating summary yet. It does not prove an app has no users, no downloads, or low quality.
 - [What Does Ready for Distribution Mean in App Store Connect?](https://dudleyapps.com/blog/what-does-ready-for-distribution-mean-app-store-connect/): Ready for Distribution means Apple has accepted the app version and it can be distributed, but it does not prove downloads, usage, revenue, or crash-free performance.
 - [What Does No Account Required Mean in an iPhone App?](https://dudleyapps.com/blog/what-does-no-account-required-mean-iphone-app/): No account required usually means you can use the app without signing in. It does not automatically mean no data, no ads, no purchases, or no privacy label.
 - [What Does Not Enough Data Mean in App Store Connect?](https://dudleyapps.com/blog/what-does-not-enough-data-mean-app-store-connect/): Not Enough Data usually means App Store Connect does not have enough eligible data to show a metric. It is not the same as zero installs, zero usage, or zero revenue.
+- [What Are First-Time Downloads in App Store Connect?](https://dudleyapps.com/blog/what-are-first-time-downloads-app-store/): First-Time Downloads show new App Store downloads, but they are not the same as active users, retention, revenue, or product-market fit. Here is the plain-English version.
 - [Why Would You Rather Works at the Dinner Table](https://dudleyapps.com/blog/would-you-rather-table/): A forced binary can restart a stalled dinner when an open question gets a shrug. How to build a Would You Rather that splits the table, and when to skip it.
 - [Conversation Openers That Don't Feel Like an Interview](https://dudleyapps.com/blog/openers-not-interviews/): Interview-style questions stall a date or a dinner because they ask for a résumé fact. Better openers ask for a preference, a choice, or a small story.
 - [Why Are Prices Still High If Inflation Is Down?](https://dudleyapps.com/blog/why-are-prices-still-high-if-inflation-is-down/): Inflation going down usually means prices are rising more slowly, not that the grocery bill has gone back to its old level. Here is the plain-English difference.
 - [The Phone in the Middle of the Table](https://dudleyapps.com/blog/phone-in-the-middle/): Two posts on September 2 showed opposite ways people handle a pause: disappear into a private phone, or share one object the whole table can talk about.
 - [What Is Age Assurance in Apps?](https://dudleyapps.com/blog/what-is-age-assurance-in-apps/): Age assurance is how an app or app store estimates, checks, or receives a user's age range so it can apply age-appropriate rules. Here is what it means for social apps, photo apps, and VibeRater users.
-- [Does Google Photos Ask Photos Use Your Photos for AI Training?](https://dudleyapps.com/blog/does-google-photos-ask-photos-use-your-photos-for-ai-training/): Google says Gemini features in Google Photos do not use your personal Photos data for ads or to train generative AI models outside Google Photos. Here is the privacy catch to understand before you ask AI about your camera roll.
-- [What Are Content Credentials on AI Photos?](https://dudleyapps.com/blog/what-are-content-credentials-ai-photos/): Content Credentials are provenance metadata that can show how a photo was created or edited. Here is what they mean, what they do not prove, and how to read them before sharing AI photos.
 
 ## About
 
