@@ -21,7 +21,7 @@ faq:
   - q: "What should you play between Thanksgiving dinner and dessert?"
     a: "Play one short game the whole table can join or pass: a no-repeat list, a charades turn from the room, or a single Would You Rather. If people are already inside a story, leave them there. A political fight or a flat silence is a conversation problem, not a game."
   - q: "What is Table Talk?"
-    a: "Table Talk is a free iPhone app of 420 hand-written conversation prompts across six categories, plus an 80-card Would You Rather deck. Family Dinner is the cross-generational category. Light & Fun is absurd hypotheticals with nothing at stake. No account. The cards work offline. An optional Remove Ads purchase is a one-time buy."
+    a: "Table Talk is a free iPhone app of 420 hand-written conversation prompts across six categories, plus an 80-card Would You Rather deck. Family Dinner is the cross-generational category. Light & Fun covers absurd hypotheticals with nothing at stake. No account. The cards work offline. An optional Remove Ads purchase is a one-time buy."
 draft: false
 ---
 
