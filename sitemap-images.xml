@@ -288,6 +288,11 @@
     <image:image><image:loc>https://dudleyapps.com/assets/share/thanksgiving-dinner-conversation.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://dudleyapps.com/blog/thanksgiving-games/</loc>
+    <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
+    <image:image><image:loc>https://dudleyapps.com/assets/share/thanksgiving-games.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://dudleyapps.com/blog/topics/</loc>
     <image:image><image:loc>https://dudleyapps.com/assets/dudley-mark-header.webp</image:loc></image:image>
     <image:image><image:loc>https://dudleyapps.com/assets/og-home.png</image:loc></image:image>
