@@ -397,6 +397,22 @@ test('contact form copy matches where the form actually delivers', () => {
   const error = contact.match(/<div class="cf-error"[\s\S]*?<\/div>/)?.[0] ?? '';
   for (const block of [success, error]) assert.doesNotMatch(block, /\u2014/);
   assert.match(error, /hello@dudleyapps\.com/);
+  assert.match(success, /Replies come from an @dudleyapps\.com address\./);
+  assert.doesNotMatch(success, /[Ww]e will reply|we&#39;ll reply|we'll reply/);
+  assert.doesNotMatch(contact, /We only use|so we see it first|small amount of client work/);
+});
+
+test('form note and privacy page describe the same use of contact messages', () => {
+  const use = /we use what you send to answer your request\s+and keep a record of the conversation/i;
+  const contact = readFileSync(resolve('dist/contact/index.html'), 'utf8');
+  const privacy = readFileSync(resolve('dist/privacy/index.html'), 'utf8');
+  const section = privacy.match(/id="website-contact"[\s\S]*?<\/ul>/)?.[0] ?? '';
+  assert.match(contact.match(/<p class="cf-privacy"[\s\S]*?<\/p>/)?.[0] ?? '', use);
+  assert.match(section, use);
+  assert.match(section, /href="https:\/\/formsubmit\.co\/privacy\.pdf"/);
+  assert.match(section, /FormSubmit keeps submissions for 30 days/);
+  assert.match(section, /Dudley&#39;s contact page sets no cookies|Dudley's contact page sets no cookies/);
+  assert.doesNotMatch(section, /as long as we need|reasonable business records|\u2014/);
 });
 
 test('privacy page discloses the FormSubmit contact form and has working icons', () => {
