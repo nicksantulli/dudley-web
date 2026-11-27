@@ -137,7 +137,7 @@ test('every JSON-LD block parses', () => {
 test('Table Talk money page uses the search title, snippet, and app schema', () => {
   const html = readFileSync(resolve('dist/apps/table-talk/index.html'), 'utf8');
   assert.match(html, /<title>Table Talk: Conversation Cards for iPhone \| Dudley Development<\/title>/);
-  assert.match(html, /<meta name="description" content="Free iPhone conversation starter cards — 420 prompts \+ Would You Rather\. Offline, no account\. Dinner, dates, friends, teams\."/);
+  assert.match(html, /<meta name="description" content="420 free conversation cards for iPhone, plus Would You Rather\. Works offline with no account\. For dinners, dates, friends and teams\."/);
   const blocks = jsonLd(html);
   const app = blocks.find((value) => value['@type'] === 'SoftwareApplication');
   assert.equal(app.name, 'Table Talk: Conversation Cards');
@@ -167,13 +167,13 @@ test('EconByte and Last Human money pages use short search titles and snippets',
   assert.ok(lastTitle.length <= 60, `Last Human title is ${lastTitle.length}`);
   const econDesc = capture(econ, /<meta name="description" content="([^"]+)"/i);
   const lastDesc = capture(last, /<meta name="description" content="([^"]+)"/i);
-  assert.equal(econDesc, 'Plain-language economics cards sourced to Fed/BLS. Five-minute daily sets. Education only — not trading tips.');
-  assert.equal(lastDesc, 'Satirical iPhone arcade: dodge office bots across 50 floors before they optimize your desk. Free to play, no account, and playable offline after download.');
+  assert.equal(econDesc, 'Plain-language economics cards, each citing an official source and date. Five-minute daily sets. Education only, not financial advice.');
+  assert.equal(lastDesc, 'Satirical iPhone arcade: dodge office bots across 100 floors. Free to play, no account, plays offline.');
   assert.ok(econDesc.length <= 160, `EconByte description is ${econDesc.length}`);
   assert.ok(lastDesc.length <= 160, `Last Human description is ${lastDesc.length}`);
   assert.match(lastDesc, /offline/i);
   assert.match(econDesc, /plain-language|Education only/);
-  assert.match(econDesc, /not trading tips/);
+  assert.match(econDesc, /not financial advice/);
   assert.doesNotMatch(`${econTitle} ${econDesc}`, /returns|beat the market|120 cards/i);
   for (const html of [econ, last]) {
     const app = jsonLd(html).find((value) => value['@type'] === 'SoftwareApplication');
@@ -194,7 +194,7 @@ test('Powell Prowl and VibeRater use short search titles', () => {
   const powellDesc = capture(powell, /<meta name="description" content="([^"]+)"/i);
   const vibeDesc = capture(vibe, /<meta name="description" content="([^"]+)"/i);
   assert.equal(powellDesc, 'Free satirical iPhone mini-game collection. El Pres chases Le Chair across 60 levels for a rate-cut memo. Parody only, no Dudley account.');
-  assert.equal(vibeDesc, 'A social app that stays playful on purpose. Rate a photo, share it with people you chose, and leave the infinite feed out of it.');
+  assert.equal(vibeDesc, 'A playful social app for iPhone. Rate a photo, then keep it private, share it with your Squad, or post it to Vibes.');
   assert.ok(powellDesc.length <= 160, `Powell description is ${powellDesc.length}`);
   assert.ok(vibeDesc.length <= 160, `VibeRater description is ${vibeDesc.length}`);
   assert.doesNotMatch(powellTitle, /tag, sniper|canoe|whack/i);
@@ -209,7 +209,7 @@ test('Powell Prowl and VibeRater use short search titles', () => {
 
 test('related apps link live money pages', () => {
   const home = readFileSync(resolve('dist/index.html'), 'utf8');
-  assert.match(home, /Apps that work before they ask who you are\./);
+  assert.match(home, /iPhone apps that say what they cost and what they collect\./);
   const moreFrom = (slug) => {
     const html = readFileSync(resolve(`dist/apps/${slug}/index.html`), 'utf8');
     return html.match(/<h2>More from Dudley Development<\/h2>[\s\S]*?<\/nav>/)?.[0] ?? '';
@@ -273,8 +273,8 @@ test('EconByte built pages use the 180-card listing, not the old 120-card prices
   assert.match(app.featureList.join('\n'), /180 sourced cards across 15 core topics, 12 cards per topic/);
   assert.equal(app.aggregateRating, undefined);
   const last = readFileSync(resolve('dist/apps/last-human/index.html'), 'utf8');
-  assert.match(last, /50 floors/);
-  assert.match(last, /50 escalating office floors/);
+  assert.match(last, /100 floors/);
+  assert.match(last, /100 escalating office floors/);
   assert.doesNotMatch(last, /180 cards/);
 });
 
@@ -291,9 +291,9 @@ test('Table Talk and EconByte money pages link their posts in the body', () => {
 
 test('homepage head uses the locked studio title', () => {
   const home = readFileSync(resolve('dist/index.html'), 'utf8');
-  assert.match(home, /<title>Dudley Development — apps that earn the tap<\/title>/);
+  assert.match(home, /<title>Dudley Development: iPhone games, conversation cards, learning and social apps<\/title>/);
   const description = capture(home, /<meta name="description" content="([^"]+)"/i);
-  assert.equal(description, 'Arcade satire, dinner-table cards, and plain-language tools. No signup as a cover charge.');
+  assert.equal(description, 'Satirical arcade games, conversation cards, economics lessons, a packing checklist and a photo-rating social app. Each app page lists its price, account needs and privacy details.');
   assert.doesNotMatch(home, /iPhone apps, games &amp; conversation cards/);
 });
 
@@ -330,11 +330,10 @@ test('homepage ships no Astro hydration', () => {
 
 test('homepage uses the approved product-first message', () => {
   const home = readFileSync(resolve('dist/index.html'), 'utf8');
-  assert.match(home, /Apps that work before they ask who you are\./);
-  assert.match(home, /Arcade satire, dinner-table cards, and plain-language tools\. No signup as a cover charge\./);
-  assert.match(home, /Notes from the shop/);
+  assert.match(home, /iPhone apps that say what they cost and what they collect\./);
+  assert.match(home, /Each app page lists its price, account needs and privacy details\.<\/p>/);
+  assert.match(home, /From the blog/);
   assert.doesNotMatch(home, /On deck|In the works|Coming soon/i);
-  assert.match(home, /Arcade satire, dinner-table cards, and plain-language tools\.<\/p>/);
   assert.doesNotMatch(home, /SendBrake|ReplyGate|ActionCard|Beat the Dealer/);
   assert.doesNotMatch(home, /Pick an app\. See what happens\.|LIVE ON THE APP STORE|Straight answers, useful context|Next from Dudley|Games, conversation starters, and useful things for iPhone/);
   assert.doesNotMatch(home, /Why Dudley|Polish is the point|feature-icon|class="grad"/);
@@ -345,7 +344,7 @@ test('homepage uses the approved product-first message', () => {
   assert.match(band('monetary-policy-independence-day'), /Chase it on the App Store/);
   assert.match(band('vibe-rater'), /href="https:\/\/apps\.apple\.com\/us\/app\/viberater-social\/id6780704282\?pt=128970277&amp;ct=vr-web-home-aug26-v1&amp;mt=8"/);
   assert.match(band('packed-yet'), /On the App Store/);
-  assert.match(band('last-human'), /50 escalating office floors/);
+  assert.match(band('last-human'), /100 escalating office floors/);
 });
 
 test('homepage, About, Contact, and llms.txt do not promote unlisted client work', () => {

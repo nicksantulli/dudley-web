@@ -35,12 +35,12 @@ test('Last Human source facts are live', () => {
   const data = frontmatter('last-human.mdx');
   assert.match(data, /^status: "live"$/m);
   assert.match(data, /^appStoreId: "6808782611"$/m);
-  assert.match(data, /50 escalating office floors/);
+  assert.match(data, /100 escalating office floors/);
   assert.doesNotMatch(data, /coming soon/i);
   assert.doesNotMatch(data, /180 cards/);
 });
 
-test('EconByte source matches the public App Store 1.1.5 listing', () => {
+test('EconByte source matches the public App Store 1.1.8 listing', () => {
   const source = readFileSync(join(APPS, 'econbyte.mdx'), 'utf8');
   assert.match(source, /180 cards across 15 topics, 12 each/);
   assert.match(source, /12 cards each, for 180 cards/);

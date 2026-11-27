@@ -28,6 +28,11 @@
  *       (e.g. tabletalk-web-home on a VibeRater URL must fail).
  *   13. llms.txt App Store links: registered token, correct app ID, pt/mt,
  *       no ppid.
+ *   14. No em dashes in visible text, titles, meta/OG tags, aria-labels,
+ *       JSON-LD, RSS, or llms.txt.
+ *   15. No word fused to an inline link or emphasis tag (lost space).
+ *   16. Every BreadcrumbList item URL resolves to a built page.
+ *   17. The retired /blog/tags/vibe-rater/ tag page redirects to viberater.
  */
 
 import test from 'node:test';
@@ -521,7 +526,7 @@ test('llms.txt App Store links are tagged, registered, and correctly paired', ()
   assert.deepEqual(failures, [], `llms.txt attribution failures:\n${failures.join('\n')}`);
 });
 
-test('Last Human renders as a live 50-floor App Store release across launch surfaces', () => {
+test('Last Human renders as a live 100-floor App Store release across launch surfaces', () => {
   const home = pages.find((p) => p.rel === '/index.html');
   const appPage = pages.find((p) => p.rel === '/apps/last-human/index.html');
   const llmsPath = join(DIST, 'llms.txt');
@@ -538,9 +543,83 @@ test('Last Human renders as a live 50-floor App Store release across launch surf
   assert.ok(extractAppStoreHrefs(home.html).includes(homeUrl), 'homepage is missing the Last Human App Store CTA');
   assert.ok(appPage.html.includes('Live on the App Store'), 'Last Human app page is not marked live');
   assert.ok(extractAppStoreHrefs(appPage.html).includes(appUrl), 'Last Human app page is missing its attributed App Store CTA');
-  assert.match(appPage.html, /50 floors/i);
+  assert.match(appPage.html, /100 floors/i);
   assert.doesNotMatch(appPage.html, /10 levels/i);
   assert.ok(llms.includes(llmsUrl), 'llms.txt is missing the attributed Last Human App Store link');
   assert.match(llms, /Last Human[^\n]+Live on the App Store/i);
   assert.doesNotMatch(llms, /Last Human[^\n]+Coming soon/i);
+});
+
+// ── Copy hygiene ───────────────────────────────────────────────────────────
+
+const EM_DASH = '\u2014';
+
+function decodeText(text) {
+  return text
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, dec) => String.fromCodePoint(Number(dec)))
+    .replace(/&mdash;/g, EM_DASH)
+    .replace(/&amp;/g, '&');
+}
+
+/** Visible text, JSON-LD, and human-readable attributes; non-JSON scripts, styles, and comments dropped. */
+function readableSurface(html) {
+  const attrs = [...html.matchAll(/\b(?:content|aria-label|alt|title|placeholder)="([^"]*)"/g)].map((m) => m[1]);
+  const body = html
+    .replace(/<script\b(?![^>]*ld\+json)[^>]*>[\s\S]*?<\/script>/g, '')
+    .replace(/<style\b[\s\S]*?<\/style>/g, '')
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/<[^>]+>/g, ' ');
+  return decodeText(`${body} ${attrs.join(' ')}`);
+}
+
+test('no em dashes in rendered copy, metadata, RSS, or llms.txt', () => {
+  const failures = [];
+  for (const page of pages) {
+    const surface = readableSurface(page.html);
+    const at = surface.indexOf(EM_DASH);
+    if (at !== -1) failures.push(`${page.rel}: …${surface.slice(Math.max(0, at - 60), at + 20).replace(/\s+/g, ' ')}…`);
+  }
+  for (const file of ['blog/rss.xml', 'llms.txt']) {
+    const text = decodeText(readFileSync(join(DIST, file), 'utf-8'));
+    if (text.includes(EM_DASH)) failures.push(`/${file}`);
+  }
+  assert.deepEqual(failures, [], `Em dashes found:\n${failures.join('\n')}`);
+});
+
+test('no words fused to inline links or emphasis', () => {
+  const failures = [];
+  const fused = /[A-Za-z0-9.,;:](?=<(?:a|strong|em|code|b)\b)|<\/(?:a|strong|em|code|b)>(?=[A-Za-z0-9])/g;
+  for (const page of pages) {
+    const html = page.html.replace(/<script\b[\s\S]*?<\/script>|<style\b[\s\S]*?<\/style>/g, '');
+    for (const m of html.matchAll(fused)) {
+      failures.push(`${page.rel}: ${html.slice(Math.max(0, m.index - 40), m.index + 40).replace(/\s+/g, ' ')}`);
+    }
+  }
+  assert.deepEqual(failures, [], `Missing spaces around inline tags:\n${failures.join('\n')}`);
+});
+
+test('every breadcrumb JSON-LD item resolves to a built page', () => {
+  const failures = [];
+  for (const page of pages) {
+    for (const [, json] of page.html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+      const blocks = [JSON.parse(json)].flat();
+      for (const block of blocks) {
+        if (block['@type'] !== 'BreadcrumbList') continue;
+        for (const item of block.itemListElement) {
+          const { pathname } = new URL(item.item);
+          if (!existsSync(join(DIST, pathname, 'index.html'))) failures.push(`${page.rel}: ${item.name} -> ${pathname}`);
+        }
+      }
+    }
+  }
+  assert.deepEqual(failures, [], `Breadcrumb items without a page:\n${failures.join('\n')}`);
+});
+
+test('the retired vibe-rater tag page redirects to the viberater tag', () => {
+  const page = pages.find((p) => p.rel === '/blog/tags/vibe-rater/index.html');
+  assert.ok(page, 'dist/blog/tags/vibe-rater/index.html not found');
+  assert.match(page.html, /<meta http-equiv="refresh" content="0; url=\/blog\/tags\/viberater\/">/);
+  assert.match(page.html, /<meta name="robots" content="noindex,follow">/);
+  assert.ok(existsSync(join(DIST, 'blog/tags/viberater/index.html')), 'viberater tag page missing');
 });
