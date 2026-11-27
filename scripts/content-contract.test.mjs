@@ -113,9 +113,10 @@ test('only released apps reach the shared app lists, and Where\'s This House sta
   assert.equal(listedApps([{ id: 'dude-wheres-this-house', data: { status: 'live', order: 1, developedFor: 'HomeLight' } }]).length, 0);
 });
 
-test('topic registry defines the six durable hub slugs', () => {
+test('topic registry defines the five durable hub slugs', () => {
   const source = readFileSync(resolve('src/lib/topics.ts'), 'utf8');
-  for (const slug of ['iphone-privacy', 'ai-media', 'internet-culture', 'economics', 'app-store', 'dudley-guides']) {
+  for (const slug of ['iphone-privacy', 'ai-media', 'economics', 'app-store', 'dudley-guides']) {
     assert.match(source, new RegExp(`['"]${slug}['"]\\s*:`), `missing topic ${slug}`);
   }
+  assert.doesNotMatch(source, /internet-culture/);
 });

@@ -89,9 +89,9 @@ test('legacy tag pages are noindex and absent from the page sitemap', () => {
 });
 
 test('an unmapped freeform tag is text, not a dead link', () => {
-  const article = readFileSync(resolve('dist/blog/npc-defense/index.html'), 'utf8');
-  assert.match(article, />Archetype Deep Dive</);
-  assert.doesNotMatch(article, /href="\/blog\/tags\/archetype-deep-dive\//);
+  const article = readFileSync(resolve('dist/blog/what-does-not-enough-ratings-mean-app-store/index.html'), 'utf8');
+  assert.match(article, />Indie Apps</);
+  assert.doesNotMatch(article, /href="\/blog\/tags\/indie-apps\//);
 });
 
 test('Last Human live facts agree across HTML and llms.txt', () => {
@@ -278,14 +278,16 @@ test('EconByte built pages use the 180-card listing, not the old 120-card prices
   assert.doesNotMatch(last, /180 cards/);
 });
 
-test('Table Talk and EconByte money pages link their posts in the body', () => {
+test('Table Talk and EconByte money pages carry their moved guides', () => {
   const table = readFileSync(resolve('dist/apps/table-talk/index.html'), 'utf8');
   const tableBody = table.match(/<article class="app-body">[\s\S]*?<\/article>/)?.[0] ?? '';
-  assert.match(tableBody, /href="\/blog\/phone-in-the-middle\/"/);
-  assert.match(tableBody, /href="\/blog\/openers-not-interviews\/"/);
+  assert.match(tableBody, /Using Table Talk at the table/);
+  assert.match(tableBody, /Put one phone in the middle/);
+  assert.doesNotMatch(tableBody, /href="\/blog\//);
   const econ = readFileSync(resolve('dist/apps/econbyte/index.html'), 'utf8');
   const econBody = econ.match(/<article class="app-body">[\s\S]*?<\/article>/)?.[0] ?? '';
-  assert.match(econBody, /href="\/blog\/why-are-prices-still-high-if-inflation-is-down\/"/);
+  assert.match(econBody, /Why prices stay high when inflation is down/);
+  assert.doesNotMatch(econBody, /href="\/blog\//);
   assert.doesNotMatch(econBody, /returns|beat the market/i);
 });
 
@@ -295,11 +297,6 @@ test('homepage head uses the locked studio title', () => {
   const description = capture(home, /<meta name="description" content="([^"]+)"/i);
   assert.equal(description, 'Satirical arcade games, conversation cards, economics lessons, a packing checklist and a photo-rating social app. Each app page lists its price, account needs and privacy details.');
   assert.doesNotMatch(home, /iPhone apps, games &amp; conversation cards/);
-});
-
-test('phone-in-the-middle links to Table Talk with a descriptive anchor', () => {
-  const html = readFileSync(resolve('dist/blog/phone-in-the-middle/index.html'), 'utf8');
-  assert.match(html, /<a href="\/apps\/table-talk\/">Table Talk conversation cards<\/a>/);
 });
 
 test('representative schema facts match visible pages', () => {
@@ -429,7 +426,8 @@ test('app pages expose pricing, account, offline, and privacy facts', () => {
 test('answer articles lead with a summary and provenance', () => {
   const html = readFileSync(resolve('dist/blog/can-iphone-apps-see-your-contacts/index.html'), 'utf8');
   assert.match(html, /class="answer-summary"/);
-  assert.match(html, /Written by Nicholas Santulli/);
+  assert.match(html, /class="byline"[^>]*>Nick Santulli</);
+  assert.doesNotMatch(html, /Written by|Nicholas/);
   assert.match(html, /<time/);
 });
 
@@ -490,7 +488,8 @@ test('author page and bylines point at Nick Santulli', () => {
   assert.match(author, /Nick Santulli is the founder of Dudley Development\./);
   assert.match(author, /"@type":"Person"/);
   const post = readFileSync(resolve('dist/blog/can-iphone-apps-see-your-contacts/index.html'), 'utf8');
-  assert.match(post, /href="\/about\/nick-santulli\/"[^>]*>Written by Nicholas Santulli/);
+  assert.match(post, /href="\/about\/nick-santulli\/"[^>]*>Nick Santulli<\/a>/);
+  assert.match(post, /"author":\{"@type":"Person","name":"Nick Santulli"/);
   assert.match(post, /Nick Santulli<\/a> is the founder of Dudley Development\./);
 });
 
