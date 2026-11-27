@@ -662,3 +662,27 @@ test('no live page names an unreleased app or teases the unshipped Powell Prowl 
     assert.doesNotMatch(page.html, /Monetary Policy: Independence Day|100-level|soon to be renamed/i, page.rel);
   }
 });
+
+test('Packed Yet copy describes the shipped ATT prompt', () => {
+  const policy = readFileSync(resolve('dist/privacy/packed-yet/index.html'), 'utf8');
+  assert.match(policy, /Effective date: November 27, 2026/);
+  assert.match(policy, /asks Apple's tracking permission\s+once, at first launch, before any ad loads/);
+  assert.match(policy, /If you tap Allow, ads may be personalized/);
+  assert.doesNotMatch(policy, /does\s+not request Apple's tracking permission/);
+  const app = readFileSync(resolve('dist/apps/packed-yet/index.html'), 'utf8');
+  assert.match(app, /Ads are personalized only if you allow it\./);
+  assert.doesNotMatch(app, /request Apple(?:'|&#39;)s tracking permission\. Ads are requested as non-personalized/);
+  const index = readFileSync(resolve('dist/privacy/index.html'), 'utf8');
+  assert.match(index, /Google AdMob, with an ATT prompt \(personalized only if you allow; no ads in EEA\/UK\/CH or unknown regions\)/);
+  assert.doesNotMatch(index, /non-personalized, no ATT prompt; no ads in EEA\/UK\/CH or unknown regions/);
+});
+
+test('VibeRater policy describes how Radar location is stored and shown', () => {
+  const html = readFileSync(resolve('dist/privacy/vibe-rater/index.html'), 'utf8');
+  const text = html.replace(/\s+/g, ' ');
+  assert.match(text, /sends your location only if you turn it on in Settings/);
+  assert.match(text, /rounds it to about 110 meters and stores it with your account ID/);
+  assert.match(text, /friends at about 110 meters, everyone else at about 1\.1 kilometers/);
+  assert.match(text, /we keep it until you turn Radar off or delete your account/);
+  assert.doesNotMatch(text, /shared briefly/);
+});
