@@ -60,7 +60,7 @@ Use Captured by Me as a sorting clue, not as a trust label.
 
 ## How iPhone Photos Sorting Already Works
 
-Even before iOS 27 is broadly available, Apple Support says iPhone users can sort the Photos library by recently added or date captured, filter to show particular item types, and hide screenshots, items synced from a Mac, or photos and videos shared through Messages.
+Apple Support also says iPhone users can sort the Photos library by recently added or date captured, filter to show particular item types, and hide screenshots, items synced from a Mac, or photos and videos shared through Messages.
 
 Source: [Apple Support: Sort and filter the photo library on iPhone](https://support.apple.com/en-ae/guide/iphone/iph2e66e2f2c/ios).
 
@@ -110,7 +110,7 @@ Be careful with apps that turn a photo into serious-sounding claims about beauty
 
 ## Where VibeRater Fits
 
-We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-captured-iphone&mt=8).
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-captured-iphone&mt=8).
 
 ## A Simple Workflow
 
