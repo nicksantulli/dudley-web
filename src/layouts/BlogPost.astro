@@ -32,9 +32,7 @@ const APP_META: Record<string, { name: string; id: string }> = {
   'table-talk': { name: 'Table Talk: Conversation Cards', id: '6780714565' },
   'econbyte': { name: 'EconByte', id: APP_STORE.econByte },
 };
-const ctaKey: string | undefined = post.appCta === false
-  ? undefined
-  : post.relatedApps?.find((a: string) => APP_META[a]);
+const ctaKey: string | undefined = post.relatedApps?.find((a: string) => APP_META[a]);
 const cta = ctaKey ? APP_META[ctaKey] : undefined;
 
 const ogImage = post.ogImage ?? `/assets/share/${post.slug}.png`;

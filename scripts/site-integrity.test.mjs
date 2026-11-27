@@ -595,16 +595,6 @@ test('removed VibeRater URLs are gone from the sitemaps, llms.txt, and internal 
   assert.doesNotMatch(llms, /## Tools|## Comparisons/);
 });
 
-test('pure VibeRater promotion posts carry no App Store CTA or app banner', () => {
-  for (const slug of ['photo-rating-apps-2026', 'npc-defense', 'gorpcore-prophet-won', 'quiet-luxury-2026', 'phone-case-vibe']) {
-    const html = readFileSync(resolve(`dist/blog/${slug}/index.html`), 'utf8');
-    assert.doesNotMatch(html, /id6780704282|apps\.apple\.com/, slug);
-    assert.doesNotMatch(html, /apple-itunes-app|app-store-badge|app-promotion-disclosure/, slug);
-  }
-  const other = readFileSync(resolve('dist/blog/are-aura-apps-real/index.html'), 'utf8');
-  assert.match(other, /app-store-badge/);
-});
-
 const BLOG_CTA_APPS = ['monetary-policy-independence-day', 'vibe-rater', 'table-talk', 'econbyte'];
 
 function blogFrontmatter() {
@@ -615,7 +605,6 @@ function blogFrontmatter() {
     return {
       slug: name.replace(/\.mdx?$/, ''),
       relatedApps: list.match(/[a-z0-9-]+/g) ?? [],
-      appCta: !/^appCta:\s*false\b/m.test(fm),
       draft: /^draft:\s*true\b/m.test(fm),
     };
   }).filter((post) => !post.draft);
@@ -631,7 +620,7 @@ test('blog posts with no related app get no App Store box or banner, VibeRater i
     assert.doesNotMatch(html, /class="cta-block"|app-promotion-disclosure/, `${slug} has an App Store box`);
   }
 
-  const optedIn = posts.filter((post) => post.appCta && post.relatedApps.find((app) => BLOG_CTA_APPS.includes(app)) === 'vibe-rater');
+  const optedIn = posts.filter((post) => post.relatedApps.find((app) => BLOG_CTA_APPS.includes(app)) === 'vibe-rater');
   assert.ok(optedIn.length > 0, 'expected posts that opt in to VibeRater');
   for (const { slug } of optedIn) {
     const html = readFileSync(resolve(`dist/blog/${slug}/index.html`), 'utf8');

@@ -99,8 +99,6 @@ const blog = defineCollection({
     tags: z.array(z.string()).default([]),
     primaryKeyword: z.string().optional(),
     relatedApps: z.array(z.string()).default([]),
-    // false drops the end-of-post App Store box and the Smart App Banner.
-    appCta: z.boolean().default(true),
     relatedArchetypes: z.array(z.string()).default([]),
     faq: z.array(faqItem).default([]),
     author: z.string().default('Nicholas Santulli'),

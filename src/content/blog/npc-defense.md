@@ -7,7 +7,6 @@ category: "archetype-deep-dive"
 primaryKeyword: "npc energy meaning compliment"
 relatedApps:
   - "vibe-rater"
-appCta: false
 relatedArchetypes:
   - "npc-affectionate"
   - "main-character"
@@ -95,6 +94,10 @@ When VibeRater assigns you NPC (Affectionate), it means the photo read as backgr
 This is not the lowest score. This is not a consolation archetype. The NPC (Affectionate) tier is for people who have resolved something the Main Characters are still working on: the need to be seen.
 
 We are not saying you're boring. We're saying you've stopped caring about the same things the rest of us are still anxious about. That's a kind of S-tier that VibeRater can't quite capture in a letter grade.
+
+---
+
+**VibeRater Social is live on the App Store.** Find out your archetype — NPC (Affectionate), Main Character, Final Boss, or one of the others. The phone vibrates while it reads you. [Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-npc-defense&mt=8).
 
 ---
 
