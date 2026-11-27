@@ -604,3 +604,38 @@ test('pure VibeRater promotion posts carry no App Store CTA or app banner', () =
   const other = readFileSync(resolve('dist/blog/are-aura-apps-real/index.html'), 'utf8');
   assert.match(other, /app-store-badge/);
 });
+
+const BLOG_CTA_APPS = ['monetary-policy-independence-day', 'vibe-rater', 'table-talk', 'econbyte'];
+
+function blogFrontmatter() {
+  const dir = resolve('src/content/blog');
+  return readdirSync(dir).filter((name) => /\.mdx?$/.test(name)).map((name) => {
+    const fm = readFileSync(join(dir, name), 'utf8').split(/^---$/m)[1] ?? '';
+    const list = fm.match(/^relatedApps:\s*(\[[^\]]*\]|(?:\n\s+-[^\n]*)+)/m)?.[1] ?? '';
+    return {
+      slug: name.replace(/\.mdx?$/, ''),
+      relatedApps: list.match(/[a-z0-9-]+/g) ?? [],
+      appCta: !/^appCta:\s*false\b/m.test(fm),
+      draft: /^draft:\s*true\b/m.test(fm),
+    };
+  }).filter((post) => !post.draft);
+}
+
+test('blog posts with no related app get no App Store box or banner, VibeRater included', () => {
+  const posts = blogFrontmatter();
+  const unmatched = posts.filter((post) => !post.relatedApps.some((app) => BLOG_CTA_APPS.includes(app)));
+  assert.ok(unmatched.length > 0, 'expected at least one blog post with no CTA app');
+  for (const { slug } of unmatched) {
+    const html = readFileSync(resolve(`dist/blog/${slug}/index.html`), 'utf8');
+    assert.doesNotMatch(html, /apple-itunes-app/, `${slug} has an app banner`);
+    assert.doesNotMatch(html, /class="cta-block"|app-promotion-disclosure/, `${slug} has an App Store box`);
+  }
+
+  const optedIn = posts.filter((post) => post.appCta && post.relatedApps.find((app) => BLOG_CTA_APPS.includes(app)) === 'vibe-rater');
+  assert.ok(optedIn.length > 0, 'expected posts that opt in to VibeRater');
+  for (const { slug } of optedIn) {
+    const html = readFileSync(resolve(`dist/blog/${slug}/index.html`), 'utf8');
+    assert.match(html, /<meta name="apple-itunes-app" content="app-id=6780704282/, `${slug} lost its banner`);
+    assert.match(html, /class="cta-block"/, `${slug} lost its App Store box`);
+  }
+});
