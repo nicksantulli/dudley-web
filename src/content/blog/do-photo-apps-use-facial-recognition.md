@@ -93,7 +93,7 @@ A photo result can be funny, stylish, or useful for a caption without being true
 
 [VibeRater Social](/apps/vibe-rater/) is built for the entertainment side of photo culture: rate a selfie, outfit, pet, group shot, or random moment; keep the result private; post it to Vibes; turn it into a Vibie; or share it with your Squad.
 
-The important privacy split is simple. Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) says a photo used only for rating is sent to the rating service, processed in memory, and discarded. If you choose to post, share, or save media, that selected content and related social data are stored so the social features work.
+Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) explains how photos are handled. If you choose to post, share, or save media, that selected content and related social data are stored so the social features work.
 
 VibeRater should be used as a vibe-check and group-chat toy, not as a claim about identity. Scores, auras, archetypes, anthems, and Vibescopes are playful outputs. They are not biometric, beauty, health, personality, or compatibility measurements.
 

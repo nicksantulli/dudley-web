@@ -115,7 +115,7 @@ Consider Full Access only when the app's core job really depends on it, such as 
 
 [VibeRater Social](/apps/vibe-rater/) is a separate Dudley iPhone app for playful photo ratings, Vibes posts, Vibies, VibeChecks, Squad, Radar, Rise, and shareable cards. The current U.S. App Store listing frames photo ratings as entertainment and creative expression, not biometric, health, identity, attractiveness, or clinical analysis.
 
-The useful privacy habit is the same one Limited Access encourages: start with the specific photo you mean to use. Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) separates a rating-only photo from media you choose to post, share, or save. A photo you only rate is processed in memory and discarded. Media you deliberately post, share, or save is stored so those selected social features work.
+The useful privacy habit is the same one Limited Access encourages: start with the specific photo you mean to use. Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) separates a rating-only photo from media you choose to post, share, or save. Media you deliberately post, share, or save is stored so those selected social features work.
 
 That distinction is the point. A private rating, a Squad share, a Vibes post, and an external share card are different choices. VibeRater's scores, auras, archetypes, anthems, and Vibescopes are entertainment outputs, not measurements of appearance, identity, health, personality, or truth.
 

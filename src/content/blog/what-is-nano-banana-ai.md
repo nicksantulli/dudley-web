@@ -109,7 +109,7 @@ VibeRater Social is not a Google or Gemini product, and it is not affiliated wit
 
 People now move between camera-roll photos, AI edits, group chats, story posts, and social feeds quickly. VibeRater fits that culture as an entertainment app: you can rate a selfie, outfit, pet, group shot, or everyday moment, then choose whether the result stays private, becomes a share card, goes to your Squad, or appears in Vibes.
 
-The important boundary is control. VibeRater's public privacy policy says a photo used only for rating is processed by the rating service in memory and discarded, while media you choose to post, share, or save is stored so those features work. The current VibeRater Social App Store listing also frames ratings as entertainment and creative expression, not biometric, health, identity, attractiveness, or clinical analysis.
+The current VibeRater Social App Store listing frames ratings as entertainment and creative expression, not biometric, health, identity, attractiveness, or clinical analysis.
 
 That is the right way to think about AI-edited photos too: make the edit if it is fun, label the context when it matters, and choose deliberately before posting.
 

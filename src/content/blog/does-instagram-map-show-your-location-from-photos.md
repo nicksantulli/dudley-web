@@ -113,7 +113,7 @@ This matters even more for photo entertainment apps and share cards. The funnies
 
 ## Where VibeRater Fits
 
-We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-instagram-map-show-photos&mt=8).
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-instagram-map-show-photos&mt=8).
 
 ## A Practical Rule
 

@@ -73,7 +73,7 @@ A person can select individual photos through Apple's photo picker without grant
 
 ## Where VibeRater Fits
 
-We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. Use it when the chat wants something more interesting than a plain text reply. A number is funny for two seconds; an archetype gives people something to argue about. The [VibeRater privacy policy](/privacy/vibe-rater/) has the details.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you post are stored so the post works. Use it when the chat wants something more interesting than a plain text reply. A number is funny for two seconds; an archetype gives people something to argue about. The [VibeRater privacy policy](/privacy/vibe-rater/) has the details.
 
 ## Five vibe check games to try
 

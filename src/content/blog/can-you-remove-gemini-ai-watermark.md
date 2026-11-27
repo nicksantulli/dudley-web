@@ -126,7 +126,7 @@ The connection is about how people actually share images now. A normal selfie ca
 
 VibeRater Social is built as entertainment. A VibeMeter score, aura-style read, archetype, anthem, or Vibescope is not a measurement of appearance, identity, health, personality, or any protected trait. The product angle is control: rate a moment, keep it private, post it to Vibes, share it with your Squad, or save a share card when you choose.
 
-VibeRater's public privacy policy says photos used only for rating are processed by the rating service in memory and discarded, while media you choose to post, share, or save is stored so those features work. Its App Store listing also frames ratings as entertainment and creative expression, not biometric, health, identity, attractiveness, or clinical analysis.
+VibeRater's App Store listing frames ratings as entertainment and creative expression, not biometric, health, identity, attractiveness, or clinical analysis.
 
 That same mindset applies to AI-edited photos: make playful media, but keep the sharing context honest.
 
