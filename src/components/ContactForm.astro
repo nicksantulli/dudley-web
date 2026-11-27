@@ -192,7 +192,7 @@ const id = (base: string) => `cf-${base}-${uid}`;
     setStatus(form, 'Something went wrong sending your message.');
   }
 
-  // Tag the email subject by topic so inbound tickets triage at a glance.
+  // Tag the email subject by topic so inbound messages triage at a glance.
   function subjectPrefix(topic: string): string {
     if (topic === 'build-an-app') return 'Website inquiry [Build an app]: ';
     if (topic === 'partnerships') return 'Website inquiry [Partnerships]: ';
