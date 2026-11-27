@@ -98,7 +98,7 @@ const schema = faqSchema
         <header class="post-head">
           <h1>{post.title}</h1>
           <p class="post-meta">
-            <a class="byline" href={rel('/about/nick-santulli/')}>Written by {post.author ?? 'Nicholas Santulli'}</a>
+            <a class="byline" href={rel('/about/nick-santulli/')}>{post.author ?? 'Nick Santulli'}</a>
             <span class="sep">·</span><span>Published </span>
             <time datetime={publishedDay}>{formatDate(published)}</time>
             {modifiedDay !== publishedDay && (

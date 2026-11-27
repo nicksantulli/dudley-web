@@ -101,7 +101,7 @@ const blog = defineCollection({
     relatedApps: z.array(z.string()).default([]),
     relatedArchetypes: z.array(z.string()).default([]),
     faq: z.array(faqItem).default([]),
-    author: z.string().default('Nicholas Santulli'),
+    author: z.string().default('Nick Santulli'),
     reviewedBy: z.string().optional(),
     answerSummary: z.string().min(20).max(420).optional(),
     // Site-relative or absolute OG image; falls back to the Dudley mark in the layout.
