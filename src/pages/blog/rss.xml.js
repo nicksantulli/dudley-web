@@ -7,7 +7,7 @@ export async function GET() {
   return rss({
     title: 'The Dudley Blog',
     description:
-      'Culture, archetypes, and honest app roundups from Dudley Development — the studio behind VibeRater Social and Powell Prowl: Rate Chase.',
+      'Technology, App Store operations, app privacy, and software culture from Dudley Development.',
     site: ORIGIN,
     trailingSlash: true,
     items: posts.map((post) => ({

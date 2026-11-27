@@ -29,7 +29,7 @@ Here are six iPhone games that are actually doing this:
 
 ## 1. Powell Prowl: Rate Chase — Free
 
-**The premise:** You play as a hapless President figure — a Trump-style caricature — chasing the Fed Chair, a Powell-style caricature, across 60 levels of Independence Day mini-games. Every stage is about forcing a rate-cut memo into his hands before fireworks, parades, or regional governors sweep you off the stage.
+**The premise:** You play as a hapless President figure, a Trump-style caricature, chasing the Fed Chair, a Powell-style caricature, across 60 levels of Independence Day mini-games. Every stage is about forcing a rate-cut memo into his hands before fireworks, parades, or regional governors sweep you off the stage.
 
 **Why it's satire and not just a joke:** The mechanics are the point. The whole game is one running gag about political pressure on the Federal Reserve — an executive who wants lower rates *now* and a central banker whose entire job is not to be caught. You never get to set rates yourself; you can only chase the person who does. That's the joke, and it's a sharp one: the Fed's independence is exactly the thing that keeps the President from simply catching the Chair and getting his way. Powell Prowl: Rate Chase turns that institutional tension into a frantic arcade chase with fireworks.
 

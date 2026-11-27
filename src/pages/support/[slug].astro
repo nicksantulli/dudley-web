@@ -1,19 +1,17 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import Moved from '../../layouts/Moved.astro';
 import { rel, SUPPORT_EMAIL } from '../../consts';
 import { isReleasedApp } from '../../lib/liveApps.mjs';
 
 export async function getStaticPaths() {
   // One support page per app that has support content. Apps without a `support`
-  // block don't get a page until they add one. An unreleased app's page redirects home.
-  const apps = (await getCollection('apps')).filter((a) => a.data.support && a.data.support.length > 0);
+  // block don't get a page until they add one. Unreleased apps get no page.
+  const apps = (await getCollection('apps')).filter((a) => isReleasedApp(a) && a.data.support && a.data.support.length > 0);
   return apps.map((app) => ({ params: { slug: app.id }, props: { app } }));
 }
 
 const { app } = Astro.props;
-const released = isReleasedApp(app);
 const data = app.data;
 const support = data.support;
 
@@ -24,7 +22,6 @@ const description = `Support and FAQs for ${data.name} by Dudley Development.`;
 // sources, so we keep the visible Q&A (good for AEO) but don't emit FAQPage markup.
 // Base still emits a site-wide BreadcrumbList for this page.
 ---
-{!released ? <Moved to="/" heading="This page has moved" linkText="the Dudley Development home page" /> : (
 <Base
   title={`Support · ${data.name}`}
   description={description}
@@ -61,4 +58,3 @@ const description = `Support and FAQs for ${data.name} by Dudley Development.`;
     </div>
   </main>
 </Base>
-)}

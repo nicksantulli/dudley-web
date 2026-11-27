@@ -555,13 +555,14 @@ test('homepage app bands deliver WebP sources without the legacy lockup', () => 
 
 const REMOVED_VIBERATER_URLS = ['/tools/whats-my-vibe/', '/compare/best-photo-rating-apps/', '/compare/vibe-check-apps/'];
 
-test('removed VibeRater quiz and comparison URLs redirect to the homepage', () => {
+test('removed VibeRater quiz and comparison URLs redirect to the VibeRater app page', () => {
   for (const url of REMOVED_VIBERATER_URLS) {
     const html = readFileSync(resolve(`dist${url}index.html`), 'utf8');
-    assert.match(html, /<meta http-equiv="refresh" content="0; url=\/"/, url);
-    assert.match(html, /<link rel="canonical" href="https:\/\/dudleyapps\.com\/"/, url);
+    assert.match(html, /<meta http-equiv="refresh" content="0; url=\/apps\/vibe-rater\/"/, url);
+    assert.match(html, /<link rel="canonical" href="https:\/\/dudleyapps\.com\/apps\/vibe-rater\/"/, url);
     assert.match(html, /<meta name="robots" content="noindex,follow"/, url);
-    assert.doesNotMatch(html, /VibeRater|apps\.apple\.com/, url);
+    assert.match(html, /<a href="\/apps\/vibe-rater\/">VibeRater Social<\/a>/, url);
+    assert.doesNotMatch(html, /apps\.apple\.com/, url);
   }
 });
 
@@ -628,19 +629,21 @@ const UNRELEASED_APP_URLS = [
   '/privacy/beat-the-dealer/',
 ];
 
-test('unreleased app pages redirect home and every redirect stub stays out of the sitemap', async () => {
+test('unreleased app pages are not built or linked, and every redirect stub stays out of the sitemap', async () => {
   const { MOVED_PATHS } = await import('../src/lib/movedPaths.mjs');
+  const pages = htmlPages();
   for (const url of UNRELEASED_APP_URLS) {
-    const html = readFileSync(resolve(`dist${url}index.html`), 'utf8');
-    assert.match(html, /<meta http-equiv="refresh" content="0; url=\/"/, url);
-    assert.match(html, /<meta name="robots" content="noindex,follow"/, url);
-    assert.ok(MOVED_PATHS.includes(url), `${url} is missing from MOVED_PATHS`);
+    assert.equal(existsSync(resolve(`dist${url}index.html`)), false, `${url} is still built`);
+    assert.equal(MOVED_PATHS.includes(url), false, `${url} should 404, not redirect`);
+    for (const page of pages) {
+      assert.doesNotMatch(page.html, new RegExp(`href="(?:https://dudleyapps\\.com)?${url}"`), `${page.rel} links to ${url}`);
+    }
   }
   const sitemaps = readdirSync(DIST)
     .filter((name) => name.startsWith('sitemap') && name.endsWith('.xml'))
     .map((name) => readFileSync(join(DIST, name), 'utf8'))
     .join('\n');
-  for (const page of htmlPages()) {
+  for (const page of pages) {
     if (!/<meta http-equiv="refresh"/.test(page.html)) continue;
     const url = page.rel.replace(/index\.html$/, '');
     assert.ok(MOVED_PATHS.includes(url), `redirect stub ${url} is missing from MOVED_PATHS`);
