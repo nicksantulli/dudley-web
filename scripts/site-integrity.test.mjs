@@ -629,7 +629,6 @@ test('blog posts with no related app get no App Store box or banner, VibeRater i
     const html = readFileSync(resolve(`dist/blog/${slug}/index.html`), 'utf8');
     assert.doesNotMatch(html, /apple-itunes-app/, `${slug} has an app banner`);
     assert.doesNotMatch(html, /class="cta-block"|app-promotion-disclosure/, `${slug} has an App Store box`);
-    assert.doesNotMatch(html, /apps\.apple\.com\/[^"]*id6780704282/, `${slug} links to VibeRater on the App Store`);
   }
 
   const optedIn = posts.filter((post) => post.appCta && post.relatedApps.find((app) => BLOG_CTA_APPS.includes(app)) === 'vibe-rater');

@@ -114,6 +114,8 @@ The public App Store listing describes VibeRater Social as an entertainment app 
 
 The important boundary is the same one this slang needs: fun, not proof. VibeRater is for reactions, captions, and shareable results. It is not a serious measurement of who someone is.
 
+[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-aura-mean-slang&mt=8) if you want to turn a photo into a playful aura-style vibe card.
+
 ## Simple Aura Slang Examples
 
 Use these when you need the phrase quickly:
