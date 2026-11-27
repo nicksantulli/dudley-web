@@ -25,14 +25,14 @@ const schema = {
   url: ORIGIN,
   publisher: { '@id': abs('/#organization') },
 };
-const description = 'Arcade satire, dinner-table cards, and plain-language tools. No signup as a cover charge.';
+const description = 'Satirical arcade games, conversation cards, economics lessons, a packing checklist and a photo-rating social app. Each app page lists its price, account needs and privacy details.';
 ---
-<Base title="Dudley Development — apps that earn the tap" description={description} path="/" schema={schema}>
+<Base title="Dudley Development: iPhone games, conversation cards, learning and social apps" description={description} path="/" schema={schema}>
   <main>
     <section class="home-intro">
       <div class="wrap home-intro-inner">
-        <h1>Apps that work before they ask who you are.</h1>
-        <p>Arcade satire, dinner-table cards, and plain-language tools. No signup as a cover charge.</p>
+        <h1>iPhone apps that say what they cost and what they collect.</h1>
+        <p>{description}</p>
       </div>
     </section>
 
@@ -70,7 +70,7 @@ const description = 'Arcade satire, dinner-table cards, and plain-language tools
               <a href={rel('/connectors/catalog-prep/')}>
                 <div class="answer-meta"><span>MCP connector</span><span>Free prototype</span></div>
                 <h3>Catalog Prep</h3>
-                <p>Turn messy corrugated box supplier files into a clean import file for your store, plus a list of every field it could not fill. Works in Claude and ChatGPT.</p>
+                <p>Map messy corrugated box supplier files to your store's import template, plus a list of every field it could not fill. Works with AI assistants that support custom MCP connectors, such as Claude.</p>
                 <span class="answer-link">How it works</span>
               </a>
             </article>
@@ -82,9 +82,9 @@ const description = 'Arcade satire, dinner-table cards, and plain-language tools
           <div class="editorial-head">
             <div>
               <p class="section-label">The Dudley Blog</p>
-              <h2 id="latest-answers">Notes from the shop</h2>
+              <h2 id="latest-answers">From the blog</h2>
             </div>
-            <a href={rel('/blog/')}>Read every answer</a>
+            <a href={rel('/blog/')}>Read the blog</a>
           </div>
           <div class="answer-grid">
             {posts.map((post) => (
@@ -131,7 +131,7 @@ const description = 'Arcade satire, dinner-table cards, and plain-language tools
       <div class="wrap home-help-inner">
         <div>
           <p class="section-label">Support</p>
-          <h2 id="need-a-hand">Need a hand, or have an app in mind?</h2>
+          <h2 id="need-a-hand">Need help with an app, or want one built?</h2>
         </div>
         <div class="home-help-actions">
           <a href={rel('/support/')}>Get app support</a>

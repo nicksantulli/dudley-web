@@ -12,7 +12,7 @@ const totalPages = Math.max(1, Math.ceil(allPosts.length / POSTS_PER_PAGE));
 const pagePosts = allPosts.slice(0, POSTS_PER_PAGE).filter((post) => post.id !== featuredPost?.id);
 const path = '/blog/';
 const title = 'The Dudley Blog';
-const description = 'Plain-English answers about iPhone privacy, AI media, internet culture, economics, and Dudley apps.';
+const description = 'How iPhone apps get built, shipped, measured and trusted: App Store mechanics, app privacy and AI media, from Dudley Development.';
 const blogSchema = {
   '@context': 'https://schema.org', '@type': 'Blog', name: title, description, url: abs(path),
   publisher: { '@type': 'Organization', name: STUDIO, url: ORIGIN, logo: { '@type': 'ImageObject', url: abs('/assets/dudley-mark-logo.png') } },
@@ -45,7 +45,7 @@ const blogSchema = {
 
       {featuredPost && (
         <a class="featured" href={rel(`/blog/${featuredPost.id}/`)}>
-          <span class="section-label">{featuredPost.data.featured ? 'Featured answer' : 'Latest answer'}</span>
+          <span class="section-label">{featuredPost.data.featured ? 'Featured article' : 'Latest article'}</span>
           <h2>{featuredPost.data.title}</h2>
           <p>{featuredPost.data.answerSummary ?? featuredPost.data.description}</p>
           <time datetime={featuredPost.data.publishDate.toISOString().slice(0, 10)}>{formatDate(featuredPost.data.publishDate)}</time>
@@ -53,7 +53,7 @@ const blogSchema = {
       )}
 
       <section class="answer-directory" aria-labelledby="recent-answers">
-        <h2 id="recent-answers">Recent answers</h2>
+        <h2 id="recent-answers">Recent articles</h2>
         <div class="answer-grid">
           {pagePosts.map((post) => (
             <AnswerCard title={post.data.title} description={post.data.answerSummary ?? post.data.description} href={`/blog/${post.id}/`} date={post.data.publishDate} topic={post.data.category} />

@@ -11,19 +11,19 @@ const apps = (await getCollection('apps'))
   .filter((a) => isReleasedApp(a) && a.data.support && a.data.support.length > 0)
   .sort((a, b) => a.data.order - b.data.order);
 
-const description = 'Support for Dudley Development apps — pick your app for FAQs and how to reach us.';
+const description = 'Support for Dudley Development apps. Pick your app for FAQs and contact options.';
 ---
 <Base title="Support" description={description} path="/support/">
   <main class="page">
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/')}>← Home</a>
       <h1>Support</h1>
-      <p class="updated">Pick your app for FAQs — we read every message.</p>
+      <p class="updated">Choose your app for its FAQs.</p>
 
       <p>
-        Need help with a Dudley app? Choose it below for answers to common questions, or email us and
-        we'll chase it down. It helps to include your device and iOS version (Settings → General → About),
-        which app and screen, and what happened — a screenshot or recording is gold.
+        For a bug report, email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> with the app name, the
+        screen, your device model and iOS version (Settings → General → About), what happened, and a screenshot or
+        screen recording if you have one.
       </p>
 
       <ul class="policy-list">
@@ -38,10 +38,10 @@ const description = 'Support for Dudley Development apps — pick your app for F
         ))}
       </ul>
 
-      <h2>Still need a hand?</h2>
+      <h2>Still need help?</h2>
       <p>
-        Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>, or use the <a href={rel('/contact/')}>contact form</a> if
-        you'd rather not open your mail app — either way, it reaches the same inbox and we'll get back to you.
+        Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> or use the{' '}
+        <a href={rel('/contact/')}>contact form</a>. Both reach the same inbox.
       </p>
     </div>
   </main>

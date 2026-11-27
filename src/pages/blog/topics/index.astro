@@ -16,7 +16,7 @@ const description = 'Durable guides to iPhone privacy, AI media, internet cultur
       <header class="topic-intro"><p class="section-label">Answer library</p><h1>Useful topics, not a tag cloud.</h1><p>{description}</p></header>
       <ul class="topic-list">
         {hubs.map((hub) => (
-          <li><a href={rel(`/blog/topics/${hub.slug}/`)}><span><strong>{hub.title}</strong>{hub.description}</span><span class="count">{hub.posts.length} answers →</span></a></li>
+          <li><a href={rel(`/blog/topics/${hub.slug}/`)}><span><strong>{hub.title}.</strong>{' '}{hub.description}</span><span class="count">{hub.posts.length} answers →</span></a></li>
         ))}
       </ul>
     </div>

@@ -26,7 +26,7 @@ export async function GET() {
   );
 
   const topicLines = eligibleTopicHubs(posts)
-    .map((hub) => `- [${hub.title}](${abs(`/blog/topics/${hub.slug}/`)}): ${hub.description} ${hub.posts.length} published answers.`)
+    .map((hub) => `- [${hub.title}](${abs(`/blog/topics/${hub.slug}/`)}): ${hub.description} ${hub.posts.length} articles.`)
     .join('\n');
 
   const blogLines = posts
@@ -42,13 +42,13 @@ export async function GET() {
 
 ${appLines}
 
-## Maintained Blog Topics
+## Blog topics
 
 ${topicLines}
 
-## Recent Answers
+## Recent articles
 
-The Dudley Blog publishes direct, sourced answers about iPhone privacy, AI media, internet culture, economics, the App Store, and Dudley products. Full index: ${abs('/blog/')} (RSS: ${abs('/blog/rss.xml')}).
+The Dudley Blog publishes sourced articles on App Store mechanics, iPhone privacy and AI media. Full index: ${abs('/blog/')} (RSS: ${abs('/blog/rss.xml')}).
 
 ${blogLines}
 

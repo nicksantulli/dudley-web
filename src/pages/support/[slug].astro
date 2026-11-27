@@ -15,7 +15,7 @@ const { app } = Astro.props;
 const data = app.data;
 const support = data.support;
 
-const subject = encodeURIComponent(`${data.name} — Support`);
+const subject = encodeURIComponent(`${data.name} support`);
 const description = `Support and FAQs for ${data.name} by Dudley Development.`;
 
 // No FAQPage JSON-LD — Google restricts FAQ rich results to authoritative gov/health
@@ -36,8 +36,8 @@ const description = `Support and FAQs for ${data.name} by Dudley Development.`;
       <p class="updated">{data.tagline}</p>
 
       <p>
-        Below are answers to the questions we hear most. Still stuck? Email us with your device and iOS
-        version, the screen you were on, and what happened — a screenshot or recording helps.
+        Common questions are answered below. If yours isn't, email us with your device model and iOS
+        version, the screen you were on, what happened, and a screenshot or screen recording if you have one.
       </p>
       <p>
         <a class="btn primary" href={`mailto:${SUPPORT_EMAIL}?subject=${subject}`}>Email Support</a>
@@ -50,10 +50,10 @@ const description = `Support and FAQs for ${data.name} by Dudley Development.`;
         </div>
       ))}
 
-      <h2>Still need a hand?</h2>
+      <h2>Still need help?</h2>
       <p>
         Email <a href={`mailto:${SUPPORT_EMAIL}?subject=${subject}`}>{SUPPORT_EMAIL}</a>, or use the
-        <a href={rel('/contact/')}>contact form</a> — either way, it reaches the same inbox and we'll get back to you.
+        {' '}<a href={rel('/contact/')}>contact form</a>. Both reach the same inbox.
       </p>
     </div>
   </main>

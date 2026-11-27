@@ -7,7 +7,7 @@ const description = 'Dudley Development builds and publishes iPhone games, conve
 
 // "The apps" is data-driven off the same content collection that powers the app cards
 // and per-app pages, so it lists exactly the released apps the home page shows.
-// Client work (developedFor set, e.g. HomeLight) is excluded.
+// Client work (developedFor set) is excluded.
 const allApps = await getCollection('apps');
 const ownApps = liveApps(allApps).filter((a) => !a.data.developedFor);
 ---
@@ -56,8 +56,8 @@ const ownApps = liveApps(allApps).filter((a) => !a.data.developedFor);
       <h2>Get in touch</h2>
       <p>
         For general questions, partnerships, or press, email
-        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. For a bug or help with an app, see
-        <a href={rel('/support/')}>Support</a> or email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+        {' '}<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. For a bug or help with an app, see
+        {' '}<a href={rel('/support/')}>Support</a> or email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
         You can also use the <a href={rel('/contact/')}>contact form</a>.
       </p>
 

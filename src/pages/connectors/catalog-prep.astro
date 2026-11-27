@@ -3,9 +3,9 @@ import Base from '../../layouts/Base.astro';
 import { rel, abs, SUPPORT_EMAIL, LEGAL_NAME } from '../../consts';
 
 const ENDPOINT = 'https://mcp.dudleyapps.com/mcp';
-const title = 'Catalog Prep: supplier files to store-ready CSV in your AI assistant';
+const title = "Catalog Prep: map supplier files to your store's import template";
 const description =
-  'Dudley Catalog Prep turns messy corrugated box supplier files into a clean import file for your store template, and lists every field it could not fill. Works in Claude, ChatGPT, and other MCP assistants.';
+  'Dudley Catalog Prep maps messy corrugated box supplier files to your store import template, and lists every field it could not fill. Works with AI assistants that support custom MCP connectors, such as Claude.';
 
 const faq = [
   {
@@ -18,7 +18,7 @@ const faq = [
   },
   {
     q: 'Does it publish anything to my store?',
-    a: 'No. It only prepares files. Nothing is sent to your store or any other system; you review the import file and upload it yourself.',
+    a: 'No. Catalog Prep never publishes to your store. It only returns files for you to review, and you upload the import file yourself.',
   },
   {
     q: 'Is it free?',
@@ -75,9 +75,9 @@ const schema = [
       <p class="updated">An MCP connector by {LEGAL_NAME} · Prototype for sample data · Free</p>
 
       <p class="tldr">
-        Catalog Prep turns messy corrugated box supplier files into a clean import file for your
-        store’s template, and lists every field it could not fill in with confidence. You run it from
-        your AI assistant, such as Claude or ChatGPT. Nothing publishes without your review.
+        Catalog Prep maps messy corrugated box supplier files to your store’s import template, and lists
+        every field it could not fill in with confidence. You run it from an AI assistant that supports
+        custom MCP connectors, such as Claude. Nothing publishes without your review.
       </p>
 
       <h2>What it does</h2>
@@ -89,7 +89,7 @@ const schema = [
       </ul>
 
       <h2>Before and after</h2>
-      <p>A real run. A messy supplier file:</p>
+      <p>Sample run. A messy supplier file:</p>
 <pre style="overflow-x:auto;background:#f6f6f6;padding:10px;border-radius:6px;font-size:.9rem;">Item #,Description,Size,Flute,ECT,Bundle,Unit Price
 RSC-1210,Shipping carton,12 x 10 x 8 in,C flute,32 ECT,25/bdl,$1.25 ea
 RSC-1812,Moving box,18x12x12,B,44,20,</pre>
@@ -102,7 +102,7 @@ RSC-1812,Moving box,,,,B,44,20,</pre>
         <li><code>RSC-1812</code> · length, width, depth · “18x12x12” has no unit, so it is not guessed.</li>
         <li><code>RSC-1812</code> · price · missing, and <strong>must be confirmed by a person</strong> (a price is never invented).</li>
       </ul>
-      <p>You get a file your store accepts and a short list of exactly what is missing, instead of silent guesses.</p>
+      <p>You get a file that matches your template’s columns, plus a list of fields it could not fill. Review it before you import.</p>
 
       <h2>Try it in your assistant</h2>
       <ol>
