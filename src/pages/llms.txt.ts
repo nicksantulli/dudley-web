@@ -40,7 +40,7 @@ export async function GET() {
 
   const body = `# Dudley Development
 
-> Dudley Development, LLC builds and publishes iPhone games, conversation tools, social apps, and plain-English learning products. The catalog is run by Nicholas Santulli and includes ${liveCatalog}. Each app page states its release status, price model, account requirement, offline behavior, and privacy boundary.
+> Dudley Development, LLC builds and publishes iPhone games, conversation cards, plain-language learning apps, and everyday utilities. The live catalog includes ${liveCatalog}. Each app page states its release status, price model, account requirement, offline behavior, and privacy boundary.
 
 ## Apps
 
@@ -80,7 +80,7 @@ ${blogLines}
 
 ## About
 
-Dudley Development is the public-facing studio name of Dudley Development, LLC. The studio is run by a small team and one human (Nicholas Santulli). [Nick Santulli](${abs('/about/nick-santulli/')}) is the founder of Dudley Development. All apps are free. Account needs, cloud storage, analytics, advertising, and tracking behavior vary by app and are disclosed in each app's privacy policy. VibeRater Social is for entertainment, does not sell personal information, and does not request cross-app tracking permission.
+Dudley Development is the public-facing studio name of Dudley Development, LLC. [Nick Santulli](${abs('/about/nick-santulli/')}) is the founder of Dudley Development. Every app Dudley has published on the App Store is free to download; optional purchases are described on each app page. Client work built for other brands is identified as client work and is not part of the Dudley catalog. Account needs, cloud storage, analytics, advertising, and tracking behavior vary by app and are disclosed in each app's privacy policy. Dudley Development does not sell personal information.
 
 ## Contact
 
