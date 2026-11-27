@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { rel, SUPPORT_EMAIL, LEGAL_NAME } from '../../consts';
+import { rel, SUPPORT_EMAIL, CONTACT_EMAIL, LEGAL_NAME } from '../../consts';
 const description = 'Privacy policies for Dudley Development apps.';
 ---
 <Base title="Privacy" description={description} path="/privacy/">
@@ -8,7 +8,7 @@ const description = 'Privacy policies for Dudley Development apps.';
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/')}>← Home</a>
       <h1>Privacy</h1>
-      <p class="updated">Effective date: September 29, 2026 · One policy per app — pick yours below.</p>
+      <p class="updated">Effective date: September 29, 2026 · Last updated: November 27, 2026 · One policy per app, plus this website. Pick yours below.</p>
 
       <p>
         {LEGAL_NAME} makes several separate apps, and they don't all collect the same things, so there
@@ -100,35 +100,35 @@ const description = 'Privacy policies for Dudley Development apps.';
       <ul class="policy-list">
         <li>
           <a class="row" href={rel('/privacy/monetary-policy-independence-day/')}>
-            <img src={rel('/assets/powell-prowl-iconpng')} alt="Powell Prowl: Rate Chase app icon" width="44" height="44" loading="lazy" />
+            <img src={rel('/assets/powell-prowl-icon.webp')} alt="Powell Prowl: Rate Chase app icon" width="44" height="44" loading="lazy" />
             <span class="meta"><b>Powell Prowl: Rate Chase</b><span>Privacy policy</span></span>
             <span class="chev">→</span>
           </a>
         </li>
         <li>
           <a class="row" href={rel('/privacy/vibe-rater/')}>
-            <img src={rel('/assets/vibe-rater-iconpng')} alt="VibeRater Social app icon" width="44" height="44" loading="lazy" />
+            <img src={rel('/assets/vibe-rater-icon.webp')} alt="VibeRater Social app icon" width="44" height="44" loading="lazy" />
             <span class="meta"><b>VibeRater Social</b><span>Privacy policy</span></span>
             <span class="chev">→</span>
           </a>
         </li>
         <li>
           <a class="row" href={rel('/privacy/table-talk/')}>
-            <img src={rel('/assets/table-talk-iconpng')} alt="Table Talk app icon" width="44" height="44" loading="lazy" />
+            <img src={rel('/assets/table-talk-icon.webp')} alt="Table Talk app icon" width="44" height="44" loading="lazy" />
             <span class="meta"><b>Table Talk: Conversation Cards</b><span>Privacy policy</span></span>
             <span class="chev">→</span>
           </a>
         </li>
         <li>
           <a class="row" href={rel('/privacy/econbyte/')}>
-            <img src={rel('/assets/econbyte-iconpng')} alt="EconByte app icon" width="44" height="44" loading="lazy" />
+            <img src={rel('/assets/econbyte-icon.webp')} alt="EconByte app icon" width="44" height="44" loading="lazy" />
             <span class="meta"><b>EconByte: Daily Economics</b><span>Privacy policy</span></span>
             <span class="chev">→</span>
           </a>
         </li>
         <li>
           <a class="row" href={rel('/privacy/last-human/')}>
-            <img src={rel('/assets/last-human-iconpng')} alt="Last Human app icon" width="44" height="44" loading="lazy" />
+            <img src={rel('/assets/last-human-icon.webp')} alt="Last Human app icon" width="44" height="44" loading="lazy" />
             <span class="meta"><b>Last Human: Dodge the Bots</b><span>Privacy policy</span></span>
             <span class="chev">→</span>
           </a>
@@ -142,14 +142,14 @@ const description = 'Privacy policies for Dudley Development apps.';
         </li>
         <li>
           <a class="row" href={rel('/privacy/claimdesk/')}>
-            <img src={rel('/assets/claimdesk-iconpng')} alt="ClaimDesk app icon" width="44" height="44" loading="lazy" />
+            <img src={rel('/assets/claimdesk-icon.png')} alt="ClaimDesk app icon" width="44" height="44" loading="lazy" />
             <span class="meta"><b>ClaimDesk</b><span>Privacy policy</span></span>
             <span class="chev">→</span>
           </a>
         </li>
         <li>
           <a class="row" href={rel('/privacy/taxshelf/')}>
-            <img src={rel('/assets/taxshelf-iconpng')} alt="TaxShelf app icon" width="44" height="44" loading="lazy" />
+            <img src={rel('/assets/taxshelf-icon.png')} alt="TaxShelf app icon" width="44" height="44" loading="lazy" />
             <span class="meta"><b>TaxShelf</b><span>Privacy policy</span></span>
             <span class="chev">→</span>
           </a>
@@ -213,6 +213,30 @@ const description = 'Privacy policies for Dudley Development apps.';
           You can also ask for a copy of what we hold or have it corrected. If you are in the EEA,
           the UK or Switzerland, you can complain to your data protection authority.</li>
         <li><b>Age:</b> the waitlist is not meant for anyone under 16.</li>
+      </ul>
+
+      <h2 id="website-contact">Website contact form and email</h2>
+      <p>
+        This section covers the <a href={rel('/contact/')}>contact form</a> on dudleyapps.com and
+        email you send to {SUPPORT_EMAIL} or {CONTACT_EMAIL}. {LEGAL_NAME} is the controller.
+      </p>
+      <ul>
+        <li><b>What we receive:</b> the name, email address, topic, subject, and message you enter in
+          the form, or the contents of the email you send us.</li>
+        <li><b>Who processes it for us:</b> the contact form is sent through FormSubmit
+          (<a href="https://formsubmit.co/">formsubmit.co</a>), which receives your submission and
+          emails it to {SUPPORT_EMAIL}. Like any web service, FormSubmit also receives technical
+          details of the request, such as your IP address. The form has no cookies or tracking of
+          its own.</li>
+        <li><b>What we use it for:</b> to reply to you, handle your support or business request, and
+          keep a record of the conversation. We do not add you to a mailing list, and we do not sell
+          or share what you send for anyone's marketing.</li>
+        <li><b>How long we keep it:</b> as long as we need it to handle your request and keep
+          reasonable business records, or longer if the law requires it.</li>
+        <li><b>Please do not send:</b> passwords, private keys, payment details, or other sensitive
+          information through the form or by email.</li>
+        <li><b>Your rights:</b> to ask for a copy of your messages, have them corrected, or have them
+          deleted, email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</li>
       </ul>
 
       <h2>What's true across every Dudley app</h2>
