@@ -18,7 +18,7 @@ faq:
   - q: "What does the Federal Reserve do?"
     a: "The Federal Reserve (the Fed) is the central bank of the United States. Its main job is to set the federal funds rate — the interest rate banks charge each other for short-term loans. When the Fed raises rates, borrowing gets more expensive, which tends to slow inflation. When it cuts rates, borrowing gets cheaper, which tends to stimulate the economy. The decision is made by the Federal Open Market Committee (FOMC), which meets eight times a year."
   - q: "What is Powell Prowl: Rate Chase?"
-    a: "Powell Prowl: Rate Chase is a free satirical iOS arcade game where you play as a hapless President figure chasing the Fed Chair through 60 levels of mini-games, trying to catch him and force a rate-cut memo on him — in an extremely simplified, extremely funny way. Available on the App Store for iPhone. (A rename and 100-level overhaul, Monetary Policy: Independence Day, is in the works.)"
+    a: "Powell Prowl: Rate Chase is a free satirical iOS arcade game where you play as a hapless President figure chasing the Fed Chair through 60 levels of mini-games, trying to catch him and force a rate-cut memo on him — in an extremely simplified, extremely funny way. Available on the App Store for iPhone."
   - q: "What is a 'hawk' vs. a 'dove' in Fed policy?"
     a: "In central banking, a 'hawk' favors higher interest rates to fight inflation. A 'dove' favors lower rates to support employment and growth. Most real Fed decisions involve hawks and doves disagreeing about where the balance is. In Powell Prowl: Rate Chase you play the ultimate dove — a President chasing the Fed Chair around to force a rate cut on him."
   - q: "What is VibeRater?"
@@ -28,7 +28,7 @@ draft: false
 
 The Federal Reserve made a decision this week. Your reaction to that sentence tells me everything I need to know about you.
 
-Not about your understanding of monetary policy — about your *vibe*. There are exactly five types of people when the FOMC releases a statement, and each one maps cleanly to a VibeRater archetype. We know this because we built Powell Prowl: Rate Chase (soon to be renamed Monetary Policy: Independence Day), a game about a President chasing the Fed Chair to force a rate cut, and we have watched people interact with interest rate news for approximately three years now.
+Not about your understanding of monetary policy — about your *vibe*. There are exactly five types of people when the FOMC releases a statement, and each one maps cleanly to a VibeRater archetype. We know this because we built Powell Prowl: Rate Chase, a game about a President chasing the Fed Chair to force a rate cut, and we have watched people interact with interest rate news for approximately three years now.
 
 Here is what your gut reaction says about your vibe:
 
