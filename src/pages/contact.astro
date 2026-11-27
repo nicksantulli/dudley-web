@@ -4,7 +4,7 @@ import ContactForm from '../components/ContactForm.astro';
 import { rel, abs, STUDIO, SUPPORT_EMAIL, CONTACT_EMAIL } from '../consts';
 
 const description =
-  'Contact Dudley Development for app support, bug reports, or partnership and press inquiries. We reply from support@dudleyapps.com, usually within a day or two.';
+  'Contact Dudley Development about app support, bug reports, client projects, partnerships, or press. Email hello@dudleyapps.com or support@dudleyapps.com, or use the form.';
 
 // ContactPage JSON-LD — mirrors the org contactPoint Base.astro already emits site-wide,
 // scoped to this page so AI answer engines and search can point directly at /contact/
@@ -38,13 +38,13 @@ const schema = {
     <div class="wrap">
       <a class="back" href={rel('/')}>← Home</a>
       <h1>Contact Dudley Development</h1>
-      <p class="updated">Support, partnerships, or just saying hi — pick whichever fits.</p>
+      <p class="updated">Support, client projects, partnerships, or just saying hi.</p>
 
       <p class="intro">
-        Got a bug, a question about one of our apps, an idea for a partnership — or an app you
-        want us to build for your brand? Use the form below and it lands directly in our inbox. For quick answers without waiting on a reply,
-        check <a href={rel('/support/')}>Support</a> first — a lot of common questions are already
-        answered there.
+        Have a bug, a question about one of our apps, a partnership idea, or an app you want built
+        for your brand? Send it with the form below. The form goes to {SUPPORT_EMAIL}. For anything
+        that isn't app support, you can also email
+        {' '}<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>{' '}directly. Many common questions are already answered on <a href={rel('/support/')}>Support</a>.
       </p>
 
       <div class="contact-layout">
@@ -54,29 +54,28 @@ const schema = {
           <div class="aside-card">
             <h2>Direct email</h2>
             <p>
-              <strong>Support &amp; bugs</strong><br />
-              <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
+              <strong>General, partnerships &amp; press</strong><br />
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
             </p>
             <p>
-              <strong>Partnerships, press &amp; everything else</strong><br />
-              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+              <strong>App support &amp; bugs</strong><br />
+              <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
             </p>
           </div>
 
           <div class="aside-card">
-            <h2>Want an app built?</h2>
+            <h2>Client work</h2>
             <p>
-              We take on a small amount of client work — iPhone apps designed, built, and shipped
-              end to end under your brand, like <a href={rel('/#apps')}>Where's This House?</a>
-              for HomeLight. Pick "Build an app for us" in the form and include what it should do,
+              We take on a small amount of client work: iPhone apps designed, built, and shipped
+              under your brand. Pick "Build an app for us" in the form and include what it should do,
               who it's for, your timeline, and a budget range.
             </p>
           </div>
 
           <div class="aside-card">
-            <h2>Response time</h2>
-            <p>We read every message and typically reply within a day or two. For urgent App
-              Store review issues, say so in the subject line.</p>
+            <h2>Urgent issues</h2>
+            <p>If your message is about an App Store review issue, say so in the subject line so
+              we see it first.</p>
           </div>
 
           <div class="aside-card">
