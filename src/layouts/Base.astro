@@ -51,12 +51,14 @@ const CRUMB_LABELS: Record<string, string> = {
 };
 // Segments without a dedicated index page point at the closest real destination.
 const CRUMB_HREF: Record<string, string> = { apps: '/#apps' };
+// Intermediate segments with no page and no stand-in are left out of the trail.
+const CRUMB_SKIP = new Set(['terms', 'connectors', 'archetypes']);
 const titleCase = (s: string) => s.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 const crumbLeaf = (breadcrumbLeaf ?? title).replace(` | ${STUDIO}`, '').trim();
 
 const segs = path.split('/').filter(Boolean);
 let breadcrumbSchema: object | null = null;
-if (segs.length > 0) {
+if (segs.length > 0 && !robots?.includes('noindex')) {
   const itemListElement: object[] = [
     { '@type': 'ListItem', position: 1, name: 'Home', item: abs('/') },
   ];
@@ -64,9 +66,10 @@ if (segs.length > 0) {
   segs.forEach((seg, i) => {
     acc += '/' + seg;
     const isLeaf = i === segs.length - 1;
+    if (!isLeaf && CRUMB_SKIP.has(seg)) return;
     itemListElement.push({
       '@type': 'ListItem',
-      position: i + 2,
+      position: itemListElement.length + 1,
       name: isLeaf ? crumbLeaf : (CRUMB_LABELS[seg] ?? titleCase(seg)),
       item: abs(CRUMB_HREF[seg] ?? acc + '/'),
     });

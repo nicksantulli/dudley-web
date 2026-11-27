@@ -18,7 +18,7 @@ const schema = {
   mainEntity: { '@type': 'ItemList', numberOfItems: hub.posts.length, itemListElement: hub.posts.map((post: any, index: number) => ({ '@type': 'ListItem', position: index + 1, url: abs(`/blog/${post.id}/`), name: post.data.title })) },
 };
 ---
-<Base title={`${hub.title} — The Dudley Blog`} description={hub.description} path={path} schema={schema} breadcrumbLeaf={hub.title}>
+<Base title={`${hub.title} | The Dudley Blog`} description={hub.description} path={path} schema={schema} breadcrumbLeaf={hub.title}>
   <main class="page editorial-page">
     <div class="wrap topic-page">
       <nav class="crumbs" aria-label="Breadcrumb"><a href={rel('/')}>Home</a><span>/</span><a href={rel('/blog/')}>Blog</a><span>/</span><a href={rel('/blog/topics/')}>Topics</a><span>/</span><span>{hub.title}</span></nav>

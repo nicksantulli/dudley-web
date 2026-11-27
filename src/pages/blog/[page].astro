@@ -15,8 +15,8 @@ export async function getStaticPaths() {
 
 const { pageNum, totalPages, posts } = Astro.props;
 const path = `/blog/${pageNum}/`;
-const title = `The Dudley Blog — Page ${pageNum}`;
-const description = `Plain-English answers from the Dudley Blog, page ${pageNum} of ${totalPages}.`;
+const title = `The Dudley Blog, page ${pageNum}`;
+const description = `Articles from the Dudley Blog, page ${pageNum} of ${totalPages}.`;
 const schema = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: title, description, url: abs(path), isPartOf: { '@type': 'Blog', name: 'The Dudley Blog', url: abs('/blog/') }, publisher: { '@type': 'Organization', name: STUDIO, url: ORIGIN } };
 ---
 <Base title={title} description={description} path={path} schema={schema} breadcrumbLeaf={`Page ${pageNum}`}>

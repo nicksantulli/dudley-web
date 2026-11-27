@@ -22,7 +22,7 @@ const { tag, posts, eligibleTopicSlugs } = Astro.props;
 const eligibleTopics = new Set(eligibleTopicSlugs);
 const label = tagLabel(tag);
 const path = `/blog/tags/${tagSlug(tag)}/`;
-const title = `${label} — The Dudley Blog`;
+const title = `${label} articles on the Dudley Blog`;
 const description = `Every Dudley Development post tagged ${label}. ${posts.length} ${posts.length === 1 ? 'post' : 'posts'}.`;
 const mappedTopicCandidate = topicForLabel(tag);
 const mappedTopic = mappedTopicCandidate && eligibleTopics.has(mappedTopicCandidate) ? mappedTopicCandidate : undefined;

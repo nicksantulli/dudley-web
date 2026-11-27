@@ -70,7 +70,7 @@ const faqSchema =
 const pageSchema = faqSchema ? [appSchema, faqSchema] : appSchema;
 // Head-only overrides. Schema above still uses `description` and the visible
 // answer still renders that same field.
-const pageTitle = app.seoTitle || `${app.name} — ${app.tagline}`;
+const pageTitle = app.seoTitle || `${app.name}: ${app.tagline}`;
 const pageDescription = app.seoDescription || app.description;
 ---
 <Base title={pageTitle} description={pageDescription} path={path} ogImage={app.ogImage ?? app.icon} schema={pageSchema} breadcrumbLeaf={app.name} appBannerId={await appBannerIdFor(app.slug)}>
