@@ -21,15 +21,13 @@ template one page per entry — so adding pages is a data edit, not hand-written
 src/
 ├── consts.ts              # site URL, base path, App Store IDs — single source of truth
 ├── content/
-│   ├── config.ts          # collection schemas (apps, archetypes, comparisons, tools, blog)
+│   ├── config.ts          # collection schemas (apps, archetypes, blog)
 │   ├── apps/*.mdx         # one file per app  → /apps/<slug>/
 │   ├── archetypes/*.mdx   # one file per Vibe Rater archetype → /archetypes/<slug>/
-│   ├── comparisons/*.mdx  # one file per comparison → /compare/<slug>/
-│   ├── tools/*.mdx        # one file per tool/quiz → /tools/<slug>/
 │   └── blog/*.md          # one file per blog post → /blog/<slug>/  (see PUBLISHING.md)
 ├── lib/blog.ts            # blog helpers (published posts, tags, date fmt)
 ├── layouts/               # Base + per-page-type layouts (build the JSON-LD)
-├── components/            # FAQ, InternalLinks, AppCTA, VibeQuiz
+├── components/            # FAQ, InternalLinks, AppCTA
 └── pages/                 # static pages + [slug] routes + blog/ (index, [slug], tags, rss.xml) + llms.txt.ts
 public/                    # served as-is: app-ads.txt, robots.txt, assets/, .nojekyll
                            #   + legacy .html redirect stubs (preserve old App Store URLs)
@@ -42,7 +40,6 @@ answer engines automatically.
 
 - **New app** → add `src/content/apps/<slug>.mdx`. The landing page, schema, and FAQ generate automatically. Add the App Store ID in `src/consts.ts` when live.
 - **New archetype** → add `src/content/archetypes/<slug>.mdx`. (Remaining to write: drip, serve, gorpcore-prophet, npc-affectionate — see `vault/growth/seo-aeo/`.)
-- **New comparison / tool** → add a file in the matching collection.
 - **New blog post** → drop `src/content/blog/<slug>.md` and push. Index, tag pages, RSS,
   sitemap, and `llms.txt` update automatically. Full guide: [`PUBLISHING.md`](PUBLISHING.md).
 

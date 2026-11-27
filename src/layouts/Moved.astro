@@ -1,0 +1,32 @@
+---
+// GitHub Pages serves static files only, so a removed URL "redirects" with an
+// instant meta refresh plus a canonical to the target. Keep these routes out of
+// the sitemap (astro.config.mjs).
+import { abs } from '../consts';
+
+export interface Props {
+  to: string;
+  heading: string;
+  linkText: string;
+}
+const { to, heading, linkText } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="This page has moved." />
+    <meta name="robots" content="noindex,follow" />
+    <link rel="canonical" href={abs(to)} />
+    <meta http-equiv="refresh" content={`0; url=${to}`} />
+    <title>{heading} | Dudley Development</title>
+  </head>
+  <body>
+    <a href="#main">Skip to content</a>
+    <main id="main">
+      <h1>{heading}</h1>
+      <p>This page is no longer available. Go to <a href={to}>{linkText}</a>.</p>
+    </main>
+  </body>
+</html>

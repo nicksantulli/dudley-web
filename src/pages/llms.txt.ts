@@ -46,15 +46,6 @@ export async function GET() {
 
 ${appLines}
 
-## Tools
-
-- [What's My Vibe? Quiz](${abs('/tools/whats-my-vibe/')}): A free 5-question quiz that suggests a vibe archetype.
-
-## Comparisons
-
-- [Best Photo Rating Apps for iPhone (2026)](${abs('/compare/best-photo-rating-apps/')}): An honest comparison of photo, vibe, and aura rating apps on iPhone.
-- [Best Vibe Check Apps for iPhone (2026)](${abs('/compare/vibe-check-apps/')}): An honest comparison of vibe check and aura apps on iPhone.
-
 ## Maintained Blog Topics
 
 ${topicLines}

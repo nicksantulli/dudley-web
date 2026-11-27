@@ -21,11 +21,14 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      // Tag archives are noindex. Machine-readable feeds and the Powell redirect
-      // stay out. Privacy and support pages are real URLs and belong in the index.
+      // Tag archives are noindex. Machine-readable feeds and the redirect stubs
+      // (Powell, removed VibeRater quiz and comparisons) stay out. Privacy and
+      // support pages are real URLs and belong in the index.
       filter: (page) =>
         !page.includes('/blog/tags') &&
         !page.includes('/apps/powell-prowl') &&
+        !page.includes('/tools/') &&
+        !page.includes('/compare/') &&
         !page.includes('/rss.xml') &&
         !page.includes('/llms.txt'),
       serialize(item) {

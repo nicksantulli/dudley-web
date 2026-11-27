@@ -12,7 +12,6 @@ export async function getStaticPaths() {
       const a = bySlug.get(s);
       if (a) related.push({ title: a.data.name, url: `/archetypes/${a.id}/`, description: a.data.tagline });
     }
-    related.push({ title: "What's my vibe? Quiz", url: '/tools/whats-my-vibe/', description: 'Find your archetype in 5 questions' });
     return {
       params: { slug: entry.id },
       props: { entry, related, dateAdded: entry.data.dateAdded.toISOString().slice(0, 10) },

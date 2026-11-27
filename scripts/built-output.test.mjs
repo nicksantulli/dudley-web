@@ -287,7 +287,7 @@ test('VibeRater and Beat the Dealer stay out of the shared app lists', () => {
   );
 
   const llms = readFileSync(join(DIST, 'llms.txt'), 'utf8');
-  const catalog = llms.split('## Tools')[0];
+  const catalog = llms.split('## Maintained Blog Topics')[0];
   assert.doesNotMatch(llms, /VibeRater|vibe-rater|Beat the Dealer|beat-the-dealer|## Archetypes|\/archetypes\//);
   let cursor = -1;
   for (const name of [

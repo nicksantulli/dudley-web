@@ -37,10 +37,6 @@ export function sourceFileForUrl(url) {
   if (app) candidates.push(`src/content/apps/${app[1]}.mdx`);
   const archetype = path.match(/^\/archetypes\/([^/]+)$/);
   if (archetype) candidates.push(`src/content/archetypes/${archetype[1]}.mdx`);
-  const comparison = path.match(/^\/compare\/([^/]+)$/);
-  if (comparison) candidates.push(`src/content/comparisons/${comparison[1]}.mdx`);
-  const tool = path.match(/^\/tools\/([^/]+)$/);
-  if (tool) candidates.push(`src/content/tools/${tool[1]}.mdx`);
   if (path === '') candidates.push('src/pages/index.astro');
   else {
     candidates.push(

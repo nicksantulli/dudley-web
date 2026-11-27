@@ -83,45 +83,6 @@ const archetypes = defineCollection({
   }),
 });
 
-const comparisons = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/comparisons' }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    primaryKeyword: z.string(),
-    targetApp: z.string(),
-    apps: z.array(
-      z.object({
-        name: z.string(),
-        bestFor: z.string().optional(),
-        price: z.string().default('Free'),
-        description: z.string(),
-        pros: z.array(z.string()),
-        verdict: z.string(),
-        appStoreUrl: z.string().optional(),
-        isDudleyApp: z.boolean().default(false),
-      })
-    ),
-    faq: z.array(faqItem).default([]),
-    related: z.array(z.object({ title: z.string(), url: z.string(), description: z.string() })).default([]),
-    dateAdded: z.date(),
-    lastUpdated: z.date(),
-  }),
-});
-
-const tools = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/tools' }),
-  schema: z.object({
-    title: z.string(),
-    tagline: z.string(),
-    description: z.string(),
-    primaryKeyword: z.string(),
-    targetApp: z.string().default('vibe-rater'),
-    faq: z.array(faqItem).default([]),
-    dateAdded: z.date(),
-  }),
-});
-
 // Blog — the Content Writer drops a markdown/MDX file in src/content/blog/ and pushes.
 // This schema mirrors the frontmatter they already author in vault/growth/blog/posts/.
 // Everything optional has a sensible default so a minimal post (title + description +
@@ -151,4 +112,4 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { apps, archetypes, comparisons, tools, blog };
+export const collections = { apps, archetypes, blog };
