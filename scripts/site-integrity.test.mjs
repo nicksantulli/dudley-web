@@ -563,3 +563,44 @@ test('homepage app bands deliver WebP sources without the legacy lockup', () => 
   assert.doesNotMatch(home, /dudley-lockup\.png/);
   for (const page of htmlPages()) assert.doesNotMatch(page.html, /dudley-lockup\.png/, page.rel);
 });
+
+const REMOVED_VIBERATER_URLS = ['/tools/whats-my-vibe/', '/compare/best-photo-rating-apps/', '/compare/vibe-check-apps/'];
+
+test('removed VibeRater quiz and comparison URLs redirect to the homepage', () => {
+  for (const url of REMOVED_VIBERATER_URLS) {
+    const html = readFileSync(resolve(`dist${url}index.html`), 'utf8');
+    assert.match(html, /<meta http-equiv="refresh" content="0; url=\/"/, url);
+    assert.match(html, /<link rel="canonical" href="https:\/\/dudleyapps\.com\/"/, url);
+    assert.match(html, /<meta name="robots" content="noindex,follow"/, url);
+    assert.doesNotMatch(html, /VibeRater|apps\.apple\.com/, url);
+  }
+});
+
+test('removed VibeRater URLs are gone from the sitemaps, llms.txt, and internal links', () => {
+  const sitemaps = readdirSync(resolve('dist'))
+    .filter((name) => name.startsWith('sitemap') && name.endsWith('.xml'))
+    .map((name) => readFileSync(resolve('dist', name), 'utf8'))
+    .join('\n');
+  const llms = readFileSync(resolve('dist/llms.txt'), 'utf8');
+  const rss = readFileSync(resolve('dist/blog/rss.xml'), 'utf8');
+  for (const url of REMOVED_VIBERATER_URLS) {
+    assert.doesNotMatch(sitemaps, new RegExp(url), `sitemap lists ${url}`);
+    assert.doesNotMatch(llms, new RegExp(url), `llms.txt lists ${url}`);
+    assert.doesNotMatch(rss, new RegExp(url), `RSS lists ${url}`);
+    for (const page of htmlPages()) {
+      if (page.rel === `${url}index.html`) continue;
+      assert.doesNotMatch(page.html, new RegExp(`href="(?:https://dudleyapps\\.com)?${url}"`), `${page.rel} links to ${url}`);
+    }
+  }
+  assert.doesNotMatch(llms, /## Tools|## Comparisons/);
+});
+
+test('pure VibeRater promotion posts carry no App Store CTA or app banner', () => {
+  for (const slug of ['photo-rating-apps-2026', 'npc-defense', 'gorpcore-prophet-won', 'quiet-luxury-2026', 'phone-case-vibe']) {
+    const html = readFileSync(resolve(`dist/blog/${slug}/index.html`), 'utf8');
+    assert.doesNotMatch(html, /id6780704282|apps\.apple\.com/, slug);
+    assert.doesNotMatch(html, /apple-itunes-app|app-store-badge|app-promotion-disclosure/, slug);
+  }
+  const other = readFileSync(resolve('dist/blog/are-aura-apps-real/index.html'), 'utf8');
+  assert.match(other, /app-store-badge/);
+});
