@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { rel, SUPPORT_EMAIL, CONTACT_EMAIL, LEGAL_NAME } from '../consts';
 import { byCatalogOrder, listedApps, liveApps, storeListName } from '../lib/liveApps.mjs';
-const description = 'Dudley Development builds and publishes iPhone games, conversation tools, social apps, and plain-English learning products.';
+const description = 'Dudley Development builds and publishes iPhone games, conversation cards, plain-language learning apps, and everyday utilities.';
 
 // "The apps" is data-driven off the same content collection that powers the app cards,
 // per-app pages, and launch-status mechanism (DUD-182) — so the list, ordering, and
@@ -27,19 +27,19 @@ const statusLabel = (s: string) =>
       </nav>
 
       <h1>About Dudley Development</h1>
-      <p class="updated">{LEGAL_NAME} · Founded by <a href={rel('/about/nick-santulli/')}>Nicholas Santulli</a> · United States</p>
+      <p class="updated">{LEGAL_NAME} · Founded by <a href={rel('/about/nick-santulli/')}>Nick Santulli</a> · United States</p>
 
       <p class="tldr">
-        Dudley Development builds iPhone products you can understand before you download: games,
-        conversation starters, social tools, and short lessons with clear prices and privacy boundaries.
+        Dudley Development builds iPhone apps you can understand before you download: games,
+        conversation cards, short lessons, and everyday utilities with clear prices and privacy boundaries.
       </p>
 
       <h2>How the apps work</h2>
       <ul>
-        <li><strong>Download price.</strong> Every Dudley app is free on the App Store. Optional purchases, when offered, are described on the app page.</li>
-        <li><strong>Accounts.</strong> Most apps work without one. VibeRater uses profiles for its social features and provides account-deletion controls.</li>
+        <li><strong>Download price.</strong> Every app Dudley has published on the App Store is free to download. Optional purchases, when an app offers them, are described on its app page.</li>
+        <li><strong>Accounts.</strong> Most Dudley apps work without one. When an app needs an account, its app page and privacy policy say so.</li>
         <li><strong>Privacy.</strong> Each app page states what works offline, what stays on the device, and where to read the full policy.</li>
-        <li><strong>Ads.</strong> Ad-supported apps request non-personalized ads and do not request Apple’s cross-app tracking permission.</li>
+        <li><strong>Ads.</strong> Some apps show ads through Google AdMob. Each app’s <a href={rel('/privacy/')}>privacy policy</a> says whether its ads can be personalized and whether it asks for Apple’s tracking permission.</li>
       </ul>
 
       <h2>The apps</h2>
@@ -64,19 +64,19 @@ const statusLabel = (s: string) =>
         const joiner = index === storeListed.length - 1 ? (storeListed.length === 2 ? ' and ' : ', and ') : ', ';
         return [joiner, link];
       })}.</p>
-      <p>See them all — plus our client work — on the <a href={rel('/#apps')}>home page</a>.</p>
+      <p>See them all on the <a href={rel('/#apps')}>home page</a>.</p>
 
       <h2>Get in touch</h2>
       <p>
-        Got a bug or need help? Use the <a href={rel('/contact/')}>contact form</a>, head to
-        <a href={rel('/support/')}>Support</a>, or email
-        <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>. Just want to say hi or talk shop? Reach us at
-        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+        For general questions, partnerships, or press, email
+        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. For a bug or help with an app, see
+        <a href={rel('/support/')}>Support</a> or email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+        You can also use the <a href={rel('/contact/')}>contact form</a>.
       </p>
 
       <div class="cta-block">
-        <h2>Want to work with us?</h2>
-        <p>We take on a small amount of client work each year — iOS apps designed, built, and shipped end to end.</p>
+        <h2>Client work</h2>
+        <p>We also design, build, and release iPhone apps for other companies, branded as theirs and published on the App Store. Client apps are not part of the Dudley catalog above.</p>
         <div class="actions">
           <a class="btn primary" href={rel('/contact/?topic=build-an-app')}>Start a conversation</a>
         </div>

@@ -40,28 +40,15 @@ export async function GET() {
 
   const body = `# Dudley Development
 
-> Dudley Development, LLC builds and publishes iPhone games, conversation tools, social apps, and plain-English learning products. The catalog is run by Nicholas Santulli and includes ${liveCatalog}. Each app page states its release status, price model, account requirement, offline behavior, and privacy boundary.
+> Dudley Development, LLC builds and publishes iPhone games, conversation cards, plain-language learning apps, and everyday utilities. The live catalog includes ${liveCatalog}. Each app page states its release status, price model, account requirement, offline behavior, and privacy boundary.
 
 ## Apps
 
 ${appLines}
 
-## Archetypes (VibeRater Social)
-
-VibeRater Social assigns one of several vibe archetypes based on your photo:
-
-- [Main Character Energy](${abs('/archetypes/main-character/')}): The protagonist of every room. Confident, intentional presence.
-- [Final Boss](${abs('/archetypes/final-boss/')}): Peak power. Effortless authority; maxed Main-Character, Rizz, and Serve.
-- [Quiet Luxury](${abs('/archetypes/quiet-luxury/')}): Understated, expensive elegance with no loud logos.
-- [Clean Girl](${abs('/archetypes/clean-girl/')}): Minimal, polished, effortless — glowy skin and gold hoops.
-- [Dark Academia](${abs('/archetypes/dark-academia/')}): Old libraries, tweed, candlelight, intellectual mood.
-- [Cottagecore](${abs('/archetypes/cottagecore/')}): Soft, rural, slow living. High Aura, peaceful energy.
-- [Cozy Goblin](${abs('/archetypes/cozy-goblin/')}): Maximally comfortable, endearingly chaotic. Zero Serve, infinite Aura.
-- [Rizz](${abs('/archetypes/rizz/')}): Natural charisma and social magnetism.
-
 ## Tools
 
-- [What's My Vibe? Quiz](${abs('/tools/whats-my-vibe/')}): A free 5-question quiz that reveals your vibe archetype. Powered by VibeRater Social logic.
+- [What's My Vibe? Quiz](${abs('/tools/whats-my-vibe/')}): A free 5-question quiz that suggests a vibe archetype.
 
 ## Comparisons
 
@@ -80,7 +67,7 @@ ${blogLines}
 
 ## About
 
-Dudley Development is the public-facing studio name of Dudley Development, LLC. The studio is run by a small team and one human (Nicholas Santulli). [Nick Santulli](${abs('/about/nick-santulli/')}) is the founder of Dudley Development. All apps are free. Account needs, cloud storage, analytics, advertising, and tracking behavior vary by app and are disclosed in each app's privacy policy. VibeRater Social is for entertainment, does not sell personal information, and does not request cross-app tracking permission.
+Dudley Development is the public-facing studio name of Dudley Development, LLC. [Nick Santulli](${abs('/about/nick-santulli/')}) is the founder of Dudley Development. Every app Dudley has published on the App Store is free to download; optional purchases are described on each app page. Client work built for other brands is identified as client work and is not part of the Dudley catalog. Account needs, cloud storage, analytics, advertising, and tracking behavior vary by app and are disclosed in each app's privacy policy. Dudley Development does not sell personal information.
 
 ## Contact
 

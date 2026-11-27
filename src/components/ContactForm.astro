@@ -9,7 +9,7 @@
 // scripts/activate-contact-form.py for the one-time activation step FormSubmit requires
 // before it will actually deliver mail to a brand-new target address.
 import { getCollection } from 'astro:content';
-import { rel, abs, SUPPORT_EMAIL } from '../consts';
+import { rel, abs, SUPPORT_EMAIL, CONTACT_EMAIL } from '../consts';
 import { byCatalogOrder, listedApps } from '../lib/liveApps.mjs';
 
 export interface Props {
@@ -43,8 +43,8 @@ const redirectBackTo = abs('/contact/?sent=1');
 
 // "Which app?" options — data-driven off the same content collection that powers the
 // app cards, /apps/<slug>/ pages, and the support index, so this list can't drift as
-// apps ship, get renamed, or get added. Client work (developedFor, e.g. HomeLight) is
-// included too — those apps get support questions same as any other.
+// apps ship, get renamed, or get added. Unlisted apps (see liveApps.mjs) stay out; their
+// users pick "General".
 const contentApps = listedApps(await getCollection('apps')).sort(byCatalogOrder);
 const appOptions = [
   { value: 'general', label: 'General' },
@@ -102,8 +102,7 @@ const id = (base: string) => `cf-${base}-${uid}`;
       <p class="cf-hint" data-hint-for="build-an-app" hidden>
         Want us to build an app for your brand? Tell us what it should do, who it's for, your
         rough timeline, and a budget range if you have one. We design, build, and ship iPhone
-        apps end to end — <a href={rel('/#apps')}>Where's This House?</a> for HomeLight is
-        a recent example.
+        apps end to end.
       </p>
     </div>
 
@@ -118,7 +117,9 @@ const id = (base: string) => `cf-${base}-${uid}`;
     </div>
 
     <p class="cf-privacy">
-      We only use this to reply to you. See our <a href={rel('/privacy/')}>Privacy policy</a>.
+      FormSubmit.co delivers this form to {SUPPORT_EMAIL}. We use what you send to answer your request
+      and keep a record of the conversation. Please do not include passwords or other sensitive details.
+      See our <a href={rel('/privacy/#website-contact')}>Privacy policy</a>.
     </p>
 
     <button type="submit" class="btn primary cf-submit">
@@ -129,16 +130,16 @@ const id = (base: string) => `cf-${base}-${uid}`;
 
     <div class="cf-success" hidden>
       <p>
-        <strong>Thanks — your message is in our queue.</strong> We reply from
-        {' '}{SUPPORT_EMAIL}, usually within a day or two. You can also check
-        {' '}<a href={rel('/support/')}>Support</a> for quick answers in the meantime.
+        <strong>Message sent.</strong> Replies come from an @dudleyapps.com address. Many common
+        questions are answered on <a href={rel('/support/')}>Support</a>.
       </p>
     </div>
 
     <div class="cf-error" hidden>
       <p>
-        Something went wrong sending that. Please try again, or email us directly at
-        {' '}<a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> and we'll pick it up from there.
+        Your message did not send. Please try again, or email
+        {' '}<a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. For help with an app, email
+        {' '}<a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
       </p>
     </div>
   </form>

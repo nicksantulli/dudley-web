@@ -363,12 +363,75 @@ test('homepage uses the approved product-first message', () => {
   assert.match(band('reply-gate'), /ReplyGate: Reply or Skip/);
 });
 
-test('client work has attribution and a tagged store action without a broken detail link', () => {
-  const home = readFileSync(resolve('dist/index.html'), 'utf8');
-  const band = home.match(/<section[^>]+data-app="dude-wheres-this-house"[\s\S]*?<\/section>/)?.[0] ?? '';
-  assert.match(band, /Built for HomeLight|Created for HomeLight/);
-  assert.match(band, /id6779785617\?pt=128970277&(?:amp;)?ct=/);
-  assert.doesNotMatch(band, /href="\/apps\/dude-wheres-this-house\//);
+test('homepage, About, Contact, and llms.txt do not promote unlisted client work', () => {
+  const surfaces = {
+    home: readFileSync(resolve('dist/index.html'), 'utf8'),
+    about: readFileSync(resolve('dist/about/index.html'), 'utf8'),
+    contact: readFileSync(resolve('dist/contact/index.html'), 'utf8'),
+    llms: readFileSync(resolve('dist/llms.txt'), 'utf8'),
+  };
+  for (const [name, text] of Object.entries(surfaces)) {
+    assert.doesNotMatch(text, /Where(?:&#39;|')s This House|HomeLight|id6779785617/, name);
+  }
+  assert.doesNotMatch(surfaces.home, /id="built-for-others"/);
+});
+
+test('studio copy makes no absolute or one-person claims', () => {
+  const about = readFileSync(resolve('dist/about/index.html'), 'utf8');
+  const llms = readFileSync(resolve('dist/llms.txt'), 'utf8');
+  assert.match(about, /Every app Dudley has published on the App Store is free to download\./);
+  assert.match(about, /Client work/);
+  assert.doesNotMatch(about, /Every Dudley app is free|request non-personalized ads and do not request/);
+  assert.match(llms, /free to download/);
+  assert.doesNotMatch(llms, /All apps are free\.|one human|small team/);
+  for (const text of [about, llms]) assert.doesNotMatch(text, /apps on this site are ours/i);
+});
+
+test('contact form copy matches where the form actually delivers', () => {
+  const contact = readFileSync(resolve('dist/contact/index.html'), 'utf8');
+  assert.match(contact, /action="https:\/\/formsubmit\.co\/support@dudleyapps\.com"/);
+  assert.match(contact, /FormSubmit\.co delivers this form to support@dudleyapps\.com\./);
+  assert.match(contact, /mailto:hello@dudleyapps\.com/);
+  assert.doesNotMatch(contact, /within a day or two/);
+  const success = contact.match(/<div class="cf-success"[\s\S]*?<\/div>/)?.[0] ?? '';
+  const error = contact.match(/<div class="cf-error"[\s\S]*?<\/div>/)?.[0] ?? '';
+  for (const block of [success, error]) assert.doesNotMatch(block, /\u2014/);
+  assert.match(error, /hello@dudleyapps\.com/);
+  assert.match(success, /Replies come from an @dudleyapps\.com address\./);
+  assert.doesNotMatch(success, /[Ww]e will reply|we&#39;ll reply|we'll reply/);
+  assert.doesNotMatch(contact, /We only use|so we see it first|small amount of client work/);
+});
+
+test('form note and privacy page describe the same use of contact messages', () => {
+  const use = /we use what you send to answer your request\s+and keep a record of the conversation/i;
+  const contact = readFileSync(resolve('dist/contact/index.html'), 'utf8');
+  const privacy = readFileSync(resolve('dist/privacy/index.html'), 'utf8');
+  const section = privacy.match(/id="website-contact"[\s\S]*?<\/ul>/)?.[0] ?? '';
+  assert.match(contact.match(/<p class="cf-privacy"[\s\S]*?<\/p>/)?.[0] ?? '', use);
+  assert.match(section, use);
+  assert.match(section, /href="https:\/\/formsubmit\.co\/privacy\.pdf"/);
+  assert.match(section, /FormSubmit keeps submissions for 30 days/);
+  assert.match(section, /Dudley&#39;s contact page sets no cookies|Dudley's contact page sets no cookies/);
+  assert.doesNotMatch(section, /as long as we need|reasonable business records|\u2014/);
+});
+
+test('privacy page discloses the FormSubmit contact form and has working icons', () => {
+  const privacy = readFileSync(resolve('dist/privacy/index.html'), 'utf8');
+  assert.match(privacy, /id="website-contact"/);
+  assert.match(privacy, /FormSubmit/);
+  assert.doesNotMatch(privacy, /-iconpng/);
+  for (const match of privacy.matchAll(/src="(\/assets\/[^"]+)"/g)) {
+    assert.ok(existsSync(resolve(`public${match[1]}`)), `${match[1]} is missing`);
+  }
+});
+
+test('the site has no seller or acquisition pages or copy', () => {
+  assert.equal(existsSync(resolve('dist/sell/index.html')), false);
+  assert.equal(existsSync(resolve('dist/buy/index.html')), false);
+  const texts = [...htmlPages().map((page) => page.html), readFileSync(resolve('dist/llms.txt'), 'utf8')];
+  for (const text of texts) {
+    assert.doesNotMatch(text, /Sell an app|Sell your app|We buy apps|we also buy|looking to buy|sell-an-app/i);
+  }
 });
 
 test('app pages expose pricing, account, offline, and privacy facts', () => {

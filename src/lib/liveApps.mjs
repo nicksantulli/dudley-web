@@ -15,6 +15,7 @@ export const LIVE_APP_ORDER = [
 const UNLISTED = new Set([
   'vibe-rater',
   'beat-the-dealer',
+  'dude-wheres-this-house',
 ]);
 
 const rank = new Map(LIVE_APP_ORDER.map((slug, index) => [slug, index]));
