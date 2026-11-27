@@ -7,4 +7,10 @@ export const MOVED_PATHS = [
   '/compare/best-photo-rating-apps/',
   '/compare/vibe-check-apps/',
   '/blog/tags/vibe-rater/',
+  '/blog/thanksgiving-dinner-conversation/',
+  '/blog/thanksgiving-games/',
+  '/blog/openers-not-interviews/',
+  '/blog/would-you-rather-table/',
+  '/blog/phone-in-the-middle/',
+  '/blog/why-are-prices-still-high-if-inflation-is-down/',
 ];
