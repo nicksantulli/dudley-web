@@ -7,6 +7,7 @@ category: "culture"
 primaryKeyword: "quiet luxury 2026"
 relatedApps:
   - "vibe-rater"
+appCta: false
 relatedArchetypes:
   - "quiet-luxury"
   - "clean-girl"
@@ -88,10 +89,6 @@ Quiet Luxury will get a trend article again in three years, when the people who 
 The archetypes underneath all of this — the ones VibeRater is mapping — don't change. The aspiration to be understated and excellent and recognized by the right people is durable. The aspiration to be comfortable in technical gear and indifferent to trend cycles is durable. The aspiration to have everything cohesively together without appearing to try is durable.
 
 Those are personality types, not trend cycles. They just get different names every few years.
-
----
-
-**VibeRater Social is live on the App Store.** Find out which archetype you actually are — your photo might surprise you. [Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-quiet-luxury-2026&mt=8).
 
 ---
 

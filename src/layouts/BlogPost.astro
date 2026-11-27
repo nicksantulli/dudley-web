@@ -83,7 +83,7 @@ const schema = faqSchema
   ogImage={ogImage}
   schema={schema}
   breadcrumbLeaf={post.title}
-  appBannerId={await appBannerIdFor(ctaKey)}
+  appBannerId={post.appCta === false ? undefined : await appBannerIdFor(ctaKey)}
 >
   <main class="page">
     <div class="wrap" style="max-width:720px;">
@@ -123,6 +123,7 @@ const schema = faqSchema
         </aside>
       </article>
 
+      {post.appCta !== false && <>
       <AppCTA
         appName={cta.name}
         appStoreId={cta.id}
@@ -137,6 +138,7 @@ const schema = faqSchema
         blurb={`Liked this? ${cta.name} ${cta.id ? 'is free on the App Store.' : 'is launching on the App Store soon.'}`}
       />
       <p class="app-promotion-disclosure">Dudley Development makes the app mentioned above. The editorial answer is written to stand on its own.</p>
+      </>}
 
       <FAQ items={post.faq} />
       <InternalLinks pages={related} heading="Keep reading" />

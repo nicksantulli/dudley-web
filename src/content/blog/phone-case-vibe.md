@@ -7,6 +7,7 @@ category: "outfit-explainer"
 primaryKeyword: "phone case personality meaning"
 relatedApps:
   - "vibe-rater"
+appCta: false
 relatedArchetypes:
   - "clean-girl"
   - "gorpcore-prophet"
@@ -108,8 +109,6 @@ The delusional version: you have AirPod cases missing, a cracked screen from thr
 ## Find Out What Your Actual Vibe Is
 
 Your phone case suggests your archetype. VibeRater will tell you for sure — upload a photo and get your score across six dimensions, your archetype, and your aura color. The phone vibrates while it reads you.
-
-[Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-phone-case-vibe&mt=8).
 
 ---
 

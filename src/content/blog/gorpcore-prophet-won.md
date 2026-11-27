@@ -7,6 +7,7 @@ category: "culture"
 primaryKeyword: "gorpcore prophet meaning"
 relatedApps:
   - "vibe-rater"
+appCta: false
 relatedArchetypes:
   - "gorpcore-prophet"
   - "quiet-luxury"
@@ -73,10 +74,6 @@ There's something deeply appealing about an aesthetic that's earned rather than 
 The mainstream wave has crested. The trend publications have moved on. What remains is what always remains: the people who were wearing it before the articles, who will keep wearing it after. The Gorpcore Prophet doesn't care that the cycle moved on. They have a hike next weekend.
 
 That's the archetype. It won the 2020s by not caring whether it won.
-
----
-
-**See if VibeRater assigns you Gorpcore Prophet** in the live app. [Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-gorpcore-prophet-won&mt=8).
 
 ---
 

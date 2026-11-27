@@ -7,6 +7,7 @@ category: "roundup"
 primaryKeyword: "best funny photo rating apps iphone 2026"
 relatedApps:
   - "vibe-rater"
+appCta: false
 faq:
   - q: "What are the best photo rating apps for iPhone in 2026?"
     a: "The most notable photo rating apps on iPhone in 2026 fall into a few categories: attractiveness/beauty raters (Umax, which went viral for harsh AI ratings), professional photo feedback tools (Photofeeler, designed for LinkedIn/dating profiles), and the newer 'vibe rater' category focused on aesthetic energy rather than attractiveness. VibeRater Social by Dudley Development takes this a step further with archetype assignment, haptic feedback, six-dimension scoring, personalized vibe eras, and mode-aware scorecards for selfies, regular photos, squad shots, and pet pics."
@@ -115,10 +116,6 @@ The category has quietly split into two completely different products:
 These are different genres. Evaluating them on the same criteria — "is this accurate?" — misses the point of the entertainment category. You don't ask a horoscope if it's a good epidemiological study.
 
 Know which one you're downloading. If you need to optimize a headshot for a job interview, use Photofeeler. If you want to find out whether you're a Gorpcore Prophet or a Cozy Goblin, that's what we're here for.
-
----
-
-**VibeRater Social is live on the App Store.** Free, ad-supported, with a one-time Remove Ads upgrade. The phone vibrates while it reads you. [Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-photo-rating-apps-2026&mt=8).
 
 ---
 
