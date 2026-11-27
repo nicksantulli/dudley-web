@@ -12,11 +12,12 @@ const description = 'Privacy policies for Dudley Development apps.';
 
       <p>
         {LEGAL_NAME} makes several separate apps, and they don't all collect the same things, so there
-        isn't one policy that's accurate for all of them. Read the policy for the app you actually use —
-        the table below is a quick summary, and each app's own page has the full detail. A few things are
+        isn't one policy that's accurate for all of them. Read the policy for the app you actually use.
+        The table below is a quick summary, and each app's own page has the full detail. A few things are
         true everywhere: we never sell your personal data, we don't share data across our own apps to
         build a profile of you, none of our apps are directed at children, and any usage analytics we run
-        ourselves is anonymous and disclosed on the app's page below. Some free apps show ads through
+        ourselves uses a random ID, not your name or contact details, and each app's policy below says exactly
+        what it sends. Some free apps show ads through
         Google AdMob, which is disclosed per app, including whether the ad requests are personalized and
         whether Apple's tracking permission is involved.
       </p>
@@ -60,7 +61,7 @@ const description = 'Privacy policies for Dudley Development apps.';
             <tr>
               <td style="padding:8px 10px 8px 0; border-bottom:1px solid var(--border, #222);">Last Human: Dodge the Bots</td>
               <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Yes (Sentry)</td>
-              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Yes (PostHog, on by default, opt-out in Settings)</td>
+              <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Yes (PostHog). Your answer to Apple's tracking prompt sets it, and you can change it in Settings.</td>
               <td style="padding:8px 10px; border-bottom:1px solid var(--border, #222);">Google AdMob, with an ATT prompt from v1.0.1 (personalized only if you allow; no ads in EEA/UK/CH), plus an optional rewarded ad to continue a run</td>
             </tr>
             <tr>
@@ -147,9 +148,9 @@ const description = 'Privacy policies for Dudley Development apps.';
       <h2 id="pattern-gym-waitlist">Pattern Gym waitlist (waitlist.dudleyapps.com)</h2>
       <p>
         Pattern Gym is a chart-reading practice app we have not released yet. Its waitlist at
-        <a href="https://waitlist.dudleyapps.com/">waitlist.dudleyapps.com</a> is a web page, separate from every app above, and this section is its
+        {' '}<a href="https://waitlist.dudleyapps.com/">waitlist.dudleyapps.com</a> is a web page, separate from every app above, and this section is its
         whole policy. {LEGAL_NAME} is the controller; contact us at
-        <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+        {' '}<a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
       </p>
       <ul>
         <li><b>What we keep:</b> the email address you type; a short source tag from the link you

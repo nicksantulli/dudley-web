@@ -8,16 +8,16 @@ const description = `Privacy policy for EconByte: Daily Economics by ${LEGAL_NAM
     <div class="wrap" style="max-width:720px;">
       <a class="back" href={rel('/privacy/')}>← All privacy policies</a>
       <h1>Privacy Policy</h1>
-      <p class="updated">EconByte: Daily Economics · Last updated September 25, 2026</p>
-      <p>This policy describes EconByte version 1.1.5 and later.</p>
+      <p class="updated">EconByte: Daily Economics · Last updated November 27, 2026</p>
+      <p>This policy describes EconByte version 1.1.8 and later.</p>
 
       <h2>The short version</h2>
       <p>
         {LEGAL_NAME} operates EconByte, a free economics-education app supported by ads, optional one-time
         purchases and an optional Pro subscription. There are no accounts. Your streak, progress and bookmarks
         stay on your device. When you first open the app, Apple asks whether EconByte may track you: your answer
-        decides whether ads can be personalized and, unless you choose otherwise in Settings, whether anonymous
-        usage analytics and crash reports are sent.
+        decides whether ads can be personalized and, unless you choose otherwise in Settings, whether usage
+        analytics and crash reports are sent. Neither is linked to your name or contact details.
       </p>
 
       <h2>What stays on your device</h2>
@@ -54,7 +54,7 @@ const description = `Privacy policy for EconByte: Daily Economics by ${LEGAL_NAM
       <h2>Usage analytics (PostHog)</h2>
       <p>
         Off unless you allow tracking or turn on <strong>Usage analytics</strong> in Settings. When on, the app
-        sends a fixed list of anonymous product events, such as app opened, a card or lesson completed, a
+        sends a fixed list of product events, not linked to your name or contact details, such as app opened, a card or lesson completed, a
         bookmark, a paywall view or a purchase outcome, with counts and durations bucketed. Card content, your
         bookmarks, exact times, prices and transaction IDs are never sent. Events are tied to PostHog's own random
         per-install ID, not to a device or advertising identifier. Settings shows that ID so you can quote it in
@@ -78,8 +78,10 @@ const description = `Privacy policy for EconByte: Daily Economics by ${LEGAL_NAM
 
       <h2>Advertising (Google AdMob)</h2>
       <p>
-        The free version shows banners on Home, Browse and while reading cards, and may show a full-screen ad
-        when you leave the set-complete screen (at most twice a day). Ads never appear in the Brief, search,
+        Without Remove Ads or Pro, a short full-screen ad can appear at a natural break, such as halfway
+        through a longer set or when you finish a set and return to Home. Ads never appear while you are reading
+        a card, and there are no banner ads. You can also choose to watch a short ad to read a topic pack free for
+        24 hours. Ads never appear in the Brief, search,
         bookmarks, lessons and quizzes, purchase screens or Settings, and never for Remove Ads or Pro members.
         Ads are served by <strong>Google AdMob</strong> and, through AdMob mediation, partner networks such as Meta
         Audience Network.
@@ -103,8 +105,8 @@ const description = `Privacy policy for EconByte: Daily Economics by ${LEGAL_NAM
           Google and its partners may process device, coarse location, ad-interaction and diagnostic information
           to provide and measure ads. Dudley does not receive the advertising identifier and does not combine ad
           data with the app's analytics. See
-          <a href="https://policies.google.com/technologies/ads">Google's advertising policy</a> and
-          <a href="https://policies.google.com/privacy">Google's privacy policy</a>.
+          {' '}<a href="https://policies.google.com/technologies/ads">Google's advertising policy</a> and
+          {' '}<a href="https://policies.google.com/privacy">Google's privacy policy</a>.
         </li>
       </ul>
 

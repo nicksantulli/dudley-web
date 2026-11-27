@@ -14,7 +14,7 @@ const description = `Privacy policy for VibeRater by ${LEGAL_NAME}.`;
       <p>
         {LEGAL_NAME} operates VibeRater, a free, for-entertainment app that gives your photos a playful AI "vibe" rating and,
         if you choose, lets you share ratings, post to a feed, add friends, message, and join events. When
-        you rate a photo, it is <strong>sent to our service to generate the rating and then discarded —
+        you rate a photo, it is <strong>sent to our service to generate the rating and then discarded:
         processed in memory and never stored</strong>. When you <strong>choose to post, share, or save</strong>,
         that media and the related profile and social data <strong>are stored</strong> so the feature works.
         We don't sell your personal data. Ads use Google AdMob and are requested as non-personalized ads;
@@ -25,7 +25,7 @@ const description = `Privacy policy for VibeRater by ${LEGAL_NAME}.`;
       <p>
         When you pick or take a photo to rate, VibeRater sends it to our rating service, which uses a
         third-party AI provider (Anthropic) to produce the playful score, verdict, archetype, and aura.
-        <strong>A photo you only rate is used solely to generate that rating, processed in memory, and is
+        {' '}<strong>A photo you only rate is used solely to generate that rating, processed in memory, and is
         never stored, retained, logged, or used to train models</strong>. The camera and photo-library
         permissions exist only so you can choose the image you want rated.
       </p>
@@ -35,15 +35,15 @@ const description = `Privacy policy for VibeRater by ${LEGAL_NAME}.`;
         Social features (posting, friends, messages, events, your Repli) use a profile that syncs to our
         cloud service so it stays attached to you across launches and devices. Depending on what you do,
         this can include: a device-generated account identifier; an optional username, display name, bio,
-        avatar, and banner; and — if you choose to sign in — a Sign in with Apple or Google identifier
+        avatar, and banner; and, if you choose to sign in, a Sign in with Apple or Google identifier
         (we receive an opaque identifier, not your Apple/Google password). You can use the rating features
         without creating a social profile.
       </p>
 
       <h2>Content you post or share</h2>
       <p>
-        If you post, share, or save, the selected media and content — posts, captions, ratings you publish,
-        vibe cards, comments, likes, events you create or RSVP to, and direct messages — <strong>are
+        If you post, share, or save, the selected media and content (posts, captions, ratings you publish,
+        vibe cards, comments, likes, events you create or RSVP to, and direct messages) <strong>are
         stored</strong> on our cloud infrastructure (Supabase) so the social features work and other users
         can see what you chose to share. Direct messages are stored to deliver them; they are not
         end-to-end encrypted, and we may access content when necessary for safety, moderation, or legal
@@ -61,9 +61,9 @@ const description = `Privacy policy for VibeRater by ${LEGAL_NAME}.`;
       <h2>Safety and moderation</h2>
       <p>
         VibeRater has no tolerance for objectionable content or abusive users. You can report any post and
-        block any user in the app. We review reports and act on them — typically within 24 hours — by
+        block any user in the app. We review reports and act on them, typically within 24 hours, by
         removing content and, where warranted, removing the user. See our
-        <a href={rel('/terms/vibe-rater/')}>Terms of Use</a> for the full policy.
+        {' '}<a href={rel('/terms/vibe-rater/')}>Terms of Use</a> for the full policy.
       </p>
 
       <h2>Analytics</h2>
@@ -91,12 +91,12 @@ const description = `Privacy policy for VibeRater by ${LEGAL_NAME}.`;
       <h2>Who we share data with</h2>
       <p>We do not sell your personal data. We share it only with the service providers that make the app work:</p>
       <ul>
-        <li><strong>Anthropic</strong> — generates your vibe rating from a photo (processed in memory, not stored by us).</li>
-        <li><strong>Supabase</strong> — cloud hosting and database for your profile and the content you post or share.</li>
-        <li><strong>Apple &amp; Google</strong> — Sign in with Apple / Google sign-in, when you choose to use them.</li>
-        <li><strong>Google AdMob</strong> — advertising, as described above.</li>
-        <li><strong>PostHog</strong> — pseudonymous product analytics, as described above.</li>
-        <li><strong>Sentry</strong> — crash and error diagnostics (crash reports plus device/OS information tied to your pseudonymous identifier). No photos, messages, contacts, or names are sent.</li>
+        <li><strong>Anthropic:</strong> generates your vibe rating from a photo (processed in memory, not stored by us).</li>
+        <li><strong>Supabase:</strong> cloud hosting and database for your profile and the content you post or share.</li>
+        <li><strong>Apple &amp; Google:</strong> Sign in with Apple / Google sign-in, when you choose to use them.</li>
+        <li><strong>Google AdMob:</strong> advertising, as described above.</li>
+        <li><strong>PostHog:</strong> pseudonymous product analytics, as described above.</li>
+        <li><strong>Sentry:</strong> crash and error diagnostics (crash reports plus device/OS information tied to your pseudonymous identifier). No photos, messages, contacts, or names are sent.</li>
       </ul>
 
       <h2>What stays on your device</h2>

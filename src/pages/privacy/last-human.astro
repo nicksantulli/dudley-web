@@ -14,7 +14,7 @@ const appStoreHref = appStoreCampaignUrl(APP_STORE.lastHuman, LAST_HUMAN_ASC_TOK
 
       <p>
         <strong><a href={appStoreHref}>Last Human is available on the App Store.</a></strong>
-        This policy describes version 1.0.1. Version 1.0 never asked for tracking permission and
+        {' '}This policy describes version 1.0.1. Version 1.0 never asked for tracking permission and
         requested only non-personalized ads; everything else below applies to both versions.
       </p>
 
@@ -22,7 +22,8 @@ const appStoreHref = appStoreCampaignUrl(APP_STORE.lastHuman, LAST_HUMAN_ASC_TOK
       <p>
         {LEGAL_NAME} operates Last Human, a free arcade game supported by ads. There are no accounts,
         and your progress, high scores, settings, and purchase state stay on your device. The app sends
-        limited anonymous usage analytics through PostHog and anonymous crash reports through Sentry.
+        limited usage analytics through PostHog and crash reports through Sentry, neither linked to your name
+        or contact details.
         Google AdMob serves ads. They are personalized only if you allow tracking when Apple's
         permission prompt appears; otherwise they are non-personalized. The app's own analytics and
         crash reports are never used to track you.
@@ -63,26 +64,26 @@ const appStoreHref = appStoreCampaignUrl(APP_STORE.lastHuman, LAST_HUMAN_ASC_TOK
         </li>
         <li>
           Sent events are retained for <strong>90 days</strong> as individual records and up to
-          <strong>13 months</strong> as aggregated statistics. To request deletion of sent events, copy
+          {' '}<strong>13 months</strong> as aggregated statistics. To request deletion of sent events, copy
           the Analytics ID before turning analytics off and email
-          <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+          {' '}<a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
         </li>
       </ul>
 
       <h2>Crash reporting (Sentry)</h2>
       <p>
-        If Last Human crashes, Sentry can receive an anonymous crash report containing the stack trace
+        If Last Human crashes, Sentry can receive a crash report, not linked to your name or contact details, containing the stack trace
         and coarse technical details such as the app version, iOS major version, device class, and
         lifecycle state. Crash reporting does not include a user profile, screenshots, view hierarchy,
         gameplay progress, scores, or advertising state. Crash reports are retained for
-        <strong>30 days</strong>.
+        {' '}<strong>30 days</strong>.
       </p>
 
       <h2>Advertising (Google AdMob)</h2>
       <p>
         Interstitial ads can appear on the corporate memo screen between floors, never during gameplay.
         One optional rewarded ad can also let you continue a run. Ads are served by
-        <strong>Google AdMob</strong>, a third-party advertising network.
+        {' '}<strong>Google AdMob</strong>, a third-party advertising network.
       </p>
       <ul>
         <li>
@@ -111,8 +112,8 @@ const appStoreHref = appStoreCampaignUrl(APP_STORE.lastHuman, LAST_HUMAN_ASC_TOK
       <ul>
         <li>
           How Google uses this data is described in
-          <a href="https://policies.google.com/technologies/ads">Google's advertising policy</a> and
-          <a href="https://policies.google.com/privacy">Google's privacy policy</a>.
+          {' '}<a href="https://policies.google.com/technologies/ads">Google's advertising policy</a> and
+          {' '}<a href="https://policies.google.com/privacy">Google's privacy policy</a>.
         </li>
         <li>
           A one-time Remove Ads purchase at the price shown in the app removes between-floor
