@@ -2,12 +2,13 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import { rel, SUPPORT_EMAIL } from '../../consts';
+import { isReleasedApp } from '../../lib/liveApps.mjs';
 
 // Data-driven: any app with a non-empty `support` array gets a card here and its
 // own /support/<slug> page. Adding support for a new app = add a `support:` block
 // to its src/content/apps/<slug>.mdx — no changes to this page required.
 const apps = (await getCollection('apps'))
-  .filter((a) => a.data.support && a.data.support.length > 0)
+  .filter((a) => isReleasedApp(a) && a.data.support && a.data.support.length > 0)
   .sort((a, b) => a.data.order - b.data.order);
 
 const description = 'Support for Dudley Development apps — pick your app for FAQs and how to reach us.';

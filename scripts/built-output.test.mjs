@@ -261,34 +261,35 @@ const APPROVED_LIVE_ORDER = [
   'last-human',
   'packed-yet',
   'monetary-policy-independence-day',
+  'vibe-rater',
 ];
+
+const UNRELEASED = /ActionCard|action-card|ReplyGate|reply-gate|SendBrake|send-brake|Beat the Dealer|beat-the-dealer|Coming soon|On deck|waitlist\.dudleyapps\.com/i;
 
 test('homepage live apps stay in the approved order', () => {
   const home = pages.find((p) => p.rel === '/index.html')?.html ?? '';
   const wall = home.slice(home.indexOf('class="poster-wall"'), home.indexOf('id="connectors"'));
   const slugs = [...wall.matchAll(/data-app="([^"]+)"/g)].map((match) => match[1]);
   assert.deepEqual(slugs, APPROVED_LIVE_ORDER);
-  const sentence = home.match(/Already on the App Store:[\s\S]*?\./)?.[0] ?? '';
-  assert.deepEqual(
-    [...sentence.matchAll(/\/apps\/([^/]+)\//g)].map((match) => match[1]),
-    APPROVED_LIVE_ORDER,
-  );
-  assert.doesNotMatch(home, /VibeRater|vibe-rater|Beat the Dealer|beat-the-dealer/);
+  assert.match(home, /href="https:\/\/apps\.apple\.com\/us\/app\/viberater-social\/id6780704282\?pt=128970277&amp;ct=vr-web-home-aug26-v1&amp;mt=8"/);
+  assert.doesNotMatch(home, UNRELEASED);
 });
 
-test('VibeRater and Beat the Dealer stay out of the shared app lists', () => {
+test('VibeRater is listed and unreleased apps stay off the shared app lists', () => {
   const about = pages.find((p) => p.rel === '/about/index.html')?.html ?? '';
-  const aboutApps = about.match(/<ul class="about-apps">[\s\S]*?<\/ul>/)?.[0] ?? '';
-  assert.doesNotMatch(aboutApps, /VibeRater|vibe-rater|Beat the Dealer|beat-the-dealer/);
-  const aboutStore = about.match(/Already on the App Store:[\s\S]*?\./)?.[0] ?? '';
+  const aboutApps = about.match(/<ul class="about-apps"[^>]*>[\s\S]*?<\/ul>/)?.[0] ?? '';
   assert.deepEqual(
-    [...aboutStore.matchAll(/\/apps\/([^/]+)\//g)].map((match) => match[1]),
+    [...aboutApps.matchAll(/\/apps\/([^/]+)\//g)].map((match) => match[1]),
     APPROVED_LIVE_ORDER,
   );
+  assert.doesNotMatch(about, UNRELEASED);
 
   const llms = readFileSync(join(DIST, 'llms.txt'), 'utf8');
   const catalog = llms.split('## Maintained Blog Topics')[0];
-  assert.doesNotMatch(llms, /VibeRater|vibe-rater|Beat the Dealer|beat-the-dealer|## Archetypes|\/archetypes\//);
+  assert.doesNotMatch(llms, UNRELEASED);
+  assert.doesNotMatch(llms, /## Archetypes|\/archetypes\//);
+  assert.match(catalog, /\[VibeRater Social\]\(https:\/\/dudleyapps\.com\/apps\/vibe-rater\/\)/);
+  assert.match(catalog, /https:\/\/apps\.apple\.com\/us\/app\/viberater-social\/id6780704282\?pt=128970277&ct=vr-web-llms-sep26-v1&mt=8/);
   let cursor = -1;
   for (const name of [
     'Table Talk: Conversation Cards',
@@ -296,6 +297,7 @@ test('VibeRater and Beat the Dealer stay out of the shared app lists', () => {
     'Last Human: Dodge the Bots',
     'Packed Yet? Trip Checklist',
     'Powell Prowl: Rate Chase',
+    'VibeRater Social',
   ]) {
     const at = catalog.indexOf(name);
     assert.ok(at > cursor, `${name} is missing from the llms.txt live catalog`);
@@ -303,9 +305,9 @@ test('VibeRater and Beat the Dealer stay out of the shared app lists', () => {
   }
 
   const contact = pages.find((p) => p.rel === '/contact/index.html')?.html ?? '';
-  assert.doesNotMatch(contact, /VibeRater|Beat the Dealer|beat-the-dealer/);
-  assert.ok(existsSync(join(DIST, 'apps/vibe-rater/index.html')));
-  assert.ok(existsSync(join(DIST, 'privacy/beat-the-dealer/index.html')));
+  assert.match(contact, /<option value="vibe-rater"/);
+  assert.doesNotMatch(contact, UNRELEASED);
+  assert.doesNotMatch(contact, /Where&#39;s This House|dude-wheres-this-house/);
 });
 
 // ── Test 5: No "no paywall" language ──────────────────────────────────────

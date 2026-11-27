@@ -5,6 +5,7 @@ import mdx from '@astrojs/mdx';
 import { satteri } from '@astrojs/markdown-satteri';
 import { lastmodForUrl } from './src/lib/gitDates.mjs';
 import { stripDuplicateFaq } from './src/lib/stripDuplicateFaq.mjs';
+import { MOVED_PATHS } from './src/lib/movedPaths.mjs';
 
 // Live at the custom domain https://dudleyapps.com (served at root, not a project path).
 // GitHub Pages serves from the gh-pages branch; the public/CNAME file keeps the domain
@@ -21,14 +22,11 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      // Tag archives are noindex. Machine-readable feeds and the redirect stubs
-      // (Powell, removed VibeRater quiz and comparisons) stay out. Privacy and
-      // support pages are real URLs and belong in the index.
+      // Tag archives are noindex. Machine-readable feeds and redirect stubs stay
+      // out. Privacy and support pages are real URLs and belong in the index.
       filter: (page) =>
         !page.includes('/blog/tags') &&
-        !page.includes('/apps/powell-prowl') &&
-        !page.includes('/tools/') &&
-        !page.includes('/compare/') &&
+        !MOVED_PATHS.some((path) => new URL(page).pathname === path) &&
         !page.includes('/rss.xml') &&
         !page.includes('/llms.txt'),
       serialize(item) {

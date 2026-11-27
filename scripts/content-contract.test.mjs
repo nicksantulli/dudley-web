@@ -66,12 +66,13 @@ const APPROVED_LIVE_ORDER = [
   'last-human',
   'packed-yet',
   'monetary-policy-independence-day',
+  'vibe-rater',
 ];
 
 test('live App Store apps stay in the approved order', async () => {
   const source = readFileSync(resolve('src/lib/liveApps.mjs'), 'utf8');
   assert.match(source, /Newly approved apps go at the top\./);
-  const { LIVE_APP_ORDER, comingSoonApps, liveApps } = await import('../src/lib/liveApps.mjs');
+  const { LIVE_APP_ORDER, liveApps } = await import('../src/lib/liveApps.mjs');
   assert.deepEqual(LIVE_APP_ORDER, APPROVED_LIVE_ORDER);
 
   const live = (id, appStoreId, order, extra = {}) => ({
@@ -98,30 +99,17 @@ test('live App Store apps stay in the approved order', async () => {
 
   const listed = liveApps(fixtures).filter((app) => !app.data.developedFor && app.data.landingPage !== false);
   assert.deepEqual(listed.map((app) => app.id), APPROVED_LIVE_ORDER);
-  assert.deepEqual(
-    comingSoonApps(fixtures).map((app) => app.id),
-    ['action-card', 'reply-gate', 'send-brake'],
-  );
 });
 
-test('VibeRater stays out of the shared app lists', async () => {
-  const { listedApps, liveApps } = await import('../src/lib/liveApps.mjs');
-  const vibe = {
-    id: 'vibe-rater',
-    data: { status: 'live', name: 'VibeRater Social', appStoreId: '6780704282', order: 2, landingPage: true },
-  };
-  const neighbors = APPROVED_LIVE_ORDER.map((id, order) => ({
-    id,
-    data: { status: 'live', name: id, appStoreId: '6780714565', order, landingPage: true },
-  }));
-  neighbors[1].data.appStoreId = '6780714383';
-  neighbors[2].data.appStoreId = '6808782611';
-  neighbors[3].data.appStoreId = '6814598931';
-  neighbors[4].data.appStoreId = '6775539250';
-  const apps = [vibe, ...neighbors];
-  assert.equal(liveApps(apps).some((app) => app.id === 'vibe-rater'), false);
-  assert.equal(listedApps(apps).some((app) => app.id === 'vibe-rater'), false);
-  assert.equal(listedApps([{ id: 'beat-the-dealer', data: { status: 'coming_soon', order: 6 } }]).length, 0);
+test('only released apps reach the shared app lists, and Where\'s This House stays off', async () => {
+  const { isReleasedApp, listedApps } = await import('../src/lib/liveApps.mjs');
+  const vibe = { id: 'vibe-rater', data: { status: 'live', name: 'VibeRater Social', appStoreId: '6780704282', order: 2 } };
+  assert.deepEqual(listedApps([vibe]).map((app) => app.id), ['vibe-rater']);
+  for (const status of ['coming_soon', 'in_development']) {
+    const unreleased = { id: 'beat-the-dealer', data: { status, order: 6 } };
+    assert.equal(isReleasedApp(unreleased), false);
+    assert.equal(listedApps([unreleased]).length, 0);
+  }
   assert.equal(listedApps([{ id: 'dude-wheres-this-house', data: { status: 'live', order: 1, developedFor: 'HomeLight' } }]).length, 0);
 });
 

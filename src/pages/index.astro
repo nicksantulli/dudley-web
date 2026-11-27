@@ -4,14 +4,12 @@ import Base from '../layouts/Base.astro';
 import AppPosterBand from '../components/AppPosterBand.astro';
 import AnswerCard from '../components/AnswerCard.astro';
 import { ORIGIN, SUPPORT_EMAIL, abs, rel } from '../consts';
-import { comingSoonApps, listedApps, liveApps, storeListName, storeUrlForLiveApp } from '../lib/liveApps.mjs';
+import { listedApps, liveApps, storeUrlForLiveApp } from '../lib/liveApps.mjs';
 import { getPublishedPosts } from '../lib/blog';
 
 const allApps = await getCollection('apps');
 const live = liveApps(allApps);
 const ownedLive = live.filter((app) => !app.data.developedFor);
-const storeListed = ownedLive.filter((app) => app.data.landingPage !== false);
-const upcoming = comingSoonApps(allApps);
 const clientApps = listedApps(allApps)
   .filter((app) => app.data.developedFor)
   .sort((a, b) => a.data.order - b.data.order);
@@ -102,34 +100,6 @@ const description = 'Arcade satire, dinner-table cards, and plain-language tools
         </div>
       </section>
     )}
-
-    {upcoming.length > 0 && (
-      <section class="catalog-heading" aria-labelledby="next-from-dudley">
-        <div class="wrap">
-          <h2 id="next-from-dudley">On deck</h2>
-          <p>Already on the App Store: {storeListed.flatMap((app, index) => {
-            const link = <a href={rel(`/apps/${app.id}/`)}>{storeListName(app)}</a>;
-            if (index === 0) return [link];
-            const joiner = index === storeListed.length - 1 ? (storeListed.length === 2 ? ' and ' : ', and ') : ', ';
-            return [joiner, link];
-          })}.</p>
-        </div>
-      </section>
-    )}
-    {upcoming.map((app, index) => (
-      <AppPosterBand
-        slug={app.id}
-        name={app.data.name}
-        headline={app.data.posterHeadline}
-        description={app.data.description}
-        icon={app.data.icon}
-        facts={app.data.posterFacts}
-        status={app.data.status}
-        detailHref={app.data.landingPage === false ? undefined : `/apps/${app.id}/`}
-        art={app.data.ogImage}
-        reverse={index % 2 === 0}
-      />
-    ))}
 
     {clientApps.length > 0 && (
       <section class="catalog-heading client-heading" aria-labelledby="built-for-others">

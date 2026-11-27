@@ -9,19 +9,23 @@ export const LIVE_APP_ORDER = [
   'last-human',
   'packed-yet',
   'monetary-policy-independence-day',
+  'vibe-rater',
 ];
 
-// Kept off the home page and every shared app list. Standalone pages stay.
+// Live, but kept off the home page and every shared app list. Standalone pages stay.
 const UNLISTED = new Set([
-  'vibe-rater',
-  'beat-the-dealer',
   'dude-wheres-this-house',
 ]);
 
 const rank = new Map(LIVE_APP_ORDER.map((slug, index) => [slug, index]));
 
+// Unreleased apps never appear on the site: no card, list entry, or page.
+export function isReleasedApp(app) {
+  return app?.data?.status === 'live';
+}
+
 export function isListedApp(app) {
-  return !UNLISTED.has(app?.id);
+  return isReleasedApp(app) && !UNLISTED.has(app?.id);
 }
 
 export function listedApps(apps) {
@@ -52,17 +56,9 @@ export function storeUrlForLiveApp(app) {
 }
 
 export function liveApps(apps) {
-  const live = listedApps(apps)
-    .filter((app) => app.data.status === 'live')
-    .sort(byCatalogOrder);
+  const live = listedApps(apps).sort(byCatalogOrder);
   for (const app of live) storeUrlForLiveApp(app);
   return live;
-}
-
-export function comingSoonApps(apps) {
-  return listedApps(apps)
-    .filter((app) => !app.data.developedFor && app.data.status !== 'live')
-    .sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 }
 
 export function englishList(items) {

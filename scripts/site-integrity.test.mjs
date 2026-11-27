@@ -207,13 +207,8 @@ test('Powell Prowl and VibeRater use short search titles', () => {
   assert.equal(powellApp.name, 'Powell Prowl: Rate Chase');
 });
 
-test('On deck and related apps link live money pages', () => {
+test('related apps link live money pages', () => {
   const home = readFileSync(resolve('dist/index.html'), 'utf8');
-  const onDeck = home.match(/id="next-from-dudley"[\s\S]*?<\/section>/)?.[0] ?? '';
-  assert.match(onDeck, /Already on the App Store/);
-  assert.match(onDeck, /href="\/apps\/last-human\/">Last Human</);
-  assert.match(onDeck, /href="\/apps\/table-talk\/">Table Talk</);
-  assert.match(onDeck, /href="\/apps\/econbyte\/">EconByte</);
   assert.match(home, /Apps that work before they ask who you are\./);
   const moreFrom = (slug) => {
     const html = readFileSync(resolve(`dist/apps/${slug}/index.html`), 'utf8');
@@ -338,13 +333,9 @@ test('homepage uses the approved product-first message', () => {
   assert.match(home, /Apps that work before they ask who you are\./);
   assert.match(home, /Arcade satire, dinner-table cards, and plain-language tools\. No signup as a cover charge\./);
   assert.match(home, /Notes from the shop/);
-  assert.match(home, /On deck/);
-  assert.doesNotMatch(home, /In the works/);
+  assert.doesNotMatch(home, /On deck|In the works|Coming soon/i);
   assert.match(home, /Arcade satire, dinner-table cards, and plain-language tools\.<\/p>/);
-  assert.doesNotMatch(home, /VibeRater|vibe-rater|Beat the Dealer|beat-the-dealer/);
-  assert.match(home, /SendBrake: Message Check/);
-  assert.match(home, /One more look before it leaves\./);
-  assert.match(home, /ReplyGate: Reply or Skip/);
+  assert.doesNotMatch(home, /SendBrake|ReplyGate|ActionCard|Beat the Dealer/);
   assert.doesNotMatch(home, /Pick an app\. See what happens\.|LIVE ON THE APP STORE|Straight answers, useful context|Next from Dudley|Games, conversation starters, and useful things for iPhone/);
   assert.doesNotMatch(home, /Why Dudley|Polish is the point|feature-icon|class="grad"/);
   const band = (slug) => home.match(new RegExp(`<section[^>]+data-app="${slug}"[\\s\\S]*?<\\/section>`))?.[0] ?? '';
@@ -352,15 +343,9 @@ test('homepage uses the approved product-first message', () => {
   assert.match(band('table-talk'), /Get the deck on the App Store/);
   assert.match(band('econbyte'), /Read a card on the App Store/);
   assert.match(band('monetary-policy-independence-day'), /Chase it on the App Store/);
-  assert.equal(band('vibe-rater'), '');
+  assert.match(band('vibe-rater'), /href="https:\/\/apps\.apple\.com\/us\/app\/viberater-social\/id6780704282\?pt=128970277&amp;ct=vr-web-home-aug26-v1&amp;mt=8"/);
   assert.match(band('packed-yet'), /On the App Store/);
   assert.match(band('last-human'), /50 escalating office floors/);
-  assert.match(band('send-brake'), /One more look before it leaves\./);
-  assert.match(band('send-brake'), /Paste a draft you&#39;re about to send\. Get three next steps\./);
-  assert.match(band('send-brake'), /One draft, three possible next steps/);
-  assert.match(band('send-brake'), /Coming soon/);
-  assert.doesNotMatch(band('send-brake'), /href="\/apps\/send-brake\//);
-  assert.match(band('reply-gate'), /ReplyGate: Reply or Skip/);
 });
 
 test('homepage, About, Contact, and llms.txt do not promote unlisted client work', () => {
@@ -522,9 +507,13 @@ test('public pages and llms.txt do not use the internal codename Jev', () => {
   assert.doesNotMatch(readFileSync(resolve('dist/llms.txt'), 'utf8'), /\bJev\b/);
 });
 
-test('the site links the Pattern Gym waitlist', () => {
-  const home = readFileSync(resolve('dist/index.html'), 'utf8');
-  assert.match(home, /href="https:\/\/waitlist\.dudleyapps\.com\/"/);
+test('only the privacy disclosure links the unreleased Pattern Gym waitlist', () => {
+  for (const page of htmlPages()) {
+    if (page.rel === '/privacy/index.html') continue;
+    assert.doesNotMatch(page.html, /waitlist\.dudleyapps\.com|Pattern Gym/, page.rel);
+  }
+  const privacy = readFileSync(resolve('dist/privacy/index.html'), 'utf8');
+  assert.match(privacy, /id="pattern-gym-waitlist"/);
 });
 
 test('Packed Yet page has a store link, smart banner, and downloadUrl', () => {
@@ -558,7 +547,7 @@ test('built campaign tokens stay within 30 characters', () => {
 test('homepage app bands deliver WebP sources without the legacy lockup', () => {
   const home = readFileSync(resolve('dist/index.html'), 'utf8');
   const bands = [...home.matchAll(/<section[^>]+data-app="[^"]+"[\s\S]*?<\/section>/g)].map((match) => match[0]);
-  assert.ok(bands.length >= 7);
+  assert.equal(bands.length, 6);
   bands.forEach((band) => assert.match(band, /<source[^>]+type="image\/webp"/));
   assert.doesNotMatch(home, /dudley-lockup\.png/);
   for (const page of htmlPages()) assert.doesNotMatch(page.html, /dudley-lockup\.png/, page.rel);
@@ -626,5 +615,49 @@ test('blog posts with no related app get no App Store box or banner, VibeRater i
     const html = readFileSync(resolve(`dist/blog/${slug}/index.html`), 'utf8');
     assert.match(html, /<meta name="apple-itunes-app" content="app-id=6780704282/, `${slug} lost its banner`);
     assert.match(html, /class="cta-block"/, `${slug} lost its App Store box`);
+  }
+});
+
+const UNRELEASED_APP_URLS = [
+  '/apps/action-card/',
+  '/apps/reply-gate/',
+  '/support/action-card/',
+  '/support/reply-gate/',
+  '/privacy/action-card/',
+  '/privacy/reply-gate/',
+  '/privacy/beat-the-dealer/',
+];
+
+test('unreleased app pages redirect home and every redirect stub stays out of the sitemap', async () => {
+  const { MOVED_PATHS } = await import('../src/lib/movedPaths.mjs');
+  for (const url of UNRELEASED_APP_URLS) {
+    const html = readFileSync(resolve(`dist${url}index.html`), 'utf8');
+    assert.match(html, /<meta http-equiv="refresh" content="0; url=\/"/, url);
+    assert.match(html, /<meta name="robots" content="noindex,follow"/, url);
+    assert.ok(MOVED_PATHS.includes(url), `${url} is missing from MOVED_PATHS`);
+  }
+  const sitemaps = readdirSync(DIST)
+    .filter((name) => name.startsWith('sitemap') && name.endsWith('.xml'))
+    .map((name) => readFileSync(join(DIST, name), 'utf8'))
+    .join('\n');
+  for (const page of htmlPages()) {
+    if (!/<meta http-equiv="refresh"/.test(page.html)) continue;
+    const url = page.rel.replace(/index\.html$/, '');
+    assert.ok(MOVED_PATHS.includes(url), `redirect stub ${url} is missing from MOVED_PATHS`);
+    assert.doesNotMatch(sitemaps, new RegExp(`https://dudleyapps\\.com${url}<`), `sitemap lists ${url}`);
+  }
+});
+
+test('no live page names an unreleased app or teases the unshipped Powell Prowl update', () => {
+  const llms = readFileSync(resolve('dist/llms.txt'), 'utf8');
+  const rss = readFileSync(resolve('dist/blog/rss.xml'), 'utf8');
+  const sources = [
+    ...htmlPages().filter((page) => !/<meta http-equiv="refresh"/.test(page.html)),
+    { rel: '/llms.txt', html: llms },
+    { rel: '/blog/rss.xml', html: rss },
+  ];
+  for (const page of sources) {
+    assert.doesNotMatch(page.html, /ActionCard|ReplyGate|SendBrake|Beat the Dealer/, page.rel);
+    assert.doesNotMatch(page.html, /Monetary Policy: Independence Day|100-level|soon to be renamed/i, page.rel);
   }
 });

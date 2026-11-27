@@ -1,15 +1,17 @@
 ---
 import { getCollection, render } from 'astro:content';
 import AppLanding from '../../layouts/AppLanding.astro';
+import Moved from '../../layouts/Moved.astro';
+import { isReleasedApp } from '../../lib/liveApps.mjs';
 
 export async function getStaticPaths() {
-  // Only apps with a real landing page get a /apps/<slug>/ route.
-  // "Coming soon" stubs (landingPage: false) appear as homepage cards only.
+  // Only apps with a real landing page get a /apps/<slug>/ route. An unreleased app's
+  // route renders a redirect to the home page so a shared link never 404s.
   const [apps, archetypes] = [
     (await getCollection('apps')).filter((a) => a.data.landingPage !== false),
     await getCollection('archetypes'),
   ];
-  const appBySlug = new Map(apps.map((a) => [a.id, a]));
+  const appBySlug = new Map(apps.filter(isReleasedApp).map((a) => [a.id, a]));
   const archBySlug = new Map(archetypes.map((a) => [a.id, a]));
 
   return apps.map((app) => {
@@ -27,9 +29,10 @@ export async function getStaticPaths() {
 }
 
 const { app, related } = Astro.props;
+const released = isReleasedApp(app);
 const { Content } = await render(app);
 const data = { ...app.data, slug: app.id };
 ---
-<AppLanding app={data} related={related}>
-  <Content />
-</AppLanding>
+{released
+  ? <AppLanding app={data} related={related}><Content /></AppLanding>
+  : <Moved to="/" heading="This page has moved" linkText="the Dudley Development home page" />}

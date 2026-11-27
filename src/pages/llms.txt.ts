@@ -1,30 +1,26 @@
 import { getCollection } from 'astro:content';
 import { abs, SUPPORT_EMAIL, CONTACT_EMAIL } from '../consts';
 import { appStoreCampaignUrl, LLMS_APP_STORE_TOKENS } from '../lib/campaignLinks.mjs';
-import { byCatalogOrder, englishList, listedApps, liveApps } from '../lib/liveApps.mjs';
+import { englishList, liveApps } from '../lib/liveApps.mjs';
 import { getPublishedPosts } from '../lib/blog';
 import { eligibleTopicHubs } from '../lib/topics';
 
 export async function GET() {
   const posts = await getPublishedPosts();
-  const apps = listedApps(await getCollection('apps')).sort(byCatalogOrder);
+  const apps = liveApps(await getCollection('apps'));
 
   const appLines = apps.map((app) => {
     const data = app.data;
     const ownedPage = !data.developedFor && data.landingPage !== false ? abs(`/apps/${app.id}/`) : '';
     const name = ownedPage ? `[${data.name}](${ownedPage})` : data.name;
-    const release = data.status === 'live' ? 'Live on the App Store.' : 'Not yet released on the App Store.';
-    let store = '';
-    if (data.status === 'live') {
-      const token = LLMS_APP_STORE_TOKENS[data.appStoreId];
-      if (!token) throw new Error(`Missing llms.txt campaign token for ${data.name} (${data.appStoreId})`);
-      store = ` [Download on the App Store](${appStoreCampaignUrl(data.appStoreId, token)}).`;
-    }
-    return `- ${name}: ${data.description} ${release} ${data.operatingSystem}. ${data.accountSummary} ${data.offlineSummary} ${data.pricingSummary}${store}`;
+    const token = LLMS_APP_STORE_TOKENS[data.appStoreId];
+    if (!token) throw new Error(`Missing llms.txt campaign token for ${data.name} (${data.appStoreId})`);
+    const store = ` [Download on the App Store](${appStoreCampaignUrl(data.appStoreId, token)}).`;
+    return `- ${name}: ${data.description} Live on the App Store. ${data.operatingSystem}. ${data.accountSummary} ${data.offlineSummary} ${data.pricingSummary}${store}`;
   }).join('\n');
 
   const liveCatalog = englishList(
-    liveApps(apps)
+    apps
       .filter((app) => !app.data.developedFor && app.data.landingPage !== false)
       .map((app) => app.data.name),
   );
