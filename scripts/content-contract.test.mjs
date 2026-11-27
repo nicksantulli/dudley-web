@@ -122,6 +122,7 @@ test('VibeRater stays out of the shared app lists', async () => {
   assert.equal(liveApps(apps).some((app) => app.id === 'vibe-rater'), false);
   assert.equal(listedApps(apps).some((app) => app.id === 'vibe-rater'), false);
   assert.equal(listedApps([{ id: 'beat-the-dealer', data: { status: 'coming_soon', order: 6 } }]).length, 0);
+  assert.equal(listedApps([{ id: 'dude-wheres-this-house', data: { status: 'live', order: 1, developedFor: 'HomeLight' } }]).length, 0);
 });
 
 test('topic registry defines the six durable hub slugs', () => {
