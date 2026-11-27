@@ -117,8 +117,9 @@ const id = (base: string) => `cf-${base}-${uid}`;
     </div>
 
     <p class="cf-privacy">
-      FormSubmit.co delivers this form to {SUPPORT_EMAIL}. We only use what you send to reply to you.
-      Please do not include passwords or other sensitive details. See our <a href={rel('/privacy/#website-contact')}>Privacy policy</a>.
+      FormSubmit.co delivers this form to {SUPPORT_EMAIL}. We use what you send to answer your request
+      and keep a record of the conversation. Please do not include passwords or other sensitive details.
+      See our <a href={rel('/privacy/#website-contact')}>Privacy policy</a>.
     </p>
 
     <button type="submit" class="btn primary cf-submit">
@@ -129,9 +130,8 @@ const id = (base: string) => `cf-${base}-${uid}`;
 
     <div class="cf-success" hidden>
       <p>
-        <strong>Message sent.</strong> We will reply to the email address you entered, and our
-        replies always come from an @dudleyapps.com address. For quick answers in the meantime,
-        check <a href={rel('/support/')}>Support</a>.
+        <strong>Message sent.</strong> Replies come from an @dudleyapps.com address. Many common
+        questions are answered on <a href={rel('/support/')}>Support</a>.
       </p>
     </div>
 
