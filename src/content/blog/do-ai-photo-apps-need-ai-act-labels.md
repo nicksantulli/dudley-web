@@ -1,6 +1,6 @@
 ---
 title: "Do AI Photo Apps Need AI Act Labels?"
-description: "The EU AI Act transparency rules start applying on August 2, 2026."
+description: "The EU AI Act transparency rules start applying on August 2, 2026. Here is what AI photo app users should know about labels, deepfakes, and honest vibe-check posts."
 publishDate: 2026-08-02
 updatedDate: 2026-08-02
 category: "answers"
@@ -15,13 +15,15 @@ faq:
   - q: "Do AI photo apps need AI Act labels?"
     a: "The EU AI Act transparency rules that start applying on August 2, 2026 require certain AI systems and AI-generated or manipulated content to be disclosed or marked in specific contexts. For everyday users, the practical takeaway is to label realistic AI photo edits, deepfakes, and public-interest AI content when a viewer could mistake them for real."
   - q: "Does the AI Act apply to every selfie filter?"
-    a: "No. The rules are context-specific. The marking duty does not apply to AI that performs an assistive function for standard editing or does not substantially alter the input. For evidently artistic, creative, satirical, or fictional work, the deepfake disclosure is limited to noting that generated content exists, in a way that does not spoil the work. A casual filter is not the same risk as a realistic deepfake or a public-interest post."
+    a: "No. The rules are context-specific and include exceptions, including for some assistive editing and artistic, creative, satirical, fictional, or similar works. A casual filter is not the same risk as a realistic deepfake or a public-interest post."
+  - q: "Should I label a VibeRater share card?"
+    a: "Treat a VibeRater card as entertainment. If the card is a playful score, aura, or archetype from a photo you chose, do not present it as proof, measurement, endorsement, or real-world fact. If you add realistic AI edits before posting, follow the platform's AI-label rules."
   - q: "What should I check before downloading an AI photo app?"
     a: "Check whether the app uses a chosen photo, Limited Access, or broad library access; read the App Store privacy label and privacy policy; and avoid apps that make vague claims about training, identity, compatibility, attractiveness, or perfect AI detection."
 draft: false
 ---
 
-Yes, some AI photo apps and AI photo posts may need labels under the EU AI Act, but the rule is not "label every fun filter forever." The rule is narrower: if AI creates or manipulates realistic image, audio, video, or text content in a way that could mislead people, expect a stronger disclosure duty, especially in the EU.
+Yes, some AI photo apps and AI photo posts may need labels under the EU AI Act, but the rule is not "label every fun filter forever." The useful answer is narrower: if AI creates or manipulates realistic image, audio, video, or text content in a way that could mislead people, expect a stronger disclosure duty, especially in the EU.
 
 For users, creators, and group chats, the practical rule is simple. Label realistic AI edits. Do not use another person's likeness in a fake scene without consent. Keep playful aura cards and vibe checks framed as entertainment, not proof about a person.
 
@@ -104,7 +106,13 @@ Better: "The group chat needed a vibe read," "This is the funniest aura card," o
 
 ## Where VibeRater Fits
 
-We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-ai-photo-apps-need-labels&mt=8).
+[VibeRater Social](/apps/vibe-rater/) is a free iPhone entertainment app built around a photo you choose. The App Store listing describes a playful vibe report with an overall score, aura color, archetype, tailored scorecard, and share card, and it frames the result as entertainment.
+
+Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) explains how photos are handled. If you deliberately post, share, or save content, that selected media and related data are handled separately so those features work.
+
+That distinction matters. A chosen-photo vibe card is not the same thing as a public deepfake generator or a tool claiming to detect reality. VibeRater should be used as a group-chat entertainment app: pick a photo, get a playful result, and share it only in the context you choose.
+
+[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-ai-photo-apps-need-labels&mt=8) if you want a photo vibe check that stays in the entertainment lane.
 
 ## A Simple Posting Checklist
 
@@ -126,7 +134,10 @@ AI labels are not just compliance text. They are social context. The goal is for
 The EU AI Act transparency rules that start applying on August 2, 2026 require certain AI systems and AI-generated or manipulated content to be disclosed or marked in specific contexts. For everyday users, the practical takeaway is to label realistic AI photo edits, deepfakes, and public-interest AI content when a viewer could mistake them for real.
 
 **Does the AI Act apply to every selfie filter?**
-No. The rules are context-specific. The marking duty does not apply to AI that performs an assistive function for standard editing or does not substantially alter the input. For evidently artistic, creative, satirical, or fictional work, the deepfake disclosure is limited to noting that generated content exists, in a way that does not spoil the work. A casual filter is not the same risk as a realistic deepfake or a public-interest post.
+No. The rules are context-specific and include exceptions, including for some assistive editing and artistic, creative, satirical, fictional, or similar works. A casual filter is not the same risk as a realistic deepfake or a public-interest post.
+
+**Should I label a VibeRater share card?**
+Treat a VibeRater card as entertainment. If the card is a playful score, aura, or archetype from a photo you chose, do not present it as proof, measurement, endorsement, or real-world fact. If you add realistic AI edits before posting, follow the platform's AI-label rules.
 
 **What should I check before downloading an AI photo app?**
 Check whether the app uses a chosen photo, Limited Access, or broad library access; read the App Store privacy label and privacy policy; and avoid apps that make vague claims about training, identity, compatibility, attractiveness, or perfect AI detection.
