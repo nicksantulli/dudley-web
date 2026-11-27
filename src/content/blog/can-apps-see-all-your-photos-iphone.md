@@ -116,8 +116,6 @@ Look for plain answers about uploads, storage, analytics, advertising, account d
 
 Be more skeptical when an app presents photo results as serious measurements. A playful vibe score or aura card is entertainment. It should not be framed as a biometric, health, beauty, personality, or dating-compatibility result unless the product can clearly support that claim.
 
-For that distinction, see [Are Aura Apps Real?](/blog/are-aura-apps-real/).
-
 ## Where VibeRater Fits
 
 We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you post are stored so the post works. The [VibeRater privacy policy](/privacy/vibe-rater/) has the details.

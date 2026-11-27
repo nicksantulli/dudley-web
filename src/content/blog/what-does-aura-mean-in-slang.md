@@ -21,7 +21,7 @@ faq:
     a: "They overlap, but they are not identical. Vibe is the general feeling someone or something gives off; aura slang usually points more directly to presence, coolness, or reputation."
   - q: "Can an app measure your aura?"
     a: "Treat aura apps as entertainment. A photo app can generate an aura color, score, or share card, but that output should not be treated as a scientific, biometric, beauty, health, personality, or compatibility measurement."
-draft: false
+draft: true
 ---
 
 In slang, aura means cool presence, social energy, or the sense that someone has effortless confidence. "Aura points" are imaginary cool points people gain or lose as a joke when they do something smooth, funny, awkward, or embarrassing. The term is close to "vibe," but aura usually sounds more like personal presence or social reputation.

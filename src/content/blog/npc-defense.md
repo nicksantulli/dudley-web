@@ -23,7 +23,7 @@ faq:
     a: "The NPC meme originated in video game culture. Non-Player Characters are the scripted characters in games that repeat dialogue, follow fixed paths, and exist to serve the player's narrative. As internet slang, 'NPC' was used around 2016–2019 to describe people who seemed to follow scripts without independent thought. The term was often used dismissively or politically. The reclamation as an affectionate self-identifier happened on TikTok around 2022–2023, when 'NPC streaming' (creators acting like video game NPCs for viewers) became a viral content genre, and the term shed most of its negative connotations."
   - q: "What is VibeRater?"
     a: "VibeRater is a free iOS entertainment app that rates your vibe from a photo. You get a score across six dimensions (Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve), plus an archetype (like NPC Affectionate, Final Boss, or Main Character) and an aura color. The phone vibrates while it reads you. Live on the App Store from Dudley Development."
-draft: false
+draft: true
 ---
 
 NPC used to be an insult. Specifically, it was the internet's way of saying: you have no inner life, you repeat talking points on a script, you are background scenery in someone else's story.

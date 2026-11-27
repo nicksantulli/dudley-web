@@ -23,7 +23,7 @@ faq:
     a: "In central banking, a 'hawk' favors higher interest rates to fight inflation. A 'dove' favors lower rates to support employment and growth. Most real Fed decisions involve hawks and doves disagreeing about where the balance is. In Powell Prowl: Rate Chase you play the ultimate dove: El Pres, chasing Le Chair around to force a rate cut on him."
   - q: "What is VibeRater?"
     a: "VibeRater is a free iOS entertainment app that rates your vibe from a photo. You get a score across six dimensions (Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve), plus an archetype, like Final Boss, Gorpcore Prophet, or Cozy Goblin. The phone vibrates while it reads you."
-draft: false
+draft: true
 ---
 
 The Federal Reserve made a rate decision. Your reaction to that sentence tells me everything I need to know about you.

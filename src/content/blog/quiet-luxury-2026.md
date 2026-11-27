@@ -24,7 +24,7 @@ faq:
     a: "Quiet Luxury is a VibeRater archetype assigned to photos that read as understated, expensive-without-announcing-it, and cohesively restrained. High Fit Cohesion (everything agrees), moderate-to-high Drip (quality is readable), low Rizz (not performing for attention), very low Serve (the clothes aren't trying; they simply are). The archetype persists in VibeRater because the aspiration is durable even when the trend cycle moves on."
   - q: "What is VibeRater?"
     a: "VibeRater is a free iOS entertainment app that rates your vibe from a photo. You get a score across six dimensions (Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve), plus an archetype (like Quiet Luxury, Final Boss, or Gorpcore Prophet) and an aura color. Live on the App Store from Dudley Development."
-draft: false
+draft: true
 ---
 
 Quiet luxury peaked in 2023. The Succession finale aired in May. Kendall Roy's $4,000 gray cashmere crewneck became a cultural reference point. The aesthetic had a name, a Wikipedia article, and, most consequentially, a fast-fashion section.

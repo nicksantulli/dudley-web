@@ -22,7 +22,7 @@ faq:
     a: "No. A vibe check is slang and social shorthand. Apps, quizzes, and memes can make it feel like a score, but the result should be treated as entertainment."
   - q: "Can VibeRater Social do a vibe check?"
     a: "Yes. VibeRater Social can turn a selfie, outfit, pet photo, group shot, or random moment into a playful VibeMeter result, aura-style read, archetype, vibe anthem, and share card."
-draft: false
+draft: true
 ---
 
 A vibe check is a quick read on the mood, energy, or social fit of a person, place, photo, plan, outfit, group chat, or moment. It is usually subjective and playful: something "passes the vibe check" when it feels right, and it "fails the vibe check" when the energy feels off.

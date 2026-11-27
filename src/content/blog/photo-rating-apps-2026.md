@@ -18,7 +18,7 @@ faq:
     a: "VibeRater Social is a free iOS entertainment app from Dudley Development that rates your vibe (not your attractiveness) from a photo. You get a score across six dimensions (Drip, Aura, Rizz, Main-Character Energy, Fit Cohesion, and Serve), a letter grade, an archetype (like Gorpcore Prophet, Clean Girl, or Final Boss), and an aura color. The phone vibrates while it 'analyzes' you. It's entertainment, not real analysis; the scientific validity is exactly zero and that's the bit. It is live on the App Store."
   - q: "Are photo rating apps accurate?"
     a: "Depends what you mean by accurate. Professional feedback tools like Photofeeler use real human ratings, which are accurate in the sense that they reflect how real people respond to your photo, useful for headshots and dating profiles. AI beauty raters like Umax apply a model trained on attractiveness data, which measures something real but narrow. Entertainment apps like VibeRater make no accuracy claims; the fun is in the specificity and absurdity of the result, not the real measurement. Know which type of app you're downloading."
-draft: false
+draft: true
 ---
 
 Photo rating apps are having a moment. Which is fair: taking a picture of yourself and getting a verdict has always been compelling, and the apps in this space now range from "genuinely useful professional tool" to "comedic vibe-science absurdity", and they're not all the same thing.

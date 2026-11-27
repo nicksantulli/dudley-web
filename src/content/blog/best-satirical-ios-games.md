@@ -17,7 +17,7 @@ faq:
     a: "Yes. Powell Prowl: Rate Chase is free (with ads) and is a legitimate satire of Federal Reserve monetary policy. BitLife is also free with optional in-app purchases, though it's more dark comedy than pointed satire. Most of the deeper satire games (Reigns, Suzerain, Papers Please) are paid."
   - q: "What makes a good satire game?"
     a: "A good satire game makes a real point through its mechanics, not just its aesthetics. The best examples, Reigns and Papers Please, put you in a position of institutional power and force you to make decisions where every option has a cost. Powell Prowl: Rate Chase takes the opposite tack: it makes you the President who can't set rates, only chase the Chair who can, so the joke lands through the chase itself. Either way the comedy comes from the system, not just from funny dialogue. You learn something about how the real system works, and that's what makes the joke land."
-draft: false
+draft: true
 ---
 
 Most "funny" games on the App Store are not satirical. They are slot machines with jokes painted on the outside. A character says something ironic while you watch an ad for the seventh time. This is not satire.

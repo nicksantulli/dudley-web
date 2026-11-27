@@ -21,7 +21,7 @@ faq:
     a: "Yes, but the mainstream wave has peaked. What's left is something more durable: gorpcore as a genuine lifestyle aesthetic rather than a trend. The people still wearing it in 2026 are the ones who were wearing it in 2019, and that's kind of the point. The Gorpcore Prophet archetype is defined by people who adopted it before it was fashionable and will keep wearing it after."
   - q: "What makes someone a Gorpcore Prophet vs. just wearing gorpcore?"
     a: "A Gorpcore Prophet has conviction. They can tell you why their specific shoe is technically superior for urban terrain. They've read the weather report. The vest is functional, not decorative; they'd wear it on an actual hike. Contrast with someone who bought a Patagonia vest because it was trending: same outfit, completely different vibe."
-draft: false
+draft: true
 ---
 
 Gorpcore didn't go mainstream. Everyone else went gorpcore.

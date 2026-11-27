@@ -21,7 +21,7 @@ faq:
     a: "Yes. VibeRater Social can turn a selfie, outfit, pet photo, squad shot, or random moment into a playful vibe read, score, archetype, aura-style result, and share card for the chat."
   - q: "Should a vibe check be serious?"
     a: "Usually no. A vibe check can be a real mood check-in, but photo and group-chat vibe checks should stay clearly playful. Do not treat scores, colors, or archetypes as real measurements of someone."
-draft: false
+draft: true
 ---
 
 A vibe check in a group chat is a fast, low-pressure way to ask what the moment feels like. You can use it as a real check-in, a reaction prompt, or a photo game: send a picture, ask for the read, and let everyone answer with a line, a reaction, or a shareable result.

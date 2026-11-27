@@ -24,7 +24,7 @@ faq:
     a: "Clean Girl is a minimalist aesthetic defined by polished basics, neutral tones, and the impression of effortless organization. Clean Girl energy is about optimization: everything is chosen deliberately and nothing is out of place. In VibeRater terms, Clean Girl scores high on Fit Cohesion and Drip but the Drip is quiet, not loud. The aesthetic peaked on TikTok around 2022–2023 and remains culturally dominant."
   - q: "What is the Gorpcore Prophet archetype?"
     a: "Gorpcore Prophet is a VibeRater archetype assigned to people whose visual language combines technical gear, functional materials, and quiet conviction. A Gorpcore Prophet has opinions about why their specific gear is correct. They chose their phone case using the same methodology they used to choose their trail runners: research, durability, and a healthy suspicion of things that are fashionable for no reason."
-draft: false
+draft: true
 ---
 
 Your phone case is the one accessory you chose at 11pm while mildly panicking about dropping your phone. The decision took approximately four minutes and now you carry it everywhere, every day, for two years. It is on your person more often than your wallet.

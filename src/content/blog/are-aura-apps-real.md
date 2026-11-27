@@ -20,7 +20,7 @@ faq:
     a: "A good aura app is clear that it is for fun, explains what happens to your photo, avoids serious claims, gives you a shareable result, and lets you decide whether to save or share it."
   - q: "Is VibeRater Social a real measurement app?"
     a: "No. VibeRater Social is a free iPhone entertainment app that turns a photo into a playful vibe score, archetype, aura color, and share card. It is designed for fun and group-chat reactions, not real analysis."
-draft: false
+draft: true
 ---
 
 Aura apps are real apps, but their results are not real-world measurements. If an app turns your selfie into an aura color, archetype, vibe score, or share card, treat it like entertainment unless the app can clearly prove a serious use case. A fun result can be memorable; it should not be mistaken for science, identity verification, health advice, personality testing, attractiveness scoring, or dating compatibility.
