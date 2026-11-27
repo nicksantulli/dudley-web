@@ -91,7 +91,7 @@ Sometimes the awkward part is inventing the dilemma while you are also passing t
 
 [Table Talk conversation cards](/apps/table-talk/) is a free iPhone app of 420 hand-written prompts in six categories, plus an 80-card Would You Rather deck. The categories are Date Night, Family Dinner, Friend Group, Work Team, Deep Questions, and Light & Fun. The Would You Rather deck is the faster round: both options show on screen, everyone commits to one, then you argue about it. The longer prompts are still there for a night when an open question is the better tool.
 
-There is no account, and the cards work offline. Every card is free. Ads stay out of a sitting, and the Remove Ads purchase is a one-time buy if you want them gone.
+There is no account, and the cards work offline. The 420 main cards and the Would You Rather deck are free, and extra packs are optional one-time purchases. Ads stay out of a sitting, and the Remove Ads purchase is a one-time buy if you want them gone.
 
 [Table Talk is free on the App Store](https://apps.apple.com/app/id6780714565?pt=128970277&ct=tt-w-would-you-rather-table&mt=8).
 

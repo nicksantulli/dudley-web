@@ -1,6 +1,6 @@
 ---
 title: "Should You Give an AI Photo App Full Photo Access?"
-description: "Most AI photo apps do not need your whole camera roll for a single edit, aura card, or vibe check. Here is when full photo access makes sense and when to use a picker instead."
+description: "Most AI photo apps do not need your whole camera roll for a single edit, aura card, or vibe check."
 publishDate: 2026-07-30
 updatedDate: 2026-07-30
 category: "answers"
@@ -18,16 +18,14 @@ faq:
     a: "Full access makes more sense for apps that genuinely manage, back up, organize, or search your whole library. For one-photo entertainment or editing workflows, it is usually broader than needed."
   - q: "Can an app see all my iPhone photos if I use the photo picker?"
     a: "Apple's picker is designed so you can select specific photos or videos for an app without granting broad library access. The app receives the selected items, not automatic access to the entire camera roll."
-  - q: "Does VibeRater need full camera-roll access?"
-    a: "VibeRater Social is built around choosing or taking a photo for a playful entertainment result. Dudley's public privacy policy says rating-only photos are sent to the rating service, processed in memory, and discarded."
 draft: false
 ---
 
 Most AI photo apps do not need full access to your entire camera roll for a single edit, aura card, selfie rating, avatar test, or vibe check. The safer default is to choose the specific photo you want to use, then grant broader access only when the app's core feature truly depends on browsing, organizing, backing up, or searching your library.
 
-That distinction matters more as more apps pitch AI help for private photo collections. A recent wave of camera-roll organizers and "emotional AI" memory apps is selling the idea that software can find meaning inside years of personal photos. That may be useful, but it also raises a simple privacy question: does this app need your library, or just the photo you picked?
+More apps now pitch AI help for private photo collections. A recent wave of camera-roll organizers and "emotional AI" memory apps is selling the idea that software can find meaning inside years of personal photos. That may be useful, but it also raises a simple privacy question: does this app need your library, or just the photo you picked?
 
-## The Short Answer
+## Use the Narrowest Photo Access That Works
 
 Use the narrowest photo access that still lets the feature work.
 
@@ -96,11 +94,7 @@ Source: [Digital Camera World: emotional AI and camera-roll memory apps](https:/
 
 ## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is a photo-based entertainment app, not a camera-roll organizer. The current App Store listing describes a flow where you upload a selfie, regular photo, squad shot, or pet pic and get a playful vibe score, archetype, aura color, and share card.
-
-Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) separates rating-only photos from media someone chooses to post, share, or save. It says rating-only photos are sent to the rating service, processed in memory, and discarded. That is the right mental model for a one-photo entertainment workflow: choose the input, get the output, then decide what happens next.
-
-VibeRater results should also stay in the right category. A score, aura, archetype, or share card is a for-fun prompt for a group chat, not proof about a person's appearance, personality, health, compatibility, identity, or private traits.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. The [VibeRater privacy policy](/privacy/vibe-rater/) has the details.
 
 ## A Practical Rule
 
@@ -121,5 +115,3 @@ Full access makes more sense for apps that genuinely manage, back up, organize, 
 **Can an app see all my iPhone photos if I use the photo picker?**
 Apple's picker is designed so you can select specific photos or videos for an app without granting broad library access. The app receives the selected items, not automatic access to the entire camera roll.
 
-**Does VibeRater need full camera-roll access?**
-VibeRater Social is built around choosing or taking a photo for a playful entertainment result. Dudley's public privacy policy says rating-only photos are sent to the rating service, processed in memory, and discarded.

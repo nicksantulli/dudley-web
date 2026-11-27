@@ -1,6 +1,6 @@
 ---
 title: "Does Instagram Map Show Your Location From Photos?"
-description: "Instagram Map can show location-tagged content, but that is different from sharing your live or last-active location. Here is what iPhone photo posters should check before sharing."
+description: "Instagram Map can show location-tagged content, but that is different from sharing your live or last-active location."
 publishDate: 2026-08-13
 updatedDate: 2026-08-13
 category: "privacy"
@@ -19,16 +19,14 @@ faq:
     a: "Meta says Instagram Map location sharing is off unless you opt in. If enabled, you choose who can see your last-active location and can turn it off anytime."
   - q: "Can iPhone photo metadata expose location when I post?"
     a: "Location can be attached to photos and Apple says sharing controls can include location, edit history, and depth data. Before posting, check both the app's location tag and your iPhone sharing/photo permissions."
-  - q: "Does VibeRater post to Instagram Map?"
-    a: "No. VibeRater is a separate photo entertainment app. It can create playful vibe results and share cards, but it is not affiliated with Instagram and does not control Instagram Map."
 draft: false
 ---
 
 Instagram Map can show location-tagged content, but that is different from sharing your live or last-active location. The practical answer is: a photo, reel, story, or note with a location tag may appear on Instagram Map for the people allowed to see it, while your own last-active location is shared only if you opt in to that separate Map setting.
 
-That distinction matters if you post from concerts, schools, gyms, cafes, vacation spots, or your neighborhood. A location tag can still reveal context even when you never meant to broadcast where you are in real time.
+If you post from concerts, schools, gyms, cafes, vacation spots, or your neighborhood, a location tag can still reveal context even when you never meant to broadcast where you are in real time.
 
-## The Short Answer
+## Instagram Map Raises Two Separate Location Questions
 
 Instagram Map has two privacy questions that people often collapse into one:
 
@@ -115,15 +113,7 @@ This matters even more for photo entertainment apps and share cards. The funnies
 
 ## Where VibeRater Fits
 
-[VibeRater](/apps/vibe-rater/) is a separate iPhone photo entertainment app. It is not affiliated with Instagram, does not control Instagram Map, and should not be treated as a location privacy tool.
-
-The useful VibeRater angle is simpler: choose a photo, get a playful aura-style result, then decide where and whether to share the card. Keep the result private, send it to people you trust, or post it where the context makes sense.
-
-The app's local source and Dudley privacy copy describe VibeRater as entertainment, not analysis or measurement. A vibe score is not a biometric read, attractiveness rating, identity signal, health assessment, personality test, dating compatibility result, or proof that a post is safe to share.
-
-For the privacy side, Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) says a photo used only for rating is sent to the rating service, processed in memory, and discarded. Media you deliberately post, share, or save is separate because those features need selected content to work.
-
-[Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-instagram-map-show-photos&mt=8) if you want a just-for-fun photo vibe check, then use your normal iPhone and social-app controls to decide where the card belongs.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-instagram-map-show-photos&mt=8).
 
 ## A Practical Rule
 
@@ -145,5 +135,3 @@ Meta says Instagram Map location sharing is off unless you opt in. If enabled, y
 **Can iPhone photo metadata expose location when I post?**
 Location can be attached to photos and Apple says sharing controls can include location, edit history, and depth data. Before posting, check both the app's location tag and your iPhone sharing/photo permissions.
 
-**Does VibeRater post to Instagram Map?**
-No. VibeRater is a separate photo entertainment app. It can create playful vibe results and share cards, but it is not affiliated with Instagram and does not control Instagram Map.

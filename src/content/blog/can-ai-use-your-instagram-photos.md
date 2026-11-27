@@ -18,16 +18,14 @@ faq:
     a: "Yes. A private account limits who can see your posts on Instagram, and it is a stronger default if you do not want strangers using or referencing your photos. It does not change every historical platform-data question, but it reduces public exposure."
   - q: "What should I check before using an AI photo app?"
     a: "Check whether the app needs a chosen photo, a public profile, or broad library access; read the App Store privacy label and privacy policy; and avoid tools that make unclear claims about training, reuse, identity, or consent."
-  - q: "How is VibeRater different from a social AI generator?"
-    a: "VibeRater Social is a for-entertainment photo app built around choosing or taking an input photo for a playful result. Dudley's privacy policy says rating-only photos are processed in memory and discarded, while media you deliberately post, share, or save is handled separately."
 draft: false
 ---
 
-AI can use or reference photos differently depending on where the photo is posted, whether the account is public, what a platform's current feature allows, and what permissions you give an app. The practical answer is simple: treat public social photos as public inputs, keep private photos private, and do not assume every AI photo feature works like a one-photo picker.
+AI can use or reference photos differently depending on where the photo is posted, whether the account is public, what a platform's current feature allows, and what permissions you give an app. Treat public social photos as public inputs, keep private photos private, and do not assume every AI photo feature works like a one-photo picker.
 
 That question became urgent in July 2026 when Meta introduced Muse Image, its image-generation model for Meta AI, Instagram, and WhatsApp. Meta first described a way for people to generate images by mentioning public Instagram accounts, then updated the announcement on July 10 to say that the feature was no longer available after feedback.
 
-## The Short Answer
+## The Public-Account Mention Feature Is Gone
 
 As of Meta's July 10, 2026 update, the public-Instagram-account mention feature for Muse Image was no longer available. That does not mean every AI privacy concern disappears.
 
@@ -107,13 +105,7 @@ The goal is not to make photo apps boring. It is to keep the audience clear on w
 
 ## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is a chosen-photo entertainment app. The current App Store listing frames it as a way to upload a selfie, regular photo, squad shot, or pet picture for a playful vibe report, aura color, archetype, scorecard, and share card.
-
-Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) says a photo used only for rating is sent to the rating service, processed in memory, and discarded. Media you choose to post, share, or save is handled separately so those features work.
-
-That distinction matters. A private chosen-photo result is not the same privacy scenario as a public social profile being referenced by an AI image generator. If you share a VibeRater card, keep it in the right lane: entertainment, group-chat energy, and your own chosen context.
-
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-ai-use-instagram-photos&mt=8) if you want a for-fun photo vibe check built around the image you choose, not a public-account AI remix.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-ai-use-instagram-photos&mt=8).
 
 ## Frequently Asked Questions
 
@@ -126,5 +118,3 @@ Yes. A private account limits who can see your posts on Instagram, and it is a s
 **What should I check before using an AI photo app?**
 Check whether the app needs a chosen photo, a public profile, or broad library access; read the App Store privacy label and privacy policy; and avoid tools that make unclear claims about training, reuse, identity, or consent.
 
-**How is VibeRater different from a social AI generator?**
-VibeRater Social is a for-entertainment photo app built around choosing or taking an input photo for a playful result. Dudley's privacy policy says rating-only photos are processed in memory and discarded, while media you deliberately post, share, or save is handled separately.

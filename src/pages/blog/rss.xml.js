@@ -1,6 +1,6 @@
 import rss from '@astrojs/rss';
 import { ORIGIN, abs } from '../../consts';
-import { getPublishedPosts } from '../../lib/blog';
+import { getPublishedPosts, postTags } from '../../lib/blog';
 
 export async function GET() {
   const posts = await getPublishedPosts();
@@ -15,7 +15,7 @@ export async function GET() {
       description: post.data.description,
       pubDate: post.data.publishDate,
       link: abs(`/blog/${post.id}/`),
-      categories: [post.data.category, ...post.data.tags],
+      categories: postTags(post),
     })),
     customData: '<language>en-us</language>',
   });

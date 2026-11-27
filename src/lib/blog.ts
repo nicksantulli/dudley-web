@@ -6,21 +6,30 @@ export type Post = CollectionEntry<'blog'>;
 // (and the JSON-LD blogPost list) always agree on where a page boundary falls.
 export const POSTS_PER_PAGE = 24;
 
-// A post's full tag set = its category plus any explicit tags, de-duplicated.
+// A post's full tag set = its category plus any explicit tags, de-duplicated by slug.
 export function postTags(post: Post): string[] {
   const all = [post.data.category, ...post.data.tags];
-  return [...new Set(all.map((t) => t.trim()).filter(Boolean))];
+  const bySlug = new Map<string, string>();
+  for (const tag of all.map((t) => t.trim()).filter(Boolean)) {
+    const slug = tagSlug(tag);
+    if (!bySlug.has(slug)) bySlug.set(slug, tag);
+  }
+  return [...bySlug.values()];
 }
 
 // Turn a human tag ("Outfit Explainer", "archetype-deep-dive") into a URL slug.
 // Case-insensitive by construction, so "Privacy" and "privacy" (or "AI photo
 // apps" / "ai photo apps") collapse to the same slug — see getAllTags below.
+// Spellings that must share one tag page (and one canonical URL).
+const TAG_SLUG_ALIASES: Record<string, string> = { 'vibe-rater': 'viberater' };
+
 export function tagSlug(tag: string): string {
-  return tag
+  const slug = tag
     .toLowerCase()
     .trim()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
+  return TAG_SLUG_ALIASES[slug] ?? slug;
 }
 
 // Known acronyms/proper nouns that naive title-casing mangles ("Ai" instead of

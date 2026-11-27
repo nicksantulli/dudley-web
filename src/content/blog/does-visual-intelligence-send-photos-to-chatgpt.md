@@ -1,6 +1,6 @@
 ---
 title: "Does Visual Intelligence Send Photos to ChatGPT?"
-description: "Visual Intelligence can send a photo, screenshot, or onscreen item to ChatGPT only when you choose a ChatGPT action. Here is what Apple and OpenAI say is shared, saved, and controlled."
+description: "Visual Intelligence can send a photo, screenshot, or onscreen item to ChatGPT only when you choose a ChatGPT action."
 publishDate: 2026-08-24
 updatedDate: 2026-08-24
 category: "Privacy"
@@ -19,8 +19,6 @@ faq:
     a: "Apple says your request, attachments, and limited request context such as time zone, country, device type, language, and feature being used are sent when you use the ChatGPT extension."
   - q: "Is Visual Intelligence the same as giving an app full Photos access?"
     a: "No. Visual Intelligence is a system feature for camera, screenshot, and onscreen queries. Full Photos access is an app permission that can let an app work with your broader photo library."
-  - q: "How is this different from VibeRater?"
-    a: "VibeRater is a separate Dudley app. A photo you only rate is sent to Dudley's rating service, processed in memory, and discarded; media you choose to post, share, or save is stored so those selected features work."
 draft: false
 ---
 
@@ -30,7 +28,7 @@ The practical rule is simple: Visual Intelligence can look at what is in front o
 
 Sources: [Apple Support: Use visual intelligence on iPhone](https://support.apple.com/guide/iphone/use-visual-intelligence-iph12eb1545e/26/ios/26), [Apple Support: Use ChatGPT with Apple Intelligence](https://support.apple.com/guide/iphone/use-chatgpt-with-apple-intelligence-iph00fd3c8c2/26/ios/26), [Apple: ChatGPT Extension & Privacy](https://www.apple.com/legal/privacy/data/en/chatgpt-extension/), [OpenAI Help: How your data is handled when you use ChatGPT through Apple's integrations](https://help.openai.com/en/articles/9737562-how-your-data-is-handled-when-you-use-chatgpt-through-apples-integrations), and [OpenAI Help: Apple Intelligence - Visual Intelligence FAQ](https://help.openai.com/en/articles/10263574).
 
-## The Short Answer
+## Visual Intelligence Uses Different Actions
 
 Visual Intelligence can use different actions depending on what you are doing:
 
@@ -108,13 +106,7 @@ That framing is more useful than panic-reading every AI feature as identical.
 
 ## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is a Dudley iPhone app for playful photo ratings, Vibes posts, Vibies, VibeChecks, Squad reactions, Radar, Rise, optional SlopGuard, and shareable cards. The current U.S. App Store listing describes the app as social entertainment and says ratings are not biometric, health, identity, attractiveness, or clinical analysis.
-
-Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) draws the product boundary this way: a photo you only rate is sent to the rating service, processed in memory, and discarded. Media you choose to post, share, or save is stored so those selected social features work.
-
-That is the habit worth carrying across AI photo tools. A private rating, a saved card, a feed post, a Squad share, and a ChatGPT visual question are not the same privacy action. Each one starts with a specific choice about what image or screen you send.
-
-[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-visual-send-chatgpt&mt=8) if you want a photo vibe check built around selected moments and entertainment-first sharing.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-visual-send-chatgpt&mt=8).
 
 ## FAQ
 
@@ -127,5 +119,3 @@ Apple says your request, attachments, and limited request context such as time z
 **Is Visual Intelligence the same as giving an app full Photos access?**  
 No. Visual Intelligence is a system feature for camera, screenshot, and onscreen queries. Full Photos access is an app permission that can let an app work with your broader photo library.
 
-**How is this different from VibeRater?**  
-VibeRater is a separate Dudley app. A photo you only rate is sent to Dudley's rating service, processed in memory, and discarded; media you choose to post, share, or save is stored so those selected features work.

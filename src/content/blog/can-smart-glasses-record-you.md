@@ -1,6 +1,6 @@
 ---
 title: "Can Smart Glasses Record You?"
-description: "Smart glasses can record photos or video from the wearer's point of view, so consent, posting choices, and app privacy settings matter. Here is the practical privacy check before filming or sharing group moments."
+description: "Smart glasses can record photos or video from the wearer's point of view, so consent, posting choices, and app privacy settings matter."
 publishDate: 2026-08-09
 updatedDate: 2026-08-09
 category: "privacy"
@@ -20,8 +20,6 @@ faq:
     a: "It depends on the product. Meta says photos and videos captured for the wearer's gallery are stored privately on the glasses until the wearer imports them to a phone, then sharing is the wearer's choice."
   - q: "Is it okay to post a group photo from smart glasses?"
     a: "Use the same rule as any social photo: ask first when people are identifiable, avoid sensitive settings, and do not post if someone says no. The fact that capture is hands-free does not remove the social consent step."
-  - q: "How does this connect to VibeRater Social?"
-    a: "VibeRater Social is for chosen photos and playful vibe checks. A private rating starts as your choice; posting to Vibes, making a Vibie, or sharing with Squad is a separate choice that should respect the people in the photo."
 draft: false
 ---
 
@@ -98,17 +96,9 @@ Before importing or posting media from smart glasses, check:
 
 The right answer depends on the app and the feature. A one-photo edit, a private save, a public feed post, and a group-chat reaction do not have the same privacy footprint.
 
-## Where VibeRater Social Fits
+## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is built for chosen-photo vibe checks, not covert capture. Pick or take a photo, get a playful VibeMeter result, aura-style read, archetype, and vibe anthem, then choose whether to keep it private, post it to Vibes, make a Vibie, send it to your Squad, or share it elsewhere.
-
-The U.S. App Store listing describes VibeRater Social as a social app with Vibes posts, Vibies, VibeChecks, Squad, Radar, Rise, share cards, and optional SlopGuard. It also says the scores, auras, archetypes, anthems, and Vibescopes are for entertainment, not measurements of appearance, personality, health, or any personal trait.
-
-Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) draws a useful boundary: a photo used only for rating is sent to the rating service, processed in memory, and discarded. Media you choose to post, share, or save is stored separately so those selected social features work.
-
-That makes the social rule clear. A private vibe check can be yours. A post, Vibie, Squad share, or group photo includes other people, so their comfort matters too.
-
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-smart-glasses-record-you&mt=8) if you want playful photo reactions that keep the posting choice explicit.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-smart-glasses-record-you&mt=8).
 
 ## Smart Glasses Etiquette In One Sentence
 
@@ -127,5 +117,3 @@ It depends on the product. Meta says photos and videos captured for the wearer's
 **Is it okay to post a group photo from smart glasses?**
 Use the same rule as any social photo: ask first when people are identifiable, avoid sensitive settings, and do not post if someone says no. The fact that capture is hands-free does not remove the social consent step.
 
-**How does this connect to VibeRater Social?**
-VibeRater Social is for chosen photos and playful vibe checks. A private rating starts as your choice; posting to Vibes, making a Vibie, or sharing with Squad is a separate choice that should respect the people in the photo.

@@ -1,6 +1,6 @@
 ---
 title: "Do AI Photo Apps Need Labels on TikTok?"
-description: "TikTok asks creators to label realistic AI-generated or significantly AI-edited content. Here is what that means before you share AI photo, aura, or vibe-check results."
+description: "TikTok asks creators to label realistic AI-generated or significantly AI-edited content."
 publishDate: 2026-07-28
 updatedDate: 2026-07-28
 category: "answers"
@@ -14,13 +14,11 @@ relatedApps:
   - "vibe-rater"
 faq:
   - q: "Do AI photo app posts need an AI-generated label on TikTok?"
-    a: "Use TikTok's AI-generated content label when a photo, video, or audio post is completely generated or significantly edited by AI, especially if it contains realistic people, places, events, or voices. Minor edits and clearly playful captions are different, but realistic AI media should be disclosed."
+    a: "Use TikTok's AI-generated content label when a photo, video, or audio post is completely generated or significantly edited by AI, especially if it contains realistic people, places, events, or voices. TikTok requires the label for realistic AI-generated images, audio, and video, and encourages it for other content that is completely generated or significantly edited with AI."
   - q: "Does TikTok label AI-generated content automatically?"
     a: "TikTok says it can apply AI-generated labels automatically, including when content uses TikTok AI effects or carries C2PA Content Credentials metadata. Once an automatic label is applied, creators cannot remove it."
   - q: "Can I post an aura or vibe-check result without misleading people?"
     a: "Yes. Keep the caption clear that the result is entertainment, do not claim it proves anything about a person, and label the post when the media itself was generated or substantially changed by AI."
-  - q: "Is VibeRater an AI detector?"
-    a: "No. VibeRater Social is a for-entertainment photo app. Its scores, auras, archetypes, and share cards are playful outputs, not proof that a photo is real or AI-generated and not measurements of a person."
 draft: false
 ---
 
@@ -100,11 +98,9 @@ Avoid captions like:
 
 The line is not about killing the joke. It is about making sure the joke does not pretend to be evidence.
 
-## Where VibeRater fits
+## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is built as a playful photo and aura entertainment app. The current U.S. App Store listing names the app VibeRater Social and frames the experience as entertainment, not analysis.
-
-That matters for sharing. A VibeRater result card can be a conversation starter for a group chat or story, but it should not be presented as a factual evaluation of a person. The current [VibeRater privacy policy](/privacy/vibe-rater/) also separates rating-only photos, which it says are processed in memory and discarded, from media someone chooses to post, share, or save.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. The [VibeRater privacy policy](/privacy/vibe-rater/) has the details.
 
 If you share a VibeRater card on TikTok, keep the context straightforward:
 
@@ -136,7 +132,7 @@ That approach fits the direction platforms are moving: more transparency for AI 
 ## Frequently Asked Questions
 
 **Do AI photo app posts need an AI-generated label on TikTok?**
-Use TikTok's AI-generated content label when a photo, video, or audio post is completely generated or significantly edited by AI, especially if it contains realistic people, places, events, or voices. Minor edits and clearly playful captions are different, but realistic AI media should be disclosed.
+Use TikTok's AI-generated content label when a photo, video, or audio post is completely generated or significantly edited by AI, especially if it contains realistic people, places, events, or voices. TikTok requires the label for realistic AI-generated images, audio, and video, and encourages it for other content that is completely generated or significantly edited with AI.
 
 **Does TikTok label AI-generated content automatically?**
 TikTok says it can apply AI-generated labels automatically, including when content uses TikTok AI effects or carries C2PA Content Credentials metadata. Once an automatic label is applied, creators cannot remove it.
@@ -144,5 +140,3 @@ TikTok says it can apply AI-generated labels automatically, including when conte
 **Can I post an aura or vibe-check result without misleading people?**
 Yes. Keep the caption clear that the result is entertainment, do not claim it proves anything about a person, and label the post when the media itself was generated or substantially changed by AI.
 
-**Is VibeRater an AI detector?**
-No. VibeRater Social is a for-entertainment photo app. Its scores, auras, archetypes, and share cards are playful outputs, not proof that a photo is real or AI-generated and not measurements of a person.

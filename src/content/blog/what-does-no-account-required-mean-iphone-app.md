@@ -33,7 +33,7 @@ The clean way to read it is this: no account required answers the sign-in questi
 
 Sources: [Apple User Privacy and Data Use](https://developer.apple.com/app-store/user-privacy-and-data-use/), [Apple App Store Connect help on app privacy](https://developer.apple.com/help/app-store-connect/manage-app-information/manage-app-privacy), [Apple privacy controls](https://www.apple.com/privacy/control/), a current U.S. Apple lookup for Table Talk: Conversation Cards, and the [Table Talk privacy policy](/privacy/table-talk/).
 
-## The Short Answer
+## What No Account Required Usually Means
 
 When an app says no account required, it usually means:
 

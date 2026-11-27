@@ -1,6 +1,6 @@
 ---
 title: "Can Apps See Hidden Photos on iPhone?"
-description: "Hidden photos are locked in the Photos app, and iPhone photo permissions still matter. Here is what apps can see, what Photo Picker protects, and how to share one image safely."
+description: "Hidden photos are locked in the Photos app, and iPhone photo permissions still matter."
 publishDate: 2026-08-11
 updatedDate: 2026-08-11
 category: "answers"
@@ -28,7 +28,7 @@ Apps cannot automatically browse your hidden iPhone photos. Hidden and Recently 
 
 The important distinction is simple: hiding a photo protects where it appears in Photos, while photo permissions control what a third-party app can access. For photo apps, aura apps, editors, and group-chat tools, the safest habit is to choose the exact image you want to use instead of opening more of your library than the feature needs.
 
-## The Short Answer
+## Apps Do Not Get Automatic Access to Hidden Photos
 
 For most people, the answer is no: apps do not get automatic access to hidden photos.
 
@@ -89,17 +89,9 @@ Apple's App Privacy Details guidance says App Store product pages can show what 
 
 Source: [Apple Developer: App Privacy Details](https://developer.apple.com/app-store/app-privacy-details/).
 
-## Where VibeRater Social Fits
+## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is a photo-based entertainment app, so hidden-photo privacy comes down to the same practical question: which photo did you choose, and what did you decide to do with the result?
-
-VibeRater frames photo results as entertainment, not biometric, health, identity, attractiveness, or clinical analysis. Treat the result like a playful vibe card, not a serious judgment about the person in the photo.
-
-Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) draws the upload boundary in plain language: a photo used only for rating is sent to the rating service, processed in memory, and discarded. Media you choose to post, share, or save may be stored so those selected social features work.
-
-That is the model to look for in any photo app. A one-photo private result, a public post, a saved share card, and a social feed item are different privacy decisions.
-
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-apps-see-hidden-iphone&mt=8) if you want a just-for-fun photo vibe check that starts with a photo you choose.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-apps-see-hidden-iphone&mt=8).
 
 ## A Safer Hidden-Photo Rule
 

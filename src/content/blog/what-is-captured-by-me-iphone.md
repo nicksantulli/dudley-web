@@ -1,8 +1,8 @@
 ---
 title: "What Is Captured by Me on iPhone?"
-description: "Captured by Me is a reported iOS 27 Photos collection for pictures taken with your iPhone camera. Here is what it means for finding cleaner photos to edit, share, or use in photo apps."
+description: "Captured by Me is an iOS 27 Photos filter for pictures taken with your iPhone camera. What it means for finding cleaner photos to edit, share, or use in photo apps."
 publishDate: 2026-08-10
-updatedDate: 2026-08-10
+updatedDate: 2026-11-27
 category: "answers"
 tags:
   - "iphone photos"
@@ -14,17 +14,15 @@ primaryKeyword: "what is Captured by Me on iPhone"
 relatedApps: []
 faq:
   - q: "What is Captured by Me on iPhone?"
-    a: "Captured by Me is a reported iOS 27 Photos collection that groups pictures taken with your iPhone camera, separating them from screenshots, saved images, and items received from other apps."
+    a: "Captured by Me is a Photos feature in iOS 27. Apple's Photos guide lists it as a filter you can apply to a collection, alongside filters like Edited and Rating. MacRumors describes it as showing images taken with the Camera app on your current or past iPhones."
   - q: "Is Captured by Me the same as photo privacy?"
     a: "No. It is an organization feature, not an app-permission setting. Photo privacy still depends on whether an app gets full Photos access, limited access, add-only access, or a specific selected image."
   - q: "Can apps see the Captured by Me collection?"
     a: "An app can access photos only with permission. Apple's privacy guidance says users can choose which photos to share with an app, grant broader Photos access, or change access later in Settings."
-  - q: "How does this help with VibeRater Social?"
-    a: "It can make it easier to find a photo you actually took before making a playful VibeRater Social result. The important privacy habit is still choosing the specific photo you want to use."
 draft: false
 ---
 
-Captured by Me is a reported iOS 27 Photos collection meant to show photos taken with your own iPhone camera, instead of mixing them with screenshots, downloads, saved images, and pictures sent by other people. For anyone using photo apps, aura apps, editors, or group-chat sharing, the useful takeaway is simple: start from a photo you intentionally captured, then choose exactly what you want to share.
+Captured by Me is a Photos filter in iOS 27 for photos taken with your own iPhone camera, so they are not mixed with screenshots, downloads, saved images, and pictures sent by other people. For anyone using photo apps, aura apps, editors, or group-chat sharing: start from a photo you intentionally captured, then choose exactly what you want to share.
 
 It is not a privacy permission by itself. It is a cleaner way to find photos. App privacy still comes down to the access you grant and what the app does after you select an image.
 
@@ -34,15 +32,15 @@ MacRumors reported on August 4, 2026 that the iOS 27 Photos app includes new Uti
 
 Source: [MacRumors: What's New in the iOS 27 Photos App](https://www.macrumors.com/guide/ios-27-photos-app/).
 
-Apple's June 8, 2026 WWDC announcement said iOS 27 and related software updates are in testing, with public availability planned as a free software update this fall. Apple also highlighted Photos-related Apple Intelligence work, including Spatial Reframing, and broader performance improvements such as faster photo loading after capture.
+Apple released iOS 27 on September 14, 2026. Apple's Photos guide lists Captured by Me as a filter you can apply to items in a collection.
 
-Source: [Apple Newsroom: WWDC26 software preview](https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/).
+Source: [Apple Support: Browse your photo collections on iPhone](https://support.apple.com/guide/iphone/browse-your-photo-collections-iph4f36c4148/ios).
 
 So the search demand makes sense: people want to know whether this is a new camera roll, a privacy feature, an AI feature, or just another Photos sorting tool.
 
-## The Short Answer
+## Captured by Me Is a Photos Organization Shortcut
 
-Captured by Me is best understood as a Photos organization shortcut. Based on current reporting, it helps you find photos you took with the iPhone camera and avoid clutter from:
+Captured by Me is best understood as a Photos organization shortcut. It helps you find photos you took with the iPhone camera and avoid clutter from:
 
 - screenshots
 - saved memes
@@ -110,15 +108,9 @@ Source: [Apple Developer: App privacy details on the App Store](https://develope
 
 Be careful with apps that turn a photo into serious-sounding claims about beauty, health, biometrics, personality, or dating compatibility. A playful aura or vibe result should be framed as entertainment unless the product has clear evidence for a stronger claim.
 
-## Where VibeRater Social Fits
+## Where VibeRater Fits
 
-[VibeRater](/apps/vibe-rater/) is a playful photo entertainment app. The current iOS source of truth in the app repo names the App Store listing as VibeRater Social, and the App Store listing for app ID 6780704282 describes an entertainment app where users upload a selfie, get a vibe report, and can share a personalized Vibe Card.
-
-Use Captured by Me the same way you would use any cleaner Photos view: find a photo you actually meant to use, then decide whether it belongs in a private result, a share card, or a group chat.
-
-Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) draws the product boundary users should care about: a photo used only for rating is sent to the rating service, processed in memory, and discarded, while media you choose to post, share, or save may be stored so those selected features work.
-
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-captured-iphone&mt=8) if you want a just-for-fun photo reaction that starts with a photo you choose.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-captured-iphone&mt=8).
 
 ## A Simple Workflow
 
@@ -135,7 +127,7 @@ The main habit is control. Find the right image, share only the image you picked
 ## Frequently Asked Questions
 
 **What is Captured by Me on iPhone?**
-Captured by Me is a reported iOS 27 Photos collection that groups pictures taken with your iPhone camera, separating them from screenshots, saved images, and items received from other apps.
+Captured by Me is a Photos feature in iOS 27. Apple's Photos guide lists it as a filter you can apply to a collection, alongside filters like Edited and Rating. MacRumors describes it as showing images taken with the Camera app on your current or past iPhones.
 
 **Is Captured by Me the same as photo privacy?**
 No. It is an organization feature, not an app-permission setting. Photo privacy still depends on whether an app gets full Photos access, limited access, add-only access, or a specific selected image.
@@ -143,5 +135,3 @@ No. It is an organization feature, not an app-permission setting. Photo privacy 
 **Can apps see the Captured by Me collection?**
 An app can access photos only with permission. Apple's privacy guidance says users can choose which photos to share with an app, grant broader Photos access, or change access later in Settings.
 
-**How does this help with VibeRater Social?**
-It can make it easier to find a photo you actually took before making a playful VibeRater Social result. The important privacy habit is still choosing the specific photo you want to use.

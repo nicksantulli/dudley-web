@@ -68,7 +68,7 @@ Sometimes the awkward part is that one person is supplying every question. A sha
 
 [Table Talk conversation cards](/apps/table-talk/) is a free iPhone app of 420 hand-written prompts in six categories, plus an 80-card Would You Rather deck. The categories are Date Night, Family Dinner, Friend Group, Work Team, Deep Questions, and Light & Fun. Date Night is written as questions that go somewhere. The app's own description of that tone is a story with a turn in it: "What's something you used to be embarrassed about that you now love about yourself?" A person can answer it in a sentence or stay with it. Nobody is collecting a favorite movie.
 
-There is no account, and the cards work offline. Every card is free. Ads stay out of a sitting, and the Remove Ads purchase is a one-time buy if you want them gone.
+There is no account, and the cards work offline. The 420 main cards and the Would You Rather deck are free, and extra packs are optional one-time purchases. Ads stay out of a sitting, and the Remove Ads purchase is a one-time buy if you want them gone.
 
 [Table Talk is free on the App Store](https://apps.apple.com/app/id6780714565?pt=128970277&ct=tt-w-openers-not-interviews&mt=8).
 

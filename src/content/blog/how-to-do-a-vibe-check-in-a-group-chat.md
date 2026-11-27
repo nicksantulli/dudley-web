@@ -1,6 +1,6 @@
 ---
 title: "How to Do a Vibe Check in a Group Chat"
-description: "A vibe check in a group chat is a quick way to ask what the room feels like, react to a photo, or turn a moment into a low-stakes game. Here is how to do it without making it weird."
+description: "A vibe check in a group chat is a quick way to ask what the room feels like, react to a photo, or turn a moment into a low-stakes game."
 publishDate: 2026-07-23
 updatedDate: 2026-07-23
 category: "how-to"
@@ -69,15 +69,11 @@ Useful constraints:
 - Use a photo everyone would be comfortable seeing in the chat.
 - Make sharing optional.
 
-Apple's iPhone privacy guidance says apps ask permission before accessing data such as Photos, Camera, and location, and that you can manage these permissions in Settings under Privacy & Security. Apple's Photos privacy information also explains that users can grant full photo-library access or limit access to selected photos. See [Control what you share on iPhone](https://support.apple.com/guide/iphone/control-what-you-share-iph6e7d349d1/ios) and [Photos & Privacy](https://www.apple.com/legal/privacy/data/en/photos/) for the platform details.
+A person can select individual photos through Apple's photo picker without granting broad library access. Apps need permission for broader Photos, Camera, or Location access, and you can manage these permissions in Settings under Privacy & Security. Apple's Photos privacy information also explains that users can grant full photo-library access or limit access to selected photos. See [Control what you share on iPhone](https://support.apple.com/guide/iphone/control-what-you-share-iph6e7d349d1/ios) and [Photos & Privacy](https://www.apple.com/legal/privacy/data/en/photos/) for the platform details.
 
-## Where VibeRater fits
+## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is built for exactly this kind of group-chat energy. You can rate a selfie, outfit, pet photo, squad shot, or random moment, then get a 0-to-100 VibeMeter result, aura-style read, archetype, and share card.
-
-Use it when the chat wants a result that feels more interesting than a plain text reply. A number can be funny for two seconds; an archetype gives people something to argue about.
-
-The important guardrail is that VibeRater is entertainment. The App Store listing frames the app as playful and for-fun, and the app says scores, auras, archetypes, anthems, and Vibescopes are not measurements of appearance, personality, health, or any personal trait. That is the right frame for a group-chat game.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. Use it when the chat wants something more interesting than a plain text reply. A number is funny for two seconds; an archetype gives people something to argue about. The [VibeRater privacy policy](/privacy/vibe-rater/) has the details.
 
 ## Five vibe check games to try
 

@@ -1,8 +1,8 @@
 ---
 title: "Can Your iPhone Prove a Photo Is Real?"
-description: "New iPhone provenance ideas could make some photos easier to authenticate, but they are not magic AI detectors. Here is what photo proof means for AI images, social posts, and vibe-check apps."
+description: "Apple Reference Image can verify some photos taken on iPhone 18 Pro, but it is not an AI detector. What photo proof means for AI images, social posts, and vibe-check apps."
 publishDate: 2026-08-12
-updatedDate: 2026-08-12
+updatedDate: 2026-11-27
 category: "answers"
 tags:
   - "iphone privacy"
@@ -14,21 +14,19 @@ relatedApps:
   - "vibe-rater"
 faq:
   - q: "Can your iPhone prove a photo is real?"
-    a: "Not for every photo. Reporting in August 2026 says Apple is exploring an iPhone camera provenance feature, but it is not live for regular users. Today, proof usually depends on provenance signals, metadata, platform labels, trusted context, and where the image came from."
+    a: "Not for every photo. Apple Reference Image, on iPhone 18 Pro and iPhone 18 Pro Max, can capture a signed reference image in Reference mode. You compare it with the regular photo in Photos to see edits. It is off by default and not available for capture in the EU. For other photos, proof depends on provenance signals, metadata, platform labels, trusted context, and where the image came from."
   - q: "Is photo provenance the same as AI detection?"
     a: "No. Provenance can show where a file came from or how it was handled. AI detection tries to guess whether content was generated or edited by AI. Neither is perfect, and missing metadata does not automatically mean a photo is fake."
   - q: "What is C2PA or Content Credentials?"
     a: "C2PA is an open technical standard for attaching tamper-evident provenance information to media, often shown to people as Content Credentials. It can add context, but metadata can be stripped or unsupported by some platforms."
-  - q: "Can VibeRater prove a photo is real?"
-    a: "No. VibeRater is a photo entertainment app for playful aura-style vibe results and share cards. It is not an authenticity, identity, biometric, attractiveness, personality, or AI-detection tool."
 draft: false
 ---
 
-Your iPhone cannot prove every photo is real. A future camera provenance feature might help authenticate some images captured in a specific mode, but that is different from a universal AI detector. For now, the safest answer is: look for provenance signals, check the source, be honest about AI edits, and do not treat a playful photo app result as proof of anything.
+Your iPhone cannot prove every photo is real. Apple Reference Image can help verify photos captured in Reference mode on iPhone 18 Pro and iPhone 18 Pro Max, but that is different from a universal AI detector. For now, the safest answer is: look for provenance signals, check the source, be honest about AI edits, and do not treat a playful photo app result as proof of anything.
 
-That distinction matters because AI images, aura apps, vibe cards, and social posts all travel through the same feeds. A photo can be fun without being evidence. A share card can start a group-chat reaction without claiming to verify the person or the scene.
+AI images, aura apps, vibe cards, and social posts all travel through the same feeds. A photo can be fun without being evidence. A share card can start a group-chat reaction without claiming to verify the person or the scene.
 
-## The Short Answer
+## No Single Setting Proves Every Photo Is Real
 
 No single iPhone setting can prove that every photo is real.
 
@@ -41,13 +39,13 @@ There are a few different things people often mix together:
 
 Those are related, but they are not interchangeable. Provenance is strongest when it starts at capture time and stays attached through editing and sharing. AI detection is more fragile because it often guesses from patterns in the image or file.
 
-## Why People Are Asking Now
+## What Apple Reference Image Does
 
-The Verge reported on August 11, 2026, that Apple appears to be developing an "Apple Reference Image" system in iOS 27 beta code. The report says the feature could authenticate photographs taken with an iPhone camera by embedding provenance information at capture time, and that the feature is not currently live for regular users.
+Apple Reference Image shipped with iOS 27 on iPhone 18 Pro and iPhone 18 Pro Max. In Reference mode, the Main camera signs photo data on the sensor and captures a reference image alongside the regular photo. In Photos, you can switch between the two to see edits such as a crop, a color adjustment, or a generative AI change.
 
-That is the useful way to read the news: it is a signal that phone makers are taking image provenance seriously, not a reason to assume every iPhone photo already carries a trustworthy proof badge.
+The limits matter. Reference mode is off by default, you set it up in Settings, and it is not available for capture in the EU. Photos taken in any other mode, or on any other iPhone, carry no reference image. So most iPhone photos still have no proof badge.
 
-Source: [The Verge: Apple could help you prove your iPhone photos aren't deepfakes](https://www.theverge.com/tech/977921/apple-reference-image-iphone-metadata).
+Source: [Apple Support: Use Apple Reference Image](https://support.apple.com/en-us/128064).
 
 ## What Photo Provenance Can Do
 
@@ -110,15 +108,7 @@ Sources: [Apple Privacy Features](https://www.apple.com/privacy/features/) and [
 
 ## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is a photo entertainment app, not a proof system.
-
-The useful VibeRater angle is exactly the opposite of overclaiming: choose a photo, get a playful aura-style result, save or share a card if you want, and keep the result in the entertainment lane. A VibeRater score is not an authenticity verdict, attractiveness rating, biometric read, health assessment, personality test, compatibility score, or identity signal.
-
-Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) says a photo used only for rating is sent to the rating service, processed in memory, and discarded. If you deliberately post, share, or save content, that selected media and related social data are handled separately so those features work.
-
-That boundary is important for photo culture in 2026. There is a place for provenance when a photo is evidence. There is also a place for harmless entertainment when a photo is just a group-chat spark.
-
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-iphone-prove-photo-real&mt=8) if you want a just-for-fun photo vibe check that does not pretend to prove what a photo is.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-iphone-prove-photo-real&mt=8).
 
 ## A Practical Rule
 
@@ -129,7 +119,7 @@ If you are sharing a photo as evidence, look for provenance, source context, and
 ## Frequently Asked Questions
 
 **Can your iPhone prove a photo is real?**
-Not for every photo. Reporting in August 2026 says Apple is exploring an iPhone camera provenance feature, but it is not live for regular users. Today, proof usually depends on provenance signals, metadata, platform labels, trusted context, and where the image came from.
+Not for every photo. Apple Reference Image, on iPhone 18 Pro and iPhone 18 Pro Max, can capture a signed reference image in Reference mode. You compare it with the regular photo in Photos to see edits. It is off by default and not available for capture in the EU. For other photos, proof depends on provenance signals, metadata, platform labels, trusted context, and where the image came from.
 
 **Is photo provenance the same as AI detection?**
 No. Provenance can show where a file came from or how it was handled. AI detection tries to guess whether content was generated or edited by AI. Neither is perfect, and missing metadata does not automatically mean a photo is fake.
@@ -137,5 +127,3 @@ No. Provenance can show where a file came from or how it was handled. AI detecti
 **What is C2PA or Content Credentials?**
 C2PA is an open technical standard for attaching tamper-evident provenance information to media, often shown to people as Content Credentials. It can add context, but metadata can be stripped or unsupported by some platforms.
 
-**Can VibeRater prove a photo is real?**
-No. VibeRater is a photo entertainment app for playful aura-style vibe results and share cards. It is not an authenticity, identity, biometric, attractiveness, personality, or AI-detection tool.

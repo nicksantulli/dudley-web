@@ -1,6 +1,6 @@
 ---
 title: "What Is a Vibe Check?"
-description: "A vibe check is a quick read on the mood, energy, or social fit of a person, place, photo, or moment. Here is what it means, how to use it, and where playful vibe apps fit."
+description: "A vibe check is a quick read on the mood, energy, or social fit of a person, place, photo, or moment."
 publishDate: 2026-08-04
 updatedDate: 2026-08-04
 category: "answers"
@@ -108,17 +108,9 @@ Be careful with apps, quizzes, captions, or posts that turn a playful read into 
 
 Those are different claims with higher proof and privacy expectations. A vibe check can be funny, specific, and useful without pretending to measure a person.
 
-## Where VibeRater Social Fits
+## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is built around the playful version of a vibe check. Pick or take a photo, get a VibeMeter score from 0 to 100, see an aura-style read, get an archetype and vibe anthem, then decide what happens next.
-
-The current U.S. App Store listing names the app VibeRater Social and describes it as a for-fun social app for photos, Vibes posts, Vibies, VibeChecks, Squad, Radar, Rise, share cards, and optional SlopGuard. The listing also frames scores, auras, archetypes, anthems, and Vibescopes as entertainment, not analysis.
-
-Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) says a photo used only for rating is sent to the rating service, processed in memory, and discarded. Media you deliberately post, share, or save is handled separately so those chosen social features can work.
-
-That makes the boundary clear: VibeRater Social can make a vibe check more shareable, but it is still for reactions, captions, and group-chat energy. It is not proof of who someone is.
-
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-what-is-a-vibe-check&mt=8) if you want to turn a photo into a playful vibe check card.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-what-is-a-vibe-check&mt=8).
 
 ## Simple Vibe Check Examples
 

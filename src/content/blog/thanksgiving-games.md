@@ -90,6 +90,6 @@ You can run any of the games above from memory. The awkward part is being the pe
 
 Leave one phone face-up. Someone else can swipe the next card.
 
-No account. The cards work offline. Every card is free. Ads stay out of a sitting, never during a session and never on the first one, and the Remove Ads purchase is a one-time buy if you want them gone.
+No account. The cards work offline. The 420 main cards and the Would You Rather deck are free, and extra packs are optional one-time purchases. Ads stay out of a sitting, never during a session and never on the first one, and the Remove Ads purchase is a one-time buy if you want them gone.
 
 [Table Talk is free on the App Store](https://apps.apple.com/app/id6780714565?pt=128970277&ct=tt-w-thanksgiving-games&mt=8).

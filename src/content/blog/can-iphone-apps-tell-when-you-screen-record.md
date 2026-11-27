@@ -20,8 +20,6 @@ faq:
     a: "No. Knowing that a screen is being captured is different from receiving the video file. Apple describes ReplayKit recording and broadcast flows as permission-gated, with recording storage and preview handled outside the normal app process."
   - q: "Can an app see old screen recordings in Photos?"
     a: "Only through the photo or video access path you grant, such as picking a specific recording, using the share sheet, granting limited Photos access, or granting broader Photos access."
-  - q: "Does VibeRater monitor screen recording?"
-    a: "The local VibeRater source checked for this post did not show ReplayKit, ScreenCaptureKit, or screen-capture status monitoring code. VibeRater's relevant privacy boundary is what photo, video, result, or share card you choose to rate, post, save, or share."
 draft: false
 ---
 
@@ -29,7 +27,7 @@ Yes, an iPhone app can often tell when its own screen is being recorded, mirrore
 
 For most people, the safe rule is simple: assume an app may know its own screen is being captured, but assume the recording itself becomes shareable only when you save it, pick it, upload it, send it through a share sheet, or grant Photos access.
 
-## The Short Answer
+## Three Separate Permissions and Signals
 
 There are three separate permissions and signals people mix together:
 
@@ -81,13 +79,7 @@ If the point is a quick joke, tutorial, bug report, outfit check, or group-chat 
 
 ## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is a photo and social entertainment app built around what you choose to rate, post, save, or share. The current Dudley site and App Store listing describe VibeRater as a social app for playful photo ratings, Vibes posts, Vibies, VibeChecks, Squad, Radar, Rise, Repli, and share cards. The current local app source checked for this article did not show ReplayKit, ScreenCaptureKit, or iOS screen-capture monitoring code.
-
-The relevant VibeRater privacy habit is intentional sharing. A private rating starts from a photo or short clip you choose. Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) says a rating-only photo is sent to the rating service, processed in memory, and discarded. Media you deliberately post, share, or save is stored so those chosen social features can work.
-
-VibeRater results also stay in the entertainment lane. Scores, auras, archetypes, anthems, Vibies, Vibescope outputs, and share cards are playful reactions, not biometric, health, identity, attractiveness, personality, dating, clinical, or authenticity measurements.
-
-[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-iphone-apps-tell-record&mt=8) if you want a just-for-fun photo result you can keep private, save, or share deliberately.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-iphone-apps-tell-record&mt=8).
 
 ## A Safer Screen Recording Rule
 
@@ -106,5 +98,3 @@ No. Knowing that a screen is being captured is different from receiving the vide
 **Can an app see old screen recordings in Photos?**  
 Only through the photo or video access path you grant, such as picking a specific recording, using the share sheet, granting limited Photos access, or granting broader Photos access.
 
-**Does VibeRater monitor screen recording?**  
-The local VibeRater source checked for this post did not show ReplayKit, ScreenCaptureKit, or screen-capture status monitoring code. VibeRater's relevant privacy boundary is what photo, video, result, or share card you choose to rate, post, save, or share.

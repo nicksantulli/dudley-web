@@ -1,6 +1,6 @@
 ---
 title: "Can iPhone Apps See Your Contacts?"
-description: "iPhone apps can see contacts only after you grant Contacts access, and newer iOS controls can limit that access to selected people. Here is what to check before using social and friend-finder apps."
+description: "An app needs Contacts access to browse your contacts. Apple's contact picker lets you share a contact without it, and newer iOS controls can limit access to selected people."
 publishDate: 2026-08-25
 updatedDate: 2026-08-25
 category: "Privacy"
@@ -15,23 +15,21 @@ relatedApps:
   - "vibe-rater"
 faq:
   - q: "Can iPhone apps see your contacts?"
-    a: "Only if you grant Contacts access. Apple says apps must ask before accessing Contacts, and you can later change which apps have access in Settings under Privacy & Security > Contacts."
+    a: "To browse your contacts, an app needs Contacts access. Without it, an app can still receive a contact you pick yourself in Apple's contact picker. Apple says apps must ask before accessing Contacts, and you can later change which apps have access in Settings under Privacy & Security > Contacts."
   - q: "Can an app access only selected contacts?"
     a: "Yes. Apple says iPhone can let you choose which contacts an app may access, including Limited Access where supported. You can edit selected contacts later in Settings."
   - q: "Does Contacts access mean the app uploads my address book?"
     a: "Not automatically. Contacts permission controls device access; upload, storage, and account matching depend on the app's implementation and privacy policy. Check the App Store privacy label and the app's own explanation."
-  - q: "How does VibeRater use Contacts?"
-    a: "VibeRater's local app copy says it scans contacts on the device for saved @handles or invite codes so you can find friends, and that contacts are not uploaded. You can also add friends by @username or QR."
 draft: false
 ---
 
 iPhone apps cannot see your contacts by default. They can ask for Contacts access, and you decide whether to allow it, limit it, or deny it. If you already granted access, you can review it later in **Settings > Privacy & Security > Contacts**.
 
-The practical answer is simple: Contacts permission is a device access choice, not a blank answer to every privacy question. An app may need contacts to help you find friends, invite people, fill forms, or sync an address book. What happens after that depends on the app's design, privacy policy, and App Store privacy label.
+Contacts permission is a device access choice, not a blank answer to every privacy question. An app may need contacts to help you find friends, invite people, fill forms, or sync an address book. What happens after that depends on the app's design, privacy policy, and App Store privacy label.
 
 Sources: [Apple Support: Control access to your contacts on iPhone](https://support.apple.com/guide/iphone/control-access-to-contacts-iph9536aa9a5/ios), [Apple Developer: Accessing the contact store](https://developer.apple.com/documentation/contacts/accessing-the-contact-store), [Apple Developer: App Privacy Details](https://developer.apple.com/app-store/app-privacy-details/), and [VibeRater Social](https://dudleyapps.com/apps/vibe-rater/).
 
-## The Short Answer
+## Three Different Contacts Questions
 
 There are three different questions people usually mean:
 
@@ -97,17 +95,9 @@ Before granting access, ask:
 
 The best social products make this choice clear instead of hiding it behind a vague "find friends" button.
 
-## How This Applies To VibeRater
+## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is a Dudley iPhone app for playful photo ratings, Vibes posts, Vibies, VibeChecks, Squad, Radar, Rise, Repli, and social discovery. The current U.S. App Store listing describes VibeRater as a social app built around what you choose to share, with public, Squad-only, and private controls.
-
-The local VibeRater app source gives a narrower Contacts explanation. Its Contacts permission copy says VibeRater scans contacts on the device for saved @handles or invite codes so you can find friends, and that contacts are not uploaded. The Add Friend screen also lets people add by Contacts, @username, or QR, and tells users they can keep adding friends by @username or QR if Contacts access is off.
-
-That is the right privacy shape for this kind of feature: Contacts can be helpful for friend discovery, but they should not be the only path. If you want the smallest surface, add people directly by @username or QR. If you use Contacts, review the permission in iOS Settings afterward.
-
-VibeRater's broader product boundary is also important. Its scores, auras, archetypes, anthems, and Vibescope outputs are entertainment, not biometric, health, identity, attractiveness, clinical, personality, or dating analysis. Contacts may help you find people; they do not make a vibe result more "real."
-
-[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-iphone-apps-see-contacts&mt=8) if you want playful photo reactions with friend options that are separate from your whole address book.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. VibeRater asks for Contacts only to find friends who saved their @handle or an invite code. Contacts stay on your iPhone. You can also add friends by @username or QR code. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-iphone-apps-see-contacts&mt=8).
 
 ## A Safer Contacts Rule
 
@@ -120,7 +110,7 @@ Contacts are personal, but they are also borrowed from everyone in your phone. T
 ## FAQ
 
 **Can iPhone apps see your contacts?**  
-Only if you grant Contacts access. Apple says apps must ask before accessing Contacts, and you can later change which apps have access in Settings under Privacy & Security > Contacts.
+To browse your contacts, an app needs Contacts access. Without it, an app can still receive a contact you pick yourself in Apple's contact picker. Apple says apps must ask before accessing Contacts, and you can later change which apps have access in Settings under Privacy & Security > Contacts.
 
 **Can an app access only selected contacts?**  
 Yes. Apple says iPhone can let you choose which contacts an app may access, including Limited Access where supported. You can edit selected contacts later in Settings.
@@ -128,5 +118,3 @@ Yes. Apple says iPhone can let you choose which contacts an app may access, incl
 **Does Contacts access mean the app uploads my address book?**  
 Not automatically. Contacts permission controls device access; upload, storage, and account matching depend on the app's implementation and privacy policy. Check the App Store privacy label and the app's own explanation.
 
-**How does VibeRater use Contacts?**  
-VibeRater's local app copy says it scans contacts on the device for saved @handles or invite codes so you can find friends, and that contacts are not uploaded. You can also add friends by @username or QR.

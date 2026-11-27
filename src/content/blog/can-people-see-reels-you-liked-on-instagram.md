@@ -29,7 +29,7 @@ Yes, people may be able to see some Reels you liked on Instagram. Instagram says
 
 The practical takeaway: if a Reel would be awkward to explain in a group chat, do not rely on like-count settings to make that interaction private. Use saves, DMs, close-friend sharing, or Instagram's activity controls instead.
 
-## The Short Answer
+## Instagram Likes Are Contextual, Not Private
 
 Instagram likes are contextual, not fully private.
 

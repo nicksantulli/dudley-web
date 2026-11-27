@@ -1,6 +1,6 @@
 ---
 title: "Do Photo Apps Use Facial Recognition?"
-description: "Some photo apps use face recognition to group, search, or identify people in images. Here is what iPhone users should check before giving a photo app access, and how to separate fun photo ratings from biometric identity claims."
+description: "Some photo apps use face recognition to group, search, or identify people in images."
 publishDate: 2026-08-04
 updatedDate: 2026-08-04
 category: "privacy"

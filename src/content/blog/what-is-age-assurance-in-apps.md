@@ -1,6 +1,6 @@
 ---
 title: "What Is Age Assurance in Apps?"
-description: "Age assurance is how an app or app store estimates, checks, or receives a user's age range so it can apply age-appropriate rules. Here is what it means for social apps, photo apps, and VibeRater users."
+description: "Age assurance is how an app or app store estimates, checks, or receives a user's age range so it can apply age-appropriate rules."
 publishDate: 2026-09-01
 updatedDate: 2026-09-01
 category: "app privacy"
@@ -24,8 +24,6 @@ faq:
     a: "Regulators, courts, app stores, and large platforms are putting more pressure on social services to identify child and teen users and apply age-appropriate protections. That has made age assurance a current product, privacy, and policy issue."
   - q: "Does age assurance require a face scan?"
     a: "Not always. Some systems use ID, payment, parental approval, self-declared age ranges, or app-store signals. Some services do use facial age estimation or visual signals, but that is only one approach."
-  - q: "How does this relate to VibeRater?"
-    a: "VibeRater Social is a 16+ iPhone social entertainment app. The useful takeaway is that age, privacy, posting, messaging, location, and user-generated-content controls belong together; VibeRater is not an age-verification provider."
 draft: false
 ---
 
@@ -35,7 +33,7 @@ The topic is getting louder because social apps, app stores, regulators, and cou
 
 Sources: [Associated Press on social-media age checks](https://apnews.com/article/instagram-meta-openai-age-checks-verification-1d36289aa2c8a9422af83798f7925aa9), [Apple Developer age assurance frameworks Q&A](https://developer.apple.com/support/age-assurance), [Apple Developer age requirements update](https://developer.apple.com/news/?id=f5zj08ey), [FTC COPPA age-verification policy statement](https://www.ftc.gov/news-events/news/press-releases/2026/02/ftc-issues-coppa-policy-statement-incentivize-use-age-verification-technologies-protect-children), [Google Play developer age-law guidance](https://support.google.com/googleplay/android-developer/answer/16569691?hl=en), [Meta age assurance update](https://about.fb.com/news/2026/05/ai-age-assurance-teens/), and [VibeRater Social](https://dudleyapps.com/apps/vibe-rater/).
 
-## The Short Answer
+## Age Assurance Is a Category of Checks
 
 Age assurance is not one technology. It is a category of checks and signals used to place people into age-appropriate experiences.
 
@@ -85,7 +83,7 @@ Meta's May 2026 update says it uses AI and other signals to place suspected teen
 
 Meta also added a July 31, 2026 correction saying its AI does not use biometric data to identify whether a person is underage, does not create facial fingerprints, and does not identify who is in a photo. Meta frames the visual work as recognizing general visual patterns that may suggest someone is underage.
 
-That distinction matters. A visual age signal is not automatically the same thing as facial recognition, but it still asks users to trust how photos and videos are analyzed, how decisions are made, and how errors are handled.
+A visual age signal is not automatically the same thing as facial recognition, but it still asks users to trust how photos and videos are analyzed, how decisions are made, and how errors are handled.
 
 ## What The FTC Says About COPPA Age Checks
 
@@ -110,15 +108,7 @@ The privacy-friendly version of age assurance should collect the least sensitive
 
 ## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is a 16+ iPhone social entertainment app from Dudley Development. Its App Store listing describes photo ratings, creative posts, social discovery, messaging, user-generated content, location-based Radar features, and optional in-app purchases.
-
-That makes age context relevant, but VibeRater is not an age-verification company and should not be treated as one. The product lesson is narrower: social features, photo uploads, messaging, discovery, location, and posting controls need clear boundaries because they affect younger users differently than a private one-player utility would.
-
-VibeRater's public privacy policy separates private rating-only photos from media a user chooses to post, share, or save. Rating-only photos are processed by the rating service in memory and discarded; posted, shared, or saved media is stored so selected social features work.
-
-The entertainment boundary matters too. VibeRater scores, auras, archetypes, anthems, Vibescopes, and similar outputs are playful. They are not biometric, health, identity, attractiveness, clinical, personality, or dating-compatibility measurements.
-
-[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-age-assurance-apps&mt=8) if you want a photo-vibe app built around chosen moments, social context, and controls.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-age-assurance-apps&mt=8).
 
 ## The Practical Rule
 
@@ -144,6 +134,3 @@ Regulators, courts, app stores, and large platforms are putting more pressure on
 
 Not always. Some systems use ID, payment, parental approval, self-declared age ranges, or app-store signals. Some services do use facial age estimation or visual signals, but that is only one approach.
 
-### How does this relate to VibeRater?
-
-VibeRater Social is a 16+ iPhone social entertainment app. The useful takeaway is that age, privacy, posting, messaging, location, and user-generated-content controls belong together. VibeRater is not an age-verification provider.

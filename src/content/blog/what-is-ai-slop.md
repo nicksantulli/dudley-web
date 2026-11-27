@@ -1,6 +1,6 @@
 ---
 title: "What Is AI Slop?"
-description: "AI slop is low-effort AI-generated content that makes feeds feel fake, repetitive, or misleading. Here is what it means for photo trends, social apps, and vibe-check posts."
+description: "AI slop is low-effort AI-generated content that makes feeds feel fake, repetitive, or misleading."
 publishDate: 2026-08-01
 updatedDate: 2026-08-01
 category: "answers"
@@ -25,7 +25,7 @@ draft: false
 
 AI slop means low-effort AI-generated content that makes the internet feel fake, repetitive, or misleading. It is not a formal legal category. It is the phrase people use when a feed fills up with synthetic images, auto-written posts, recycled captions, fake reactions, or realistic edits that lack clear context.
 
-The useful answer is not "AI bad." The useful answer is: AI content needs context. If a post is realistic, public-facing, or easy to mistake for something that actually happened, label it. If a photo app gives you a playful aura, archetype, score, or share card, keep it in the entertainment lane.
+AI content needs context. If a post is realistic, public-facing, or easy to mistake for something that actually happened, label it. If a photo app gives you a playful aura, archetype, score, or share card, keep it in the entertainment lane.
 
 ## The Short Definition
 
@@ -116,13 +116,7 @@ That is why the best vibe-check posts feel social instead of synthetic. The valu
 
 ## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is a free iPhone entertainment app built around a photo you choose. The current App Store listing describes a playful vibe report with an overall score, aura color, archetype, tailored scorecard, and share card. It also says the app is "vibe science, not real science."
-
-Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) says a photo used only for rating is sent to the rating service, processed in memory, and discarded. If you deliberately post, share, or save content, that selected media and related data are handled separately so those features work.
-
-That positioning matters in an AI slop moment. VibeRater is not a public-profile AI remix tool, not a dating-compatibility test, not an appearance measurement, and not a proof engine. It is a chosen-photo entertainment app for making a shareable vibe card and starting a group-chat reaction.
-
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-what-is-ai-slop&mt=8) if you want a playful photo vibe check that stays honest about what it is.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-what-is-ai-slop&mt=8).
 
 ## How To Avoid Making AI Slop
 

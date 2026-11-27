@@ -6,4 +6,5 @@ export const MOVED_PATHS = [
   '/tools/whats-my-vibe/',
   '/compare/best-photo-rating-apps/',
   '/compare/vibe-check-apps/',
+  '/blog/tags/vibe-rater/',
 ];

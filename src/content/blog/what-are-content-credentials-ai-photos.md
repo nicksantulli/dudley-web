@@ -1,6 +1,6 @@
 ---
 title: "What Are Content Credentials on AI Photos?"
-description: "Content Credentials are provenance metadata that can show how a photo was created or edited. Here is what they mean, what they do not prove, and how to read them before sharing AI photos."
+description: "Content Credentials are provenance metadata that can show how a photo was created or edited."
 publishDate: 2026-08-29
 updatedDate: 2026-08-29
 category: "ai culture"
@@ -22,8 +22,6 @@ faq:
     a: "No. Content Credentials are metadata attached to a file or associated with it. Watermarks such as SynthID are signals embedded into the media itself and may survive some edits differently."
   - q: "Can social apps read Content Credentials?"
     a: "Some platforms use Content Credentials as one signal for AI labels. TikTok says uploads with attached Content Credentials can trigger automatic AI-generated labels, but platform behavior varies."
-  - q: "How does this relate to VibeRater?"
-    a: "VibeRater Social is not a provenance verifier. The relevant connection is sharing context: its ratings and share cards are entertainment, and users should keep private, posted, AI-edited, and saved media clearly separated."
 draft: false
 ---
 
@@ -33,7 +31,7 @@ The practical answer: treat Content Credentials as one transparency signal. If a
 
 Sources: [C2PA explainer](https://c2pa.org/specifications/specifications/2.2/explainer/Explainer.html), [C2PA FAQ](https://c2pa.org/faqs/), [Google Gemini Apps Help: Verify AI-generated images, videos, and audio](https://support.google.com/gemini/answer/16722517?hl=en), [Google: Tools to understand how content was created and edited](https://blog.google/innovation-and-ai/products/identifying-ai-generated-media-online/), [Google DeepMind: SynthID](https://deepmind.google/models/synthid/), [Apple: Apple Intelligence brings powerful AI capabilities into everyday experiences](https://www.apple.com/newsroom/2026/06/apple-intelligence-brings-powerful-ai-capabilities-into-everyday-experiences/), [TikTok: AI-generated content](https://support.tiktok.com/en/using-tiktok/creating-videos/ai-generated-content), [Apple Developer: App privacy details](https://developer.apple.com/app-store/app-privacy-details/), and [VibeRater Social](https://dudleyapps.com/apps/vibe-rater/).
 
-## The Short Answer
+## Content Credentials Are a Content History Card
 
 Content Credentials are provenance metadata based on the C2PA standard. In plain English, they are a content history card that can travel with a file when supported tools preserve it.
 
@@ -130,15 +128,7 @@ Content Credentials can help explain a file's history. They do not replace readi
 
 ## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is not a C2PA verifier, Gemini verifier, SynthID detector, TikTok labeling tool, or camera-authenticity system. It is not affiliated with or endorsed by Google, Apple, C2PA, Adobe, TikTok, or Gemini.
-
-The useful connection is sharing behavior. A photo can move from private camera roll to AI edit to group-chat joke to social post very quickly. Those contexts are not the same.
-
-VibeRater Social is built as entertainment: a VibeMeter score, aura-style read, archetype, anthem, Vibescope, or share card is not a measurement of appearance, health, identity, personality, attractiveness, dating compatibility, or authenticity. The product angle is control. You can rate a moment, keep it private, post it to Vibes, share with your Squad, or save a card when you choose.
-
-Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) also separates rating-only photos from media you deliberately post, share, or save. Photos used only for rating are processed by the rating service in memory and discarded; posted, shared, or saved media is stored so those social features work.
-
-That same distinction matters for AI-edited images. If the context changes, say so. A private joke, a playful vibe read, a feed post, and a supposedly real screenshot carry different expectations.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. The [VibeRater privacy policy](/privacy/vibe-rater/) has the details.
 
 ## Quick Rule
 
@@ -164,6 +154,3 @@ No. Content Credentials are metadata attached to or associated with a media file
 
 Some platforms use Content Credentials as one signal for AI labels. TikTok says uploads with attached Content Credentials can trigger automatic AI-generated labels, but platform behavior varies.
 
-### Is VibeRater an AI-photo detector?
-
-No. VibeRater Social is an entertainment app for playful photo ratings, social posts, and share cards. It should not be treated as a universal detector for AI-edited images or as proof that a photo is real.

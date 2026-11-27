@@ -30,11 +30,11 @@ draft: false
 
 Not Enough Data in App Store Connect usually means Apple does not have enough eligible data to show the metric, view, date range, or filter you selected. It is not the same thing as zero downloads, zero users, zero revenue, or a failed app.
 
-The clean interpretation is: the metric is unmeasured in that view. Before you make a decision, check which metric is missing, what date range you selected, which filters are active, and whether Apple says that metric has an availability threshold.
+App Store Connect is not displaying enough eligible data for the selected metric, period, and filters. The underlying value may exist, but this view does not expose it. Before you make a decision, check which metric is missing, what date range you selected, which filters are active, and whether Apple says that metric has an availability threshold.
 
 Sources: [Apple App Store Connect Analytics metric definitions](https://developer.apple.com/help/app-store-connect-analytics/reference/metrics-definitions/), [Apple App Analytics overview](https://developer.apple.com/app-store-connect/analytics/), [Apple App Store Connect sales analytics](https://developer.apple.com/help/app-store-connect-analytics/monetization/sales), and [Apple App Analytics & Privacy](https://www.apple.com/legal/privacy/data/en/app-analytics/).
 
-## The Short Answer
+## Not Enough Data Is Not Zero
 
 When App Store Connect says Not Enough Data, read it as a data availability message. It means the dashboard cannot responsibly show the selected result yet.
 

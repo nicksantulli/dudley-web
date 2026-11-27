@@ -1,6 +1,6 @@
 ---
 title: "Does iPhone Share Photo Metadata When You Send a Picture?"
-description: "Yes, iPhone photo sharing can include metadata such as date, time, location, device details, and captions. Here is how to remove location before sharing and what to check before using photo apps."
+description: "Yes, iPhone photo sharing can include metadata such as date, time, location, device details, and captions."
 publishDate: 2026-08-21
 updatedDate: 2026-08-21
 category: "Privacy"
@@ -19,8 +19,6 @@ faq:
     a: "In Photos, open or select the photo, tap Share, tap Options at the top of the share sheet, turn off Location, tap Done, then choose where to send it."
   - q: "Is turning off Location the same as removing all photo metadata?"
     a: "No. Turning off Location removes location data for that share. Apple's All Photos Data option is broader and can include the original file, edit history, and metadata when available through supported sharing methods."
-  - q: "Does VibeRater need my whole photo library?"
-    a: "No. Dudley's VibeRater privacy policy separates rating-only photos from posted, shared, or saved media. A rating-only photo is processed in memory and discarded; selected social media is stored only so those chosen features work."
 draft: false
 ---
 
@@ -98,19 +96,7 @@ Do not assume "photo app" means one privacy model. Read the specific app's polic
 
 ## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is a free iPhone social app for playful photo ratings, Vibes posts, Vibies, VibeChecks, Squad, Radar, Rise, and shareable cards. The current App Store listing describes photo ratings as entertainment and creative expression, not biometric, health, identity, attractiveness, or clinical analysis.
-
-The useful privacy boundary is choice. Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) separates a photo used only for rating from media you deliberately post, share, or save. A rating-only photo is processed in memory and discarded. Media you choose to post, share, or save is stored so those selected social features can work.
-
-If you are using a photo for a vibe check, use the same habit you would use anywhere else:
-
-- pick the specific photo you mean to use
-- avoid sensitive photos when the context is public or social
-- treat VibeRater outputs as entertainment, not proof or measurement
-- share cards and posts intentionally
-- check location and metadata when sending original photos outside the app
-
-[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-iphone-share-metadata&mt=8) if you want a playful photo reaction with privacy controls around what stays private, what goes to your Squad, and what becomes a post.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-iphone-share-metadata&mt=8).
 
 ## Quick Checklist Before Sharing a Photo
 
@@ -135,5 +121,3 @@ In Photos, open or select the photo, tap Share, tap Options at the top of the sh
 **Is turning off Location the same as removing all photo metadata?**  
 No. Turning off Location removes location data for that share. Apple's All Photos Data option is broader and can include the original file, edit history, and metadata when available through supported sharing methods.
 
-**Does VibeRater need my whole photo library?**  
-No. Dudley's VibeRater privacy policy separates rating-only photos from posted, shared, or saved media. A rating-only photo is processed in memory and discarded; selected social media is stored only so those chosen features work.

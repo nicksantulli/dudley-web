@@ -1,6 +1,6 @@
 ---
 title: "What Does Aura Mean in Slang?"
-description: "Aura slang means cool presence, social energy, or the imaginary points people gain and lose online. Here is how aura points work and how to use the term without taking it too seriously."
+description: "Aura slang means cool presence, social energy, or the imaginary points people gain and lose online."
 publishDate: 2026-08-03
 updatedDate: 2026-08-03
 category: "answers"
@@ -108,13 +108,7 @@ Apple says App Store pages include privacy information developers self-report, i
 
 ## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is built for the playful version of aura: choose a photo, get a vibe scorecard, see an aura-style result, and share a card when the result is funny enough for the group chat.
-
-The public App Store listing describes VibeRater Social as an entertainment app with photo-based vibe reports, aura colors, archetypes, and share cards. Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) says a photo used only for rating is sent to the rating service, processed in memory, and discarded. Media you deliberately post, share, or save is handled separately so those selected features can work.
-
-The important boundary is the same one this slang needs: fun, not proof. VibeRater is for reactions, captions, and shareable results. It is not a serious measurement of who someone is.
-
-[VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-aura-mean-slang&mt=8) if you want to turn a photo into a playful aura-style vibe card.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-aura-mean-slang&mt=8).
 
 ## Simple Aura Slang Examples
 

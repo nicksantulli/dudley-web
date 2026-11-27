@@ -33,7 +33,7 @@ That does not mean the app never uses the internet. Ads, analytics, crash report
 
 Sources: Apple's [User Privacy and Data Use](https://developer.apple.com/app-store/user-privacy-and-data-use/) guidance, Apple's [App Privacy Report](https://support.apple.com/en-ie/102188) help, Apple Developer documentation for [`URLSessionConfiguration.waitsForConnectivity`](https://developer.apple.com/documentation/Foundation/URLSessionConfiguration/waitsForConnectivity), Ink & Switch's [local-first software essay](https://www.inkandswitch.com/essay/local-first/), and the current U.S. [Table Talk: Conversation Cards App Store listing](https://apps.apple.com/app/id6780714565?pt=128970277&ct=tt-w-offline-first-mean-app&mt=8).
 
-## The Short Answer
+## Offline-First Means the Device Comes First
 
 An offline-first iPhone app treats the device as the first place where the useful experience happens.
 
@@ -60,7 +60,7 @@ An offline-first app may still connect for:
 
 The meaningful question is narrower: can the user do the main job when the network is gone?
 
-That distinction matters because a weak connection should not turn a simple local task into a spinning wheel. A dinner-table prompt, a saved checklist, a study drill, or a local game should not need perfect signal unless the feature genuinely depends on another device, another person, or a server.
+A weak connection should not turn a simple local task into a spinning wheel. A dinner-table prompt, a saved checklist, a study drill, or a local game should not need perfect signal unless the feature genuinely depends on another device, another person, or a server.
 
 ## What Offline-First Usually Feels Like
 

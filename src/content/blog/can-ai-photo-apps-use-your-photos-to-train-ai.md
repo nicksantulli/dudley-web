@@ -1,6 +1,6 @@
 ---
 title: "Can AI Photo Apps Use Your Photos To Train AI?"
-description: "Some AI services can use saved media to improve models, but every photo app is different. Here is how to check AI training, iPhone photo access, privacy labels, and VibeRater's entertainment boundary."
+description: "Some AI services can use saved media to improve models, but every photo app is different."
 publishDate: 2026-08-15
 updatedDate: 2026-08-15
 category: "privacy"
@@ -20,8 +20,6 @@ faq:
     a: "Not by itself. iOS photo access controls what an app can reach on your device, but training depends on what the app uploads, stores, and says it will do with the data. Selected-photo access is usually safer than full-library access when you only need to use one image."
   - q: "Where can I check an app's photo data practices?"
     a: "Start with the App Store privacy label, then read the app's privacy policy for retention, model-training, third-party AI, deletion, and sharing language. Also check iOS Settings to see whether the app has selected-photo or full-photo access."
-  - q: "Does VibeRater use private rating photos to train models?"
-    a: "Dudley's VibeRater privacy policy says a photo used only for rating is sent to the rating service, processed in memory, discarded, and not used to train models. Posted, shared, or saved media is handled separately so those social features work."
 draft: false
 ---
 
@@ -29,7 +27,7 @@ Some AI photo apps can use uploaded or saved media to improve AI systems, but yo
 
 That matters more in 2026 because people are uploading photos into search, try-on tools, filters, AI editors, avatar makers, and vibe-check apps every day. A one-photo joke and a full camera-roll training pipeline are very different privacy situations.
 
-## The Short Answer
+## Training Depends on the Service, Not the Photo Permission
 
 Yes, an AI photo service may be able to use photos or saved media to improve AI models if its settings and policies allow that use. No, granting photo access on your iPhone does not automatically mean every app can train on your entire camera roll.
 
@@ -122,17 +120,7 @@ The goal is not panic. It is matching the privacy risk to the photo.
 
 ## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is a free iPhone social app built around playful photo ratings, share cards, Vibes posts, Vibies, Squad reactions, Radar, Rise, and optional SlopGuard. The important boundary is that VibeRater is for entertainment, not analysis or measurement.
-
-Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) says a photo used only for rating is sent to the rating service, processed in memory, discarded, and not stored or used to train models. The policy separates that from media you deliberately post, share, or save, which is stored so social and sharing features can work.
-
-That distinction is the whole point:
-
-- A private rating photo is a request to generate a playful result.
-- A posted Vibie, Vibes post, saved card, comment, or shared social object is content you chose to keep or publish.
-- A VibeRater score, aura, archetype, anthem, Vibie, or Vibescope is not an identity check, attractiveness score, biometric reading, personality test, dating-compatibility result, health signal, or AI-detection verdict.
-
-[Download VibeRater on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-ai-photo-apps-use-ai&mt=8) if you want a just-for-fun photo reaction with sharing controls, then keep sensitive photos out of any app unless its privacy terms match your comfort level.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-ai-photo-apps-use-ai&mt=8).
 
 ## A Simple Rule
 
@@ -151,5 +139,3 @@ Not by itself. iOS photo access controls what an app can reach on your device, b
 **Where can I check an app's photo data practices?**
 Start with the App Store privacy label, then read the app's privacy policy for retention, model-training, third-party AI, deletion, and sharing language. Also check iOS Settings to see whether the app has selected-photo or full-photo access.
 
-**Does VibeRater use private rating photos to train models?**
-Dudley's VibeRater privacy policy says a photo used only for rating is sent to the rating service, processed in memory, discarded, and not used to train models. Posted, shared, or saved media is handled separately so those social features work.

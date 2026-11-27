@@ -1,6 +1,6 @@
 ---
 title: "Does Google Photos Ask Photos Use Your Photos for AI Training?"
-description: "Google says Gemini features in Google Photos do not use your personal Photos data for ads or to train generative AI models outside Google Photos. Here is the privacy catch to understand before you ask AI about your camera roll."
+description: "Google says Gemini features in Google Photos do not use your personal Photos data for ads or to train generative AI models outside Google Photos."
 publishDate: 2026-08-30
 updatedDate: 2026-08-30
 category: "ai culture"
@@ -24,8 +24,6 @@ faq:
     a: "Google says Ask Photos responses are not reviewed by humans unless you give feedback or in rare abuse or harm cases. Queries donated for review are separated from your account and do not include your photos, videos, Ask Photos response, or account information used to generate the response."
   - q: "What changes if I share a Google Photos image with Gemini or another app?"
     a: "Google says the policy of the other Google service or third-party app applies when you share or connect Google Photos content to that service."
-  - q: "How is this different from VibeRater?"
-    a: "VibeRater Social is not a camera-roll memory search tool or a Google Photos feature. Its relevant lesson is context control: rating-only photos, posted media, saved results, and shared social content should be treated as different privacy situations."
 draft: false
 ---
 
@@ -35,7 +33,7 @@ The practical answer is more nuanced: Ask Photos still processes your library so
 
 Sources: [Google Photos Gemini features privacy hub](https://support.google.com/photos/answer/15344015?hl=en), [Google: Ask button and Ask Photos tips](https://blog.google/products-and-platforms/products/photos/ask-button-ask-photos-tips/), [Google Photos face groups help](https://support.google.com/photos/answer/6128838?hl=en), [Apple Developer: App privacy details](https://developer.apple.com/app-store/app-privacy-details/), and [VibeRater Social](https://dudleyapps.com/apps/vibe-rater/).
 
-## The Short Answer
+## Ask Photos Is a Gemini Feature Inside Google Photos
 
 Ask Photos is a Gemini-powered feature inside Google Photos. It can search your library with natural-language questions, answer follow-ups about images, suggest related memories, and help with edits.
 
@@ -101,13 +99,7 @@ For AI photo apps, check:
 
 ## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is not Google Photos, Ask Photos, Gemini, a photo-library search assistant, a biometric identity tool, or an AI training dashboard. It is also not affiliated with or endorsed by Google.
-
-The useful connection is privacy context. A private camera roll, an AI-assisted search result, a playful rating, a saved share card, and a public social post are not the same thing.
-
-VibeRater Social is built around entertainment and sharing controls. Its App Store listing describes ratings as creative expression, not biometric, health, identity, attractiveness, or clinical analysis. The product lesson is to keep the context visible: rate a moment, decide whether it stays private, share with a Squad when you mean to, or post only when the post belongs in public.
-
-Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) makes the same kind of distinction: rating-only photos are different from media you deliberately post, share, or save for social features.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. The [VibeRater privacy policy](/privacy/vibe-rater/) has the details.
 
 ## Quick Rule
 
@@ -133,6 +125,3 @@ Google says Ask Photos responses are not reviewed by humans unless you give feed
 
 Google says the policy of the other Google service or third-party app applies when you share or connect Google Photos content to that service. Treat sharing as a new privacy decision, not as a continuation of the same Google Photos privacy boundary.
 
-### Is VibeRater a Google Photos or Gemini alternative?
-
-No. VibeRater Social is a social entertainment app for playful photo ratings, share cards, and chosen posts. It is not a camera-roll search assistant, a Google Photos feature, or a Gemini privacy tool.

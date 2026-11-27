@@ -1,6 +1,6 @@
 ---
 title: "Can Apps See All Your iPhone Photos?"
-description: "iPhone apps can see your full photo library only when you grant full Photos access. Here is how Limited Access, Photo Picker, and privacy labels work."
+description: "An iPhone app sees your whole photo library only with Full Access. How Limited Access, the photo picker, and privacy labels work."
 publishDate: 2026-07-27
 updatedDate: 2026-07-27
 category: "answers"
@@ -18,14 +18,12 @@ faq:
     a: "Limited Access means the app can use only the photos and videos you selected for that app. You can review or change the selection later in Settings under Privacy & Security > Photos."
   - q: "Does using a photo app mean it gets my whole camera roll?"
     a: "No. Many photo apps can work from a single selected image. The important check is whether the app asks for Full Access, Limited Access, Add Photos Only, or uses Apple's picker for one-time selection."
-  - q: "How does VibeRater handle rating photos?"
-    a: "VibeRater's public privacy policy says a rating-only photo is sent to its service to generate the playful result and then discarded, while media you choose to post, share, or save may be stored so those features work."
 draft: false
 ---
 
-Apps cannot automatically see every photo on your iPhone. They can see your full library only when you grant full Photos access. For most one-photo workflows, you can choose a specific image, use Limited Access, or use the system picker so the rest of your camera roll stays private.
+Apps cannot automatically see every photo on your iPhone. An app sees your whole library only with Full Access. With Limited Access or Apple's photo picker, it sees only the photos you choose. For most one-photo workflows, you can choose a specific image, use Limited Access, or use the system picker so the rest of your camera roll stays private.
 
-That distinction matters for photo rating apps, aura apps, editors, social apps, and any tool that asks you to upload a selfie. The privacy question is not simply "does this app use photos?" The better question is: **which photos did you give it, and what does the app say it does with them?**
+The privacy question is not simply "does this app use photos?" The better question is: **which photos did you give it, and what does the app say it does with them?**
 
 ## Why this question is coming up now
 
@@ -120,13 +118,9 @@ Be more skeptical when an app presents photo results as serious measurements. A 
 
 For that distinction, see [Are Aura Apps Real?](/blog/are-aura-apps-real/).
 
-## Where VibeRater fits
+## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is a photo-based entertainment app, so the right privacy question is straightforward: what happens when you rate a photo, and what changes if you decide to post, share, or save something?
-
-The current [VibeRater privacy policy](/privacy/vibe-rater/) says a rating-only photo is sent to the rating service to generate the playful result and then discarded, processed in memory rather than stored. It also says media you choose to post, share, or save may be stored so those selected features work.
-
-That is the line to look for in any photo app: private one-off processing should be described differently from deliberate posting, saving, or social sharing.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. The [VibeRater privacy policy](/privacy/vibe-rater/) has the details.
 
 ## The best default for photo apps
 
@@ -147,5 +141,3 @@ Limited Access means the app can use only the photos and videos you selected for
 **Does using a photo app mean it gets my whole camera roll?**
 No. Many photo apps can work from a single selected image. The important check is whether the app asks for Full Access, Limited Access, Add Photos Only, or uses Apple's picker for one-time selection.
 
-**How does VibeRater handle rating photos?**
-VibeRater's public privacy policy says a rating-only photo is sent to its service to generate the playful result and then discarded, while media you choose to post, share, or save may be stored so those features work.

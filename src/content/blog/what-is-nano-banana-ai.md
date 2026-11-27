@@ -1,6 +1,6 @@
 ---
 title: "What Is Nano Banana AI?"
-description: "Nano Banana is Google's nickname for Gemini image generation and editing models. Here is what the trend means, what it can do with photos, and what to check before sharing AI-edited images."
+description: "Nano Banana is Google's nickname for Gemini image generation and editing models."
 publishDate: 2026-08-27
 updatedDate: 2026-08-27
 category: "answers"
@@ -22,8 +22,6 @@ faq:
     a: "Yes. Google's official posts describe image editing that can work from uploaded photos, preserve the look of people or pets, blend images, change scenes, and apply styles. Treat that as creative editing, not proof that an image remains real."
   - q: "Does Nano Banana mark AI-generated images?"
     a: "Google says Gemini-generated or edited images use SynthID, and Google also documents Content Credentials for provenance in supported Gemini verification flows. These tools help with transparency, but they are not a universal detector for every AI image on the internet."
-  - q: "How does this relate to VibeRater?"
-    a: "VibeRater Social is not affiliated with Google or Gemini. The useful connection is practical: if you rate, post, or share AI-edited photos, keep the context clear, use privacy controls, and remember that VibeRater ratings are entertainment outputs rather than measurements."
 draft: false
 ---
 
@@ -33,7 +31,7 @@ The short version: Nano Banana is a creative AI image tool, not proof that a pho
 
 Sources: [Google: Image editing in Gemini just got a major upgrade](https://blog.google/products-and-platforms/products/gemini/updated-image-editing-model/), [Google: Nano Banana 2](https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/), [Google: Personal Intelligence with Nano Banana and Google Photos](https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence-nano-banana/), [Gemini Apps Privacy Hub](https://support.google.com/gemini/answer/13594961), [Google Gemini Help: Verify AI-generated images, videos, and audio](https://support.google.com/gemini/answer/16722517), and [VibeRater Social](https://dudleyapps.com/apps/vibe-rater/).
 
-## The Short Answer
+## Nano Banana Is a Google Image Model Brand
 
 Nano Banana is a Google/Gemini image model brand, not a magic label that means every image is trustworthy.
 
@@ -142,6 +140,3 @@ It depends on the product and your settings. For Gemini, read Google's Gemini Ap
 
 It can make convincing AI-edited visuals, so treat results as creative edits. Do not use them to fake events, endorsements, evidence, screenshots, identities, or anything that would mislead people.
 
-### Can VibeRater detect every Nano Banana image?
-
-No. VibeRater should not be treated as a universal AI-image detector. VibeRater Social has an optional SlopGuard setting for suspected AI image posts in its feed, but that is a feed-control feature, not a guarantee that every AI-edited image will be identified.

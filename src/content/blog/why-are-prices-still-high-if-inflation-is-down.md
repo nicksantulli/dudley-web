@@ -1,6 +1,6 @@
 ---
 title: "Why Are Prices Still High If Inflation Is Down?"
-description: "Inflation going down usually means prices are rising more slowly, not that the grocery bill has gone back to its old level. Here is the plain-English difference."
+description: "Inflation going down usually means prices are rising more slowly, not that the grocery bill has gone back to its old level."
 publishDate: 2026-09-20
 updatedDate: 2026-09-20
 category: "economics"
@@ -36,7 +36,7 @@ So the short version is: a slower increase is still an increase. To get broad pr
 
 Sources: [BLS Consumer Price Index Summary for August 2026](https://www.bls.gov/news.release/cpi.nr0.htm), [St. Louis Fed: The Inflation Rate Is Falling, but Prices Are Not](https://www.stlouisfed.org/publications/page-one-economics/2024/03/01/the-inflation-rate-is-falling-but-prices-are-not), [St. Louis Fed: Prices vs. Inflation Explained](https://www.stlouisfed.org/open-vault/2025/july/differences-prices-inflation-explained), [Federal Reserve FAQ on inflation measures](https://www.federalreserve.gov/faqs/economy_14419.htm), and the current [EconByte: Daily Economics app page](/apps/econbyte/).
 
-## The Short Answer
+## Inflation Is a Rate; Prices Are a Level
 
 Inflation is a rate of change. Prices are the level you pay.
 

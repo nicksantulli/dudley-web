@@ -1,6 +1,6 @@
 ---
 title: "Can You Remove the Gemini AI Watermark?"
-description: "Gemini now lets some users turn off visible watermarks on AI-generated media. Here is what changes, what still stays in the file, and what to check before sharing AI-edited photos."
+description: "Gemini now lets some users turn off visible watermarks on AI-generated media."
 publishDate: 2026-08-28
 updatedDate: 2026-08-28
 category: "answers"
@@ -22,8 +22,6 @@ faq:
     a: "No. Gemini verification can help identify content created or edited by Google AI tools, and Content Credentials can show origin and history when available. Google also says a missing SynthID result does not rule out other AI systems."
   - q: "Should you post Gemini-edited photos without labeling them?"
     a: "If the edit could mislead people about a real person, place, event, screenshot, product, or endorsement, label the context clearly even if the visible watermark is off."
-  - q: "How does this relate to VibeRater?"
-    a: "VibeRater Social is not affiliated with Gemini. The useful connection is sharing behavior: VibeRater is for entertainment, and people should stay clear about what is private, posted, AI-edited, or just a playful vibe read."
 draft: false
 ---
 
@@ -33,7 +31,7 @@ The practical answer: if you are making an AI photo for a joke, profile image, g
 
 Sources: [Google Gemini Apps Help: Manage watermark settings](https://support.google.com/gemini/answer/17405358?hl=en-GB), [Google Gemini Apps Help: Verify AI-generated images, videos, and audio](https://support.google.com/gemini/answer/16722517?co=GENIE.Platform%3DDesktop&hl=en), [Google DeepMind: SynthID](https://deepmind.google/models/synthid/), [Gemini Apps Privacy Hub](https://support.google.com/gemini/answer/13594961?hl=en), [Apple App Review Guidelines](https://developer.apple.com/app-store/review/guidelines/), and [VibeRater Social](https://dudleyapps.com/apps/vibe-rater/).
 
-## The Short Answer
+## The Visible Watermark Is a Gemini Setting
 
 Gemini's visible watermark is now a setting in Gemini Apps for supported users and accounts. Google documents it as a "Media watermark" control for visual media created in Gemini Apps, including images, video, and music.
 
@@ -164,6 +162,3 @@ No. Gemini verification can help identify Google AI-generated or Google AI-edite
 
 Label them when the context could mislead people. A private joke edit is different from a public image that looks like evidence, an endorsement, a news event, a screenshot, or an unedited photo of a real person.
 
-### Is VibeRater an AI-image detector?
-
-No. VibeRater Social is an entertainment app for playful photo ratings and sharing choices. It should not be treated as a universal detector for Gemini, Nano Banana, or other AI-edited images.

@@ -1,6 +1,6 @@
 ---
 title: "Can Photo Apps See Your Location?"
-description: "Photo apps may receive location metadata when you share or upload an image. Here is how iPhone photo location data works and what to check before using an aura or AI photo app."
+description: "Photo apps may receive location metadata when you share or upload an image."
 publishDate: 2026-07-29
 updatedDate: 2026-07-29
 category: "answers"
@@ -18,14 +18,12 @@ faq:
     a: "Yes. Apple's picker lets you select specific photos for an app instead of granting broad library access. The app receives the item you choose, not automatic access to every photo."
   - q: "How do I stop photos from saving location data on iPhone?"
     a: "Go to Settings > Privacy & Security > Location Services > Camera and change Camera location access. You can also remove a specific photo's location in Photos by choosing Adjust Location > No Location."
-  - q: "Does VibeRater use photo location as part of the rating?"
-    a: "VibeRater Social is a for-entertainment photo app. Dudley's public privacy policy says rating-only photos are sent to the rating service, processed in memory, and discarded; it does not describe photo location as a rating input."
 draft: false
 ---
 
 Photo apps can sometimes see where a picture was taken if the image you upload or share includes location metadata. On iPhone, that metadata can travel with a photo depending on how you share it, which access you grant, and whether you remove the location first.
 
-The practical answer is simple: if a photo workflow does not need location, use the narrowest sharing option available. Pick one image instead of granting full library access, remove location from sensitive photos, and check the app's privacy policy before uploading private moments to an aura, AI edit, rating, or social photo app.
+If a photo workflow does not need location, use the narrowest sharing option available. Pick one image instead of granting full library access, remove location from sensitive photos, and check the app's privacy policy before uploading private moments to an aura, AI edit, rating, or social photo app.
 
 ## Why this question matters
 
@@ -101,13 +99,9 @@ Before uploading a personal image, look for four privacy signals.
 
 Source: [Apple Developer: App Privacy Details](https://developer.apple.com/app-store/app-privacy-details/).
 
-## Where VibeRater fits
+## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is built as a for-entertainment photo app. The current public App Store listing describes it as a selfie and vibe-rating app, with playful outputs like scores, archetypes, aura colors, and share cards. It also says the photo is sent to the rating service, scored in memory, and not stored.
-
-Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) gives the same split: a rating-only photo is sent to the service to generate the result, processed in memory, and discarded. Media someone chooses to post, share, or save may be stored so those selected features work.
-
-That is the privacy model to look for in any photo app: temporary processing should be described separately from deliberate sharing, posting, saving, analytics, ads, and account features.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. The [VibeRater privacy policy](/privacy/vibe-rater/) has the details.
 
 ## The safest default
 
@@ -128,5 +122,3 @@ Yes. Apple's picker lets you select specific photos for an app instead of granti
 **How do I stop photos from saving location data on iPhone?**
 Go to Settings > Privacy & Security > Location Services > Camera and change Camera location access. You can also remove a specific photo's location in Photos by choosing Adjust Location > No Location.
 
-**Does VibeRater use photo location as part of the rating?**
-VibeRater Social is a for-entertainment photo app. Dudley's public privacy policy says rating-only photos are sent to the rating service, processed in memory, and discarded; it does not describe photo location as a rating input.

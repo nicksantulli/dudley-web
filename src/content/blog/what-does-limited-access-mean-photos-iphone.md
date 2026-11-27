@@ -1,6 +1,6 @@
 ---
 title: "What Does Limited Access Mean for Photos on iPhone?"
-description: "Limited Access means an iPhone app can use only the photos and videos you select, not your whole photo library. Here is what it changes, how to check it, and what to watch before using photo apps."
+description: "Limited Access means an iPhone app can use only the photos and videos you select, not your whole photo library."
 publishDate: 2026-08-23
 updatedDate: 2026-08-23
 category: "Privacy"
@@ -19,8 +19,6 @@ faq:
     a: "Usually, yes. Limited Access narrows the app's library permission to selected items, while Full Access can let the app work with your broader photo library. It does not change what happens after you intentionally upload, post, or share a selected photo."
   - q: "Does the iPhone photo picker give an app my whole library?"
     a: "No. Apple says its Photos picker lets people choose photos in a system view and gives the app access only to the items selected; photo-library authorization is not needed for that picker flow."
-  - q: "Does VibeRater need Full Access to rate a photo?"
-    a: "No. VibeRater is built around the photo you choose. Dudley's privacy policy says a rating-only photo is processed in memory and discarded; media you choose to post, share, or save is stored so those selected social features work."
 draft: false
 ---
 
@@ -30,7 +28,7 @@ That setting controls library permission. It does not make every upload private 
 
 Sources: [Apple Support: Control access to information in apps on iPhone](https://support.apple.com/guide/iphone/control-access-to-information-in-apps-iph251e92810/ios), [Apple Developer Documentation: PhotosUI](https://developer.apple.com/documentation/photosui), [Apple Support: About App Privacy Report](https://support.apple.com/en-us/102188), and [VibeRater Social](https://dudleyapps.com/apps/vibe-rater/).
 
-## The Short Answer
+## Limited Access Shows Only the Photos You Pick
 
 When an iPhone photo permission prompt offers Limited Access, it is asking how much of your Photos library the app may use.
 
@@ -147,5 +145,3 @@ Usually, yes. Limited Access narrows the app's library permission to selected it
 **Does the iPhone photo picker give an app my whole library?**  
 No. Apple says its Photos picker lets people choose photos in a system view and gives the app access only to the items selected; photo-library authorization is not needed for that picker flow.
 
-**Does VibeRater need Full Access to rate a photo?**  
-No. VibeRater is built around the photo you choose. Dudley's privacy policy says a rating-only photo is processed in memory and discarded; media you choose to post, share, or save is stored so those selected social features work.

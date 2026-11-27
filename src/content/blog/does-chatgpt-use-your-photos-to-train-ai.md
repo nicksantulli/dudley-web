@@ -1,6 +1,6 @@
 ---
 title: "Does ChatGPT Use Your Photos To Train AI?"
-description: "ChatGPT can use content you upload, including images, to improve OpenAI's models unless your plan or data controls say otherwise. Here is the practical photo privacy checklist."
+description: "ChatGPT can use content you upload, including images, to improve OpenAI's models unless your plan or data controls say otherwise."
 publishDate: 2026-08-22
 updatedDate: 2026-08-22
 category: "Privacy"
@@ -19,8 +19,6 @@ faq:
     a: "OpenAI says signed-in users can go to Settings, open Data Controls, and turn off Improve the model for everyone. The setting applies across the account once changed."
   - q: "Does Temporary Chat use photos for training?"
     a: "OpenAI says Temporary Chat does not appear in history, use or create memories, or get used to train models. You should still avoid uploading sensitive images unless you need to."
-  - q: "Is VibeRater the same as ChatGPT?"
-    a: "No. VibeRater is a separate Dudley iPhone app. Its privacy policy says a rating-only photo is processed in memory, not stored, and not used to train models; posted, shared, or saved media is stored only so chosen social features work."
 draft: false
 ---
 
@@ -30,7 +28,7 @@ That does not mean every uploaded photo is instantly copied into a training set,
 
 Sources: [OpenAI Data Controls FAQ](https://help.openai.com/en/articles/7730893-data-usage-privacy-and-security), [OpenAI: How your data is used to improve model performance](https://openai.com/policies/how-your-data-is-used-to-improve-model-performance/), [OpenAI Privacy Policy](https://openai.com/policies/privacy-policy/), and [OpenAI: How ChatGPT and our foundation models are developed](https://openai.com/policies/how-chatgpt-and-our-foundation-models-are-developed/).
 
-## The Short Answer
+## Treat a ChatGPT Upload as Content You Gave an AI Service
 
 If you upload a photo to ChatGPT in a personal account, treat that image like content you intentionally gave to an AI service. OpenAI's privacy policy says user content can include prompts and uploaded content such as files, images, audio, and video. OpenAI also says personal services such as ChatGPT, Sora, and Operator may use your content to train models, while giving users ways to opt out.
 
@@ -111,13 +109,7 @@ The best privacy move is usually to narrow the upload before you worry about the
 
 ## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is not ChatGPT, OpenAI, or an OpenAI partner. It is Dudley's separate iPhone app for playful photo ratings, Vibes posts, Vibies, VibeChecks, Squad, Radar, Rise, and shareable cards.
-
-The useful comparison is the privacy question, not the vendor. In Dudley's [VibeRater privacy policy](/privacy/vibe-rater/), a photo you only rate is sent to the rating service, used to generate the playful result, processed in memory, and not stored or used to train models. If you choose to post, share, or save media, that selected content is stored so the social feature can work.
-
-That boundary is important: private rating, deliberate posting, and external sharing are different actions. VibeRater's scores, auras, archetypes, anthems, and Vibescopes are entertainment outputs, not measurements of appearance, identity, health, personality, or truth.
-
-[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-chatgpt-use-photos-ai&mt=8) if you want a photo vibe check that is built around choosing what stays private and what becomes social.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-chatgpt-use-photos-ai&mt=8).
 
 ## Bottom Line
 
@@ -134,5 +126,3 @@ OpenAI says signed-in users can go to Settings, open Data Controls, and turn off
 **Does Temporary Chat use photos for training?**  
 OpenAI says Temporary Chat does not appear in history, use or create memories, or get used to train models. You should still avoid uploading sensitive images unless you need to.
 
-**Is VibeRater the same as ChatGPT?**  
-No. VibeRater is a separate Dudley iPhone app. Its privacy policy says a rating-only photo is processed in memory, not stored, and not used to train models; posted, shared, or saved media is stored only so chosen social features work.

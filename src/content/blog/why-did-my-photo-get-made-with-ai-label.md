@@ -1,6 +1,6 @@
 ---
 title: "Why Did My Photo Get a Made With AI Label?"
-description: "A Made with AI label usually means a platform, tool, disclosure setting, or content credential signaled that media was meaningfully AI-generated or altered. Here is what the label can and cannot prove."
+description: "A Made with AI label usually means a platform, tool, disclosure setting, or content credential signaled that media was meaningfully AI-generated or altered."
 publishDate: 2026-08-16
 updatedDate: 2026-08-16
 category: "ai culture"
@@ -20,16 +20,14 @@ faq:
     a: "Not always. It can mean the media was meaningfully generated or altered with AI, but platforms also treat metadata, disclosure settings, and automated detection differently. Read the platform's label explanation before assuming what changed."
   - q: "Do filters and vibe apps need AI labels?"
     a: "Minor aesthetic edits, captions, filters, and clearly playful non-realistic outputs often do not need the same disclosure as realistic AI edits. If a post makes a real person, place, event, or product look like something happened that did not happen, label it clearly."
-  - q: "How should I share VibeRater results?"
-    a: "Treat VibeRater Social results as entertainment. A score, aura-style read, archetype, anthem, Vibie, or share card is not proof, diagnosis, identity verification, attractiveness analysis, or a claim that a real event happened."
 draft: false
 ---
 
 A Made with AI label usually means a platform has some reason to believe media was generated or meaningfully altered with AI, or that the creator disclosed AI use. It does not automatically prove the entire photo, video, caption, or post is fake. The label is a context signal, and the exact meaning depends on the platform.
 
-That distinction matters in 2026 because AI labels are showing up in more places: social posts, video descriptions, ad creatives, content credentials, and camera-authenticity disclosures. If a label appears on your photo or video, the useful question is not just "is this AI?" It is: who applied the label, what rule triggered it, and what did the media actually claim?
+AI labels are showing up in more places: social posts, video descriptions, ad creatives, content credentials, and camera-authenticity disclosures. If a label appears on your photo or video, the useful question is not just "is this AI?" It is: who applied the label, what rule triggered it, and what did the media actually claim?
 
-## The Short Answer
+## Common Reasons for a Made with AI Label
 
 Your photo or video can get a Made with AI label for a few common reasons:
 
@@ -110,13 +108,7 @@ A reverse image search, original file check, or source comparison can help, but 
 
 ## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is a free iPhone social app for playful photo ratings, Vibes posts, Vibies, VibeChecks, Squad reactions, Radar, Rise, optional SlopGuard, and shareable vibe cards. Its product boundary is entertainment.
-
-That means a VibeRater result should be shared as a joke, caption, reaction, or group-chat prompt, not as proof about someone. A VibeMeter score, aura-style read, archetype, anthem, Vibie, Vibescope, or share card is not identity verification, biometric analysis, attractiveness measurement, personality analysis, health guidance, dating compatibility, or AI-detection proof.
-
-Dudley's [VibeRater privacy policy](/privacy/vibe-rater/) also separates private rating photos from media you choose to post or save. It says a photo used only for rating is sent to the rating service, processed in memory, discarded, and not stored or used to train models. Posted, shared, or saved media is different because the app has to store selected content for those social features to work.
-
-[Download VibeRater Social on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-photo-ai-label&mt=8) if you want playful photo reactions and share cards, then caption them honestly as entertainment.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. [VibeRater Social is free on the App Store](https://apps.apple.com/us/app/viberater-social/id6780704282?pt=128970277&ct=vr-w-photo-ai-label&mt=8).
 
 ## The Safer Rule For Sharing
 
@@ -135,5 +127,3 @@ Not always. It can mean the media was meaningfully generated or altered with AI,
 **Do filters and vibe apps need AI labels?**
 Minor aesthetic edits, captions, filters, and clearly playful non-realistic outputs often do not need the same disclosure as realistic AI edits. If a post makes a real person, place, event, or product look like something happened that did not happen, label it clearly.
 
-**How should I share VibeRater results?**
-Treat VibeRater Social results as entertainment. A score, aura-style read, archetype, anthem, Vibie, or share card is not proof, diagnosis, identity verification, attractiveness analysis, or a claim that a real event happened.

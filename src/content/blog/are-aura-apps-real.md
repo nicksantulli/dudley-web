@@ -1,6 +1,6 @@
 ---
 title: "Are Aura Apps Real? Entertainment vs. Actual Analysis"
-description: "Aura apps can be fun, but their photo scores, colors, and archetypes should be treated as entertainment. Here is how to tell playful vibe reads from serious claims."
+description: "Aura apps can be fun, but their photo scores, colors, and archetypes should be treated as entertainment."
 publishDate: 2026-07-16
 updatedDate: 2026-07-16
 category: "answers"
@@ -77,13 +77,9 @@ Look for:
 
 That last part matters. The best aura apps are not trying to be a lab report. They are trying to give you a result your group chat will immediately have opinions about.
 
-## Where VibeRater fits
+## Where VibeRater Fits
 
-[VibeRater Social](/apps/vibe-rater/) is an aura app in the entertainment sense. It rates a selfie, regular photo, squad shot, or pet pic across playful vibe dimensions, then gives you an archetype, aura color, grade, and share card.
-
-It is not a beauty app. It is not a biometric tool. It is not a dating compatibility app. It is not a personality test. It is a free iPhone app built around the idea that your photo can produce a funny, specific, shareable vibe read.
-
-The privacy angle matters for any photo app. VibeRater's public [privacy policy](/privacy/vibe-rater/) explains current photo handling, and the app page keeps the claim simple: your photo is rated for the result and not turned into a permanent photo library.
+We make [VibeRater Social](/apps/vibe-rater/), a photo-rating social app rated 16+. Its scores and auras are entertainment, not a measurement of anyone. Photos you only rate are processed in memory and discarded. Photos you post are stored so the post works. The [VibeRater privacy policy](/privacy/vibe-rater/) has the details.
 
 ## Should you use an aura app?
 

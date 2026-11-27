@@ -35,7 +35,7 @@ The clean reading is: the app cleared the release-state gate. Now verify the sto
 
 Sources: [Apple App and submission statuses](https://developer.apple.com/help/app-store-connect/reference/app-information/app-and-submission-statuses), [Apple overview of publishing your app on the App Store](https://developer.apple.com/help/app-store-connect/manage-your-apps-availability/overview-of-publishing-your-app-on-the-app-store), [Apple App Store Connect Analytics metric definitions](https://developer.apple.com/help/app-store-connect-analytics/reference/metrics-definitions/), [Apple phased release documentation](https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases/), and a current U.S. Apple lookup for Table Talk: Conversation Cards.
 
-## The Short Answer
+## Ready for Distribution Is a Release Status
 
 Ready for Distribution is a release status. Apple says app status shows where an app is in the review and release process, and a green status indicator means the app is Ready for Distribution.
 
@@ -107,7 +107,7 @@ So after the green release status appears, check:
 4. Whether the public page shows the expected version and copy.
 5. Whether your website links point to the right listing.
 
-For a public report, a direct App Store link returning 200 is stronger evidence than saying "the dashboard looked ready." A direct link plus the current version text is stronger still.
+For a public report, open the listing in the target storefront and confirm the expected app and version appear. That is stronger evidence than saying "the dashboard looked ready."
 
 ## Phased Release Can Change the Rollout Story
 

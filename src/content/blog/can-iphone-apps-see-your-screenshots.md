@@ -27,9 +27,9 @@ draft: false
 
 iPhone apps cannot automatically browse every screenshot on your phone. The important nuance is that an app can know when you take a screenshot while that app is active, but Apple's screenshot notification posts after the screenshot and does not include the image itself. To receive a saved screenshot later, the app still needs a Photos permission path, a picker selection, a share sheet action, or another action you choose.
 
-That distinction matters for photo apps, social apps, group-chat tools, bug-reporting flows, and aura or vibe-check apps. A screenshot can include names, messages, locations, receipts, usernames, health details, or other context you did not mean to upload. Treat each screenshot as a deliberate share, not just another image.
+A screenshot can include names, messages, locations, receipts, usernames, health details, or other context you did not mean to upload. Treat each screenshot as a deliberate share, not just another image.
 
-## The Short Answer
+## Three Different Screenshot Questions
 
 There are three different questions people usually mean:
 

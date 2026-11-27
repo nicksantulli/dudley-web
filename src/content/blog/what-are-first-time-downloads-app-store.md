@@ -1,6 +1,6 @@
 ---
 title: "What Are First-Time Downloads in App Store Connect?"
-description: "First-Time Downloads show new App Store downloads, but they are not the same as active users, retention, revenue, or product-market fit. Here is the plain-English version."
+description: "First-Time Downloads show new App Store downloads, but they are not the same as active users, retention, revenue, or product-market fit."
 publishDate: 2026-10-05
 updatedDate: 2026-10-05
 category: "app analytics"
@@ -27,13 +27,13 @@ faq:
 draft: false
 ---
 
-First-Time Downloads in App Store Connect are a useful acquisition signal: they tell an app maker how many people downloaded the app for the first time. They do not, by themselves, prove that people opened the app, came back later, made a purchase, saw an ad, shared it, or liked it.
+First-Time Downloads in App Store Connect are a useful acquisition signal: they count the first-time downloads of the app in the selected period. They do not, by themselves, prove that people opened the app, came back later, made a purchase, saw an ad, shared it, or liked it.
 
-That distinction matters. A download is a distribution event. Product health needs separate evidence from usage, quality, support, and money.
+A download is a distribution event. Product health needs separate evidence from usage, quality, support, and money.
 
 Sources: [Apple App Store Connect Analytics: metric definitions](https://developer.apple.com/help/app-store-connect-analytics/reference/metrics-definitions/), [Apple App Store Connect Analytics: acquisition](https://developer.apple.com/help/app-store-connect-analytics/acquisition/acquisition/), [Apple App Store Connect: App Analytics overview](https://developer.apple.com/app-store-connect/analytics/), [Apple App Store search guidance](https://developer.apple.com/app-store/search/), and the current [Table Talk: Conversation Cards App Store listing](https://apps.apple.com/app/id6780714565?pt=128970277&ct=tt-w-first-time-app-store&mt=8).
 
-## The Short Answer
+## First-Time Downloads Do Not Measure Active Users
 
 First-Time Downloads answer one narrow question: how many first-time app downloads happened in the selected App Store Connect window?
 
@@ -60,7 +60,7 @@ Apple separates first-time downloads, redownloads, and total downloads. That sep
 | Metric | What it is useful for | What it does not prove |
 | --- | --- | --- |
 | First-Time Downloads | New acquisition | Whether the user opened or kept using the app |
-| Redownloads | Returning device or account behavior | New-user demand |
+| Redownloads | Downloads by people who downloaded the app before | New-user demand |
 | Total Downloads | A broader distribution count | The quality of the user base |
 | Sessions | App usage after install | New-user acquisition by itself |
 | Proceeds | Money from App Store commerce | Retention or user satisfaction by itself |

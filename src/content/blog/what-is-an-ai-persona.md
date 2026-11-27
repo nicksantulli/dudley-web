@@ -1,6 +1,6 @@
 ---
 title: "What Is an AI Persona?"
-description: "An AI persona is a synthetic artist, creator, character, or profile that is presented like a person. Here is why Spotify's AI-persona labels matter for photos, social posts, and vibe-check apps."
+description: "An AI persona is a synthetic artist, creator, character, or profile that is presented like a person."
 publishDate: 2026-08-11
 updatedDate: 2026-08-11
 category: "answers"
@@ -45,7 +45,7 @@ Source: [Spotify Newsroom: Spotify Strengthens AI Protections for Artists, Songw
 
 The search intent is bigger than music. People are trying to understand what counts as a fake profile, what counts as a normal AI edit, and how to post without accidentally misleading friends or followers.
 
-## The Short Answer
+## An AI Persona Is an Identity Layer
 
 An AI persona is an identity layer. It can be:
 
@@ -65,7 +65,7 @@ These phrases overlap, but they are not the same.
 
 **AI persona** is about the speaker or performer. It asks whether the account, artist, or character behind the content is a real person, a clearly fictional character, or a synthetic identity that could confuse people.
 
-That distinction matters in everyday posting. A real friend using a funny AI filter is different from a generated "friend" account pretending to have a real life. A musician using AI for production is different from an AI-made artist profile that looks like a human performer.
+A real friend using a funny AI filter is different from a generated "friend" account pretending to have a real life. A musician using AI for production is different from an AI-made artist profile that looks like a human performer.
 
 ## How Social Platforms Are Handling AI Labels
 
@@ -91,7 +91,7 @@ That is especially important for group-chat content. A vibe check is funny becau
 
 [VibeRater](/apps/vibe-rater/) is a just-for-fun photo and vibe-check app. The useful connection is not that VibeRater can settle whether something is real. It cannot. The connection is that VibeRater works best when the social context is honest: you choose the photo, keep the result private or share it intentionally, and treat scores, auras, archetypes, and Vibescopes as entertainment.
 
-The Dudley [VibeRater privacy policy](/privacy/vibe-rater/) also draws a clear line between a photo used only for rating and media you choose to post, share, or save. That distinction matters when people are more sensitive to AI slop, fake profiles, and unclear provenance.
+The Dudley [VibeRater privacy policy](/privacy/vibe-rater/) also draws a clear line between a photo used only for rating and media you choose to post, share, or save.
 
 VibeRater also includes SlopGuard in the social app direction, which can hide suspected AI-generated image posts from the feed. That is a feed-quality control, not a perfect truth machine. The safer habit is still to post with context and avoid pretending synthetic media is an unedited real moment.
 

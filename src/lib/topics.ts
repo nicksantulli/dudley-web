@@ -2,9 +2,13 @@ import type { Post } from './blog';
 import { postTags, tagLabel, tagSlug } from './blog';
 
 export const TOPIC_HUBS = {
+  'app-store': {
+    title: 'Shipping on the App Store',
+    description: 'What App Store Connect numbers, statuses and review rules mean, from a studio that ships there.',
+  },
   'iphone-privacy': {
     title: 'iPhone Privacy',
-    description: 'Plain-English answers about photo access, contacts, location, screenshots, metadata, and app permissions.',
+    description: 'How iPhone photo access, contacts, location, screenshots, metadata, and app permissions work.',
   },
   'ai-media': {
     title: 'AI Images & Media',
@@ -17,10 +21,6 @@ export const TOPIC_HUBS = {
   'economics': {
     title: 'Economics in Plain English',
     description: 'Inflation, prices, interest rates, central banks, and economic headlines without textbook fog.',
-  },
-  'app-store': {
-    title: 'The App Store Explained',
-    description: 'Practical answers about iPhone app releases, privacy disclosures, age checks, downloads, and updates.',
   },
   'dudley-guides': {
     title: 'Dudley App Guides',
@@ -66,8 +66,6 @@ const TAG_TO_TOPIC: Record<string, TopicSlug> = {
   'price-level': 'economics',
   'app-store': 'app-store',
   'age-assurance': 'app-store',
-  viberater: 'dudley-guides',
-  'vibe-rater': 'dudley-guides',
   'table-talk': 'dudley-guides',
   econbyte: 'dudley-guides',
   'photo-games': 'dudley-guides',
